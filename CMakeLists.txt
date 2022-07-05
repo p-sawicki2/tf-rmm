@@ -48,7 +48,7 @@ include("cmake/BuildType.cmake")
 # and also where the project directory and version variables are set up.
 #
 
-project(RMM VERSION 0.1.0 LANGUAGES ASM C)
+project(RMM VERSION 0.1.0 LANGUAGES ASM C CXX)
 
 #
 # Set global flags.
@@ -65,6 +65,11 @@ endif()
 # Include the platform makefile
 #
 include("cmake/Platforms.cmake")
+
+#
+# Include the Unit Test Framework
+#
+include(UnitTestFramework)
 
 #
 # Include the common configuration options
@@ -108,6 +113,11 @@ add_subdirectory("runtime")
 if(RMM_DOCS)
     add_subdirectory("docs")
 endif()
+
+# Generate test_groups.h to import test groups
+configure_file(plat/host/host_test/src/test_groups.h.in
+               plat/host/host_test/src/test_groups.h
+               @ONLY)
 
 #
 # Create the flat binary using whatever tool comes with the toolchain.
