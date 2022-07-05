@@ -1,0 +1,11 @@
+/*
+ * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+ */
+
+#ifndef TEST_GROUPS_H
+#define TEST_GROUPS_H
+
+@IMPORT_TEST_GROUPS@
+
+#endif
