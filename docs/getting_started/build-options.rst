@@ -163,6 +163,16 @@ Run checkincludes on entire codebase:
     cmake -DRMM_CONFIG=fvp_defcfg -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- checkincludes-codebase
 
+13. Perform unit tests on development host
+
+Run unit tests on develpment host:
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DRMM_HOST_VARIANT=host_test -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR}
+    make test -C ${RMM_BUILD_DIR}
+
 .. _build_options_table:
 
 ###################
@@ -199,6 +209,7 @@ The |RMM| build system supports the following CMake build options.
    MBEDTLS_ECP_MAX_OPS		,248 -			,1000			,"Number of max operations per ECC signing iteration"
    RMM_FPU_USE_AT_REL2		,ON | OFF		,OFF(fake_host) ON(aarch64),"Enable FPU/SIMD usage in RMM."
    RMM_MAX_GRANULES		,			,0			,"Maximum number of memory granules available to the system"
+   RMM_HOST_VARIANT         , host_build | host_test, host_build, "Variant to build for the host platform. Only available when RMM_CONFIG is set to host_defcfg"
 
 
 
