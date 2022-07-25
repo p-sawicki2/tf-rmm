@@ -515,3 +515,8 @@ uint64_t *xlat_get_pte_from_table(const struct xlat_table_entry * const entry,
 
 	return &table[index];
 }
+
+int xlat_get_ns_for_descriptor(const uint64_t desc)
+{
+	return (desc & LOWER_ATTRS(NS));
+}

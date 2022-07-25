@@ -13,6 +13,7 @@ extern "C" {
 #include <granule.h>	/* Interface to exercise */
 #include <host_harness.h>
 #include <host_utils.h>
+#include <realm_test_utils.h>
 #include <status.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,12 +21,6 @@ extern "C" {
 #include <time.h>
 #include <unistd.h>
 #include <utils_def.h>
-}
-
-/* Function to get a random value within [min, max] range. */
-static inline int get_rand_in_range(int min, int max)
-{
-	return (rand() % (max - min + 1)) + min;
 }
 
 /*
