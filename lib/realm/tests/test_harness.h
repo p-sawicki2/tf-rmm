@@ -13,7 +13,10 @@
  * overridden during test execution.
  */
 
-void *test_buffer_map(enum buffer_slot slot, unsigned long addr);
-void test_buffer_unmap(void *buf);
+void *test_buffer_map_ret_pa(enum buffer_slot slot, unsigned long addr);
+void test_buffer_unmap_from_pa(void *buf);
+
+void *test_buffer_map_ret_va(enum buffer_slot slot, unsigned long addr);
+void test_buffer_unmap_from_va(void *buf);
 
 #endif /* TEST_HARNESS_H */
