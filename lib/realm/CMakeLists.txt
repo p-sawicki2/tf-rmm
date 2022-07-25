@@ -52,7 +52,8 @@ target_link_libraries(rmm-lib-realm
 
 target_include_directories(rmm-lib-realm
     PUBLIC "include"
-    PRIVATE "src/include/${RMM_ARCH}")
+    PRIVATE "src/include/${RMM_ARCH}"
+            "src")
 
 target_sources(rmm-lib-realm
     PRIVATE "src/buffer.c"
@@ -64,3 +65,10 @@ if(NOT RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-realm
         PRIVATE "src/aarch64/sve_helpers.S")
 endif()
+
+# Add test functionality
+rmm_build_unittest(NAME granule
+                   TARGET rmm-lib-realm
+                   SOURCES "tests/granule.cpp"
+                           "tests/test_harness.c"
+                   ITERATIONS 1000)
