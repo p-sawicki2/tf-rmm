@@ -320,5 +320,16 @@ int xlat_ctx_create_dynamic(struct xlat_ctx *ctx,
 			    void *tables_ptr,
 			    unsigned int ntables);
 
+/*
+ * Return the NS attribute of a given descriptor entry.
+ *
+ * Note: This function does not make any validation on the passed descriptor.
+ *	 It only applies a bitmask to the value passed.
+ *
+ * The function returns 0 if the NS attribute of the descriptor is False and
+ * a different value otherwise.
+ */
+int xlat_get_ns_for_descriptor(const uint64_t desc);
+
 #endif /*__ASSEMBLER__*/
 #endif /* XLAT_TABLES_H */
