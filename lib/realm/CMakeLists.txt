@@ -52,7 +52,8 @@ target_link_libraries(rmm-lib-realm
 
 target_include_directories(rmm-lib-realm
     PUBLIC "include"
-    PRIVATE "src/include/${RMM_ARCH}")
+    PRIVATE "src/include/${RMM_ARCH}"
+    PRIVATE "src/include")
 
 target_sources(rmm-lib-realm
     PRIVATE "src/buffer.c"
@@ -63,4 +64,8 @@ target_sources(rmm-lib-realm
 if(NOT RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-realm
         PRIVATE "src/aarch64/sve_helpers.S")
+endif()
+
+if(RMM_UNITTESTS STREQUAL "ON")
+    include (tests/CMakeLists.txt)
 endif()
