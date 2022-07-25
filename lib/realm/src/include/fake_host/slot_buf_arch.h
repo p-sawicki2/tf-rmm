@@ -6,6 +6,7 @@
 #ifndef SLOT_BUF_ARCH_H
 #define SLOT_BUF_ARCH_H
 
+#include <buffer.h>
 #include <host_harness.h>
 
 static void *buffer_arch_map(enum buffer_slot slot,
