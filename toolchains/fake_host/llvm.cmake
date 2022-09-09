@@ -22,3 +22,7 @@ endforeach()
 
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none ")
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-fuse-ld=lld ")
+
+# Setup the right coverage tool if using llvm
+set(GCOV_EXECUTABLE --gcov-executable "llvm-cov gcov"
+    CACHE INTERNAL "GCOV_EXECUTABLE")

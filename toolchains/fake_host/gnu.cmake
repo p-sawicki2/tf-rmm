@@ -22,4 +22,8 @@ find_program(CMAKE_CXX_COMPILER
 
 set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
 
-string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none ")
+#
+# Flags needed to enable coverage testing
+#
+string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT " -Wl,--build-id=none ")
+string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT " -coverage -lgcov ")

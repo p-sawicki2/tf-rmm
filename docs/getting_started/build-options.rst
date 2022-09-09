@@ -162,7 +162,7 @@ Run checkincludes on entire codebase:
     cmake -DRMM_CONFIG=fvp_defcfg -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- checkincludes-codebase
 
-14.  Perform unit tests on development host:
+14. Perform unit tests on development host:
 
 Build and run unit tests on host platform. It is recommended to do the Debug
 build of RMM.
@@ -171,6 +171,23 @@ build of RMM.
 
     cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- run-unittests
+
+15. Perform coverage analysis
+
+Build and run unit tests. It is recommended to do the Debug
+build of RMM.
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DRMM_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- coverage-report
+
+Enable HTML output on coverage report:
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DRMM_COVERAGE=ON -DRMM_HTML_COV_REPORT=ON -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- coverage-report
 
 .. _build_options_table:
 
@@ -208,9 +225,9 @@ The |RMM| build system supports the following CMake build options.
    MBEDTLS_ECP_MAX_OPS		,248 -			,1000			,"Number of max operations per ECC signing iteration"
    RMM_FPU_USE_AT_REL2		,ON | OFF		,OFF(fake_host) ON(aarch64),"Enable FPU/SIMD usage in RMM."
    RMM_MAX_GRANULES		,			,0			,"Maximum number of memory granules available to the system"
-   HOST_VARIANT			,host_build | host_test	,host_build		, "Variant to build for the host platform. Only available when RMM_PLATFORM=host"
-
-
+   HOST_VARIANT         , host_build | host_test, host_build, "Variant to build for the host platform. Only available when RMM_CONFIG is set to host_defcfg"
+   RMM_COVERAGE         , ON | OFF, OFF, "Enable coverity analysis when unit tests are enabled"
+   RMM_HTML_COV_REPORT     , ON | OFF, OFF, "Enable HTML output report for coverity analysis"
 
 .. _llvm_build:
 
