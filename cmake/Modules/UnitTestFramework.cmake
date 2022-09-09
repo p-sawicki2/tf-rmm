@@ -11,7 +11,7 @@ rmm_build_unittest
 
 .. command:: rmm_build_unittest
 
-Build a unit test group for a given target
+Build a unit test group for a given target, including coverage.
 
 .. code:: cmake
 
@@ -65,6 +65,41 @@ add_custom_target(run-unittests
     WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
     COMMAND ctest
 )
+
+if(${COVERAGE_ENABLED} STREQUAL "ON" OR
+    ${COVERAGE_ENABLED} STREQUAL "TRUE")
+
+    find_program(GCOVR_EXECUTABLE "gcovr" DOC "Path to gcovr")
+
+    if(${GCOVR_EXECUTABLE} STREQUAL "GCOVR_EXECUTABLE-NOTFOUND")
+        message ("-- WARNING: gcovr executable not found. Coverage tests disabled")
+    else()
+        # Create a directory for the coverage results,
+        # if it doesn't exist yet.
+        set(COVERAGE_DIRECTORY "${CMAKE_BINARY_DIR}/Testing/coverage")
+        file(MAKE_DIRECTORY "${COVERAGE_DIRECTORY}")
+
+        set(COVERAGE_OUTPUT "${COVERAGE_DIRECTORY}/${COVERAGE_REPORT_NAME}")
+
+        if(${HTML_COVERAGE_REPORT} STREQUAL "ON" OR
+           ${HTML_COVERAGE_REPORT} STREQUAL "TRUE")
+            set(HTML_REPORT --html-details ${COVERAGE_OUTPUT}.html)
+        endif()
+
+        #
+        # Rules for coverage tests
+        #
+        add_custom_target(coverage-report
+                            COMMAND ${GCOVR_EXECUTABLE}
+                            ${GCOV_EXECUTABLE}
+                            --exclude "'((.+)ext(.+))|((.+)CMakeFiles(.+)\..)|((.+)\.cpp)'"
+                            -r ${CMAKE_SOURCE_DIR}
+                            -x ${COVERAGE_OUTPUT}.xml
+                            ${HTML_REPORT}
+                            ${CMAKE_BINARY_DIR}
+        )
+    endif()
+endif()
 
 function(rmm_build_unittest)
 
