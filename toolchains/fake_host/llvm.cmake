@@ -20,5 +20,4 @@ foreach(language IN ITEMS ASM C CXX)
     string(APPEND CMAKE_${language}_FLAGS_INIT "-fPIC ")
 endforeach()
 
-string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none ")
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-fuse-ld=lld ")

@@ -79,7 +79,7 @@ macro(arm_target_linker_script target script)
     set_target_properties(${target}
         PROPERTIES INTERFACE_LINK_DEPENDS "${location}")
 
-    if(CMAKE_C_COMPILER_ID STREQUAL "ARMClang")
+    if(CMAKE_C_COMPILER_ID STREQUAL "Clang")
         target_link_options(${target}
             PUBLIC "LINKER:--scatter" "LINKER:${location}")
     else()
