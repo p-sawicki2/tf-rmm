@@ -11,7 +11,7 @@ rmm_build_unittest
 
 .. command:: rmm_build_unittest
 
-Build a unit test group for a given target
+Build a unit test group for a given target, including coverage.
 
 .. code:: cmake
 
