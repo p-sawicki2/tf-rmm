@@ -11,14 +11,15 @@ rmm_build_unittest
 
 .. command:: rmm_build_unittest
 
-Build a unit test group for a given target
+Build a unit test group for a given target, including coverage.
 
 .. code:: cmake
 
     rmm_build_unittest(NAME <name> TARGET <target> SOURCES <sources>
+                       FILTER <filter>
                        [RUN_ISOLATED_TESTS <LIST of tests to run>
                        [LIBRARIES <libraries_to_link>]
-		               [ITERATIONS <iterations>])
+                       [ITERATIONS <iterations>])
 
 This helper function simplifies the mechanics to setup and enable an unit test.
 
@@ -31,6 +32,8 @@ strings):
 - ``NAME`` Name of the test. It must match the name of the CppUtest test group.
 - ``TARGET`` Target where the tests will be linked against.
 - ``SOURCES`` Source files for the tests. This is usually a single C++ file.
+- ``FILTER`` Regex that specifies the source files to include on the coverage
+             report. Mandatory.
 - ``RUN_ISOLATED_TESTS`` Optional parameter that specifies a list of tests
                          implemented within ``SOURCES`` to be run. When this
                          list is specified, the binary is re-spawned for each
@@ -49,20 +52,50 @@ strings):
 #]=======================================================================]
 
 if((RMM_PLATFORM STREQUAL host) AND (RMM_HOST_VARIANT STREQUAL host_test))
+
     include("cmake/BuildCppUTest.cmake")
 
     # Clean ${IMPORT_TEST_GROUPS}, used to generate test_groups.h later.
     SET(IMPORT_TEST_GROUPS "" CACHE INTERNAL "IMPORT_TEST_GROUP List")
 
     include(CTest)
+
+    if(${COVERAGE_ENABLED} STREQUAL "ON" OR
+       ${COVERAGE_ENABLED} STREQUAL "TRUE")
+
+        find_program(GCOVR_EXECUTABLE "gcovr"
+                     DOC "Path to gcovr")
+
+        if(${GCOVR_EXECUTABLE} STREQUAL "GCOVR_EXECUTABLE-NOTFOUND")
+            message ("-- WARNING: gcovr executable not found. Coverage tests disabled")
+        else()
+            # Clean the filter used for the coverage report
+            set(COVERAGE_FILTER " " CACHE INTERNAL "Filter used for coverage")
+
+            # Create a directory for the coverage results,
+            # if it doesn't exist yet.
+            set(COVERAGE_DIRECTORY "${CMAKE_BINARY_DIR}/Testing/coverage")
+            file(MAKE_DIRECTORY "${COVERAGE_DIRECTORY}")
+
+            # Create the path where to store results. COVERAGE_OUTPUT will also be
+            # used to decide wether to create or not the coverage-report target.
+            set(COVERAGE_OUTPUT "${COVERAGE_DIRECTORY}/${COVERAGE_REPORT_NAME}"
+                CACHE INTERNAL "COVERAGE_OUTPUT")
+        endif()
+    endif()
 endif()
 
 function(rmm_build_unittest)
 
     if((RMM_PLATFORM STREQUAL host) AND (RMM_HOST_VARIANT STREQUAL host_test))
         set(_options "")
-        set(_multi_args "SOURCES;LIBRARIES;RUN_ISOLATED_TESTS")
-        set(_single_args "NAME;TARGET;ITERATIONS")
+        set(_multi_args "SOURCES"
+                        "LIBRARIES"
+                        "RUN_ISOLATED_TESTS")
+        set(_single_args "NAME"
+                         "TARGET"
+                         "ITERATIONS"
+                         "FILTER")
 
         cmake_parse_arguments(
             arg "${_options}" "${_single_args}" "${_multi_args}" ${ARGN})
@@ -87,11 +120,31 @@ function(rmm_build_unittest)
             set(arg_ITERATIONS "10")
         endif()
 
+        if((${COVERAGE_ENABLED} STREQUAL "ON" OR
+           ${COVERAGE_ENABLED} STREQUAL "TRUE") AND
+           NOT ${GCOVR_EXECUTABLE} STREQUAL "GCOVR_EXECUTABLE-NOTFOUND")
+
+            if("FILTER" IN_LIST arg_KEYWORDS_MISSING_VALUES OR
+                NOT DEFINED arg_FILTER)
+                message(FATAL_ERROR "Filter for ${arg_TARGET}::${arg_NAME} coverage test missed")
+            endif()
+
+            # Update the filter
+            if(${COVERAGE_FILTER} STREQUAL " ")
+                set(COVERAGE_FILTER "(${arg_FILTER})"
+                    CACHE INTERNAL "COVERAGE_FILTER")
+            else()
+                # Concatenate the new filter to the existing one
+                set(COVERAGE_FILTER "${COVERAGE_FILTER}|(${arg_FILTER})"
+                    CACHE INTERNAL "COVERAGE_FILTER")
+            endif()
+        endif()
+
         target_sources("${arg_TARGET}"
-	        PRIVATE ${arg_SOURCES})
+            PRIVATE ${arg_SOURCES})
 
         target_link_libraries("${arg_TARGET}"
-	        PRIVATE CppUTest
+            PRIVATE CppUTest
                     ${arg_LIBRARIES})
 
         # Add the test to the CMake test builder, so we can automate
@@ -101,16 +154,16 @@ function(rmm_build_unittest)
             # Run all tests at once
             add_test(NAME "${arg_NAME}"
                      COMMAND ${CMAKE_BINARY_DIR}/rmm.elf
-                             -g${arg_NAME}
-                             -r${arg_ITERATIONS})
+                     -g${arg_NAME}
+                     -r${arg_ITERATIONS})
         else()
             # Register a test for each test case, so each one on them can
             # run on isolation.
             foreach(TEST IN LISTS arg_RUN_ISOLATED_TESTS)
                 add_test(NAME "${arg_NAME}::${TEST}"
                          COMMAND ${CMAKE_BINARY_DIR}/rmm.elf
-                                 -sg${arg_NAME}
-                                 -sn${TEST})
+                         -sg${arg_NAME}
+                         -sn${TEST})
             endforeach()
         endif()
 
