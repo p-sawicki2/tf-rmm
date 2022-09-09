@@ -22,4 +22,13 @@ find_program(CMAKE_CXX_COMPILER
 
 set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
 
-string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none ")
+#
+# Flags needed to enable coverage testing
+#
+foreach(language in ITEMS C CXX)
+    string(APPEND CMAKE_${language}_FLAGS_INIT "--coverage ")
+    string(APPEND CMAKE_${language}_FLAGS_INIT "-O0 ")
+    string(APPEND CMAKE_${language}_FLAGS_INIT "-fprofile-abs-path ")
+endforeach()
+
+string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none")
