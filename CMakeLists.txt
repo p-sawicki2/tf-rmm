@@ -206,3 +206,24 @@ add_custom_target(checkincludes-patch
   WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
   COMMAND ${CMAKE_COMMAND} -DCHECKINCLUDES_PATCH=1 -P ${CMAKE_SOURCE_DIR}/tools/checkincludes/CheckIncludes.cmake
   )
+
+#
+# Rules for coverage tests
+#
+if(COVERAGE_OUTPUT)
+  if(${HTML_COVERAGE_REPORT} STREQUAL "ON" OR
+     ${HTML_COVERAGE_REPORT} STREQUAL "TRUE")
+      set(HTML_REPORT --html-details ${COVERAGE_OUTPUT}.html)
+endif()
+
+  add_custom_target(coverage-report
+                    COMMAND ${GCOVR_EXECUTABLE}
+                            ${GCOV_EXECUTABLE}
+                            --exclude-directories "ext"
+                            --filter '${COVERAGE_FILTER}'
+                            -r ${CMAKE_SOURCE_DIR}
+                            -x ${COVERAGE_OUTPUT}.xml
+                            ${HTML_REPORT}
+                            ${CMAKE_BINARY_DIR}
+  )
+endif()
