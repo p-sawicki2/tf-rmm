@@ -162,7 +162,7 @@ Run checkincludes on entire codebase:
     cmake -DRMM_CONFIG=fvp_defcfg -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- checkincludes-codebase
 
-13. Perform unit tests on development host
+13.  Perform unit tests on development host (with coverage analysis enabled by default)
 
 Run unit tests on develpment host:
 
@@ -171,6 +171,38 @@ Run unit tests on develpment host:
     cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- run-unittests
+
+14. Perform coverage analysis (note: unit tests must be run in advance)
+
+Build and run unit tests:
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=build_test HTML_COVERAGE_REPORT=ON -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- run-unittests
+
+Generate coverage report:
+
+.. code-block:: bash
+
+    cmake --build ${RMM_BUILD_DIR} -- coverage-report
+
+Enable HTML output on coverage report:
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=build_test HTML_COVERAGE_REPORT=ON -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- run-unittests
+    cmake --build ${RMM_BUILD_DIR} -- coverage-report
+
+Disable coverage report:
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=build_test COVERAGE_ENABLED=OFF -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR}
 
 .. _build_options_table:
 
@@ -210,8 +242,8 @@ The |RMM| build system supports the following CMake build options.
    RMM_MAX_GRANULES		,			,0			,"Maximum number of memory granules available to the system"
    HOST_VARIANT         , host_build | host_test, host_build, "Variant to build for the host platform. Only available when RMM_CONFIG is set to host_defcfg"
    RMM_SKIP_UNITTESTS   , ON | OFF          ,OFF    ,"Do not run unittests unless forced with FORCED parameter. Use during development only"
-
-
+   COVERAGE_ENABLED         , ON | OFF, ON, "Enable coverity analysis when unit tests are enabled"
+   HTML_COVERAGE_REPORT     , ON | OFF, OFF, "Enable HTML output report for coverity analysis"
 
 .. _llvm_build:
 
