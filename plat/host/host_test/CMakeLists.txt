@@ -9,8 +9,31 @@ add_library(rmm-plat-host_test)
 arm_config_option(
     NAME RMM_UNITTESTS
     HELP "Enable Unitests for the build"
+    TYPE BOOL
     DEFAULT "ON"
     TYPE INTERNAL)
+
+#
+# Options specific to the test variant
+#
+arm_config_option(
+    NAME RMM_COVERAGE
+    HELP "Enable coverage tests"
+    TYPE BOOL
+    DEFAULT "OFF")
+
+arm_config_option(
+    NAME RMM_HTML_COV_REPORT
+    HELP "Enable html coverage report"
+    TYPE BOOL
+    DEFAULT "OFF")
+
+arm_config_option(
+    NAME COVERAGE_REPORT_NAME
+    HELP "Canonical name for the coverage report"
+    TYPE STRING
+    DEFAULT "tf-rmm_coverage"
+    ADVANCED)
 
 target_link_libraries(rmm-plat-host_test
     PRIVATE rmm-lib
