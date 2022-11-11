@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58896156_9daf087a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-11T14:22:31Z",
+      "side": 1,
+      "message": "The contributing guide just mentions:\n\n-  Submit your changes for review at https://review.trustedfirmware.org\n   targeting the ``integration`` branch. Create a topic that describes\n   the target of your changes to help group related patches together.\n\n   .. code::\n\n       git push origin HEAD:refs/for/integration [-o topic\u003d\u003cyour_topic\u003e]\n\n\nthis can be changed also be modified to :\n\n\"Assuming the clone of the repo has been done as mentioned in the getting started guide and origin refers to the upstream repo, submit your changes for review targeting the ....\"",
+      "revId": "d5df794165ec2b47fb199d5ae6a125bc19b63753",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
