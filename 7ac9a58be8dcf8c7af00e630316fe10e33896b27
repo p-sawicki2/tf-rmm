@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f68a239a_7f35aaa4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-14T12:26:25Z",
+      "side": 1,
+      "message": "It would be good if we can have a TFTF test to test this destroyed scenario and also exercise the valid case.",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c40192d4_897df30b",
+        "filename": "runtime/include/rsi-memory.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-14T12:26:25Z",
+      "side": 1,
+      "message": "Maybe we should use a common struct\n`rsi_walk_smc_res` and reuse the same struct here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 7,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e9d553d_fa2bcf41",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-14T12:26:25Z",
+      "side": 1,
+      "message": "perhaps checks can be done together here ? \n\nif ( !GRANULE_ALIGNED(ipa) || !addr_in_rec_par(rec, ipa))",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6df6ccac_e7a895b4",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-14T12:26:25Z",
+      "side": 1,
+      "message": "Maybe this can be init value ?",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 33
+      },
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a25baca_a18c1fc6",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-14T12:26:25Z",
+      "side": 1,
+      "message": "Add a comment here : \"The IPA has been destroyed by NS Host. Return data_abort back to NS Host and there is no recovery possible of this Rec after this.\"",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
