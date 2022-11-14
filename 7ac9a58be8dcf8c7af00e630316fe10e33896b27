@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1fd7633_2d2c440b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2022-11-14T16:39:59Z",
+      "side": 1,
+      "message": "\u003e It would be good if we can have a TFTF test [..]\nCreated a task for this.",
+      "parentUuid": "f68a239a_7f35aaa4",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c40192d4_897df30b",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-11-14T12:26:25Z",
       "side": 1,
       "message": "Maybe we should use a common struct\n`rsi_walk_smc_res` and reuse the same struct here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 7,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c7f2743_6bd9d489",
+        "filename": "runtime/include/rsi-memory.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2022-11-14T16:39:59Z",
+      "side": 1,
+      "message": "Done\n\nCommon \u0027struct rsi_config_result\u0027 and \u0027struct rsi_ripas_get_res\u0027 are renamed to \u0027struct rsi_walk_smc_result\u0027",
+      "parentUuid": "c40192d4_897df30b",
       "range": {
         "startLine": 15,
         "startChar": 7,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "109a1223_ba80faf5",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2022-11-14T16:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e9d553d_fa2bcf41",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6df6ccac_e7a895b4",
@@ -81,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fafe3d7_0ef1b9d5",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2022-11-14T16:39:59Z",
+      "side": 1,
+      "message": "Done\n\nSet abort \u003d false; as a common init value.",
+      "parentUuid": "6df6ccac_e7a895b4",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 33
+      },
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a25baca_a18c1fc6",
@@ -94,6 +178,24 @@
       "writtenOn": "2022-11-14T12:26:25Z",
       "side": 1,
       "message": "Add a comment here : \"The IPA has been destroyed by NS Host. Return data_abort back to NS Host and there is no recovery possible of this Rec after this.\"",
+      "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8823ef7e_acc61ea8",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2022-11-14T16:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a25baca_a18c1fc6",
       "revId": "7ac9a58be8dcf8c7af00e630316fe10e33896b27",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
