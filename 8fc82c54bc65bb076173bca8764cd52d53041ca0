@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b5f2066_a38ab060",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2022-11-21T17:05:05Z",
+      "side": 1,
+      "message": "The v2.8.0 link yet does not exist but it will soon.",
+      "revId": "8fc82c54bc65bb076173bca8764cd52d53041ca0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
