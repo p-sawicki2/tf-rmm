@@ -6,6 +6,24 @@ Change-log and Release notes
 ############################
 
 ******
+v0.2.0
+******
+
+* This release has been verified with **TF-Av2.8** release.
+
+* The release has the following fixes and enhancements :
+   * Add support to render documention on read-the-docs.
+   * Fix the known issue with RSI_IPA_STATE_GET returning
+     ``RSI_ERROR_INPUT`` for a `destroyed` IPA instead of
+     emulating data abort to NS Host.
+   * Fix an issue with RSI_HOST_CALL not returning back to Host
+     to emulate a stage2 data abort.
+   * Harden an assertion check for ``do_host_call()``.
+
+* The other known issues and limitations remain the same as
+  listed for v0.1.0.
+
+******
 v0.1.0
 ******
 
