@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96155f00_bb854d84",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "I think we can do some work if possible to move more of unittests specifics to the host_test platform.\n\nThis is a proposal, I am not sure whether it will work or not. \n\nDefine a config variable RMM_UNITTESTS which is OFF by default. The host_tests platform would set this variable to ON.\n\nThis include can be done within the platform layer.",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08c6a801_b06397ae",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "We can try to move this to the platform layer, there is a dependancy here that this should only run only after all the makefiles have been consumed by the configure stage. \n\nOne way to get this to execute later would be to add a custom target for this and have this execute during the build stage with the appropriate dependency.",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 21
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa14a15f_9d648323",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "is a closing `]` missing ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 64,
+        "endLine": 19,
+        "endChar": 65
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f2d4401_22223bd2",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "use space",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b29f9bf6_5bd48b57",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "1 time is good as default I think.",
+      "range": {
+        "startLine": 46,
+        "startChar": 39,
+        "endLine": 46,
+        "endChar": 41
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9e7e0b8_5aac8fe3",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "I think we should not rely on random tests in unit tests to verify the required boundary conditions. \n\nIf there are indeed random tests then I think they can be a different test group and we can specify the ITERATIONS to 100 or some number.",
+      "range": {
+        "startLine": 87,
+        "startChar": 32,
+        "endLine": 87,
+        "endChar": 34
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36ec3a46_f37b3329",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "nit: use space.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27caf416_cda2df11",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "use space.",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9cfffae_f75672b3",
+        "filename": "lib/arch/include/fake_host/cpuid.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "should this be a test helper rather than a generic fake_host arch helper ?",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "873df977_294acee1",
+        "filename": "plat/host/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T12:59:58Z",
+      "side": 1,
+      "message": "we can remove the RMM_ from the name as this is a platform specific variant.",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
