@@ -217,6 +217,172 @@
       },
       "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ff05e8b_29a23a21",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "maybe test_harness.h is enough as the header name ?",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0317517e_81017e52",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "Have a brief description of functions expected to be declared here :\n\n/* The below functions are to be defined by the tests and allow the tests to implement specific host harness APIs as defined in host_harness.h */",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60e2f516_ecedb8e2",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "Have a brief note here about functions expected to be declared here:\n\nGeneric helpers provided by the host_test for use by the Tests. The functions defined here are expected to be invoked only by the tests and defined by the host_test platform.",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a3ad8c4_804aaef6",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "test_helper_\n\nMaybe we should call this test_helper_rmm_start()  ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54d6c1a1_a4f91959",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "test_helper_get_nr_granules()",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afbd4ecf_49679a9a",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "Maybe all the regs should be multi CPU as default. This way this function will initialize the values for N CPUs directly.",
+      "range": {
+        "startLine": 85,
+        "startChar": 7,
+        "endLine": 85,
+        "endChar": 30
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d76f6288_52dea96c",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "see comment above, this may not be needed.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 44
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84090410_d1192d4d",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:16:09Z",
+      "side": 1,
+      "message": "Instead of a host arch helper, this should be a host_util_  which will set the `n` for the tpidr_el2[n] read.",
+      "range": {
+        "startLine": 110,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 15
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
