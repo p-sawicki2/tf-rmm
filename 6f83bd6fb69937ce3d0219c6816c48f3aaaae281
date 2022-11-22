@@ -383,6 +383,23 @@
       },
       "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cf99936_8943a147",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T14:29:40Z",
+      "side": 1,
+      "message": "we discussed this previously, this function should track if the setup is already done and skip setup if called again. Currently the tests seem to keep track which should be changed.",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
