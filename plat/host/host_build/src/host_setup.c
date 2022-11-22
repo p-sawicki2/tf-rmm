@@ -33,6 +33,12 @@ static struct rmm_core_manifest *boot_manifest =
 static void setup_sysreg_and_boot_manifest(void)
 {
 	/*
+	 * By default, set current CPU to be CPU0.
+	 * Fake host doesn't support using more than one CPU.
+	 */
+	host_util_set_cpuid(0U);
+
+	/*
 	 * Initialize ID_AA64MMFR0_EL1 with a physical address
 	 * range of 48 bits (PARange bits set to 0b0101)
 	 */
