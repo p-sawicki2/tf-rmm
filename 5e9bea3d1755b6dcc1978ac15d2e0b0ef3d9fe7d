@@ -142,6 +142,98 @@
       "message": "It seems we are only testing with random addr. Instead we should test lowest addr, highest addr and then 10 random addr (in a loop) .\n\nSimilar comments for below tests.",
       "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48773f09_7a8f70fd",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T17:45:39Z",
+      "side": 1,
+      "message": "This can be written in a simpler way, see below:",
+      "range": {
+        "startLine": 252,
+        "startChar": 22,
+        "endLine": 253,
+        "endChar": 21
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba769bca_1b359f30",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T17:45:39Z",
+      "side": 1,
+      "message": "This should prob be:\n\nget_rand_in_range(test_get_platform_nr_granules() * GRANULE_SIZE, (test_get_platform_nr_granules() + 10) * GRANULE_SIZE);\n\n/* Add a comment, compute an address greater that valid granule range */",
+      "range": {
+        "startLine": 260,
+        "startChar": 28,
+        "endLine": 263,
+        "endChar": 21
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6387a17b_660fb0ba",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T17:45:39Z",
+      "side": 1,
+      "message": "this will not work if granules_below is 1.\n\n\nGRANULE_SIZE * get_rand_in_range(0, (host_util_get_granule_base()/GRANULE_SIZE) - 1)",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 274,
+        "endChar": 25
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7e8204f_3b0f692d",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T17:45:39Z",
+      "side": 1,
+      "message": "this is assuming we have atleast GRANULE_SIZE granule whih is not correct. \n\ng1_index \u003d get_rand_in_range(1, test_get_platform_nr_granules() - 1);\ng2_index \u003d get_rand_in_range(1, test_get_platform_nr_granules() -1);",
+      "range": {
+        "startLine": 302,
+        "startChar": 10,
+        "endLine": 302,
+        "endChar": 42
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
