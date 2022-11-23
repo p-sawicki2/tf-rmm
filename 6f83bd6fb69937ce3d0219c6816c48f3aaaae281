@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3baa1d99_a5f71f1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d10cc9eb_f8cc5a0e",
+      "range": {
+        "startLine": 14,
+        "startChar": 50,
+        "endLine": 14,
+        "endChar": 60
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a8fd06a_9e073f51",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-11-22T15:03:14Z",
       "side": 1,
       "message": "It would be useful to fold this invocation as well as a cmake rule\n\nand the rule invocation could invoke this make command.\n\ncmake --build build -- run_unittests\n\nthis target should be present only host_test platform and can be defined in the platform layer.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a432a2f3_3b49cd22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8fd06a_9e073f51",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39b9b2a1_a1b69219",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96155f00_bb854d84",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08c6a801_b06397ae",
@@ -77,6 +143,30 @@
       "writtenOn": "2022-11-22T12:59:58Z",
       "side": 1,
       "message": "We can try to move this to the platform layer, there is a dependancy here that this should only run only after all the makefiles have been consumed by the configure stage. \n\nOne way to get this to execute later would be to add a custom target for this and have this execute during the build stage with the appropriate dependency.",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 21
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0e0e7d6_5bb79635",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08c6a801_b06397ae",
       "range": {
         "startLine": 117,
         "startChar": 0,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4c3750b_adfa257e",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa14a15f_9d648323",
+      "range": {
+        "startLine": 19,
+        "startChar": 64,
+        "endLine": 19,
+        "endChar": 65
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f2d4401_22223bd2",
@@ -133,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cb1e3c4_c88553ad",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f2d4401_22223bd2",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b29f9bf6_5bd48b57",
@@ -146,6 +284,30 @@
       "writtenOn": "2022-11-22T12:59:58Z",
       "side": 1,
       "message": "1 time is good as default I think.",
+      "range": {
+        "startLine": 46,
+        "startChar": 39,
+        "endLine": 46,
+        "endChar": 41
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "032d3596_44acc3d4",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b29f9bf6_5bd48b57",
       "range": {
         "startLine": 46,
         "startChar": 39,
@@ -226,6 +388,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "559e9e96_f7f169c7",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36ec3a46_f37b3329",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27caf416_cda2df11",
@@ -239,6 +425,30 @@
       "writtenOn": "2022-11-22T12:59:58Z",
       "side": 1,
       "message": "use space.",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 1
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9315789d_831ea66d",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27caf416_cda2df11",
       "range": {
         "startLine": 94,
         "startChar": 0,
@@ -307,6 +517,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5ce4ae_5b998a8c",
+        "filename": "plat/host/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "873df977_294acee1",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ff05e8b_29a23a21",
@@ -359,6 +593,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aeeda671_6e6b1bc0",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0317517e_81017e52",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "60e2f516_ecedb8e2",
@@ -372,6 +624,24 @@
       "writtenOn": "2022-11-22T14:16:09Z",
       "side": 1,
       "message": "Have a brief note here about functions expected to be declared here:\n\nGeneric helpers provided by the host_test for use by the Tests. The functions defined here are expected to be invoked only by the tests and defined by the host_test platform.",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f8a90ad_de4f86da",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60e2f516_ecedb8e2",
       "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -399,6 +669,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e65e56a_a58a7b72",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a3ad8c4_804aaef6",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54d6c1a1_a4f91959",
@@ -412,6 +706,30 @@
       "writtenOn": "2022-11-22T14:16:09Z",
       "side": 1,
       "message": "test_helper_get_nr_granules()",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b3ad2b2_d155d331",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54d6c1a1_a4f91959",
       "range": {
         "startLine": 10,
         "startChar": 13,
