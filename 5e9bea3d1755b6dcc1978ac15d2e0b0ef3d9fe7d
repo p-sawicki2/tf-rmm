@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29092914_53d48a0e",
+        "filename": "lib/realm/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02706ecc_b0410b7f",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 17
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f6805d7_07fce6d8",
@@ -37,6 +61,24 @@
       "writtenOn": "2022-11-23T17:06:24Z",
       "side": 1,
       "message": "as discussed in previous patch, this can be added to another Cmakelists in tests folder and depending on RMM_UTESTS value, can skip or progress.",
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "439eb4fc_166dbd2b",
+        "filename": "lib/realm/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f6805d7_07fce6d8",
       "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb87116c_9f0f9d14",
+        "filename": "lib/realm/src/buffer_private.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f112eeff_8d04571c",
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ee891ab_1616d3ad",
@@ -71,6 +131,30 @@
       "writtenOn": "2022-11-23T17:06:24Z",
       "side": 1,
       "message": "relies",
+      "range": {
+        "startLine": 48,
+        "startChar": 17,
+        "endLine": 48,
+        "endChar": 23
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b0e3c64_bc07eba2",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ee891ab_1616d3ad",
       "range": {
         "startLine": 48,
         "startChar": 17,
@@ -106,6 +190,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "65fefa42_4cb34eb9",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "\u003e\u003e Hmm, this usage got me thinking. It seems this fn is being invoked to test it!\nYes, that is actually the reason for my comment on line 47\n\nWith regards to the rest of the changes you are proposing here, we discussed them when we did all the platform rework and we agreed that these will be part of the DDR optimizations.\n\nI think introducing more platform/architectural changes again would delay this further again.\n\nThoughts?",
+      "parentUuid": "d611f140_b8980585",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 23
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6134a614_d0d94f55",
         "filename": "lib/realm/tests/granule.cpp",
         "patchSetId": 3
@@ -117,6 +225,30 @@
       "writtenOn": "2022-11-23T17:06:24Z",
       "side": 1,
       "message": "this will probably hide issues from previous test. This seems unnecessary.  Each test needs to cleanup properly rather than expecting subsequent tests to initialize again.",
+      "range": {
+        "startLine": 80,
+        "startChar": 2,
+        "endLine": 80,
+        "endChar": 8
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b410490d_191c45c9",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Not necessary. A test, might write random data into a granule as part of the test, for instance, and not clean afterwards either because it is not expected to do that or because it failed.\n\nOn the first case, it has an easy solution: to clean everything up, but that would introduce more burden on the tests as we need to remember an extra step.\n\nOn the second case, it can cause the next tests to fail even when they work properly, giving false negatives. I think it is safer to clean up to avoid false negatives so in case of a failure we focus only on the offending test and not on false negatives caused by a rogue test leaving the system in an inconsistent state.",
+      "parentUuid": "6134a614_d0d94f55",
       "range": {
         "startLine": 80,
         "startChar": 2,
@@ -190,6 +322,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65595d53_f1586151",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "If I do that, it will give me a value between the first address outside of range, and the last address 10 granules afterwards, that will include any unaligned address.\n\nMy intent here is to get a granule number between the maximum and the maximum + 10 and then convert that into an aligned granule address (by multiplying by GRANULE_SIZE). That way I get an aligned granule address outside the range, which is my intent.",
+      "parentUuid": "ba769bca_1b359f30",
+      "range": {
+        "startLine": 260,
+        "startChar": 28,
+        "endLine": 263,
+        "endChar": 21
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6387a17b_660fb0ba",
@@ -213,6 +369,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee51d34e_8dd46a67",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "Fixed on a pending patch rework.",
+      "parentUuid": "6387a17b_660fb0ba",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 274,
+        "endChar": 25
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7e8204f_3b0f692d",
@@ -226,6 +406,30 @@
       "writtenOn": "2022-11-23T17:45:39Z",
       "side": 1,
       "message": "this is assuming we have atleast GRANULE_SIZE granule whih is not correct. \n\ng1_index \u003d get_rand_in_range(1, test_get_platform_nr_granules() - 1);\ng2_index \u003d get_rand_in_range(1, test_get_platform_nr_granules() -1);",
+      "range": {
+        "startLine": 302,
+        "startChar": 10,
+        "endLine": 302,
+        "endChar": 42
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38a53bfa_56916ec1",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T19:26:35Z",
+      "side": 1,
+      "message": "That\u0027s right. I didn\u0027t update this after the changes we made on the granule library",
+      "parentUuid": "d7e8204f_3b0f692d",
       "range": {
         "startLine": 302,
         "startChar": 10,
