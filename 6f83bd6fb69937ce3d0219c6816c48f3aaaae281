@@ -179,6 +179,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d877e66_e764af95",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "I don\u0027t use randomization to test boundary conditions. If there are any boundary conditions to be tested, they are done explicitly (e.g. there are tests in later patches where I explicitly test unaligned addresses, or addresses outside the valid range, etc). The main reason why I use it is to avoid knowing things such as which granule is going to be tested or which address is going to be used, etc. This way I avoid any biases that might lead to an situation in which the tests pass but there are undiscovered bugs.\n\nThat said, the ITERATIONS argument is not mandatory. There is actually no need to run every test several times. I just did it to be more \"thorough\" and to add some more \"stress\" to the tests. If the tests use randomization (such as the ones I introduced in later patches), this will mean that, statistically, I will have tested a larger number of different addresses, granules, or other parameter that I randomize. But that\u0027s all. If there is any boundary that needs to be tested, that is done explicitly.",
+      "parentUuid": "f9e7e0b8_5aac8fe3",
+      "range": {
+        "startLine": 87,
+        "startChar": 32,
+        "endLine": 87,
+        "endChar": 34
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36ec3a46_f37b3329",
@@ -242,6 +266,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1732bb77_68594953",
+        "filename": "lib/arch/include/fake_host/cpuid.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "I moved this to the host_util layer on a previous patch, as part of some refactoring.",
+      "parentUuid": "d9cfffae_f75672b3",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "873df977_294acee1",
@@ -278,6 +320,24 @@
       "writtenOn": "2022-11-22T14:16:09Z",
       "side": 1,
       "message": "maybe test_harness.h is enough as the header name ?",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b041df5_1fcb9454",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "We actually agreed on this name in the past as there are other test_harness.h files as part of the libraries to be tested.",
+      "parentUuid": "0ff05e8b_29a23a21",
       "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -385,6 +445,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ee3de4f_5273fd83",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "Done as par of a previous patch.",
+      "parentUuid": "afbd4ecf_49679a9a",
+      "range": {
+        "startLine": 85,
+        "startChar": 7,
+        "endLine": 85,
+        "endChar": 30
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d76f6288_52dea96c",
@@ -398,6 +482,30 @@
       "writtenOn": "2022-11-22T14:16:09Z",
       "side": 1,
       "message": "see comment above, this may not be needed.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 44
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2c4ea1a_bc4f82aa",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "See my previous comment",
+      "parentUuid": "d76f6288_52dea96c",
       "range": {
         "startLine": 91,
         "startChar": 0,
@@ -431,6 +539,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1bd52ec_bbd0c0c1",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "See my previous comment",
+      "parentUuid": "84090410_d1192d4d",
+      "range": {
+        "startLine": 110,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 15
+      },
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3cf99936_8943a147",
@@ -444,6 +576,24 @@
       "writtenOn": "2022-11-22T14:29:40Z",
       "side": 1,
       "message": "we discussed this previously, this function should track if the setup is already done and skip setup if called again. Currently the tests seem to keep track which should be changed.",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00bbf86_35fdfa76",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-23T11:22:40Z",
+      "side": 1,
+      "message": "Yes, these changes were already locally done. Just awaiting for more review changes before pushing.",
+      "parentUuid": "3cf99936_8943a147",
       "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
