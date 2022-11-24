@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0e53caf_ac03f8a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T12:16:55Z",
+      "side": 1,
+      "message": "Looks almost there",
+      "revId": "790b26a007606635001304b13fa52613efd85cee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82c3db1a_47828f2e",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T12:16:55Z",
+      "side": 1,
+      "message": "Are these 2 lines required ?",
+      "revId": "790b26a007606635001304b13fa52613efd85cee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4af82fa3_64cabfce",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T12:16:55Z",
+      "side": 1,
+      "message": "mapped granule address.",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "790b26a007606635001304b13fa52613efd85cee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

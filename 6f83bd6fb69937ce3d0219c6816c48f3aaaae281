@@ -578,6 +578,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4ed67485_9e7bb4ea",
+        "filename": "plat/host/host_test/include/plat_test_harness.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T12:16:55Z",
+      "side": 1,
+      "message": "As discussed, it would be better to have this name as test_harness.h as the tests implement this in test_harnes.c",
+      "parentUuid": "0b041df5_1fcb9454",
+      "revId": "6f83bd6fb69937ce3d0219c6816c48f3aaaae281",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0317517e_81017e52",
         "filename": "plat/host/host_test/include/plat_test_harness.h",
         "patchSetId": 3
