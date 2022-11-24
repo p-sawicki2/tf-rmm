@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b742d012_a87cdaea",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T17:09:29Z",
+      "side": 1,
+      "message": "nit: can go in the setup_sysreg_and_boot_manifest() at line 40",
+      "revId": "4f31ef00c3229d61dd7932f3ddd4e1ac1f3bf2cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
