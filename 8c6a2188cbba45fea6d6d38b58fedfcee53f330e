@@ -1,0 +1,296 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad7ce4d0_93b8241c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4986f461_09a9691e",
+        "filename": "lib/realm/tests/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "nit: add SPDX headers.",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02ea388f_b762d4c4",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "rename to \"get_granule_struct_base()\"",
+      "range": {
+        "startLine": 50,
+        "startChar": 30,
+        "endLine": 50,
+        "endChar": 48
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43bd04b4_adcc0f37",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "Probably we need to add one more assert in granule_addr()\n\nassert(g \u003e\u003d \u0026granules[0]);\n\nthis is an assumption made by the function which needs to be asserted.",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4028e577_09bd84a4",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "add comment:\n\n/* Find number of invalid granules below the start of granule_base */",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdec552e_93d37248",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "add comment as previous,",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63b0793c_dce4c386",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "can be a helper  ? seems atleast 2 tests use this.",
+      "range": {
+        "startLine": 426,
+        "startChar": 1,
+        "endLine": 430,
+        "endChar": 42
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a96317_45ea26b7",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "same issue as previous,. can be a helper.",
+      "range": {
+        "startLine": 443,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 28
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bf578b8_ed5b650f",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "this is lower addr where as you are trying to test higher invalid address. Need to be corrected",
+      "range": {
+        "startLine": 459,
+        "startChar": 5,
+        "endLine": 459,
+        "endChar": 13
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98c9565e_9f87825f",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "\"we expect the default state to be STATE_NS.\"",
+      "range": {
+        "startLine": 516,
+        "startChar": 13,
+        "endLine": 516,
+        "endChar": 38
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3a4f5fa_4361d645",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "better to start from NS and continue for this state.",
+      "range": {
+        "startLine": 570,
+        "startChar": 26,
+        "endLine": 570,
+        "endChar": 49
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36b82c85_1073422d",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "need helper for this.",
+      "range": {
+        "startLine": 614,
+        "startChar": 1,
+        "endLine": 618,
+        "endChar": 38
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75c21d29_16716aea",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "\"...as this will succeed.\"",
+      "range": {
+        "startLine": 734,
+        "startChar": 23,
+        "endLine": 734,
+        "endChar": 37
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11d6d6b2_5fc46ed6",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 1249,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T15:28:57Z",
+      "side": 1,
+      "message": "\"Skip if the state is the correct one\"",
+      "range": {
+        "startLine": 1249,
+        "startChar": 6,
+        "endLine": 1249,
+        "endChar": 32
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
