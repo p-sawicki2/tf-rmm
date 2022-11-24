@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfc32315_73fc22e3",
+        "filename": "lib/realm/src/include/fake_host/slot_buf_arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "may not be needed here.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32daad98_b7b6568a",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "instead of trying to recreate the entire array with random addresses, we could go about this entry by entry;\n\nfind_rand_addr;\n\ncheck if any previous addresses match, if they match try again;\n\nelse increment array index and continue.",
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccae2d1e_b40c801e",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "can be removed,",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 25
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d677fc9_20cf1095",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "this should be done first ?",
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c20e8c42_09a772e9",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "It seems we can remove the bool ns argument from this API as it is another combination which needs to be tested.\n\nThe API can do is_ns_slot() tp figure out whether the slot is NS or not.",
+      "range": {
+        "startLine": 100,
+        "startChar": 18,
+        "endLine": 100,
+        "endChar": 47
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb90a6b1_c6a14bd4",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "we can use slot_to_va() ?",
+      "range": {
+        "startLine": 129,
+        "startChar": 18,
+        "endLine": 129,
+        "endChar": 37
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "801b8dc8_e9fdc394",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "this name is confusing.\n\nget_slot_va_from_pa()",
+      "range": {
+        "startLine": 144,
+        "startChar": 14,
+        "endLine": 144,
+        "endChar": 32
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a99b1a25_cf1646fe",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "This is a bug in the impleemntation of buffer_map_internal. It should not be possible to map a Non NS slot to NS state. hence the recommendation to remove the ns parameter from the API.",
+      "range": {
+        "startLine": 160,
+        "startChar": 4,
+        "endLine": 160,
+        "endChar": 31
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "082700ca_a9aecfda",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 229,
+        "startChar": 3,
+        "endLine": 229,
+        "endChar": 30
+      },
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d5ff4cb_a1436e96",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-24T16:49:34Z",
+      "side": 1,
+      "message": "I think only these tests should be present. the _internal ones are not public API and these are wrappers for those, so it is redundant.",
+      "revId": "bce8aa762d3a889f7a174781b7390bc26be2c9de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
