@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95aa4d10_aa1f80cb",
+        "filename": "lib/realm/tests/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4986f461_09a9691e",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02ea388f_b762d4c4",
@@ -48,6 +66,30 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "rename to \"get_granule_struct_base()\"",
+      "range": {
+        "startLine": 50,
+        "startChar": 30,
+        "endLine": 50,
+        "endChar": 48
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50a56e62_b89f18aa",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02ea388f_b762d4c4",
       "range": {
         "startLine": 50,
         "startChar": 30,
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46d67733_93a440e0",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43bd04b4_adcc0f37",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4028e577_09bd84a4",
@@ -88,6 +148,24 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "add comment:\n\n/* Find number of invalid granules below the start of granule_base */",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f6ac499_ee4ec267",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4028e577_09bd84a4",
       "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -109,6 +187,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ca94ad4_da88e16b",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdec552e_93d37248",
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63b0793c_dce4c386",
@@ -122,6 +218,30 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "can be a helper  ? seems atleast 2 tests use this.",
+      "range": {
+        "startLine": 426,
+        "startChar": 1,
+        "endLine": 430,
+        "endChar": 42
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edc1a82d_56457ab2",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63b0793c_dce4c386",
       "range": {
         "startLine": 426,
         "startChar": 1,
@@ -155,6 +275,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e809c897_6fdf59f8",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65a96317_45ea26b7",
+      "range": {
+        "startLine": 443,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 28
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bf578b8_ed5b650f",
@@ -168,6 +312,30 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "this is lower addr where as you are trying to test higher invalid address. Need to be corrected",
+      "range": {
+        "startLine": 459,
+        "startChar": 5,
+        "endLine": 459,
+        "endChar": 13
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fffd4553_53c95d4f",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Hmm, reviewing the code for find_lock_two_granules() I noticed that it internally calls find_lock_granule(), which sorts the list of addresses passed to it.\n\nI didn\u0027t find any comment about find_lock_two_granules() expecting the addresses sorted so I never made that assumption on the test. Therefore the above testcase should hold.",
+      "parentUuid": "8bf578b8_ed5b650f",
       "range": {
         "startLine": 459,
         "startChar": 5,
@@ -201,6 +369,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8781cf7c_ea499e21",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98c9565e_9f87825f",
+      "range": {
+        "startLine": 516,
+        "startChar": 13,
+        "endLine": 516,
+        "endChar": 38
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3a4f5fa_4361d645",
@@ -214,6 +406,30 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "better to start from NS and continue for this state.",
+      "range": {
+        "startLine": 570,
+        "startChar": 26,
+        "endLine": 570,
+        "endChar": 49
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aefaf838_6be86662",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "NS is tested on TC1, the previous test.",
+      "parentUuid": "b3a4f5fa_4361d645",
       "range": {
         "startLine": 570,
         "startChar": 26,
@@ -247,6 +463,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7729b6fd_e1089582",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36b82c85_1073422d",
+      "range": {
+        "startLine": 614,
+        "startChar": 1,
+        "endLine": 618,
+        "endChar": 38
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75c21d29_16716aea",
@@ -270,6 +510,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45901a2e_f667c51e",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75c21d29_16716aea",
+      "range": {
+        "startLine": 734,
+        "startChar": 23,
+        "endLine": 734,
+        "endChar": 37
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11d6d6b2_5fc46ed6",
@@ -283,6 +547,30 @@
       "writtenOn": "2022-11-24T15:28:57Z",
       "side": 1,
       "message": "\"Skip if the state is the correct one\"",
+      "range": {
+        "startLine": 1249,
+        "startChar": 6,
+        "endLine": 1249,
+        "endChar": 32
+      },
+      "revId": "8c6a2188cbba45fea6d6d38b58fedfcee53f330e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f0fabc3_c37c691a",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 1249,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T16:40:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11d6d6b2_5fc46ed6",
       "range": {
         "startLine": 1249,
         "startChar": 6,
