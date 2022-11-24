@@ -462,6 +462,30 @@
       },
       "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53f02bc2_f4bf426b",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-24T11:03:34Z",
+      "side": 1,
+      "message": "Double checked this. This was actually a bug. It should have never been GRANULE_SIZE, but NR_GRANULES, which was eventually replaced by test_helper_get_nr_granules(). Fixing it.",
+      "parentUuid": "38a53bfa_56916ec1",
+      "range": {
+        "startLine": 302,
+        "startChar": 10,
+        "endLine": 302,
+        "endChar": 42
+      },
+      "revId": "5e9bea3d1755b6dcc1978ac15d2e0b0ef3d9fe7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
