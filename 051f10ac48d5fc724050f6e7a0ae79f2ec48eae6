@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "115030e0_9d9f43dd",
+        "filename": "lib/realm/tests/realm_test_utils.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T14:57:39Z",
+      "side": 1,
+      "message": "Needed. See my previous comments",
+      "parentUuid": "52bde094_b2a63b99",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f5ef319_0294c7fa",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-11-24T17:05:58Z",
       "side": 1,
       "message": "test_util_slot_to_pa ?",
+      "range": {
+        "startLine": 12,
+        "startChar": 10,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fdaa00e_e3103f93",
+        "filename": "lib/realm/tests/realm_test_utils.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T14:57:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f5ef319_0294c7fa",
       "range": {
         "startLine": 12,
         "startChar": 10,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78ad8735_b1e7f4d6",
+        "filename": "lib/realm/tests/realm_test_utils.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T14:57:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af1d976f_cc2373d9",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fe7bfa9_3ef3d97a",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e178a54_6735e8fb",
+        "filename": "lib/realm/tests/realm_test_utils.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T14:57:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fe7bfa9_3ef3d97a",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 21
+      },
+      "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c118767a_0c4ce8f5",
@@ -106,6 +202,24 @@
       "writtenOn": "2022-11-24T17:05:58Z",
       "side": 1,
       "message": "would prefer to not add another public API to the lib. The desc can be checked directly using required mask in the test_util",
+      "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "821809e5_05fe9ea2",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T14:57:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c118767a_0c4ce8f5",
       "revId": "051f10ac48d5fc724050f6e7a0ae79f2ec48eae6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
