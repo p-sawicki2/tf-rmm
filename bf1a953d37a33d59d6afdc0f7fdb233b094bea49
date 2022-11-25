@@ -389,6 +389,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46a8780d_9756be68",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Actually, once we include this file from the root cmakefile, this will not be needed anymore. All the checks will be done in this file, so we will not need a flag.",
+      "parentUuid": "d047bb18_8dc59dcc",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f59db46_96877f1f",
@@ -485,6 +509,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a6866da_e239d377",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "I\u0027ve been trying this for a while, using rmm.elf as well as the abosulute path and in both cases it fails because it cannot find the file. I cannot find any way to invoke a target dependency from another target. Am I missing something?",
+      "parentUuid": "facfd3c0_17386b28",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 17
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b46a8e48_638d7e48",
         "filename": "cmake/Modules/UnitTestFramework.cmake",
         "patchSetId": 5
@@ -549,6 +597,24 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "Dont do this, this will break Multiconfig builds. \n\nWe can suggest to do Debug builds for accurate coverage results but not mandatory.",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80861441_ff4b04e7",
+        "filename": "configs/host_defcfg.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fdb1831_ffbd3777",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -622,6 +688,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7fe9f3c_491cc6d0",
+        "filename": "lib/arch/include/fake_host/memory.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfe3ee7a_e64b3fd2",
+      "range": {
+        "startLine": 24,
+        "startChar": 59,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f552883c_3257eb71",
@@ -635,6 +725,30 @@
       "writtenOn": "2022-11-25T11:32:35Z",
       "side": 1,
       "message": "change to uint64_t *",
+      "range": {
+        "startLine": 38,
+        "startChar": 69,
+        "endLine": 38,
+        "endChar": 74
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d79add89_0c2d49a1",
+        "filename": "lib/arch/include/fake_host/memory.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f552883c_3257eb71",
       "range": {
         "startLine": 38,
         "startChar": 69,
@@ -680,6 +794,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d142a738_5b73b743",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e874cd8_1b2aba35",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d356a3fd_930dbdee",
@@ -715,6 +847,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d90c615c_dd3ef90e",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e674d11d_0a5368ab",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec07c819_2c895ad3",
@@ -732,6 +882,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c90147da_83b4b87e",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec07c819_2c895ad3",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ca23cc2_2f916c80",
@@ -745,6 +913,30 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "CMAKE_BINARY_DIR ? also add a comment , this is for test_helpers.h",
+      "range": {
+        "startLine": 21,
+        "startChar": 15,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f26e74a9_6f50073e",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ca23cc2_2f916c80",
       "range": {
         "startLine": 21,
         "startChar": 15,
@@ -792,6 +984,30 @@
       "side": 1,
       "message": "Yes if I recall correctly. But I will double check. I have moved a lot of files around and that might be a leftover",
       "parentUuid": "c67549d1_868d210d",
+      "range": {
+        "startLine": 22,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6b43a35_d7c42bc7",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Not needed. was probably a leftover from a previous patchset",
+      "parentUuid": "8252dcc5_351f002a",
       "range": {
         "startLine": 22,
         "startChar": 12,
@@ -890,6 +1106,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "24cf9d39_0884e2d7",
+        "filename": "plat/host/host_test/src/test_groups.h.in",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08135a07_bfa30468",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5cb76f5_dc8a5ed3",
@@ -907,6 +1141,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97f290bc_25c76719",
+        "filename": "plat/host/host_test/src/test_harness.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5cb76f5_dc8a5ed3",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3dc7f9ef_6be71310",
@@ -920,6 +1172,24 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "remove unneeded headers.",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "085c44b1_5457e096",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:13:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3dc7f9ef_6be71310",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
