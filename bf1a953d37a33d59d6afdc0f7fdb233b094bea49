@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "82049d50_49b239ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "This time I have tested the review comments and seen them to be better suited, so hopefully I will not change my mind after this :). ",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23b08593_f52a34ac",
         "filename": "CMakeLists.txt",
         "patchSetId": 5
@@ -179,6 +196,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "453eaabe_2d5334b4",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "I needed to make my comments clear. This can be removed *once* the comments in this file are taken care.",
+      "parentUuid": "faa28e7e_6663e38e",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "99093a89_8088922f",
         "filename": "cmake/Modules/UnitTestFramework.cmake",
         "patchSetId": 5
@@ -261,6 +302,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb85591c_428da6b0",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "I think it is better to reduce the overhead for every unittest makefile (or the caller makefile) and take care of this internally.",
+      "parentUuid": "74a14580_7e6e6501",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "12a392ce_f184b3af",
         "filename": "cmake/Modules/UnitTestFramework.cmake",
         "patchSetId": 5
@@ -308,6 +367,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d047bb18_8dc59dcc",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "This will not be a build option but rather an internal option set only by the host test platform. This allows the check for the RM_UNITTESTS variable after the Platform makefile has been included.",
+      "parentUuid": "b1487eba_f7297e52",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9f59db46_96877f1f",
         "filename": "cmake/Modules/UnitTestFramework.cmake",
         "patchSetId": 5
@@ -343,6 +426,30 @@
       "side": 1,
       "message": "I had problems when including ctest here. Ctest must be included right after the project is called. using enable_testing() and including ctest in the main CMakefile fixed all my problems.",
       "parentUuid": "9f59db46_96877f1f",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 16
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c304a1ac_72c96b23",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "You would need to undo the move of include(Unittestframework) to the platform layer and bring it to root layer.",
+      "parentUuid": "32eb0f32_9f03836d",
       "range": {
         "startLine": 69,
         "startChar": 0,
@@ -407,6 +514,24 @@
       "side": 1,
       "message": "See my previous comment on this. As we agreed that this file is going to be included by the platform CMakefile and not by the main one, there is no need to add conditions here as this will only be included on the test platform.\n\nThe lib/realm cmakefile needs to do this check as we agreed, though, as if this file is not included for host_build or fvp anymore, then we cannot call rmm_build_unittest() in those cases",
       "parentUuid": "b46a8e48_638d7e48",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da8ff616_130ea7de",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "Yes, We agreed that, but after seeing the rework, I have changed my mind. Sometimes we can only evaluate options better after seeing the alternative. and it helps in other ways as it makes the test cmake file simpler",
+      "parentUuid": "60bb6b00_ea076bfa",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -714,6 +839,30 @@
       "side": 1,
       "message": "We had an extensive discussion in which we agreed that this will be included here because we wanted to avoid adding dependencies to the root cmakefile. The last patchset, which had a lot of changes, was actually all about that request.",
       "parentUuid": "2d3444c2_543991ed",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55260e0b_3fa40192",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:42:51Z",
+      "side": 1,
+      "message": "Yes, the rework then introduced Ctest into the root Makefile which was a hard sequence dependency. So after evaluating the tradeoffs, I think having this in root makefile is a better option and removes some other artefacts nicely.",
+      "parentUuid": "4c864c7f_72943e5b",
       "range": {
         "startLine": 34,
         "startChar": 0,
