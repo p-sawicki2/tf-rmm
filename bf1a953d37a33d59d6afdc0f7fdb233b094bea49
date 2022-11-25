@@ -89,6 +89,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b41789f_9b41d79a",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:07:17Z",
+      "side": 1,
+      "message": "This is afer making the suggestions in this review",
+      "parentUuid": "4eea70ef_babcbd1c",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "99093a89_8088922f",
         "filename": "cmake/Modules/UnitTestFramework.cmake",
         "patchSetId": 5
