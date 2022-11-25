@@ -1,0 +1,450 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2af69c5_fafc01a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "I have given some comments to resolve dependancy and fix for multi-config builds\n\nThe suggestions will remove the need for this intermediate build step.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 30
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23b08593_f52a34ac",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 14
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bc5eb79_c0126020",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "add\n\nif(RMM_UNITTESTS)\n  include(UnitTestFramework)\nendif()",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4eea70ef_babcbd1c",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "can be just \"ext/cpputest\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99093a89_8088922f",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "FORCED is not needed.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8306f198_3bfee791",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "Add this check :\nif(${RMM_UNITTESTS} STREQUAL \"ON\")\n\nand endif() at line 79",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12a392ce_f184b3af",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "need to be moved to platform makefile.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f59db46_96877f1f",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "include(CTest) is enough",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 16
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "facfd3c0_17386b28",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "Add dependancy on elf creation and map file. Also fix the ctest for ninja multi-conf\n\nCOMMAND ctest -C \"$\u003cCONFIG\u003e\"\nDEPENDS rmm.elf rmm.map\n)",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 17
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b46a8e48_638d7e48",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "wrap with \n+if(${RMM_UNITTESTS} STREQUAL \"ON\")\n\nand endif() at the end. We can then remove this check from lib/realm cmakefile",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fdb1831_ffbd3777",
+        "filename": "configs/host_defcfg.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "Dont do this, this will break Multiconfig builds. \n\nWe can suggest to do Debug builds for accurate coverage results but not mandatory.",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6e92ecd_e3d77f90",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 34
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19610a74_2732012d",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 212,
+        "startChar": 3,
+        "endLine": 212,
+        "endChar": 21
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fd1ee56_fadde66f",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "Not sure whether this has to be common, if needed add a comment why this is added to PUBLIC",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d356a3fd_930dbdee",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "is this needed?",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec07c819_2c895ad3",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "add comment why this is made PUBLIC",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca23cc2_2f916c80",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "CMAKE_BINARY_DIR ? also add a comment , this is for test_helpers.h",
+      "range": {
+        "startLine": 21,
+        "startChar": 15,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c67549d1_868d210d",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "is this correct?",
+      "range": {
+        "startLine": 22,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d3444c2_543991ed",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "can be removed since I added comment to add to root cmakefile",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08135a07_bfa30468",
+        "filename": "plat/host/host_test/src/test_groups.h.in",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "can add some comment on how this file will be used.",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5cb76f5_dc8a5ed3",
+        "filename": "plat/host/host_test/src/test_harness.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "may not be needed",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dc7f9ef_6be71310",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T04:05:45Z",
+      "side": 1,
+      "message": "remove unneeded headers.",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
