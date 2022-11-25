@@ -16,6 +16,24 @@
       "message": "nit: can go in the setup_sysreg_and_boot_manifest() at line 40",
       "revId": "4f31ef00c3229d61dd7932f3ddd4e1ac1f3bf2cf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f7994e4_7c4d1dff",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T10:29:37Z",
+      "side": 1,
+      "message": "I left this here in purpose. setup_sysreg_and_boot_manifest() \"prepares\" the environment for RMM whereas this sets-up RMM. tpidr_el2 configuration is usually part of the warmboot path. That\u0027s why I put it here",
+      "parentUuid": "b742d012_a87cdaea",
+      "revId": "4f31ef00c3229d61dd7932f3ddd4e1ac1f3bf2cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
