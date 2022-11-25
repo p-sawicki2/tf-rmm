@@ -47,6 +47,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be8cf7c6_b0f0cabf",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "See my comments about this. CTest needs to be included right after the project is called (line 51). When I did this inside the unittestframework.cmake, I was unable to make the tests work.",
+      "parentUuid": "23b08593_f52a34ac",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 14
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1bc5eb79_c0126020",
@@ -60,6 +84,24 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "add\n\nif(RMM_UNITTESTS)\n  include(UnitTestFramework)\nendif()",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "656ecf3f_7a972021",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "We already had this and after a long discussion we decided to not include unittestFramework here but doing it from the platform layer",
+      "parentUuid": "1bc5eb79_c0126020",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -111,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "faa28e7e_6663e38e",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "No it cannot. As BuildCppUTest is not called from the main CMakefile anymore but from a platform CMakefile, I need to add the subdirectory explicitly, which means adding the absolute paths for both sources and binaries",
+      "parentUuid": "4b41789f_9b41d79a",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99093a89_8088922f",
@@ -124,6 +190,30 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "FORCED is not needed.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faf2313a_a41ea49c",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99093a89_8088922f",
       "range": {
         "startLine": 35,
         "startChar": 4,
@@ -151,6 +241,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74a14580_7e6e6501",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "We don\u0027t need the check. This file is not included if the unittests are not enabled.",
+      "parentUuid": "8306f198_3bfee791",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12a392ce_f184b3af",
@@ -174,6 +282,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1487eba_f7297e52",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "This is actually not a build option. This is a flag setup by the unittest framework when enabled to notify other parts of the system, so the best place to setup the flag is here. Once this file is added by the platform, it takes care of everything, the platform doesn\u0027t need to do anything else. It relies on a centralize point (this file) to do all the setup",
+      "parentUuid": "12a392ce_f184b3af",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f59db46_96877f1f",
@@ -187,6 +319,30 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "include(CTest) is enough",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 16
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32eb0f32_9f03836d",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "I had problems when including ctest here. Ctest must be included right after the project is called. using enable_testing() and including ctest in the main CMakefile fixed all my problems.",
+      "parentUuid": "9f59db46_96877f1f",
       "range": {
         "startLine": 69,
         "startChar": 0,
@@ -233,6 +389,24 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "wrap with \n+if(${RMM_UNITTESTS} STREQUAL \"ON\")\n\nand endif() at the end. We can then remove this check from lib/realm cmakefile",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60bb6b00_ea076bfa",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "See my previous comment on this. As we agreed that this file is going to be included by the platform CMakefile and not by the main one, there is no need to add conditions here as this will only be included on the test platform.\n\nThe lib/realm cmakefile needs to do this check as we agreed, though, as if this file is not included for host_build or fvp anymore, then we cannot call rmm_build_unittest() in those cases",
+      "parentUuid": "b46a8e48_638d7e48",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -319,6 +493,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7e874cd8_1b2aba35",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "plat common had public APIs if I recall correctly",
+      "parentUuid": "9fd1ee56_fadde66f",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d356a3fd_930dbdee",
         "filename": "plat/host/common/src/host_platform_api_cmn.c",
         "patchSetId": 5
@@ -330,6 +522,24 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "is this needed?",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e674d11d_0a5368ab",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "I\u0027ll double check",
+      "parentUuid": "d356a3fd_930dbdee",
       "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -399,6 +609,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8252dcc5_351f002a",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "Yes if I recall correctly. But I will double check. I have moved a lot of files around and that might be a leftover",
+      "parentUuid": "c67549d1_868d210d",
+      "range": {
+        "startLine": 22,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d3444c2_543991ed",
         "filename": "plat/host/host_test/CMakeLists.txt",
         "patchSetId": 5
@@ -410,6 +644,30 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "can be removed since I added comment to add to root cmakefile",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c864c7f_72943e5b",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T11:31:57Z",
+      "side": 1,
+      "message": "We had an extensive discussion in which we agreed that this will be included here because we wanted to avoid adding dependencies to the root cmakefile. The last patchset, which had a lot of changes, was actually all about that request.",
+      "parentUuid": "2d3444c2_543991ed",
       "range": {
         "startLine": 34,
         "startChar": 0,
