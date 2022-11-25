@@ -476,6 +476,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dfe3ee7a_e64b3fd2",
+        "filename": "lib/arch/include/fake_host/memory.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:32:35Z",
+      "side": 1,
+      "message": "change to uint64_t *",
+      "range": {
+        "startLine": 24,
+        "startChar": 59,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f552883c_3257eb71",
+        "filename": "lib/arch/include/fake_host/memory.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-25T11:32:35Z",
+      "side": 1,
+      "message": "change to uint64_t *",
+      "range": {
+        "startLine": 38,
+        "startChar": 69,
+        "endLine": 38,
+        "endChar": 74
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9fd1ee56_fadde66f",
         "filename": "plat/host/common/CMakeLists.txt",
         "patchSetId": 5
