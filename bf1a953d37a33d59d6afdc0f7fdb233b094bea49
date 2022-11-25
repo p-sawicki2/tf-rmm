@@ -123,6 +123,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1270911_48d7ed32",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Change reverted. We don need to do a check here. Just include UnitTestFramework",
+      "parentUuid": "656ecf3f_7a972021",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4eea70ef_babcbd1c",
@@ -208,6 +226,30 @@
       "side": 1,
       "message": "I needed to make my comments clear. This can be removed *once* the comments in this file are taken care.",
       "parentUuid": "faa28e7e_6663e38e",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f7be249_c48fe280",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "453eaabe_2d5334b4",
       "range": {
         "startLine": 6,
         "startChar": 18,
@@ -318,6 +360,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "864c6b65_56f22e11",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Change reverted",
+      "parentUuid": "cb85591c_428da6b0",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12a392ce_f184b3af",
@@ -413,6 +473,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b85fb35_10690266",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "46a8780d_9756be68",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f59db46_96877f1f",
@@ -474,6 +558,30 @@
       "side": 1,
       "message": "You would need to undo the move of include(Unittestframework) to the platform layer and bring it to root layer.",
       "parentUuid": "32eb0f32_9f03836d",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 16
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "022adb0c_ba0e7dd0",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Change reverted. CTest included here",
+      "parentUuid": "c304a1ac_72c96b23",
       "range": {
         "startLine": 69,
         "startChar": 0,
@@ -584,6 +692,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4008503a_00438591",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Change reverted",
+      "parentUuid": "da8ff616_130ea7de",
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fdb1831_ffbd3777",
@@ -655,6 +781,30 @@
       "writtenOn": "2022-11-25T04:05:45Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 212,
+        "startChar": 3,
+        "endLine": 212,
+        "endChar": 21
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f853564_273150fe",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19610a74_2732012d",
       "range": {
         "startLine": 212,
         "startChar": 3,
@@ -1079,6 +1229,30 @@
       "side": 1,
       "message": "Yes, the rework then introduced Ctest into the root Makefile which was a hard sequence dependency. So after evaluating the tradeoffs, I think having this in root makefile is a better option and removes some other artefacts nicely.",
       "parentUuid": "4c864c7f_72943e5b",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "bf1a953d37a33d59d6afdc0f7fdb233b094bea49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfc413a1_7e54cc17",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-25T16:50:20Z",
+      "side": 1,
+      "message": "Change reverted",
+      "parentUuid": "55260e0b_3fa40192",
       "range": {
         "startLine": 34,
         "startChar": 0,
