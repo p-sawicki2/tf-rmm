@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "351b5426_a8feb48d",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-28T15:48:33Z",
+      "side": 1,
+      "message": "This is needed. Otherwise test_groups.h will not be generated if we try to build without including any test (e.g this patch will fail to build)",
+      "revId": "357ad9e61bc5dbae5ed34f1e93b028d80bfa84eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
