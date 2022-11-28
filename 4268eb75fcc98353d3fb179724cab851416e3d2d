@@ -116,6 +116,30 @@
       },
       "revId": "4268eb75fcc98353d3fb179724cab851416e3d2d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ba70ff6_ca73d01e",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-28T16:12:53Z",
+      "side": 1,
+      "message": "arm_config_option is just a wrapper.  hmm, yes, this can be changed as you suggest.",
+      "parentUuid": "44cfbca9_8acb9ad6",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 18
+      },
+      "revId": "4268eb75fcc98353d3fb179724cab851416e3d2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
