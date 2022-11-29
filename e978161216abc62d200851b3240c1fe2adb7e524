@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7c6b0a4_99aa2f72",
+        "filename": "lib/realm/tests/CMakeLists.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d28a4aae_1fa2f6d4",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6aff95e_e23c77eb",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4a137a9_ccd2c400",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Yes, that\u0027s why the range is opened on the right side (use of \")\"). I will replace it by [1, NR_GRANULES - 2] which might be clearer",
+      "parentUuid": "d6aff95e_e23c77eb",
+      "range": {
+        "startLine": 31,
+        "startChar": 71,
+        "endLine": 31,
+        "endChar": 74
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24ed8c25_ce3f5a82",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-11-28T16:56:31Z",
       "side": 1,
       "message": "generate an invalid random granule address outside the valid range.\n\nIf the address cannot be generated, the function will return false.",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 21
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "765cf122_305e019a",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24ed8c25_ce3f5a82",
       "range": {
         "startLine": 60,
         "startChar": 15,
@@ -116,6 +188,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aacbb27_55a9f0ca",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "903c978c_cfd67013",
+      "range": {
+        "startLine": 98,
+        "startChar": 27,
+        "endLine": 98,
+        "endChar": 41
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e1d9115_bf18a657",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a22f439_55043a80",
+      "range": {
+        "startLine": 98,
+        "startChar": 48,
+        "endLine": 98,
+        "endChar": 63
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a8ed953_b24d0fe5",
@@ -129,6 +249,30 @@
       "writtenOn": "2022-11-28T16:56:31Z",
       "side": 1,
       "message": "\"..for a clean state for the next tests\"",
+      "range": {
+        "startLine": 129,
+        "startChar": 5,
+        "endLine": 129,
+        "endChar": 45
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8948f7c_0744a246",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a8ed953_b24d0fe5",
       "range": {
         "startLine": 129,
         "startChar": 5,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd3d599e_7f060a11",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "See my comment below",
+      "parentUuid": "ba96aceb_97b78a41",
+      "range": {
+        "startLine": 508,
+        "startChar": 31,
+        "endLine": 508,
+        "endChar": 39
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1675a9c_952a6527",
@@ -175,6 +343,30 @@
       "writtenOn": "2022-11-28T16:56:31Z",
       "side": 1,
       "message": "This may have been overwritten by lower addr. Use 2 different variables as suggested above.",
+      "range": {
+        "startLine": 520,
+        "startChar": 5,
+        "endLine": 520,
+        "endChar": 13
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1cb299d_98bf9f19",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "There is actually no need for another tmp variable. This is actually a bug. I should have generated another address before calling find_lock_two_granules() here.",
+      "parentUuid": "a1675a9c_952a6527",
       "range": {
         "startLine": 520,
         "startChar": 5,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03986f76_4f372500",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "See my comment above",
+      "parentUuid": "3d57bdd0_11e99a91",
+      "range": {
+        "startLine": 529,
+        "startChar": 31,
+        "endLine": 529,
+        "endChar": 39
+      },
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d795a48_54bcb2a7",
@@ -221,6 +437,24 @@
       "writtenOn": "2022-11-28T16:56:31Z",
       "side": 1,
       "message": "a comment given for prev patchset.",
+      "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12d637d6_ca0094d3",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-29T10:52:15Z",
+      "side": 1,
+      "message": "Missed that. Fixed",
+      "parentUuid": "4d795a48_54bcb2a7",
       "revId": "e978161216abc62d200851b3240c1fe2adb7e524",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
