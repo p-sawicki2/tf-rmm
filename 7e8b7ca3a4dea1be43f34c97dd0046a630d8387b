@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4276ba4c_c10e4ad1",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-30T05:14:26Z",
+      "side": 1,
+      "message": "removed an unneeded space in the set cmd\n\n#\n# Remove Werror from CXXFLAGS else CppUTest compiler checks will fail.\n# This will affect CMAKE_CXX_FLAG in the current scope and parent scope\n# is unaffected.\n#\nstring(REPLACE \"-Werror\" \" \" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})\n\n# Additional CXXFLAGS to get CppUTest to compile.\nset(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -Wno-c++98-compat-pedantic\")\n\nadd_subdirectory(\"ext/cpputest\")",
+      "parentUuid": "3dc7a7fe_e9630930",
+      "revId": "7e8b7ca3a4dea1be43f34c97dd0046a630d8387b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e216154e_8d2c250f",
         "filename": "cmake/BuildCppUTest.cmake",
         "patchSetId": 20
