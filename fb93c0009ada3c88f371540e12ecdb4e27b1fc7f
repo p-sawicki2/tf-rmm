@@ -45,6 +45,115 @@
       },
       "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fcc84f8_d99cc064",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-01T14:38:42Z",
+      "side": 1,
+      "message": "I think Coverage should be made a more central feature (not coupled to Utests).\n\nIn commonconfigs.cmake , define a RMM_COVERAGE option which is OFF by default and Depends on fake_host\n\narm_config_option(\n    NAME RMM_COVERAGE\n    HELP \"RMM Coverage build\"\n    TYPE BOOL\n    DEFAULT OFF\n    DEPENDS (RMM_ARCH STREQUAL fake_host))\n\n\nAdd documentation to mention additional dependencies \u0026 install them.\n\nIn the main make file, if RMM_COVERAGE is ON, then include a cmake file exclusively for coverage.",
+      "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c59ebaa_b2030185",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-01T14:38:42Z",
+      "side": 1,
+      "message": "should be disabled by default.",
+      "range": {
+        "startLine": 165,
+        "startChar": 43,
+        "endLine": 165,
+        "endChar": 87
+      },
+      "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "473b0887_645516ac",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-01T14:38:42Z",
+      "side": 1,
+      "message": "host",
+      "range": {
+        "startLine": 182,
+        "startChar": 50,
+        "endLine": 182,
+        "endChar": 55
+      },
+      "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "911954b1_315528e9",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-01T14:38:42Z",
+      "side": 1,
+      "message": "rename to RMM_COVERAGE and default to OFF.",
+      "range": {
+        "startLine": 236,
+        "startChar": 3,
+        "endLine": 236,
+        "endChar": 19
+      },
+      "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "059bdffb_aa5bfcbb",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-01T14:38:42Z",
+      "side": 1,
+      "message": "rename to RMM_HTML_COV_REPORT",
+      "range": {
+        "startLine": 237,
+        "startChar": 3,
+        "endLine": 237,
+        "endChar": 28
+      },
+      "revId": "fb93c0009ada3c88f371540e12ecdb4e27b1fc7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
