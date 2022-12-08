@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "274be1cd_8e27abcf",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "dont modify CFLAGS, see below.",
+      "range": {
+        "startLine": 18,
+        "startChar": 20,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ee282ab_22621a9d",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "This operation can be avoided if possible. We can have  COV_C_FLAFS and this can be appended to CFlags by the caller.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9f44ada_5a4de159",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "remove. \"ON\" is enough",
+      "range": {
+        "startLine": 48,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "842710dd_13531876",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "we would need to differentiate between GCC and Clang right ?",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 65,
+        "endChar": 27
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6527f179_69a900e5",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "this variable is not valid for multi-config. use $\u003cconfig\u003e here.",
+      "range": {
+        "startLine": 84,
+        "startChar": 43,
+        "endLine": 84,
+        "endChar": 59
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b166140d_09c9e014",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "Perhaps this is not needed to mention here.",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f75261_b1cadaac",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "It is better to encapsulate all options related to coverage in the dedicated cmake file",
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80ce911d_f999b4f9",
+        "filename": "toolchains/fake_host/llvm.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "why is this needed ?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 84
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f54ed861_6620b392",
+        "filename": "toolchains/fake_host/llvm.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-08T15:48:18Z",
+      "side": 1,
+      "message": "this can be done in dedicated Cmake file for coverage ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 37
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
