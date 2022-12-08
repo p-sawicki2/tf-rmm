@@ -118,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ea40c32_9d287f14",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:28:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9f44ada_5a4de159",
+      "range": {
+        "startLine": 48,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "842710dd_13531876",
@@ -259,6 +283,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30c64857_8077a421",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:28:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15d9ab4b_de3d12d1",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2f75261_b1cadaac",
@@ -331,6 +379,30 @@
       "side": 1,
       "message": "No needed. I forgot to remove it",
       "parentUuid": "80ce911d_f999b4f9",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 84
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a5b733b_126f1f6f",
+        "filename": "toolchains/fake_host/llvm.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:28:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60c7a7e6_c9dd328d",
       "range": {
         "startLine": 20,
         "startChar": 0,
