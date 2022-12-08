@@ -76,9 +76,10 @@ function(run_checkspdx source_files errors_ret)
     COMMAND ${CHECKSPDX_EXECUTABLE} -r docs/readme.rst ${source_files}
     OUTPUT_VARIABLE checkspdx_output
     RESULT_VARIABLE checkspdx_rc
-    ECHO_OUTPUT_VARIABLE
     OUTPUT_STRIP_TRAILING_WHITESPACE
     )
+
+  message(${checkspdx_output})
 
   # checkspdx failed for this file. Collect no.of errors
   if(${checkspdx_rc} GREATER 0)

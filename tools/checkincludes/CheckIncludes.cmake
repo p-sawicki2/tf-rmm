@@ -84,9 +84,10 @@ function(run_checkincludes source_files errors_ret)
     COMMAND ${CHECKINCLUDES_EXECUTABLE} ${source_files}
     OUTPUT_VARIABLE checkincludes_output
     RESULT_VARIABLE checkincludes_rc
-    ECHO_OUTPUT_VARIABLE
     OUTPUT_STRIP_TRAILING_WHITESPACE
     )
+
+  message(${checkincludes_rc})
 
   # checkincludes failed for this file. Collect no.of errors
   if(${checkincludes_rc} GREATER 0)
