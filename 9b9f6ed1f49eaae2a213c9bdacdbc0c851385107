@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38bf0a1c_dca484ee",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "See my comment below",
+      "parentUuid": "274be1cd_8e27abcf",
+      "range": {
+        "startLine": 18,
+        "startChar": 20,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ee282ab_22621a9d",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-12-08T15:48:18Z",
       "side": 1,
       "message": "This operation can be avoided if possible. We can have  COV_C_FLAFS and this can be appended to CFlags by the caller.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbe9bb61_84164727",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "That is exactly what I do on line 76. Once I have checked that C and C++ compilers both support the same flags for coverage, I append the flags there, however, I also need to do it here, one by one as there are dependencies between the flags. For instance, check for -fcoverage-mapping will fail even if supported if -ftest-coverage is not used during the check. So for each check that passes, I add the flag so it will be used for the next check.\n\nThen, once I have checked all the flags, I restore the CMAKE_${lang}_FLAGS until I am certain that both compilers support the same set of flags (that doesn\u0027t happen for instance with Clang-10), which is checked in line 74",
+      "parentUuid": "6ee282ab_22621a9d",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -93,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7b14010_2dc29de6",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "No. No needed. All these will be tested for both, GCC and Clang. If a toolchain does not support a flag, then it will not be used.\n\nThis way, we avoid dependencies between this file and the toolchain being used.",
+      "parentUuid": "842710dd_13531876",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 65,
+        "endChar": 27
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6527f179_69a900e5",
@@ -106,6 +178,30 @@
       "writtenOn": "2022-12-08T15:48:18Z",
       "side": 1,
       "message": "this variable is not valid for multi-config. use $\u003cconfig\u003e here.",
+      "range": {
+        "startLine": 84,
+        "startChar": 43,
+        "endLine": 84,
+        "endChar": 59
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a82e506_2163f23a",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "$\u003cconfig\u003e here didn\u0027t have any effect when I tried it.",
+      "parentUuid": "6527f179_69a900e5",
       "range": {
         "startLine": 84,
         "startChar": 43,
@@ -141,6 +237,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "15d9ab4b_de3d12d1",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "Yes, missed this",
+      "parentUuid": "b166140d_09c9e014",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f2f75261_b1cadaac",
         "filename": "toolchains/fake_host/gnu.cmake",
         "patchSetId": 21
@@ -152,6 +272,24 @@
       "writtenOn": "2022-12-08T15:48:18Z",
       "side": 1,
       "message": "It is better to encapsulate all options related to coverage in the dedicated cmake file",
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6852db6b_76ddf8ab",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "If I move this to the dedicated cmake file, then that file will have a dependency with the used toolchain as depending on the toolchain we will need these or other flags. This will also add more complexity. See an answer for a similar comment here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/17891/comment/26b1aa81_60b8e955/",
+      "parentUuid": "f2f75261_b1cadaac",
       "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -181,6 +319,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "60c7a7e6_c9dd328d",
+        "filename": "toolchains/fake_host/llvm.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "No needed. I forgot to remove it",
+      "parentUuid": "80ce911d_f999b4f9",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 84
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f54ed861_6620b392",
         "filename": "toolchains/fake_host/llvm.cmake",
         "patchSetId": 21
@@ -192,6 +354,30 @@
       "writtenOn": "2022-12-08T15:48:18Z",
       "side": 1,
       "message": "this can be done in dedicated Cmake file for coverage ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 37
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a1f50e2_417996c7",
+        "filename": "toolchains/fake_host/llvm.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-08T16:13:16Z",
+      "side": 1,
+      "message": "See my comment on this here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/17891/comment/26b1aa81_60b8e955/",
+      "parentUuid": "f54ed861_6620b392",
       "range": {
         "startLine": 27,
         "startChar": 0,
