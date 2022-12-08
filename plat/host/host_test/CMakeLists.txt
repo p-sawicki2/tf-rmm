@@ -29,6 +29,7 @@ target_include_directories(rmm-plat-host_test
 
 target_sources(rmm-plat-host_test
     PRIVATE "src/test_main.cpp"
+            "src/cpputest_ifc.cpp"
             "src/host_harness.c"
             "src/test_helpers.c")
 
