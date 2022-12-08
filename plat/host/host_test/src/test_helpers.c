@@ -3,11 +3,14 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <cpputest_ifc.h>
+#include <debug.h>
 #include <gic.h>
 #include <host_defs.h>
 #include <host_utils.h>
 #include <platform_api.h>
 #include <rmm_el3_ifc.h>
+#include <string.h>
 #include <xlat_tables.h>
 
 /* Implemented in init.c and needed here */
@@ -19,6 +22,14 @@ void rmm_main(void);
  */
 #define RMM_EL3_IFC_ABI_VERSION		(RMM_EL3_IFC_SUPPORTED_VERSION)
 #define RMM_EL3_MAX_CPUS		(MAX_CPUS)
+
+/* Maximum size of the assertion check string */
+#define CHECK_SIZE			U(80)
+
+/* Assertion control variables */
+static char assert_check[CHECK_SIZE + 1U];
+static bool assert_expected;
+static bool asserted;
 
 static unsigned char el3_rmm_shared_buffer[PAGE_SIZE] __aligned(PAGE_SIZE);
 
@@ -143,4 +154,69 @@ void test_helper_rmm_start(bool secondaries)
 unsigned int test_helper_get_nr_granules(void)
 {
 	return HOST_NR_GRANULES;
+}
+
+/* Assertion control */
+void __assert_fail(const char *assertion, const char *file,
+		   unsigned int line, const char *function)
+{
+	asserted = true;
+
+	if (assert_expected == true) {
+		if (strlen(assert_check) > 0U) {
+			if (strncmp(assert_check, assertion,
+				    strlen(assertion)) != 0) {
+				VERBOSE("Assertion mismatch on %s at line %u\n",
+					file, line);
+				VERBOSE("Expected assertion \"%s\"\n",
+					assert_check);
+				VERBOSE("Received assertion \"%s\"\n",
+					assertion);
+				cpputest_ifc_fail_test("Assertion mismatch\n");
+			}
+		}
+	} else {
+		VERBOSE("Unexpected assertion \"%s\" on file %s at line %u\n",
+			assertion, file, line);
+		cpputest_ifc_fail_test("Unexpected assertion\n");
+	}
+
+	assert_check[0] = '\0';
+	assert_expected = false;
+
+	VERBOSE("Expected assertion \"%s\" on file %s at line %u\n",
+			assertion, file, line);
+
+	cpputest_ifc_pass_test();
+}
+
+void test_helper_expect_assert_fail_with_check(bool expected, char *check)
+{
+	if (check == NULL) {
+		assert_check[0] = '\0';
+	} else {
+		if (strlen(check) > CHECK_SIZE) {
+			cpputest_ifc_fail_test("Assert check string too large");
+		}
+		strncpy(assert_check, check, CHECK_SIZE);
+		assert_check[CHECK_SIZE] = '\0';
+	}
+	asserted = false;
+	assert_expected = expected;
+}
+
+void test_helper_expect_assert_fail(bool expected)
+{
+	test_helper_expect_assert_fail_with_check(expected, NULL);
+}
+
+void test_helper_fail_if_no_assert_failed(void)
+{
+	if (asserted == false) {
+		cpputest_ifc_fail_test("Expected assertion did not happen");
+	} else {
+		asserted = false;
+		assert_check[0] = '\0';
+		assert_expected = false;
+	}
 }

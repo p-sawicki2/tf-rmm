@@ -62,10 +62,12 @@ if(RMM_UNITTESTS)
     # Include CTest for unittests
     include(CTest)
 
+    set(CMAKE_CTEST_ARGUMENTS "--verbose")
+
     # Custom target to run the unit tests
     add_custom_target(run-unittests
         WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
-        COMMAND ctest -C "$<CONFIG>"
+        COMMAND ctest "${CMAKE_CTEST_ARGUMENTS}" -C "$<CONFIG>"
         DEPENDS rmm.elf rmm.map
     )
 endif()
@@ -109,9 +111,15 @@ function(rmm_build_unittest)
         # the test run process.
         if("RUN_ISOLATED_TESTS" IN_LIST arg_KEYWORDS_MISSING_VALUES OR
             NOT DEFINED arg_RUN_ISOLATED_TESTS)
+
+        if (${CMAKE_BUILD_TYPE} STREQUAL "Release")
+            set(EXCLUDE_TESTS "assert")
+        endif()
+
             # Run all tests at once
             add_test(NAME "${arg_NAME}"
                     COMMAND ${CMAKE_BINARY_DIR}/rmm.elf
+                            -xn${EXCLUDE_TESTS}
                             -g${arg_NAME}
                             -r${arg_ITERATIONS})
         else()
