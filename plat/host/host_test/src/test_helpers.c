@@ -3,12 +3,23 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <debug.h>
 #include <gic.h>
 #include <host_defs.h>
 #include <host_utils.h>
 #include <platform_api.h>
 #include <rmm_el3_ifc.h>
 #include <xlat_tables.h>
+#include <setjmp.h>
+#include <string.h>
+#include <test_helpers_private.h>
+
+/* Possible return codes for setjmp on an assert context */
+enum assert_ret_codes {
+	ASSERT_CONTINUE = 0,
+	ASSERT_FAIL,
+	ASSERT_PASS
+};
 
 /* Implemented in init.c and needed here */
 void rmm_warmboot_main(void);
@@ -19,6 +30,12 @@ void rmm_main(void);
  */
 #define RMM_EL3_IFC_ABI_VERSION		(RMM_EL3_IFC_SUPPORTED_VERSION)
 #define RMM_EL3_MAX_CPUS		(MAX_CPUS)
+
+/* Assertion control variables */
+static jmp_buf assert_buf;
+static char *assert_check;
+static bool assert_expected;
+static bool asserted;
 
 static unsigned char el3_rmm_shared_buffer[PAGE_SIZE] __aligned(PAGE_SIZE);
 
@@ -143,4 +160,103 @@ void test_helper_rmm_start(bool secondaries)
 unsigned int test_helper_get_nr_granules(void)
 {
 	return HOST_NR_GRANULES;
+}
+
+/* Assertion control */
+void __assert_fail(const char *assertion, const char *file,
+		   unsigned int line, const char *function)
+{
+	int retval;
+
+	asserted = true;
+
+	if (assert_expected == true) {
+		if (assert_check == NULL) {
+			retval = ASSERT_PASS;
+		} else {
+			if (strncmp(assert_check, assertion,
+				    strlen(assertion)) == 0) {
+				retval = ASSERT_PASS;
+			} else {
+				VERBOSE("Assertion mismatch on %s at line %u\n",
+					file, line);
+				VERBOSE("Expected assertion \"%s\"\n",
+					assert_check);
+				VERBOSE("Received assertion \"%s\"\n",
+					assertion);
+				retval = ASSERT_FAIL;
+			}
+		}
+	} else {
+		VERBOSE("Unexpected assertion \"%s\" on file %s at line %u\n",
+			assertion, file, line);
+		retval = ASSERT_FAIL;
+	}
+
+	if (retval == ASSERT_PASS) {
+		VERBOSE("Expected assertion \"%s\" on file %s at line %u\n",
+			assertion, file, line);
+
+	}
+
+	assert_check = NULL;
+	assert_expected = false;
+	longjmp(assert_buf, retval);
+}
+
+void test_helper_expect_assert_with_check(bool expected, char *check)
+{
+	int assert_ret;
+
+	asserted = false;
+	assert_expected = expected;
+	assert_check = check;
+
+	assert_ret = setjmp(assert_buf);
+
+	switch (assert_ret) {
+	case ASSERT_FAIL:
+		test_helpers_private_fail_test("Unexpected assertion\n");
+		break;
+	case ASSERT_PASS:
+		test_helpers_private_pass_test();
+		break;
+	case ASSERT_CONTINUE:
+		/* Nothing to do in this case */
+	break;
+	default:
+		test_helpers_private_fail_test("Unexpected assert return code\n");
+	}
+}
+
+void test_helper_expect_assert(bool expected)
+{
+	int assert_ret;
+
+	asserted = false;
+	assert_expected = expected;
+	assert_check = NULL;
+
+	assert_ret = setjmp(assert_buf);
+
+	switch (assert_ret) {
+	case ASSERT_FAIL:
+		test_helpers_private_fail_test("Unexpected assertion\n");
+		break;
+	case ASSERT_PASS:
+		test_helpers_private_pass_test();
+		break;
+	case ASSERT_CONTINUE:
+		/* Nothing to do in this case */
+	break;
+	default:
+		test_helpers_private_fail_test("Unexpected assert return code\n");
+	}
+}
+
+void test_helper_fail_if_no_assertion(void)
+{
+	if (asserted == false) {
+		test_helpers_private_fail_test("Expected assertion did not happen");
+	}
 }

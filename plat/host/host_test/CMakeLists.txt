@@ -24,10 +24,12 @@ target_include_directories(rmm-plat-host_test
     PRIVATE "${CMAKE_BINARY_DIR}/plat/host/${HOST_VARIANT}/src")
 
 target_include_directories(rmm-plat-host_test
-    PUBLIC "include")
+    PUBLIC "include"
+    PRIVATE "src")
 
 target_sources(rmm-plat-host_test
     PRIVATE "src/test_main.cpp"
+            "src/test_helpers_private.cpp"
             "src/host_harness.c"
             "src/test_helpers.c")
 
