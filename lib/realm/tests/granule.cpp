@@ -120,6 +120,8 @@ TEST_GROUP(granule) {
 			random_seed = (int)time(NULL);
 			srand(random_seed);
 		}
+
+		test_helper_expect_assert(false);
 	}
 
 	TEST_TEARDOWN()
