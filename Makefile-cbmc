@@ -1,0 +1,178 @@
+# Configurations for the initial state.
+GRANULE_SIZE_SHIFT?=7
+GRANULE_SIZE:=$(shell echo 2^${GRANULE_SIZE_SHIFT} | bc)
+MAX_NUM_OF_GRANULE?=8
+HOST_MEM_SIZE:=$(shell echo ${GRANULE_SIZE}*${MAX_NUM_OF_GRANULE} | bc)
+
+# Configurations for shrinking the search space
+MEASUREMENT_SLOT_NR:=1U
+MAX_MEASUREMENT_SIZE:=1
+ICH_MAX_APRS:=1
+ICH_MAX_LRS:=2
+RPV_SIZE:=1
+MAX_REC_AUX_GRANULES:=1
+
+#VERIFICATION_CASES=rmi_rec_destroy
+#VERIFICATION_CASES=rmi_realm_create
+#VERIFICATION_CASES=rmi_realm_activate
+VERIFICATION_CASES=rmi_granule_delegate
+#VERIFICATION_CASES=rmi_realm_destroy
+#VERIFICATION_CASES=rmi_rec_aux_count
+#VERIFICATION_CASES=rmi_data_destroy
+#VERIFICATION_CASES=rmi_rtt_read_entry
+#VERIFICATION_CASES=rmi_rtt_map_unprotected
+#VERIFICATION_CASES=rmi_rtt_unmap_unprotected
+#VERIFICATION_CASES?=rmi_rtt_create
+
+######################################################## Above are configurable variables
+
+# API entry ooints
+RUNTIME_SOURCES=$(wildcard runtime/rmi/*.c) \
+				$(wildcard runtime/core/fake_host/*.c) \
+				$(wildcard runtime/core/vmid.c) 
+# Rmm specific lib
+LIB_SOURCES=$(wildcard lib/asc/src/*.c) \
+			$(wildcard lib/realm/src/*.c) \
+			$(wildcard lib/arch/src/*.c) \
+			$(wildcard lib/gic/src/*.c) \
+# Host simulation functions
+HOST_SOURCES=$(wildcard plat/host/common/src/*.c) \
+			 plat/host/host_build/src/host_harness.c \
+			 lib/smc/src/fake_host/smc_wrapper.c 
+# Define the entry point for the CBMC
+VERIFICATION_ENTRIES_FUNCTION=$(addprefix tb_,$(VERIFICATION_CASES))
+# CBMC related sources
+CBMC_SOURCES=$(wildcard tools/CBMC/src/*.c) $(addsuffix .c,$(addprefix tools/CBMC/testbenches/,$(VERIFICATION_ENTRIES_FUNCTION)))
+ALL_SOURCES:=$(RUNTIME_SOURCES) \
+			 $(LIB_SOURCES) \
+			 $(HOST_SOURCES) \
+			 $(CBMC_SOURCES) \
+			 -I/plat/host/common/include/ \
+			 -Itools/CBMC/include \
+			 -Itools/CBMC/testbenches \
+			 -Iruntime/include/ \
+			 -Ilib/debug/include/ \
+			 -Ilib/smc/include/ \
+			 -Ilib/common/include/ \
+			 -Ilib/realm/include/ \
+			 -Ilib/measurement/include/ \
+			 -Ilib/arch/include/ \
+			 -Ilib/arch/include/fake_host/ \
+			 -Ilib/arch/src/fake_host/ \
+			 -Ilib/common/include/fake_host/ \
+			 -Ilib/attestation/include/ \
+			 -Ilib/realm/src/include/ \
+			 -Ilib/realm/src/include/fake_host/ \
+			 -Ilib/gic/include/ \
+			 -Ilib/allocator/include/ \
+			 -Ilib/asc/include/ \
+			 -Ilib/xlat/include/ \
+			 -Ilib/xlat/src/ \
+			 -Ilib/timers/include/ \
+			 -Ilib/rmm_el3_ifc/include/ \
+			 -Iext/qcbor/inc/ \
+			 -Iext/t_cose/inc/ \
+			 -Iext/t_cose/crypto_adapters/ \
+			 -Iext/mbedtls/include/ \
+			 -Iplat/common/include/ \
+			 -Iplat/host/common/include/ 
+
+# The max unwind for verification. These values should be larger than the expect maximum rtt level,
+# it is recommanded to include at least one more interations. CBMC will `assert` if a loop is unwinded enough.
+MAX_RTT_UNWIND:=6
+MAX_AUX_REC:=2
+MAX_ROOT_RTT:=3
+MAX_UNWIND_FLAGS:=--unwindset find_lock_rd_granules.0:$(MAX_RTT_UNWIND) \
+				  --unwindset find_lock_rd_granules.1:$(MAX_RTT_UNWIND) \
+				  --unwindset smc_realm_create.0:$(MAX_RTT_UNWIND) \
+				  --unwindset total_root_rtt_refcount.0:$(MAX_RTT_UNWIND) \
+				  --unwindset free_sl_rtts.0:$(MAX_RTT_UNWIND) \
+				  --unwindset rtt_walk_lock_unlock.0:$(MAX_RTT_UNWIND) \
+				  --unwindset RttWalk.0:$(MAX_RTT_UNWIND) \
+				  --unwindset init_walk_path.0:$(MAX_RTT_UNWIND) \
+				  --unwindset smc_rec_create.0:$(MAX_AUX_REC) \
+				  --unwindset free_rec_aux_granules.0:$(MAX_AUX_REC) \
+				  --unwindset find_lock_granules.3:$(MAX_ROOT_RTT) \
+				  --unwindset RealmIsLive.0:$(MAX_ROOT_RTT) \
+				  --unwindset init_rtt_root_page.0:$(MAX_ROOT_RTT) \
+				  --unwindset init_rec.0:$(MAX_AUX_REC)
+
+# Optimisation flag for CBMC. These flags in the comnent do NOT always lead to better performance
+OPTIMISATION_FLAGS:=--drop-unused-functions \
+					--reachability-slice 
+					#--symex-cache-dereferences \
+					--slice-formula \
+					--refine-arrays \
+					--refine-arithmetic
+# All CBMC flags
+CBMC_FLAGS:=--c11 \
+			--timestamp wall \
+			--verbosity 9 \
+			$(MAX_UNWIND_FLAGS) \
+			$(OPTIMISATION_FLAGS)
+
+# Flags for sources files.
+SOURCE_FLAGS:=-DCBMC \
+			  -DGRANULE_SHIFT=$(GRANULE_SIZE_SHIFT) \
+			  -DXLAT_GRANULARITY_SIZE_SHIFT=$(GRANULE_SIZE_SHIFT) \
+			  -DGRANULE_SIZE=$(GRANULE_SIZE) \
+			  -DRMM_MAX_GRANULES=$(MAX_NUM_OF_GRANULE) \
+			  -DHOST_MEM_SIZE=$(HOST_MEM_SIZE) \
+			  -DMAX_CPUS=1 \
+			  -DMAX_RTT_LEVEL=$(MAX_RTT_UNWIND) \
+			  -DMEASUREMENT_SLOT_NR=$(MEASUREMENT_SLOT_NR) \
+			  -DMAX_MEASUREMENT_SIZE=$(MAX_MEASUREMENT_SIZE) \
+			  -DICH_MAX_APRS=$(ICH_MAX_APRS) \
+			  -DICH_MAX_LRS=$(ICH_MAX_LRS) \
+			  -DRPV_SIZE=$(RPV_SIZE) \
+			  -DMAX_REC_AUX_GRANULES=$(MAX_REC_AUX_GRANULES)
+
+# All common parameters and flags for CBMC
+PARAMETER:=$(ALL_SOURCES) \
+	$(CBMC_FLAGS) \
+	$(SOURCE_FLAGS) \
+    --function $(VERIFICATION_ENTRIES_FUNCTION) 
+
+# CBMC flags for memory safety analysis and undefined behaviour analysis.
+ANALYSIS_FLAGS = --bounds-check \
+				 --pointer-check \
+				 --div-by-zero-check \
+				 --signed-overflow-check \
+				 --unsigned-overflow-check \
+				 --pointer-overflow-check \
+				 --conversion-check \
+				 --undefined-shift-check \
+				 --float-overflow-check \
+				 --nan-check \
+				 --enum-range-check \
+				 --pointer-primitive-check \
+				 --memory-leak-check
+
+.phony:
+cover: 
+	cbmc $(PARAMETER) \
+	--cover cover \
+	--no-assertions \
+	1> $(VERIFICATION_CASES)-cover.log \
+	2> $(VERIFICATION_CASES)-cover-err.log 
+
+.phony:
+assert:
+	cbmc $(PARAMETER) \
+	--unwinding-assertions \
+	--trace \
+	--trace-show-function-calls \
+	1> $(VERIFICATION_CASES)-assert.log \
+	2> $(VERIFICATION_CASES)-assert-err.log
+
+.phony:
+analysis:
+	cbmc $(PARAMETER) \
+	--unwinding-assertions \
+	$(ANALYSIS_FLAGS) \
+	1> $(VERIFICATION_CASES)-analysis.log \
+	2> $(VERIFICATION_CASES)-analysis-err.log
+
+.phony:
+loop:
+	cbmc $(PARAMETER) --show-loops 

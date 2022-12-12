@@ -18,7 +18,11 @@
 /*
  * The bitmap for the reserved/used VMID values.
  */
+#ifdef CBMC
+unsigned long vmids[VMID_ARRAY_LONG_SIZE];
+#else
 static unsigned long vmids[VMID_ARRAY_LONG_SIZE];
+#endif
 
 /*
  * Marks the VMID value to be in use. It returns:

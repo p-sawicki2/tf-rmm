@@ -230,7 +230,11 @@ void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx, unsigned l
  * aarch64/translation/vmsa_addrcalc/AArch64.TTEntryAddress on which this is
  * modeled.
  */
+#ifdef CBMC
+unsigned long s2_addr_to_idx(unsigned long addr, long level)
+#else
 static unsigned long s2_addr_to_idx(unsigned long addr, long level)
+#endif
 {
 	int levels = RTT_PAGE_LEVEL - level;
 	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
@@ -250,8 +254,13 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
  * aarch64/translation/vmsa_addrcalc/AArch64.S2SLTTEntryAddress on which
  * this is modeled.
  */
+#ifdef CBMC
+unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
+				       unsigned long ipa_bits)
+#else
 static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 				       unsigned long ipa_bits)
+#endif
 {
 	int levels = RTT_PAGE_LEVEL - start_level;
 	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
@@ -270,10 +279,12 @@ static unsigned long addr_level_mask(unsigned long addr, long level)
 	return addr & BIT_MASK_ULL(msb, lsb);
 }
 
+#ifndef CBMC
 static inline unsigned long table_entry_to_phys(unsigned long entry)
 {
 	return addr_level_mask(entry, RTT_PAGE_LEVEL);
 }
+#endif
 
 static inline bool entry_is_table(unsigned long entry)
 {

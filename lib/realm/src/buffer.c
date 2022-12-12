@@ -34,7 +34,9 @@ COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) <= (GRANULE_SIZE * XLAT_TABLE_ENTRIES));
  * the PE is executing in AArch64 state and is using 4KB
  * translation granules, the min address space size is 64KB
  */
+#ifndef CBMC
 COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) >= (1 << 16U));
+#endif
 
 #define RMM_SLOT_BUF_MMAP	MAP_REGION_TRANSIENT(			\
 					SLOT_VIRT,			\

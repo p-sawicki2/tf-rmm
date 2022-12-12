@@ -135,7 +135,9 @@
 			(((uintptr_t)_addr >= (uintptr_t)&_array[0]) && \
 			 ((((uintptr_t)_addr - (uintptr_t)&_array[0]) % \
 						sizeof(_array[0])) == UL(0)))
+#ifndef GRANULE_SHIFT
 #define GRANULE_SHIFT	(UL(12))
+#endif
 #define GRANULE_MASK	(~0xfffUL)
 
 #define HAS_MPAM 0
@@ -220,11 +222,15 @@
  * Defines member of structure and reserves space
  * for the next member with specified offset.
  */
+#ifdef CBMC
+#define SET_MEMBER(member, start, end) member;
+#else
 #define SET_MEMBER(member, start, end)	\
 	union {				\
 		member;			\
 		unsigned char reserved##end[end - start]; \
 	}
+#endif
 
 #define	FALLTHROUGH	__attribute__((fallthrough))
 

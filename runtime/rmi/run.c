@@ -20,6 +20,7 @@
 #include <smc.h>
 #include <timers.h>
 
+#ifndef CBMC
 static void reset_last_run_info(struct rec *rec)
 {
 	rec->last_run_info.esr = 0UL;
@@ -289,3 +290,4 @@ out_unmap_buffers:
 
 	return ret;
 }
+#endif

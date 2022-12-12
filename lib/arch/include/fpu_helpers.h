@@ -12,7 +12,11 @@
 
 /* Size of one FPU vector register in bytes */
 #define FPU_VEC_REG_SIZE	U(16)
+#ifdef CBMC
+#define FPU_VEC_REG_NUM		U(1)
+#else
 #define FPU_VEC_REG_NUM		U(32)
+#endif
 #define FPU_REGS_SIZE		(FPU_VEC_REG_SIZE * FPU_VEC_REG_NUM)
 
 /* These defines are required by compiler assert to check offsets */

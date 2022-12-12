@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2021-2022, Arm Limited. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#ifndef TB_INTERFACE_PSCI_H
+#define TB_INTERFACE_PSCI_H
+
+#include "psci.h"
+
+#define SMC_RMM_AFFINITY_INFO	SMC64_PSCI_AFFINITY_INFO
+#define SMC_RMM_CPU_ON		SMC64_PSCI_CPU_ON
+#define SMC_RMM_CPU_OFF		SMC32_PSCI_CPU_OFF
+#define SMC_RMM_CPU_SUSPEND	SMC64_PSCI_CPU_SUSPEND
+//#define SMC_RMM_FEATURES	SMC32_PSCI_FEATURES
+#define SMC_RMM_SYSTEM_OFF	SMC32_PSCI_SYSTEM_OFF
+#define SMC_RMM_SYSTEM_RESET	SMC32_PSCI_SYSTEM_RESET
+
+//TODO
+#define PSCI_ALREADY_ON 0
+#define PSCI_SUCCESS 0
+#define PSCI_OFF 0
+#define PSCI_REQUEST_PENDING 0
+#define NO_PSCI_REQUEST_PENDING 0
+#define FID_PSCI_CPU_ON 0
+#define FID_PSCI_AFFINITY_INFO 0
+
+int PsciReturnCodeEncode(int value);
+
+#endif /* !TB_INTERFACE_PSCI_H */
