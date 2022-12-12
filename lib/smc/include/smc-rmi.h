@@ -347,7 +347,11 @@
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
 
 /* Size of Realm Personalization Value */
+#ifndef CBMC
 #define RPV_SIZE		64
+#else /* CBMC */
+#define RPV_SIZE		1
+#endif  /* CBMC */
 
 /* RmiRealmFlags format */
 #define RMI_REALM_FLAGS_LPA2_SHIFT	UL(0)

@@ -9,7 +9,11 @@
 #include <arch_features.h>
 #include <memory.h>
 
+#ifdef CBMC
+#define MIN_IPA_BITS		5
+#else
 #define MIN_IPA_BITS		32
+#endif
 #define MAX_IPA_BITS		48
 #define MAX_IPA_SIZE		(1UL << MAX_IPA_BITS)
 

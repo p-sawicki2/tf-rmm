@@ -19,7 +19,12 @@
 #include <table.h>
 #include <vmid.h>
 
+
+#ifdef CBMC
+#define RMM_FEATURE_MIN_IPA_SIZE	5
+#else
 #define RMM_FEATURE_MIN_IPA_SIZE	PARANGE_0000_WIDTH
+#endif
 
 unsigned long smc_realm_activate(unsigned long rd_addr)
 {
@@ -109,7 +114,7 @@ static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl)
 	return !s2_inconsistent_sl(ipa_bits, sl);
 }
 
-static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
+_NCBMC(static) unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 {
 	unsigned int levels = (unsigned int)(RTT_PAGE_LEVEL - sl);
 	unsigned int sl_ipa_bits;
@@ -176,7 +181,7 @@ static void init_s2_starting_level(struct rd *rd)
 	assert(false);
 }
 
-static bool validate_realm_params(struct rmi_realm_params *p)
+_NCBMC(static) bool validate_realm_params(struct rmi_realm_params *p)
 {
 	unsigned long feat_reg0 = get_feature_register_0();
 

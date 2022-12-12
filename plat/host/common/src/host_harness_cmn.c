@@ -110,6 +110,7 @@ static uint8_t sample_attest_priv_key[] = {
 	0xEB, 0x1A, 0x41, 0x85, 0xBD, 0x11, 0x7F, 0x68
 };
 
+_NCBMC(
 bool host_memcpy_ns_read(void *dest, const void *ns_src, unsigned long size)
 {
 	(void)memcpy(dest, ns_src, size);
@@ -121,6 +122,7 @@ bool host_memcpy_ns_write(void *ns_dest, const void *src, unsigned long size)
 	(void)memcpy(ns_dest, src, size);
 	return true;
 }
+)
 
 unsigned long host_monitor_call(unsigned long id,
 			unsigned long arg0,

@@ -190,7 +190,6 @@ _NCBMC(
 		uint8_t sve_vq;
 	} realm_info;
 
-_NCBMC(
 	struct {
 		/*
 		 * The contents of the *_EL2 system registers at the last time
@@ -203,6 +202,7 @@ _NCBMC(
 		unsigned long far;
 	} last_run_info;
 
+_NCBMC(
 	/* Pointer to per-cpu non-secure state */
 	struct ns_state *ns;
 
@@ -230,9 +230,9 @@ _NCBMC(
 		bool inject;
 	} serror_info;
 
+) /* _NCBMC */
 	/* True if host call is pending */
 	bool host_call;
-) /* _NCBMC */
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
 
