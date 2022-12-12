@@ -43,6 +43,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2dfa1172_97b19577",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "I tried that so I could use $\u003cconfig\u003e on the report path, but $\u003cconfig\u003e wasn\u0027t working either way, so I moved it here to do the check as soon as possible. I still can move it to line 84 if you think it is better.",
+      "parentUuid": "df571d14_14f73c72",
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c72c2eb_75e6e3da",
         "filename": "cmake/Modules/CoverageReport.cmake",
         "patchSetId": 23
@@ -66,6 +84,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e835b09c_9105a4a3",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "Didn\u0027t we agreed that coverage will only be done for unittests ? (host_test variant). Even if we want to have it for other variants, we might still have a dependency with RMM_UNITTESTS as other variants do not support C++.\n\nAlso there is a dependency between coverage-report and run-unittests, as discussed during one of the previous reviews. So if we still want to have that dependency whilst we permit the coverage to run for other variants, it means that we still need the dependency with RMM_UNITTESTS to enable/disable the dependency with run-unittests rule",
+      "parentUuid": "1c72c2eb_75e6e3da",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "31fb1fb9_f439d432",
         "filename": "cmake/Modules/CoverageReport.cmake",
         "patchSetId": 23
@@ -77,6 +119,30 @@
       "writtenOn": "2022-12-12T14:36:55Z",
       "side": 1,
       "message": "too many levels of nesting. Can be simplified.",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79853742_324889ce",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "Yes, I am not happy with this either and I already tried to simplify, but had some issues. I will give it another try, though",
+      "parentUuid": "31fb1fb9_f439d432",
       "range": {
         "startLine": 122,
         "startChar": 1,
@@ -133,6 +199,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82113b86_d8049d12",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "We don\u0027t need to run the unittests. As agreed on previous discussions, there is a dependency between coverage-report and between run-unittests and a dependency between run-unittests and build, so invoking coverage-report will actually do everything.",
+      "parentUuid": "8cab827a_882f5efd",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2274eea2_534e1551",
@@ -146,6 +236,30 @@
       "writtenOn": "2022-12-12T14:36:55Z",
       "side": 1,
       "message": "cmake --build ${RMM_BUILD_DIR} -- run-unittests coverage-report",
+      "range": {
+        "startLine": 183,
+        "startChar": 4,
+        "endLine": 183,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa81f2e7_08a51e56",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "See my comment above",
+      "parentUuid": "2274eea2_534e1551",
       "range": {
         "startLine": 183,
         "startChar": 4,
@@ -179,6 +293,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c0ada86_da930a36",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "the HTML report is disabled by default. You don\u0027t need to set RMM_HTML_COV_REPORT to OFF. You need to explicitly set it to ON to enable the HTML report.",
+      "parentUuid": "00afc22f_2696f447",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a13eedd_ab9e4818",
@@ -202,6 +340,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "502eb216_43b21ef4",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "We already discussed this and agreed that it will be OFF by default",
+      "parentUuid": "9a13eedd_ab9e4818",
+      "range": {
+        "startLine": 230,
+        "startChar": 39,
+        "endLine": 230,
+        "endChar": 42
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d9ab0c5_4cc574b0",
@@ -215,6 +377,30 @@
       "writtenOn": "2022-12-12T14:36:55Z",
       "side": 1,
       "message": "Can be moved to commonconfigs.cmake and suitable dependencies can be added\n\narm_config_option(\n    NAME RMM_COVERAGE\n    HELP \"Enable coverage tests\"\n    TYPE BOOL\n    DEFAULT \"OFF\"\n    DEPENDS RMM_ARCH STREQUAL \"fake_host\")\n\narm_config_option(\n    NAME RMM_HTML_COV_REPORT\n    HELP \"Enable html coverage report\"\n    TYPE BOOL\n    DEFAULT \"ON\"\n    DEPENDS RMM_COVERAGE)\n\narm_config_option(\n    NAME COVERAGE_REPORT_NAME\n    HELP \"Canonical name for the coverage report\"\n    TYPE STRING\n    DEFAULT \"tf-rmm_coverage\"\n    DEPENDS RMM_COVERAGE\n    ADVANCED)",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d94ef429_c66db8cb",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-12T15:25:47Z",
+      "side": 1,
+      "message": "As discussed on a previous comment, I don\u0027t think this should go to commonconfigs.cmake. These are specific configs for the host_test variant, they are not common to all of them.",
+      "parentUuid": "0d9ab0c5_4cc574b0",
       "range": {
         "startLine": 19,
         "startChar": 0,
