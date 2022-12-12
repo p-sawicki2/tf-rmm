@@ -89,6 +89,10 @@ static inline void granule_set_state(struct granule *g,
  * Fails if unexpected locking sequence detected.
  * Also asserts if invariant conditions are met.
  */
+#ifdef CBMC
+bool granule_lock_on_state_match(struct granule *g,
+				    enum granule_state expected_state);
+#else
 static inline bool granule_lock_on_state_match(struct granule *g,
 				    enum granule_state expected_state)
 {
@@ -102,6 +106,7 @@ static inline bool granule_lock_on_state_match(struct granule *g,
 	__granule_assert_unlocked_invariants(g, expected_state);
 	return true;
 }
+#endif
 
 /*
  * Used when we're certain of the type of an object (e.g. because we hold a
@@ -115,11 +120,15 @@ static inline void granule_lock(struct granule *g,
 	assert(locked);
 }
 
+#ifdef CBMC
+void granule_unlock(struct granule *g);
+#else
 static inline void granule_unlock(struct granule *g)
 {
 	__granule_assert_unlocked_invariants(g, granule_get_state(g));
 	spinlock_release(&g->lock);
 }
+#endif
 
 /* Transtion state to @new_state and unlock the granule */
 static inline void granule_unlock_transition(struct granule *g,
