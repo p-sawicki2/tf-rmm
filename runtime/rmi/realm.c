@@ -111,7 +111,11 @@ static unsigned int requested_ipa_bits(struct rmi_realm_params *p)
 	return EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, p->features_0);
 }
 
+#ifdef CBMC
+unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
+#else
 static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
+#endif
 {
 	unsigned int levels = (unsigned int)(RTT_PAGE_LEVEL - sl);
 	unsigned int sl_ipa_bits;
@@ -128,7 +132,11 @@ static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 	return (1U << (ipa_bits - sl_ipa_bits));
 }
 
+#ifdef CBMC
+bool validate_realm_params(struct rmi_realm_params *p)
+#else
 static bool validate_realm_params(struct rmi_realm_params *p)
+#endif
 {
 	if (!validate_feature_register(RMM_FEATURE_REGISTER_0_INDEX,
 					p->features_0)) {
