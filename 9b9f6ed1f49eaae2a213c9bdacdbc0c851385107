@@ -119,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67ba26b9_d4cdfbce",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:48:23Z",
+      "side": 1,
+      "message": "This seems to be alright given how this is used for compiler tests",
+      "parentUuid": "2e4d72b3_6eee0b32",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9f44ada_5a4de159",
@@ -227,6 +251,30 @@
       "side": 1,
       "message": "Hmm, there seems some flaw in the logic here. \n\nIf any one of the flag is supported then COVERAGE_SUPPORTED is set on ON. also -coverage seems to be added from GNU.cmake as well? I have given a comment to move it here.",
       "parentUuid": "b7b14010_2dc29de6",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 65,
+        "endChar": 27
+      },
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9d42dfd_104e18a0",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:48:23Z",
+      "side": 1,
+      "message": "Ignore this as this is resolved.",
+      "parentUuid": "a67f30ea_388383e2",
       "range": {
         "startLine": 61,
         "startChar": 10,
@@ -404,6 +452,24 @@
       "side": 1,
       "message": "Sorry, I dont understand , -coverage is already on of the flags you are testing ? So it getting added from 2 places.",
       "parentUuid": "6852db6b_76ddf8ab",
+      "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a57b34e_192bf6c5",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:48:23Z",
+      "side": 1,
+      "message": "This is resolved now.",
+      "parentUuid": "4e6b5a13_e3d95666",
       "revId": "9b9f6ed1f49eaae2a213c9bdacdbc0c851385107",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
