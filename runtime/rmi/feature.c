@@ -13,7 +13,11 @@
 #include <table.h>
 #include <utils_def.h>
 
+#ifdef CBMC
+#define RMM_FEATURE_MIN_IPA_SIZE	5
+#else
 #define RMM_FEATURE_MIN_IPA_SIZE	PARANGE_0000_WIDTH
+#endif
 
 static unsigned long get_feature_register_0(void)
 {
