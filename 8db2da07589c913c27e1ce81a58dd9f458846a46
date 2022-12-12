@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84b4156d_846538b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "${RMM_BUILD_DIR}/$\u003cCONFIG\u003e/coverage",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 12,
+        "endChar": 76
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df571d14_14f73c72",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "can be moved to line 84 after common config.cmake if possible",
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c72c2eb_75e6e3da",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "would be good to remove dependancy on RMM_UNITTESTS as coverage can be generated for any host variant.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31fb1fb9_f439d432",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "too many levels of nesting. Can be simplified.",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "888e4f8e_db0b1300",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "...analysis on unit tests.",
+      "range": {
+        "startLine": 175,
+        "startChar": 21,
+        "endLine": 175,
+        "endChar": 29
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cab827a_882f5efd",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "Run the additional build target `coverage_report` after build and run of unit tests. It is recommended to do the Debug build of RMM.",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2274eea2_534e1551",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "cmake --build ${RMM_BUILD_DIR} -- run-unittests coverage-report",
+      "range": {
+        "startLine": 183,
+        "startChar": 4,
+        "endLine": 183,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00afc22f_2696f447",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "\"This will automatically generate the HTML coverage report in folder `Debug/coverage` within build directory. The HTML generation can be disabled by setting `RMM_HTML_COV_REPORT\u003dOFF`.\"",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a13eedd_ab9e4818",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "can be ON by default.",
+      "range": {
+        "startLine": 230,
+        "startChar": 39,
+        "endLine": 230,
+        "endChar": 42
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d9ab0c5_4cc574b0",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-12T14:36:55Z",
+      "side": 1,
+      "message": "Can be moved to commonconfigs.cmake and suitable dependencies can be added\n\narm_config_option(\n    NAME RMM_COVERAGE\n    HELP \"Enable coverage tests\"\n    TYPE BOOL\n    DEFAULT \"OFF\"\n    DEPENDS RMM_ARCH STREQUAL \"fake_host\")\n\narm_config_option(\n    NAME RMM_HTML_COV_REPORT\n    HELP \"Enable html coverage report\"\n    TYPE BOOL\n    DEFAULT \"ON\"\n    DEPENDS RMM_COVERAGE)\n\narm_config_option(\n    NAME COVERAGE_REPORT_NAME\n    HELP \"Canonical name for the coverage report\"\n    TYPE STRING\n    DEFAULT \"tf-rmm_coverage\"\n    DEPENDS RMM_COVERAGE\n    ADVANCED)",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
