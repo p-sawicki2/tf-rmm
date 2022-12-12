@@ -98,7 +98,9 @@
 #define REC_GIC_NUM_LRS			U(16)
 
 /* Maximum number of auxiliary granules required for a REC */
+#ifndef MAX_REC_AUX_GRANULES
 #define MAX_REC_AUX_GRANULES		U(16)
+#endif
 
 #define REC_ENTRY_FLAG_EMUL_MMIO	(UL(1) << 0)
 #define REC_ENTRY_FLAG_INJECT_SEA	(UL(1) << 1)
@@ -318,7 +320,9 @@
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
 
 /* Size of Realm Personalization Value */
+#ifndef RPV_SIZE
 #define RPV_SIZE		64
+#endif
 
 #ifndef __ASSEMBLER__
 /*

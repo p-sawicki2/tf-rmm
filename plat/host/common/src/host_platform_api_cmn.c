@@ -62,7 +62,9 @@ unsigned long plat_granule_addr_to_idx(unsigned long addr)
 		return UINT64_MAX;
 	}
 
-	return (addr - host_util_get_granule_base()) / GRANULE_SIZE;
+    unsigned long idx = (addr - host_util_get_granule_base()) / GRANULE_SIZE;
+	assert(idx < HOST_NR_GRANULES);
+	return idx;
 }
 
 unsigned long plat_granule_idx_to_addr(unsigned long idx)

@@ -9,7 +9,9 @@
 #include <utils_def.h>
 
 /* Allocate 1GB of space to be used as physical granules */
+#ifndef HOST_MEM_SIZE
 #define HOST_MEM_SIZE			UL(0x40000000)
+#endif
 
 /* Total number of granules on the current platform */
 #define HOST_NR_GRANULES		(HOST_MEM_SIZE/GRANULE_SIZE)

@@ -29,7 +29,9 @@ enum hash_algo {
 #define RIM_MEASUREMENT_SLOT		(0U)
 
 /* Maximum number of measurements */
+#ifndef MEASUREMENT_SLOT_NR
 #define MEASUREMENT_SLOT_NR		(5U)
+#endif
 
 /* Size in bytes of the SHA256 measurement */
 #define SHA256_SIZE			(32U)
@@ -45,7 +47,9 @@ enum hash_algo {
  * Size in bytes of the largest measurement type that can be supported.
  * This macro needs to be updated accordingly if new algorithms are supported.
  */
+#ifndef MAX_MEASUREMENT_SIZE
 #define MAX_MEASUREMENT_SIZE		SHA512_SIZE
+#endif
 
 /* RmmMeasurementDescriptorData type as per RMM spec */
 struct measurement_desc_data {
@@ -65,6 +69,7 @@ struct measurement_desc_data {
 	 */
 	SET_MEMBER(unsigned char content[MAX_MEASUREMENT_SIZE], 0x60, 0x100);
 };
+#ifndef CBMC
 COMPILER_ASSERT(sizeof(struct measurement_desc_data) == 0x100);
 
 COMPILER_ASSERT(offsetof(struct measurement_desc_data, desc_type) == 0x0);
@@ -73,6 +78,7 @@ COMPILER_ASSERT(offsetof(struct measurement_desc_data, rim) == 0x10);
 COMPILER_ASSERT(offsetof(struct measurement_desc_data, ipa) == 0x50);
 COMPILER_ASSERT(offsetof(struct measurement_desc_data, flags) == 0x58);
 COMPILER_ASSERT(offsetof(struct measurement_desc_data, content) == 0x60);
+#endif
 
 /* RmmMeasurementDescriptorRec type as per RMM spec */
 struct measurement_desc_rec {
@@ -85,12 +91,14 @@ struct measurement_desc_rec {
 	/* Hash of 4KB page which contains REC parameters data structure */
 	SET_MEMBER(unsigned char content[MAX_MEASUREMENT_SIZE], 0x50, 0x100);
 };
+#ifndef CBMC
 COMPILER_ASSERT(sizeof(struct measurement_desc_rec) == 0x100);
 
 COMPILER_ASSERT(offsetof(struct measurement_desc_rec, desc_type) ==  0x0);
 COMPILER_ASSERT(offsetof(struct measurement_desc_rec, len) ==  0x8);
 COMPILER_ASSERT(offsetof(struct measurement_desc_rec, rim) ==  0x10);
 COMPILER_ASSERT(offsetof(struct measurement_desc_rec, content) ==  0x50);
+#endif
 
 /* RmmMeasurementDescriptorRipas type as per RMM spec */
 struct measurement_desc_ripas {
@@ -105,6 +113,7 @@ struct measurement_desc_ripas {
 	/* RTT level at which the RIPAS change occurred */
 	SET_MEMBER(unsigned char level, 0x58, 0x100);
 };
+#ifndef CBMC
 COMPILER_ASSERT(sizeof(struct measurement_desc_ripas) == 0x100);
 
 COMPILER_ASSERT(offsetof(struct measurement_desc_ripas, desc_type) == 0x0);
@@ -112,6 +121,7 @@ COMPILER_ASSERT(offsetof(struct measurement_desc_ripas, len) == 0x8);
 COMPILER_ASSERT(offsetof(struct measurement_desc_ripas, rim) == 0x10);
 COMPILER_ASSERT(offsetof(struct measurement_desc_ripas, ipa) == 0x50);
 COMPILER_ASSERT(offsetof(struct measurement_desc_ripas, level) == 0x58);
+#endif
 
 /*
  * Calculate the hash of data with algorithm hash_algo to the buffer `out`.

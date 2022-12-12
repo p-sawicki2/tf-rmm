@@ -15,7 +15,11 @@
 #include <string.h>
 #include <utils_def.h>
 
+#ifdef CBMC
+struct granule granules[RMM_MAX_GRANULES] = { 0 };
+#else
 static struct granule granules[RMM_MAX_GRANULES];
+#endif
 
 /*
  * Takes a valid pointer to a struct granule, and returns the granule physical
@@ -251,11 +255,15 @@ void granule_memzero(struct granule *g, enum buffer_slot slot)
 	assert(g != NULL);
 
 	buf = granule_map(g, slot);
+#ifndef CBMC
 	(void)memset(buf, 0, GRANULE_SIZE);
+#endif
 	buffer_unmap(buf);
 }
 
 void granule_memzero_mapped(void *buf)
 {
+#ifndef CBMC
 	(void)memset(buf, 0, GRANULE_SIZE);
+#endif
 }
