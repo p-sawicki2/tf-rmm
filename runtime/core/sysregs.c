@@ -186,10 +186,9 @@ bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
 
 	for (i = 0U; i < ARRAY_LEN(sysreg_handlers); i++) {
 		const struct sysreg_handler *handler = &sysreg_handlers[i];
-		bool handled;
 
 		if ((esr & handler->esr_mask) == handler->esr_value) {
-			handled = handler->fn(rec, rec_exit, esr);
+			bool handled = handler->fn(rec, rec_exit, esr);
 			if (!handled) {
 				emulate_sysreg_access_ns(rec, rec_exit, esr);
 			}
