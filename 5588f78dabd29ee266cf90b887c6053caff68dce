@@ -135,6 +135,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b6506dfd_a9da1ada",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 27
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T15:04:45Z",
+      "side": 1,
+      "message": "On testing with Ninja generator and specifying multi-target, I found that the coverage report is not generated as intended. This is because Ninja is a parallel build and does not know about the dependancy in sequence and I assumed that Ninja will honour the multi-target order specified on cmd line which is not the case.\n\n\nSo , it seems we need to specify the dependancy on run-unitests target. We did have this dependancy initially but removed it as wanted this to run on different host variants.\n\nWe can still keep that behaviour but also enforce ordering by adding these lines here (line 146):\n\n  #\n  # Add dependency on unit test target if being invoked in a\n  # multi-target build command line.\n  #\n  #if(RMM_UNITTESTS)\n  #  add_dependencies(create-coverage run-unittests)\n  #endif()\n\n\nIn future we can keep appending this list we have more variants to generate coverage for.",
+      "revId": "5588f78dabd29ee266cf90b887c6053caff68dce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3472fef_7138560c",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 27
