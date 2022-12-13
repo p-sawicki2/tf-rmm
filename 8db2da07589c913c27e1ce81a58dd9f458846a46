@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40adf24f_76b92570",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T11:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84b4156d_846538b4",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 12,
+        "endChar": 76
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df571d14_14f73c72",
@@ -106,6 +130,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30164abf_17359d96",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T11:53:58Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "e835b09c_9105a4a3",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31fb1fb9_f439d432",
@@ -143,6 +191,30 @@
       "side": 1,
       "message": "Yes, I am not happy with this either and I already tried to simplify, but had some issues. I will give it another try, though",
       "parentUuid": "31fb1fb9_f439d432",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9337205_947585c9",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T11:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79853742_324889ce",
       "range": {
         "startLine": 122,
         "startChar": 1,
