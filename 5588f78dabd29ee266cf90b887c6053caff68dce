@@ -152,6 +152,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f9c20e19_4108d5ac",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 27
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T15:07:19Z",
+      "side": 1,
+      "message": "#\n  # Add dependency on unit test target if being invoked in a\n  # multi-target build command line.\n  #\n  if(RMM_UNITTESTS)\n    add_dependencies(create-coverage run-unittests)\n  endif()",
+      "parentUuid": "b6506dfd_a9da1ada",
+      "revId": "5588f78dabd29ee266cf90b887c6053caff68dce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3472fef_7138560c",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 27
