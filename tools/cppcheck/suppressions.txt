@@ -12,3 +12,5 @@ unusedFunction
 // the `missingIncludeSystem` suppression was useless. It's right, but it's
 // also not particularly helpful.
 unmatchedSuppression
+preprocessorErrorDirective
+unusedLabel

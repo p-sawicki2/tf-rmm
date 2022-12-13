@@ -56,6 +56,7 @@
 #endif /* MBEDTLS_THREADING_C */
 
 #if defined(MBEDTLS_SELF_TEST)
+/* cppcheck-suppress preprocessorErrorDirective */
 #error MBEDTLS_SELF_TEST is not supported by this allocator.
 #endif /* MBEDTLS_SELF_TEST */
 
