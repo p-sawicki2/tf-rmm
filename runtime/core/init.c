@@ -55,6 +55,8 @@ void rmm_main(void)
 	 */
 	NOTICE("Booting %s v.%s(%s) %s Built with %s\n",
 		NAME, VERSION, RMM_BUILD_TYPE, COMMIT_INFO,
+
+/* cppcheck-suppress preprocessorErrorDirective */
 #ifdef __clang__
 	VER_STRING("Clang ", __clang_major__, __clang_minor__,
 		__clang_patchlevel__)

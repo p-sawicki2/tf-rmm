@@ -119,6 +119,7 @@ static inline return_code_t unpack_return_code(unsigned long error_code)
  */
 static inline void *status_ptr(status_t status)
 {
+	/* cppcheck-suppress signConversion */
 	return (void *)(-1 * (unsigned long)status);
 }
 
@@ -135,6 +136,7 @@ static inline bool ptr_is_err(const void *ptr)
  */
 static inline status_t ptr_status(const void *ptr)
 {
+	/* cppcheck-suppress signConversion */
 	return (status_t)(-1 * (unsigned long)ptr);
 }
 
