@@ -164,7 +164,6 @@ static void rmi_log_on_exit(unsigned long handler_id,
 {
 	const struct smc_handler *handler = &smc_handlers[handler_id];
 	unsigned long function_id = SMC64_RMI_FID(handler_id);
-	unsigned int i;
 	return_code_t rc;
 
 	if (!handler->log_exec && !handler->log_error) {
@@ -202,7 +201,7 @@ static void rmi_log_on_exit(unsigned long handler_id,
 		}
 
 		/* Print output values */
-		for (i = 1U; i <= handler->out_values; i++) {
+		for (unsigned int i = 1U; i <= handler->out_values; i++) {
 			INFO(" %8lx", ret->x[i]);
 		}
 
@@ -229,10 +228,6 @@ void handle_ns_smc(unsigned long function_id,
 		}
 	}
 
-	/*
-	 * Check if handler exists and 'fn_dummy' is not NULL
-	 * for not implemented 'function_id' calls in SMC RMI range.
-	 */
 	if ((handler == NULL) || (handler->fn_dummy == NULL)) {
 		VERBOSE("[%s] unknown function_id: %lx\n",
 			__func__, function_id);
