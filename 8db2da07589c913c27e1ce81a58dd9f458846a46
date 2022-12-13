@@ -83,6 +83,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42676931_f1c89760",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "As per our discussion, left it here",
+      "parentUuid": "2dfa1172_97b19577",
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c72c2eb_75e6e3da",
@@ -248,6 +266,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4e53ef5_a4f4914f",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "888e4f8e_db0b1300",
+      "range": {
+        "startLine": 175,
+        "startChar": 21,
+        "endLine": 175,
+        "endChar": 29
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8cab827a_882f5efd",
@@ -285,6 +327,30 @@
       "side": 1,
       "message": "We don\u0027t need to run the unittests. As agreed on previous discussions, there is a dependency between coverage-report and between run-unittests and a dependency between run-unittests and build, so invoking coverage-report will actually do everything.",
       "parentUuid": "8cab827a_882f5efd",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c09e62a_f8537d69",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "82113b86_d8049d12",
       "range": {
         "startLine": 177,
         "startChar": 0,
@@ -342,6 +408,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "616e5d28_e5774d6e",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "aa81f2e7_08a51e56",
+      "range": {
+        "startLine": 183,
+        "startChar": 4,
+        "endLine": 183,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00afc22f_2696f447",
@@ -379,6 +469,30 @@
       "side": 1,
       "message": "the HTML report is disabled by default. You don\u0027t need to set RMM_HTML_COV_REPORT to OFF. You need to explicitly set it to ON to enable the HTML report.",
       "parentUuid": "00afc22f_2696f447",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 53
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1284020_92adc6e6",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "8c0ada86_da930a36",
       "range": {
         "startLine": 185,
         "startChar": 0,
@@ -436,6 +550,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7a2c7de_32150e65",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "502eb216_43b21ef4",
+      "range": {
+        "startLine": 230,
+        "startChar": 39,
+        "endLine": 230,
+        "endChar": 42
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d9ab0c5_4cc574b0",
@@ -473,6 +611,30 @@
       "side": 1,
       "message": "As discussed on a previous comment, I don\u0027t think this should go to commonconfigs.cmake. These are specific configs for the host_test variant, they are not common to all of them.",
       "parentUuid": "0d9ab0c5_4cc574b0",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 13
+      },
+      "revId": "8db2da07589c913c27e1ce81a58dd9f458846a46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bd71470_f3b5f9b8",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:00:08Z",
+      "side": 1,
+      "message": "moved to CoverageReport.cmake as per our discussion",
+      "parentUuid": "d94ef429_c66db8cb",
       "range": {
         "startLine": 19,
         "startChar": 0,
