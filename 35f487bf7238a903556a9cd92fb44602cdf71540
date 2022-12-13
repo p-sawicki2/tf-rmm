@@ -87,6 +87,24 @@
       "parentUuid": "a89ad3ec_198560d1",
       "revId": "35f487bf7238a903556a9cd92fb44602cdf71540",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1eecdf5_f07fe389",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:57:55Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "42f21f1a_8f748808",
+      "revId": "35f487bf7238a903556a9cd92fb44602cdf71540",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
