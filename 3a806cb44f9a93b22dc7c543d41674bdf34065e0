@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "905aeea3_ee7e4a06",
+        "filename": "cmake/Modules/ArmTargetLinkerScript.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "remove, this change should not be done.",
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57126f9d_88c42fc0",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "nit: these can be at start of the file and move macros below this.\n\ncould use `-` for the spacer in name.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 13
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80fa9d8c_01ccbfce",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 26
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "043a4b21_b838b793",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "rename to \"GCOVR_EXE_OPTION\" else this can be mistaken with previous variable.",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 24
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35630960_2e26b010",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "Change path to \n\nBIN_DIR/$\u003cCONFIG\u003e/coverage",
+      "range": {
+        "startLine": 123,
+        "startChar": 27,
+        "endLine": 123,
+        "endChar": 53
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd36c59e_e6e542c3",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "if (RMM_HTML_COV_REPORT) will cover both cases.",
+      "range": {
+        "startLine": 127,
+        "startChar": 2,
+        "endLine": 128,
+        "endChar": 45
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8efb8382_86f13b94",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "The target name is wrong here.\n\nPerhaps : create-coverage ? \n\nJust thinking about additional targets we have may have in future\n\ncurrently we have 2 classes of targets : check* , run*. The create* can be the 3rd class of target. What do you think ?",
+      "range": {
+        "startLine": 177,
+        "startChar": 33,
+        "endLine": 177,
+        "endChar": 48
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fc491a6_c0f5c017",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "stay within 80 col width if possible.",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 128
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "611bcbf6_47f92365",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-13T12:33:47Z",
+      "side": 1,
+      "message": "I may have commented on this before, but replace \"coverity\" with \"coverage\" everywhere. They are 2 different things.",
+      "range": {
+        "startLine": 226,
+        "startChar": 74,
+        "endLine": 226,
+        "endChar": 83
+      },
+      "revId": "3a806cb44f9a93b22dc7c543d41674bdf34065e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
