@@ -69,6 +69,24 @@
       "message": "do not remove.",
       "revId": "35f487bf7238a903556a9cd92fb44602cdf71540",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42f21f1a_8f748808",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-13T12:47:33Z",
+      "side": 0,
+      "message": "I misread one of your previous comments, I will reintroduce it",
+      "parentUuid": "a89ad3ec_198560d1",
+      "revId": "35f487bf7238a903556a9cd92fb44602cdf71540",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
