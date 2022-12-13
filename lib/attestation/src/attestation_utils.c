@@ -120,7 +120,7 @@ int attestation_heap_ctx_assign_pe(struct buffer_alloc_ctx *ctx)
 	return 0;
 }
 
-int attestation_heap_ctx_unassign_pe(struct buffer_alloc_ctx *ctx)
+int attestation_heap_ctx_unassign_pe(const struct buffer_alloc_ctx *ctx)
 {
 	assert(ctx != NULL);
 
