@@ -13,7 +13,7 @@
 #include <utils_def.h>
 
 /*
- * Local copy of the core boot manifest to be used during runtime.
+ * Local copy of the core boot manifest to be used during runtime
  */
 static struct rmm_core_manifest local_core_manifest;
 
@@ -24,19 +24,19 @@ static bool manifest_processed;
 
 void rmm_el3_ifc_process_boot_manifest(void)
 {
-	assert(is_mmu_enabled() == false);
-	assert(manifest_processed == false);
+	assert((manifest_processed == false) &&
+		(is_mmu_enabled() == false));
 
 	/*
 	 * The boot manifest is expected to be on the shared area.
 	 * Make a local copy of it.
 	 */
-	(void)memcpy(&local_core_manifest,
+	(void)memcpy((void *)&local_core_manifest,
 		     (void *)rmm_el3_ifc_get_shared_buf_pa(),
 		     sizeof(struct rmm_core_manifest));
 
-	flush_dcache_range((uintptr_t)(void *)&local_core_manifest,
-			 sizeof(local_core_manifest));
+	flush_dcache_range((uintptr_t)&local_core_manifest,
+				sizeof(local_core_manifest));
 
 	/*
 	 * Validate the Boot Manifest Version.
@@ -44,16 +44,11 @@ void rmm_el3_ifc_process_boot_manifest(void)
 	 */
 	if ((RMM_EL3_MANIFEST_GET_VERS_MAJOR(local_core_manifest.version)) >
 					RMM_EL3_MANIFEST_VERS_MAJOR) {
-		(void)monitor_call(SMC_RMM_BOOT_COMPLETE,
-				   E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED,
-				   0UL, 0UL, 0UL, 0UL, 0UL);
-		/* EL3 should never return back here */
-		panic();
+		report_fail_to_el3(E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED);
 	}
 
 	manifest_processed = true;
-	flush_dcache_range((uintptr_t)(void *)&manifest_processed,
-			 sizeof(bool));
+	flush_dcache_range((uintptr_t)&manifest_processed, sizeof(bool));
 }
 
 /* Return the raw value of the received boot manifest */
@@ -67,7 +62,17 @@ unsigned int rmm_el3_ifc_get_manifest_version(void)
 /* Return a pointer to the platform manifest */
 uintptr_t rmm_el3_ifc_get_plat_manifest_pa(void)
 {
-	assert((manifest_processed == true) && (is_mmu_enabled() == false));
+	assert((manifest_processed == true) &&
+		(is_mmu_enabled() == false));
 
 	return local_core_manifest.plat_data;
+}
+
+/* Return a pointer to the platform DRAM info setup by EL3 Firmware */
+struct dram_info *rmm_el3_ifc_get_dram_data_manifest_pa(void)
+{
+	assert((manifest_processed == true) &&
+		(is_mmu_enabled() == false));
+
+	return &local_core_manifest.plat_dram;
 }
