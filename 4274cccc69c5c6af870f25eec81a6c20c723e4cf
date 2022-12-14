@@ -390,6 +390,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f97b756_1fa72a9b",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T11:43:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d4678c7_4abf1251",
+      "range": {
+        "startLine": 233,
+        "startChar": 123,
+        "endLine": 233,
+        "endChar": 155
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9b1c0a0_c0d5ca00",
@@ -498,6 +522,30 @@
       "side": 1,
       "message": "I think we had firmware and documentation previously. I was thinking we could add another general category tools with specific details in (). Like line 45. This is also fine, perhaps we can think again when we need to modify this.",
       "parentUuid": "325f58c5_46f5b0b3",
+      "range": {
+        "startLine": 52,
+        "startChar": 21,
+        "endLine": 52,
+        "endChar": 38
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83bc2b96_adaae01b",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T11:43:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c141d7a_16fec275",
       "range": {
         "startLine": 52,
         "startChar": 21,
