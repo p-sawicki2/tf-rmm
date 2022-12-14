@@ -90,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc9cc18b_c17304fd",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 28
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T09:48:14Z",
+      "side": 1,
+      "message": "Yup, I know. But lets not add this for now because it would seem like a legal build target to get coverage statistics which it is not atm. Hence the preference to not add the build target.",
+      "parentUuid": "9095894b_4958cf06",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 9
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e0057d8b_94fa86ad",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 28
