@@ -118,6 +118,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b7774ba0_f40fd45e",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T04:36:42Z",
+      "side": 1,
+      "message": "Please revert to previous wording. This is because although today we have only a single \"defcfg\" per platform, it is possible to have multiple \"config\" for a platform in future.\n\nIn fact, we could have a host_testcfg which will be host_defcfg + HOST_VARIANT\u003dhost_test.",
+      "range": {
+        "startLine": 233,
+        "startChar": 123,
+        "endLine": 233,
+        "endChar": 155
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9b1c0a0_c0d5ca00",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T04:36:42Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 234,
+        "startChar": 67,
+        "endLine": 234,
+        "endChar": 94
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a2cd5088_c0db9c7d",
         "filename": "docs/getting_started/getting-started.rst",
         "patchSetId": 28
