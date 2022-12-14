@@ -30,10 +30,10 @@
 /* SMC_RMM_BOOT_COMPLETE return codes */
 #define E_RMM_BOOT_SUCCESS				(0)
 #define E_RMM_BOOT_UNKNOWN_ERROR			(-1)
-#define E_RMM_BOOT_VERSION_MISMATCH			(-2)
+#define E_RMM_BOOT_VERSION_NOT_VALID			(-2)
 #define E_RMM_BOOT_CPUS_OUT_OF_RANGE			(-3)
 #define E_RMM_BOOT_CPU_ID_OUT_OF_RANGE			(-4)
-#define E_RMM_BOOT_INVALID_SHARED_POINTER		(-5)
+#define E_RMM_BOOT_INVALID_SHARED_BUFFER		(-5)
 #define E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED	(-6)
 #define E_RMM_BOOT_MANIFEST_DATA_ERROR			(-7)
 
@@ -152,29 +152,63 @@ void rmm_el3_ifc_release_shared_buf(void);
  * Boot Manifest functions and structures.
  ****************************************************************************/
 
-/* Boot manifest core structure as per v0.1 */
+/* DRAM bank structure */
+struct dram_bank {
+	uintptr_t base;			/* Base address */
+	uint64_t size;			/* Size of bank */
+};
+
+/* DRAM layout info structure */
+struct dram_info {
+	uint64_t num_banks;		/* Number of DRAM banks */
+	struct dram_bank *banks;	/* Pointer to dram_banks[] */
+	uint64_t checksum;		/* Checksum of dram_info data */
+};
+
+/* Boot manifest core structure as per v0.2 */
 struct rmm_core_manifest {
-	uint32_t version;	/* Manifest version */
-	uintptr_t plat_data;	/* Manifest platform data */
+	uint32_t version;		/* Manifest version */
+	uint32_t padding;		/* RES0 */
+	uintptr_t plat_data;		/* Manifest platform data */
+	struct dram_info plat_dram;	/* Platform DRAM data */
 };
 
 COMPILER_ASSERT(offsetof(struct rmm_core_manifest, version) == 0);
 COMPILER_ASSERT(offsetof(struct rmm_core_manifest, plat_data) == 8);
 
 /*
- * Accessors to the Boot Manifest data.
+ * Accessors to the Boot Manifest data
  */
 unsigned int rmm_el3_ifc_get_manifest_version(void);
 
 /*
- * Return a pointer to the platform manifest data if setup by EL3 Firmware.
- *
- * This function must be called only after the core manifest has
+ * These functions must be called only after the core manifest has
  * been processed (See rmm_el3_ifc_process_boot_manifest()). Also, since
  * the shared buffer can be reclaimed for communication during rmm_main(), we
  * restrict this call to be allowed before the MMU is enabled by the platform.
  */
+/*
+ * Return a pointer to the platform manifest data if setup by EL3 Firmware
+ */
 uintptr_t rmm_el3_ifc_get_plat_manifest_pa(void);
+
+/*
+ * Validate DRAM data passed in plat_dram pointer.
+ *
+ * Args:
+ *	- max_num_banks:	Maximum number of platform's DRAM banks
+ *				supported.
+ *
+ * Return:
+ *	- For EL3 firmware with Boot manifest v0.2:
+ *	  pointer to the platform DRAM info structure setup by EL3 Firmware,
+ *	  or NULL in case of an DRAM data errors.
+ *	- For EL3 firmware with Boot manifest v0.1:
+ *	  aborts the boot process and returns to EL3 error code
+ *	  E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED.
+ */
+struct dram_info *rmm_el3_ifc_get_dram_data_validated_pa(
+					unsigned long max_num_banks);
 
 /****************************************************************************
  * RMM-EL3 Runtime APIs
@@ -231,5 +265,15 @@ static inline unsigned long rmm_el3_ifc_gtsi_undelegate(unsigned long addr)
 	return monitor_call(SMC_RMM_GTSI_UNDELEGATE, addr,
 				0UL, 0UL, 0UL, 0UL, 0UL);
 }
+
+/*
+ * Abort the boot process and return to EL3 FW reporting
+ * the ec error code.
+ *
+ * Args:
+ *	- ec:		SMC_RMM_BOOT_COMPLETE return code
+ */
+__dead2 void rmm_el3_ifc_report_fail_to_el3(uint64_t ec);
+
 #endif /* __ASSEMBLER__ */
 #endif /* RMM_EL3_IFC_H */
