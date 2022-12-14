@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbfd5426_b5ea8523",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "039876a6_1df813bb",
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c09839a0_08bcc479",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-12-14T04:31:27Z",
       "side": 1,
       "message": "thinking again, I think we can accomodate all build target  in 2 name spaces \"check*\" and \"run*\". Creating a new name space \"create*\" will be a source of naming confusion in future. So suggest \"run-coverage\" as the target name.",
+      "range": {
+        "startLine": 135,
+        "startChar": 20,
+        "endLine": 135,
+        "endChar": 35
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f9182d5_1bd32dab",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 28
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c09839a0_08bcc479",
       "range": {
         "startLine": 135,
         "startChar": 20,
@@ -112,6 +154,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4692ba8_5b4d4946",
+        "filename": "cmake/Modules/CoverageReport.cmake",
+        "patchSetId": 28
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc9cc18b_c17304fd",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 9
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0057d8b_94fa86ad",
@@ -135,6 +201,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cac588a5_787d78d5",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0057d8b_94fa86ad",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 47
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8af84230_4d264912",
@@ -148,6 +238,30 @@
       "writtenOn": "2022-12-14T04:31:27Z",
       "side": 1,
       "message": "remove as I am not convinced about adding a run target for host_build platform. The coverage should work but it does not need to be officially documented.",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 53
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "401e8847_b5eaf01e",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8af84230_4d264912",
       "range": {
         "startLine": 188,
         "startChar": 0,
@@ -206,6 +320,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "abf2b9f5_81121d45",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "What wording exactly do you want me to use here? Just remove the \"only available when RMM_CONFIG is set to host_defcfg\"?",
+      "parentUuid": "b7774ba0_f40fd45e",
+      "range": {
+        "startLine": 233,
+        "startChar": 123,
+        "endLine": 233,
+        "endChar": 155
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c520d883_a98962ab",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b93106a_e32cbabc",
+      "range": {
+        "startLine": 233,
+        "startChar": 15,
+        "endLine": 233,
+        "endChar": 24
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9b1c0a0_c0d5ca00",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 28
@@ -217,6 +379,30 @@
       "writtenOn": "2022-12-14T04:36:42Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 234,
+        "startChar": 67,
+        "endLine": 234,
+        "endChar": 94
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74f06df5_4a5cf419",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9b1c0a0_c0d5ca00",
       "range": {
         "startLine": 234,
         "startChar": 67,
@@ -252,6 +438,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "325f58c5_46f5b0b3",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this notation be inconsistent with the rest of the table?",
+      "parentUuid": "a2cd5088_c0db9c7d",
+      "range": {
+        "startLine": 52,
+        "startChar": 21,
+        "endLine": 52,
+        "endChar": 38
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a96e2d48_255f5c72",
         "filename": "docs/getting_started/getting-started.rst",
         "patchSetId": 28
@@ -263,6 +473,30 @@
       "writtenOn": "2022-12-14T04:31:27Z",
       "side": 1,
       "message": "... analysis depedancies\"",
+      "range": {
+        "startLine": 148,
+        "startChar": 17,
+        "endLine": 148,
+        "endChar": 22
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a71ae780_38ddfe6f",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a96e2d48_255f5c72",
       "range": {
         "startLine": 148,
         "startChar": 17,
@@ -296,6 +530,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "351f73be_e57d2f47",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "699803ab_edfb3f02",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 67
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd1138c5_a4ec197c",
@@ -319,6 +577,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84eec2aa_d0191ca0",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd1138c5_a4ec197c",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 18
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37c3d123_f2e48aae",
@@ -332,6 +614,30 @@
       "writtenOn": "2022-12-14T04:31:27Z",
       "side": 1,
       "message": "add \"sudo\"",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 3
+      },
+      "revId": "4274cccc69c5c6af870f25eec81a6c20c723e4cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c706ca54_440cd24f",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-14T10:57:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37c3d123_f2e48aae",
       "range": {
         "startLine": 163,
         "startChar": 0,
