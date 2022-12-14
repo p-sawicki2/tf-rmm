@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7af0b098_6d53c601",
+        "filename": "lib/attestation/src/attestation_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "looks like this argument can be removed.",
+      "range": {
+        "startLine": 123,
+        "startChar": 37,
+        "endLine": 123,
+        "endChar": 71
+      },
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "799145a1_d8b884dc",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "I think we can modify the refcount check between 0 and 512 (need to confirm).\n\n/* The refcount can be any number between 0 and (512) */",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 29
+      },
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65da71ea_e758ed62",
+        "filename": "lib/realm/include/status.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "maybe we should multiple with (signed)  here to remove the warning.",
+      "range": {
+        "startLine": 123,
+        "startChar": 23,
+        "endLine": 123,
+        "endChar": 36
+      },
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5170c0b1_7bc75ca6",
+        "filename": "lib/realm/include/status.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05a4abdf_598ac36f",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "should we add this to the declaration of COMPILER_ASSERT_ZERO ?",
+      "range": {
+        "startLine": 231,
+        "startChar": 2,
+        "endLine": 231,
+        "endChar": 37
+      },
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9be5103f_8812f0a3",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-12-14T16:56:19Z",
+      "side": 1,
+      "message": "perhaps this can be added to the definition of the macro so to avoid supressing the warning where it is used.",
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
