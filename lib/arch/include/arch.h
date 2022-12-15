@@ -183,7 +183,7 @@
 /* TODO verify that all the traps are enabled */
 #define HCR_FLAGS (HCR_FWB | HCR_E2H | HCR_RW | HCR_TSC | HCR_AMO | \
 	HCR_BSU_IS | HCR_IMO | HCR_FMO | HCR_PTW | HCR_SWIO | HCR_VM | \
-	HCR_TID3 | HCR_TEA)
+	HCR_TID3 | HCR_TEA | HCR_API | HCR_APK)
 
 #define HCR_EL2_INIT		(HCR_TGE | HCR_E2H | HCR_TEA)
 
@@ -621,20 +621,21 @@
 
 
 /* SCTLR definitions */
-#define SCTLR_EL1_EE		(UL(1) << 25)
-#define SCTLR_EL1_SPAN		(UL(1) << 23)
-#define SCTLR_EL1_EIS		(UL(1) << 22)
-#define SCTLR_EL1_nTWE		(UL(1) << 18)
-#define SCTLR_EL1_nTWI		(UL(1) << 16)
-#define SCTLR_EL1_EOS		(UL(1) << 11)
-#define SCTLR_EL1_nAA		(UL(1) << 6)
-#define SCTLR_EL1_CP15BEN	(UL(1) << 5)
-#define SCTLR_EL1_SA0		(UL(1) << 4)
-#define SCTLR_EL1_SA		(UL(1) << 3)
+#define SCTLR_ELx_EnIA		(UL(1) << 31)
+#define SCTLR_ELx_EE		(UL(1) << 25)
+#define SCTLR_ELx_SPAN		(UL(1) << 23)
+#define SCTLR_ELx_EIS		(UL(1) << 22)
+#define SCTLR_ELx_nTWE		(UL(1) << 18)
+#define SCTLR_ELx_nTWI		(UL(1) << 16)
+#define SCTLR_ELx_EOS		(UL(1) << 11)
+#define SCTLR_ELx_nAA		(UL(1) << 6)
+#define SCTLR_ELx_CP15BEN	(UL(1) << 5)
+#define SCTLR_ELx_SA0		(UL(1) << 4)
+#define SCTLR_ELx_SA		(UL(1) << 3)
 
-#define SCTLR_EL1_FLAGS (SCTLR_EL1_SPAN | SCTLR_EL1_EIS | SCTLR_EL1_nTWE | \
-	SCTLR_EL1_nTWI | SCTLR_EL1_EOS | SCTLR_EL1_nAA | SCTLR_EL1_CP15BEN | \
-	SCTLR_EL1_SA0 | SCTLR_EL1_SA)
+#define SCTLR_EL1_FLAGS (SCTLR_ELx_SPAN | SCTLR_ELx_EIS | SCTLR_ELx_nTWE | \
+	SCTLR_ELx_nTWI | SCTLR_ELx_EOS | SCTLR_ELx_nAA | SCTLR_ELx_CP15BEN | \
+	SCTLR_ELx_SA0 | SCTLR_ELx_SA)
 
 /* PMCR_EL0 Definitions */
 #define PMCR_EL0_LC_SHIFT		6
@@ -753,6 +754,10 @@
 				| MDCR_EL2_TPM_BIT \
 				| MDCR_EL2_TDA_BIT)
 
+/* Armv8.3 Pointer Authentication Registers */
+#define APIAKeyLo_EL1		S3_0_C2_C1_0
+#define APIAKeyHi_EL1		S3_0_C2_C1_1
+
 /* MPIDR definitions */
 #define MPIDR_EL1_AFF_MASK	0xFF
 #define MPIDR_EL1_AFF0_SHIFT	0
@@ -850,10 +855,14 @@
 #define ESR_EL2_SYSREG_ID_AA64MMFR1_EL1	SYSREG_ESR(3, 0, 0, 7, 1)
 #define ESR_EL2_SYSREG_ID_AA64MMFR2_EL1	SYSREG_ESR(3, 0, 0, 7, 2)
 
-#define ESR_EL2_SYSREG_ID_AA64ISAR1_GPI_SHIFT	28
-#define ESR_EL2_SYSREG_ID_AA64ISAR1_GPA_SHIFT	24
-#define ESR_EL2_SYSREG_ID_AA64ISAR1_API_SHIFT	8
-#define ESR_EL2_SYSREG_ID_AA64ISAR1_APA_SHIFT	4
+#define ID_AA64ISAR1_GPI_SHIFT	28
+#define ID_AA64ISAR1_GPI_MASK	0xf
+#define ID_AA64ISAR1_GPA_SHIFT	24
+#define ID_AA64ISAR1_GPA_MASK	0xf
+#define ID_AA64ISAR1_API_SHIFT	8
+#define ID_AA64ISAR1_API_MASK	0xf
+#define ID_AA64ISAR1_APA_SHIFT	4
+#define ID_AA64ISAR1_APA_MASK	0xf
 
 #define ESR_EL2_SYSREG_TIMERS_MASK		SYSREG_ESR(3, 3, 15, 12, 0)
 #define ESR_EL2_SYSREG_TIMERS			SYSREG_ESR(3, 3, 14, 0, 0)
