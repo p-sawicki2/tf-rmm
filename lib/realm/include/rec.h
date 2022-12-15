@@ -6,12 +6,14 @@
 #ifndef REC_H
 #define REC_H
 
+#define OFFSETOF_REC_PAUTH_FROM_REGS    248U
 #ifndef __ASSEMBLER__
 
 #include <arch.h>
 #include <attestation_token.h>
 #include <gic.h>
 #include <memory_alloc.h>
+#include <pauth.h>
 #include <pmu.h>
 #include <ripas.h>
 #include <simd.h>
@@ -121,6 +123,12 @@ struct rec {
 	bool runnable;
 
 	unsigned long regs[31];
+	/*
+	 * Structure for storing Pauth Key values for Realm
+	 * Should follow regs, sync with run-asm.S
+	 */
+	struct pauth_state pauth;
+
 	unsigned long pc;
 	unsigned long pstate;
 
@@ -201,7 +209,8 @@ struct rec {
 	bool host_call;
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
-
+COMPILER_ASSERT(offsetof(struct rec, pauth) - offsetof(struct rec, regs)
+		== OFFSETOF_REC_PAUTH_FROM_REGS);
 /*
  * Check that mpidr has a valid value with all fields except
  * Aff3[39:32]:Aff2[23:16]:Aff1[15:8]:Aff0[3:0] set to 0.

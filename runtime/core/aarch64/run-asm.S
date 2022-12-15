@@ -27,8 +27,24 @@ func run_realm
 
 	/* Push rec pointer to the stack for realm_exit */
 	stp	x0, xzr, [sp, #-16]!
+	/* Restore Realm PAuth Key */
+	ldp x2,  x3,  [x0, #OFFSETOF_REC_PAUTH_FROM_REGS]
+	msr APIAKeyLo_EL1, x2
+	msr APIAKeyHi_EL1, x3
+	ldp x2,  x3,  [x0, #(16 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	msr APIBKeyLo_EL1, x2
+	msr APIBKeyHi_EL1, x3
+	ldp x2,  x3,  [x0, #(32 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	msr APDAKeyLo_EL1, x2
+	msr APDAKeyHi_EL1, x3
+	ldp x2,  x3,  [x0, #(48 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	msr APDBKeyLo_EL1, x2
+	msr APDBKeyHi_EL1, x3
+	ldp x2,  x3,  [x0, #(64 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	msr APGAKeyLo_EL1, x2
+	msr APGAKeyHi_EL1, x3
 
-	/* load realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* x0 = rec + (offsetof(rec, rec->regs[0]) */
 	ldp	x2,  x3,  [x0, #(16 * 1)]
 	ldp	x4,  x5,  [x0, #(16 * 2)]
 	ldp	x6,  x7,  [x0, #(16 * 3)]
@@ -61,7 +77,7 @@ func realm_exit
 	/* Recover the rec pointer */
 	ldr	x1, [sp, #16]
 
-	/* Store realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* Store realm GPRs  x1 = rec + (offsetof(rec, rec->regs[0]) */
 	stp	x2,  x3,  [x1, #(16 * 1)]
 	stp	x4,  x5,  [x1, #(16 * 2)]
 	stp	x6,  x7,  [x1, #(16 * 3)]
@@ -79,8 +95,27 @@ func realm_exit
 	str	x30,      [x1, #(16 * 15)]
 
 	/* x0 and x1 as stored by el2_vectors */
-	ldp	x2, x3,	  [sp]
-	stp	x2, x3,   [x1, #(16 * 0)]
+	ldp     x2, x3,   [sp]
+	stp     x2, x3,   [x1, #(16 * 0)]
+
+	/* Same Realm PAuth key, restore RMM PAuth key */
+	mrs x2, APIAKeyLo_EL1
+	mrs x3, APIAKeyHi_EL1
+	stp x2, x3, [x1, #OFFSETOF_REC_PAUTH_FROM_REGS]
+	mrs x2, APIBKeyLo_EL1
+	mrs x3, APIBKeyHi_EL1
+	stp x2, x3, [x1, #(16 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	mrs x2, APDAKeyLo_EL1
+	mrs x3, APDAKeyHi_EL1
+	stp x2, x3, [x1, #(32 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	mrs x2, APDBKeyLo_EL1
+	mrs x3, APDBKeyHi_EL1
+	stp x2, x3, [x1, #(48 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+	mrs x2, APGAKeyLo_EL1
+	mrs x3, APGAKeyHi_EL1
+	stp x2, x3, [x1, #(64 + OFFSETOF_REC_PAUTH_FROM_REGS)]
+
+        bl restore_rmm_pauth_regs
 
 	/* Move sp to the realm regs */
 	add	sp, sp, #32
