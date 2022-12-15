@@ -11,11 +11,13 @@ target_link_libraries(rmm-lib-arch
 
 target_include_directories(rmm-lib-arch
     PUBLIC "include"
-	   "include/${RMM_ARCH}")
+	   "include/${RMM_ARCH}"
+    PRIVATE "src/${RMM_ARCH}")
 
 target_sources(rmm-lib-arch
         PRIVATE "src/arch_features.c"
                 "src/pmu.c"
+                "src/pauth_core.c"
                 "src/simd.c")
 
 if(NOT RMM_ARCH STREQUAL fake_host)
