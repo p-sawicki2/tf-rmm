@@ -11,6 +11,7 @@ target_link_libraries(rmm-lib-timers
             rmm-lib-common
             rmm-lib-gic
             rmm-lib-measurement
+            rmm-lib-pauth
             rmm-lib-realm
             rmm-lib-smc
             rmm-lib-debug
