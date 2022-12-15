@@ -12,6 +12,7 @@
 #include <attestation_token.h>
 #include <gic.h>
 #include <memory_alloc.h>
+#include <pauth.h>
 #include <pmu.h>
 #include <ripas.h>
 #include <simd.h>
@@ -121,6 +122,12 @@ struct rec {
 	bool runnable;
 
 	unsigned long regs[31];
+
+	/*
+	 * Structure for storing Pauth Key values for Realm
+	 */
+	struct pauth_state pauth;
+
 	unsigned long pc;
 	unsigned long pstate;
 
