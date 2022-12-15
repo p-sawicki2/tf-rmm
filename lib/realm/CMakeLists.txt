@@ -20,13 +20,14 @@ target_compile_definitions(rmm-lib-realm
     PUBLIC "VIRT_ADDR_SPACE_SIZE=(1ULL << ULL(${VIRT_ADDR_SPACE_WIDTH}))")
 
 target_link_libraries(rmm-lib-realm
-    PRIVATE rmm-lib-arch
+    PRIVATE rmm-lib-allocator
+            rmm-lib-arch
+            rmm-lib-attestation
             rmm-lib-common
             rmm-lib-debug
             rmm-lib-gic
             rmm-lib-xlat
-            rmm-lib-allocator
-            rmm-lib-attestation
+            rmm-lib-pauth
             rmm-platform)
 
 target_link_libraries(rmm-lib-realm
