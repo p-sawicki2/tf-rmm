@@ -27,8 +27,13 @@ func run_realm
 
 	/* Push rec pointer to the stack for realm_exit */
 	stp	x0, xzr, [sp, #-16]!
+	/* Save RMM PAuth key, restore Realm PAuth Key */
+	bl save_rmm_pauth_regs
+	ldp x2,  x3,  [x0, #(8 * 31)] /* offsetof rec, pauth*/
+	msr APIAKeyLo_EL1, x2
+	msr APIAKeyHi_EL1, x3
 
-	/* load realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* x0 = rec + (offsetof(rec, rec->regs[0]) */
 	ldp	x2,  x3,  [x0, #(16 * 1)]
 	ldp	x4,  x5,  [x0, #(16 * 2)]
 	ldp	x6,  x7,  [x0, #(16 * 3)]
@@ -61,7 +66,7 @@ func realm_exit
 	/* Recover the rec pointer */
 	ldr	x1, [sp, #16]
 
-	/* Store realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* Store realm GPRs  x1 = rec + (offsetof(rec, rec->regs[0]) */
 	stp	x2,  x3,  [x1, #(16 * 1)]
 	stp	x4,  x5,  [x1, #(16 * 2)]
 	stp	x6,  x7,  [x1, #(16 * 3)]
@@ -79,8 +84,15 @@ func realm_exit
 	str	x30,      [x1, #(16 * 15)]
 
 	/* x0 and x1 as stored by el2_vectors */
-	ldp	x2, x3,	  [sp]
-	stp	x2, x3,   [x1, #(16 * 0)]
+        ldp     x2, x3,   [sp]
+        stp     x2, x3,   [x1, #(16 * 0)]
+
+        /* Same Realm PAuth key, restore RMM PAuth key */
+        mrs x2, APIAKeyLo_EL1
+        mrs x3, APIAKeyHi_EL1
+        stp x2, x3, [x1, #(8 * 31)] /* offsetof rec, pauth*/
+
+        bl restore_rmm_pauth_regs
 
 	/* Move sp to the realm regs */
 	add	sp, sp, #32
@@ -96,7 +108,7 @@ func realm_exit
 	ldp	x25, x26, [sp, #(16 * 3)]
 	ldp	x27, x28, [sp, #(16 * 4)]
 	ldp	x29, x30, [sp, #(16 * 5)]
-	add	sp, sp, #(16 * 6)
+	add     sp, sp, #(16 * 6)
 
 	ret
 endfunc realm_exit
