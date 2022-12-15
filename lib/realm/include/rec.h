@@ -98,6 +98,7 @@ struct ns_state {
 	struct fpu_state *fpu; /* FPU/SVE saved lazily. */
 	struct sve_state *sve;
 	struct pmu_state *pmu;
+	struct pauth_state *pauth;
 } __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
 
 /*
@@ -160,6 +161,9 @@ struct rec {
 
 	/* Structure for storing FPU/SIMD context for Realm */
 	struct rec_fpu_context fpu_ctx;
+
+	/* Structure for storing Pauth Key values */
+	struct pauth_state *pauth;
 
 	/* Pointer to per-cpu non-secure state */
 	struct ns_state *ns;
