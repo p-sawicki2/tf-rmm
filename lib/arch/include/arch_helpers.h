@@ -86,12 +86,12 @@ void flush_dcache_range(uintptr_t addr, size_t size);
 void clean_dcache_range(uintptr_t addr, size_t size);
 void inv_dcache_range(uintptr_t addr, size_t size);
 
-#define is_dcache_enabled() ((read_sctlr_el2() & SCTLR_EL2_C) != 0U)
+#define is_dcache_enabled() ((read_sctlr_el2() & SCTLR_ELx_C) != 0U)
 
 /*******************************************************************************
  * MMU management
  ******************************************************************************/
-#define is_mmu_enabled() ((read_sctlr_el2() & SCTLR_EL2_M) != 0U)
+#define is_mmu_enabled() ((read_sctlr_el2() & SCTLR_ELx_M) != 0U)
 
 /*******************************************************************************
  * FPU management
@@ -462,5 +462,8 @@ DEFINE_RENAME_SYSREG_RW_FUNCS(tfsre0_el1, TFSRE0_EL1)
 DEFINE_RENAME_SYSREG_RW_FUNCS(tfsr_el1, TFSR_EL1)
 DEFINE_RENAME_SYSREG_RW_FUNCS(rgsr_el1, RGSR_EL1)
 DEFINE_RENAME_SYSREG_RW_FUNCS(gcr_el1, GCR_EL1)
+
+/* Armv8.5 Random Number Register */
+DEFINE_RENAME_SYSREG_READ_FUNC(rndr, RNDR)
 
 #endif /* ARCH_HELPERS_H */

@@ -27,7 +27,8 @@ target_link_libraries(rmm-lib-realm
             rmm-lib-xlat
             rmm-lib-allocator
             rmm-lib-attestation
-            rmm-platform)
+            rmm-platform
+            rmm-lib-pauth)
 
 target_link_libraries(rmm-lib-realm
     PUBLIC rmm-lib-measurement
