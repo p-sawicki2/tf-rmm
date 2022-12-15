@@ -14,6 +14,7 @@ target_link_libraries(rmm-lib
               rmm-lib-debug
               rmm-lib-gic
               rmm-lib-measurement
+              rmm-lib-pauth
               rmm-lib-realm
               rmm-lib-rmm_el3_ifc
               rmm-lib-smc
@@ -29,6 +30,7 @@ add_subdirectory("common")
 add_subdirectory("debug")
 add_subdirectory("gic")
 add_subdirectory("measurement")
+add_subdirectory("pauth")
 add_subdirectory("realm")
 add_subdirectory("smc")
 add_subdirectory("rmm_el3_ifc")
