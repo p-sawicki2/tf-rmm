@@ -37,6 +37,13 @@ func rmm_handler
 	ldp	x3, x4, [sp], #16
 	ldp	x5, lr, [sp], #16
 
+	/*
+	 * EL3 saves pointer authentication keys when entering by SMC.
+	 * Although prefer clearing the keys to be on the safe side.
+	 */
+	msr APIAKeyLo_EL1, xzr
+	msr APIAKeyHi_EL1, xzr
+
 	smc	#0
 
 	/* Continue the rmm handling loop */
