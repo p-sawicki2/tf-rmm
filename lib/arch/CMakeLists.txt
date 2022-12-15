@@ -16,6 +16,7 @@ target_include_directories(rmm-lib-arch
 target_sources(rmm-lib-arch
         PRIVATE "src/arch_features.c"
                 "src/pmu.c"
+                "src/pauth_core.c"
                 "src/simd.c")
 
 if(NOT RMM_ARCH STREQUAL fake_host)
