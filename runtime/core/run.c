@@ -12,6 +12,7 @@
 #include <exit.h>
 #include <fpu_helpers.h>
 #include <pmu.h>
+#include <pauth.h>
 #include <rec.h>
 #include <run.h>
 #include <smc-rmi.h>
@@ -19,6 +20,11 @@
 #include <timers.h>
 
 static struct ns_state g_ns_data[MAX_CPUS];
+
+static struct pauth_state g_pauth_data[MAX_CPUS];
+
+static struct pauth_state rec_pauth_data[MAX_CPUS];
+
 static uint8_t g_sve_data[MAX_CPUS][sizeof(struct sve_state)]
 		__aligned(sizeof(__uint128_t));
 static struct pmu_state g_pmu_data[MAX_CPUS];
@@ -125,6 +131,7 @@ static void save_realm_state(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		pmu_save_state(rec->aux_data.pmu,
 				rec->realm_info.pmu_num_cnts);
 	}
+	save_pauth_regs(rec->pauth);
 }
 
 static void restore_sysreg_state(struct sysreg_state *sysregs)
@@ -204,6 +211,9 @@ static void restore_realm_state(struct rec *rec)
 
 	gic_restore_state(&rec->sysregs.gicstate);
 
+	/* Restores Pauth registers after coming from Realm State */
+	restore_pauth_regs(rec->pauth);
+
 	configure_realm_stage2(rec);
 
 	if (rec->realm_info.pmu_enabled) {
@@ -232,6 +242,8 @@ static void save_ns_state(struct rec *rec)
 		/* Save PMU context */
 		pmu_save_state(ns_state->pmu, rec->realm_info.pmu_num_cnts);
 	}
+	/* Saves Pauth key registers before switching to Realm state */
+	save_pauth_regs(ns_state->pauth);
 }
 
 static void restore_ns_state(struct rec *rec)
@@ -254,6 +266,8 @@ static void restore_ns_state(struct rec *rec)
 		pmu_restore_state(ns_state->pmu,
 				  rec->realm_info.pmu_num_cnts);
 	}
+	/* Restores Pauth after coming from Realm State */
+	restore_pauth_regs(ns_state->pauth);
 }
 
 static void activate_events(struct rec *rec)
@@ -323,6 +337,11 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	ns_state->pmu = &g_pmu_data[cpuid];
+	ns_state->pauth = &g_pauth_data[cpuid];
+	rec->pauth = &rec_pauth_data[cpuid];
+
+	/* Disable Pauth before saving Pauth registers */
+	pauth_disable_el2();
 
 	save_ns_state(rec);
 	restore_realm_state(rec);
@@ -394,4 +413,9 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	attestation_heap_ctx_unassign_pe();
 	/* Unmap auxiliary granules */
 	unmap_rec_aux(rec_aux, rec->num_rec_aux);
+
+	pauth_enable_el2();
+
+	/* Clear Pauth context after restoring Pauth registers */
+	ns_state->pauth = NULL;
 }
