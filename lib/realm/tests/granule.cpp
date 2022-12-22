@@ -120,6 +120,8 @@ TEST_GROUP(granule) {
 			random_seed = (int)time(NULL);
 			srand(random_seed);
 		}
+
+		test_helper_expect_assert(false);
 	}
 
 	TEST_TEARDOWN()
@@ -161,12 +163,72 @@ TEST(granule, addr_to_granule_TC1)
 		granule = addr_to_granule(addr);
 		POINTERS_EQUAL(expected_granule, granule);
 	}
+}
 
-	/*
-	 * addr_to_granule() asserts if the addr is a NULL pointer, if the
-	 * alignment is not correct or if the address is outside of the valid
-	 * range, so skip these tests.
-	 */
+TEST(granule, addr_to_granule_TC2)
+{
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Verify that addr_to_granule() asserts when the address is a
+	 * NULL pointer
+	 ******************************************************************/
+
+	test_helper_expect_assert(true);
+	(void)addr_to_granule((unsigned long)NULL);
+	test_helper_fail_if_no_assertion();
+}
+
+TEST(granule, addr_to_granule_TC3)
+{
+	unsigned long addr = get_rand_granule_addr();
+
+	/******************************************************************
+	 * TEST CASE 3:
+	 *
+	 * Verify that addr_to_granule() asserts with an unaligned address
+	 ******************************************************************/
+
+	addr += get_rand_in_range(1, GRANULE_SIZE - 2);
+	test_helper_expect_assert(true);
+	(void)addr_to_granule(addr);
+	FAIL_TEST("Expected assertion did not happen");
+}
+
+TEST(granule, addr_to_granule_TC4)
+{
+	unsigned long addr = 0;
+
+	/******************************************************************
+	 * TEST CASE 4:
+	 *
+	 * Verify that addr_to_granule() asserts with an address below
+	 * the valid range
+	 ******************************************************************/
+
+	/* Check an address below the valid range */
+	(void)get_out_of_range_granule(&addr, false);
+	test_helper_expect_assert(true);
+	(void)addr_to_granule(addr);
+	test_helper_fail_if_no_assertion();
+}
+
+TEST(granule, addr_to_granule_TC5)
+{
+	unsigned long addr;
+
+	/******************************************************************
+	 * TEST CASE 5:
+	 *
+	 * Verify that addr_to_granule() asserts with an address over
+	 * the valid range
+	 ******************************************************************/
+
+	/* Check an address over the valid range */
+	(void)get_out_of_range_granule(&addr, true);
+	test_helper_expect_assert(true);
+	(void)addr_to_granule(addr);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, granule_addr_TC1)
@@ -201,11 +263,38 @@ TEST(granule, granule_addr_TC1)
 		CHECK_EQUAL(0, granule->state);
 		CHECK_EQUAL(0, granule->lock.val);
 	}
+}
 
-	/*
-	 * granule_addr() asserts if the pointer to granule is NULL of if
-	 * the granule index > NR_GRANULES, so skip these tests.
-	 */
+TEST(granule, granule_addr_TC2)
+{
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Verify that granule_addr() asserts with a NULL address
+	 ******************************************************************/
+
+	test_helper_expect_assert(true);
+	(void)granule_addr(NULL);
+	test_helper_fail_if_no_assertion();
+}
+
+TEST(granule, granule_addr_TC3)
+{
+	struct granule *granule;
+	unsigned int idx = get_last_granule_idx();
+
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Verify that granule_addr() asserts if the granule index >=
+	 * gNR_GRANULES
+	 ******************************************************************/
+
+	idx += get_rand_in_range(1, 10);
+	granule = get_granule_struct_base() + idx;
+	test_helper_expect_assert(true);
+	(void)granule_addr(granule);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, granule_refcount_read_relaxed_TC1)
@@ -591,12 +680,58 @@ TEST(granule, find_lock_two_granules_TC5)
 			POINTERS_EQUAL(NULL, g2);
 		} /* granule 2 state. */
 	} /* granule 1 state. */
+}
 
-	/*
-	 * find_lock_two_granules() will assert if any of the references
-	 * to the granule pointers passed as arguments is NULL, so skip that
-	 * testcase.
-	 */
+TEST(granule, find_lock_two_granules_TC6)
+{
+	struct granule *granule;
+	unsigned long addr1, addr2;
+
+	/******************************************************************
+	 * TEST CASE 6:
+	 *
+	 * Verify that find_lock_two_granules() assert when the first
+	 * reference to a granule pointer is NULL.
+	 ******************************************************************/
+
+	/* Get random PAs for two different granules */
+	do {
+		addr1 = get_rand_granule_addr();
+		addr2 = get_rand_granule_addr();
+	} while (addr1 == addr2);
+
+	granule = NULL;
+
+	test_helper_expect_assert(true);
+	(void)find_lock_two_granules(addr1, GRANULE_STATE_DELEGATED, NULL,
+				     addr2, GRANULE_STATE_DELEGATED, &granule);
+	test_helper_fail_if_no_assertion();
+}
+
+TEST(granule, find_lock_two_granules_TC7)
+{
+	struct granule *granule;
+	unsigned long addr1, addr2;
+
+	/******************************************************************
+	 * TEST CASE 7:
+	 *
+	 * Verify that find_lock_two_granules() assert when the second
+	 * reference to a granule pointer is NULL.
+	 ******************************************************************/
+
+	/* Get random PAs for two different granules */
+	do {
+		addr1 = get_rand_granule_addr();
+		addr2 = get_rand_granule_addr();
+	} while (addr1 == addr2);
+
+	granule = NULL;
+
+	test_helper_expect_assert(true);
+	(void)find_lock_two_granules(addr1, GRANULE_STATE_DELEGATED, &granule,
+				     addr2, GRANULE_STATE_DELEGATED, NULL);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, find_lock_granule_TC1)
@@ -750,9 +885,41 @@ TEST(granule, granule_lock_TC1)
 	 * In addition to that, granule_lock() also expects:
 	 * 	* That the expected state belongs to enum granule_state,
 	 * 	  so it doesn't perform any checks on that either.
-	 *	* That we are certain of the type of granule we want to lock
-	 *	  so it will assert if the new state is incorrect.
 	 */
+}
+
+TEST(granule, granule_lock_TC2)
+{
+	struct granule *granule;
+	unsigned int state, expected;
+	unsigned long addr = (get_rand_granule_idx() * GRANULE_SIZE) +
+					host_util_get_granule_base();
+
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Verify that granule_lock() asserts when the expected state of
+	 * the granule does not mach the current one.
+	 ******************************************************************/
+
+	granule = addr_to_granule(addr);
+	do {
+		state = get_rand_in_range((int)GRANULE_STATE_NS,
+					  (int)GRANULE_STATE_LAST);
+		expected = get_rand_in_range((int)GRANULE_STATE_NS,
+					     (int)GRANULE_STATE_LAST);
+	} while (state == expected);
+
+	/* Ensure the granule is unlocked */
+	granule_unlock(granule);
+
+	/* Set the granule state */
+	granule_set_state(granule, (enum granule_state)state);
+
+	test_helper_expect_assert(true);
+	/* Lock the granule */
+	granule_lock(granule, (enum granule_state)expected);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, granule_lock_on_state_match_TC1)
@@ -1177,10 +1344,26 @@ TEST(granule, granule_refcount_dec_TC2)
 	/*
 	 * __granule_refcount_dec() doesn't make any check to validate
 	 * the granule pointer passed, so skip the testcase for NULL pointer.
-	 *
-	 * It also asserts in case the granule refcount is lower than the val
-	 * passed, so skip this test too.
 	 */
+}
+
+TEST(granule, granule_refcount_dec_TC23)
+{
+	unsigned long address = get_rand_granule_addr();
+	struct granule *granule = find_granule(address);
+	unsigned long val = (unsigned long)get_rand_in_range(10, INT_MAX);
+
+	/******************************************************************
+	 * TEST CASE 3:
+	 *
+	 * Verify that granule_refcount_dec() asserts when the granule
+	 * refcount is lower than the value passed.
+	 ******************************************************************/
+
+	__granule_refcount_inc(granule, val);
+	test_helper_expect_assert(true);
+	__granule_refcount_dec(granule, val + 1UL);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, atomic_granule_get_TC1)
@@ -1318,10 +1501,24 @@ TEST(granule, atomic_granule_put_release_TC2)
 	/*
 	 * atomic_granule_put_release() doesn't make any check to validate
 	 * the granule pointer passed, so skip the testcase for NULL pointer.
-	 *
-	 * Also, if refcount reaches a value < 0, atomic_granule_put_release()
-	 * will assert, so skip this test too.
 	 */
+}
+
+TEST(granule, atomic_granule_put_release_TC3)
+{
+	unsigned long address = get_rand_granule_addr();
+	struct granule *granule = find_granule(address);
+
+	/******************************************************************
+	 * TEST CASE 3:
+	 *
+	 * Verify that atomic_granule_put_release() asserts if refcount
+	 * reaches a value < 0;
+	 ******************************************************************/
+
+	test_helper_expect_assert(true);
+	atomic_granule_put_release(granule);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, find_lock_unused_granule_TC1)
@@ -1538,6 +1735,19 @@ TEST(granule, granule_memzero_TC1)
 	 * granule_memzero() asserts if the granule is NULL, so skip this
 	 * testcase.
 	 */
+}
+
+TEST(granule, granule_memzero_TC2)
+{
+	/***************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Verify that granule_memzero() asserts if granule is NULL
+	 ***************************************************************/
+
+	test_helper_expect_assert(true);
+	granule_memzero(NULL, SLOT_DELEGATED);
+	test_helper_fail_if_no_assertion();
 }
 
 TEST(granule, granule_memzero_mapped_TC1)
