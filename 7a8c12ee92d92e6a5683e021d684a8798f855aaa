@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a793d6fe_41de92e2",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-22T13:15:25Z",
+      "side": 1,
+      "message": "Replace by test_helper_fail_if_no_assertion();",
+      "revId": "7a8c12ee92d92e6a5683e021d684a8798f855aaa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
