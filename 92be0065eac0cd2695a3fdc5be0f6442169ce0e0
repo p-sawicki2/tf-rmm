@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bd67533_2f8d8e74",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4b38caa8_c8b74469",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f43a9b7b_f129dc87",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-12-23T15:52:16Z",
       "side": 1,
       "message": "It is not clear to me why do you need an array here. Shouldn\u0027t this be just a register? Each REC contains a pauth_state structure, where they store the pauth context for that REC. Whenever a REC is assigned to a PE, the pauth context on that REC is restored to that PE. And the same goes for NS.\n\ng_pauth_data \u0026 rec_pauth_data, in run.c, are arrays indexed by cpuid. Those are restored/saved to the REC and NS contexts before and after entering the REC (as per this patch). You already have a pauth context per CPU for both Realms and NS, which are stored int g_pauth_data and rec_pauth_data. You don\u0027t need to duplicate that here.\n\nAlso, Aligning with one of Alexei\u0027s comments, shouldn\u0027t you also take care of the rest of pauth related registers such as  APDAKey_EL1, APDBKey_EL1, APIBKey_EL1, APGAKey_EL1?",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ec12a14_992e5f42",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Yeah that makes sense. I seemed to have missed that. I\u0027ll make the structure entry to a register. I was told by Soby that APIAKey_EL1 should be enough at the beginning when I took up this task.",
+      "parentUuid": "f43a9b7b_f129dc87",
       "range": {
         "startLine": 10,
         "startChar": 24,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "449dc09b_ebda0a42",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "946bee57_658c69b9",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 63
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad5eb886_6c95a26d",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-12-23T15:52:16Z",
       "side": 1,
       "message": "nit: Not sure we need an assert here. It might be redundant as the rmm_el3_ifc library already validated the CPU IDs. Usually assert() is mostly to validate arguments received by the API.\n\nIt doesn\u0027t harm having it here, though. Just saying.",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbaa3220_81984d8c",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ad5eb886_6c95a26d",
       "range": {
         "startLine": 22,
         "startChar": 1,
@@ -110,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "965ba0e9_12e981a0",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b7a05848_c9d99193",
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c57ddab_8d0cbfa7",
@@ -123,6 +237,30 @@
       "writtenOn": "2022-12-23T15:52:16Z",
       "side": 1,
       "message": "nit: This name feels a bit misleading to me: Maybe something like pauth_disable_instr_trap would be a better description?",
+      "range": {
+        "startLine": 74,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f74557fa_03607ae5",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6c57ddab_8d0cbfa7",
       "range": {
         "startLine": 74,
         "startChar": 5,
@@ -156,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e486ef01_e86b2916",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2ebde020_6fef1a40",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40866930_3c8b27b9",
@@ -169,6 +331,30 @@
       "writtenOn": "2022-12-23T15:52:16Z",
       "side": 1,
       "message": "Looks like you only enable pauth for el2 here, after a realm has exited. Shouldn\u0027t you enable it as well when RMM is booting up? I couldn\u0027t find any other place where this is enabled.",
+      "range": {
+        "startLine": 381,
+        "startChar": 1,
+        "endLine": 381,
+        "endChar": 17
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb3d0f5_0d6beae3",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-23T16:08:16Z",
+      "side": 1,
+      "message": "lib/pauth/src/aarch64/pauth_arch.S pauth_init_enable() is where I create rmm keys and enable pauth for el2",
+      "parentUuid": "40866930_3c8b27b9",
       "range": {
         "startLine": 381,
         "startChar": 1,
