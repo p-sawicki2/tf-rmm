@@ -93,8 +93,7 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 		mask = 0UL;
 	}
 
-	ARRAY_WRITE(rec->regs, rt, read_idreg(idreg) & ~mask);
-
+	rec->regs[rt] = read_idreg(idreg) & ~mask;
 	return true;
 }
 
@@ -146,15 +145,13 @@ static const struct sysreg_handler sysreg_handlers[] = {
 static unsigned long get_sysreg_write_value(struct rec *rec, unsigned long esr)
 {
 	unsigned int rt = esr_sysreg_rt(esr);
-	unsigned long val;
 
 	/* Handle reads from XZR register */
 	if (rt == 31U) {
 		return 0UL;
 	}
 
-	ARRAY_READ(rec->regs, rt, val);
-	return val;
+	return rec->regs[rt];
 }
 
 static void emulate_sysreg_access_ns(struct rec *rec, struct rmi_rec_exit *rec_exit,
@@ -202,7 +199,7 @@ bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	 * Handle writes to XZR register.
 	 */
 	if (!ESR_EL2_SYSREG_IS_WRITE(esr) && (rt != 31U)) {
-		ARRAY_WRITE(rec->regs, rt, 0UL);
+		rec->regs[rt] = 0UL;
 	}
 
 	sysreg = esr & ESR_EL2_SYSREG_MASK;
