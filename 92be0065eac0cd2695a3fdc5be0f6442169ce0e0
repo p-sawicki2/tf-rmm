@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b38caa8_c8b74469",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "nit: You can combine public and private directories inside the same target_include_directories. No need to have two",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f43a9b7b_f129dc87",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "It is not clear to me why do you need an array here. Shouldn\u0027t this be just a register? Each REC contains a pauth_state structure, where they store the pauth context for that REC. Whenever a REC is assigned to a PE, the pauth context on that REC is restored to that PE. And the same goes for NS.\n\ng_pauth_data \u0026 rec_pauth_data, in run.c, are arrays indexed by cpuid. Those are restored/saved to the REC and NS contexts before and after entering the REC (as per this patch). You already have a pauth context per CPU for both Realms and NS, which are stored int g_pauth_data and rec_pauth_data. You don\u0027t need to duplicate that here.\n\nAlso, Aligning with one of Alexei\u0027s comments, shouldn\u0027t you also take care of the rest of pauth related registers such as  APDAKey_EL1, APDBKey_EL1, APIBKey_EL1, APGAKey_EL1?",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946bee57_658c69b9",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "nit: First line on a multiline comment is only \"\\*\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 63
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad5eb886_6c95a26d",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "nit: Not sure we need an assert here. It might be redundant as the rmm_el3_ifc library already validated the CPU IDs. Usually assert() is mostly to validate arguments received by the API.\n\nIt doesn\u0027t harm having it here, though. Just saying.",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7a05848_c9d99193",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "Same as my comment above",
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c57ddab_8d0cbfa7",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "nit: This name feels a bit misleading to me: Maybe something like pauth_disable_instr_trap would be a better description?",
+      "range": {
+        "startLine": 74,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ebde020_6fef1a40",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "For consistency, these two lines might be placed after the call to plat_enable_mmu_el2() so the sequence for cold and warm boot would be the same\n\n(plat_warmboot_setup() is also called at the end of plat_setup() so the sequence in both cases would be exactly the same)",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40866930_3c8b27b9",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-23T15:52:16Z",
+      "side": 1,
+      "message": "Looks like you only enable pauth for el2 here, after a realm has exited. Shouldn\u0027t you enable it as well when RMM is booting up? I couldn\u0027t find any other place where this is enabled.",
+      "range": {
+        "startLine": 381,
+        "startChar": 1,
+        "endLine": 381,
+        "endChar": 17
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
