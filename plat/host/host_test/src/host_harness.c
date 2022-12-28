@@ -5,9 +5,8 @@
 
 
 #include <buffer.h>
-#include <host_harness.h>
-#include <test_helpers.h>
 #include <test_private.h>
+#include <utils_def.h>
 
 /*
  * Harness corresponding to CB_BUFFER_MAP.
@@ -33,4 +32,9 @@ void host_buffer_arch_unmap(void *buf)
 	if (cb != NULL) {
 		cb(buf);
 	}
+}
+
+__dead2 void panic(void)
+{
+	test_private_panic();
 }
