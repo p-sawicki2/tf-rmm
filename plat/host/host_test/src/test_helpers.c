@@ -11,6 +11,7 @@
 #include <platform_api.h>
 #include <rmm_el3_ifc.h>
 #include <string.h>
+#include <utils_def.h>
 #include <xlat_tables.h>
 
 /* Implemented in init.c and needed here */
@@ -30,6 +31,10 @@ void rmm_main(void);
 static char assert_check[CHECK_SIZE + 1U];
 static bool assert_expected;
 static bool asserted;
+
+/* Panic control variables */
+static bool panic_expected;
+static bool panicked;
 
 static unsigned char el3_rmm_shared_buffer[PAGE_SIZE] __aligned(PAGE_SIZE);
 
@@ -219,4 +224,35 @@ void test_helper_fail_if_no_assertion(void)
 		assert_check[0] = '\0';
 		assert_expected = false;
 	}
+}
+
+void test_helper_expect_panic(bool expected)
+{
+	panicked = false;
+	panic_expected = expected;
+}
+
+void test_helper_fail_if_no_panic(void)
+{
+	if (panicked == false) {
+		cpputest_ifc_fail_test("Expected panic() did not happen");
+	} else {
+		panicked = false;
+		panic_expected = false;
+	}
+}
+
+/***************************************************************************
+ * Private helpers used internally by the platform layer.
+ **************************************************************************/
+
+__dead2 void test_private_panic(void)
+{
+	if (panic_expected == true) {
+		panic_expected = false;
+		VERBOSE("Excpected call to panic()\n");
+		cpputest_ifc_pass_test();
+	}
+
+	cpputest_ifc_fail_test("Unexpected call to panic()\n");
 }
