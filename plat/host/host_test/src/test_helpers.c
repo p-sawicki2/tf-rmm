@@ -13,12 +13,13 @@
 #include <xlat_tables.h>
 #include <setjmp.h>
 #include <string.h>
+#include <utils_def.h>
 
 /* Possible return codes for setjmp on an assert context */
 enum assert_ret_codes {
-	ASSERT_CONTINUE = 0,
-	ASSERT_FAIL,
-	ASSERT_PASS
+	ASSERT_PANIC_CONTINUE = 0,
+	ASSERT_PANIC_FAIL,
+	ASSERT_PANIC_PASS
 };
 
 /* Implemented in init.c and needed here */
@@ -39,6 +40,11 @@ static jmp_buf assert_buf;
 static char assert_check[CHECK_SIZE + 1U];
 static bool assert_expected;
 static bool asserted;
+
+/* Panic control variables */
+static jmp_buf panic_buf;
+static bool panic_expected;
+static bool panicked;
 
 static unsigned char el3_rmm_shared_buffer[PAGE_SIZE] __aligned(PAGE_SIZE);
 
@@ -175,11 +181,11 @@ void __assert_fail(const char *assertion, const char *file,
 
 	if (assert_expected == true) {
 		if (strlen(assert_check) == 0U) {
-			retval = ASSERT_PASS;
+			retval = ASSERT_PANIC_PASS;
 		} else {
 			if (strncmp(assert_check, assertion,
 				    strlen(assertion)) == 0) {
-				retval = ASSERT_PASS;
+				retval = ASSERT_PANIC_PASS;
 			} else {
 				VERBOSE("Assertion mismatch on %s at line %u\n",
 					file, line);
@@ -187,16 +193,16 @@ void __assert_fail(const char *assertion, const char *file,
 					assert_check);
 				VERBOSE("Received assertion \"%s\"\n",
 					assertion);
-				retval = ASSERT_FAIL;
+				retval = ASSERT_PANIC_FAIL;
 			}
 		}
 	} else {
 		VERBOSE("Unexpected assertion \"%s\" on file %s at line %u\n",
 			assertion, file, line);
-		retval = ASSERT_FAIL;
+		retval = ASSERT_PANIC_FAIL;
 	}
 
-	if (retval == ASSERT_PASS) {
+	if (retval == ASSERT_PANIC_PASS) {
 		VERBOSE("Expected assertion \"%s\" on file %s at line %u\n",
 			assertion, file, line);
 
@@ -219,13 +225,13 @@ void test_helper_expect_assert_with_check(bool expected, char *check)
 	assert_ret = setjmp(assert_buf);
 
 	switch (assert_ret) {
-	case ASSERT_FAIL:
+	case ASSERT_PANIC_FAIL:
 		cpputest_ifc_fail_test("Unexpected assertion\n");
 		break;
-	case ASSERT_PASS:
+	case ASSERT_PANIC_PASS:
 		cpputest_ifc_pass_test();
 		break;
-	case ASSERT_CONTINUE:
+	case ASSERT_PANIC_CONTINUE:
 		/* Nothing to do in this case */
 	break;
 	default:
@@ -244,13 +250,13 @@ void test_helper_expect_assert(bool expected)
 	assert_ret = setjmp(assert_buf);
 
 	switch (assert_ret) {
-	case ASSERT_FAIL:
+	case ASSERT_PANIC_FAIL:
 		cpputest_ifc_fail_test("Unexpected assertion\n");
 		break;
-	case ASSERT_PASS:
+	case ASSERT_PANIC_PASS:
 		cpputest_ifc_pass_test();
 		break;
-	case ASSERT_CONTINUE:
+	case ASSERT_PANIC_CONTINUE:
 		/* Nothing to do in this case */
 	break;
 	default:
@@ -264,3 +270,48 @@ void test_helper_fail_if_no_assertion(void)
 		cpputest_ifc_fail_test("Expected assertion did not happen");
 	}
 }
+
+void test_helper_expect_panic(bool expected)
+{
+	int panic_ret;
+
+	panicked = false;
+	panic_expected = expected;
+
+	panic_ret = setjmp(panic_buf);
+
+	switch (panic_ret) {
+	case ASSERT_PANIC_FAIL:
+		cpputest_ifc_fail_test("Unexpected call to panic()\n");
+		break;
+	case ASSERT_PANIC_PASS:
+		VERBOSE("Expected call to panic()\n");
+		cpputest_ifc_pass_test();
+		break;
+	case ASSERT_PANIC_CONTINUE:
+		/*Nothing to do in this case */
+	break;
+	default:
+		cpputest_ifc_fail_test("Unexpected panic return code\n");
+	}
+}
+
+void test_helper_fail_if_no_panic(void)
+{
+	if (panicked == false) {
+		cpputest_ifc_fail_test("Expected panic() did not happen");
+	}
+}
+
+/***************************************************************************
+ * Private helpers used internally by the platform layer.
+ **************************************************************************/
+
+ __dead2 void test_private_panic(void)
+ {
+	int retval = panic_expected == true ? ASSERT_PANIC_PASS
+					    : ASSERT_PANIC_FAIL;
+
+	panic_expected = false;
+	longjmp(panic_buf, retval);
+ }
