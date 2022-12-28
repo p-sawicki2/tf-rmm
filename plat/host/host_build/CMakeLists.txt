@@ -13,4 +13,7 @@ target_sources(rmm-plat-host_build
     PRIVATE "src/host_setup.c"
             "src/host_harness.c")
 
+target_include_directories(rmm-plat-host_build
+    PUBLIC "include")
+
 add_library(rmm-platform ALIAS rmm-plat-host_build)
