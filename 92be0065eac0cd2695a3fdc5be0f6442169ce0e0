@@ -380,6 +380,30 @@
       },
       "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c230744c_5431754a",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-28T09:37:16Z",
+      "side": 1,
+      "message": "Ack. I was looking for calls to pauth_enable_el2()",
+      "parentUuid": "9cb3d0f5_0d6beae3",
+      "range": {
+        "startLine": 381,
+        "startChar": 1,
+        "endLine": 381,
+        "endChar": 17
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
