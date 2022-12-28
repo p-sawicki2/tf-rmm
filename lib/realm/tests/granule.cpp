@@ -122,6 +122,7 @@ TEST_GROUP(granule) {
 		}
 
 		test_helper_expect_assert(false);
+		test_helper_expect_panic(false);
 	}
 
 	TEST_TEARDOWN()
