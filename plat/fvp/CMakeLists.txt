@@ -15,9 +15,11 @@ target_link_libraries(rmm-fvp
 
 target_sources(rmm-fvp
     PRIVATE "src/fvp_setup.c"
-            "src/fvp_granule.c")
+            "src/fvp_granule.c"
+            "src/fvp_debug.c")
 
 target_include_directories(rmm-fvp
+    PUBLIC "include"
     PRIVATE "src/include")
 
 add_library(rmm-platform ALIAS rmm-fvp)
