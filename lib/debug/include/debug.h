@@ -7,6 +7,7 @@
 #define DEBUG_H
 
 #ifndef __ASSEMBLER__
+#include <platform.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -77,14 +78,6 @@
 #else
 # define VERBOSE(...)	no_rmm_log(__VA_ARGS__)
 #endif
-
-/*
- * FIXME: Fully implement panic() handlers once it is decided how to panic.
- */
-
-#define panic()				\
-	do {				\
-	} while (true)
 
 __attribute__((__format__(__printf__, 1, 2)))
 static inline void rmm_log(const char *fmt, ...)
