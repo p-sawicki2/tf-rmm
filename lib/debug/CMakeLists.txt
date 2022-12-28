@@ -16,3 +16,6 @@ target_compile_definitions(rmm-lib-debug
 
 target_include_directories(rmm-lib-debug
     INTERFACE "include")
+
+target_link_libraries(rmm-lib-debug
+    INTERFACE rmm-platform)

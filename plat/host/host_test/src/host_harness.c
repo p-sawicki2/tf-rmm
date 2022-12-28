@@ -5,6 +5,8 @@
 
 #include <host_harness.h>
 #include <test_harness.h>
+#include <test_private.h>
+#include <utils_def.h>
 
 /*
  * Maps addr to the requested slot buffer and returns a pointer to the
@@ -20,4 +22,9 @@ void *host_buffer_arch_map(enum buffer_slot slot,
 void host_buffer_arch_unmap(void *buf)
 {
 	test_buffer_unmap(buf);
+}
+
+__dead2 void panic(void)
+{
+	test_private_panic();
 }

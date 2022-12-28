@@ -18,6 +18,7 @@ target_sources(rmm-fvp
             "src/fvp_granule.c")
 
 target_include_directories(rmm-fvp
+    PUBLIC "include"
     PRIVATE "src/include")
 
 add_library(rmm-platform ALIAS rmm-fvp)
