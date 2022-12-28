@@ -67,10 +67,42 @@ void test_helper_expect_assert_fail_with_check(bool expected, char *check);
 void test_helper_expect_assert_fail(bool expected);
 
 /*
+ * Defines whether we expect or not for panic() to be called.
+ *
+ * Arguments:
+ *	- expected: True if we are expecting panic() to be called.
+ *		    False if we do not expect a panic() to be called.
+ *
+ * If, during the execution of the test, panic() is unexpectedly called,
+ * the current unittest with FAIL.
+ *
+ * Conversely, if an expected call to panic() happens, the test will FINISH
+ * and will be marked as PASSED.
+ *
+ * NOTE: After a panic() invocation, regardless of whether it was expected or
+ * not, the next panic() call will be considered unexpected and therefore the
+ * test will fail. If we expect panic() to be invoked again, then this API must
+ * be invoked again to indicate that. It is recommended to setup the expected
+ * panic() behavior during TEST_SETUP().
+ *
+ * NOTE2: If a panic() call was expected but did not happen, the test will not
+ * FAIL. In that case, the unittest must fail inmediately after the returning
+ * from the call that was expected to call panic().
+ * See test_helper_fail_if_not_panic()
+ */
+void test_helper_expect_panic(bool expected);
+
+/*
  * Call this function to fail a test if an expected assert fail did not happen.
  * This is preferred than fail with FAIL_TEST().
  */
 void test_helper_fail_if_no_assert_failed(void);
+
+/*
+ * Call this function to fail a test if an expected call to panic() did not
+ * happen. This is preferred than fail with FAIL_TEST().
+ */
+void test_helper_fail_if_no_panic(void);
 
 /*
  * Helper function to fully initialize RMM.
