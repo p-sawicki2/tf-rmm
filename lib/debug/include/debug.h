@@ -78,14 +78,6 @@
 # define VERBOSE(...)	no_rmm_log(__VA_ARGS__)
 #endif
 
-/*
- * FIXME: Fully implement panic() handlers once it is decided how to panic.
- */
-
-#define panic()				\
-	do {				\
-	} while (true)
-
 __attribute__((__format__(__printf__, 1, 2)))
 static inline void rmm_log(const char *fmt, ...)
 {
@@ -95,6 +87,8 @@ static inline void rmm_log(const char *fmt, ...)
 	(void)vprintf(fmt, args);
 	va_end(args);
 }
+
+__dead2 void panic(void);
 
 #endif /* __ASSEMBLER__ */
 #endif /* DEBUG_H */

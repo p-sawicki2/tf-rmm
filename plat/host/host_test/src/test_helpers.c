@@ -15,6 +15,7 @@
 #include <string.h>
 #include <test_private.h>
 #include <utest_exit.h>
+#include <utils_def.h>
 #include <xlat_tables.h>
 
 /* Implemented in init.c and needed here */
@@ -34,6 +35,10 @@ void rmm_main(void);
 static char assert_check[CHECK_SIZE + 1U];
 static bool assert_expected;
 static bool asserted;
+
+/* Panic control variables */
+static bool panic_expected;
+static bool panicked;
 
 static unsigned char el3_rmm_shared_buffer[PAGE_SIZE] __aligned(PAGE_SIZE);
 
@@ -272,4 +277,35 @@ uintptr_t get_cb(enum cb_ids id)
 
 	return callbacks[id];
 
+}
+
+void test_helpers_expect_panic(bool expected)
+{
+	panicked = false;
+	panic_expected = expected;
+}
+
+void test_helper_fail_if_no_panic(void)
+{
+	if (panicked == false) {
+		utest_exit_fail("Expected panic() did not happen");
+	} else {
+		panicked = false;
+		panic_expected = false;
+	}
+}
+
+/***************************************************************************
+ * Private helpers used internally by the platform layer.
+ **************************************************************************/
+
+__dead2 void test_private_panic(void)
+{
+	if (panic_expected == true) {
+		panic_expected = false;
+		VERBOSE("Excpected call to panic()\n");
+		utest_exit_pass();
+	}
+
+	utest_exit_fail("Unexpected call to panic()\n");
 }
