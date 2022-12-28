@@ -118,6 +118,7 @@ TEST_GROUP(granule) {
 		}
 
 		test_helpers_expect_assert_fail(false);
+		test_helpers_expect_panic(false);
 	}
 
 	TEST_TEARDOWN()
