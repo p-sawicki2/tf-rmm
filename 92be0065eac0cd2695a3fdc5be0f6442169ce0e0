@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4827f551_7ee75d82",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-29T10:03:33Z",
+      "side": 1,
+      "message": "Missed this",
+      "parentUuid": "4bd67533_2f8d8e74",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f43a9b7b_f129dc87",
         "filename": "lib/pauth/include/pauth.h",
         "patchSetId": 3
@@ -149,6 +173,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "946bee57_658c69b9",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 63
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43ba573a_a354eeb3",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-29T10:03:33Z",
+      "side": 1,
+      "message": "Missed this",
+      "parentUuid": "449dc09b_ebda0a42",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -290,6 +338,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2e2cd597_18fcab15",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-29T10:03:33Z",
+      "side": 1,
+      "message": "Missed this",
+      "parentUuid": "f74557fa_03607ae5",
+      "range": {
+        "startLine": 74,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2ebde020_6fef1a40",
         "filename": "runtime/core/aarch64/head.S",
         "patchSetId": 3
@@ -325,6 +397,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "2ebde020_6fef1a40",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bbcf617_b16b22c9",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-12-29T10:03:33Z",
+      "side": 1,
+      "message": "Missed this",
+      "parentUuid": "e486ef01_e86b2916",
       "range": {
         "startLine": 140,
         "startChar": 1,
