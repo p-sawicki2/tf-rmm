@@ -33,6 +33,24 @@
       "message": "src must be PRIVATE. The syntax would be\n\ntarget_include_directories(rmm-lib-pauth\n     PUBLIC \"include\"\n     PRIVATE \"src\")",
       "revId": "20b5c2f82391173d98a3662227908a838ada6b74",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3352ee79_5339c6ee",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T18:33:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "308ed373_13e382e2",
+      "revId": "20b5c2f82391173d98a3662227908a838ada6b74",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
