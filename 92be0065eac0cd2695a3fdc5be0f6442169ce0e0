@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69de24d4_eb710d38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "ACK",
+      "parentUuid": "b7d3730d_149a2c22",
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b38caa8_c8b74469",
@@ -89,6 +107,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "660a5d1b_30d89ff6",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4827f551_7ee75d82",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f43a9b7b_f129dc87",
@@ -126,6 +168,30 @@
       "side": 1,
       "message": "Yeah that makes sense. I seemed to have missed that. I\u0027ll make the structure entry to a register. I was told by Soby that APIAKey_EL1 should be enough at the beginning when I took up this task.",
       "parentUuid": "f43a9b7b_f129dc87",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "773c6d86_7a39e900",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ec12a14_992e5f42",
       "range": {
         "startLine": 10,
         "startChar": 24,
@@ -197,6 +263,30 @@
       "side": 1,
       "message": "Missed this",
       "parentUuid": "449dc09b_ebda0a42",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 63
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88c46fc4_e8e535a8",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43ba573a_a354eeb3",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -360,6 +450,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5203a83_c5051171",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "It disables instruction access trapping and key register access trapping. So I have renamed it to pauth_disable_trap()",
+      "parentUuid": "2e2cd597_18fcab15",
+      "range": {
+        "startLine": 74,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ebde020_6fef1a40",
@@ -421,6 +535,30 @@
       "side": 1,
       "message": "Missed this",
       "parentUuid": "e486ef01_e86b2916",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 24
+      },
+      "revId": "92be0065eac0cd2695a3fdc5be0f6442169ce0e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f2a451_9f442ed9",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2022-12-29T16:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bbcf617_b16b22c9",
       "range": {
         "startLine": 140,
         "startChar": 1,
