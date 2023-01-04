@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d11fb310_8d29fb34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-04T12:32:37Z",
+      "side": 1,
+      "message": "LSL instruction masks higher bits and actually performs correct shift:\nEL2RL:0x00000000FDC03340 : MOV      x1,#1\nEL2RL:0x00000000FDC03344 : LSL      x0,x1,x0\nwith x0 \u003d 0x81 \u003d 129 results in X0 \u003d 2\nwith x0 \u003d 0x82 \u003d 130 results in X0 \u003d 4\n, but it cannot be guaranteed for x86 Host.",
+      "parentUuid": "c9694a73_6493c1eb",
+      "revId": "c16506925301e713d3b5dc1f123c3420b8f53011",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf8237a3_4b8ef999",
