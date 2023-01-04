@@ -16,6 +16,23 @@
       "message": "The bit manipulation related to `vmid` seems wrong to me. Particularly, when calling the `atomic_*` function, the second parameter can be larger than 64, therefore the bit mask in the `atomic_*` will be all zero due to left shift overflow. I made an educated guess here on the patch. Can you check if it is an actual bug and if I patched correctly.\n\nShale Xiong",
       "revId": "c16506925301e713d3b5dc1f123c3420b8f53011",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9694a73_6493c1eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-04T09:48:43Z",
+      "side": 1,
+      "message": "Thanks for the fix, This is a genuine bug and I guess we never tested with vmid \u003e 64\n",
+      "revId": "c16506925301e713d3b5dc1f123c3420b8f53011",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
