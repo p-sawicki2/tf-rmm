@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "660b9b55_88097090",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-05T16:53:44Z",
+      "side": 1,
+      "message": "Added comment\nRt bits [9:5] of ISS field cannot exceed 0b11111.",
+      "parentUuid": "d2b9f438_33cdda8a",
+      "revId": "9a64697ae9426dea4476ef4ee0770225d83fb592",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "80ffec0c_abc18653",
         "filename": "runtime/core/sysregs.c",
         "patchSetId": 1
@@ -31,6 +49,30 @@
       "writtenOn": "2023-01-05T12:33:28Z",
       "side": 1,
       "message": "Not sure why different macros are used to extract rt. We should align to one macro viz \nrt \u003d ESR_EL2_SYSREG_ISS_RT(esr);\n\nalso could add an assert as per comments above.",
+      "range": {
+        "startLine": 147,
+        "startChar": 19,
+        "endLine": 147,
+        "endChar": 32
+      },
+      "revId": "9a64697ae9426dea4476ef4ee0770225d83fb592",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cd26ab7_f641429e",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-05T16:53:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "80ffec0c_abc18653",
       "range": {
         "startLine": 147,
         "startChar": 19,
@@ -54,6 +96,24 @@
       "writtenOn": "2023-01-05T12:33:28Z",
       "side": 1,
       "message": "could add an assert as per comments above.",
+      "revId": "9a64697ae9426dea4476ef4ee0770225d83fb592",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "476263f8_4409a7c0",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-05T16:53:44Z",
+      "side": 1,
+      "message": "Added comment as per our discussion.",
+      "parentUuid": "b709e404_ca1f7c8a",
       "revId": "9a64697ae9426dea4476ef4ee0770225d83fb592",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
