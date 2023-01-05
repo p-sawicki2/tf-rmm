@@ -16,6 +16,7 @@ extern "C" {
 #include <status.h>
 #include <stdlib.h>
 #include <string.h>
+#include <test_harness.h>
 #include <test_helpers.h>
 #include <time.h>
 #include <unistd.h>
@@ -125,6 +126,9 @@ TEST_GROUP(granule) {
 		memset((void *)get_granule_struct_base(), 0,
 			sizeof(struct granule) *
 					test_helpers_get_nr_granules());
+
+		(void)test_helpers_unregister_cb(CB_BUFFER_MAP);
+		(void)test_helpers_unregister_cb(CB_BUFFER_UNMAP);
 	}
 };
 
