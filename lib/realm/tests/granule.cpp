@@ -13,9 +13,11 @@ extern "C" {
 #include <granule.h>	/* Interface to exercise */
 #include <host_harness.h>
 #include <host_utils.h>
+#include <realm_test_utils.h>
 #include <status.h>
 #include <stdlib.h>
 #include <string.h>
+#include <test_harness.h>
 #include <test_helpers.h>
 #include <time.h>
 #include <unistd.h>
@@ -109,6 +111,12 @@ TEST_GROUP(granule) {
 		/* Make sure current cpu id is 0 (primary processor) */
 		host_util_set_cpuid(0U);
 
+		/* Register harness callbacks to use by tests */
+		(void)test_helpers_register_cb((uintptr_t)test_buffer_map,
+					       CB_BUFFER_MAP);
+		(void)test_helpers_register_cb((uintptr_t)test_buffer_unmap,
+					       CB_BUFFER_UNMAP);
+
 		/* Initialize the random seed */
 		while (random_seed == 0) {
 			random_seed = (int)time(NULL);
@@ -125,6 +133,9 @@ TEST_GROUP(granule) {
 		memset((void *)get_granule_struct_base(), 0,
 			sizeof(struct granule) *
 					test_helpers_get_nr_granules());
+
+		(void)test_helpers_unregister_cb(CB_BUFFER_MAP);
+		(void)test_helpers_unregister_cb(CB_BUFFER_UNMAP);
 	}
 };
 

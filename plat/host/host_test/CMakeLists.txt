@@ -21,7 +21,8 @@ target_link_libraries(rmm-plat-host_test
 
 # Used to locate test_groups.h
 target_include_directories(rmm-plat-host_test
-    PRIVATE "${CMAKE_BINARY_DIR}/plat/host/${HOST_VARIANT}/src")
+    PRIVATE "${CMAKE_BINARY_DIR}/plat/host/${HOST_VARIANT}/src"
+            "src")
 
 target_include_directories(rmm-plat-host_test
     PUBLIC "include")
