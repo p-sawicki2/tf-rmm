@@ -10,6 +10,7 @@
 
 #include <arch_helpers.h>
 #include <sizes.h>
+#include <smc.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <utils_def.h>
@@ -146,6 +147,17 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 				   size_t *len, size_t hash_size);
 
+static inline unsigned long granule_mark_realm(unsigned long addr)
+{
+	return monitor_call(SMC_ASC_MARK_REALM, addr,
+				0UL, 0UL, 0UL, 0UL, 0UL);
+}
+
+static inline unsigned long granule_mark_nonsecure(unsigned long addr)
+{
+	return monitor_call(SMC_ASC_MARK_NONSECURE, addr,
+				0UL, 0UL, 0UL, 0UL, 0UL);
+}
 #endif /* __ASSEMBLER__ */
 
 /*************************************
