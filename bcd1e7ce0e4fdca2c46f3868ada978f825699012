@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1405a19d_15ee546a",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "This is used in line 57",
+      "parentUuid": "1876a806_b003030e",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee7fd1c2_8304877a",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "can be removed.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 2
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e969a81_7a776496",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee7fd1c2_8304877a",
       "range": {
         "startLine": 30,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cdf91a3_63a495cd",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Yes, makes sense.\n\nDone",
+      "parentUuid": "f33c5ab3_5a34e387",
+      "range": {
+        "startLine": 41,
+        "startChar": 20,
+        "endLine": 41,
+        "endChar": 24
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd258010_21e5801f",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f415da4a_11fb87c2",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd258010_21e5801f",
+      "range": {
+        "startLine": 42,
+        "startChar": 11,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0af9dcce_91fc1563",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "may not be needed since the ns parameter is now removed.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0813bcc5_358c7d2b",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0af9dcce_91fc1563",
       "range": {
         "startLine": 44,
         "startChar": 0,
@@ -162,6 +282,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "392a591e_44054fed",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc068170_eb75f2cf",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 45
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0aea5791_5cc45ba6",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2869b88_e9f73090",
+      "range": {
+        "startLine": 47,
+        "startChar": 60,
+        "endLine": 47,
+        "endChar": 68
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a2bd593_a1f180db",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 53,
+        "startChar": 10,
+        "endLine": 53,
+        "endChar": 16
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6797f1e_42c0d976",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a2bd593_a1f180db",
       "range": {
         "startLine": 53,
         "startChar": 10,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "83d62a50_45f600b4",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c230dd5_9ede8e12",
+      "range": {
+        "startLine": 26,
+        "startChar": 75,
+        "endLine": 26,
+        "endChar": 81
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9962158_cbdce660",
@@ -221,6 +437,24 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "Add a comment:\n\n\"test specific host_harness functions which are dynamically overridden during test execution\"",
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a683c24_45131488",
+        "filename": "lib/realm/tests/test_harness.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9962158_cbdce660",
       "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -242,6 +476,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03bde40f_f8ddab61",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "096bffdf_1fc2db44",
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b096e311_73487a4e",
@@ -255,6 +507,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "..the possible host harness callbacks that ...",
+      "range": {
+        "startLine": 12,
+        "startChar": 45,
+        "endLine": 12,
+        "endChar": 61
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "748d3d11_319f782d",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b096e311_73487a4e",
       "range": {
         "startLine": 12,
         "startChar": 45,
@@ -288,6 +564,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e825fde_8f99a9ac",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bc41ef3_147d160b",
+      "range": {
+        "startLine": 23,
+        "startChar": 14,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f35bab12_1ba9f52b",
@@ -301,6 +601,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "just thought a way to make this more robust.\n\nEssentially by making this pointer a generic uintptr_t, we lose the the validation that is done by compiler on the function prototypes. To get the benefit of this, we can:\n\n\ntypedef union {\n  void*(*cb_buffer_map)(enum buffer_slot slot, unsigned long addr);\n  void(*cb_buffer_unmap)(void *buf);\n} test_harness_cbs;\n\n\nand the test will need to assign the pointer to the function, wherein the compiler will check the signatures and ensure it matches. So this function protutype will be :\n\nint test_helpers_register_cb(test_harness_cbs cb, enum cb_ids id);",
+      "range": {
+        "startLine": 33,
+        "startChar": 29,
+        "endLine": 33,
+        "endChar": 41
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f592f91f_97e47556",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f35bab12_1ba9f52b",
       "range": {
         "startLine": 33,
         "startChar": 29,
@@ -328,6 +652,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6de3502f_d9649e34",
+        "filename": "plat/host/host_test/src/host_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32278ab3_e6421256",
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd7e7c9a_97d27dd9",
@@ -341,6 +683,30 @@
       "writtenOn": "2023-01-06T14:21:36Z",
       "side": 1,
       "message": "other host_test files.",
+      "range": {
+        "startLine": 175,
+        "startChar": 34,
+        "endLine": 175,
+        "endChar": 54
+      },
+      "revId": "bcd1e7ce0e4fdca2c46f3868ada978f825699012",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6139ad82_eac68d0e",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-06T18:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd7e7c9a_97d27dd9",
       "range": {
         "startLine": 175,
         "startChar": 34,
