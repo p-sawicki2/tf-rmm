@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceba776a_782932f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-01-06T13:15:28Z",
+      "side": 1,
+      "message": "Only a minor comment on documentation",
+      "revId": "80e727add1bca351dd5c039252587a84ef3dda18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33426efa_ac2e791e",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-01-06T13:15:28Z",
+      "side": 1,
+      "message": "Same as https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/18521/5/plat/host/host_test/include/test_helpers.h#33",
+      "range": {
+        "startLine": 84,
+        "startChar": 58,
+        "endLine": 85,
+        "endChar": 7
+      },
+      "revId": "80e727add1bca351dd5c039252587a84ef3dda18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
