@@ -10,6 +10,7 @@
 
 #include <arch_helpers.h>
 #include <sizes.h>
+#include <smc.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <utils_def.h>
@@ -151,9 +152,13 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 /*************************************
  * SMC codes for the EL3-RMM interface
  *************************************/
+					/* 0x1B0 - 0x1B3 */
+#define SMC_RMM_GTSI_DELEGATE		SMC64_STD_FID(RMM_EL3, U(0))
+#define SMC_RMM_GTSI_UNDELEGATE		SMC64_STD_FID(RMM_EL3, U(1))
 
+					/* 0x1B2 - 0x1B3 */
 #define SMC_RMM_GET_REALM_ATTEST_KEY	SMC64_STD_FID(RMM_EL3, U(2))
-#define SMC_RMM_GET_PLAT_TOKEN	SMC64_STD_FID(RMM_EL3, U(3))
+#define SMC_RMM_GET_PLAT_TOKEN		SMC64_STD_FID(RMM_EL3, U(3))
 
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
@@ -217,5 +222,19 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 				RMM_EL3_IFC_GET_VERS_MINOR
 #define RMM_EL3_MANIFEST_VERSION					\
 				RMM_EL3_IFC_SUPPORTED_VERSION
+
+#ifndef __ASSEMBLER__
+static inline unsigned long rmm_el3_ifc_gtsi_delegate(unsigned long addr)
+{
+	return monitor_call(SMC_RMM_GTSI_DELEGATE, addr,
+				0UL, 0UL, 0UL, 0UL, 0UL);
+}
+
+static inline unsigned long rmm_el3_ifc_gtsi_undelegate(unsigned long addr)
+{
+	return monitor_call(SMC_RMM_GTSI_UNDELEGATE, addr,
+				0UL, 0UL, 0UL, 0UL, 0UL);
+}
+#endif /* __ASSEMBLER__ */
 
 #endif /* RMM_EL3_IFC_H */
