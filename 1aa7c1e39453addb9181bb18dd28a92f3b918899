@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a76b7b4_567f9517",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-06T14:04:19Z",
+      "side": 1,
+      "message": "We can get rid of lib\\asc and define functions as inline in lib\\rmm_el3_ifc\\include\\asc.h ot just add definitions in lib\\rmm_el3_ifc\\include\\rmm_el3_ifc.h.",
+      "parentUuid": "ea591399_7eb98bcf",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e3a46b6_ed263b69",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-01-06T13:31:40Z",
       "side": 1,
       "message": "rename to \"realm\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 23,
+        "endLine": 8,
+        "endChar": 29
+      },
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12a0cdd7_00524534",
+        "filename": "lib/asc/include/asc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-06T14:04:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6e3a46b6_ed263b69",
       "range": {
         "startLine": 8,
         "startChar": 23,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e4bad86_ee2abf8f",
+        "filename": "lib/asc/src/asc_drv.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-06T14:04:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f939374b_79ad28da",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a08cc5d_b053c25b",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70811efa_6c09ce23",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-06T14:04:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7a08cc5d_b053c25b",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f1c8b8b_37f91c6d",
@@ -94,6 +178,24 @@
       "writtenOn": "2023-01-06T13:31:40Z",
       "side": 1,
       "message": "add a comment: \n\"A delegated granule should only be undelegated on request from RMM. If this fails, we have an unrecoverable error in EL3/RMM\".",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "444251c3_eeb6a0ad",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-06T14:04:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7f1c8b8b_37f91c6d",
       "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
