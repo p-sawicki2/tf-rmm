@@ -1,6 +1,11 @@
 .. SPDX-License-Identifier: BSD-3-Clause
 .. SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
 
+<a href="https://scan.coverity.com/projects/tf-rmm-tf-rmm">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/28411/badge.svg"/>
+</a>
+
 #################
 Readme for TF-RMM
 #################
