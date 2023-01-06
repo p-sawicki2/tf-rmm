@@ -158,12 +158,12 @@
 	((SMCCC_VERSION_MAJOR << U(16)) | SMCCC_VERSION_MINOR)
 
 /* SMCCC return codes */
-#define SMC_SUCCESS		0
-#define SMC_NOT_SUPPORTED	(-1)
-#define SMC_NOT_REQUIRED	(-2)
-#define SMC_INVALID_PARAMETER	(-3)
+#define SMC_SUCCESS		UL(0)
+#define SMC_NOT_SUPPORTED	UL(-1)
+#define SMC_NOT_REQUIRED	UL(-2)
+#define SMC_INVALID_PARAMETER	UL(-3)
 
-#define SMC_UNKNOWN		(-1)
+#define SMC_UNKNOWN		UL(-1)
 
 #ifndef __ASSEMBLER__
 unsigned long monitor_call(unsigned long id,

@@ -5,7 +5,7 @@
 #ifndef ASC_H
 #define ASC_H
 
-void asc_mark_secure(unsigned long addr);
-void asc_mark_nonsecure(unsigned long addr);
+unsigned long asc_mark_secure(unsigned long addr);
+unsigned long asc_mark_nonsecure(unsigned long addr);
 
 #endif /* ASC_H */
