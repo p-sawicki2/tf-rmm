@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57e31b87_9264634e",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "nit: `num_banks` ?",
+      "range": {
+        "startLine": 89,
+        "startChar": 10,
+        "endLine": 89,
+        "endChar": 19
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38ffefb8_f0b1d244",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "nit: `*banks`",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 28
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c35d994c_5252fd7e",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "chksum..\n\nthe RMM-EL3 spec should specify how the chksum is calculated.",
+      "range": {
+        "startLine": 91,
+        "startChar": 10,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0af89d98_30975299",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "Add a comment : ... info structure if setup by EL3 Firmware. Available from v0.2 of Boot manifest. \n\nIf the EL3 firmware is v0.1 or the platform in EL3 has not populated this field, this these API will return NULL pointer.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce1ea9ec_165d3039",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "Since this is only used within the component, this can go in a priv header `rmm_el3_ifc_priv.h`.",
+      "range": {
+        "startLine": 178,
+        "startChar": 13,
+        "endLine": 178,
+        "endChar": 17
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dabba8d_8735e366",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "as discussed, keep the original explicit check even for boolean variables.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bd3dcaf_c0a2a25b",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "I suspect none of the flush dcache is required because unlike TF-A, RMM turns on Cache before MMU is enabled. If that is the case, could you remove all the flush_dcache_range() and run with FVP cache state modelling enabled to see if this works well ?",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aeea9284_999d9ed1",
+        "filename": "plat/fvp/src/fvp_granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "This is one of the performance critical functions and it seems there is some optimization we can do later.\n\nIf a new plat_ api is introduced to check the Addr and this API can `assume` that the addr is validated and within range, then the check reduces to \n\n\"if addr[bit 35] is set, then add idx_bank_1 offset to idx\"\n\n\nFor now, this is OK, we can do a follow on patch later.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a69e0892_54102725",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "Hmm , it would be useful to have checksum validation and overlap validation as part of rmm_el3_ifc component so other platforms can consume the data directly. Also it reduces the code in platform layer.\n\nSuggest to rename the function rmm_el3_ifc_get_dram_data_manifest_pa() to rmm_el3_ifc_get_dram_data_validated_pa()\n\nThis will do the checksum validation and also check for overlaps. Platforms can then directly consume the data. The function can return NULL if either the check fails or data is not present or unexpected num of banks received. And the platform can call rmm_el3_ifc_report_fail_to_el3()",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0eaf0a8d_e41a8824",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T10:17:30Z",
+      "side": 1,
+      "message": "I suspect the flush dcache range are not needed.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
