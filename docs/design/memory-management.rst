@@ -16,9 +16,9 @@ Memory accessed by the |RMM| and by Realms can be categorised as follows:
 
 -  |RMM| data
 
-   -  Granule state tracking (see "Granule state tracking")
-   -  |RMM| stage 1 translation tables (see "|RMM| stage 1 translation
-      regime")
+   -  Granule state tracking (see `Granule state tracking`_)
+   -  |RMM| stage 1 translation tables (see `RMM stage 1 translation
+      regime`_)
 
 -  Realm data
 
@@ -31,8 +31,8 @@ Memory accessed by the |RMM| and by Realms can be categorised as follows:
    -  Realm Descriptors (RDs)
    -  Realm Execution Contexts (RECs)
    -  REC lists
-   -  Realm Translation Tables (RTTs) (see "Realm stage 2 translation
-      regime")
+   -  Realm Translation Tables (RTTs) (see `Realm stage 2 translation
+      regime`_)
 
 -  NS data
 
@@ -52,7 +52,8 @@ table mappings to this memory.
 Physical Address Space
 ----------------------
 
-Tormore (TORMORE\_ARCH) defines four Physical Address Spaces (PASs):
+The Realm Management Extension (RME) defines four Physical Address
+Spaces (PAS):
 
 -  Non-secure
 -  Secure
@@ -60,12 +61,12 @@ Tormore (TORMORE\_ARCH) defines four Physical Address Spaces (PASs):
 -  Root
 
 |RMM| code and |RMM| data are in Realm PAS memory, allocated to the |RMM| at
-boot. This is a static allocation, so this memory is never accessible to
-the Host.
+boot by the EL3 Firware. This is a static allocation, so this memory is never
+accessible to the Host.
 
 The size of the |RMM| data is fixed at boot. The majority of this is the
-granule array (see "Granule state tracking" below), whose size is
-proportional to the amount of DRAM in the system.
+granule array (see `Granule state tracking`_ below), whose size is configurable
+and proportional to the maximum amount of DRAM supported by the system.
 
 Realm data and Realm metadata are in Realm PAS memory, delegated to the
 |RMM| by the Host at runtime. The |RMM| ABI ensures that this memory cannot
@@ -79,6 +80,8 @@ handle a Granule Protection Fault (GPF) while accessing NS data.
 Similarly, a Realm must be able to handle a GPF when accessing memory
 outside the PAR.
 
+.. _granule state tracking:
+
 Granule state tracking
 ----------------------
 
@@ -87,7 +90,8 @@ stored in |RMM| data memory.
 
 The granule array contains one entry for every Granule of physical
 memory which was in Non-secure PAS at |RMM| boot. It therefore describes
-all memory in categories except for |RMM| code and |RMM| data.
+all memory in categories except for |RMM| code and |RMM| data and other
+|TF-A| firmware components.
 
 Each entry in the granule array contains a field which records the
 *state* of the Granule:
@@ -97,56 +101,72 @@ Each entry in the granule array contains a field which records the
    data or Realm metadata
 -  RD
 -  REC
--  REC list
--  RTT
+-  REC aux
 -  Data: Realm data
+-  RTT
 
 For further details, see:
 
 -  ``enum granule_state``
 -  ``struct granule``
 
-|RMM| stage 1 translation regime
----------------------------------
+.. _RMM stage 1 translation regime:
 
-The |RMM| stage 1 translation regime is configured to use
+RMM stage 1 translation regime
+------------------------------
 
--  36 bits of VA space (64G)
+The |RMM| stage 1 translation regime is taken care of by the xlat library. This
+library is configured by |RMM| to use
+
+-  Up to 38 bits of VA space (256G) per address region
 -  3 levels of translation tables (L1 to L3)
 
-Each entry in the L1 table maps a 1G block of VA space as follows:
+In order to keep the bootstrap of Stage 1 MMU simple, VHE is used by the xlat
+library to split the 64-bit VA space into two address spaces:
 
-::
+-  The lower range: it expands from VA 0x0 up to the maximum VA size configured
+   for the region (with a maximum VA size of 48 bits or 52 bits if ``FEAT_LPA2``
+   is supported). This is used to map the |RMM| Runtime (code and data) using
+   `Static mappings`_
+-  The upper range: It expands from VA 0xFFFF_FFFF_FFFF_FFFF all the way down
+   to the maximum VA size configured for the region. This region is used by
+   the `Dynamic Mappings`_
 
-    TTBR1_EL2 --> L1 table
-                  --------
-                  entry 0  --> static mappings for RMM code and RMM data
-                  entry 1      invalid
-                  ...          invalid
-                  entry 61     invalid
-                  entry 62 --> dynamic mappings
-                  entry 63 --> static mappings for I/O devices
-
-|RMM| stage 1 translation tables are shared by all PEs in the system.
-
-The base of the |RMM| VA range is defined as ``RMM_VIRT``.
+For further details, see ``lib/xlat``.
 
 Static mappings
 ~~~~~~~~~~~~~~~
 
 The |RMM| is loaded as an ELF binary with various sections. The loader of
-the |RMM| allocates memory for each section in the |RMM| binary.
+the |RMM| allocates memory for each section available in the |RMM| binary.
 
-The size of the sections in the |RMM| binary and placing of |RMM| code and
-data into appropriate sections is controlled by the linker script.
+The size of the sections in the |RMM| binary as well as the placing of
+|RMM| code and data into appropriate sections is controlled by the linker
+script.
 
-I/O devices such as the UART are allocated from the top of the
-TTBR1\_EL2 range.
+Platform initialization code takes care of importing the linker symbols
+that define the boundaries of the different sections and creates static
+memory mapping representations that are then passed to the xlat library to
+generate flat static mappings. In addition, as |RMM| is compiled as a
+Position Independed Execution (PIE) application at offset 0x0, the Global
+Offset Table (GOT) and other data structures provided by the linker are
+updated with the right offsets.
+
+For I/O devices such as the UART, the addresses are defined as per-platform
+build options or through the Boot Manifest.
+
+All the CPUs in the system share the same translation context for the static
+mappings.
+
+The diagram below shows the memory layout for the lower range region region
+
+|lower range memory|
 
 For further details, see:
 
--  ``src/linker.lds``
--  ``src/core/mmu.S``
+-  ``runtime/linker.lds``
+-  ``plat/common/src/plat_common_init.c``
+-  ``plat/fvp/src/fvp_setup.c``
 
 Dynamic mappings
 ~~~~~~~~~~~~~~~~
@@ -155,30 +175,10 @@ Memory which is mapped into the |RMM| VA space and unmapped dynamically at
 runtime is referred to as *buffers*.
 
 The |RMM| has a fixed number of *buffer slots* per CPU. These are used to
-create transient mappings of buffers used by the |RMM|.
-
-Buffer slots are statically allocated in the |RMM| stage 1 translation
-tables as shown in the following diagram.
-
-::
-
-    TTBR1_EL2 --> L1 table
-                  --------
-                  ...
-                  entry 62 --> L2 table
-                  ...          --------
-                               entry 0  --> L3 table
-                                            --------
-                                            CPU 0 slot 0
-                                            ...
-                                            CPU 0 slot N
-                                            CPU 1 slot 0
-                                            ...
-                                            CPU 1 slot N
-                                            ...
-                                            CPU M slot 0
-                                            ...
-                                            CPU M slot N
+create dynamic mappings of buffers used by the |RMM|. These dynamic mappings
+are marked by the xlat library as *TRANSIENT*, to distinguish their Translation
+Table Entries from invalid ones, as they can be temporarly invalid but
+eventually will be used to map a buffer.
 
 Each buffer slot is used to map memory of a particular category. The |RMM|
 validates that the target physical granule is of the expected category
@@ -201,13 +201,30 @@ During Realm entry and Realm exit, the RD is mapped in the "RD" buffer
 slot. Once Realm entry or Realm exit is complete, this mapping is
 removed. The RD is not mapped during Realm execution.
 
-The REC and the *REC run* data structure are both mapped during Realm
+The REC and the *REC run* data structures are both mapped during Realm
 execution.
 
 The tag-lock is held while a dynamic mapping exists, for all memory
 categories except for the REC run data structure. In this case, access
 to the REC run data structure is protected by holding a reference count
 during execution of RMI.REC.Run.
+
+Buffer slots are mapped in the upper address range. The VA space for this area
+is fixed at build time and it depends on the the number of buffer slots
+descriptors defined in ``enum granule_state``.
+
+Each CPU in the system has its own translation context for the slot buffers,
+which means that a particular slot buffer descriptor will always be mapped to
+the same VA, regardless of the CPU or if other CPUs have the same slot buffer
+descriptor in use. The slot buffer implementation includes some optimizations,
+such as internal caches for the translation table entries, which allows to
+improve the efficiency of mapping and unmapping operations. This also allows
+the migration of vCPUs accross different CPUs if an operation is interrupted,
+for instance while the Realm attestation is ongoing in RMM.
+
+The diagram below shows the memory layout for the upper range region region
+
+|upper range memory|
 
 As an alternative to using dynamic buffer slots, the approach of
 maintaining static mappings for all physical memory (similar to the
@@ -218,9 +235,10 @@ who is able to subvert |RMM| execution.
 For further details, see:
 
 -  ``enum buffer_slot``
--  ``src/core/buffer.c``
--  ``src/core/mmu.S``
+-  ``lib/realm/src/buffer.c``
 -  ``struct granule``
+
+.. _Realm stage 2 translation regime:
 
 Realm stage 2 translation regime
 --------------------------------
@@ -254,9 +272,14 @@ Glossary
 -  PAS: Physical Address Space
 -  RMM: Realm Management Monitor
 -  RTT: Realm Translation Table
+-  VHE: Virtualization Host Extensions
 
 References
 ----------
 
--  TORMORE\_ARCH: Tormore architecture specification (ARM AES 0014)
+.. |lower range memory| image:: ./diagrams/lower_memory_diagram.png
+   :height: 600
+
+.. |upper range memory| image:: ./diagrams/upper_memory_diagram.png
+   :height: 450
 
