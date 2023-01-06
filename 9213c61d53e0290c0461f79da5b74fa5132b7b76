@@ -89,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3d6ac323_7cd8ef5b",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T11:05:42Z",
+      "side": 1,
+      "message": "should we make this function return an error code and then return the address as a return arg ? \n\nI have given suggestion in later comment to enhance this function and rename this to  rmm_el3_ifc_get_dram_data_validated_pa()",
+      "parentUuid": "0af89d98_30975299",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ce1ea9ec_165d3039",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 2
@@ -100,6 +118,30 @@
       "writtenOn": "2023-01-06T10:17:30Z",
       "side": 1,
       "message": "Since this is only used within the component, this can go in a priv header `rmm_el3_ifc_priv.h`.",
+      "range": {
+        "startLine": 178,
+        "startChar": 13,
+        "endLine": 178,
+        "endChar": 17
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe974d75_ad307846",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T11:05:42Z",
+      "side": 1,
+      "message": "This is being used by FVP so need to be a public API. So keep this here and prefix with rmm_el3_ifc_ to the function name.",
+      "parentUuid": "ce1ea9ec_165d3039",
       "range": {
         "startLine": 178,
         "startChar": 13,
