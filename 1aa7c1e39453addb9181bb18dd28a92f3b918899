@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea591399_7eb98bcf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T13:31:40Z",
+      "side": 1,
+      "message": "Minor comments.\n\n\nthere is some follow on work.\nThe ASC module should be actually be part of rmm_el3_ifc module. The comms should be aligned as documented here :  https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-gtsi-delegate-command\n\nYou can either do that as well or raise a JIRA for that which can be scheduled later.",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e3a46b6_ed263b69",
+        "filename": "lib/asc/include/asc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T13:31:40Z",
+      "side": 1,
+      "message": "rename to \"realm\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 23,
+        "endLine": 8,
+        "endChar": 29
+      },
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f939374b_79ad28da",
+        "filename": "lib/asc/src/asc_drv.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T13:31:40Z",
+      "side": 1,
+      "message": "Realm",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a08cc5d_b053c25b",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T13:31:40Z",
+      "side": 1,
+      "message": "Add comment: \"It is possible for EL3 to delegate the granule to Secure on request from SPM and hence this request can fail\"",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f1c8b8b_37f91c6d",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-06T13:31:40Z",
+      "side": 1,
+      "message": "add a comment: \n\"A delegated granule should only be undelegated on request from RMM. If this fails, we have an unrecoverable error in EL3/RMM\".",
+      "revId": "1aa7c1e39453addb9181bb18dd28a92f3b918899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
