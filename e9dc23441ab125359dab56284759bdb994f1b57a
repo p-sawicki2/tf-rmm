@@ -166,6 +166,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f74cec5_1257b0e0",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T15:46:17Z",
+      "side": 1,
+      "message": "I\u0027ve been reviewing the tests and got rid of this API (and others depending of it). There weren\u0027t necessary for the granule unittests after all.\n\nAfter reworking the tests for the buffer slot library, I will check whether this is necessary or if I can test in any other way",
+      "parentUuid": "fd602f45_6107c877",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "83753758_f452ce70",
