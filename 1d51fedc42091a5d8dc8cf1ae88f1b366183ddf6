@@ -24,6 +24,47 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3369de0b_d0d073dd",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ad9fa48e_8f176d75",
+      "range": {
+        "startLine": 150,
+        "startChar": 28,
+        "endLine": 150,
+        "endChar": 46
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "332e6315_d38509a1",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "I had to move functions\u0027 declarations because of:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h: In function \u0027rmm_el3_ifc_gtsi_delegate\u0027:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:152:29: error: \u0027SMC_RMM_GTSI_DELEGATE\u0027 undeclared (first use in this function); did you mean \u0027SMC_RMM_GRANULE_DELEGATE\u0027?\n  152 |         return monitor_call(SMC_RMM_GTSI_DELEGATE, addr,\n      |                             ^~~~~~~~~~~~~~~~~~~~~\n      |                             SMC_RMM_GRANULE_DELEGATE\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:152:29: note: each undeclared identifier is reported only once for each function it appears in\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h: In function \u0027rmm_el3_ifc_gtsi_undelegate\u0027:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:158:29: error: \u0027SMC_RMM_GTSI_UNDELEGATE\u0027 undeclared (first use in this function); did you mean \u0027SMC_RMM_GRANULE_UNDELEGATE\u0027?\n  158 |         return monitor_call(SMC_RMM_GTSI_UNDELEGATE, addr,\n      |                             ^~~~~~~~~~~~~~~~~~~~~~~\n      |                             SMC_RMM_GRANULE_UNDELEGATE",
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f215fa5_0bb98140",
@@ -37,6 +78,30 @@
       "writtenOn": "2023-01-09T11:27:00Z",
       "side": 1,
       "message": "This should be defined at line 166 along with other RMM-EL3 SMCs\n\nCan call this \n\nSMC_RMM_GTSI_DELEGATE. \n\nSimilar comment for undelegate.",
+      "range": {
+        "startLine": 152,
+        "startChar": 21,
+        "endLine": 152,
+        "endChar": 39
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a91f794e_8a63d5d7",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6f215fa5_0bb98140",
       "range": {
         "startLine": 152,
         "startChar": 21,
@@ -70,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "744c88c4_c04abf7a",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "725f7da1_d3ae6600",
+      "range": {
+        "startLine": 156,
+        "startChar": 28,
+        "endLine": 156,
+        "endChar": 50
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "533f527e_4eac48a6",
@@ -93,6 +182,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd028944_0cd915b7",
+        "filename": "lib/smc/include/smc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "533f527e_4eac48a6",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 60
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f89d90d_210a2ed8",
@@ -106,6 +219,24 @@
       "writtenOn": "2023-01-09T11:27:00Z",
       "side": 1,
       "message": "Is this needed ? Or add an ERROR Log before the panic()",
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fb0048d_ce6a356a",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-09T18:15:29Z",
+      "side": 1,
+      "message": "Yes.\ndebug.h:\n\n#define panic()\t\t\t\t\\\n\tdo {\t\t\t\t\\\n\t} while (true)\n\nERROR log added.",
+      "parentUuid": "2f89d90d_210a2ed8",
       "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
