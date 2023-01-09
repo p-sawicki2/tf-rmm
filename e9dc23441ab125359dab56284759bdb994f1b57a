@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "756e43de_96b2ab02",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbc02bd0_0600d58c",
+      "range": {
+        "startLine": 13,
+        "startChar": 21,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec5e6b11_42a8cd76",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-09T10:19:14Z",
       "side": 1,
       "message": "\"host test helpers\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 41,
+        "endLine": 15,
+        "endChar": 62
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59aeb937_447e64a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec5e6b11_42a8cd76",
       "range": {
         "startLine": 15,
         "startChar": 41,
@@ -102,6 +150,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fd602f45_6107c877",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "As an example of use, this function is used by test_buffer_unmap(), as buffer_unmap_internal() needs to receive the expected VA as per aarch64 for a given slot in order to retrieve a valid xlat descriptor to perform the unmap.\n\nIf we were passing a VA corresponding to an address in the the array used to emulate the DRAM in fake_host, the call would have failed as the xlat library expects a valid VA.\n\ntest_buffer_unmap() is the callback we have configured for buffer_unmap on the granule unittest (on this patch)",
+      "parentUuid": "1fe70ceb_1e376f65",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "83753758_f452ce70",
         "filename": "plat/host/host_test/include/test_helpers.h",
         "patchSetId": 2
@@ -113,6 +179,30 @@
       "writtenOn": "2023-01-09T10:19:14Z",
       "side": 1,
       "message": "\"declarations\" ;).",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 28
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c6927fb_1f1ed8ca",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83753758_f452ce70",
       "range": {
         "startLine": 23,
         "startChar": 17,
@@ -146,6 +236,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f0e7518_39a0ffaf",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce3e2f68_4106d7d6",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 29
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ee2225d_cbbe99ce",
@@ -159,6 +273,30 @@
       "writtenOn": "2023-01-09T10:19:14Z",
       "side": 1,
       "message": "nit: void (*cb_buffer_unmap)",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7623d5a6_2ace1fcb",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ee2225d_cbbe99ce",
       "range": {
         "startLine": 47,
         "startChar": 8,
@@ -186,6 +324,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e631e6db_072ef8c0",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e94f3368_268628ad",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b0c8690_e15239af",
@@ -199,6 +355,24 @@
       "writtenOn": "2023-01-09T10:19:14Z",
       "side": 1,
       "message": "\"... We ignore the exact the cb corresponding to the cbs_id and just use the first one.\"",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bca94ebc_bcc58f2a",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b0c8690_e15239af",
       "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
