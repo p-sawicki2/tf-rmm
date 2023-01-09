@@ -66,6 +66,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5b03dba6_70be9d0c",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T13:19:12Z",
+      "side": 1,
+      "message": "slot_to_va() returns a VA for a given slot. For fvp platform, it returns an address on the valid granules space. For the fake_host platform, it returns an address inside the array we use as granules memory (there are no \"VAs\" for the fake_host platform). For instance, granule_map() will return an address inside the array used to emulate the granules on the fake_host platform.\n\nThe VA returned by slot_to_va() on the fake_host platform can be used to write and read data to it, as it returns a valid address, but it cannot be used to validate that a specific granule has been mapped to a specific slot (the slots have specific VAs defined at build time).\n\nIf the fake_host needs to know the VA to which a given slot would be mapped on aarch64, then we need to call slot_to_expected_va(), as it will return a VA starting in SLOT_VIRT (SLOT_VIRT is calculated at build time and it depends on the number of different types of slots).\n\nFor instance, this function receives a PA (for fake_host PA and VA are the same, so the address received here corresponds to an address for the array used as granules), then it tries to find out if that address was mapped to any of the slot buffers (line 43) and once it has found a slot number, it gets the VA to which that slot would have been mapped on aarch64\n\nAll the above said, I noticed that this API is actually only used on the slot buffers test, so I should remove it from this patch and move it to that one. As the slot buffers unittests are going to need a large rework it is possible that this API will not be needed after all.",
+      "parentUuid": "e87d66b8_0b7744a6",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "83753758_f452ce70",
         "filename": "plat/host/host_test/include/test_helpers.h",
         "patchSetId": 2
