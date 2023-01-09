@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b11e598_b138047d",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T20:01:34Z",
+      "side": 1,
+      "message": "Mate comments made me think that maybe I should rename this to \"test_helper_expect_assert_fail\".\n\nThoughts?",
+      "range": {
+        "startLine": 67,
+        "startChar": 5,
+        "endLine": 67,
+        "endChar": 30
+      },
+      "revId": "c21557d72f2bb274f52c5578754819e835ea7b0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fa5f2c3_088f544b",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T20:01:34Z",
+      "side": 1,
+      "message": "On the same line as my comment above, it might be better to rename this to \"test_helper_fail_if_no_assertion_failed\" (or something shorter, actually)",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 73,
+        "endChar": 37
+      },
+      "revId": "c21557d72f2bb274f52c5578754819e835ea7b0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
