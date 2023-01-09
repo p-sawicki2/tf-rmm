@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad9fa48e_8f176d75",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T11:27:00Z",
+      "side": 1,
+      "message": "need to follow component naming convention:\n\nprefix with rmm_el3_ifc_\n\ncould call this function\n\nrmm_el3_ifc_gtsi_delegate()",
+      "range": {
+        "startLine": 150,
+        "startChar": 28,
+        "endLine": 150,
+        "endChar": 46
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f215fa5_0bb98140",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T11:27:00Z",
+      "side": 1,
+      "message": "This should be defined at line 166 along with other RMM-EL3 SMCs\n\nCan call this \n\nSMC_RMM_GTSI_DELEGATE. \n\nSimilar comment for undelegate.",
+      "range": {
+        "startLine": 152,
+        "startChar": 21,
+        "endLine": 152,
+        "endChar": 39
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "725f7da1_d3ae6600",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T11:27:00Z",
+      "side": 1,
+      "message": "similar comment to delegate.",
+      "range": {
+        "startLine": 156,
+        "startChar": 28,
+        "endLine": 156,
+        "endChar": 50
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "533f527e_4eac48a6",
+        "filename": "lib/smc/include/smc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T11:27:00Z",
+      "side": 1,
+      "message": "should be moved to rmm_el3_ifc.h",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 60
+      },
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f89d90d_210a2ed8",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T11:27:00Z",
+      "side": 1,
+      "message": "Is this needed ? Or add an ERROR Log before the panic()",
+      "revId": "1d51fedc42091a5d8dc8cf1ae88f1b366183ddf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
