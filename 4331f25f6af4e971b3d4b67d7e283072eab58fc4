@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dd6020d_48fe5c25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T19:56:03Z",
+      "side": 1,
+      "message": "Thanks!!. I think I corrected everything now.",
+      "parentUuid": "827f0e25_b19f39d8",
+      "revId": "4331f25f6af4e971b3d4b67d7e283072eab58fc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4501adde_3f0e7c0e",
@@ -41,6 +59,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "331cefe1_353be23f",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T19:56:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4501adde_3f0e7c0e",
+      "range": {
+        "startLine": 36,
+        "startChar": 3,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "4331f25f6af4e971b3d4b67d7e283072eab58fc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8c8365a_2d8a173c",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-01-09T13:16:48Z",
       "side": 1,
       "message": "I think this still should be \u0027fails\u0027.",
+      "range": {
+        "startLine": 48,
+        "startChar": 54,
+        "endLine": 48,
+        "endChar": 62
+      },
+      "revId": "4331f25f6af4e971b3d4b67d7e283072eab58fc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35a21557_be81dc4e",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-09T19:56:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8c8365a_2d8a173c",
       "range": {
         "startLine": 48,
         "startChar": 54,
