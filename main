@@ -1,0 +1,20 @@
+[dashboard]
+  title = TF-RMM patches
+  description = Main dashboard for the TF-RMM project
+  foreach = project:TF-RMM/tf-rmm
+
+[section "Approved Patches"]
+  query = is:open -is:wip is:submittable
+
+[section "On-going reviews"]
+  query = is:open -is:wip -is:submittable
+
+[section "Work-in-progress Patches"]
+  query = is:open is:wip
+
+[section "Recently Merged"]
+  query = is:merged -age:1w
+
+[section "Recently Abandoned"]
+  query = is:abandoned -age:1w
+
