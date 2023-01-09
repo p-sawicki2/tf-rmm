@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbc02bd0_0600d58c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "\"build\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 21,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec5e6b11_42a8cd76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "\"host test helpers\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 41,
+        "endLine": 15,
+        "endChar": 62
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e87d66b8_0b7744a6",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "It is difficult to distinguish the use of expected_va test helper and call at line 27. Instead of complicating it, is it better to keep it simple and use slot_to_va always ?\n\nThere was some initial reasoning to reimplement it, but I cannot recollect it and it may not matter much in the overall scheme.",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83753758_f452ce70",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "\"declarations\" ;).",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 28
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce3e2f68_4106d7d6",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "nit: void *(*cb_buffer_map)",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 29
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ee2225d_cbbe99ce",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "nit: void (*cb_buffer_unmap)",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e94f3368_268628ad",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "also add: \n\n\"... We ignore the exact the cb corresponding to the cbs_id and just use the first one.\"",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b0c8690_e15239af",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T10:19:14Z",
+      "side": 1,
+      "message": "\"... We ignore the exact the cb corresponding to the cbs_id and just use the first one.\"",
+      "revId": "e9dc23441ab125359dab56284759bdb994f1b57a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
