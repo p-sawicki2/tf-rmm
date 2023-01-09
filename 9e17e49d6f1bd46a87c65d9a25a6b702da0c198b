@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e042e9d_3ab9fa10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T17:04:41Z",
+      "side": 1,
+      "message": "\"The host_buffer_arch_map/unmap() implementations for the granule unit tests now use the default mechanisms and doesn\u0027t call into xlat_table lib.  Also includes....\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 26
+      },
+      "revId": "9e17e49d6f1bd46a87c65d9a25a6b702da0c198b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f2a7345_a3f62d8b",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-09T17:04:41Z",
+      "side": 1,
+      "message": "remove this as well.",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 51
+      },
+      "revId": "9e17e49d6f1bd46a87c65d9a25a6b702da0c198b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
