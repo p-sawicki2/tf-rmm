@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32015c25_82a2d822",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-10T17:34:28Z",
+      "side": 1,
+      "message": "It seems this is the default expectation. Can this be avoided and be the init value ? If not, perhaps this be called in test_helpers_rmm_start() and avoid overhead for tests.",
+      "revId": "7812758ef33e197c65a044e3469f1973d7e2cc6a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

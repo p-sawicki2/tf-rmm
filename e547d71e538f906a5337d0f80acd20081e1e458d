@@ -16,6 +16,69 @@
       "message": "Overriding V-1 vote as static checks failed due to the use of strncpy() API, which is allowed on the context of this patch and its use has been reviewed",
       "revId": "e547d71e538f906a5337d0f80acd20081e1e458d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01b83942_145bb395",
+        "filename": "plat/host/host_test/src/cpputest_ifc.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-10T17:34:28Z",
+      "side": 1,
+      "message": "perhaps this file can be utest_exit.h and utest_exit.cpp for the source file",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "e547d71e538f906a5337d0f80acd20081e1e458d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b23099e6_dab973cd",
+        "filename": "plat/host/host_test/src/cpputest_ifc.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-10T17:34:28Z",
+      "side": 1,
+      "message": "\"utest_exit_fail()\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "e547d71e538f906a5337d0f80acd20081e1e458d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1ae5571_4b1ab75b",
+        "filename": "plat/host/host_test/src/cpputest_ifc.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-10T17:34:28Z",
+      "side": 1,
+      "message": "utest_exit_pass()",
+      "revId": "e547d71e538f906a5337d0f80acd20081e1e458d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
