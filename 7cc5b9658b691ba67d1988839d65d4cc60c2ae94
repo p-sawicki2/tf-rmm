@@ -34,6 +34,24 @@
       "parentUuid": "3c41bb42_41accc52",
       "revId": "7cc5b9658b691ba67d1988839d65d4cc60c2ae94",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67c9b516_b2f2ce51",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T12:58:59Z",
+      "side": 1,
+      "message": "/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:161:17: error: implicit declaration of function ‘offsetof’ [-Werror\u003dimplicit-function-declaration]\n  161 | COMPILER_ASSERT(offsetof(struct rmm_core_manifest, version) \u003d\u003d 0);\n      |                 ^~~~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/common/include/utils_def.h:106:66: note: in definition of macro ‘COMPILER_ASSERT’\n  106 | #define COMPILER_ASSERT(_condition) extern char compiler_assert[(_condition) ? 1 : -1]\n      |                                                                  ^~~~~~~~~~\nIn file included from /mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c:11:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:11:1: note: ‘offsetof’ is defined in header ‘\u003cstddef.h\u003e’; did you forget to ‘#include \u003cstddef.h\u003e’?\n   10 | #include \u003csmc.h\u003e\n  +++ |+#include \u003cstddef.h\u003e\n   11 |\nIn file included from /mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/arch/include/arch.h:9,\n                 from /mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c:6:                                 /mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:161:26: error: expected expression before ‘struct’\n  161 | COMPILER_ASSERT(offsetof(struct rmm_core_manifest, version) \u003d\u003d 0);\n      |                          ^~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/common/include/utils_def.h:106:66: note: in definition of macro ‘COMPILER_ASSERT’\n  106 | #define COMPILER_ASSERT(_condition) extern char compiler_assert[(_condition) ? 1 : -1]\n      |                                                                  ^~~~~~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/rmm_el3_ifc/include/rmm_el3_ifc.h:162:26: error: expected expression before ‘struct’\n  162 | COMPILER_ASSERT(offsetof(struct rmm_core_manifest, plat_data) \u003d\u003d 8);\n      |                          ^~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/lib/common/include/utils_def.h:106:66: note: in definition of macro ‘COMPILER_ASSERT’\n  106 | #define COMPILER_ASSERT(_condition) extern char compiler_assert[(_condition) ? 1 : -1]\n      |                                                                  ^~~~~~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c: In function ‘setup_sysreg_and_boot_manifest’:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c:66:2: error: implicit declaration of function ‘write_tpidr_el2’ [-Werror\u003dimplicit-function-declaration]\n   66 |  write_tpidr_el2(0);\n      |  ^~~~~~~~~~~~~~~                                                                                                                            /mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c: In function ‘enable_fake_host_mmu’:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230104/tf-rmm/plat/host/host_build/src/host_setup.c:74:2: error: implicit declaration of function ‘write_sctlr_el2’ [-Werror\u003dimplicit-function-declaration]\n   74 |  write_sctlr_el2(SCTLR_EL2_WXN | SCTLR_EL2_M);\n      |  ^~~~~~~~~~~~~~~                                                                                                                            cc1: all warnings being treated as errors\n[16/178] Building C object ext/qcbor/CMakeFiles/qcbor.dir/src/qcbor_decode.c.obj                                                                    ninja: build stopped: subcommand failed.",
+      "parentUuid": "ffc1b540_b42a596b",
+      "revId": "7cc5b9658b691ba67d1988839d65d4cc60c2ae94",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
