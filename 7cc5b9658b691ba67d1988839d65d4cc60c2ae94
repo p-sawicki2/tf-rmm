@@ -52,6 +52,24 @@
       "parentUuid": "ffc1b540_b42a596b",
       "revId": "7cc5b9658b691ba67d1988839d65d4cc60c2ae94",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2f9c048_4bbb579d",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-10T14:01:17Z",
+      "side": 1,
+      "message": "can you try removing arch_helpers.h from here and including into host_setup.c? I think it is missing there, which is what causes the problem (write_sctlr_el2() is called from host_setup.c)",
+      "parentUuid": "67c9b516_b2f2ce51",
+      "revId": "7cc5b9658b691ba67d1988839d65d4cc60c2ae94",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
