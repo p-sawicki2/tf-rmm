@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12dd0605_d86f9220",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57e31b87_9264634e",
+      "range": {
+        "startLine": 89,
+        "startChar": 10,
+        "endLine": 89,
+        "endChar": 19
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38ffefb8_f0b1d244",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dedd71c_6d8a7d29",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38ffefb8_f0b1d244",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 28
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c35d994c_5252fd7e",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-01-06T10:17:30Z",
       "side": 1,
       "message": "chksum..\n\nthe RMM-EL3 spec should specify how the chksum is calculated.",
+      "range": {
+        "startLine": 91,
+        "startChar": 10,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "413617ad_77f38478",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "trusted-firmware-a\\docs\\components\\rmm-el3-comms-spec.rst will be updated later",
+      "parentUuid": "c35d994c_5252fd7e",
       "range": {
         "startLine": 91,
         "startChar": 10,
@@ -152,6 +224,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89298b7a_fc1c6638",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe974d75_ad307846",
+      "range": {
+        "startLine": 178,
+        "startChar": 13,
+        "endLine": 178,
+        "endChar": 17
+      },
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6dabba8d_8735e366",
@@ -165,6 +261,24 @@
       "writtenOn": "2023-01-06T10:17:30Z",
       "side": 1,
       "message": "as discussed, keep the original explicit check even for boolean variables.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21c2fdbf_a3087158",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dabba8d_8735e366",
       "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -188,6 +302,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "25ff7e2b_06bed909",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Will keep it for now, as per our discussion.",
+      "parentUuid": "6bd3dcaf_c0a2a25b",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aeea9284_999d9ed1",
         "filename": "plat/fvp/src/fvp_granule.c",
         "patchSetId": 2
@@ -199,6 +331,24 @@
       "writtenOn": "2023-01-06T10:17:30Z",
       "side": 1,
       "message": "This is one of the performance critical functions and it seems there is some optimization we can do later.\n\nIf a new plat_ api is introduced to check the Addr and this API can `assume` that the addr is validated and within range, then the check reduces to \n\n\"if addr[bit 35] is set, then add idx_bank_1 offset to idx\"\n\n\nFor now, this is OK, we can do a follow on patch later.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3faae44f_1d170324",
+        "filename": "plat/fvp/src/fvp_granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Testing addr[35] will mean that RMM already knows what the banks\u0027 addresses are. Why would we need to pass DRAM layout data in Boot Manifest then?",
+      "parentUuid": "aeea9284_999d9ed1",
       "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -222,6 +372,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0792b554_d1647e19",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "This function will have to check for (num_banks \u003c\u003d MAX_DRAM_NUM_BANKS), so MAX_DRAM_NUM_BANKS will have to be passed as a build option for each platform.\nIn case of (num_banks \u003e 2) the check for overlapping becomes more complicated, as each bank must be checked with all previous banks.\nThis function can implement \u0027checksum\u0027 check, just assuming that \u0027num_banks\u0027 value passed is correct, but the platform layer function for ovelapping check will have to read all the data from memory again which will effect performance. The current platform implementation does all the checks by reading memory data just once.",
+      "parentUuid": "a69e0892_54102725",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0eaf0a8d_e41a8824",
         "filename": "plat/fvp/src/fvp_memory.c",
         "patchSetId": 2
@@ -233,6 +401,24 @@
       "writtenOn": "2023-01-06T10:17:30Z",
       "side": 1,
       "message": "I suspect the flush dcache range are not needed.",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6041a2df_575236fa",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-10T18:06:10Z",
+      "side": 1,
+      "message": "Let\u0027s keep it for now as we discussed.",
+      "parentUuid": "0eaf0a8d_e41a8824",
       "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
