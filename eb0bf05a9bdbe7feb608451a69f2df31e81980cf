@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cda4b7f8_df9ad23a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-11T16:02:39Z",
+      "side": 1,
+      "message": "Overriding V-1 vote as static checks failed due to the use of strncpy() API, which is allowed on the context of this patch and its use has been reviewed",
+      "revId": "eb0bf05a9bdbe7feb608451a69f2df31e81980cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
