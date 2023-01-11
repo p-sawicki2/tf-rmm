@@ -135,6 +135,30 @@
       },
       "revId": "a8cf940786a272b6aa1a59a41e2b42393b568f5f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d0a7df8_868aff98",
+        "filename": "lib/debug/include/debug.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-11T16:59:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b551d539_a797ee1a",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "a8cf940786a272b6aa1a59a41e2b42393b568f5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
