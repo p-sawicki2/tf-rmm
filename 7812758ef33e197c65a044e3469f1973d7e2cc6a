@@ -16,6 +16,24 @@
       "message": "It seems this is the default expectation. Can this be avoided and be the init value ? If not, perhaps this be called in test_helpers_rmm_start() and avoid overhead for tests.",
       "revId": "7812758ef33e197c65a044e3469f1973d7e2cc6a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f861697_62663f81",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-11T12:17:18Z",
+      "side": 1,
+      "message": "This cannot be avoided as if a test invokes test_helpers_expect_assert_fail(true) and for some reason the test fails and no assertion fail is generated when it was expected, then the next test would be expecting an assertion fail by default (and we might not want that), so we need to explicitly set the default behavior we expect for assert at the beginning of every test.\n\nWith regards to adding this to test_helpers_rmm_start(), I did think about that, and I dismissed it because we might not need test_helpers_rmm_start() for all tests (for instance, the tests for the xlat table will probably not need RMM to be initialized, just the library). So I thought it was better to add this line explicitly to the TEST_SETUP() as a rule of thumb.",
+      "parentUuid": "32015c25_82a2d822",
+      "revId": "7812758ef33e197c65a044e3469f1973d7e2cc6a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
