@@ -33,6 +33,24 @@
       "message": "I was wondering another way of filtering for debug builds\n\nBasically define something like\n\n#if NDEBUG\n#define ASSERT_TEST IGNORE_TEST\n#else\n#define ASSERT_TEST TEST\n#endif\n\nThis will enable the binary invocation to run as well without issues. Also , the assert tests will appear as \"ignored\" rather than filtered and this may help to distinguish  between user filtered tests vs assert tests which are ignored.\n\nWe can also add more conditions to this like checking for CLANG VERSION \u003e\u003d 14 for assert tests and ignore as necessary.",
       "revId": "9693b4f2318ccaec098fb183610f81b9f5789d90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5287e821_4204ec8d",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-11T13:10:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae74402_c41aae25",
+      "revId": "9693b4f2318ccaec098fb183610f81b9f5789d90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
