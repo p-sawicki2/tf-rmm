@@ -179,6 +179,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9f64b8cf_0fa2659c",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-11T18:59:12Z",
+      "side": 1,
+      "message": "\"If the EL3 firmware is v0.1 or the platform in EL3 has not populated this field...\"\nAs per you suggestion\n\"How about embedding a new struct dram_info in rmm_manifest ?\", please see\nhttps://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/18435/comment/4ff36ddc_092c17c5/\n\nstruct dram_info plat_dram;\nis now part of Boot manifest core structure:\n\n/* DRAM layout info structure */\nstruct dram_info {\n\tuint64_t num_banks;\t\t/* Number of DRAM banks */\n\tstruct dram_bank *banks;\t/* Pointer to dram_banks[] */\n\tuint64_t checksum;\t\t/* Checksum of dram_info data */\n};\n\n/* Boot manifest core structure as per v0.2 */\nstruct rmm_core_manifest {\n\tuint32_t version;\t\t/* Manifest version */\n\tuint32_t padding;\t\t/* RES0 */\n\tuintptr_t plat_data;\t\t/* Manifest platform data */\n\tstruct dram_info plat_dram;\t/* Platform DRAM data */\n};\n\nEL3 firmware v0.1 is not aware of this new added data structure and doesn\u0027t clear memory beyond \u0027plat_data\u0027 when passing BM to RMM.\nIn that case it is possible to validate only \u0027num_banks\u0027 member of \u0027dram_info\u0027, which should be (!\u003d0 \u0026\u0026 \u003c\u003d platform\u0027s max_num_banks). Pointer *banks is not initialised and \u0027dram_bank[]\u0027 cannot be accessed for validation.\nrmm_el3_ifc_get_dram_data_validated_pa() must check Boot Manifest Version before accessing \nstruct dram_info plat_dram and report E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED in case of version \u003c 0.2.\nFor v0.2+ in case of DRAM data errors rmm_el3_ifc_get_dram_data_validated_pa() will return NULL which\ncan be passed to fvp_set_dram_layout() which will report E_RMM_BOOT_MANIFEST_DATA_ERROR in that case.\n\nAnther option is to check for NULL in plat_setup():\n\t/*\n\t * Validate DRAM data and get pointer\n\t * to the platform DRAM info structure\n\t */\n\tplat_dram \u003d rmm_el3_ifc_get_dram_data_validated_pa(MAX_DRAM_NUM_BANKS);\n\nand report error:\n\n\t/* Validate DRAM info pointer */\n\tif (plat_dram \u003d\u003d NULL) {\n\t\tERROR(\"DRAM data error\\n\");\n\t\trmm_el3_ifc_report_fail_to_el3(E_RMM_BOOT_MANIFEST_DATA_ERROR);\n\t}",
+      "parentUuid": "3d6ac323_7cd8ef5b",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ce1ea9ec_165d3039",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 2
