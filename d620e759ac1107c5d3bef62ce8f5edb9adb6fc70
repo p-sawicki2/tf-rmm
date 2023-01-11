@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e1991480_01b0a1f1",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-11T13:06:36Z",
+      "side": 1,
+      "message": "We could either add a comment similar to line 50 or do an assertion check on upper bound of refcount for an RTT granule. Perhaps this can be changed to assert(g-\u003erefcount \u003c\u003d512).\n\n@Alexei, can you confirm whether the above will hold?",
+      "parentUuid": "acfee55d_3e63f5c0",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 29
+      },
+      "revId": "d620e759ac1107c5d3bef62ce8f5edb9adb6fc70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "65da71ea_e758ed62",
         "filename": "lib/realm/include/status.h",
         "patchSetId": 1
