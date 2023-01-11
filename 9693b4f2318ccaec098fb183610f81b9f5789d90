@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2de4366_1b1fdc76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-11T17:10:06Z",
+      "side": 1,
+      "message": "I think we should stick with what we discussed:\n\n* When applicable, any library API that is invoked should cause an assertion failure if any of the arguments is outside the valid range (e.g a NULL pointer, or an address out of range).\n\n* Libraries should never call panic(). They should return (or forward) an error code to the caller. It is the caller\u0027s responsibility to either call panic if the error is not recoverable at that point or to forward that error elsewhere for processing",
+      "parentUuid": "cbf62850_46dd22b7",
+      "revId": "9693b4f2318ccaec098fb183610f81b9f5789d90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bae74402_c41aae25",
         "filename": "lib/realm/tests/granule.cpp",
         "patchSetId": 10
