@@ -355,6 +355,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6c83680c_82c3b605",
+        "filename": "plat/fvp/src/fvp_granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-11T12:06:37Z",
+      "side": 1,
+      "message": "There would be some implicit knowledge in RMM but you are right , checking bit[35] is too specific.\n\nRMM platform layer would know that for FVP a max of 2 DDR banks are possible. Then in this function it can just check if addr \u003e\u003d fvp_dram.fvp_bank[1] , then apply offset.\n\nThis is something for future, for now, your change is OK.",
+      "parentUuid": "3faae44f_1d170324",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a69e0892_54102725",
         "filename": "plat/fvp/src/fvp_memory.c",
         "patchSetId": 2
@@ -384,6 +402,24 @@
       "side": 1,
       "message": "This function will have to check for (num_banks \u003c\u003d MAX_DRAM_NUM_BANKS), so MAX_DRAM_NUM_BANKS will have to be passed as a build option for each platform.\nIn case of (num_banks \u003e 2) the check for overlapping becomes more complicated, as each bank must be checked with all previous banks.\nThis function can implement \u0027checksum\u0027 check, just assuming that \u0027num_banks\u0027 value passed is correct, but the platform layer function for ovelapping check will have to read all the data from memory again which will effect performance. The current platform implementation does all the checks by reading memory data just once.",
       "parentUuid": "a69e0892_54102725",
+      "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54918387_82db1d33",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-11T12:06:37Z",
+      "side": 1,
+      "message": "The max dram banks can be an argument to rmm_el3_ifc_get_dram_data_validated_pa(MAX_FVP_BANK) which can used to do the validation. \n\n\u003e (num_banks \u003e 2) the check for overlapping becomes more complicated,\n\nYes, agree but the check can be simplified by putting in a restriction on bank_info. It has to be sorted in ascending order by EL3 before sending it RMM. Then RMM needs to ensure prev_bank.end_addr is less next than next_bank.start_addr. Then the check becomes trivial validation of all entries in the array.\n\n\u003e This function can implement \u0027checksum\u0027 check, just assuming that \u0027num_banks\u0027 value passed is correct, but the platform layer function for ovelapping check will have to read all the data from memory again which will effect performance. The current platform implementation does all the checks by reading memory data just once.\n\nok, performance is not a huge concern for this functionality as this is a boot time func.",
+      "parentUuid": "0792b554_d1647e19",
       "revId": "9213c61d53e0290c0461f79da5b74fa5132b7b76",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
