@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab33436a_a83b17c9",
+        "filename": "lib/attestation/include/attestation.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:55:53Z",
+      "side": 1,
+      "message": "int attestation_heap_ctx_unassign_pe(void);\n?",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1cf216b_1175b1e3",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:55:53Z",
+      "side": 1,
+      "message": "bool rc \u003d ...\n?",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36ffb724_ddde096d",
+        "filename": "lib/attestation/src/attestation_utils.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:55:53Z",
+      "side": 1,
+      "message": "int attestation_heap_ctx_unassign_pe(void)",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 38
+      },
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bdc775e_095325a9",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:55:53Z",
+      "side": 1,
+      "message": "unsigned int function_id \u003d (unsigned int)rec-\u003eregs[0];",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76092a99_8a4bb9b8",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:55:53Z",
+      "side": 1,
+      "message": "Please restore the comment",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
