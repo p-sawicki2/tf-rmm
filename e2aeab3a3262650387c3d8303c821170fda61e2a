@@ -135,6 +135,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b46771b2_5bd340e1",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T15:05:11Z",
+      "side": 1,
+      "message": "\"end\" is the end address of the previous bank. For bank #0 it is set to 0 on line #81, \u0026 then gets updated on line #136.\n\"start\" is the start address of the current bank, so this check (start \u003c end) ensures that current bank doesn\u0027t overlap with the previous one.",
+      "parentUuid": "d6eacb46_460d82ee",
+      "range": {
+        "startLine": 128,
+        "startChar": 5,
+        "endLine": 128,
+        "endChar": 18
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1fabd52e_257ef411",
         "filename": "plat/fvp/src/fvp_memory.c",
         "patchSetId": 5
