@@ -16,6 +16,23 @@
       "message": "Overriding V-1 vote as static checks failed due to the use of strncpy() API, which is allowed on the context of this patch and its use has been reviewed",
       "revId": "eb0bf05a9bdbe7feb608451a69f2df31e81980cf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e96b9e0f_8e457013",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T09:53:47Z",
+      "side": 1,
+      "message": "add documentation to the following functions for the `addr` arg as it is coming outside the trust boundary :\n\n\nfind_granule\nfind_lock_granule\nfind_lock_two_granules\n\n\nThe convention is that for any library API which has an argument outside trust boundary should be documented and assertions should not be used to check invalid values.\n",
+      "revId": "eb0bf05a9bdbe7feb608451a69f2df31e81980cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
