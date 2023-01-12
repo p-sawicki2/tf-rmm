@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ccd1564_cb23007a",
+        "filename": "lib/attestation/include/attestation.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-12T16:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab33436a_a83b17c9",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1cf216b_1175b1e3",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06635c9f_99dab477",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-12T16:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1cf216b_1175b1e3",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36ffb724_ddde096d",
@@ -48,6 +84,30 @@
       "writtenOn": "2023-01-12T15:55:53Z",
       "side": 1,
       "message": "int attestation_heap_ctx_unassign_pe(void)",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 38
+      },
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "774b4515_10ce1008",
+        "filename": "lib/attestation/src/attestation_utils.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-12T16:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36ffb724_ddde096d",
       "range": {
         "startLine": 123,
         "startChar": 0,
@@ -77,6 +137,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e552a54d_d4673d92",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-12T16:50:51Z",
+      "side": 1,
+      "message": "unsigned long regs[31], the regs are already unsigned.\ncppcheck is complaining that it is trivial to check \u003e\u003d0 for min PSCI FID min which is 0",
+      "parentUuid": "3bdc775e_095325a9",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76092a99_8a4bb9b8",
         "filename": "runtime/core/handler.c",
         "patchSetId": 9
@@ -88,6 +166,24 @@
       "writtenOn": "2023-01-12T15:55:53Z",
       "side": 1,
       "message": "Please restore the comment",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb1cbebf_4cb76fbe",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-12T16:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76092a99_8a4bb9b8",
       "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
