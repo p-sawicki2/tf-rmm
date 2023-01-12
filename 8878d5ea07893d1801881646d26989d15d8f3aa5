@@ -155,6 +155,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e1c1f5c1_0853eb2a",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-12T17:21:58Z",
+      "side": 1,
+      "message": "The cast is required for MISRA-C.",
+      "parentUuid": "e552a54d_d4673d92",
+      "revId": "8878d5ea07893d1801881646d26989d15d8f3aa5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76092a99_8a4bb9b8",
         "filename": "runtime/core/handler.c",
         "patchSetId": 9
