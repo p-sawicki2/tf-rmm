@@ -20,6 +20,121 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4544593_173f3dc5",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "Just say:\n\"(from v0.2 onwards)\"",
+      "range": {
+        "startLine": 196,
+        "startChar": 49,
+        "endLine": 196,
+        "endChar": 50
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9e7d9fb_0a2bc272",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "I have given comments for error return, this can be modified based on that.",
+      "range": {
+        "startLine": 203,
+        "startChar": 4,
+        "endLine": 208,
+        "endChar": 47
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d00c82a_21fd55fe",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "As a policy, the platform (caller to this API) is better placed to make this decision. It can be that some platforms can probe the hardware to discover the DDR or is a fixed SoC such that the DRAM is always know. So better to return error from here.",
+      "range": {
+        "startLine": 94,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 75
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a84cfe69_61f039a6",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "return MANIFEST_ERROR",
+      "range": {
+        "startLine": 108,
+        "startChar": 9,
+        "endLine": 108,
+        "endChar": 13
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6eacb46_460d82ee",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "this can be (start + size \u003e end)",
+      "range": {
+        "startLine": 128,
+        "startChar": 5,
+        "endLine": 128,
+        "endChar": 18
+      },
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1fabd52e_257ef411",
         "filename": "plat/fvp/src/fvp_memory.c",
         "patchSetId": 5
@@ -31,6 +146,24 @@
       "writtenOn": "2023-01-12T09:57:29Z",
       "side": 1,
       "message": "I\u0027m not sure that this check is correct, I\u0027d suggest to change it as below:\nfvp_dram-\u003enum_granules \u003d dram_size / GRANULE_SIZE;\nif (fvp_dram-\u003enum_granules \u003e RMM_MAX_GRANULES) {\n          fvp_dram-\u003enum_granules \u003d RMM_MAX_GRANULES;\n}",
+      "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a6e108a_fe324c8b",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-12T14:13:01Z",
+      "side": 1,
+      "message": "As discussed, this is the case, then RMM needs to return error. Can be checked in common helper.",
+      "parentUuid": "1fabd52e_257ef411",
       "revId": "e2aeab3a3262650387c3d8303c821170fda61e2a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
