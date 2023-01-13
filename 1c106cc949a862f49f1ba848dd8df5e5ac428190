@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10dd3c96_58b7ae35",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "nit: dont use same name for struct and object. similar comment to below instances.",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 24
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63a19fdf_9ebc2899",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "_aarch64_vmsa",
+      "range": {
+        "startLine": 116,
+        "startChar": 33,
+        "endLine": 116,
+        "endChar": 39
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7c1b1aa_a3d7fc76",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "_aarch64_vmsa",
+      "range": {
+        "startLine": 118,
+        "startChar": 36,
+        "endLine": 118,
+        "endChar": 44
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9380266_6c7c953d",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "...in the Stage 1 xlat tables as per aarch64 VMSA.",
+      "range": {
+        "startLine": 140,
+        "startChar": 18,
+        "endLine": 140,
+        "endChar": 38
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1d854d1_d310708a",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "better to use the aarch64 VMSA one rather than a different one. could use slot_to_va(i) as arg to this call.",
+      "range": {
+        "startLine": 225,
+        "startChar": 5,
+        "endLine": 225,
+        "endChar": 55
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4464b8e_ab518bb0",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "the graceful exit can be tested.",
+      "range": {
+        "startLine": 237,
+        "startChar": 4,
+        "endLine": 237,
+        "endChar": 36
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f11a145_4f9b5568",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "I think this test is too complicated for the API it is trying to test. As I see it, there are 2  aspects to test: whether the NS buffer is mapped correctly, can we write to it.\n\nFor the first part, use realm_util_ API to ensure mapping is done in slot_buffer.\n\nFor the second part , you could just write random values to one buffer and use this API and compare it. And perhaps ns_buffer_read can be combined in the test so we get 2 APIs tested at one.",
+      "range": {
+        "startLine": 242,
+        "startChar": 18,
+        "endLine": 242,
+        "endChar": 37
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5a70ae8_0fc225d4",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "Using numbers instead of basing it on GRANULE_SIZE will break these tests if the SIZE is changed in future. Recommend to base number on GRANULE_SIZE.",
+      "range": {
+        "startLine": 276,
+        "startChar": 31,
+        "endLine": 276,
+        "endChar": 36
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "706666bc_acb9ad6c",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T07:09:51Z",
+      "side": 1,
+      "message": "This can only happen if the same PA is mapped to 2 different CPUs SLOT_NS. I dont think we need to check this as slot_buffer allows to map same PA to 2 different CPUs. The `leak` comes down to memory arch and since this is host platform, there is not much point in testing it here.",
+      "range": {
+        "startLine": 334,
+        "startChar": 38,
+        "endLine": 335,
+        "endChar": 64
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
