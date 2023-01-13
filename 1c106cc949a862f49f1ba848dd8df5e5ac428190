@@ -188,6 +188,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "306d3d17_8ace6333",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:39:00Z",
+      "side": 1,
+      "message": "Hmm, yes, the offset and size need to be checked, and that can be done in a easier way IMO. You could write with an offset (can be random) to granule of a given size (again random) and check. I find the windowing mechanism done currently too complicated for the purpose.\n\nOK, that is general policy. But if the test logic is more or less the same, it is better to combine multiple APIs to save code to review and maintain. It is just a thought but I dont have a strong opinion.",
+      "parentUuid": "0f11a145_4f9b5568",
+      "range": {
+        "startLine": 242,
+        "startChar": 18,
+        "endLine": 242,
+        "endChar": 37
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a5a70ae8_0fc225d4",
         "filename": "lib/realm/tests/buffer.cpp",
         "patchSetId": 19
@@ -246,6 +270,30 @@
       "side": 1,
       "message": "Actually, the point of this test is to check that the slot buffer library is able to keep different contexts for each CPU isolated (the slot buffer contexts are handled by the slot buffer module itself), so that having different PAs mapped to the same granule type (hence the same VA) at the same time on different CPUs is done properly.\n\nHowever, reviewing this test more closely, I\u0027m noticing that this is actually not tested at all: the callback used for the mapping returns the same address passed as argument, so it could happen that the library is doing the mapping all wrong or using the wrong context and that goes unnoticed here. And the same might be happening on other tests within this test group.\n\nOne solution that I see is that test_buffer_map_ret_pa() (or the counter one once I rename it as per your suggestions), doesn\u0027t return the same addr used as argument, but instead, once buffer_map_internal() has been called and a VA has been returned, instead of just ignore it, use a back conversion of that VA back to the \"PA\" that was mapped to it and return that address. If the slot buffer module used the right context, then the addr returned by test_buffer_map_ret_pa() should be same as used as argument, which will validate the tests.\n\nThoughts?",
       "parentUuid": "706666bc_acb9ad6c",
+      "range": {
+        "startLine": 334,
+        "startChar": 38,
+        "endLine": 335,
+        "endChar": 64
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c11762b_fbfc65a1",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:39:00Z",
+      "side": 1,
+      "message": "Hmm the testing needs to define the purpose carefully when dealing with VA and PA on host platform. The point of the test was not clear from the description.\n\nIf only the Mapping according to VMSA is to be tested, then the bufeer_map_internal() return + a validation using realm_test_util_slot_va_from_pa() is enough\n\nIf the mapped buffer needs to be written to, then PA needs to be used through out, but as long as the former case is tested, this case can just use the PA returned and this is fine.\n\n\nThe previous tests are doing the right thing as AFAICS. For this one, we need to define the objective correctly and then the implementation can be done accordingly.",
+      "parentUuid": "69a7e5a9_e9de2cdc",
       "range": {
         "startLine": 334,
         "startChar": 38,
