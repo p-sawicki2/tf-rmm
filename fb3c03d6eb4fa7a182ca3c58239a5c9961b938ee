@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7d73f34_d5bb3d0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-13T11:44:19Z",
+      "side": 1,
+      "message": "Sorry about this, corrected now",
+      "parentUuid": "c2256101_25a05c0e",
+      "revId": "fb3c03d6eb4fa7a182ca3c58239a5c9961b938ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc218a5b_63ab10f0",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-01-13T10:11:23Z",
       "side": 1,
       "message": "void is needed ?",
+      "range": {
+        "startLine": 65,
+        "startChar": 37,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "fb3c03d6eb4fa7a182ca3c58239a5c9961b938ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faa0ae6e_840bc408",
+        "filename": "lib/attestation/include/attestation.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-13T11:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc218a5b_63ab10f0",
       "range": {
         "startLine": 65,
         "startChar": 37,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c0b2432_202959fd",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-13T11:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b535e8a5_df10e13b",
+      "range": {
+        "startLine": 41,
+        "startChar": 9,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "fb3c03d6eb4fa7a182ca3c58239a5c9961b938ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11e33a74_75d7a646",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddbed6e0_19595df4",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-13T11:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11e33a74_75d7a646",
+      "revId": "fb3c03d6eb4fa7a182ca3c58239a5c9961b938ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1e78541_118976c1",
@@ -94,6 +178,30 @@
       "writtenOn": "2023-01-13T10:11:23Z",
       "side": 1,
       "message": "this is to be removed.",
+      "range": {
+        "startLine": 354,
+        "startChar": 34,
+        "endLine": 354,
+        "endChar": 54
+      },
+      "revId": "fb3c03d6eb4fa7a182ca3c58239a5c9961b938ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a1f1a27_9cfa9065",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-13T11:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1e78541_118976c1",
       "range": {
         "startLine": 354,
         "startChar": 34,
