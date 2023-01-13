@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7ca7332_bdb68aa6",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10dd3c96_58b7ae35",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 24
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63a19fdf_9ebc2899",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-13T07:09:51Z",
       "side": 1,
       "message": "_aarch64_vmsa",
+      "range": {
+        "startLine": 116,
+        "startChar": 33,
+        "endLine": 116,
+        "endChar": 39
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13811dc0_0d2690c2",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63a19fdf_9ebc2899",
       "range": {
         "startLine": 116,
         "startChar": 33,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d503dde1_41593c14",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7c1b1aa_a3d7fc76",
+      "range": {
+        "startLine": 118,
+        "startChar": 36,
+        "endLine": 118,
+        "endChar": 44
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9380266_6c7c953d",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-01-13T07:09:51Z",
       "side": 1,
       "message": "...in the Stage 1 xlat tables as per aarch64 VMSA.",
+      "range": {
+        "startLine": 140,
+        "startChar": 18,
+        "endLine": 140,
+        "endChar": 38
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a33f7025_00f25442",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9380266_6c7c953d",
       "range": {
         "startLine": 140,
         "startChar": 18,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96da1067_75e3431a",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1d854d1_d310708a",
+      "range": {
+        "startLine": 225,
+        "startChar": 5,
+        "endLine": 225,
+        "endChar": 55
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4464b8e_ab518bb0",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-01-13T07:09:51Z",
       "side": 1,
       "message": "the graceful exit can be tested.",
+      "range": {
+        "startLine": 237,
+        "startChar": 4,
+        "endLine": 237,
+        "endChar": 36
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16e169c8_d94e7b7e",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4464b8e_ab518bb0",
       "range": {
         "startLine": 237,
         "startChar": 4,
@@ -210,6 +354,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5dce0be_f6ff8db2",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Fixed as per our discussion this morning. Let me know if there is anything else that needs to be changed.",
+      "parentUuid": "306d3d17_8ace6333",
+      "range": {
+        "startLine": 242,
+        "startChar": 18,
+        "endLine": 242,
+        "endChar": 37
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5a70ae8_0fc225d4",
@@ -223,6 +391,30 @@
       "writtenOn": "2023-01-13T07:09:51Z",
       "side": 1,
       "message": "Using numbers instead of basing it on GRANULE_SIZE will break these tests if the SIZE is changed in future. Recommend to base number on GRANULE_SIZE.",
+      "range": {
+        "startLine": 276,
+        "startChar": 31,
+        "endLine": 276,
+        "endChar": 36
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "249c98fb_1ea8cffa",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5a70ae8_0fc225d4",
       "range": {
         "startLine": 276,
         "startChar": 31,
@@ -294,6 +486,30 @@
       "side": 1,
       "message": "Hmm the testing needs to define the purpose carefully when dealing with VA and PA on host platform. The point of the test was not clear from the description.\n\nIf only the Mapping according to VMSA is to be tested, then the bufeer_map_internal() return + a validation using realm_test_util_slot_va_from_pa() is enough\n\nIf the mapped buffer needs to be written to, then PA needs to be used through out, but as long as the former case is tested, this case can just use the PA returned and this is fine.\n\n\nThe previous tests are doing the right thing as AFAICS. For this one, we need to define the objective correctly and then the implementation can be done accordingly.",
       "parentUuid": "69a7e5a9_e9de2cdc",
+      "range": {
+        "startLine": 334,
+        "startChar": 38,
+        "endLine": 335,
+        "endChar": 64
+      },
+      "revId": "1c106cc949a862f49f1ba848dd8df5e5ac428190",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3a534cd_6f482d2b",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-13T17:18:04Z",
+      "side": 1,
+      "message": "Reworked as per our discussion this morning.",
+      "parentUuid": "0c11762b_fbfc65a1",
       "range": {
         "startLine": 334,
         "startChar": 38,
