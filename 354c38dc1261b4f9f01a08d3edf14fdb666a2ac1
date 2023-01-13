@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f832d49_f46caaea",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-13T16:00:06Z",
+      "side": 1,
+      "message": "Separate variable declarations from the code below by empty line.",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "544d9dff_e2af128a",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-13T16:00:06Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4eb8ce6_f658ba1f",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-13T16:00:06Z",
+      "side": 1,
+      "message": "for (unsigned int i \u003d 0U;",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53a0e1ff_7c940b6c",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-13T16:00:06Z",
+      "side": 1,
+      "message": "Separate variable declarations from the code below by empty line.",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
