@@ -1,0 +1,268 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b4af3f1_4b9ce7b0",
+        "filename": "lib/rmm_el3_ifc/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "remove from here, as this is already defined for lib/realm component. We need to make it common and hence define it in CommonConfigs.cmake (remove from lib/realm as well).",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e3e184b_c2b15363",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "this should be 2.",
+      "range": {
+        "startLine": 81,
+        "startChar": 39,
+        "endLine": 81,
+        "endChar": 40
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b64a7246_6dadb44a",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "introduce a RMM_EL3_IFC_MAKE_VERSION() which will take maj and minor and construct the version number. the Manifest version numbers should be used here.",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 33
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae448d33_390ed167",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "\"Return the pointer to platform DRAM info....\"",
+      "range": {
+        "startLine": 202,
+        "startChar": 17,
+        "endLine": 202,
+        "endChar": 20
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7da002d_4a67ec77",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "Could list the 2 error codes returned as well in the comment.",
+      "range": {
+        "startLine": 207,
+        "startChar": 38,
+        "endLine": 207,
+        "endChar": 52
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "281da865_3602bd2a",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "Keep the return as -ve (int) to align with general error code policy for components. The cast to unsigned long can be done when calling the SMC within rmm_el3_ifc_report_fail_to_el3().",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 13
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2190a3fc_b5e36761",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "keep the type here as (int)  and the cast can be done at monitor_call().",
+      "range": {
+        "startLine": 276,
+        "startChar": 53,
+        "endLine": 276,
+        "endChar": 55
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7eb6707_db0e59b7",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "nit : revert to previous.",
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39563ff9_e78f1949",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "nit: revert to previous",
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "300bf98a_7a3be112",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "Need to take care of both Major and minor version. In future the Version will be bumped up to 0.3 or 1.0 and this check here will break.\n\nWe need a RMM_EL3_IFC_MAKE_VERSION macro which needs to construct 0.2 (do not version macros for this but hardcode 0 and 2) and this should be \u003c\u003d local_core_manifest.version.",
+      "range": {
+        "startLine": 96,
+        "startChar": 5,
+        "endLine": 96,
+        "endChar": 32
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24b6b437_f9a628d4",
+        "filename": "plat/fvp/src/fvp_granule.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "RMM_MAX_GRANULES",
+      "range": {
+        "startLine": 41,
+        "startChar": 14,
+        "endLine": 41,
+        "endChar": 36
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbfafe31_1a6dbf83",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:08:49Z",
+      "side": 1,
+      "message": "this field is not needed anymore ?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
