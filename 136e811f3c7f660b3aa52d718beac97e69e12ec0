@@ -221,6 +221,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c83e1c7_9b665752",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-13T10:14:49Z",
+      "side": 1,
+      "message": "if(local_core_manifest.version \u003c RMM_EL3_IFC_MAKE_VERSION(0,2)) {\n    return VERSION_ERROR;\n}",
+      "parentUuid": "300bf98a_7a3be112",
+      "range": {
+        "startLine": 96,
+        "startChar": 5,
+        "endLine": 96,
+        "endChar": 32
+      },
+      "revId": "136e811f3c7f660b3aa52d718beac97e69e12ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "24b6b437_f9a628d4",
         "filename": "plat/fvp/src/fvp_granule.c",
         "patchSetId": 7
