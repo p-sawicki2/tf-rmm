@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d27b741_e82ddadc",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-16T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f832d49_f46caaea",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "544d9dff_e2af128a",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-13T16:00:06Z",
       "side": 1,
       "message": "remove this line",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e72ed49f_863aabcf",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-16T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "544d9dff_e2af128a",
       "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0cd0995_eec760c1",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-16T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4eb8ce6_f658ba1f",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53a0e1ff_7c940b6c",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-01-13T16:00:06Z",
       "side": 1,
       "message": "Separate variable declarations from the code below by empty line.",
+      "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28e379b9_ea16df10",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-01-16T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53a0e1ff_7c940b6c",
       "revId": "354c38dc1261b4f9f01a08d3edf14fdb666a2ac1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
