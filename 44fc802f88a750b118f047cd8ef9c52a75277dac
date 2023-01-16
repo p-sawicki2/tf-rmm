@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6a9596f_87d8f206",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "we are only comparing clean blocks and not verifying the written data in the current test it seems. Also test can be simplified as follows as per the test purpose.\n\nSimplify logic as below:\n0. start loop and memset both granule_add[0] and [1] to zero.\n1. Copy random data to one of 4 blocks in granule_addrs[1].\n2. Copy the same block to granule_add[0] (same offset/same size) using ns_buffer_write().\n3. Compare the 2 buffer using memcmp (full size) and this should match.\n\n\nCan iterate the same loop over all CPUs.\n\nThe ns_buffer_read_TC1 is a similar to my suggestion. You can use that logic as well here instead of my suggestion.  keeping similar logic for different API is good for maintainability.",
+      "range": {
+        "startLine": 353,
+        "startChar": 3,
+        "endLine": 353,
+        "endChar": 15
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af9cab49_be496561",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "\"check\"",
+      "range": {
+        "startLine": 416,
+        "startChar": 20,
+        "endLine": 416,
+        "endChar": 29
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e9fceaf_a3bb01f6",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "It is better to stay away from VA/PA when host is involved.\n\n\"  .. which can be accessed for read or write by the tests. The callback maps the `addr` as per aarch64 VMSA and walk of the xlat tables to retrieve the original `addr` thus verifying that the `addr` was mapped correctly in the tables.\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 64,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cb12cfc_2c00d94b",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff453bd4_c1ecc0ee",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "I think the prefix can be `_access`",
+      "range": {
+        "startLine": 19,
+        "startChar": 21,
+        "endLine": 19,
+        "endChar": 29
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86dccf1a_b7cc9d21",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "\" Perform a table walk to get the PA mapped to \u0027slot\u0027. If everything went\n   well, it should return the same address as \u0027addr\u0027.\"\n\n\nYou could add a check here\n\nCHECK(addr \u003d\u003d realm_test_util_slot_to_pa(slot))",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 4
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3e02678_eb289045",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "\"Unmap a buffer addr which was previously mapped using test_buffer_map_access(). The addr needs to correspond to VA as per aarch64 VMSA, hence use the test helper to retrieve the same.\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 3,
+        "endLine": 40,
+        "endChar": 55
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5e76fdc_065377e8",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T11:45:15Z",
+      "side": 1,
+      "message": "_access",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 30
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
