@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7d1c15bf_c3460020",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T10:19:30Z",
+      "side": 1,
+      "message": "\".. is not supoprted for this API\".",
+      "range": {
+        "startLine": 212,
+        "startChar": 26,
+        "endLine": 213,
+        "endChar": 28
+      },
+      "revId": "55a319cda040c3c57d999fc6a29c622b2a616854",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e46fdc3_0b3a02d5",
         "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
         "patchSetId": 8
@@ -14,6 +37,24 @@
       "writtenOn": "2023-01-13T17:56:51Z",
       "side": 1,
       "message": "This function always returns 0 with all errors handled by calling rmm_el3_ifc_report_fail_to_el3().\nIt can be made void and check for the return value can be removed:\n\n\t/* Initialize the RMM \u003c-\u003e EL3 interface */\n\tret \u003d rmm_el3_ifc_init(x0, x1, x2, x3, RMM_SHARED_BUFFER_START);\n\tif (ret !\u003d 0) {\n\t\tERROR(\"%s (%u): Failed to initialized RMM EL3 Interface\\n\",\n\t\t\t__func__, __LINE__);\n\t\treturn ret;\n\t}",
+      "revId": "55a319cda040c3c57d999fc6a29c622b2a616854",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "179b62df_dd2aa8be",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-16T10:19:30Z",
+      "side": 1,
+      "message": "Hmm, let\u0027s keep this return for now even though it is not used.",
+      "parentUuid": "0e46fdc3_0b3a02d5",
       "revId": "55a319cda040c3c57d999fc6a29c622b2a616854",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
