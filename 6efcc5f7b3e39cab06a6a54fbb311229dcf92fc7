@@ -1,0 +1,8 @@
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Mon, 16 Jan 2023 15:46:13 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/18824
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
