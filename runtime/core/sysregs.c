@@ -18,22 +18,21 @@
 static unsigned long read_idreg(unsigned int idreg)
 {
 	switch (idreg) {
-	SYSREG_READ_CASE(ID_AA64PFR0_EL1);
+	SYSREG_READ_CASE(ID_AA64AFR0_EL1);
+	SYSREG_READ_CASE(ID_AA64AFR1_EL1);
+	/* trapped	 ID_AA64DFR0_EL1*/
+	SYSREG_READ_CASE(ID_AA64DFR1_EL1);
+	SYSREG_READ_CASE(ID_AA64ISAR0_EL1);
+	/* trapped	 ID_AA64ISAR1_EL1 */
+	SYSREG_READ_CASE(ID_AA64MMFR0_EL1);
+	SYSREG_READ_CASE(ID_AA64MMFR1_EL1);
+	SYSREG_READ_CASE(ID_AA64MMFR2_EL1);
+	/* trapped	 ID_AA64PFR0_EL1 */
 	SYSREG_READ_CASE(ID_AA64PFR1_EL1);
 	/*
 	 * TODO: not supported without SVE:
 	 * SYSREG_READ_CASE(ID_AA64ZFR0_EL1);
 	 */
-	SYSREG_READ_CASE(ID_AA64DFR0_EL1);
-	SYSREG_READ_CASE(ID_AA64DFR1_EL1);
-	SYSREG_READ_CASE(ID_AA64AFR0_EL1);
-	SYSREG_READ_CASE(ID_AA64AFR1_EL1);
-	SYSREG_READ_CASE(ID_AA64ISAR0_EL1);
-	SYSREG_READ_CASE(ID_AA64ISAR1_EL1);
-	SYSREG_READ_CASE(ID_AA64MMFR0_EL1);
-	SYSREG_READ_CASE(ID_AA64MMFR1_EL1);
-	SYSREG_READ_CASE(ID_AA64MMFR2_EL1);
-
 	default:
 		/* All other encodings are in the RES0 space */
 		return 0UL;
@@ -48,7 +47,7 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 				  unsigned long esr)
 {
 	unsigned int rt;
-	unsigned long idreg, mask;
+	unsigned long idreg, mask, value;
 
 	/*
 	 * We only set HCR_EL2.TID3 to trap ID registers at the moment and
@@ -71,17 +70,24 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 
 	idreg = esr & ESR_EL2_SYSREG_MASK;
 
-	if (idreg == ESR_EL2_SYSREG_ID_AA64ISAR1_EL1) {
+	switch (idreg) {
+	case ESR_EL2_SYSREG_ID_AA64ISAR1_EL1:
+		value = read_ID_AA64ISAR1_EL1();
+
 		/* Clear Address and Generic Authentication bits */
 		mask = (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_APA_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_API_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_GPA_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_GPI_SHIFT);
-	/*
-	 * Workaround for TF-A trapping AMU registers access
-	 * to EL3 in Realm state
-	 */
-	} else if (idreg == ESR_EL2_SYSREG_ID_AA64PFR0_EL1) {
+
+		break;
+	case ESR_EL2_SYSREG_ID_AA64PFR0_EL1:
+		/*
+		 * Workaround for TF-A trapping AMU registers access
+		 * to EL3 in Realm state.
+		 */
+		value = read_ID_AA64PFR0_EL1();
+
 		/* Clear support for Activity Monitors Extension */
 		mask = MASK(ID_AA64PFR0_EL1_AMU);
 
@@ -90,11 +96,19 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 		 * completely supports SVE.
 		 */
 		mask |= MASK(ID_AA64PFR0_EL1_SVE);
-	} else {
+		break;
+	case ESR_EL2_SYSREG_ID_AA64DFR0_EL1:
+		value = read_ID_AA64DFR0_EL1();
+
+		/* Report PMU is not implemented */
+		mask = MASK(ID_AA64DFR0_EL1_PMUVer);
+		break;
+	default:
+		value = read_idreg(idreg);
 		mask = 0UL;
 	}
 
-	rec->regs[rt] = read_idreg(idreg) & ~mask;
+	rec->regs[rt] = value & ~mask;
 	return true;
 }
 
