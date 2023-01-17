@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d908b55a_c2d2ae1d",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "I reimplemented this test in the following way:\n\n1- Start with a granule full of random data and the test granule zeroed.\n2- For each block within a granule:\n   2.1- Copy that block to the test granule using ns_buffer_write() with the right offset\n   2.2- Test that the content of the test granule from start up to the end of the current block matches with the source\n   2.3- Test that the content of the test granule from the beginning of the next block till the end of the granule is still zero\n\nSimilar approach is used for ns_buffer_read()",
+      "parentUuid": "4dc920ea_f4e3fcf9",
+      "range": {
+        "startLine": 353,
+        "startChar": 3,
+        "endLine": 353,
+        "endChar": 15
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "af9cab49_be496561",
         "filename": "lib/realm/tests/buffer.cpp",
         "patchSetId": 21
@@ -61,6 +85,30 @@
       "writtenOn": "2023-01-16T11:45:15Z",
       "side": 1,
       "message": "\"check\"",
+      "range": {
+        "startLine": 416,
+        "startChar": 20,
+        "endLine": 416,
+        "endChar": 29
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31e1905e_98fcf645",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af9cab49_be496561",
       "range": {
         "startLine": 416,
         "startChar": 20,
@@ -94,6 +142,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ac8f337_ff7e9f22",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e9fceaf_a3bb01f6",
+      "range": {
+        "startLine": 9,
+        "startChar": 64,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cb12cfc_2c00d94b",
@@ -107,6 +179,30 @@
       "writtenOn": "2023-01-16T11:45:15Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39a05480_9cacb5df",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cb12cfc_2c00d94b",
       "range": {
         "startLine": 13,
         "startChar": 0,
@@ -140,6 +236,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e35e0c5_f7e63a00",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff453bd4_c1ecc0ee",
+      "range": {
+        "startLine": 19,
+        "startChar": 21,
+        "endLine": 19,
+        "endChar": 29
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86dccf1a_b7cc9d21",
@@ -153,6 +273,30 @@
       "writtenOn": "2023-01-16T11:45:15Z",
       "side": 1,
       "message": "\" Perform a table walk to get the PA mapped to \u0027slot\u0027. If everything went\n   well, it should return the same address as \u0027addr\u0027.\"\n\n\nYou could add a check here\n\nCHECK(addr \u003d\u003d realm_test_util_slot_to_pa(slot))",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 4
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9083f5e_1e3fe6f7",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "We cannot do checks here as this is C code and the checks are C++ code. Also, I think it is more intuitive to do the explicit check on the test itself, so it is not hidden anywhere. I don\u0027t think the test harnesses should perform checks.\n\nDone on the comment",
+      "parentUuid": "86dccf1a_b7cc9d21",
       "range": {
         "startLine": 27,
         "startChar": 1,
@@ -186,6 +330,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac50e4c4_92140e38",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3e02678_eb289045",
+      "range": {
+        "startLine": 39,
+        "startChar": 3,
+        "endLine": 40,
+        "endChar": 55
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5e76fdc_065377e8",
@@ -199,6 +367,30 @@
       "writtenOn": "2023-01-16T11:45:15Z",
       "side": 1,
       "message": "_access",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 30
+      },
+      "revId": "44fc802f88a750b118f047cd8ef9c52a75277dac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d753f132_fe95c416",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-17T13:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5e76fdc_065377e8",
       "range": {
         "startLine": 42,
         "startChar": 22,
