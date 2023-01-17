@@ -71,18 +71,21 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 
 	idreg = esr & ESR_EL2_SYSREG_MASK;
 
-	if (idreg == ESR_EL2_SYSREG_ID_AA64ISAR1_EL1) {
+	switch (idreg) {
+	case ESR_EL2_SYSREG_ID_AA64ISAR1_EL1:
 		/* Clear Address and Generic Authentication bits */
 		mask = (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_APA_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_API_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_GPA_SHIFT) |
 		       (0xfUL << ESR_EL2_SYSREG_ID_AA64ISAR1_GPI_SHIFT);
-	/*
-	 * Workaround for TF-A trapping AMU registers access
-	 * to EL3 in Realm state
-	 */
-	} else if (idreg == ESR_EL2_SYSREG_ID_AA64PFR0_EL1) {
-		/* Clear support for Activity Monitors Extension */
+		break;
+	case ESR_EL2_SYSREG_ID_AA64PFR0_EL1:
+		/*
+		 * Workaround for TF-A trapping AMU registers access
+		 * to EL3 in Realm state.
+		 *
+		 * Clear support for Activity Monitors Extension.
+		 */
 		mask = MASK(ID_AA64PFR0_EL1_AMU);
 
 		/*
@@ -90,7 +93,12 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 		 * completely supports SVE.
 		 */
 		mask |= MASK(ID_AA64PFR0_EL1_SVE);
-	} else {
+		break;
+	case ESR_EL2_SYSREG_ID_AA64DFR0_EL1:
+		/* Report PMU is not implemented */
+		mask = MASK(ID_AA64DFR0_EL1_PMUVer);
+		break;
+	default:
 		mask = 0UL;
 	}
 
