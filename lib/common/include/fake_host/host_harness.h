@@ -5,13 +5,11 @@
 #ifndef HOST_HARNESS_H
 #define HOST_HARNESS_H
 
+#include <buffer.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <types.h>
-
-/* Forward declaration of buffer_slot */
-enum buffer_slot;
 
 /* Fake host wrapper to read and write sysregs */
 u_register_t host_read_sysreg(char *reg_name);
