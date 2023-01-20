@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec30ed54_e09fdc69",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T10:15:08Z",
+      "side": 1,
+      "message": "I think it is better to have read_idreg common for all the cases , see comment below.",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5e37f85_93243065",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T10:15:08Z",
+      "side": 1,
+      "message": "we probably need to mask several other features like MTPMU, trace, debug, PMS etc.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 38
+      },
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95256983_53c6aca1",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T10:15:08Z",
+      "side": 1,
+      "message": "we could do a common read of id_reg here ? Any benefit in reading it within each case?",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "975a08d5_caab6cda",
+        "filename": "runtime/include/feature.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T10:15:08Z",
+      "side": 1,
+      "message": "Ah, there is a re-structing going on for the header files, https://review.trustedfirmware.org/q/topic:%22sm%252Frmi_rsi_hdr_refactor%22+(status:open%20OR%20status:merged)\n\nThis can be based on top of that , after it is merged ?",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
