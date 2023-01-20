@@ -22,6 +22,53 @@
       },
       "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53aa827d_3eb09d4b",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T12:31:45Z",
+      "side": 1,
+      "message": "\u0026 line #16",
+      "parentUuid": "3dbcbe91_97e4c2b5",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 16
+      },
+      "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8085f64f_90838eb5",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T12:31:45Z",
+      "side": 1,
+      "message": "void *buffer_map_internal(enum buffer_slot slot, unsigned long addr);\nwhy do we need these 3 casts?",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 16,
+        "endChar": 46
+      },
+      "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
