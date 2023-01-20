@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0911426a_5fc9b546",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T22:32:40Z",
+      "side": 1,
+      "message": "Will do.\n\nThe bugs actually were the destination and source address not being tested for NULL values, as we discussed",
+      "parentUuid": "37b67ad7_d833ca1f",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "424ef375_582d931c",
         "filename": "lib/realm/tests/buffer.cpp",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-20T09:47:52Z",
       "side": 1,
       "message": "why is this changed? Was there an overflow in any test case ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 59
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5874c81f_682caf42",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T22:32:40Z",
+      "side": 1,
+      "message": "One of the assertion tests consists on trying an unaligned granule address. In order to get that address, I add a random offset between 1 and (GRANULE_SIZE - 1) to the random granule address returned by this helper. If by any chance this helper returned the last granule, then the address, including the offset to make it unaligned, would be larger than the DDR space, which will trigger a different assertion failure, masking the one that I want to test.\n\nBy never returning the last granule, I don\u0027t have that problem, as there is always room for offsets.",
+      "parentUuid": "424ef375_582d931c",
       "range": {
         "startLine": 34,
         "startChar": 29,
@@ -95,6 +143,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ccf927d9_bc66fd2c",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T22:32:40Z",
+      "side": 1,
+      "message": "This is a bug actually. I mixed up host_util_get_granule_base() with get_granule_struct_base() in granule.cpp, which should return a pointer to the first struct granule available. Then, by subtracting 1 to that pointer, I would be pointing to a struct granule before the start of the granules array.\n\nThe reason why the test passed seems to be that the unaligned address was triggering an assertion failure.\n\nI will fix it. Thanks for spotting it",
+      "parentUuid": "277546ad_5bec34ad",
+      "range": {
+        "startLine": 353,
+        "startChar": 1,
+        "endLine": 353,
+        "endChar": 68
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1662c79f_03e42673",
         "filename": "lib/realm/tests/buffer.cpp",
         "patchSetId": 3
@@ -130,6 +202,30 @@
       "side": 1,
       "message": "Didnt*",
       "parentUuid": "1662c79f_03e42673",
+      "range": {
+        "startLine": 385,
+        "startChar": 1,
+        "endLine": 385,
+        "endChar": 68
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "757b2ecc_fd1b82f6",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T22:32:40Z",
+      "side": 1,
+      "message": "Similar bug as on the previous comment",
+      "parentUuid": "0778d997_f94ff417",
       "range": {
         "startLine": 385,
         "startChar": 1,
