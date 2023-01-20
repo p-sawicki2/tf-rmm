@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37b67ad7_d833ca1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T09:47:52Z",
+      "side": 1,
+      "message": "need to describe what the bug is. Would be better for the test to case care rather than modify a general helper to accomodate",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "424ef375_582d931c",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T09:47:52Z",
+      "side": 1,
+      "message": "why is this changed? Was there an overflow in any test case ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 59
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbe4a01f_1fb737ba",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T09:47:52Z",
+      "side": 1,
+      "message": "\"...less than start of valid granule addr range...\"",
+      "range": {
+        "startLine": 342,
+        "startChar": 4,
+        "endLine": 342,
+        "endChar": 33
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "277546ad_5bec34ad",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T09:47:52Z",
+      "side": 1,
+      "message": "I didnt understand how this is being converted to struct_granule * and why this is considered less that valid address range",
+      "range": {
+        "startLine": 353,
+        "startChar": 1,
+        "endLine": 353,
+        "endChar": 68
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1662c79f_03e42673",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T09:47:52Z",
+      "side": 1,
+      "message": "Did understand how this is considered above valid granule range.",
+      "range": {
+        "startLine": 385,
+        "startChar": 1,
+        "endLine": 385,
+        "endChar": 68
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
