@@ -56,7 +56,7 @@ static void setup_sysreg_and_boot_manifest(void)
 {
 	/*
 	 * Initialize ID_AA64MMFR0_EL1 with a physical address
-	 * range of 18 bits
+	 * range of 48 bits
 	 */
 	(void)host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
 			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL));
