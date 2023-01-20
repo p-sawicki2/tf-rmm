@@ -50,6 +50,24 @@
       "message": "Hmmm, not sure about this change. To me, it would make more sense to have the COMPILER_ASSERT closer to the data structures we want to validate. Not only it makes it easier to check as everything is together, but you immediately notice you need to update the COMPILE_ASSERTs if you make a change to the data structures.",
       "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6813245e_6213b2db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T17:12:55Z",
+      "side": 1,
+      "message": "Yes, you are right that having the COMPILER_ASSERT in the same header makes maintenance easier. One of the reasons to have this header refactor is to make it easier to share headers across software stacks (like say KVM, kvm_unit_tests, TFTF etc). Having the compiler asserts in the header prevents that. One marginal benefit of this is that the COMPILER_ASSERT is only evaluated once within the C file rather than every C file the header file thus improving build.\n\nI need to make the intention clearer in the commit message.",
+      "parentUuid": "6f0eb03d_bc4de315",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
