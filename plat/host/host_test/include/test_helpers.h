@@ -21,6 +21,17 @@
 #endif
 
 /*
+ * Macro to replace CHECK_TRUE() with an equivalent that also prints
+ * a verbose message with a "PASS"/"FAIL" tail.
+ */
+#define CHECK_VERBOSE(condition, ...)					\
+	do {								\
+		VERBOSE(__VA_ARGS__);					\
+		VERBOSE(" : %s\n", ((condition) == true) ? "PASS" : "FAIL"); \
+		CHECK_TRUE((condition));				\
+	} while(false);
+
+/*
  * Callback identifiers for all the possible host harness
  * callbacks that can be installed by the unit tests.
  */
