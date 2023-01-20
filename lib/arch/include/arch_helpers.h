@@ -17,6 +17,10 @@
 #define DEFINE_SYSREG_READ_FUNC(_name)			\
 	DEFINE_SYSREG_READ_FUNC_(_name, _name)
 
+/* Define write function for system register */
+#define DEFINE_SYSREG_WRITE_FUNC(_name)			\
+	DEFINE_SYSREG_WRITE_FUNC_(_name, _name)
+
 /* Define read & write function for system register */
 #define DEFINE_SYSREG_RW_FUNCS(_name)			\
 	DEFINE_SYSREG_READ_FUNC_(_name, _name)		\
