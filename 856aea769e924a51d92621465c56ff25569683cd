@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44e3cb9a_32cdfe02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T11:46:46Z",
+      "side": 1,
+      "message": "Same comment as in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/18836/1\nI think it should be better if the assertions are next to what they are checking",
+      "revId": "856aea769e924a51d92621465c56ff25569683cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
