@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bc2577f_d01d4923",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T18:00:26Z",
+      "side": 1,
+      "message": "See my reply below.",
+      "parentUuid": "ec30ed54_e09fdc69",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c5e37f85_93243065",
         "filename": "runtime/core/sysregs.c",
         "patchSetId": 3
@@ -31,6 +49,30 @@
       "writtenOn": "2023-01-20T10:15:08Z",
       "side": 1,
       "message": "we probably need to mask several other features like MTPMU, trace, debug, PMS etc.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 38
+      },
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e1b2d3b_48a145a8",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T18:00:26Z",
+      "side": 1,
+      "message": "This will come in a subsequent patch. It is not possible to mask Debug support, and at least 2 break/watchpoints must be reported.",
+      "parentUuid": "c5e37f85_93243065",
       "range": {
         "startLine": 103,
         "startChar": 0,
@@ -60,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "985e1237_b215db7f",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T18:00:26Z",
+      "side": 1,
+      "message": "This switch statement has already found cases for ID_AA64ISAR1_EL1, ID_AA64PFR0_EL1 \u0026 ID_AA64DFR0_EL1 registers. Calling read_idreg() function will result in its switch statement going through all cases again to read the proper register.\nWith this proposed change read cases of these 3 registers are moved from one function to another with no increase in the code size.\nI would suggest to get rid of read_idreg() function, \nmodify SYSREG_READ_CASE(reg) as below:\n#define SYSREG_READ_CASE(reg) \\\n\t    case ESR_EL2_SYSREG_##reg: \\\n            value \u003d read_##reg();  \\\n            break;\nand put all these macros in handle_id_sysreg_trap().",
+      "parentUuid": "95256983_53c6aca1",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "975a08d5_caab6cda",
         "filename": "runtime/include/feature.h",
         "patchSetId": 3
@@ -71,6 +131,24 @@
       "writtenOn": "2023-01-20T10:15:08Z",
       "side": 1,
       "message": "Ah, there is a re-structing going on for the header files, https://review.trustedfirmware.org/q/topic:%22sm%252Frmi_rsi_hdr_refactor%22+(status:open%20OR%20status:merged)\n\nThis can be based on top of that , after it is merged ?",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88a3af59_4675641a",
+        "filename": "runtime/include/feature.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T18:00:26Z",
+      "side": 1,
+      "message": "Yes.\nAlso the first tabs on lines #12, 13, 15, 25 and 26 should be replaced with spaces.",
+      "parentUuid": "975a08d5_caab6cda",
       "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
