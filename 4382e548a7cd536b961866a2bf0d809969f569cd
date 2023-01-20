@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "527ab88d_b6acbe01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T17:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc9b7d51_d0edc8d4",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e6340ca_d74a2b8b",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-20T12:26:11Z",
       "side": 1,
       "message": "are moved",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cf9d0c9_08032ada",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T17:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e6340ca_d74a2b8b",
       "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -66,6 +102,24 @@
       "side": 1,
       "message": "Yes, you are right that having the COMPILER_ASSERT in the same header makes maintenance easier. One of the reasons to have this header refactor is to make it easier to share headers across software stacks (like say KVM, kvm_unit_tests, TFTF etc). Having the compiler asserts in the header prevents that. One marginal benefit of this is that the COMPILER_ASSERT is only evaluated once within the C file rather than every C file the header file thus improving build.\n\nI need to make the intention clearer in the commit message.",
       "parentUuid": "6f0eb03d_bc4de315",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df81f285_cb629635",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-20T17:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6813245e_6213b2db",
       "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
