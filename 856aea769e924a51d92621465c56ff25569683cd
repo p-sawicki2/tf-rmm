@@ -3,6 +3,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7569566f_63a7f103",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T14:00:59Z",
+      "side": 1,
+      "message": "COMPILER ASSERTS",
+      "revId": "856aea769e924a51d92621465c56ff25569683cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3f544b4_3b1c72ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T14:00:59Z",
+      "side": 1,
+      "message": "are moved",
+      "revId": "856aea769e924a51d92621465c56ff25569683cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44e3cb9a_32cdfe02",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -14,6 +48,23 @@
       "writtenOn": "2023-01-20T11:46:46Z",
       "side": 1,
       "message": "Same comment as in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/18836/1\nI think it should be better if the assertions are next to what they are checking",
+      "revId": "856aea769e924a51d92621465c56ff25569683cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddfc519c_789f9b0f",
+        "filename": "lib/smc/src/smc-rsi-offsets.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-20T14:00:59Z",
+      "side": 1,
+      "message": "remove last empty line",
       "revId": "856aea769e924a51d92621465c56ff25569683cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
