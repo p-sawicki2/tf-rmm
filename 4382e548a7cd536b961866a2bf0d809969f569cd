@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f0eb03d_bc4de315",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-20T11:06:07Z",
+      "side": 1,
+      "message": "Hmmm, not sure about this change. To me, it would make more sense to have the COMPILER_ASSERT closer to the data structures we want to validate. Not only it makes it easier to check as everything is together, but you immediately notice you need to update the COMPILE_ASSERTs if you make a change to the data structures.",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
