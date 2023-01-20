@@ -24,7 +24,9 @@ target_link_libraries(rmm-plat-host_test
     PRIVATE rmm-lib
             CppUTest
     # Needed to export host_utils.h
-    PUBLIC  rmm-host-common)
+    PUBLIC  rmm-host-common
+    # Need to import buffer.h
+            rmm-lib-realm)
 
 # Used to locate test_groups.h
 target_include_directories(rmm-plat-host_test
