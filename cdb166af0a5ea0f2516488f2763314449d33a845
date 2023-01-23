@@ -117,6 +117,30 @@
       },
       "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccb7b17f_bbde461c",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-23T11:19:24Z",
+      "side": 1,
+      "message": "When I started working on this functions, many moons ago, MISRA checks would fail due to the use of void* so I had to do a lot of casting back and forth to avoid those failures.\n\nAfter many refactoring iterations some of those casts are still there and in fact might not be needed nor make any sense anymore. I guess as Soby mentioned this needs a bit of clean-up.",
+      "parentUuid": "b80a0468_1bf7edc4",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 16,
+        "endChar": 46
+      },
+      "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
