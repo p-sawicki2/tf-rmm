@@ -141,6 +141,30 @@
       },
       "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15dfda50_8ce7bcc6",
+        "filename": "lib/realm/tests/test_harness.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-23T11:26:06Z",
+      "side": 1,
+      "message": "Using uintptr_t \u0026 void casts in this function just doesn\u0027t make any sense. Why cannot we remove them here in this patch?",
+      "parentUuid": "b80a0468_1bf7edc4",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 16,
+        "endChar": 46
+      },
+      "revId": "cdb166af0a5ea0f2516488f2763314449d33a845",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
