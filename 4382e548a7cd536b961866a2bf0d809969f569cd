@@ -176,6 +176,24 @@
       "parentUuid": "35c47034_621426ed",
       "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a3c66e0_4604f5c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T12:09:23Z",
+      "side": 1,
+      "message": "I tried to do the following: \nCOMPILER_ASSERTS(RMI_ABI_VERSION_MAJOR \u003d\u003d U(56) \u0026\u0026 RMI_ABI_VERSION_MINOR \u003d\u003d U(0))\n\nbut this gives compilation issue on gcc aarch64 toolchain although host gcc is fine. \n\nI think it is not worth the trouble and this is something we need to keep in mind as part of review.",
+      "parentUuid": "152c479c_12f75a3f",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
