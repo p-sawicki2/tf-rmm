@@ -87,6 +87,24 @@
       "parentUuid": "fd87ee6e_db06f6a0",
       "revId": "bf6f81dd748f8ff8af2e6502683753579c2bbba0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a5913ee_1cb429b5",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-23T12:43:16Z",
+      "side": 1,
+      "message": "Looks much better now.",
+      "parentUuid": "e6165346_6fa26011",
+      "revId": "bf6f81dd748f8ff8af2e6502683753579c2bbba0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
