@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad710150_95d51477",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-23T11:35:30Z",
+      "side": 1,
+      "message": "See my comment about \"index is zero.\" for the previous patch.",
+      "revId": "79486901c643b655cbdfbc33addafec18b4f5a1b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
