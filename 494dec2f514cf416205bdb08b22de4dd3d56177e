@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a3bf512_8e139552",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-23T09:43:29Z",
+      "side": 1,
+      "message": "Actually, got this totally wrong. In the case this function returned the last granule, it would give the address of the beginning of that granule, thus adding the offset wouldn\u0027t cause an overflow. So this change is actually not needed. I will revert it.",
+      "parentUuid": "5874c81f_682caf42",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 59
+      },
+      "revId": "494dec2f514cf416205bdb08b22de4dd3d56177e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cbe4a01f_1fb737ba",
         "filename": "lib/realm/tests/buffer.cpp",
         "patchSetId": 3
