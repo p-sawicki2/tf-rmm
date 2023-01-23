@@ -120,6 +120,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a76f7e11_a17e69a0",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T11:25:16Z",
+      "side": 1,
+      "message": "I see. \nMaybe, if any masking is needed , we can define a macro for that reads the ID reg and applies a mask as well, #define for mask can have all the comments related the fields being masked.\n\n\n#define SYSREG_READ_MASKED_CASE(reg, mask) \\\n\t    case ESR_EL2_SYSREG_##reg: \\\n            value \u003d read_##reg() \u0026 (mask);  \\\n            break;\n\nThis is a bit unreadable because switch case is hidden in the macro and break the multi-line coding guidelines. So perhaps even \n\n#define SYSREG_READ_MASKED(reg, mask) \\\n            read_##reg() \u0026 (mask);  \\\n\n\nand will be used as \n\ncase ESR_EL2_SYSREG_ID_AA64DFR0_EL1:\n     value \u003d SYSREG_READ_MASKED(ID_AA64DFR0_EL1, TRAP_ID_AA64DFR0_EL1_MASK);\n     break;",
+      "parentUuid": "985e1237_b215db7f",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "975a08d5_caab6cda",
         "filename": "runtime/include/feature.h",
         "patchSetId": 3
