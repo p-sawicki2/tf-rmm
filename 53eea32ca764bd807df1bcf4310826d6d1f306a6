@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f26189a_fbbd6370",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T10:05:38Z",
+      "side": 1,
+      "message": "Hmm, yes. I dont think we want to enforce this rule in RMM unless we have some tooling to check and enforce this in place.",
+      "parentUuid": "06bea447_71e8b782",
+      "revId": "53eea32ca764bd807df1bcf4310826d6d1f306a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7b937ca_433a1025",
