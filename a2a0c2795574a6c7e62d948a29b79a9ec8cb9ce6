@@ -138,6 +138,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1d142bb8_c2bebbd3",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-23T11:46:17Z",
+      "side": 1,
+      "message": "OK. This will require to add invividual mask definitions for each system register we process.\nI\u0027ll add them in arch.h",
+      "parentUuid": "a76f7e11_a17e69a0",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "975a08d5_caab6cda",
         "filename": "runtime/include/feature.h",
         "patchSetId": 3
