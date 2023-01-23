@@ -140,6 +140,24 @@
       "parentUuid": "df81f285_cb629635",
       "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35c47034_621426ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T11:38:25Z",
+      "side": 1,
+      "message": "hmm, yes, but I am reluctant to add comments to this header file which are specific to RMM which may not be relevant when shared across projects. \n\nUsually the sizeof check is enough to catch when fields are added to the structure at the end, but there is slack in the RMM datastructure size so there is a corner case when COMPILER ASSERT will fail to catch modification to the file. \n\nBut given that this is a core header file and will affect the ABI , this header is unlikely to be modified by anyone other than folks involved in updating the ABI to a newer version. So the version number of ABI will get updated.\n\nSo we could add a COMPILER_ASSERT checking for specific ABI version thus any update will force update of the asserts as well.",
+      "parentUuid": "70852c10_9861fd20",
+      "revId": "4382e548a7cd536b961866a2bf0d809969f569cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
