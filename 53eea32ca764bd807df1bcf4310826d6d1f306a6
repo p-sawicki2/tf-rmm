@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06bea447_71e8b782",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T09:53:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "729cdd4f_db665ba6",
+      "revId": "53eea32ca764bd807df1bcf4310826d6d1f306a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7b937ca_433a1025",
@@ -37,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "904bd4fa_e52a82df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T09:53:33Z",
+      "side": 1,
+      "message": "The idea was to keep all aspects related to RMM specification in the realeted smc-rmi.h/rsi.h.\n\nwill add a note to the commit message.",
+      "parentUuid": "f7b937ca_433a1025",
+      "revId": "53eea32ca764bd807df1bcf4310826d6d1f306a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2a7ef96b_0fc06d91",
         "filename": "lib/smc/include/smc-rmi.h",
         "patchSetId": 1
@@ -48,6 +84,24 @@
       "writtenOn": "2023-01-20T12:50:23Z",
       "side": 1,
       "message": "replace tabs after #define on lines #129,130 with spaces.",
+      "revId": "53eea32ca764bd807df1bcf4310826d6d1f306a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "372de9ae_423655e8",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T09:53:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a7ef96b_0fc06d91",
       "revId": "53eea32ca764bd807df1bcf4310826d6d1f306a6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
