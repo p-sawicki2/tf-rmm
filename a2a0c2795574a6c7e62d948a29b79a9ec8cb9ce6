@@ -156,6 +156,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a45988f3_882d6523",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-23T13:30:45Z",
+      "side": 1,
+      "message": "The ORing of bits to create the appropriate masks can be defined here as it is specific to the features being emulated to realms. Need not be part of arch.h",
+      "parentUuid": "1d142bb8_c2bebbd3",
+      "revId": "a2a0c2795574a6c7e62d948a29b79a9ec8cb9ce6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "975a08d5_caab6cda",
         "filename": "runtime/include/feature.h",
         "patchSetId": 3
