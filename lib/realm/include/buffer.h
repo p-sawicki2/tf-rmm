@@ -64,10 +64,19 @@ bool ns_buffer_write(enum buffer_slot slot,
 void slot_buf_setup_xlat(void);
 
 /*
- * Finishes initializing the slot buffer mechanism.
- * This function should be called after the MMU is enabled.
+ * Initialzes the slot buffer components common to all PEs. This function
+ * must only be called once during cold boot initialization.
+ *
+ * Returns 0 on success and a negative POSIX error code otherwise.
  */
-void slot_buf_init(void);
+int slot_buf_coldboot_init(void);
+
+/*
+ * Finishes initializing the slot buffer mechanism.
+ * This function should be called after the MMU is enabled, during the
+ * warmboot path.
+ */
+void slot_buf_finish_warmboot_init(void);
 
 /******************************************************************************
  * Internal APIs not meant to be invoked by generic RMM code.
