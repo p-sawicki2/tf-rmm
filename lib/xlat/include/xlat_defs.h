@@ -60,7 +60,7 @@
 	(((virtual_addr) >> XLAT_ADDR_SHIFT(level)) & ULL(0x1FF))
 
 /* Mask to get the PA given a L3 descriptor entry (4KB granularity) */
-#define XLAT_TTE_L3_PA_MASK	ULL(0x0000FFFFFFFFF000)
+#define xlat_tte_info_L3_PA_MASK	ULL(0x0000FFFFFFFFF000)
 
 /*
  * In AArch64 state, the MMU may support 4KB, 16KB and 64KB page
@@ -88,22 +88,22 @@
  * state.
  *
  * TCR.TxSZ is calculated as 64 minus the width of said address space.
- * The value of TCR.TxSZ must be in the range 16 to 39 [1] or 48 [2],
- * depending on Small Translation Table Support which means that
- * the virtual address space width must be in the range 48 to 25 or 16 bits.
+ * The value of TCR.TxSZ must be in the range 16 to 48 [1], which means that
+ * the virtual address space width must be in the range 48 to 16 bits.
  *
  * [1] See the ARMv8-A Architecture Reference Manual (DDI 0487A.j) for more
  * information:
  * Page 1730: 'Input address size', 'For all translation stages'.
- * [2] See section 12.2.55 in the ARMv8-A Architecture Reference Manual
+ * and section 12.2.55 in the ARMv8-A Architecture Reference Manual
  * (DDI 0487D.a)
  */
-/* Maximum value of TCR_ELx.T(0,1)SZ is 39 */
+/*
+ * Maximum value of TCR_ELx.T(0,1)SZ is 39 for a min VA size of 16 bits.
+ * RMM is only supported with FEAT_TTST implemented.
+ */
 #define MIN_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MAX))
 
-/* Maximum value of TCR_ELx.T(0,1)SZ is 48 */
-#define MIN_VIRT_ADDR_SPACE_SIZE_TTST	\
-				(UL(1) << (UL(64) - TCR_TxSZ_MAX_TTST))
+/* Minimum value of TCR_ELx.T(0,1)SZ is 16, for a VA of 48 bits */
 #define MAX_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MIN))
 
 /*
@@ -138,4 +138,22 @@
 	: (((_virt_addr_space_sz) > (ULL(1) << L2_XLAT_ADDRESS_SHIFT))	\
 	? 2U : 3U)))
 
+/*************************************************************************
+ * Common data structures needed by several public headers
+ ************************************************************************/
+
+#ifndef __ASSEMBLER__
+
+/*
+ * Structure for specifying a single region of memory.
+ */
+struct xlat_mmap_region {
+	uintptr_t	base_pa;	/* Base PA for the current region. */
+	uintptr_t	base_va;	/* Base VA for the current region. */
+	size_t		size;		/* Size of the current region. */
+	uint64_t	attr;		/* Attrs for the current region. */
+	size_t		granularity;    /* Region granularity. */
+};
+
+#endif /* __ASSEMBLER__ */
 #endif /* XLAT_DEFS_H */

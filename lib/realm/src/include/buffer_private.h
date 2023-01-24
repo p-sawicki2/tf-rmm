@@ -19,5 +19,5 @@
 #define SLOT_VIRT		((ULL(0xffffffffffffffff) - \
 				 RMM_SLOT_BUF_VA_SIZE + ULL(1)))
 
-struct xlat_table_entry *get_cache_entry(void);
+struct xlat_tte_info *get_cache_entry(void);
 uintptr_t slot_to_va(enum buffer_slot slot);

@@ -17,12 +17,12 @@
  */
 uintptr_t realm_test_util_slot_to_pa(enum buffer_slot slot)
 {
-	struct xlat_table_entry *entry = get_cache_entry();
+	struct xlat_tte_info *entry = get_cache_entry();
 	uintptr_t va = slot_to_va(slot);
 	uint64_t *desc_ptr = xlat_get_pte_from_table(entry, va);
-	uint64_t descriptor = xlat_read_descriptor(desc_ptr);
+	uint64_t descriptor = xlat_read_tte(desc_ptr);
 
-	return (uintptr_t)(descriptor & XLAT_TTE_L3_PA_MASK);
+	return (uintptr_t)(descriptor & xlat_tte_info_L3_PA_MASK);
 }
 
 /*

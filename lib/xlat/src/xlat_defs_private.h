@@ -60,7 +60,7 @@
 /* Guarded Page bit */
 #define GP			(ULL(1) << 50)
 
-#define TABLE_ADDR_MASK		XLAT_TTE_L3_PA_MASK
+#define TABLE_ADDR_MASK		xlat_tte_info_L3_PA_MASK
 
 #define AP2_SHIFT			UL(0x7)
 #define AP2_RO				ULL(0x1)

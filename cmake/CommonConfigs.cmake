@@ -46,6 +46,17 @@ arm_config_option(
     ELSE OFF)
 
 #
+# PLAT_CMN_MAX_MMAP_REGIONS is set a default value so in case when there are
+# not enough mmap regions allocated, adding regions to the xlat tables will
+# fail.
+#
+arm_config_option(
+    NAME PLAT_CMN_MAX_MMAP_REGIONS
+    HELP "Maximum number of static regions to be mapped in xlat tables"
+    DEFAULT 0x5
+    TYPE STRING)
+
+#
 # Introduce a pseudo-library purely for applying flags to RMM's libraries.
 # This is applied to any targets created after this point.
 #
@@ -80,6 +91,9 @@ if(RMM_FPU_USE_AT_REL2)
     target_compile_definitions(rmm-common
         INTERFACE "RMM_FPU_USE_AT_REL2=1")
 endif()
+
+target_compile_definitions(rmm-common
+    INTERFACE "PLAT_CMN_MAX_MMAP_REGIONS=U(${PLAT_CMN_MAX_MMAP_REGIONS})")
 
 #
 # Project name and version
