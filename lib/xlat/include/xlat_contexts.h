@@ -118,13 +118,6 @@ struct xlat_ctx {
 #define XLAT_TABLES_ALIGNMENT		XLAT_TABLE_SIZE
 
 /*
- * Align the base tables to page boundary. This migh generate larger tables
- * than needed, but it simplifies the code, which is a good trade-off
- * since we have enough memory.
- */
-#define BASE_XLAT_TABLES_ALIGNMENT	XLAT_TABLE_SIZE
-
-/*
  * Compute the number of entries required at the initial lookup level to
  * address the whole virtual address space.
  */
@@ -143,117 +136,121 @@ struct xlat_ctx {
 #define XLAT_TABLES_CTX_TBL_VALID(_ctx)		((_ctx)->tbls != NULL)
 
 /*
- * Macro to allocate translation tables to be used within a context.
+ * Macro to calculate the size of a memory buffer able to contain all the
+ * translation tables for a context.
  */
-#define XLAT_CREATE_TABLES(_tblset_name,				\
-			   _xlat_tables_count,				\
-			   _virt_addr_space_size,			\
-			   _tables_section)				\
-									\
-	static uint64_t _tblset_name##_base_xlat_table			\
-		[(XLAT_TABLE_ENTRIES)]					\
-		__aligned((BASE_XLAT_TABLES_ALIGNMENT))			\
-		__section((_tables_section));				\
-									\
-	static uint64_t _tblset_name##_xlat_tables[(_xlat_tables_count)]\
-		[(XLAT_TABLE_ENTRIES)]					\
-		__aligned((XLAT_TABLES_ALIGNMENT))			\
-		__section((_tables_section));				\
-									\
-	static struct xlat_ctx_tbls _tblset_name##_tbls = {		\
-		.tables = _tblset_name##_xlat_tables,			\
-		.tables_num = (_xlat_tables_count),			\
-		.next_table = 0,					\
-		.base_table = _tblset_name##_base_xlat_table,		\
-		.max_base_table_entries =				\
-			GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size),\
-		.initialized = false					\
-	}								\
+#define XLAT_TABLES_CTX_BUF_SIZE(_tables)				\
+		((size_t)(XLAT_TABLE_SIZE * ((_tables) + 1U)))
 
 /*
- * Macro used to define the xlat_ctx_cfg and xlat_mmap_region array
- * associated with a context.
+ * Function to generate a set of empty translation tables and initialize
+ * a translation context with them.
+ *
+ * Arguments:
+ *	- buf:	Memory area where the tables will be initialized.
+ *	- buf_size: Size of the `buf` memory area.
+ *	- t_count: Number of tables to initialize. This does not take
+ *		   into account the base table.
+ *	- tbls_ctx: Pointer to a xlat_ctx_tbls structure with the tables
+ *	       context to be initialized.
+ *
+ * Return:
+ *	- 0 on success or a negative POSIX error otherwise.
+ *
+ * NOTE: This function does not perform any zeroing or cleaning of the
+ *	 allocated translation tables.
  */
-#define XLAT_REGISTER_VA_SPACE(_ctx_name, _region, _mmap_count,		\
-			_virt_addr_space_size)				\
-	COMPILER_ASSERT(((_region) < VA_REGIONS));			\
-	COMPILER_ASSERT(((unsigned long)(_virt_addr_space_size)		\
-					% GRANULE_SIZE) == UL(0));	\
-	COMPILER_ASSERT((unsigned long)(_virt_addr_space_size)		\
-					<= (MAX_VIRT_ADDR_SPACE_SIZE));	\
-									\
-	static struct xlat_mmap_region _ctx_name##_mmap[(_mmap_count)];	\
-									\
-	static struct xlat_ctx_cfg _ctx_name##_xlat_ctx_cfg = {		\
-		.max_va_size = (_virt_addr_space_size),			\
-		.base_va = 0ULL,					\
-		.mmap = _ctx_name##_mmap,				\
-		.mmap_num = (_mmap_count),				\
-		.max_mapped_va_offset = 0ULL,				\
-		.max_mapped_pa = 0ULL,					\
-		.base_level =						\
-			(GET_XLAT_TABLE_LEVEL_BASE((_virt_addr_space_size))),\
-		.region = (_region),					\
-		.initialized = false					\
-	}
+int xlat_ctx_allocate_tables(uintptr_t buf, size_t buf_size,
+			     unsigned int t_count,
+			     struct xlat_ctx_tbls *tbls_ctx);
 
 /*
- * Macro to generate a context and associate the translation table set passed
- * to it by ref.
+ * Function to initialize the configuration structure for a
+ * translation context.
+ *
+ * Arguments:
+ *	- cfg: Pointer to a xlat_ctx_cfg structure to initialize.
+ *	- region: xlat_addr_region_id_t descriptor indicating the memory
+ *		  region for the configured context.
+ *	- mmap: Pointer to an array of xlat_mmap_region structures.
+ *	- mmap_count: Number of mmap regions to be stored on the current
+ *		      context.
+ *	- va_size: Size of the VA space for the current context.
+ *
+ * Return:
+ *	- 0 on success or a negative POSIX error otherwise.
  */
-#define XLAT_REGISTER_CONTEXT_FULL_SPEC(_ctx_name, _region, _mmap_count,\
-			_virt_addr_space_size,				\
-			_tables_set)					\
-	XLAT_REGISTER_VA_SPACE(_ctx_name, (_region),			\
-			       (_mmap_count), (_virt_addr_space_size));	\
-									\
-	static struct xlat_ctx _ctx_name##_xlat_ctx = {			\
-		.cfg = &(_ctx_name##_xlat_ctx_cfg),			\
-		.tbls = (_tables_set)					\
-	}
+int xlat_ctx_init_config(struct xlat_ctx_cfg *cfg,
+			 xlat_addr_region_id_t region,
+			 struct xlat_mmap_region *mmap,
+			 unsigned int mmap_count,
+			 size_t va_size);
 
 /*
- * Statically allocate a translation context and associated translation
- * tables. Also initialize them.
+ * Function to initialize a context along with its configuration and
+ * associate the translation table set passed to it.
  *
- * _ctx_name:
- *   Prefix for the translation context variable.
- *   E.g. If _ctx_name is 'foo', the variable will be called 'foo_xlat_ctx'.
- *   Useful to distinguish multiple contexts from one another.
+ * Arguments:
+ *	- ctx: Pointer to the empty translation context to generate.
+ *	- cfg: Pointer to the translation context configuration structure.
+ *	- tbls_ctx: Pointer to a xlat_ctx_tbls structure with the tables
+ *	       context already setup.
+ *	- region: xlat_addr_region_id_t descriptor indicating the memory
+ *		  region for the configured context.
+ *	- mmap: Pointer to an array of xlat_mmap_region structures.
+ *	- mmap_count: Number of mmap regions to be stored on the current
+ *		      context.
+ *	- va_size: Size of the VA space for the current context.
  *
- * _region:
- *   Region mapped by this context (high or low address region).
- *   See @xlat_ctx_region_id_t for more info.
- *
- * _mmap_count:
- *   Number ofstruct xlat_mmap_region to allocate.
- *   Would be defined during the context creation.
- *
- * _xlat_tables_count:
- *   Number of non-base tables to allocate at level others than the
- *   initial lookup.
- *
- * _virt_addr_space_size:
- *   Size (in bytes) of the virtual address space that can be accessed by this
- *   context.
- *
- * _section_name:
- *   Specify the name of the section where the translation tables have to be
- *   placed by the linker.
+ * Return:
+ *	- 0 on success or a negative POSIX error otherwise.
  */
-#define XLAT_REGISTER_CONTEXT(_ctx_name, _region, _mmap_count,		\
-			      _xlat_tables_count,			\
-			      _virt_addr_space_size,			\
-			      _section_name)				\
-		XLAT_CREATE_TABLES(_ctx_name, (_xlat_tables_count),	\
-				   (_virt_addr_space_size),		\
-				   (_section_name));			\
-									\
-		XLAT_REGISTER_CONTEXT_FULL_SPEC(_ctx_name, (_region),	\
-						(_mmap_count),		\
-						(_virt_addr_space_size),\
-						&(_ctx_name##_tbls))
+int xlat_ctx_register_context(struct xlat_ctx *ctx,
+			      struct xlat_ctx_cfg *cfg,
+			      struct xlat_ctx_tbls *tbls_ctx,
+			      xlat_addr_region_id_t region,
+			      struct xlat_mmap_region *mmap,
+			      unsigned int mmap_count,
+			      size_t va_size);
+
+/*
+ * Setup a given translation context with a given configuration and
+ * set of translation tables. This function initializes the associated
+ * xlat_ctx_tbls structure with the set of tables passed destroying any
+ * previous configuration that might been there before.
+ *
+ * Arguments:
+ *	- ctx: Pointer to the translation context to generate.
+ *	- cfg: Pointer to the structure containing the context configuration.
+ *	- tbls_ctx: Pointer to a tables structure to configure the associated
+ *		    table data for the translation context.
+ *	- base_table: Pointer to the base table for the given context.
+ *	- base_level_entries: Maximum number of entries on the base table.
+ *	- tables_ptr: Pointer to the intermediate translation tables for the
+ *		      given context. This can be NULL.
+ *	-ntables: Number of intermediate tables. This can be 0.
+ *
+ * NOTE: This function does not perform any type of validation on the
+ *	 xlat_ctx_cfg structure, and it just add it to the context.
+ */
+int xlat_ctx_setup_context(struct xlat_ctx *ctx,
+			   struct xlat_ctx_cfg *cfg,
+			   struct xlat_ctx_tbls *tbls_ctx,
+			   uint64_t *base_table,
+			   unsigned int base_level_entries,
+			   uint64_t *tables_ptr,
+			   unsigned int ntables);
+
+/*
+ * Return true if the xlat_ctx_cfg field in the xlat_ctx is initialized.
+ */
+bool xlat_ctx_cfg_initialized(const struct xlat_ctx * const ctx);
+
+/*
+ * Return true if the translation tables on the current context are already
+ * initialized or false otherwise.
+ */
+bool xlat_ctx_tbls_initialized(const struct xlat_ctx * const ctx);
 
 #endif /*__ASSEMBLER__*/
-
 #endif /* XLAT_CONTEXTS_H */

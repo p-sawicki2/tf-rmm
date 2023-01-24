@@ -61,11 +61,20 @@ IMPORT_SYM(uintptr_t, rmm_rw_end,		RMM_RW_END);
 					0U,				\
 					MT_RW_DATA | MT_REALM)
 
+/*
+ * Allocate an array of memory to store the translation tables for the
+ * runtime context.
+ */
+static unsigned char runtime_xlat_buf[(XLAT_TABLES_CTX_BUF_SIZE(
+						PLAT_CMN_CTX_MAX_XLAT_TABLES))]
+				__aligned(XLAT_TABLES_ALIGNMENT)
+				__section("xlat_static_tables");
 
-XLAT_REGISTER_CONTEXT(runtime, VA_LOW_REGION, PLAT_CMN_MAX_MMAP_REGIONS,
-		      PLAT_CMN_CTX_MAX_XLAT_TABLES,
-		      VIRT_ADDR_SPACE_SIZE,
-		      "xlat_static_tables");
+/* Structures to hold the runtime translation context information  */
+static struct xlat_ctx_tbls runtime_tbls;
+static struct xlat_ctx_cfg runtime_xlat_ctx_cfg;
+static struct xlat_ctx runtime_xlat_ctx;
+static struct xlat_mmap_region runtime_mmap[(PLAT_CMN_MAX_MMAP_REGIONS)];
 
 /*
  * Platform common cold boot setup for RMM.
@@ -86,6 +95,39 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 	if (ret != 0) {
 		ERROR("%s (%u): Failed to initialized RMM EL3 Interface\n",
 		      __func__, __LINE__);
+		return ret;
+	}
+
+	/*
+	 * Allocate the translation tables and initialize the
+	 * runtime context table structure
+	 */
+	ret = xlat_ctx_allocate_tables((uintptr_t)&runtime_xlat_buf[0],
+					    XLAT_TABLES_CTX_BUF_SIZE(
+						PLAT_CMN_CTX_MAX_XLAT_TABLES),
+					   PLAT_CMN_CTX_MAX_XLAT_TABLES,
+					   &runtime_tbls);
+	if (ret != 0) {
+		ERROR("%s (%u): %s (%i)\n",
+			__func__, __LINE__,
+			"Failed to allocate tables for the runtime xlat ctx",
+			 ret);
+		return ret;
+	}
+
+	ret = xlat_ctx_register_context(&runtime_xlat_ctx,
+					&runtime_xlat_ctx_cfg,
+					&runtime_tbls,
+					VA_LOW_REGION,
+					&runtime_mmap[0],
+					PLAT_CMN_MAX_MMAP_REGIONS,
+					VIRT_ADDR_SPACE_SIZE);
+
+	if (ret != 0) {
+		ERROR("%s (%u): %s (%i)\n",
+			__func__, __LINE__,
+			"Failed to register the xlat ctx within the xlat library",
+			ret);
 		return ret;
 	}
 
@@ -130,7 +172,8 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 	/* Read supported GIC virtualization features and init GIC variables */
 	gic_get_virt_features();
 
-	return 0;
+	/* Perform coold boot initialization of the slot buffer mechanism */
+	return slot_buf_coldboot_init();
 }
 
 /*
