@@ -21,22 +21,8 @@ arm_config_option(
     DEFAULT 0x0
     TYPE STRING)
 
-#
-# PLAT_CMN_MAX_MMAP_REGIONS is set a default value and in case when there are
-# not enough mmap regions allocated, adding regions to the xlat tables will
-# fail.
-#
-arm_config_option(
-    NAME PLAT_CMN_MAX_MMAP_REGIONS
-    HELP "Maximum number of static regions to be mapped in xlat tables"
-    DEFAULT 0x5
-    TYPE STRING)
-
 target_compile_definitions(rmm-plat-common
     PUBLIC "PLAT_CMN_CTX_MAX_XLAT_TABLES=U(${PLAT_CMN_CTX_MAX_XLAT_TABLES})")
-
-target_compile_definitions(rmm-plat-common
-    PUBLIC "PLAT_CMN_MAX_MMAP_REGIONS=U(${PLAT_CMN_MAX_MMAP_REGIONS})")
 
 target_include_directories(rmm-plat-common
     PUBLIC "include")
