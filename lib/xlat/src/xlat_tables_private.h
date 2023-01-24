@@ -100,27 +100,19 @@ uintptr_t xlat_arch_get_max_supported_pa(void);
  * This macro doesn't check parameters.
  *
  * _tlbs:
- *   Pointer to xlat_ctx.
+ *   Pointer to xlat_ctx_tlbs structure.
  *
  * _tables:
- *   pointer to non-base xlat_ctx_tbls.
+ *   pointer to a translation table array containing all the translation
+ *   tables.
  *
  * _tnum:
- *   Maximum number of intermediate tables that can fit in the _tables area.
- *
- * _btables:
- *   pointer to base xlat_ctx_tbls.
- *
- * _bt_entries:
- *   Maximum number of entries available on the base table.
+ *   Maximum number of tables that can fit in the _tables area.
  */
-#define XLAT_INIT_CTX_TBLS(_tbls, _tables, _tnum,			\
-			   _btables, _bt_entries)			\
+#define XLAT_INIT_CTX_TBLS(_tbls, _tables, _tnum)			\
 	{								\
 		(_tbls)->tables = (_tables);				\
 		(_tbls)->tables_num = (_tnum);				\
-		(_tbls)->base_table = (_btables);			\
-		(_tbls)->max_base_table_entries = (_bt_entries);	\
 		(_tbls)->next_table = 0U;				\
 		(_tbls)->initialized = false;				\
 	}

@@ -168,20 +168,9 @@
 				 | MT_RW | MT_EXECUTE_NEVER)
 
 /*
- * Structure for specifying a single region of memory.
- */
-struct xlat_mmap_region {
-	uintptr_t	base_pa;	/* Base PA for the current region. */
-	uintptr_t	base_va;	/* Base VA for the current region. */
-	size_t		size;		/* Size of the current region. */
-	uint64_t	attr;		/* Attrs for the current region. */
-	size_t		granularity;    /* Region granularity. */
-};
-
-/*
  * Structure containing a table entry and its related information.
  */
-struct xlat_table_entry {
+struct xlat_tte_info {
 	uint64_t *table;	/* Pointer to the translation table. */
 	uintptr_t base_va;	/* Context base VA for the current entry. */
 	unsigned int level;	/* Table level of the current entry. */
@@ -192,12 +181,12 @@ struct xlat_table_entry {
  * Generic translation table APIs.
  *****************************************************************************/
 
-static inline void xlat_write_descriptor(uint64_t *entry, uint64_t desc)
+static inline void xlat_write_tte(uint64_t *entry, uint64_t desc)
 {
 	SCA_WRITE64(entry, desc);
 }
 
-static inline uint64_t xlat_read_descriptor(uint64_t *entry)
+static inline uint64_t xlat_read_tte(uint64_t *entry)
 {
 	return SCA_READ64(entry);
 }
@@ -218,39 +207,14 @@ static inline uint64_t xlat_read_descriptor(uint64_t *entry)
 int xlat_init_tables_ctx(struct xlat_ctx *ctx);
 
 /*
- * Add a memory region with defined base PA and base VA. This function can only
- * be used before marking the xlat_ctx_cfg for the current xlat_ctx as
- * initialized.
- *
- * The region cannot be removed once added.
- *
- * This function returns 0 on success or an error code otherwise.
- */
-int xlat_mmap_add_region_ctx(struct xlat_ctx *ctx,
-			     struct xlat_mmap_region *mm);
-
-/*
- * Add an array of memory regions with defined base PA and base VA.
- * This function needs to be called before initialiting the xlat_ctx_cfg.
- * Setting the `last` argument to true will initialise the xlat_ctx_cfg.
- *
- * The regions cannot be removed once added.
- *
- * Return 0 on success or a negative error code otherwise.
- */
-int xlat_mmap_add_ctx(struct xlat_ctx *ctx,
-		      struct xlat_mmap_region *mm,
-		      bool last);
-
-/*
  * Return a table entry structure given a context and a VA.
  * The return structure is populated on the retval field.
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_get_table_from_va(struct xlat_table_entry * const retval,
+int xlat_get_table_from_va(struct xlat_tte_info * const retval,
 			   const struct xlat_ctx * const ctx,
-			   const uintptr_t va);
+			   const uintptr_t va, size_t va_size);
 
 /*
  * Function to unmap a physical memory page from the descriptor entry and
@@ -260,7 +224,7 @@ int xlat_get_table_from_va(struct xlat_table_entry * const retval,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_unmap_memory_page(struct xlat_table_entry * const table,
+int xlat_unmap_memory_page(struct xlat_tte_info * const table,
 			   const uintptr_t va);
 
 /*
@@ -271,7 +235,7 @@ int xlat_unmap_memory_page(struct xlat_table_entry * const table,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_map_memory_page_with_attrs(const struct xlat_table_entry * const table,
+int xlat_map_memory_page_with_attrs(const struct xlat_tte_info * const table,
 				    const uintptr_t va,
 				    const uintptr_t pa,
 				    const uint64_t attrs);
@@ -281,7 +245,7 @@ int xlat_map_memory_page_with_attrs(const struct xlat_table_entry * const table,
  * table entry structure and the VA for that descriptor.
  *
  */
-uint64_t *xlat_get_pte_from_table(const struct xlat_table_entry * const table,
+uint64_t *xlat_get_pte_from_table(const struct xlat_tte_info * const table,
 				    const uintptr_t va);
 
 /*
@@ -300,31 +264,6 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx);
 
 /* MMU control */
 void xlat_enable_mmu_el2(void);
-
-/*
- * Returns true if the xlat_ctx_cfg field in the xlat_ctx is initialized.
- */
-bool xlat_ctx_cfg_initialized(const struct xlat_ctx * const ctx);
-
-/*
- * Returns true if the translation tables on the current context are already
- * initialized or false otherwise.
- */
-bool xlat_ctx_tbls_initialized(const struct xlat_ctx * const ctx);
-
-/*
- * Initialize a context dynamically at runtime using the given xlat_ctx_cfg
- * and xlat_ctx_tbls structures.
- *
- * Return 0 if success or a Posix erro code otherwise.
- */
-int xlat_ctx_create_dynamic(struct xlat_ctx *ctx,
-			    struct xlat_ctx_cfg *cfg,
-			    struct xlat_ctx_tbls *tbls,
-			    void *base_tables,
-			    unsigned int base_level_entries,
-			    void *tables_ptr,
-			    unsigned int ntables);
 
 #endif /*__ASSEMBLER__*/
 #endif /* XLAT_TABLES_H */

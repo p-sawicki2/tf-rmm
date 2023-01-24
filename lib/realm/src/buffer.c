@@ -56,20 +56,18 @@ COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) >= (1 << 16U));
  * The base tables for all the contexts are manually allocated as a continous
  * block of memory.
  */
-static uint64_t transient_base_table[XLAT_TABLE_ENTRIES * MAX_CPUS]
-				    __aligned(BASE_XLAT_TABLES_ALIGNMENT)
+static uint64_t transient_s1tt[XLAT_TABLE_ENTRIES * MAX_CPUS]
+				    __aligned(XLAT_TABLES_ALIGNMENT)
 				    __section("slot_buffer_xlat_tbls");
 
 /* Allocate per-cpu xlat_ctx_tbls */
 static struct xlat_ctx_tbls slot_buf_tbls[MAX_CPUS];
 
 /*
- * Allocate mmap regions and define common xlat_ctx_cfg shared will
- * all slot_buf_xlat_ctx
+ * Structure to contain the common translation context
+ * configuration for all PEs
  */
-XLAT_REGISTER_VA_SPACE(slot_buf, VA_HIGH_REGION,
-		       SLOT_BUF_MMAP_REGIONS,
-		       RMM_SLOT_BUF_VA_SIZE);
+static struct xlat_ctx_cfg slot_buf_xlat_ctx_cfg;
 
 /* context definition */
 static struct xlat_ctx slot_buf_xlat_ctx[MAX_CPUS];
@@ -79,7 +77,7 @@ static struct xlat_ctx slot_buf_xlat_ctx[MAX_CPUS];
  * are mapped to avoid needing to perform a table walk every time a buffer
  * slot operation is needed.
  */
-static struct xlat_table_entry te_cache[MAX_CPUS];
+static struct xlat_tte_info te_cache[MAX_CPUS];
 
 uintptr_t slot_to_va(enum buffer_slot slot)
 {
@@ -93,7 +91,7 @@ static inline struct xlat_ctx *get_slot_buf_xlat_ctx(void)
 	return &slot_buf_xlat_ctx[my_cpuid()];
 }
 
-struct xlat_table_entry *get_cache_entry(void)
+struct xlat_tte_info *get_cache_entry(void)
 {
 	return &te_cache[my_cpuid()];
 }
@@ -103,7 +101,30 @@ __unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
 	uint64_t *entry = xlat_get_pte_from_table(get_cache_entry(),
 						  slot_to_va(slot));
 
-	return xlat_read_descriptor(entry);
+	return xlat_read_tte(entry);
+}
+
+int slot_buf_coldboot_init(void)
+{
+	static bool coldboot_done;
+	struct xlat_mmap_region slot_buf_regions[] = {
+		RMM_SLOT_BUF_MMAP,
+		{0}
+	};
+
+	if (coldboot_done == true) {
+		return -EALREADY;
+	}
+
+	coldboot_done = true;
+
+	/*
+	 * Initialize the common configuration used for all
+	 * translation contexts
+	 */
+	return xlat_ctx_cfg_init(&slot_buf_xlat_ctx_cfg, VA_HIGH_REGION,
+				 &slot_buf_regions[0],
+				 RMM_SLOT_BUF_VA_SIZE);
 }
 
 /*
@@ -113,53 +134,27 @@ __unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
 void slot_buf_setup_xlat(void)
 {
 	unsigned int cpuid = my_cpuid();
-	int ret = xlat_ctx_create_dynamic(get_slot_buf_xlat_ctx(),
-					  &slot_buf_xlat_ctx_cfg,
-					  &slot_buf_tbls[cpuid],
-					  &transient_base_table[
-						XLAT_TABLE_ENTRIES * cpuid],
-					  GET_NUM_BASE_LEVEL_ENTRIES(
-							RMM_SLOT_BUF_VA_SIZE),
-					  NULL,
-					  0U);
+	struct xlat_ctx *slot_buf_ctx = get_slot_buf_xlat_ctx();
 
-	if (ret == -EINVAL) {
-		/*
-		 * If the context was already created, carry on with the
-		 * initialization. If it cannot be created, panic.
-		 */
-		ERROR("%s (%u): Failed to create the empty context for the slot buffers\n",
-					__func__, __LINE__);
-		panic();
-	}
-
-	if (xlat_ctx_cfg_initialized(get_slot_buf_xlat_ctx()) == false) {
-		/* Add necessary mmap regions during cold boot */
-		struct xlat_mmap_region slot_buf_regions[] = {
-			RMM_SLOT_BUF_MMAP,
-			{0}
-		};
-
-		if (xlat_mmap_add_ctx(get_slot_buf_xlat_ctx(),
-				      slot_buf_regions, true) != 0) {
-			ERROR("%s (%u): Failed to map slot buffer memory on high region\n",
-				__func__, __LINE__);
-			panic();
-		}
-
-	}
-
-	if (xlat_ctx_tbls_initialized(get_slot_buf_xlat_ctx()) == false) {
+	if ((xlat_ctx_initialized(slot_buf_ctx) == false) ||
+		(xlat_ctx_tbls_initialized(slot_buf_ctx) == false)) {
 		/*
 		 * Initialize the translation tables for the current context.
 		 * This is done on the first boot of each CPU.
 		 */
-		int err;
+		int ret = xlat_ctx_init(slot_buf_ctx,
+					&slot_buf_xlat_ctx_cfg,
+					&slot_buf_tbls[cpuid],
+					&transient_s1tt[
+					XLAT_TABLE_ENTRIES * cpuid], 1U);
 
-		err = xlat_init_tables_ctx(get_slot_buf_xlat_ctx());
-		if (err != 0) {
-			ERROR("%s (%u): xlat initialization failed with code %i\n",
-			__func__, __LINE__, err);
+		if (ret == -EINVAL) {
+			/*
+			 * If the context was already created, carry on with the
+			 * initialization. If it cannot be created, panic.
+			 */
+			ERROR("%s (%u): Failed to initialize the xlat context for the slot buffers\n",
+						__func__, __LINE__);
 			panic();
 		}
 	}
@@ -180,7 +175,7 @@ void slot_buf_setup_xlat(void)
  * Finishes initializing the slot buffer mechanism.
  * This function must be called after the MMU is enabled.
  */
-void slot_buf_init(void)
+void slot_buf_finish_warmboot_init(void)
 {
 	if (is_mmu_enabled() == false) {
 		ERROR("%s: MMU must be enabled\n", __func__);
@@ -195,7 +190,8 @@ void slot_buf_init(void)
 	if ((get_cache_entry())->table == NULL) {
 		if (xlat_get_table_from_va(get_cache_entry(),
 					   get_slot_buf_xlat_ctx(),
-					   slot_to_va(SLOT_NS)) != 0) {
+					   slot_to_va(SLOT_NS),
+					   RMM_SLOT_BUF_VA_SIZE) != 0) {
 			ERROR("%s (%u): Failed to initialize table entry cache for CPU %u\n",
 					__func__, __LINE__, my_cpuid());
 			panic();
@@ -351,7 +347,7 @@ void *buffer_map_internal(enum buffer_slot slot, unsigned long addr)
 {
 	uint64_t attr = SLOT_DESC_ATTR;
 	uintptr_t va = slot_to_va(slot);
-	struct xlat_table_entry *entry = get_cache_entry();
+	struct xlat_tte_info *entry = get_cache_entry();
 
 	assert(GRANULE_ALIGNED(addr));
 
