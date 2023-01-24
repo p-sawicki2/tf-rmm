@@ -57,19 +57,20 @@ COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) >= (1 << 16U));
  * block of memory.
  */
 static uint64_t transient_base_table[XLAT_TABLE_ENTRIES * MAX_CPUS]
-				    __aligned(BASE_XLAT_TABLES_ALIGNMENT)
+				    __aligned(XLAT_TABLES_ALIGNMENT)
 				    __section("slot_buffer_xlat_tbls");
 
 /* Allocate per-cpu xlat_ctx_tbls */
 static struct xlat_ctx_tbls slot_buf_tbls[MAX_CPUS];
 
 /*
- * Allocate mmap regions and define common xlat_ctx_cfg shared will
- * all slot_buf_xlat_ctx
+ * Structure to contain the common translation context
+ * configuration for all PEs
  */
-XLAT_REGISTER_VA_SPACE(slot_buf, VA_HIGH_REGION,
-		       SLOT_BUF_MMAP_REGIONS,
-		       RMM_SLOT_BUF_VA_SIZE);
+static struct xlat_ctx_cfg slot_buf_xlat_ctx_cfg;
+
+/* Array of mmap regions for the slot buffer system. */
+static struct xlat_mmap_region slot_buf_mmap_regions[SLOT_BUF_MMAP_REGIONS];
 
 /* context definition */
 static struct xlat_ctx slot_buf_xlat_ctx[MAX_CPUS];
@@ -106,6 +107,26 @@ __unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
 	return xlat_read_descriptor(entry);
 }
 
+int slot_buf_coldboot_init(void)
+{
+	static bool coldboot_done;
+
+	if (coldboot_done == true) {
+		return -EALREADY;
+	}
+
+	coldboot_done = true;
+
+	/*
+	 * Initialize the common configuration used for all
+	 * translation contexts
+	 */
+	return xlat_ctx_init_config(&slot_buf_xlat_ctx_cfg, VA_HIGH_REGION,
+				    &slot_buf_mmap_regions[0],
+				    SLOT_BUF_MMAP_REGIONS,
+				    RMM_SLOT_BUF_VA_SIZE);
+}
+
 /*
  * Setup xlat table for slot buffer mechanism for each PE.
  * Must be called for every PE in the system
@@ -113,15 +134,14 @@ __unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
 void slot_buf_setup_xlat(void)
 {
 	unsigned int cpuid = my_cpuid();
-	int ret = xlat_ctx_create_dynamic(get_slot_buf_xlat_ctx(),
-					  &slot_buf_xlat_ctx_cfg,
-					  &slot_buf_tbls[cpuid],
-					  &transient_base_table[
+	int ret = xlat_ctx_setup_context(get_slot_buf_xlat_ctx(),
+					 &slot_buf_xlat_ctx_cfg,
+					 &slot_buf_tbls[cpuid],
+					 &transient_base_table[
 						XLAT_TABLE_ENTRIES * cpuid],
-					  GET_NUM_BASE_LEVEL_ENTRIES(
+					 GET_NUM_BASE_LEVEL_ENTRIES(
 							RMM_SLOT_BUF_VA_SIZE),
-					  NULL,
-					  0U);
+					 NULL, 0U);
 
 	if (ret == -EINVAL) {
 		/*
@@ -180,7 +200,7 @@ void slot_buf_setup_xlat(void)
  * Finishes initializing the slot buffer mechanism.
  * This function must be called after the MMU is enabled.
  */
-void slot_buf_init(void)
+void slot_buf_finish_warmboot_init(void)
 {
 	if (is_mmu_enabled() == false) {
 		ERROR("%s: MMU must be enabled\n", __func__);
