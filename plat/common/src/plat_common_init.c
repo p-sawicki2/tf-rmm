@@ -8,11 +8,13 @@
 #include <buffer.h>
 #include <cpuid.h>
 #include <debug.h>
+#include <errno.h>
 #include <gic.h>
 #include <import_sym.h>
 #include <rmm_el3_ifc.h>
 #include <sizes.h>
 #include <stdint.h>
+#include <string.h>
 #include <xlat_contexts.h>
 #include <xlat_tables.h>
 
@@ -29,6 +31,7 @@ IMPORT_SYM(uintptr_t, rmm_rw_end,		RMM_RW_END);
  * underflow by RMM.
  */
 #define RMM_SHARED_BUFFER_START	(RMM_RW_END + SZ_4K)
+
 /*
  * Memory map REGIONS used for the RMM runtime (static mappings)
  */
@@ -61,11 +64,24 @@ IMPORT_SYM(uintptr_t, rmm_rw_end,		RMM_RW_END);
 					0U,				\
 					MT_RW_DATA | MT_REALM)
 
+/* Number of common memory mapping regions */
+#define COMMON_REGIONS		(4U)
 
-XLAT_REGISTER_CONTEXT(runtime, VA_LOW_REGION, PLAT_CMN_MAX_MMAP_REGIONS,
-		      PLAT_CMN_CTX_MAX_XLAT_TABLES,
-		      VIRT_ADDR_SPACE_SIZE,
-		      "xlat_static_tables");
+/* Total number of memory mapping regions */
+#define TOTAL_MMAP_REGIONS	(COMMON_REGIONS + 1U)
+
+/* Memory mapping regions for the system runtime */
+static struct xlat_mmap_region runtime_regions[TOTAL_MMAP_REGIONS];
+
+/* Allocate the runtime translation tables */
+static uint64_t runtime_s1tt[XLAT_TABLE_ENTRIES * PLAT_CMN_CTX_MAX_XLAT_TABLES]
+					__aligned(XLAT_TABLES_ALIGNMENT)
+					__section("xlat_static_tables");
+
+/* Structures to hold the runtime translation context information  */
+static struct xlat_ctx_tbls runtime_tbls;
+static struct xlat_ctx_cfg runtime_xlat_ctx_cfg;
+static struct xlat_ctx runtime_xlat_ctx;
 
 /*
  * Platform common cold boot setup for RMM.
@@ -77,61 +93,97 @@ XLAT_REGISTER_CONTEXT(runtime, VA_LOW_REGION, PLAT_CMN_MAX_MMAP_REGIONS,
  */
 int plat_cmn_setup(unsigned long x0, unsigned long x1,
 		   unsigned long x2, unsigned long x3,
-		   struct xlat_mmap_region *plat_regions)
+		   struct xlat_mmap_region *plat_regions,
+		   unsigned int nregions)
 {
 	int ret;
+	unsigned int cmn_idx, plat_idx;
+	unsigned int total_regions;
+
+	/* Common regions sorted by ascending VA */
+	struct xlat_mmap_region regions[COMMON_REGIONS] = {
+		RMM_CODE,
+		RMM_RO,
+		RMM_RW,
+		RMM_SHARED
+	};
+
+	if (nregions > 0U && plat_regions == NULL) {
+		return -EINVAL;
+	}
 
 	/* Initialize the RMM <-> EL3 interface */
 	ret = rmm_el3_ifc_init(x0, x1, x2, x3, RMM_SHARED_BUFFER_START);
 	if (ret != 0) {
-		ERROR("%s (%u): Failed to initialized RMM EL3 Interface\n",
-			__func__, __LINE__);
-		return ret;
-	}
-
-	/*
-	 * xlat library might modify the memory mappings
-	 * to optimize it, so don't make this constant.
-	 */
-	struct xlat_mmap_region runtime_regions[] = {
-		RMM_CODE,
-		RMM_RO,
-		RMM_RW,
-		RMM_SHARED,
-		{0}
-	};
-
-	assert(plat_regions != NULL);
-
-	ret = xlat_mmap_add_ctx(&runtime_xlat_ctx, plat_regions, false);
-	if (ret != 0) {
-		ERROR("%s (%u): Failed to add platform regions to xlat mapping\n",
-			__func__, __LINE__);
+		ERROR("%s (%u): Failed to initialize the RMM EL3 Interface\n",
+		      __func__, __LINE__);
 		return ret;
 	}
 
 	/* Setup the parameters of the shared area */
-	runtime_regions[3].base_pa = rmm_el3_ifc_get_shared_buf_pa();
-	runtime_regions[3].size = rmm_el3_ifc_get_shared_buf_size();
+	regions[3].base_pa = rmm_el3_ifc_get_shared_buf_pa();
+	regions[3].size = rmm_el3_ifc_get_shared_buf_size();
 
-	ret = xlat_mmap_add_ctx(&runtime_xlat_ctx, runtime_regions, true);
+	/*
+	 * Combine the common memory regions with the platform ones in an
+	 * array where they are sorted as per VA.
+	 */
+	cmn_idx = 0U;
+	plat_idx = 0U;
+	total_regions = 0U;
+	while (((cmn_idx < COMMON_REGIONS) || (plat_idx < nregions))
+				&& (total_regions < TOTAL_MMAP_REGIONS)) {
+		if ((plat_idx < nregions) && (plat_regions != NULL) &&
+			(plat_regions[plat_idx].base_va <
+					regions[cmn_idx].base_va)) {
+			memcpy((void *)&runtime_regions[total_regions],
+				(void *)&plat_regions[plat_idx++],
+				sizeof(struct xlat_mmap_region));
+		} else {
+			memcpy((void *)&runtime_regions[total_regions],
+				(void *)&regions[cmn_idx++],
+				sizeof(struct xlat_mmap_region));
+		}
+		total_regions++;
+	}
+
+	/* Check that all the regions fit */
+	if ((cmn_idx < COMMON_REGIONS) || (plat_idx < nregions)) {
+		ERROR("%s (%u): Insufficient space for mmap regions\n",
+				__func__, __LINE__);
+		return -ENOMEM;
+	}
+
+	ret = xlat_ctx_cfg_init(&runtime_xlat_ctx_cfg, VA_LOW_REGION,
+				&runtime_regions[0], total_regions,
+				VIRT_ADDR_SPACE_SIZE);
+
 	if (ret != 0) {
-		ERROR("%s (%u): Failed to add RMM common regions to xlat mapping\n",
-			__func__, __LINE__);
+		ERROR("%s (%u): %s (%i)\n",
+			__func__, __LINE__,
+			"Failed to initialize the xlat ctx within the xlat library ",
+			ret);
 		return ret;
 	}
 
-	ret = xlat_init_tables_ctx(&runtime_xlat_ctx);
+	ret = xlat_ctx_init(&runtime_xlat_ctx, &runtime_xlat_ctx_cfg,
+			    &runtime_tbls,
+			    &runtime_s1tt[0],
+			    PLAT_CMN_CTX_MAX_XLAT_TABLES);
+
 	if (ret != 0) {
-		ERROR("%s (%u): xlat initialization failed\n",
-			__func__, __LINE__);
+		ERROR("%s (%u): %s (%i)\n",
+			__func__, __LINE__,
+			"Failed to create the xlat ctx within the xlat library ",
+			ret);
 		return ret;
 	}
 
 	/* Read supported GIC virtualization features and init GIC variables */
 	gic_get_virt_features();
 
-	return 0;
+	/* Perform coold boot initialization of the slot buffer mechanism */
+	return slot_buf_coldboot_init();
 }
 
 /*
