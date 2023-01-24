@@ -301,30 +301,5 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx);
 /* MMU control */
 void xlat_enable_mmu_el2(void);
 
-/*
- * Returns true if the xlat_ctx_cfg field in the xlat_ctx is initialized.
- */
-bool xlat_ctx_cfg_initialized(const struct xlat_ctx * const ctx);
-
-/*
- * Returns true if the translation tables on the current context are already
- * initialized or false otherwise.
- */
-bool xlat_ctx_tbls_initialized(const struct xlat_ctx * const ctx);
-
-/*
- * Initialize a context dynamically at runtime using the given xlat_ctx_cfg
- * and xlat_ctx_tbls structures.
- *
- * Return 0 if success or a Posix erro code otherwise.
- */
-int xlat_ctx_create_dynamic(struct xlat_ctx *ctx,
-			    struct xlat_ctx_cfg *cfg,
-			    struct xlat_ctx_tbls *tbls,
-			    void *base_tables,
-			    unsigned int base_level_entries,
-			    void *tables_ptr,
-			    unsigned int ntables);
-
 #endif /*__ASSEMBLER__*/
 #endif /* XLAT_TABLES_H */
