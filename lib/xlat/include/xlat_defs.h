@@ -88,22 +88,22 @@
  * state.
  *
  * TCR.TxSZ is calculated as 64 minus the width of said address space.
- * The value of TCR.TxSZ must be in the range 16 to 39 [1] or 48 [2],
- * depending on Small Translation Table Support which means that
- * the virtual address space width must be in the range 48 to 25 or 16 bits.
+ * The value of TCR.TxSZ must be in the range 16 to 48 [1], which means that
+ * the virtual address space width must be in the range 48 to 16 bits.
  *
  * [1] See the ARMv8-A Architecture Reference Manual (DDI 0487A.j) for more
  * information:
  * Page 1730: 'Input address size', 'For all translation stages'.
- * [2] See section 12.2.55 in the ARMv8-A Architecture Reference Manual
+ * and section 12.2.55 in the ARMv8-A Architecture Reference Manual
  * (DDI 0487D.a)
  */
-/* Maximum value of TCR_ELx.T(0,1)SZ is 39 */
+/*
+ * Maximum value of TCR_ELx.T(0,1)SZ is 39 for a min VA size of 16 bits.
+ * RMM is only supported with FEAT_TTST implemented.
+ */
 #define MIN_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MAX))
 
-/* Maximum value of TCR_ELx.T(0,1)SZ is 48 */
-#define MIN_VIRT_ADDR_SPACE_SIZE_TTST	\
-				(UL(1) << (UL(64) - TCR_TxSZ_MAX_TTST))
+/* Minimum value of TCR_ELx.T(0,1)SZ is 16, for a VA of 48 bits */
 #define MAX_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MIN))
 
 /*
