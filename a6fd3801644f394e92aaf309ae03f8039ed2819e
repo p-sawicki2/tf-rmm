@@ -16,6 +16,24 @@
       "message": "I think if you make \u0027ARTEFACT_DIR\u0027 a \"global\" variable, you could use it here as well, which will be more convenient than having to edit several paths if you change the former in the future.\n\nThe same goes for line 125\n\nCheck line 55 for an example on how to make \u0027ARTEFACT_DIR\u0027 globally available",
       "revId": "a6fd3801644f394e92aaf309ae03f8039ed2819e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f666d448_e7bb3b5b",
+        "filename": "cmake/Modules/UnitTestFramework.cmake",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-25T17:25:33Z",
+      "side": 1,
+      "message": "I think there are nuances when the $\u003cCONFIG\u003e variable becomes valid. It is not valid during config phase when few things here in this file are evaluated so there is a risk that ARTEFACT_DIR might not be set correctly when this is initially evaluated.",
+      "parentUuid": "98d5fa64_d97b5e95",
+      "revId": "a6fd3801644f394e92aaf309ae03f8039ed2819e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
