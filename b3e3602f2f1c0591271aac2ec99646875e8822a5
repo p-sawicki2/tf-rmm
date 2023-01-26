@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37440997_2baf171d",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "Suggest:\nSYSREG_CLEAR(reg)\nSYSREG_CLEAR_SET(reg)",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5dcab13_848c88b0",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "remove this line.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 31
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0beb100_7063d354",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 73
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70e102d0_96ce6066",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "add comment here for BRP and WRP saying these are to be set to certain values.",
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5df547e5_2ad06590",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "remove this as we can expose the ID field directly to Realms",
+      "range": {
+        "startLine": 52,
+        "startChar": 1,
+        "endLine": 52,
+        "endChar": 33
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23d532bd_3ea3c9fd",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "remove this for now till we figure out the right set of values to this up considering FGT and PMUv3",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 27
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c14643de_27287660",
+        "filename": "runtime/include/feature.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-01-26T15:53:09Z",
+      "side": 1,
+      "message": "these are now moved to smc-rmi.h",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 0
+      },
+      "revId": "b3e3602f2f1c0591271aac2ec99646875e8822a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
