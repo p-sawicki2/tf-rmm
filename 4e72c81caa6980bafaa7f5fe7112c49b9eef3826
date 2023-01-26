@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9461a3f3_b7ac060d",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7a70a75b_66478370",
+      "range": {
+        "startLine": 423,
+        "startChar": 0,
+        "endLine": 425,
+        "endChar": 73
+      },
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b77b24b4_4f159d79",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-01-26T12:04:42Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 455,
+        "startChar": 0,
+        "endLine": 457,
+        "endChar": 63
+      },
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12d96117_dbf5ad95",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b77b24b4_4f159d79",
       "range": {
         "startLine": 455,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d31284d0_46f21deb",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f988bb02_f84edc15",
+      "range": {
+        "startLine": 462,
+        "startChar": 0,
+        "endLine": 465,
+        "endChar": 61
+      },
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1878540_74ad153a",
@@ -110,6 +182,47 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2c8a80f_f5db4966",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d1878540_74ad153a",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 489,
+        "endChar": 43
+      },
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16671e60_d6bcfae9",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "This should be also changed to ID_AA64ISAR0_EL1",
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a8262954_6bf79345",
@@ -123,6 +236,30 @@
       "writtenOn": "2023-01-26T12:04:42Z",
       "side": 1,
       "message": "use the full qualified name ID_AA64ISAR1_EL1 for comment and macro names",
+      "range": {
+        "startLine": 926,
+        "startChar": 3,
+        "endLine": 926,
+        "endChar": 16
+      },
+      "revId": "4e72c81caa6980bafaa7f5fe7112c49b9eef3826",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80a2fa57_f415b3a1",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-26T12:38:54Z",
+      "side": 1,
+      "message": "Ack\ndefinitions on lines #554-555 should be also updated",
+      "parentUuid": "a8262954_6bf79345",
       "range": {
         "startLine": 926,
         "startChar": 3,
