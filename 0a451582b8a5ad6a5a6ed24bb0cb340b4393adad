@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e8072a7_bbb3c1d4",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-27T11:55:36Z",
+      "side": 1,
+      "message": "Missing COMPILER_ASSERT for plat_dram",
+      "range": {
+        "startLine": 180,
+        "startChar": 1,
+        "endLine": 180,
+        "endChar": 68
+      },
+      "revId": "0a451582b8a5ad6a5a6ed24bb0cb340b4393adad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e4354d5_7deb6a14",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-01-27T11:55:36Z",
+      "side": 1,
+      "message": "I think this function should zero the local_core_manifest.plat_dram field. The rationale for that is that local_core_manifest.plat_dram.banks points to the shared area where the manifest is stored. After the boot process has completed, the shared area is reserved for EL3 \u003c-\u003e RMM communications and the manifest is considered no longer valid, therefore the pointer to banks will become stale. Since it is not likely that it is going to be needed anytime later anyway, I think it should be safe just to zero the structure to keep consistency and avoid having a stale pointer.",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 159,
+        "endChar": 7
+      },
+      "revId": "0a451582b8a5ad6a5a6ed24bb0cb340b4393adad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
