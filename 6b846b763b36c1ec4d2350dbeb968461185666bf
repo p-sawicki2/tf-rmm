@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46cb1eb6_b51c1e0e",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-01-27T11:14:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "14562d4d_dc884b0b",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 34
+      },
+      "revId": "6b846b763b36c1ec4d2350dbeb968461185666bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "acd5b4d3_e9634132",
