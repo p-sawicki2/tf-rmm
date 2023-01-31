@@ -6,8 +6,8 @@
 #ifndef INSTR_HELPERS_H
 #define INSTR_HELPERS_H
 
-#include <host_harness.h>
 #include <stddef.h>
+#include <types.h>
 
 #ifdef __cplusplus
 /*
@@ -22,6 +22,10 @@
 	#pragma GCC diagnostic ignored "-Wwrite-strings"
 #endif /* __clang__ */
 #endif /* __cplusplus__ */
+
+/* Fake host wrapper to read and write sysregs */
+u_register_t host_read_sysreg(char *reg_name);
+void host_write_sysreg(char *reg_name, u_register_t v);
 
 /**********************************************************************
  * Macros which create inline functions to read or write CPU system
