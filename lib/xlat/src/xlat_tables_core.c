@@ -593,17 +593,23 @@ int xlat_mmap_add_region_ctx(struct xlat_ctx *ctx,
 		return -EINVAL;
 	}
 
+	if (ctx_cfg->mmap == NULL) {
+		return -EINVAL;
+	}
+
 	if (mm == NULL) {
 		return -EINVAL;
 	}
 
 	/* The context data cannot be initialized */
 	if (xlat_ctx_cfg_initialized(ctx) == true) {
-		return -EINVAL;
+		return -EALREADY;
 	}
 
 	/* Memory regions must be added before initializing the xlat tables. */
-	assert(ctx_tbls->initialized == false);
+	if (ctx_tbls->initialized == true) {
+		return -EALREADY;
+	}
 
 	/* Ignore empty regions */
 	if (mm->size == 0UL) {
