@@ -13,10 +13,6 @@
 /* Forward declaration of buffer_slot */
 enum buffer_slot;
 
-/* Fake host wrapper to read and write sysregs */
-u_register_t host_read_sysreg(char *reg_name);
-void host_write_sysreg(char *reg_name, u_register_t v);
-
 struct spinlock_s;
 /* Fake host harness to lock and release spin lock */
 void host_spinlock_acquire(struct spinlock_s *l);
