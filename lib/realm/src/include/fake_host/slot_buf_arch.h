@@ -9,9 +9,9 @@
 #include <buffer.h>
 #include <host_harness.h>
 
-static void *buffer_arch_map(enum buffer_slot slot, unsigned long addr)
+static void *buffer_arch_map(unsigned int slot, unsigned long addr)
 {
-	return host_buffer_arch_map(slot, addr);
+	return host_buffer_arch_map((enum buffer_slot)slot, addr);
 }
 
 static void buffer_arch_unmap(void *buf)
