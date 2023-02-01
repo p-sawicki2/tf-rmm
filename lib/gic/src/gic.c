@@ -15,23 +15,41 @@
 #define READ_ICH_LR_EL2(n)	{				\
 	case n:							\
 	gicstate->ich_lr_el2[n] = read_ich_lr##n##_el2();	\
+	if (gicstate->ich_lr_el2[n] != 0UL) { \
+		INFO("ich_lr_el2[%u]: %lx\n", n, gicstate->ich_lr_el2[n]); \
+	} \
 	}
 
 #define WRITE_ICH_LR_EL2(n)	{			\
 	case n:						\
 	write_ich_lr##n##_el2(gicstate->ich_lr_el2[n]);	\
+	if (gicstate->ich_lr_el2[n] != 0UL) { \
+		INFO("ich_lr_el2[%u]: %lx\n", n, gicstate->ich_lr_el2[n]); \
+	} \
 	}
 
 #define READ_ICH_APR_EL2(n)	{				\
 	case n:							\
 	gicstate->ich_ap0r_el2[n] = read_ich_ap0r##n##_el2();	\
+	if (gicstate->ich_ap0r_el2[n] != 0UL) { \
+		INFO("ich_ap0r_el2[%u]: %lx\n", n, gicstate->ich_ap0r_el2[n]); \
+	} \
 	gicstate->ich_ap1r_el2[n] = read_ich_ap1r##n##_el2();	\
+	if (gicstate->ich_ap1r_el2[n] != 0UL) { \
+		INFO("ich_ap1r_el2[%u]: %lx\n", n, gicstate->ich_ap1r_el2[n]); \
+	} \
 	}
 
 #define WRITE_ICH_APR_EL2(n)	{				\
 	case n:							\
 	write_ich_ap0r##n##_el2(gicstate->ich_ap0r_el2[n]);	\
+	if (gicstate->ich_ap0r_el2[n] != 0UL) { \
+		INFO("ich_ap0r_el2[%u]: %lx\n", n, gicstate->ich_ap0r_el2[n]); \
+	} \
 	write_ich_ap1r##n##_el2(gicstate->ich_ap1r_el2[n]);	\
+	if (gicstate->ich_ap1r_el2[n] != 0UL) { \
+		INFO("ich_ap1r_el2[%u]: %lx\n", n, gicstate->ich_ap1r_el2[n]); \
+	} \
 	}
 
 /* GIC virtualization features */

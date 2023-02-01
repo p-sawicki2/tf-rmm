@@ -58,12 +58,13 @@ bool check_pending_timers(struct rec *rec)
 
 	/*
 	 * We don't want to run the Realm just to immediately exit due a
-	 * physical interrupt casused by one of the timer interrupts not having
+	 * physical interrupt caused by one of the timer interrupts not having
 	 * been retired from the CPU interface yet. Check that the interrupts
 	 * are retired before entering the Realm.
 	 */
 	while (true) {
 		unsigned long hppir = read_icc_hppir1_el1();
+
 		unsigned int intid = EXTRACT(ICC_HPPIR1_EL1_INTID, hppir);
 
 		if (!((((rec->sysregs.cnthctl_el2 & CNTHCTL_EL2_CNTVMASK) != 0UL) &&
