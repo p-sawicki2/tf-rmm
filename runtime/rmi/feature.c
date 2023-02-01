@@ -9,8 +9,9 @@
 #include <smc-handler.h>
 #include <smc-rmi.h>
 #include <status.h>
+#include <utils_def.h>
 
-#define RMM_FEATURE_MIN_IPA_SIZE		PARANGE_0000_WIDTH
+#define RMM_FEATURE_MIN_IPA_SIZE	PARANGE_0000_WIDTH
 
 static unsigned long get_feature_register_0(void)
 {
@@ -29,10 +30,13 @@ static unsigned long get_feature_register_0(void)
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_512,
 				RMI_SUPPORTED);
 
-	/* PMU is not supported */
+	/* Set support for PMUv3 */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_EN,
-				RMI_NOT_SUPPORTED);
-	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, 0U);
+				RMI_SUPPORTED);
+
+	/* Set number of PMU counters available */
+	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS,
+				EXTRACT(PMCR_EL0_N, read_pmcr_el0()));
 
 	return feat_reg0;
 }
@@ -63,13 +67,13 @@ static bool validate_feature_register_0(unsigned long value)
 
 	/* Validate LPA2 flag */
 	if ((EXTRACT(RMM_FEATURE_REGISTER_0_LPA2, value) == RMI_LPA2) &&
-	    !is_feat_lpa2_4k_present()) {
+	    (EXTRACT(RMM_FEATURE_REGISTER_0_LPA2, feat_reg0) == RMI_NO_LPA2))  {
 		return false;
 	}
 
-	/* Validate PMU_EN flag */
-	if ((EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, value) == RMI_SUPPORTED) ||
-	    (EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, value) != 0U)) {
+	/* Validate number of PMU counters */
+	if (EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, value) !=
+	    EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0)) {
 		return false;
 	}
 
