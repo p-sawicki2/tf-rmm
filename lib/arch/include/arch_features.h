@@ -51,7 +51,7 @@ static inline bool is_feat_vmid16_present(void)
 
 /*
  * Check if FEAT_LPA2 is implemented.
- * 4KB granule  at stage 2 supports 52-bit input and output addresses:
+ * 4KB granule at stage 2 supports 52-bit input and output addresses:
  * ID_AA64MMFR0_EL1.TGran4_2 bits [43:40]: 0b0011
  */
 static inline bool is_feat_lpa2_4k_present(void)

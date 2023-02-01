@@ -11,6 +11,7 @@
 #include <cpuid.h>
 #include <exit.h>
 #include <fpu_helpers.h>
+#include <pmu.h>
 #include <rec.h>
 #include <run.h>
 #include <smc-rmi.h>
@@ -19,7 +20,9 @@
 
 static struct ns_state g_ns_data[MAX_CPUS];
 static uint8_t g_sve_data[MAX_CPUS][sizeof(struct sve_state)]
-		__attribute__((aligned(sizeof(__uint128_t))));
+		__aligned(sizeof(__uint128_t));
+static uint8_t g_pmu_data[MAX_CPUS][sizeof(struct pmu_state)]
+		__aligned(sizeof(uint64_t));
 
 /*
  * Initialize the aux data and any buffer pointers to the aux granule memory for
@@ -29,10 +32,12 @@ static void init_aux_data(struct rec_aux_data *aux_data,
 			  void *rec_aux,
 			  unsigned int num_rec_aux)
 {
-	aux_data->attest_heap_buf = (uint8_t *)rec_aux;
-
 	/* Ensure we have enough aux granules for use by REC */
-	assert(num_rec_aux >= REC_HEAP_PAGES);
+	assert(num_rec_aux >= REC_NUM_PAGES);
+
+	aux_data->attest_heap_buf = (uint8_t *)rec_aux;
+	aux_data->pmu = (struct pmu_state *)((uint8_t *)rec_aux +
+						REC_HEAP_SIZE);
 }
 
 /*
@@ -69,7 +74,6 @@ static void save_sysreg_state(struct sysreg_state *sysregs)
 	sysregs->elr_el1 = read_elr_el12();
 	sysregs->spsr_el1 = read_spsr_el12();
 	sysregs->pmcr_el0 = read_pmcr_el0();
-	sysregs->pmuserenr_el0 = read_pmuserenr_el0();
 	sysregs->tpidrro_el0 = read_tpidrro_el0();
 	sysregs->tpidr_el0 = read_tpidr_el0();
 	sysregs->csselr_el1 = read_csselr_el1();
@@ -122,7 +126,6 @@ static void restore_sysreg_state(struct sysreg_state *sysregs)
 	write_elr_el12(sysregs->elr_el1);
 	write_spsr_el12(sysregs->spsr_el1);
 	write_pmcr_el0(sysregs->pmcr_el0);
-	write_pmuserenr_el0(sysregs->pmuserenr_el0);
 	write_tpidrro_el0(sysregs->tpidrro_el0);
 	write_tpidr_el0(sysregs->tpidr_el0);
 	write_csselr_el1(sysregs->csselr_el1);
@@ -177,11 +180,18 @@ static void restore_realm_state(struct rec *rec)
 	isb();
 
 	restore_sysreg_state(&rec->sysregs);
+
 	write_elr_el2(rec->pc);
 	write_spsr_el2(rec->pstate);
 	write_hcr_el2(rec->sysregs.hcr_el2);
 
 	gic_restore_state(&rec->sysregs.gicstate);
+
+	if (rec->realm_info.pmu_enabled) {
+		/* Restore PMU context */
+		pmu_restore_state(rec->aux_data.pmu,
+				  rec->realm_info.pmu_num_cnts);
+	}
 }
 
 static void configure_realm_stage2(struct rec *rec)
@@ -190,7 +200,7 @@ static void configure_realm_stage2(struct rec *rec)
 	write_vttbr_el2(rec->common_sysregs.vttbr_el2);
 }
 
-static void save_ns_state(struct ns_state *ns_state)
+static void save_ns_state(struct ns_state *ns_state, struct rec *rec)
 {
 	save_sysreg_state(&ns_state->sysregs);
 
@@ -202,6 +212,11 @@ static void save_ns_state(struct ns_state *ns_state)
 	ns_state->sysregs.cnthctl_el2 = read_cnthctl_el2();
 
 	ns_state->icc_sre_el2 = read_icc_sre_el2();
+
+	if (rec->realm_info.pmu_enabled) {
+		/* Save PMU context */
+		pmu_save_state(ns_state->pmu, rec->realm_info.pmu_num_cnts);
+	}
 }
 
 static void restore_ns_state(struct ns_state *ns_state)
@@ -243,14 +258,16 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	void *rec_aux;
 	unsigned int cpuid = my_cpuid();
 
-	assert(rec->ns == NULL);
-
 	assert(cpuid < MAX_CPUS);
+	assert(rec->ns == NULL);
+	assert(rec->fpu_ctx.used == false);
+
 	ns_state = &g_ns_data[cpuid];
 
-	/* ensure SVE/FPU context is cleared */
+	/* Ensure SVE/FPU and PMU context is cleared */
 	assert(ns_state->sve == NULL);
 	assert(ns_state->fpu == NULL);
+	assert(ns_state->pmu == NULL);
 
 	/* Map auxiliary granules */
 	rec_aux = map_rec_aux(rec->g_aux, rec->num_rec_aux);
@@ -270,7 +287,7 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	 */
 	if (!rec->alloc_info.ctx_initialised) {
 		(void)attestation_heap_ctx_init(rec->aux_data.attest_heap_buf,
-						REC_HEAP_PAGES * SZ_4K);
+						REC_HEAP_SIZE);
 		rec->alloc_info.ctx_initialised = true;
 	}
 
@@ -280,14 +297,18 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		ns_state->fpu = (struct fpu_state *)&g_sve_data[cpuid];
 	}
 
-	save_ns_state(ns_state);
+	ns_state->pmu = (struct pmu_state *)&g_pmu_data[cpuid];
+
+	save_ns_state(ns_state, rec);
 	restore_realm_state(rec);
 
 	/* Prepare for lazy save/restore of FPU/SIMD registers. */
 	rec->ns = ns_state;
-	assert(rec->fpu_ctx.used == false);
 
 	configure_realm_stage2(rec);
+
+	/* Control trapping of accesses to PMU registers */
+	write_mdcr_el2(rec->common_sysregs.mdcr_el2);
 
 	do {
 		/*
@@ -304,6 +325,19 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		activate_events(rec);
 		realm_exception_code = run_realm(&rec->regs[0]);
 	} while (handle_realm_exit(rec, rec_exit, realm_exception_code));
+
+	if (rec->realm_info.pmu_enabled) {
+		/* Expose PMU Realm state to NS */
+		pmu_update_rec_exit(rec_exit);
+
+		/* Save Realm PMU context */
+		pmu_save_state(rec->aux_data.pmu,
+					rec->realm_info.pmu_num_cnts);
+
+		/* Restore NS PMU state */
+		pmu_restore_state(ns_state->pmu,
+					rec->realm_info.pmu_num_cnts);
+	}
 
 	/*
 	 * Check if FPU/SIMD was used, and if it was, save the realm state,
@@ -336,10 +370,11 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	/*
-	 * Clear FPU/SVE context while exiting
+	 * Clear FPU/SVE and PMU context while exiting
 	 */
 	ns_state->sve = NULL;
 	ns_state->fpu = NULL;
+	ns_state->pmu = NULL;
 
 	/*
 	 * Clear NS pointer since that struct is local to this function.
