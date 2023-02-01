@@ -51,13 +51,25 @@ static inline bool is_feat_vmid16_present(void)
 
 /*
  * Check if FEAT_LPA2 is implemented.
- * 4KB granule  at stage 2 supports 52-bit input and output addresses:
+ * 4KB granule at stage 2 supports 52-bit input and output addresses:
  * ID_AA64MMFR0_EL1.TGran4_2 bits [43:40]: 0b0011
  */
 static inline bool is_feat_lpa2_4k_present(void)
 {
 	return (EXTRACT(ID_AA64MMFR0_EL1_TGRAN4_2,
 		read_id_aa64mmfr0_el1()) == ID_AA64MMFR0_EL1_TGRAN4_2_LPA2);
+}
+
+/*
+ * Check if FEAT_HPMN is implemented.
+ * ID_AA64DFR0_EL1.HPMN0, bits [63:60]
+ * 0b0000: Setting MDCR_EL2.HPMN to zero has constrained unpredictable behavior
+ * 0b0001: Setting MDCR_EL2.HPMN to zero has defined behavior
+ */
+static inline bool is_feat_hpmn0_present(void)
+{
+	return (EXTRACT(ID_AA64DFR0_EL1_HPMN0,
+		read_id_aa64dfr0_el1()) != 0UL);
 }
 
 unsigned int arch_feat_get_pa_width(void);

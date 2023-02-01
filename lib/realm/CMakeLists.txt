@@ -41,6 +41,7 @@ target_include_directories(rmm-lib-realm
 target_sources(rmm-lib-realm
     PRIVATE "src/buffer.c"
             "src/granule.c"
+            "src/pmu.c"
             "src/s2tt.c"
             "src/sve.c")
 
