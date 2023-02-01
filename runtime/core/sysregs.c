@@ -36,7 +36,6 @@
  * - Debug architecture version:
  *   set in ID_AA64DFR0_EL1_SET
  * - Trace unit System registers not implemented
- * - PMU is not implemented
  * - Number of breakpoints:
  *   set in ID_AA64DFR0_EL1_SET
  * - Number of watchpoints:
@@ -45,20 +44,17 @@
  * - Statistical Profiling Extension not implemented
  * - Armv8.4 Self-hosted Trace Extension not implemented
  * - Trace Buffer Extension not implemented
- * - FEAT_MTPMU not implemented
  * - Branch Record Buffer Extension not implemented
  */
 #define ID_AA64DFR0_EL1_CLEAR			  \
 	MASK(ID_AA64DFR0_EL1_DebugVer)		| \
 	MASK(ID_AA64DFR0_EL1_TraceVer)		| \
-	MASK(ID_AA64DFR0_EL1_PMUVer)		| \
 	MASK(ID_AA64DFR0_EL1_BRPs)		| \
 	MASK(ID_AA64DFR0_EL1_WRPs)		| \
 	MASK(ID_AA64DFR0_EL1_CTX_CMPS)		| \
 	MASK(ID_AA64DFR0_EL1_PMSVer)		| \
 	MASK(ID_AA64DFR0_EL1_TraceFilt)		| \
 	MASK(ID_AA64DFR0_EL1_TraceBuffer)	| \
-	MASK(ID_AA64DFR0_EL1_MTPMU)		| \
 	MASK(ID_AA64DFR0_EL1_BRBE)
 
 /*
@@ -67,9 +63,9 @@
  * - Number of breakpoints: 2
  * - Number of watchpoints: 2
  */
-#define ID_AA64DFR0_EL1_SET			  \
-	ID_AA64DFR0_EL1_DebugVer_8		| \
-	INPLACE(ID_AA64DFR0_EL1_BRPs, 1UL)	| \
+#define ID_AA64DFR0_EL1_SET						  \
+	INPLACE(ID_AA64DFR0_EL1_DebugVer, ID_AA64DFR0_EL1_Debugv8)	| \
+	INPLACE(ID_AA64DFR0_EL1_BRPs, 1UL)				| \
 	INPLACE(ID_AA64DFR0_EL1_WRPs, 1UL)
 
 /*

@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
-#include <arch_helpers.h>
+#include <arch_features.h>
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
@@ -28,7 +28,21 @@ static void rmm_arch_init(void)
 	SPE(write_pmscr_el2(PMSCR_EL2_INIT));
 
 	write_cnthctl_el2(CNTHCTL_EL2_INIT);
-	write_mdcr_el2(MDCR_EL2_INIT);
+
+	if (is_feat_fgt2_present()) {
+		write_hdfgrtr2_el2(HDFGRWTR2_EL2_INIT);
+		write_hdfgwtr2_el2(HDFGRWTR2_EL2_INIT);
+	}
+
+	if (is_feat_hpmn0_present()) {
+		write_mdcr_el2(MDCR_EL2_INIT);
+	} else {
+		/*
+		 * When FEAT_HPMN0 is not implemented,
+		 * the minimum permitted value of HDCR.HPMN is 1
+		 */
+		write_mdcr_el2(MDCR_EL2_INIT | INPLACE(MDCR_EL2_HPMN, 1UL));
+	}
 }
 
 void rmm_warmboot_main(void)
