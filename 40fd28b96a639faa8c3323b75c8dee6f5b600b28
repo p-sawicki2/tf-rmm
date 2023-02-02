@@ -72,6 +72,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d5c27dfc_fe0c75bc",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:49:07Z",
+      "side": 1,
+      "message": "I think we can get rid of the need for separate base tables in xlat table library and use one pool of xlat tables for all the tables.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6c3f33b5_e94f02b6",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 7
