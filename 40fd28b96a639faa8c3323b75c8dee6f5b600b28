@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52cae401_ba4eb1f9",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:46:50Z",
+      "side": 1,
+      "message": "As discussed, it might be possible to combine xlat_mmap_add_ctx() with this API.\n\nWe could pre-allocate mmap_regions[] within the xlat_ctx_cfg structure and use the same macro to determine the size of mmap regions.\n\nThis would remove the 2 args from this API \" \u0026slot_buf_mmap_regions[0] and SLOT_BUF_MMAP_REGIONS\".\n\nAlso this API could be called xlat_ctx_cfg_init().",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fda2dd1_e3f96316",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:46:50Z",
+      "side": 1,
+      "message": "Suggest \"xlat_ctx_tbls_init()\" as name.\n\nAlso we could combine xlat_init_tables_ctx() with this API.",
+      "range": {
+        "startLine": 137,
+        "startChar": 11,
+        "endLine": 137,
+        "endChar": 33
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec5b1fa2_b5d442bd",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:46:50Z",
+      "side": 1,
+      "message": "Possibly even this API can be called within xlat_ctx_tbls_init() and not be exposed as a public API.",
+      "range": {
+        "startLine": 192,
+        "startChar": 5,
+        "endLine": 192,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c3f33b5_e94f02b6",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:46:50Z",
+      "side": 1,
+      "message": "use uint64_t type where possible and pass the args as uint64_t * to the APIs.",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ab9578f_6c972dbb",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-02T16:46:50Z",
+      "side": 1,
+      "message": "I think we can re-use the same API as slot buf here for the lower half setup.",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 0
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
