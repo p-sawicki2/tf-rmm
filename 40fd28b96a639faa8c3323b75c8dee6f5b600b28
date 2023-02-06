@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3786d627_2fe5bc2a",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52cae401_ba4eb1f9",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fda2dd1_e3f96316",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-02-02T16:46:50Z",
       "side": 1,
       "message": "Suggest \"xlat_ctx_tbls_init()\" as name.\n\nAlso we could combine xlat_init_tables_ctx() with this API.",
+      "range": {
+        "startLine": 137,
+        "startChar": 11,
+        "endLine": 137,
+        "endChar": 33
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c3f741e_2c49f178",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "I renamed it to xlat_ctx_init() rather than xlat_init_tables_ctx() as the collapsed version of this API not only will initialize the tables, but also the whole context",
+      "parentUuid": "9fda2dd1_e3f96316",
       "range": {
         "startLine": 137,
         "startChar": 11,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bec825b3_a9084e01",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "We discussed about this and we agreed that the PE registers must be setup every time the PE is brought up, whereas the xlat_ctx_init() will only be called once per PE, so we need to keep this API separated.",
+      "parentUuid": "ec5b1fa2_b5d442bd",
+      "range": {
+        "startLine": 192,
+        "startChar": 5,
+        "endLine": 192,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5c27dfc_fe0c75bc",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-02-02T16:49:07Z",
       "side": 1,
       "message": "I think we can get rid of the need for separate base tables in xlat table library and use one pool of xlat tables for all the tables.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4109e49_645531d1",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5c27dfc_fe0c75bc",
       "range": {
         "startLine": 48,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad1d4d04_46f78f07",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "This was actually removed",
+      "parentUuid": "6c3f33b5_e94f02b6",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ab9578f_6c972dbb",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-02-02T16:46:50Z",
       "side": 1,
       "message": "I think we can re-use the same API as slot buf here for the lower half setup.",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 0
+      },
+      "revId": "40fd28b96a639faa8c3323b75c8dee6f5b600b28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d7a3bc8_cc0bbced",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-06T12:52:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ab9578f_6c972dbb",
       "range": {
         "startLine": 105,
         "startChar": 0,
