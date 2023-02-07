@@ -16,6 +16,29 @@
       "message": "Conceptually this is fine. Would like a few more review scores\n",
       "revId": "b25617eff0bd16acd7f997b03e2436f24be436e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87bb56fd_c56026fb",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-07T12:47:41Z",
+      "side": 1,
+      "message": "Remove this. Duplicated",
+      "range": {
+        "startLine": 587,
+        "startChar": 2,
+        "endLine": 587,
+        "endChar": 25
+      },
+      "revId": "b25617eff0bd16acd7f997b03e2436f24be436e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
