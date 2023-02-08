@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2fa1a5d_71bf8632",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "We can call this `slot_buf_s1tt`.",
+      "range": {
+        "startLine": 59,
+        "startChar": 26,
+        "endLine": 59,
+        "endChar": 30
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6190505_f835cb3f",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "do we need special section ? this can just go into bss I think.",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 38
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58045d46_4ba8eb82",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "/* Allocate xlat_ctx_cfg for high VA which will be common for all PEs */",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 3
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d09e122f_c4fe3ca6",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "`info`",
+      "range": {
+        "startLine": 76,
+        "startChar": 50,
+        "endLine": 76,
+        "endChar": 56
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3c10b8f_d2762851",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "tbl_info_cache ?",
+      "range": {
+        "startLine": 80,
+        "startChar": 28,
+        "endLine": 80,
+        "endChar": 36
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97a02627_1f553da2",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "This is still a tbl and not a tte. Suggest to call this `xlat_tbl_info`.",
+      "range": {
+        "startLine": 80,
+        "startChar": 19,
+        "endLine": 80,
+        "endChar": 27
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf357304_11e6a7c1",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "suggest: `get_cached_tbl_info()`",
+      "range": {
+        "startLine": 94,
+        "startChar": 22,
+        "endLine": 94,
+        "endChar": 37
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a198354c_fb97f4ec",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "we could remove this suffix since it is clear that from argument that tte is read from tbl_info.\n\nThe function would just be called xlat_get_tte()",
+      "range": {
+        "startLine": 101,
+        "startChar": 31,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca7625b1_e1e84a84",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "`tte` instead of `pte`",
+      "range": {
+        "startLine": 101,
+        "startChar": 28,
+        "endLine": 101,
+        "endChar": 31
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41a5fce2_d263279a",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "the xlat_ctx_cfg_init() already checks whether the init is done or not. Hence this check is redundant.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 2
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a3363dd_ca414407",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "These checks are not needed. The API is already checking if tables are initialized or not and there is a sequence restriction that cfg should have been initialized first before this is called.",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 55
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a275fb_72deba12",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "if (ret !\u003d -EALREADY) {",
+      "range": {
+        "startLine": 151,
+        "startChar": 6,
+        "endLine": 151,
+        "endChar": 20
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb1f4cde_7eeb9936",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "call this XLAT_MAX_MMAP_REGIONS",
+      "range": {
+        "startLine": 52,
+        "startChar": 30,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a02f9a96_c8d4707a",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "`*tbls` is enough ?",
+      "range": {
+        "startLine": 160,
+        "startChar": 14,
+        "endLine": 160,
+        "endChar": 24
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "813b6ddf_36a2ac2c",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "I suspect these 2 APis are not needed anymore after my comments are addressed.",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 0
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7c864e7_4bdf18f1",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "the previous name is correct.",
+      "range": {
+        "startLine": 63,
+        "startChar": 8,
+        "endLine": 63,
+        "endChar": 22
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b4341ec_56687f3a",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "this shouldnt be here.",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 0
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "194aab39_f6c58952",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-08T00:29:51Z",
+      "side": 1,
+      "message": "I think the funtionality for regions can be simplified now that we have removed the requirement to add regions in a piecemeal fashion. 1st , we can impose the condition that the caller ensure that map regions are sorted according to VA. This removes the need to sort the regions here, all we need to check is VA is ordered in ascending order.\n\n2nd, I realized we  cold remove the need dual mmap region array and the need to copy it across. This is a deviation from our previous discussion. Just have a pointer to mmap_regions in the xlat_ctx and num. The array provided by caller can be assigned to this pointer. \n\nThis removes the need to check for storage, the need to copy it etc. Will discuss further with you.",
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
