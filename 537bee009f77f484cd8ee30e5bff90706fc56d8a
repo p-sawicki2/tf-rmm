@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ba2f11a_ea4c6720",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-02-08T15:28:25Z",
+      "side": 1,
+      "message": "STP run:\nhttps://gitlab.oss.arm.com/engineering/newmore/newmore-stp-manifest/-/pipelines/212091\n",
+      "revId": "537bee009f77f484cd8ee30e5bff90706fc56d8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
