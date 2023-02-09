@@ -503,6 +503,24 @@
       "message": "I think the funtionality for regions can be simplified now that we have removed the requirement to add regions in a piecemeal fashion. 1st , we can impose the condition that the caller ensure that map regions are sorted according to VA. This removes the need to sort the regions here, all we need to check is VA is ordered in ascending order.\n\n2nd, I realized we  cold remove the need dual mmap region array and the need to copy it across. This is a deviation from our previous discussion. Just have a pointer to mmap_regions in the xlat_ctx and num. The array provided by caller can be assigned to this pointer. \n\nThis removes the need to check for storage, the need to copy it etc. Will discuss further with you.",
       "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8606261b_d8191ae4",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-09T10:32:17Z",
+      "side": 1,
+      "message": "I\u0027ve been thinking about this and I don\u0027t think this will be easy to pull off:\n\nCase 1.- plat_cmn_setup() receives a pointer with an array of regions defined by the platform. In the case of fvp, this only contains the UART mapping region, which ATM is a build option parameter but in the future it will be passed by EL3. The rest of mapping areas, defined in plat_common_init.c use symbols exported by the linker. In my opinion it will be very hard to ensure that the platform regions are sorted in the right order, especially WRT the common regions, as some of these regions might be unknown at build time.\n\nCase 2.- Since case 1 might not be able to be pulled off, we still need an internal copy of the memory mapping regions so we can store the sorted list of regions. I guess we still could just store a pointer and sort the very same list we pass, but I think the gain is not worth the effort for this.\n\nThoughts?",
+      "parentUuid": "194aab39_f6c58952",
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
