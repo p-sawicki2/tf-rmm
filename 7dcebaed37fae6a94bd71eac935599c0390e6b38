@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d97d804b_aba1ab6e",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2fa1a5d_71bf8632",
+      "range": {
+        "startLine": 59,
+        "startChar": 26,
+        "endLine": 59,
+        "endChar": 30
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6190505_f835cb3f",
@@ -71,6 +95,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8dce840_1d832ef0",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78f08085_cadbb56d",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 38
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58045d46_4ba8eb82",
@@ -94,6 +142,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b1a8c2d_87355b3f",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58045d46_4ba8eb82",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 3
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d09e122f_c4fe3ca6",
@@ -107,6 +179,30 @@
       "writtenOn": "2023-02-08T00:29:51Z",
       "side": 1,
       "message": "`info`",
+      "range": {
+        "startLine": 76,
+        "startChar": 50,
+        "endLine": 76,
+        "endChar": 56
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14b8b33a_132a2256",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d09e122f_c4fe3ca6",
       "range": {
         "startLine": 76,
         "startChar": 50,
@@ -163,6 +259,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c696aef7_72b6f025",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97a02627_1f553da2",
+      "range": {
+        "startLine": 80,
+        "startChar": 19,
+        "endLine": 80,
+        "endChar": 27
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2a79371_7d55d313",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3c10b8f_d2762851",
+      "range": {
+        "startLine": 80,
+        "startChar": 28,
+        "endLine": 80,
+        "endChar": 36
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf357304_11e6a7c1",
@@ -176,6 +320,30 @@
       "writtenOn": "2023-02-08T00:29:51Z",
       "side": 1,
       "message": "suggest: `get_cached_tbl_info()`",
+      "range": {
+        "startLine": 94,
+        "startChar": 22,
+        "endLine": 94,
+        "endChar": 37
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d65f8553_f3fc6e73",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf357304_11e6a7c1",
       "range": {
         "startLine": 94,
         "startChar": 22,
@@ -227,6 +395,54 @@
         "startChar": 28,
         "endLine": 101,
         "endChar": 31
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1037c9a3_f4c6a747",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca7625b1_e1e84a84",
+      "range": {
+        "startLine": 101,
+        "startChar": 28,
+        "endLine": 101,
+        "endChar": 31
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c36f085b_b2ba8eca",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a198354c_fb97f4ec",
+      "range": {
+        "startLine": 101,
+        "startChar": 31,
+        "endLine": 101,
+        "endChar": 42
       },
       "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -302,6 +518,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2347707e_64000c43",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "3a3363dd_ca414407",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 55
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0a275fb_72deba12",
@@ -315,6 +555,30 @@
       "writtenOn": "2023-02-08T00:29:51Z",
       "side": 1,
       "message": "if (ret !\u003d -EALREADY) {",
+      "range": {
+        "startLine": 151,
+        "startChar": 6,
+        "endLine": 151,
+        "endChar": 20
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c19d14f_a1c7f349",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0a275fb_72deba12",
       "range": {
         "startLine": 151,
         "startChar": 6,
@@ -348,6 +612,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2685d7f_9e9d2c72",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "After the changes we discussed, this is not going to be needed anymore",
+      "parentUuid": "bb1f4cde_7eeb9936",
+      "range": {
+        "startLine": 52,
+        "startChar": 30,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a02f9a96_c8d4707a",
@@ -371,6 +659,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed50898c_28eea67c",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a02f9a96_c8d4707a",
+      "range": {
+        "startLine": 160,
+        "startChar": 14,
+        "endLine": 160,
+        "endChar": 24
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "813b6ddf_36a2ac2c",
@@ -384,6 +696,30 @@
       "writtenOn": "2023-02-08T00:29:51Z",
       "side": 1,
       "message": "I suspect these 2 APis are not needed anymore after my comments are addressed.",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 0
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7648ae9f_6542da2f",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "813b6ddf_36a2ac2c",
       "range": {
         "startLine": 163,
         "startChar": 0,
@@ -431,6 +767,30 @@
       "side": 1,
       "message": "Yikes, that was a replacement that shouldn\u0027t have happened :)",
       "parentUuid": "a7c864e7_4bdf18f1",
+      "range": {
+        "startLine": 63,
+        "startChar": 8,
+        "endLine": 63,
+        "endChar": 22
+      },
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bbd4c07_6c766a47",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "887421a0_d9a69219",
       "range": {
         "startLine": 63,
         "startChar": 8,
@@ -519,6 +879,24 @@
       "side": 1,
       "message": "I\u0027ve been thinking about this and I don\u0027t think this will be easy to pull off:\n\nCase 1.- plat_cmn_setup() receives a pointer with an array of regions defined by the platform. In the case of fvp, this only contains the UART mapping region, which ATM is a build option parameter but in the future it will be passed by EL3. The rest of mapping areas, defined in plat_common_init.c use symbols exported by the linker. In my opinion it will be very hard to ensure that the platform regions are sorted in the right order, especially WRT the common regions, as some of these regions might be unknown at build time.\n\nCase 2.- Since case 1 might not be able to be pulled off, we still need an internal copy of the memory mapping regions so we can store the sorted list of regions. I guess we still could just store a pointer and sort the very same list we pass, but I think the gain is not worth the effort for this.\n\nThoughts?",
       "parentUuid": "194aab39_f6c58952",
+      "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbfde9bc_ff27d2de",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-10T17:12:05Z",
+      "side": 1,
+      "message": "Done as discussed",
+      "parentUuid": "8606261b_d8191ae4",
       "revId": "7dcebaed37fae6a94bd71eac935599c0390e6b38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
