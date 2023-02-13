@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d89a80f_17ef5e09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-13T13:27:28Z",
+      "side": 1,
+      "message": "Only CI failure caused by a banned API used in the host layer, which is safe in that context. So overriding CI-1",
+      "revId": "b39d959723504ef249dcd9f87efc9525855f1885",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
