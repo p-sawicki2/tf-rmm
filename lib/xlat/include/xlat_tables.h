@@ -11,6 +11,7 @@
 
 #ifndef __ASSEMBLER__
 
+#include <limits.h>
 #include <memory.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -71,8 +72,20 @@
 #define MAP_REGION_TRANSIENT(_va, _sz, _gr)			\
 	MAP_REGION_FULL_SPEC(ULL(0), _va, _sz, MT_TRANSIENT, _gr)
 
-/* Definition of an invalid descriptor */
-#define INVALID_DESC		UL(0x0)
+/*
+ * Use the first bit reserved for sofware use in the table/block upper
+ * attributes field as a flag to know if a tte corresponds to a transient
+ * address or not. Use an absolute shift, rather than one with regards to
+ * the beginning of the upper attributes to simplify operations.
+ */
+#define TRANSIENT_FLAG_SHIFT	U(55)
+
+/*
+ * TRANSIENT_DESC can be used either as a bit mask or as as absolute value.
+ * The absolute value is used to mark an invalid transient TTE and the mask
+ * is used to make a valid TTE as transient.
+ */
+#define TRANSIENT_DESC		INPLACE(TRANSIENT_FLAG, 1UL)
 
 /*
  * Shifts and masks to access fields of an mmap attribute
