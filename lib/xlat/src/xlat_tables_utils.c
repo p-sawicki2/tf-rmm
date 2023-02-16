@@ -105,6 +105,9 @@ static const char * const level_spacers[] = {
 static const char *invalid_descriptors_ommited =
 		"%s(%d invalid descriptors omitted)\n";
 
+static const char *transient_descriptors_ommited =
+		"%s(%d transient descriptors omitted)\n";
+
 /*
  * Recursive function that reads the translation tables passed as an argument
  * and prints their status.
@@ -115,8 +118,9 @@ static void xlat_tables_print_internal(struct xlat_ctx *ctx,
 				       unsigned int level)
 {
 	uint64_t *addr_inner;
-	unsigned int invalid_row_count;
+	unsigned int invalid_row_count, transient_row_count;
 	unsigned int table_idx = 0U;
+	bool is_invalid, is_transient;
 	size_t level_size;
 	uintptr_t table_idx_va;
 
@@ -135,35 +139,66 @@ static void xlat_tables_print_internal(struct xlat_ctx *ctx,
 			(table_base_va + ctx->cfg->base_va));
 
 	/*
-	 * Keep track of how many invalid descriptors are counted in a row.
-	 * Whenever multiple invalid descriptors are found, only the first one
-	 * is printed, and a line is added to inform about how many descriptors
-	 * have been omitted.
+	 * Keep track of how many invalid or transient descriptors are counted
+	 * in a row. Whenever multiple invalid descriptors are found, only the
+	 * first one is printed, and a line is added to inform about how many
+	 * descriptors have been omitted.
 	 */
 	invalid_row_count = 0U;
+	transient_row_count = 0U;
 
 	while (table_idx < XLAT_TABLE_ENTRIES) {
 		uint64_t desc;
 
 		desc = table_base[table_idx];
 
-		if ((desc & DESC_MASK) == INVALID_DESC) {
+		is_invalid = ((desc & DESC_MASK) == INVALID_DESC);
+		is_transient = (desc == TRANSIENT_DESC);
 
-			if (invalid_row_count == 0U) {
-				VERBOSE("%sVA:0x%lx size:0x%zx\n",
-					level_spacers[level],
-					table_idx_va, level_size);
+		if ((is_invalid == true) || (is_transient == true)) {
+			if (is_invalid == true) {
+				if (transient_row_count > 1U) {
+					VERBOSE(transient_descriptors_ommited,
+					       level_spacers[level],
+					       transient_row_count - 1U);
+				}
+				transient_row_count = 0U;
+
+				if (invalid_row_count == 0U) {
+					VERBOSE("%sVA:0x%lx size:0x%zx\n",
+						level_spacers[level],
+						table_idx_va, level_size);
+				}
+				invalid_row_count++;
+			} else {
+				if (invalid_row_count > 1U) {
+					VERBOSE(invalid_descriptors_ommited,
+					       level_spacers[level],
+					       invalid_row_count - 1U);
+				}
+
+				invalid_row_count = 0U;
+				if (transient_row_count == 0U) {
+					VERBOSE("%sVA:0x%lx PA: TRANSIENT size:0x%zx\n",
+						level_spacers[level],
+						table_idx_va, level_size);
+				}
+				transient_row_count++;
 			}
-			invalid_row_count++;
-
 		} else {
-
 			if (invalid_row_count > 1U) {
 				VERBOSE(invalid_descriptors_ommited,
 				       level_spacers[level],
 				       invalid_row_count - 1U);
 			}
 			invalid_row_count = 0U;
+
+			if (transient_row_count > 1U) {
+				VERBOSE(transient_descriptors_ommited,
+				       level_spacers[level],
+				       transient_row_count - 1U);
+			}
+			transient_row_count = 0U;
 
 			/*
 			 * Check if this is a table or a block. Tables are only
@@ -299,7 +334,7 @@ static uint64_t *find_xlat_last_table(uintptr_t virtual_addr,
 
 		if (desc_type != TABLE_DESC) {
 			if (((desc_type == BLOCK_DESC) ||
-			    (((desc_type == PAGE_DESC) || (desc_type == INVALID_DESC))
+			    (((desc_type == PAGE_DESC) || (desc == TRANSIENT_DESC))
 			      && (level == XLAT_TABLE_LEVEL_MAX)))) {
 				*out_level = level;
 				return ret_table;
@@ -350,7 +385,7 @@ int xlat_unmap_memory_page(struct slot_tbl_info * const table,
 	 * No need to perform any checks on this page descriptor as it is going
 	 * to be made invalid anyway.
 	 */
-	xlat_write_tte(tte, INVALID_DESC);
+	xlat_write_tte(tte, TRANSIENT_DESC);
 
 	/* Invalidate any cached copy of this mapping in the TLBs. */
 	xlat_arch_tlbi_va(va);
@@ -389,8 +424,8 @@ int xlat_map_memory_page_with_attrs(const struct slot_tbl_info * const table,
 		return -EFAULT;
 	}
 
-	/* This function must only be called on invalid descriptors */
-	if (xlat_read_tte(tte_ptr) != INVALID_DESC) {
+	/* This function must only be called on transient descriptors */
+	if (xlat_read_tte(tte_ptr) != TRANSIENT_DESC) {
 		return -EFAULT;
 	}
 

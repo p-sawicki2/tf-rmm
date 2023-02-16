@@ -17,6 +17,7 @@
 
 #endif
 
+#include <limits.h>
 #include <xlat_contexts.h>
 #include <xlat_defs.h>
 
@@ -73,6 +74,13 @@
 
 /* Definition of an invalid descriptor */
 #define INVALID_DESC		UL(0x0)
+
+/*
+ * Definition of a transient descriptor. This is actually an invalid
+ * descriptor. We differentiate it from INVALID_DESC in order to make
+ * a distinction when printing the tables for debugging.
+ */
+#define TRANSIENT_DESC		(~(1ULL))
 
 /*
  * Shifts and masks to access fields of an mmap attribute
