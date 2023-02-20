@@ -221,6 +221,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "10473193_bb5f5c48",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:46:49Z",
+      "side": 1,
+      "message": "\"Initializes the translation context (xlat_ctx) with the given  xlat_ctx_cfg. The tables are created according to the configuration in the provided memory and the associated xlat_ctx_tbls structure is initialized. Must be called before the MMU is enabled.\"",
+      "parentUuid": "58b0dcca_62f2dcb8",
+      "range": {
+        "startLine": 142,
+        "startChar": 3,
+        "endLine": 144,
+        "endChar": 66
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a57c8c2f_d1b857b2",
         "filename": "lib/xlat/include/xlat_contexts.h",
         "patchSetId": 12
