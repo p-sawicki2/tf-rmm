@@ -699,6 +699,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "78fd12bb_c8b44cf8",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T16:16:58Z",
+      "side": 1,
+      "message": "On second thoughts, this macro can be the additional regions to be allocated by platform needs in addition to the common ones. \n\nSo the platform would allocate static struct xlat_mmap_region static_regions[4 + PLAT_CMN_MMAP_REGIONS];",
+      "parentUuid": "e4e0179f_34f86749",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 27
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d5ef19c1_7a7d9767",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 12
