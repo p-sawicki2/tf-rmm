@@ -1,0 +1,745 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ada03ee2_e7e7dadb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60277b39_c9307770",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "add \"...memory (One L3 table per PE)\".",
+      "range": {
+        "startLine": 57,
+        "startChar": 18,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2b24aee_8b07d33c",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "This is a xlat_table structure. So the prefix has to be \"xlat_\"",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 11
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd0a46eb_7c3ce18d",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "nit: use \"PE\" instead of \"CPU\"",
+      "range": {
+        "startLine": 129,
+        "startChar": 43,
+        "endLine": 129,
+        "endChar": 46
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2459cda9_2eab0274",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Configure",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 147,
+        "endChar": 14
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87bd289b_65a78c8e",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 147,
+        "startChar": 29,
+        "endLine": 149,
+        "endChar": 32
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d87f68b_f6ec4817",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "This info is already in the ctx_cfg. This arg is not needed I think.",
+      "range": {
+        "startLine": 178,
+        "startChar": 8,
+        "endLine": 178,
+        "endChar": 28
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a5b24ed_9f9d10f7",
+        "filename": "lib/realm/src/include/buffer_private.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "xlat_",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5f98d3d_df607854",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Add: \"Must be called before MMU is enabled.\"",
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b0dcca_62f2dcb8",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "\"Initializes the translation context (xlat_ctx) if not already initialized with the given  xlat_ctx_cfg. The tables are created according to the configuration in the provided memory and the associated xlat_ctx_tbls structure is initialized. Must be called before the MMU is enabled.\"",
+      "range": {
+        "startLine": 142,
+        "startChar": 3,
+        "endLine": 144,
+        "endChar": 66
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a57c8c2f_d1b857b2",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "xlat_ctx",
+      "range": {
+        "startLine": 147,
+        "startChar": 25,
+        "endLine": 147,
+        "endChar": 44
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df7667e1_a8e579d8",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Add: \"this must have already been initialized via xlat_ctx_cfg_init().",
+      "range": {
+        "startLine": 148,
+        "startChar": 71,
+        "endLine": 148,
+        "endChar": 72
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4661f5d0_fde520a0",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "xlat_ctx_tbls structure.",
+      "range": {
+        "startLine": 149,
+        "startChar": 26,
+        "endLine": 149,
+        "endChar": 44
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eb5a27e_e74eb4c3",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "remve.",
+      "range": {
+        "startLine": 149,
+        "startChar": 45,
+        "endLine": 150,
+        "endChar": 47
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "070fc8cf_454836d8",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Pointer to the memory for the translation tables, the memory provided must be page aligned and multiple of page size.",
+      "range": {
+        "startLine": 151,
+        "startChar": 17,
+        "endLine": 151,
+        "endChar": 72
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81156ec3_85a13e4c",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Number of pages passed in the `tables_ptr`.",
+      "range": {
+        "startLine": 152,
+        "startChar": 14,
+        "endLine": 152,
+        "endChar": 67
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cebb37a5_ab8c26fa",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "0 on Success\n-EALREADY if tbls_ctx is already initialized.\nNegative POSIX error codes on all other errors.",
+      "range": {
+        "startLine": 155,
+        "startChar": 58,
+        "endLine": 155,
+        "endChar": 59
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe2eab8b_c64f209e",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "This is a duplicate of PAGE_SIZE in line 23. Suggest to remove.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 34
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9665e409_21d1cd26",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "not needed. Can be removed I think.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 6
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20d5279a_e29c347a",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "xlat_",
+      "range": {
+        "startLine": 184,
+        "startChar": 7,
+        "endLine": 184,
+        "endChar": 12
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c14e82d9_15a8a557",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "The macro is reducing the readability here. Would prefer a simple\nctx-\u003ecfg \u003d cfg;",
+      "range": {
+        "startLine": 292,
+        "startChar": 1,
+        "endLine": 292,
+        "endChar": 30
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67a579ad_5ff5b5f8",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "same comment as above. The macro can be removed.",
+      "range": {
+        "startLine": 298,
+        "startChar": 1,
+        "endLine": 298,
+        "endChar": 20
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f32294dc_2947e93d",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "This is already done by caller.",
+      "range": {
+        "startLine": 552,
+        "startChar": 0,
+        "endLine": 552,
+        "endChar": 69
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eb321df_0f4e65ef",
+        "filename": "lib/xlat/src/xlat_tables_private.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "This is not done ? Can be removed if not.",
+      "range": {
+        "startLine": 16,
+        "startChar": 33,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a816f89_a2aaab27",
+        "filename": "lib/xlat/src/xlat_tables_private.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "can be moved to function doc of xlat_ctx_init()",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 32
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43dd3c52_6b97b2c8",
+        "filename": "lib/xlat/src/xlat_tables_private.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "xlat_ctx_cfg_init()",
+      "range": {
+        "startLine": 24,
+        "startChar": 44,
+        "endLine": 24,
+        "endChar": 68
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c6df8b9_06de612f",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "You could compute the number of entries of base table here : \n\n\nentries \u003d GET_NUM_BASE_LEVEL_ENTRIES(va_size);",
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ff4c197_6e282ae2",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "perhaps we can get base table entries as suggested above.",
+      "range": {
+        "startLine": 291,
+        "startChar": 13,
+        "endLine": 291,
+        "endChar": 31
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c743965_c4e3eaad",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "should this be called xlat_get_tte_ptr()",
+      "range": {
+        "startLine": 483,
+        "startChar": 10,
+        "endLine": 483,
+        "endChar": 22
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4e0179f_34f86749",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "Use PLAT_CMN_MAX_MMAP_REGIONS here and CASSERT that it is \u003e\u003d 4.",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 27
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5ef19c1_7a7d9767",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "\"static_regions\"",
+      "range": {
+        "startLine": 74,
+        "startChar": 31,
+        "endLine": 74,
+        "endChar": 38
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6106a2ae_826f472e",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "no need to return error as it is valid to not have any platform region.\n\ndo a sanity check here : nregions + COMMON_REGIONS \u003c\u003d PLAT_CMN_MAX_MMAP_REGIONS",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 2
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a41c82b_68d666ca",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-20T14:39:08Z",
+      "side": 1,
+      "message": "The common regions are all continous and hence can treated as one huge mmap region block.\nIf the plat is less that common, it goes and then common can be copied as a single memcopy.",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 2
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
