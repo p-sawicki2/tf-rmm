@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46e6f9f1_8a9ff342",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "flushing out early comments\n",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92f4c9d7_48d61941",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "Do we need a page for PMU ? Perhaps we can share with other fields we might introduce later.",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5328af6_eb134aeb",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "nit: \"..register definitions\".\n\nSuggest to move changes specific to PMUv3p9 to a different patch.",
+      "range": {
+        "startLine": 68,
+        "startChar": 24,
+        "endLine": 68,
+        "endChar": 34
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a8af0dc_23340cdf",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "This is an external debug interface for PMU. Not needed by Realms not RMM. saving and restoring this register may have side-effects on PMU.\n\nsuggest to move to PMUv3p9 patch",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 33
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98136708_be204836",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "FEAT_FGT2 is only needed for PMUv3p9",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 34
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "857e9dbd_1214c122",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "can be removed as they will not be needed for RMM. since RME mandates v3p7, this need to check versions \u003e\u003d v3p7 only.",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 470,
+        "endChar": 39
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04375e8a_cbddfe52",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-22T14:12:32Z",
+      "side": 1,
+      "message": "move to the v3p9 patch",
+      "range": {
+        "startLine": 487,
+        "startChar": 0,
+        "endLine": 493,
+        "endChar": 42
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
