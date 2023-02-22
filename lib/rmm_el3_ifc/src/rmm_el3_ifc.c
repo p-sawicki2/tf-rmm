@@ -13,7 +13,6 @@
 #include <xlat_defs.h>
 
 /* Boot Interface arguments */
-static uintptr_t rmm_shared_buffer_start_pa;
 static unsigned long rmm_el3_ifc_abi_version;
 
 /* Platform paramters */
@@ -43,6 +42,9 @@ __dead2 void rmm_el3_ifc_report_fail_to_el3(int ec)
 int rmm_el3_ifc_init(unsigned long x0, unsigned long x1, unsigned long x2,
 		     unsigned long x3, uintptr_t shared_buf_va)
 {
+	/* x3: Pointer to the start of the EL3-RMM shared buffer. */
+	uintptr_t rmm_shared_buffer_start_pa = (uintptr_t)x3;
+
 	assert(is_mmu_enabled() == false);
 	assert(initialized == false);
 	assert((shared_buf_va & PAGE_SIZE_MASK) == 0UL);
@@ -83,15 +85,14 @@ int rmm_el3_ifc_init(unsigned long x0, unsigned long x1, unsigned long x2,
 
 	/*
 	 * Validate that the shared buffer pointer is not NULL.
-	 *
-	 * x3: Pointer to the start of the EL3-RMM shared buffer.
 	 */
-	if ((x3 == 0UL) || ((x3 & PAGE_SIZE_MASK) != 0UL)) {
+	if ((rmm_shared_buffer_start_pa == 0UL) ||
+	    ((rmm_shared_buffer_start_pa & PAGE_SIZE_MASK) != 0UL)) {
 		rmm_el3_ifc_report_fail_to_el3(E_RMM_BOOT_INVALID_SHARED_BUFFER);
 	}
 
 	rmm_el3_ifc_abi_version = x1;
-	rmm_shared_buffer_start_pa = (uintptr_t)x3;
+	rmm_el3_ifc_set_shared_buf_pa_value(rmm_shared_buffer_start_pa);
 	rmm_shared_buffer_start_va = shared_buf_va;
 
 	initialized = true;
@@ -117,7 +118,7 @@ uintptr_t rmm_el3_ifc_get_shared_buf_pa(void)
 {
 	assert(initialized == true);
 
-	return rmm_shared_buffer_start_pa;
+	return rmm_el3_ifc_get_shared_buf_pa_value();
 }
 
 /* Get the raw value of the boot interface version */

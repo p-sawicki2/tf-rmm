@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <debug.h>
 #include <rmm_el3_ifc.h>
+#include <rmm_el3_ifc_priv.h>
 #include <sizes.h>
 #include <smc.h>
 #include <spinlock.h>
@@ -13,9 +14,6 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <xlat_defs.h>
-
-/* Platform parameter */
-extern uintptr_t rmm_shared_buffer_start_va;
 
 /* Spinlock used to protect the EL3<->RMM shared area */
 static spinlock_t shared_area_lock = {0U};
@@ -27,7 +25,7 @@ uintptr_t rmm_el3_ifc_get_shared_buf_locked(void)
 {
 	spinlock_acquire(&shared_area_lock);
 
-	return rmm_shared_buffer_start_va;
+	return rmm_el3_ifc_get_shared_buf_va_value();
 }
 
 /*
@@ -47,6 +45,9 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 {
 	struct smc_result smc_res;
 	unsigned long buffer_pa;
+	uintptr_t rmm_shared_buffer_start_va =
+		rmm_el3_ifc_get_shared_buf_va_value();
+
 	unsigned long offset =
 		(unsigned long)(buf - rmm_shared_buffer_start_va);
 
@@ -80,6 +81,8 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 {
 	struct smc_result smc_res;
 	unsigned long buffer_pa;
+	uintptr_t rmm_shared_buffer_start_va =
+		rmm_el3_ifc_get_shared_buf_va_value();
 	unsigned long offset =
 		(unsigned long)(buf - rmm_shared_buffer_start_va);
 

@@ -22,4 +22,29 @@
  */
 void rmm_el3_ifc_process_boot_manifest(void);
 
+/*
+ * Function to return the value of the shared buffer PA value.
+ *
+ * Args:	None.
+ * Return:	- The address of the shared buffer
+ */
+uintptr_t rmm_el3_ifc_get_shared_buf_pa_value(void);
+
+/*
+ * Function to set the value of the shared buffer PA value.
+ *
+ * Args:	The value to set as PA value.
+ * Return:	- None.
+ */
+void rmm_el3_ifc_set_shared_buf_pa_value(uintptr_t value);
+
+/*
+ * Function to return the value of the shared buffer VA value.
+ *
+ * Args:	None.
+ * Return:	- The address of the shared buffer
+ */
+uintptr_t rmm_el3_ifc_get_shared_buf_va_value(void);
+
+
 #endif /* RMM_EL3_IFC_PRIV_H */

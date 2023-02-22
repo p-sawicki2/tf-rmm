@@ -20,7 +20,8 @@ target_link_libraries(rmm-lib-rmm_el3_ifc
 target_sources(rmm-lib-rmm_el3_ifc
     PRIVATE "src/rmm_el3_ifc.c"
             "src/rmm_el3_ifc_manifest.c"
-            "src/rmm_el3_runtime.c")
+            "src/rmm_el3_runtime.c"
+            "src/${RMM_ARCH}/rmm_el3_ifc_helpers.c")
 
 if (NOT RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-rmm_el3_ifc
