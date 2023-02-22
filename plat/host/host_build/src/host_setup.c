@@ -59,6 +59,10 @@ static void setup_sysreg_and_boot_manifest(void)
 	/* TPIDR_EL2 is reset to zero */
 	(void)host_util_set_default_sysreg_cb("tpidr_el2", 0UL);
 
+	/* ID_AA64ISAR0.RNDR is reset to 1 */
+	(void)host_util_set_default_sysreg_cb("id_aa64isar0_el1",
+				INPLACE(ID_AA64ISAR0_EL1_RNDR, 1UL));
+
 	/* Initialize the boot manifest */
 	boot_manifest->version = RMM_EL3_IFC_SUPPORTED_VERSION;
 	boot_manifest->plat_data = (uintptr_t)NULL;
