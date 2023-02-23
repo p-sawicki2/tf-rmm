@@ -252,6 +252,29 @@
       },
       "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be240cfb_afcc1d53",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-23T13:42:29Z",
+      "side": 1,
+      "message": "This can be probably be written as :\n       \n        plat_offset \u003d COMMON_REGIONS;\n        cmn_offset \u003d 0;\n\tif (nregions \u003e 0U) {\n\t\t/*\n\t\t * Combine the common memory regions with the platform ones\n\t\t * in an array where they are sorted as per VA.\n\t\t */\n\t\tif (plat_regions[0U].base_va \u003c RMM_CODE_START) {\n                        plat_offset \u003d 0;\n                        cmn_offset \u003d COMMON_REGIONS;\n\t\t} \n\t\tmemcpy((void *)\u0026static_regions[plat_offset],\n\t\t         (void *)\u0026plat_regions[0U],\n\t\t\t sizeof(struct xlat_mmap_region) * nregions);\n\t} \n\n\tmemcpy((void *)\u0026static_regions[cmn_offset],\n\t\t(void *)\u0026regions[0U],\n\t\tsizeof(struct xlat_mmap_region) * COMMON_REGIONS);",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
