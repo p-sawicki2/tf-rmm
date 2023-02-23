@@ -100,6 +100,12 @@ void inv_dcache_range(uintptr_t addr, size_t size);
 					CPTR_EL2_FPEN_NO_TRAP_11)
 
 /*******************************************************************************
+ * SVE management
+ ******************************************************************************/
+#define is_zen_enabled() (EXTRACT(CPTR_EL2_ZEN, read_cptr_el2()) == \
+			  CPTR_EL2_ZEN_NO_TRAP_11)
+
+/*******************************************************************************
  * Misc. accessor prototypes
  ******************************************************************************/
 
@@ -194,6 +200,7 @@ DEFINE_SYSREG_RW_FUNCS(csselr_el1)
 DEFINE_SYSREG_RW_FUNCS(sctlr_el12)
 DEFINE_SYSREG_RW_FUNCS(cpacr_el12)
 DEFINE_SYSREG_RW_FUNCS(zcr_el1)
+DEFINE_RENAME_SYSREG_RW_FUNCS(zcr_el2, ZCR_EL2)
 DEFINE_SYSREG_RW_FUNCS(ttbr0_el12)
 DEFINE_SYSREG_RW_FUNCS(ttbr1_el12)
 DEFINE_SYSREG_RW_FUNCS(tcr_el12)
@@ -226,6 +233,7 @@ DEFINE_RENAME_SYSREG_READ_FUNC(ID_AA64MMFR1_EL1, id_aa64mmfr1_el1)
 DEFINE_RENAME_SYSREG_READ_FUNC(ID_AA64MMFR2_EL1, id_aa64mmfr2_el1)
 DEFINE_RENAME_SYSREG_READ_FUNC(ID_AA64PFR0_EL1, id_aa64pfr0_el1)
 DEFINE_RENAME_SYSREG_READ_FUNC(ID_AA64PFR1_EL1, id_aa64pfr1_el1)
+DEFINE_RENAME_SYSREG_READ_FUNC(id_aa64zfr0_el1, ID_AA64ZFR0_EL1)
 DEFINE_RENAME_SYSREG_RW_FUNCS(icc_hppir1_el1, ICC_HPPIR1_EL1)
 DEFINE_SYSREG_READ_FUNC(id_aa64isar0_el1)
 DEFINE_SYSREG_READ_FUNC(id_aa64mmfr0_el1)

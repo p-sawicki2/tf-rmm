@@ -28,6 +28,9 @@
 /* Interrupt Controller Control Register */
 #define ICC_CTLR_EL1		S3_0_C12_C12_4
 
+/* SVE Feature ID register 0 */
+#define ID_AA64ZFR0_EL1		S3_0_C0_C4_4
+
 #define ICC_CTLR_EL1_EXT_RANGE_BIT	(UL(1) << 19)
 
 /* Virtual GIC registers */
@@ -61,6 +64,8 @@
 #define ICH_VTR_EL2		S3_4_C12_C11_1
 #define ICH_MISR_EL2		S3_4_C12_C11_2
 #define ICH_VMCR_EL2		S3_4_C12_C11_7
+
+#define ZCR_EL2			S3_4_C1_C2_0
 
 /* RNDR definition */
 #define RNDR			S3_3_C2_C4_0
@@ -560,6 +565,9 @@
 #define SPSR_EL2_N_BIT			(UL(1) << 31)
 #define SPSR_EL2_PM_BIT			(UL(1) << 32)
 #define SPSR_EL2_PPEND_BIT		(UL(1) << 33)
+
+#define ZCR_EL2_SVE_VL_SHIFT		UL(0)
+#define ZCR_EL2_SVE_VL_WIDTH		UL(4)
 
 /* VTCR definitions */
 #define VTCR_T0SZ_SHIFT		0

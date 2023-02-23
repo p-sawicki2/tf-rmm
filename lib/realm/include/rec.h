@@ -10,10 +10,10 @@
 
 #include <arch.h>
 #include <attestation_token.h>
-#include <fpu_helpers.h>
 #include <gic.h>
 #include <memory_alloc.h>
 #include <ripas.h>
+#include <simd.h>
 #include <sizes.h>
 #include <smc-rmi.h>
 #include <utils_def.h>
@@ -86,6 +86,13 @@ struct common_sysreg_state {
 	unsigned long hcr_el2;
 };
 
+/* This structure is used for storing FPU or SVE context for realm. */
+struct rec_simd_state {
+	struct simd_state simd;
+	bool used;
+	bool init_done;
+};
+
 /*
  * This structure is aligned on cache line size to avoid cache line trashing
  * when allocated as an array for N CPUs.
@@ -94,8 +101,6 @@ struct ns_state {
 	struct sysreg_state sysregs;
 	unsigned long sp_el0;
 	unsigned long icc_sre_el2;
-	struct fpu_state *fpu; /* FPU/SVE saved lazily. */
-	struct sve_state *sve;
 } __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
 
 /*
@@ -104,12 +109,7 @@ struct ns_state {
  */
 struct rec_aux_data {
 	uint8_t *attest_heap_buf; /* Pointer to the heap buffer of this REC. */
-};
-
-/* This structure is used for storing FPU/SIMD context for realm. */
-struct rec_fpu_context {
-	struct fpu_state fpu;
-	bool used;
+	struct rec_simd_state *rec_simd; /* Pointer to SIMD context region */
 };
 
 struct rec {
@@ -139,6 +139,8 @@ struct rec {
 		int s2_starting_level;
 		struct granule *g_rtt;
 		struct granule *g_rd;
+		bool sve_enabled;
+		uint8_t sve_vq;
 	} realm_info;
 
 	struct {
@@ -152,9 +154,6 @@ struct rec {
 		unsigned long hpfar;
 		unsigned long far;
 	} last_run_info;
-
-	/* Structure for storing FPU/SIMD context for realm. */
-	struct rec_fpu_context fpu_ctx;
 
 	/* Pointer to per-cpu non-secure state */
 	struct ns_state *ns;
@@ -222,6 +221,21 @@ static inline unsigned long mpidr_to_rec_idx(unsigned long mpidr)
 		MPIDR_EL2_AFF(3, mpidr));
 }
 
+static inline simd_t rec_simd_type(struct rec *rec)
+{
+	if (rec->realm_info.sve_enabled) {
+		return SIMD_SVE;
+	} else {
+		return SIMD_FPU;
+	}
+}
+
+static inline bool rec_used_simd(struct rec *rec)
+{
+	assert(rec->aux_data.rec_simd != NULL);
+	return rec->aux_data.rec_simd->used;
+}
+
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);
 
 unsigned long smc_rec_create(unsigned long rec_addr,
@@ -238,6 +252,7 @@ void inject_serror(struct rec *rec, unsigned long vsesr);
 void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *exit,
 			       unsigned long rtt_level);
 
+void rec_simd_restore_disable_trap(struct rec *rec);
 #endif /* __ASSEMBLER__ */
 
 #endif /* REC_H */

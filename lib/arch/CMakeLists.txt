@@ -14,12 +14,13 @@ target_include_directories(rmm-lib-arch
 
 target_sources(rmm-lib-arch
         PRIVATE "src/arch_features.c"
-                "src/fpu_helpers.c")
+                "src/simd.c")
 
 if(NOT RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-arch
         PRIVATE "src/aarch64/cache_helpers.S"
-                "src/aarch64/fpu_helpers.S")
+                "src/aarch64/fpu_helpers.S"
+                "src/aarch64/sve_helpers.S")
 else()
     target_sources(rmm-lib-arch
         PRIVATE "src/fake_host/cache_wrappers.c"
