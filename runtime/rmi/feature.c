@@ -6,6 +6,7 @@
 #include <arch_features.h>
 #include <assert.h>
 #include <feature.h>
+#include <simd.h>
 #include <smc-handler.h>
 #include <smc-rmi.h>
 #include <status.h>
@@ -33,6 +34,17 @@ static unsigned long get_feature_register_0(void)
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_EN,
 				RMI_NOT_SUPPORTED);
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, 0U);
+
+	/* Set SVE fields */
+	if (is_feat_sve_present()) {
+		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_SVE_EN,
+				     RMI_SUPPORTED);
+
+		simd_traps_disable(SIMD_SVE);
+		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_SVE_VL,
+				     EXTRACT(ZCR_EL2_SVE_VL, read_zcr_el2()));
+		simd_traps_enable();
+	}
 
 	return feat_reg0;
 }
@@ -71,6 +83,25 @@ static bool validate_feature_register_0(unsigned long value)
 	if ((EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, value) == RMI_SUPPORTED) ||
 	    (EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, value) != 0U)) {
 		return false;
+	}
+
+	/* Validate SVE flag */
+	if ((EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, value) == RMI_SUPPORTED)) {
+		unsigned long zcr_val;
+
+		if (!is_feat_sve_present()) {
+			return false;
+		}
+
+		simd_traps_disable(SIMD_SVE);
+		zcr_val = read_zcr_el2();
+		simd_traps_enable();
+
+		/* Validate SVE_VL value */
+		if (EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL, value) >
+		    EXTRACT(ZCR_EL2_SVE_VL, zcr_val)) {
+			return false;
+		}
 	}
 
 	return true;

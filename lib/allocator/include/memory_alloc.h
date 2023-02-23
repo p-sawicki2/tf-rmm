@@ -17,6 +17,15 @@ typedef struct memory_header_s memory_header_t;
  */
 #define REC_HEAP_PAGES		2
 
+/*
+ * SIMD context that holds FPU/SVE registers. Space to save max arch supported
+ * SVE vector length of 2048 bits
+ */
+#define REC_SIMD_PAGES		3
+
+/* Number of aux granules pages per REC to be used */
+#define REC_NUM_PAGES		(REC_HEAP_PAGES + REC_SIMD_PAGES)
+
 struct buffer_alloc_ctx {
 	unsigned char		*buf;
 	size_t			len;

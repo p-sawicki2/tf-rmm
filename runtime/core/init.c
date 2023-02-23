@@ -3,13 +3,16 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
 #include <rmm_el3_ifc.h>
+#include <simd.h>
 #include <smc-rmi.h>
 #include <smc-rsi.h>
+
 
 #ifdef NDEBUG
 #define RMM_BUILD_TYPE	"release"
@@ -29,6 +32,8 @@ static void rmm_arch_init(void)
 
 	write_cnthctl_el2(CNTHCTL_EL2_INIT);
 	write_mdcr_el2(MDCR_EL2_INIT);
+
+	simd_init();
 }
 
 void rmm_warmboot_main(void)
