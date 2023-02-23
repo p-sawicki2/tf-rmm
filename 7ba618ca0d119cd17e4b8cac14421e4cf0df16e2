@@ -1242,6 +1242,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bfd83ee2_0883e9ce",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-23T12:25:53Z",
+      "side": 1,
+      "message": "Hmm, I suppose it is an optimization to avoid iterating if the VA is known to be above what is initialized.\n\nI realized the same optimization can be achieved by a simple check:\n\n  if (virtual_addr \u003e (ctx_cfg-\u003emax_mapped_va_offset)\n    return NULL;\n\n\nbut this is already done , so the optimization is not needed.",
+      "parentUuid": "a2847cd3_98ea0313",
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5ff4c197_6e282ae2",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 12
@@ -1489,6 +1507,30 @@
       "side": 1,
       "message": "Yes, it is valid to not have any platform regions. This is just to enforce consistency on the arguments. It checks that in case the number of regions is \u003e 0, the pointer to the regions is not NULL and viceversa.\n\nThe sanity check you suggest was already done below, when adding the mapping regions, although moved it before this check after refactoring below as per your comment.",
       "parentUuid": "6106a2ae_826f472e",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 2
+      },
+      "revId": "7ba618ca0d119cd17e4b8cac14421e4cf0df16e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dba3db3_5abd9177",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-23T12:25:53Z",
+      "side": 1,
+      "message": "ACK.",
+      "parentUuid": "681a227f_8d7dc72d",
       "range": {
         "startLine": 111,
         "startChar": 0,
