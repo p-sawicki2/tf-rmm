@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "156d4768_34585e66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T16:19:55Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "fae18029753f6dc418cef52d916ae9ebb245c9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc90767b_ed0e6dcf",
+        "filename": "plat/common/include/imported_symbols.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T16:19:55Z",
+      "side": 1,
+      "message": "could call this plat_import_sym.h",
+      "revId": "fae18029753f6dc418cef52d916ae9ebb245c9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "246b0a6b_7314bd1e",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T16:19:55Z",
+      "side": 1,
+      "message": "Could add this comment: \n\n\".... Since host platform does not have VA address translation, we pass the same shared buf address as the VA to be used for access by users of rmm-el3-ifc.\"",
+      "revId": "fae18029753f6dc418cef52d916ae9ebb245c9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
