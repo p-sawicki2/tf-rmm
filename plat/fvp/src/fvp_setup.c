@@ -6,6 +6,7 @@
 #include <debug.h>
 #include <fvp_dram.h>
 #include <fvp_private.h>
+#include <imported_symbols.h>
 #include <pl011.h>
 #include <plat_common.h>
 #include <rmm_el3_ifc.h>
@@ -58,7 +59,12 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 
 	uart_init(RMM_UART_ADDR, FVP_UART_CLK_IN_HZ, FVP_UART_BAUDRATE);
 
-	/* Initialize the RMM <-> EL3 interface and xlat table */
+	/* Initialize the RMM <-> EL3 interface */
+	if (rmm_el3_ifc_init(x0, x1, x2, x3, RMM_SHARED_BUFFER_START) != 0) {
+		panic();
+	}
+
+	/* Initialize xlat table */
 	if (plat_cmn_setup(x0, x1, x2, x3, plat_regions) != 0) {
 		panic();
 	}
