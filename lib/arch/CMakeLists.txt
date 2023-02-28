@@ -24,5 +24,6 @@ if(NOT RMM_ARCH STREQUAL fake_host)
 else()
     target_sources(rmm-lib-arch
         PRIVATE "src/fake_host/cache_wrappers.c"
-                "src/fake_host/fpu_helpers_host.c")
+                "src/fake_host/fpu_helpers_host.c"
+                "src/fake_host/sve_helpers_host.c")
 endif()
