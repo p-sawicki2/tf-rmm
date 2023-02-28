@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d7fb4a3_2afc2d5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T10:35:49Z",
+      "side": 1,
+      "message": "Some static check failure in CI : \n\nhttps://jenkins.openci.aws.arm.com/job/rmm-static-checks/899/console",
+      "revId": "88129e26eb31cce4506a4f1fb133fc7a853c2def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
