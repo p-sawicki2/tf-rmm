@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38476051_31dcf8b9",
+        "filename": "configs/fvp_defcfg.cmake",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "273f7535_30d29880",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 54
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ad7045b_d43896b5",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-02-23T12:25:53Z",
       "side": 1,
       "message": "nit: use tab for alignment.",
+      "range": {
+        "startLine": 217,
+        "startChar": 24,
+        "endLine": 217,
+        "endChar": 76
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b2204f6_b634da6f",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ad7045b_d43896b5",
       "range": {
         "startLine": 217,
         "startChar": 24,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f96fc9_c1f26202",
+        "filename": "lib/realm/include/buffer.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3b15b4a_b1d318ba",
+      "range": {
+        "startLine": 67,
+        "startChar": 3,
+        "endLine": 67,
+        "endChar": 14
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c0ef8cf_dd1e7c2e",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-02-23T12:25:53Z",
       "side": 1,
       "message": "this should probably be an assert.",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 0
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cbe7256_f26bd14c",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c0ef8cf_dd1e7c2e",
       "range": {
         "startLine": 160,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4690eabb_b8915de0",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ff6ef0c_05006b7f",
+      "range": {
+        "startLine": 143,
+        "startChar": 50,
+        "endLine": 143,
+        "endChar": 76
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bbf52801_e8a9e2db",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-02-23T12:25:53Z",
       "side": 1,
       "message": "\"xlat_ctx_tbls structure\".",
+      "range": {
+        "startLine": 152,
+        "startChar": 28,
+        "endLine": 152,
+        "endChar": 35
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6a036ec_8873f140",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbf52801_e8a9e2db",
       "range": {
         "startLine": 152,
         "startChar": 28,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54f1371d_3d787d4f",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "926ea80f_217b90cc",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "087c6e81_62502b1c",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-02-23T12:25:53Z",
       "side": 1,
       "message": "rename to `va_offset`",
+      "range": {
+        "startLine": 263,
+        "startChar": 48,
+        "endLine": 263,
+        "endChar": 60
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fd68e11_b291c764",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "087c6e81_62502b1c",
       "range": {
         "startLine": 263,
         "startChar": 48,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96f032a3_bd163c11",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3299113e_0e542da3",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c3c881c_3ab5c3ef",
@@ -221,6 +437,30 @@
       "writtenOn": "2023-02-23T12:25:53Z",
       "side": 1,
       "message": "\"Extra platform mmap regions that need to be mapped in S1 xlat tables\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 10,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3e84d8a_2a1840b4",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c3c881c_3ab5c3ef",
       "range": {
         "startLine": 32,
         "startChar": 10,
@@ -254,6 +494,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "608fcc68_78d48af7",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1b562d2_14bd9c57",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 23
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be240cfb_afcc1d53",
@@ -267,6 +531,30 @@
       "writtenOn": "2023-02-23T13:42:29Z",
       "side": 1,
       "message": "This can be probably be written as :\n       \n        plat_offset \u003d COMMON_REGIONS;\n        cmn_offset \u003d 0;\n\tif (nregions \u003e 0U) {\n\t\t/*\n\t\t * Combine the common memory regions with the platform ones\n\t\t * in an array where they are sorted as per VA.\n\t\t */\n\t\tif (plat_regions[0U].base_va \u003c RMM_CODE_START) {\n                        plat_offset \u003d 0;\n                        cmn_offset \u003d COMMON_REGIONS;\n\t\t} \n\t\tmemcpy((void *)\u0026static_regions[plat_offset],\n\t\t         (void *)\u0026plat_regions[0U],\n\t\t\t sizeof(struct xlat_mmap_region) * nregions);\n\t} \n\n\tmemcpy((void *)\u0026static_regions[cmn_offset],\n\t\t(void *)\u0026regions[0U],\n\t\tsizeof(struct xlat_mmap_region) * COMMON_REGIONS);",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "f5aca2905ad87252e937fc676d670e0476601baf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e798f64a_be096dc3",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T12:19:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be240cfb_afcc1d53",
       "range": {
         "startLine": 129,
         "startChar": 0,
