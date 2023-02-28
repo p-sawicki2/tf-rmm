@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31cd87de_e7280213",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T13:34:36Z",
+      "side": 1,
+      "message": "As we discussed, this will help not only to fix the logs (which at the moment might show misleading information when there are transient tables present) but they can also help with the unittests, as treating transient entries like invalid ones and viceversa can lead to problems on the tests.\n\nAlso, by treating invalid descriptor as transient ones, we could easily map an invalid descriptor using xlat_map_memory_page_with_attrs(), which would give as an inconsistent translation context (there would be a mapping not present on the mmap regions). This way we can ensure that only transient descriptors generated during the xlat initialization can be mapped to any PA.\n\nTo finish, if we used the VA region to infer if an invalid region is transient or not, not only that wouldn\u0027t fix the problems above, but it could cause inconsistencies by treating the different VA regions differently (which would also make tests harder because we would have special/different cases depending on the VA region)",
+      "parentUuid": "19d13a85_ac54e18b",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 61
+      },
+      "revId": "0326d726bb18a61cec788fb065f8b9cf3444c55e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b528a49_8265b7ce",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-02-23T15:00:34Z",
       "side": 1,
       "message": "would the below work ?\n\n        is_invalid \u003d ((desc \u0026 DESC_MASK) \u003d\u003d INVALID_DESC);\n\tis_transient \u003d (desc \u003d\u003d TRANSIENT_DESC);\n\n\tif ((is_invalid \u003d\u003d true) || (is_transient \u003d\u003d true)) {\n\t\tif (row_count \u003d\u003d 0U) {\n\t\t\tVERBOSE(\"%sVA:0x%lx size:0x%zx\\n\",\n\t\t\t\tlevel_spacers[level],\n\t\t\t\ttable_idx_va, level_size);\n                        prev_desc \u003d desc;\n                        if(is_invalid)\n                               *str \u003d invalid_descriptors_ommited;\n                        else\n                               *str \u003d transient_descriptors_ommited;\n                }\n\t\trow_count++;\n       }\n        \n       if ((row_count \u003e 0) \u0026\u0026 (prev_desc !\u003d desc)) {\n\t\tVERBOSE(str, level_spacers[level],\n\t\t\t\trow_count - 1U);\t\t\n\t\trow_count \u003d 0U;\n       }",
+      "range": {
+        "startLine": 155,
+        "startChar": 1,
+        "endLine": 202,
+        "endChar": 0
+      },
+      "revId": "0326d726bb18a61cec788fb065f8b9cf3444c55e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7197852e_e814e415",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T13:34:36Z",
+      "side": 1,
+      "message": "Yes, that\u0027s simpler, thanks",
+      "parentUuid": "9b528a49_8265b7ce",
       "range": {
         "startLine": 155,
         "startChar": 1,
