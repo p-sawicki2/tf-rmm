@@ -16,6 +16,29 @@
       "message": "Thanks for the review!",
       "revId": "6f4882cde16140a3dd3641b62a9376e9948fc3e7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a82a2690_609a7603",
+        "filename": "plat/common/include/plat_import_sym.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T09:47:12Z",
+      "side": 1,
+      "message": "nit: this needs to be changed. Also the #include needs to be changed as well in the related .c files.",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "6f4882cde16140a3dd3641b62a9376e9948fc3e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
