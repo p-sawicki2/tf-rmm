@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebdc9052_bc9c9da9",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-02-28T16:09:57Z",
+      "side": 1,
+      "message": "nit: id_aa64isar0_el1 is a RO register, so although this works, it would be more correct to install only the read callback:\n\nstatic u_register_t sysreg_rd_cb(u_register_t *reg)\n{\n    return *reg;\n}\n\n(...)\n\n(void)host_util_set_sysreg_cb(\"id_aa64isar0_el1\", sysreg_rd_cb, NULL, INPLACE(ID_AA64ISAR0_EL1_RNDR, 1UL));\n\nAlso, check the return value for the last register added (id_aa64isar0_el1 in this case). If it is \u003c 0 just panic, so we know that there wasn\u0027t enough space to store all the callbacks (I was meaning to do that next time I needed to modify this file but now looks like a good time to do it 😊)",
+      "range": {
+        "startLine": 63,
+        "startChar": 7,
+        "endLine": 63,
+        "endChar": 38
+      },
+      "revId": "ec99e8298e383b78fa094b63667d1b6e34da13c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
