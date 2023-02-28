@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "731bb256_4d58d89f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T15:29:46Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "ebe7ebd2d0f98f3fb2c7e8570cb2f8dbf0a7cbe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a243258e_c7a05d03",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T15:29:46Z",
+      "side": 1,
+      "message": "`tables_ptr` memory.",
+      "range": {
+        "startLine": 145,
+        "startChar": 50,
+        "endLine": 145,
+        "endChar": 67
+      },
+      "revId": "ebe7ebd2d0f98f3fb2c7e8570cb2f8dbf0a7cbe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60b201cc_3530dae6",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T15:29:46Z",
+      "side": 1,
+      "message": "nit: va_base.",
+      "range": {
+        "startLine": 257,
+        "startChar": 40,
+        "endLine": 257,
+        "endChar": 53
+      },
+      "revId": "ebe7ebd2d0f98f3fb2c7e8570cb2f8dbf0a7cbe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3db2a23_4d12aa3f",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 15
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T15:29:46Z",
+      "side": 1,
+      "message": "Can this be made PRIVATE",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 11
+      },
+      "revId": "ebe7ebd2d0f98f3fb2c7e8570cb2f8dbf0a7cbe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6823afea_192eaf42",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-28T15:29:46Z",
+      "side": 1,
+      "message": "Can this be made PRIVATE",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 11
+      },
+      "revId": "ebe7ebd2d0f98f3fb2c7e8570cb2f8dbf0a7cbe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
