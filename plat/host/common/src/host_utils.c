@@ -95,10 +95,13 @@ void host_util_reset_all_sysreg_cb(void)
 	installed_cb_idx = 0U;
 }
 
-int host_util_set_default_sysreg_cb(char *name, u_register_t init)
+int host_util_set_default_sysreg_cb(char *name, u_register_t init,
+				    bool readonly)
 {
-	return host_util_set_sysreg_cb(name, &sysreg_rd_cb,
-				       &sysreg_wr_cb, init);
+	rd_cb_t rd_cb = &sysreg_rd_cb;
+	wr_cb_t wr_cb = readonly ? NULL : &sysreg_wr_cb;
+
+	return host_util_set_sysreg_cb(name, rd_cb, wr_cb, init);
 }
 
 unsigned long host_util_get_granule_base(void)
