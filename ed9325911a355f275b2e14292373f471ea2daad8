@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "675eca11_ef14ba50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-01T14:37:15Z",
+      "side": 1,
+      "message": "Static checks failed due to the use of strncpy(), which is allowed on this context. Overriding Verified vote",
+      "revId": "ed9325911a355f275b2e14292373f471ea2daad8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
