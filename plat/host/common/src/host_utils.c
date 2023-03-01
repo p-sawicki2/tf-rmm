@@ -109,10 +109,13 @@ void host_util_reset_all_sysreg_cb(void)
 	installed_cb_idx = 0U;
 }
 
-int host_util_set_default_sysreg_cb(char *name, u_register_t init)
+int host_util_set_default_sysreg_cb(char *name, u_register_t init,
+				    bool readonly)
 {
-	return host_util_set_sysreg_cb(name, &sysreg_rd_cb,
-				       &sysreg_wr_cb, init);
+	rd_cb_t rd_cb = &sysreg_rd_cb;
+	wr_cb_t wr_cb = readonly ? NULL : &sysreg_wr_cb;
+
+	return host_util_set_sysreg_cb(name, rd_cb, wr_cb, init);
 }
 
 unsigned long host_util_get_granule_base(void)
@@ -134,25 +137,37 @@ unsigned char *host_util_get_el3_rmm_shared_buffer(void)
 
 void host_util_setup_sysreg_and_boot_manifest(void)
 {
+	int ret;
+
 	/*
 	 * Initialize ID_AA64MMFR0_EL1 with a physical address
 	 * range of 48 bits (PARange bits set to 0b0101)
 	 */
-	(void)host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
-			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL));
+	ret = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
+			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL),
+			true);
 
 	/*
 	 * Initialize ICH_VTR_EL2 with 6 preemption bits.
 	 * (PREbits is equal number of preemption bits minus one)
 	 */
-	(void)host_util_set_default_sysreg_cb("ich_vtr_el2",
-			INPLACE(ICH_VTR_EL2_PRE_BITS, 5UL));
+	ret = host_util_set_default_sysreg_cb("ich_vtr_el2",
+			INPLACE(ICH_VTR_EL2_PRE_BITS, 5UL),
+			false);
 
 	/* SCTLR_EL2 is reset to zero */
-	(void)host_util_set_default_sysreg_cb("sctlr_el2", 0UL);
+	ret = host_util_set_default_sysreg_cb("sctlr_el2", 0UL, false);
 
 	/* TPIDR_EL2 is reset to zero */
-	(void)host_util_set_default_sysreg_cb("tpidr_el2", 0UL);
+	ret = host_util_set_default_sysreg_cb("tpidr_el2", 0UL, false);
+
+	/*
+	 * Only check the return value of the last callback setup, to detect
+	 * if we are out of callback slots.
+	 */
+	if (ret != 0) {
+		panic();
+	}
 
 	/* Initialize the boot manifest */
 	boot_manifest->version = RMM_EL3_IFC_SUPPORTED_VERSION;
