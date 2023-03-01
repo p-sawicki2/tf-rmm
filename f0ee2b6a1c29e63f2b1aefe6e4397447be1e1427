@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "363937b1_034492d5",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:26:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe8e8b0b_54edeecc",
+      "revId": "f0ee2b6a1c29e63f2b1aefe6e4397447be1e1427",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "568d85a6_625b7617",
         "filename": "plat/fvp/src/fvp_setup.c",
         "patchSetId": 4
@@ -48,6 +66,30 @@
       "writtenOn": "2023-02-28T15:40:54Z",
       "side": 1,
       "message": "I would rephrase this to something like \"Carry on with the rest of the system setup\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 3
+      },
+      "revId": "f0ee2b6a1c29e63f2b1aefe6e4397447be1e1427",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5305b4f3_136c1bcb",
+        "filename": "plat/fvp/src/fvp_setup.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:26:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "568d85a6_625b7617",
       "range": {
         "startLine": 67,
         "startChar": 0,
