@@ -104,25 +104,37 @@ unsigned char *plat_get_el3_rmm_shared_buffer(void)
 
 void plat_setup_sysreg_and_boot_manifest(void)
 {
+	int ret;
+
 	/*
 	 * Initialize ID_AA64MMFR0_EL1 with a physical address
 	 * range of 48 bits (PARange bits set to 0b0101)
 	 */
-	(void)host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
-			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL));
+	ret = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
+			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL),
+			true);
 
 	/*
 	 * Initialize ICH_VTR_EL2 with 6 preemption bits.
 	 * (PREbits is equal number of preemption bits minus one)
 	 */
-	(void)host_util_set_default_sysreg_cb("ich_vtr_el2",
-			INPLACE(ICH_VTR_EL2_PRE_BITS, 5UL));
+	ret = host_util_set_default_sysreg_cb("ich_vtr_el2",
+			INPLACE(ICH_VTR_EL2_PRE_BITS, 5UL),
+			false);
 
 	/* SCTLR_EL2 is reset to zero */
-	(void)host_util_set_default_sysreg_cb("sctlr_el2", 0UL);
+	ret = host_util_set_default_sysreg_cb("sctlr_el2", 0UL, false);
 
 	/* TPIDR_EL2 is reset to zero */
-	(void)host_util_set_default_sysreg_cb("tpidr_el2", 0UL);
+	ret = host_util_set_default_sysreg_cb("tpidr_el2", 0UL, false);
+
+	/*
+	 * Only check the return value of the last callback setup, to detect
+	 * if we are out of callback slots.
+	 */
+	if (ret != 0) {
+		panic();
+	}
 
 	/* Initialize the boot manifest */
 	boot_manifest->version = RMM_EL3_IFC_SUPPORTED_VERSION;

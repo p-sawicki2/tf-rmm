@@ -6,6 +6,7 @@
 #ifndef HOST_UTILS_H
 #define HOST_UTILS_H
 
+#include <stdbool.h>
 #include <types.h>
 
 /***********************************************************************
@@ -106,11 +107,13 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
  *	       the sysreg cannot exceed MAX_SYSREG_NAME_LEN (excluding
  *	       the terminating NULL character) or it will be truncated.
  *	init - Value used as reset value for the sysreg.
+ *	readonly - If this value is true, no write callback is not set up.
  *
  * Returns:
  *	0 on success or a negative error code otherwise.
  */
-int host_util_set_default_sysreg_cb(char *name, u_register_t init);
+int host_util_set_default_sysreg_cb(char *name, u_register_t init,
+				    bool readonly);
 
 /*
  * Clear the list of sysreg callbacks.
