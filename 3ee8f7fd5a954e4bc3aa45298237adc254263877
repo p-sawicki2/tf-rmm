@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "49a6c58a_17e002c3",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2912b87d_59f8d269",
+      "range": {
+        "startLine": 149,
+        "startChar": 2,
+        "endLine": 149,
+        "endChar": 9
+      },
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1cefe021_10399fd2",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 5
@@ -54,6 +78,30 @@
       "writtenOn": "2023-02-28T16:17:49Z",
       "side": 1,
       "message": "Maybe -ENOMEM is a more descriptive error code in this case?",
+      "range": {
+        "startLine": 150,
+        "startChar": 10,
+        "endLine": 150,
+        "endChar": 16
+      },
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c52e5ebe_eef18aeb",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cefe021_10399fd2",
       "range": {
         "startLine": 150,
         "startChar": 10,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7d48a8ea_3e1cfc08",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b5010a9_cc2f7a0c",
+      "range": {
+        "startLine": 153,
+        "startChar": 29,
+        "endLine": 153,
+        "endChar": 44
+      },
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ddfbdc71_863d1126",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 5
@@ -100,6 +172,24 @@
       "writtenOn": "2023-02-28T16:17:49Z",
       "side": 1,
       "message": "nit: I think this might fit in the previous line",
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a9bddfc_6ed000f7",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddfbdc71_863d1126",
       "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -129,6 +219,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9eb94131_1914008e",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7e2f8fd_7ae47553",
+      "range": {
+        "startLine": 171,
+        "startChar": 30,
+        "endLine": 171,
+        "endChar": 52
+      },
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "52caae93_d1508060",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 5
@@ -146,6 +260,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4eb20927_4c813fff",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "52caae93_d1508060",
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "991a0a03_0bb5353f",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 5
@@ -157,6 +289,30 @@
       "writtenOn": "2023-02-28T16:17:49Z",
       "side": 1,
       "message": "VERBOSE",
+      "range": {
+        "startLine": 201,
+        "startChar": 2,
+        "endLine": 201,
+        "endChar": 9
+      },
+      "revId": "3ee8f7fd5a954e4bc3aa45298237adc254263877",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d3b5694_e565207e",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-01T12:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "991a0a03_0bb5353f",
       "range": {
         "startLine": 201,
         "startChar": 2,
