@@ -35,6 +35,8 @@ static bool asserted;
 
 static uintptr_t callbacks[CB_IDS];
 
+static struct sysreg_data sysreg_snapshot[SYSREG_MAX_CBS];
+
 /*
  * Function to emulate the turn on of the MMU for the fake_host architecture.
  */
@@ -113,7 +115,15 @@ void test_helpers_rmm_start(bool secondaries)
 			}
 			host_util_set_cpuid(0U);
 		}
+
+		/* Take a snapshot of the current sysreg status */
+		(void)host_util_take_sysreg_snapshot(&sysreg_snapshot[0],
+						     SYSREG_MAX_CBS);
 		initialized = true;
+	} else {
+		/* Restore the sysreg status */
+		(void)host_util_restore_sysreg_snapshot(&sysreg_snapshot[0],
+							SYSREG_MAX_CBS);
 	}
 }
 
