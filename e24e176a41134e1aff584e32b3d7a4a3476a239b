@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6282aaf9_c5382d04",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Done in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
+      "parentUuid": "63501515_7740abe0",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "e24e176a41134e1aff584e32b3d7a4a3476a239b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fce9cd06_5f0fd5c1",
         "filename": "plat/host/host_build/src/host_setup.c",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-01T13:53:14Z",
       "side": 1,
       "message": "this is a read-only reg",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 9
+      },
+      "revId": "e24e176a41134e1aff584e32b3d7a4a3476a239b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7d6c629_9e3c378b",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fce9cd06_5f0fd5c1",
       "range": {
         "startLine": 50,
         "startChar": 4,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7ed626be_ceabd97b",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Done in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
+      "parentUuid": "290de716_3774743f",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 20
+      },
+      "revId": "e24e176a41134e1aff584e32b3d7a4a3476a239b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5997453b_d3eb82e5",
         "filename": "plat/host/host_test/src/test_helpers.c",
         "patchSetId": 1
@@ -95,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7bfe996b_ca061506",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Done in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
+      "parentUuid": "5997453b_d3eb82e5",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 53,
+        "endChar": 42
+      },
+      "revId": "e24e176a41134e1aff584e32b3d7a4a3476a239b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b8203db_9129f9ff",
         "filename": "plat/host/host_test/src/test_helpers.c",
         "patchSetId": 1
@@ -106,6 +202,30 @@
       "writtenOn": "2023-03-01T13:53:14Z",
       "side": 1,
       "message": "read-only reg",
+      "range": {
+        "startLine": 63,
+        "startChar": 3,
+        "endLine": 63,
+        "endChar": 8
+      },
+      "revId": "e24e176a41134e1aff584e32b3d7a4a3476a239b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff4c144f_b7845950",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Done in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
+      "parentUuid": "2b8203db_9129f9ff",
       "range": {
         "startLine": 63,
         "startChar": 3,

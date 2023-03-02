@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7489a20f_7a745f5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-02T09:44:38Z",
+      "side": 1,
+      "message": "Thanks for the review. I created a new commit that unifies the common code in the host platform: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
+      "revId": "e3d3e4601e25f0510e72b495eaff4ad3df20a5c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
