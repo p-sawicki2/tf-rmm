@@ -100,7 +100,40 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
 	return -ENOMEM;
 }
 
-void host_util_reset_all_sysreg_cb(void)
+int host_util_take_sysreg_snapshot(struct sysreg_data *snapshot, size_t len)
+{
+	if (snapshot == NULL) {
+		return -EINVAL;
+	}
+
+	if (len < SYSREG_MAX_CBS) {
+		return -EINVAL;
+	}
+
+	memcpy((void *)&snapshot[0], (void *)&sysregs[0],
+		sizeof(struct sysreg_data) * len);
+
+	return 0;
+}
+
+int host_util_restore_sysreg_snapshot(struct sysreg_data *snapshot,
+				      size_t len)
+{
+	if (snapshot == NULL) {
+		return -EINVAL;
+	}
+
+	if (len < SYSREG_MAX_CBS) {
+		return -EINVAL;
+	}
+
+	memcpy((void *)&sysregs[0], (void *)&snapshot[0],
+		sizeof(struct sysreg_data) * len);
+
+	return 0;
+}
+
+void host_util_zero_sysregs_and_cbs(void)
 {
 
 	(void)memset((void *)sysregs, 0,
