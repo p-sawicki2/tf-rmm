@@ -16,6 +16,29 @@
       "message": "Thanks for the review. I created a new commit that unifies the common code in the host platform: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19817",
       "revId": "e3d3e4601e25f0510e72b495eaff4ad3df20a5c6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69557b2a_cacdb868",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T14:08:05Z",
+      "side": 1,
+      "message": "nit: remove this \"not\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 58,
+        "endLine": 110,
+        "endChar": 61
+      },
+      "revId": "e3d3e4601e25f0510e72b495eaff4ad3df20a5c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
