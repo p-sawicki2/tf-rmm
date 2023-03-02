@@ -127,6 +127,9 @@ TEST_GROUP(granule) {
 		 */
 		(void)test_helpers_unregister_cb(CB_BUFFER_MAP);
 		(void)test_helpers_unregister_cb(CB_BUFFER_UNMAP);
+
+		/* Reset all the system registers callbacks */
+		host_util_reset_all_sysregs();
 	}
 };
 
