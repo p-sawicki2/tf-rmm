@@ -6,6 +6,7 @@
 #ifndef HOST_UTILS_H
 #define HOST_UTILS_H
 
+#include <stddef.h>
 #include <types.h>
 
 /***********************************************************************
@@ -113,9 +114,9 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
 int host_util_set_default_sysreg_cb(char *name, u_register_t init);
 
 /*
- * Clear the list of sysreg callbacks.
+ * Zero all sysreg values and unregister all sysreg callbacks.
  */
-void host_util_reset_all_sysreg_cb(void);
+void host_util_zero_sysregs_and_cbs(void);
 
 /*
  * Return the configured address for the granule base.
