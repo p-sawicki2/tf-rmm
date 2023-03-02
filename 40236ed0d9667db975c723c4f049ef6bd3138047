@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d2f710a_b1f668a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T14:10:59Z",
+      "side": 1,
+      "message": "hmm, so will the test have to include the slot buffer definition even if it just want to read and write registers ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "40236ed0d9667db975c723c4f049ef6bd3138047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
