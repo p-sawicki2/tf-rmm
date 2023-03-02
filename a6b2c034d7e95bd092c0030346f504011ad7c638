@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c3bf0d5_7d1332a4",
+        "filename": "plat/host/common/include/host_platform_api.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T14:03:17Z",
+      "side": 1,
+      "message": "I agree with Soby. This could all go to host_utils.h",
+      "parentUuid": "af1c8e28_13a4af18",
+      "revId": "a6b2c034d7e95bd092c0030346f504011ad7c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "884b715e_26a62639",
         "filename": "plat/host/common/include/host_platform_api.h",
         "patchSetId": 1
