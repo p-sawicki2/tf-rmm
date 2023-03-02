@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7be53abf_04233eef",
+        "filename": "plat/host/host_build/src/host_rmi_wrappers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T15:34:56Z",
+      "side": 1,
+      "message": "This could go to plat/host/common so it can also be used by the host_test build if needed",
+      "revId": "ae49df08bc898c716e49d2193f79f940ae257464",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbab6b61_75b33042",
+        "filename": "plat/host/host_build/src/host_rmi_wrappers_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T15:34:56Z",
+      "side": 1,
+      "message": "nit: I think this header could be moved to host/common so the build_test could also make use of it in the future. You could create a folder such as host/common/private for private headers and place this there",
+      "revId": "ae49df08bc898c716e49d2193f79f940ae257464",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c01661a4_cd371f08",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T15:34:56Z",
+      "side": 1,
+      "message": "See my comment below about this macro",
+      "revId": "ae49df08bc898c716e49d2193f79f940ae257464",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f83a92f6_8f98ed73",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T15:34:56Z",
+      "side": 1,
+      "message": "This file is meant to contain mostly APIs used to bring up the host_build variant of the fake_host platform, so I don\u0027t think this APIs would fit here.\n\nI think it is better to add this to plat/host/common so it can also be used by the build_test variant as well. Then we can have a different implementation of CHECK_RMI_RESULT() (as a function, not a macro) for host_build and for host_test variant. The latter can just be empty, to be filled later if we want to implement unittests.",
+      "revId": "ae49df08bc898c716e49d2193f79f940ae257464",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5d454c8_3d9dd178",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-02T15:34:56Z",
+      "side": 1,
+      "message": "I think it should be better to use a macro to clarify what this means. The same goes for the rest of magic values",
+      "range": {
+        "startLine": 136,
+        "startChar": 12,
+        "endLine": 136,
+        "endChar": 13
+      },
+      "revId": "ae49df08bc898c716e49d2193f79f940ae257464",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
