@@ -63,6 +63,30 @@
       },
       "revId": "6f4882cde16140a3dd3641b62a9376e9948fc3e7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5faa3a6a_222918bf",
+        "filename": "plat/common/include/plat_import_sym.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T23:23:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3c7fd99c_3a4767f5",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "6f4882cde16140a3dd3641b62a9376e9948fc3e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
