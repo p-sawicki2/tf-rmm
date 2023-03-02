@@ -6,6 +6,7 @@
 #ifndef HOST_UTILS_H
 #define HOST_UTILS_H
 
+#include <stddef.h>
 #include <types.h>
 
 /***********************************************************************
@@ -113,9 +114,38 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
 int host_util_set_default_sysreg_cb(char *name, u_register_t init);
 
 /*
- * Clear the list of sysreg callbacks.
+ * Take a snapshot of all the sysreg callbacks and internal state.
+ *
+ * Arguments:
+ *	snapshot - Pointer to an array of struct sysreg_data where the
+ *		   snapshot will be stored.
+ *	len	 - Number of items on the snapshot array. Must be at least
+ *		   SYSREG_MAX_CBS.
+ *
+ * Returns:
+ *	0 on success or a negative error code otherwise.
  */
-void host_util_reset_all_sysreg_cb(void);
+int host_util_take_sysreg_snapshot(struct sysreg_data *snapshot, size_t len);
+
+/*
+ * Restore a snapshot of all the sysreg callbacks and internal state.
+ *
+ * Arguments:
+ *	snapshot - Pointer to an array of struct sysreg_data where the
+ *		   snapshot are be stored.
+ *	len	 - Number of items on the snapshot array. Must be at least
+ *		   SYSREG_MAX_CBS.
+ *
+ * Returns:
+ *	0 on success or a negative error code otherwise.
+ */
+int host_util_restore_sysreg_snapshot(struct sysreg_data *snapshot,
+				      size_t len);
+
+/*
+ * Clear the list of sysreg callbacks and reset all the values.
+ */
+void host_util_reset_all_sysregs(void);
 
 /*
  * Return the configured address for the granule base.
