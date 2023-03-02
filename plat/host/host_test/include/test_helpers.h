@@ -161,10 +161,26 @@ void test_helpers_fail_if_no_assert_failed(void);
 /*
  * Helper function to fully initialize RMM.
  *
+ * This function must be called for every test that needs to fully initialize
+ * the RMM runtime. Upon first call, the whole runtime will be initialized
+ * and enabled. Subsequent calls will restore/reinitialize any component that
+ * might be modified by other test groups between calls.
+ *
  * Args
  *	secondaries - If true, support for secondary PEs is enabled.
  */
 void test_helpers_rmm_start(bool secondaries);
+
+/*
+ * Helper function to deinitialize RMM.
+ *
+ * This function deinitializes some components initialized by
+ * test_helpers_rmm_start() that will be initialized by later tests
+ * and leave them in a known state. It also saves some of the RMM state
+ * so subsequent calls to test_helpers_rmm_start() will restore such state
+ * rather than perform a full reinitialization.
+ */
+void test_helpers_rmm_stop(void);
 
 /*
  * Helper function to get the total number of memory granules available

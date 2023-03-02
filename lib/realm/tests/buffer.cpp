@@ -99,12 +99,7 @@ TEST_GROUP(slot_buffer) {
 
 	TEST_TEARDOWN()
 	{
-		/*
-		 * Unregister any existing callback that might
-		 * have been installed
-		 */
-		(void)test_helpers_unregister_cb(CB_BUFFER_MAP);
-		(void)test_helpers_unregister_cb(CB_BUFFER_UNMAP);
+		test_helpers_rmm_stop();
 	}
 };
 
