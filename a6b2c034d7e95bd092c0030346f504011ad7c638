@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a489c9ff_2ba459dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T10:13:43Z",
+      "side": 1,
+      "message": "minor comments on naming and placement.",
+      "revId": "a6b2c034d7e95bd092c0030346f504011ad7c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af1c8e28_13a4af18",
+        "filename": "plat/host/common/include/host_platform_api.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T10:13:43Z",
+      "side": 1,
+      "message": "plat_ is a name space reserved for platform interface for generic code. This is shared code between 2 host platform variants.\n\nPerhaps reuse host_util_ namespace and the same header ?",
+      "revId": "a6b2c034d7e95bd092c0030346f504011ad7c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "884b715e_26a62639",
+        "filename": "plat/host/common/include/host_platform_api.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T10:13:43Z",
+      "side": 1,
+      "message": "Going by same comment above, just call this host_util_setup_sysreg_and_boot_manifest() ?",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 40
+      },
+      "revId": "a6b2c034d7e95bd092c0030346f504011ad7c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07c8dfed_b9ec111c",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T10:13:43Z",
+      "side": 1,
+      "message": "All the new changes could live in host_utils.c",
+      "revId": "a6b2c034d7e95bd092c0030346f504011ad7c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
