@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a92d3ffe_0abb6f80",
+        "filename": "lib/xlat/tests/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-02T14:26:27Z",
+      "side": 1,
+      "message": "would be better to use component name _test as group name.",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "73e1cd788d31c28224d4135d7197eeb99931b723",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
