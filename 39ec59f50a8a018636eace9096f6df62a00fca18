@@ -360,6 +360,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70e29daa_411d9a28",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T11:42:34Z",
+      "side": 1,
+      "message": "WRT to your first question: Yes, the check will fail as INVALID_DESC \u003d\u003d 0x0 and TRANSIENT_DESC \u003d\u003d (1ULL \u003c\u003c 55)\n\nWith your change, this function would return invalid descriptors, which we want to avoid: The only descriptors considered as valid are Transient-Invalid (tte \u003d\u003d (1ULL \u003c\u003c 55)), block and page descriptors (the last two ones can also be transient if bit 55 \u003d\u003d 1).\n\nInvalid descriptors (0x0) are descriptors for addresses not configured in the mmap regions and therefore we should not return those. There are returned in the current implementation as we didn\u0027t make any distinction between transient and invalid, which is what this patch fixes.",
+      "parentUuid": "79e54382_9b4edd03",
+      "range": {
+        "startLine": 316,
+        "startChar": 38,
+        "endLine": 316,
+        "endChar": 60
+      },
+      "revId": "39ec59f50a8a018636eace9096f6df62a00fca18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0149724f_132babf7",
