@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0962182_d3c65867",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T09:33:09Z",
+      "side": 1,
+      "message": "The CI flags error for banned API but this was present previously and analyzed to be OK.",
+      "revId": "e8b0a910ddf85a16de08f3821fa8d6710b42b03d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
