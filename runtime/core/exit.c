@@ -449,6 +449,13 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		break;
 	case SMC_RSI_ATTEST_TOKEN_CONTINUE: {
 		struct attest_result res;
+#ifdef RMM_FPU_USE_AT_REL2
+		/*
+		 * todo: If RMM uses FPU at REL2 and if this Realm has enabled
+		 * SVE, then SVE state has to saved and restored.
+		 */
+		assert(!(rec_simd_type(rec) == SIMD_SVE));
+#endif
 		attest_realm_token_sign_continue_start();
 		while (true) {
 			/*
