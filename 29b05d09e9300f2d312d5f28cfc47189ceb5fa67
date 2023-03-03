@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "933af148_a85c38e2",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T12:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37b957f2_f62f8be8",
+      "range": {
+        "startLine": 117,
+        "startChar": 3,
+        "endLine": 117,
+        "endChar": 66
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e09275b_0817cd85",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-03T00:03:36Z",
       "side": 1,
       "message": "suggest to remove the args. I cannot forsee the need to have multiple snapshots and we just need one in which case the structure can be allocated in the file.\n\nPerhaps call this function host_util_save_sysreg_and_cbs()",
+      "range": {
+        "startLine": 128,
+        "startChar": 35,
+        "endLine": 128,
+        "endChar": 75
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "448695d5_06913398",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T12:09:06Z",
+      "side": 1,
+      "message": "Hmmm, Wouldn\u0027t it be more consistent to have a generic API and let the caller be responsible of storing/managing the snapshots?",
+      "parentUuid": "9e09275b_0817cd85",
       "range": {
         "startLine": 128,
         "startChar": 35,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b87c62fd_6923a9af",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T12:09:06Z",
+      "side": 1,
+      "message": "See my previous comment about the arguments",
+      "parentUuid": "94127c61_532ee8b6",
+      "range": {
+        "startLine": 131,
+        "startChar": 3,
+        "endLine": 131,
+        "endChar": 69
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8eafc0bb_54bc782b",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b427e72d_85a7345e",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T12:09:06Z",
+      "side": 1,
+      "message": "I don\u0027t think the last part of your comment is needed. A valid sysreg state can be restored later or we can create a new one completely different from the previous one.",
+      "parentUuid": "8eafc0bb_54bc782b",
+      "range": {
+        "startLine": 146,
+        "startChar": 3,
+        "endLine": 146,
+        "endChar": 63
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eec7189d_51e985f7",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-03-03T00:03:36Z",
       "side": 1,
       "message": "void host_util_zero_sysregs_and_cbs();",
+      "range": {
+        "startLine": 148,
+        "startChar": 5,
+        "endLine": 148,
+        "endChar": 32
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdc6d4da_3b1fd3fc",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T12:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eec7189d_51e985f7",
       "range": {
         "startLine": 148,
         "startChar": 5,
