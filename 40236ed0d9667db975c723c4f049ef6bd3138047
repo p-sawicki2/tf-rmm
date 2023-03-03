@@ -94,6 +94,30 @@
       },
       "revId": "40236ed0d9667db975c723c4f049ef6bd3138047",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41157683_33ca5abf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-03T16:16:07Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "ca37712d_9797b0f7",
+      "range": {
+        "startLine": 14,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "40236ed0d9667db975c723c4f049ef6bd3138047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
