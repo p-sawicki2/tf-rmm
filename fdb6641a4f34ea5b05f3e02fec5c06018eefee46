@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f38a6f7_436cf3b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e8886f5_523de55d",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "The header file ordering is triggering a failure in CI. Please take a look.",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "323bae29_731703d6",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "Add a comment:\n\n/* Create a simple 4 level (Lvl 0 - LvL 3) RTT structure */\n\nhope that was the intention else modify as required.",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fcce6d3_d10b277d",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "Yes this triggers a checkpatch warning. This is an internal macro not meant to be used outside this file so I am less worried about this warning. Prefer this multi line format.\n\n\n ({  \\\n     if (result.x[0] !\u003d 0) { \\\n\tERROR(\"RMI call failed at %s:%d. status\u003d%lu.\\n\", __FILE__, __LINE__, result.x[0]); \\\n\treturn -1; \\\n     }\n  })",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f6cddac_533eb50a",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "Could check this count will not exceed HOST_NR_GRANULES and panic() otherwise.",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1135e4af_75546e99",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "add this comment if this was the intention.\n\n/* Create RTT table to start at IPA 0x0 */",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37e7ecf9_642b2408",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "Add a comment /* Execute the Realm */",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "450aaf65_f0ff2ccf",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:35:11Z",
+      "side": 1,
+      "message": "Small case is enough :\n\n\"ERROR: failed to create Realm\"",
+      "range": {
+        "startLine": 172,
+        "startChar": 9,
+        "endLine": 172,
+        "endChar": 38
+      },
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
