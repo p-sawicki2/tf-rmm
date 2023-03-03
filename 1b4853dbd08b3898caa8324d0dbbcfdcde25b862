@@ -33,6 +33,29 @@
       "message": "On seeing the usage in another patch, I realized this Read-only setting is problematic and also not needed in host layer.\n\nThe arch_helpers.h exposes the accessors for reading and writing sysregs. The RO register are only meant to have the \"READ\" accessor define. Hence the generic code does not have an accessor to write RO sysregs.\n\nIn fake host, the regs are variable in memory but the generic code will not write the RO regs due to property of accessors discussed above.\n\nBut, the tests would need to write to the RO registers to expose various values to the generic code and it would need a way to modify these RO values and hence the Callbacks need to be present even for RO regs.\n\nSorry for the extra work, but I think this change need not be the patch stack.",
       "revId": "1b4853dbd08b3898caa8324d0dbbcfdcde25b862",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11c7873e_259d8e31",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T13:57:22Z",
+      "side": 1,
+      "message": "If this patch is being removed, this check is still useful can be combined with another patch in the stack.",
+      "range": {
+        "startLine": 164,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 0
+      },
+      "revId": "1b4853dbd08b3898caa8324d0dbbcfdcde25b862",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
