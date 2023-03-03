@@ -30,6 +30,20 @@ struct ns_simd_state {
 
 static struct ns_simd_state g_ns_simd[MAX_CPUS];
 
+#ifdef RMM_FPU_USE_AT_REL2
+struct rmm_simd_state {
+	struct simd_state simd;
+	simd_t to_save;			/* The simd type that RMM needs to save
+					 * when it wants to use FPU at REL2. This
+					 * could be NS or Realm's SIMD type */
+	bool saved;			/* true when RMM is using FPU and SIMD
+					 * state of NS or Realm is saved in
+					 * the memory */
+} __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
+
+static struct rmm_simd_state g_rmm_simd[MAX_CPUS];
+#endif
+
 /*
  * Program the ZCR_EL2.LEN field from the VQ, if current ZCR_EL2.LEN is not same
  * as the passed in VQ.
@@ -124,6 +138,13 @@ void simd_restore_state(simd_t type, struct simd_state *simd)
 		assert(false);
 	}
 	simd->simd_type = SIMD_NONE;
+#ifdef RMM_FPU_USE_AT_REL2
+	/*
+	 * Update the SIMD type that needs to saved by RMM whenever it wants to
+	 * use FPU at REL2.
+	 */
+	g_rmm_simd[my_cpuid()].to_save = type;
+#endif
 }
 
 /*
@@ -180,29 +201,71 @@ void simd_restore_ns_state(void)
 	g_ns_simd[cpu_id].saved = false;
 }
 
-/*
- * These functions and macros will be renamed to simd_* once RMM supports
- * SIMD (FPU/SVE) at REL2
- */
 #ifdef RMM_FPU_USE_AT_REL2
-void fpu_save_my_state(void)
+/*
+ * Prepares RMM to use FPU at REL2. Saves the current SIMD state to a separate
+ * per-cpu simd state that RMM maintains. The state it needs to save whether FPU
+ * or SVE is determined by 'to_save' field maintained in g_rmm_simd[].
+ */
+void simd_save_my_state(void)
 {
-	/* todo */
-	assert(false);
+	unsigned int cpu_id = my_cpuid();
+	simd_t stype;
+
+	assert(g_rmm_simd[cpu_id].saved == false);
+
+	/*
+	 * 'to_save' field will give the simd type that needs to be saved by RMM
+	 * before it could use FPU are REL2. This could be FPU or SVE based on
+	 * the recent use of simd by NS or Realm.
+	 */
+	stype = g_rmm_simd[cpu_id].to_save;
+	simd_enable(stype);
+	if (stype == SIMD_SVE) {
+		/* Save the full state of SVE registers */
+		g_rmm_simd[cpu_id].simd.t.sve.vq = g_sve_max_vq;
+	}
+	simd_save_state(stype, &g_rmm_simd[cpu_id].simd);
+	simd_disable();
+	g_rmm_simd[cpu_id].saved = true;
 }
 
-void fpu_restore_my_state(void)
+/*
+ * RMM done with using FPU at REL2. Restores the SIMD state from the per-cpu
+ * simd state that RMM maintains in g_rmm_simd. The state it needs to restore
+ * whether FPU or SVE is determined by 'to_save' field maintained in
+ * g_rmm_simd[].
+ */
+void simd_restore_my_state(void)
 {
-	assert(false);
+	unsigned int cpu_id = my_cpuid();
+	simd_t stype;
+
+	assert(g_rmm_simd[cpu_id].saved == true);
+
+	/*
+	 * Get the simd type that was saved, for RMM to restore it once it has
+	 * used FPU at REL2. This could be FPU or SVE based on the recent use of
+	 * simd by NS or Realm.
+	 */
+	stype = g_rmm_simd[cpu_id].to_save;
+	simd_enable(stype);
+	if (stype == SIMD_SVE) {
+		assert(g_rmm_simd[cpu_id].simd.t.sve.vq == g_sve_max_vq);
+	}
+	simd_restore_state(stype, &g_rmm_simd[cpu_id].simd);
+	simd_disable();
+	g_rmm_simd[cpu_id].saved = false;
 }
 
-bool fpu_is_my_state_saved(unsigned int cpu_id)
+bool simd_is_my_state_saved(unsigned int cpu_id)
 {
-	return false;
+	assert(cpu_id < MAX_CPUS);
+	return g_rmm_simd[cpu_id].saved;
 }
 #else /* !RMM_FPU_USE_AT_REL2 */
-void fpu_save_my_state(void) {}
-void fpu_restore_my_state(void) {}
+void simd_save_my_state(void) {}
+void simd_restore_my_state(void) {}
 #endif /* RMM_FPU_USE_AT_REL */
 
 /* Return the SVE max vq discovered during init */
@@ -276,4 +339,11 @@ void simd_init(void)
 		/* Set the max vq in NS simd state */
 		g_ns_simd[cpu_id].simd.t.sve.vq = g_sve_max_vq;
 	}
+#ifdef RMM_FPU_USE_AT_REL2
+	/*
+	 * Initialize the SIMD type that needs to saved by RMM when it wants to
+	 * use FPU at REL2
+	 */
+	g_rmm_simd[cpu_id].to_save = g_cpu_simd_type;
+#endif
 }
