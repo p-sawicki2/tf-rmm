@@ -9,6 +9,7 @@
 #include <arch.h>
 #include <arch_features.h>
 #include <assert.h>
+#include <cpuid.h>
 #include <fpu_helpers.h>
 #include <stddef.h>
 #include <sve_helpers.h>
@@ -106,27 +107,29 @@ static inline void simd_set_type(simd_t type, struct simd_state *simd)
 }
 
 /*
- * These functions and macros will be renamed to simd_* once RMM supports
- * SIMD (FPU/SVE) at REL2
+ * RMM support to use SIMD (FPU) at REL2
  */
 #ifdef RMM_FPU_USE_AT_REL2
-#define FPU_ALLOW(expression) \
-	do { \
-		assert(false); \
-		expression; \
+#define RMM_SIMD_TYPE			SIMD_FPU
+
+#define SIMD_FPU_ALLOW(expression)				\
+	do {							\
+		assert(simd_is_my_state_saved(my_cpuid()));	\
+		simd_enable(RMM_SIMD_TYPE);			\
+		expression;					\
+		simd_disable();					\
 	} while (false)
 
-#define IS_FPU_ALLOWED() \
-	(false)
+#define SIMD_IS_FPU_ALLOWED()					\
+	(simd_is_my_state_saved(my_cpuid()) && is_fpen_enabled())
 
-#else /* RMM_FPU_USE_AT_REL2 */
-#define FPU_ALLOW(expression) \
-	do { \
-		expression; \
+#else /* !RMM_FPU_USE_AT_REL2 */
+#define SIMD_FPU_ALLOW(expression)				\
+	do {							\
+		expression;					\
 	} while (false)
 
-#define IS_FPU_ALLOWED() (true)
-
+#define SIMD_IS_FPU_ALLOWED()		(true)
 #endif /* RMM_FPU_USE_AT_REL2 */
 
 /*
@@ -136,15 +139,15 @@ static inline void simd_set_type(simd_t type, struct simd_state *simd)
  * These functions are expected to be called before FPU is used by RMM to save
  * the incoming FPU context.
  */
-void fpu_save_my_state(void);
-void fpu_restore_my_state(void);
+void simd_save_my_state(void);
+void simd_restore_my_state(void);
 
 /*
  * Return true if an SIMD state is saved in the per-cpu buffer in this library.
  *
- * After calling 'fpu_save_my_state' this function returns true. After calling
- * 'fpu_restore_my_state' this function returns false.
+ * After calling 'simd_save_my_state' this function returns true. After calling
+ * 'simd_restore_my_state' this function returns false.
  */
-bool fpu_is_my_state_saved(unsigned int cpu_id);
+bool simd_is_my_state_saved(unsigned int cpu_id);
 
 #endif /* SIMD_H */
