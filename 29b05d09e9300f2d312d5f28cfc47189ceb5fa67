@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37b957f2_f62f8be8",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:03:36Z",
+      "side": 1,
+      "message": "\"Save the sysreg state across all PEs in the systems along with registered callbacks. This function is meant to be invoked at a point wherein the system is initialized properly and can restored later for test iterations.\"",
+      "range": {
+        "startLine": 117,
+        "startChar": 3,
+        "endLine": 117,
+        "endChar": 66
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e09275b_0817cd85",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:03:36Z",
+      "side": 1,
+      "message": "suggest to remove the args. I cannot forsee the need to have multiple snapshots and we just need one in which case the structure can be allocated in the file.\n\nPerhaps call this function host_util_save_sysreg_and_cbs()",
+      "range": {
+        "startLine": 128,
+        "startChar": 35,
+        "endLine": 128,
+        "endChar": 75
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94127c61_532ee8b6",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:03:36Z",
+      "side": 1,
+      "message": "\"Restore a saved sysreg state and associated callbacks. The state is already assumed to be saved prior to calling this API.\"\n\nWe can remove the args and call this function\n\nhost_util_restore_sysreg_and_cbs()",
+      "range": {
+        "startLine": 131,
+        "startChar": 3,
+        "endLine": 131,
+        "endChar": 69
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8eafc0bb_54bc782b",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:03:36Z",
+      "side": 1,
+      "message": "\"Zero all sysreg values and unregister all sysreg callbacks. Valid sysreg state can be restored later by calling host_util_restore_sysreg_and_cbs()\".",
+      "range": {
+        "startLine": 146,
+        "startChar": 3,
+        "endLine": 146,
+        "endChar": 63
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eec7189d_51e985f7",
+        "filename": "plat/host/common/include/host_utils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:03:36Z",
+      "side": 1,
+      "message": "void host_util_zero_sysregs_and_cbs();",
+      "range": {
+        "startLine": 148,
+        "startChar": 5,
+        "endLine": 148,
+        "endChar": 32
+      },
+      "revId": "29b05d09e9300f2d312d5f28cfc47189ceb5fa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
