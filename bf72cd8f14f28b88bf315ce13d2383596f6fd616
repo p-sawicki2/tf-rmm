@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2b952cb_bb17d383",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:22:34Z",
+      "side": 1,
+      "message": "remove as this is implied.",
+      "range": {
+        "startLine": 12,
+        "startChar": 40,
+        "endLine": 15,
+        "endChar": 0
+      },
+      "revId": "bf72cd8f14f28b88bf315ce13d2383596f6fd616",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f79e029_7f95326a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:22:34Z",
+      "side": 1,
+      "message": "\"A test might change the sysreg values or leave the sysreg in an inconsistent state and cause problems for the next test. Hence it is essential to reset to a previous known state as part of initialization.\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 59
+      },
+      "revId": "bf72cd8f14f28b88bf315ce13d2383596f6fd616",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f30adf79_ad960e90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:22:34Z",
+      "side": 1,
+      "message": "This is already implicit in the previous point and this is not needed IMO.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "bf72cd8f14f28b88bf315ce13d2383596f6fd616",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcebbeda_e704a916",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:22:34Z",
+      "side": 1,
+      "message": "\"This patch adds support to save the sysreg state after RMM initialization in test_helpers_rmm_start() and restores this state for any subsequent call to test_helpers_rmm_start().\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "bf72cd8f14f28b88bf315ce13d2383596f6fd616",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c97aaae8_7503ddc2",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:22:34Z",
+      "side": 1,
+      "message": "The test doesnt need to call this. This is only needed for tests which need to zero all regs and reset to different values. The contract for test to call test_helpers_rmm_start(). It can also unregister any cbs as it is good to give better readability to the tests although the test_helpers_rmm_start() will undo that as well.\n\nSo the contract for the test is to call test_helpers_rmm_start() at start of each test.",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 29
+      },
+      "revId": "bf72cd8f14f28b88bf315ce13d2383596f6fd616",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
