@@ -6,6 +6,7 @@
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <assert.h>
+#include <cpuid.h>
 #include <simd.h>
 
 static bool sve_init_once;
@@ -17,6 +18,15 @@ struct ns_simd_state {
 	bool saved;
 } __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
 static struct ns_simd_state g_ns_simd[MAX_CPUS];
+
+#ifdef RMM_FPU_USE_AT_REL2
+struct rmm_simd_state {
+	struct simd_state simd;
+	bool saved;
+} __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
+
+static struct rmm_simd_state g_rmm_simd[MAX_CPUS];
+#endif
 
 void simd_save_state(simd_t type, struct simd_state *simd)
 {
@@ -126,29 +136,42 @@ void simd_restore_ns_state(void)
 	ns_simd->saved = false;
 }
 
-/*
- * These functions and macros will be renamed to simd_* once RMM supports
- * SIMD (FPU/SVE) at REL2
- */
+/* RMM support to use SIMD at REL2 */
 #ifdef RMM_FPU_USE_AT_REL2
-void fpu_save_my_state(void)
+void simd_save_my_state(void)
 {
-	/* todo */
-	assert(false);
+	struct rmm_simd_state *rmm_simd;
+	unsigned int cpu_id = my_cpuid();
+
+	rmm_simd = g_rmm_simd + cpu_id;
+	assert(rmm_simd->saved == false);
+	simd_traps_disable(RMM_SIMD_TYPE);
+	simd_save_state(RMM_SIMD_TYPE, &rmm_simd->simd);
+	simd_traps_enable();
+	rmm_simd->saved = true;
 }
 
-void fpu_restore_my_state(void)
+void simd_restore_my_state(void)
 {
-	assert(false);
+	struct rmm_simd_state *rmm_simd;
+	unsigned int cpu_id = my_cpuid();
+
+	rmm_simd = g_rmm_simd + cpu_id;
+	assert(rmm_simd->saved == true);
+	simd_traps_disable(RMM_SIMD_TYPE);
+	simd_restore_state(RMM_SIMD_TYPE, &rmm_simd->simd);
+	simd_traps_enable();
+	rmm_simd->saved = false;
 }
 
-bool fpu_is_my_state_saved(unsigned int cpu_id)
+bool simd_is_my_state_saved(unsigned int cpu_id)
 {
-	assert(false);
+	assert(cpu_id < MAX_CPUS);
+	return g_rmm_simd[cpu_id].saved;
 }
 #else /* !RMM_FPU_USE_AT_REL2 */
-void fpu_save_my_state(void) {}
-void fpu_restore_my_state(void) {}
+void simd_save_my_state(void) {}
+void simd_restore_my_state(void) {}
 #endif /* RMM_FPU_USE_AT_REL */
 
 void simd_sve_state_init(struct simd_state *simd, uint8_t vq)
