@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aeb38989_84bfadb7",
+        "filename": "plat/host/host_build/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "948d1c0d_a834de34",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 0
+      },
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e8886f5_523de55d",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-03-03T10:35:11Z",
       "side": 1,
       "message": "The header file ordering is triggering a failure in CI. Please take a look.",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0704b17d_66ad2206",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "4e8886f5_523de55d",
       "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "186bc3f4_f9550819",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Yes, Done",
+      "parentUuid": "323bae29_731703d6",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fcce6d3_d10b277d",
@@ -88,6 +148,24 @@
       "writtenOn": "2023-03-03T10:35:11Z",
       "side": 1,
       "message": "Yes this triggers a checkpatch warning. This is an internal macro not meant to be used outside this file so I am less worried about this warning. Prefer this multi line format.\n\n\n ({  \\\n     if (result.x[0] !\u003d 0) { \\\n\tERROR(\"RMI call failed at %s:%d. status\u003d%lu.\\n\", __FILE__, __LINE__, result.x[0]); \\\n\treturn -1; \\\n     }\n  })",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bdf022a_fba1cdc1",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fcce6d3_d10b277d",
       "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -109,6 +187,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c5160e3_e538b939",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Added check",
+      "parentUuid": "2f6cddac_533eb50a",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1135e4af_75546e99",
@@ -122,6 +218,24 @@
       "writtenOn": "2023-03-03T10:35:11Z",
       "side": 1,
       "message": "add this comment if this was the intention.\n\n/* Create RTT table to start at IPA 0x0 */",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f1bb241_22fa8cdd",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Added comment",
+      "parentUuid": "1135e4af_75546e99",
       "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -143,6 +257,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a60b1127_1f777034",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Added comment",
+      "parentUuid": "37e7ecf9_642b2408",
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "450aaf65_f0ff2ccf",
@@ -156,6 +288,30 @@
       "writtenOn": "2023-03-03T10:35:11Z",
       "side": 1,
       "message": "Small case is enough :\n\n\"ERROR: failed to create Realm\"",
+      "range": {
+        "startLine": 172,
+        "startChar": 9,
+        "endLine": 172,
+        "endChar": 38
+      },
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba028d9b_6a6c8629",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-03-03T15:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "450aaf65_f0ff2ccf",
       "range": {
         "startLine": 172,
         "startChar": 9,
