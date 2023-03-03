@@ -338,6 +338,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "79e54382_9b4edd03",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T00:36:18Z",
+      "side": 1,
+      "message": "If we get an INVALID_DESC here (0x0) , this check will fail (because INVALID_DESC !\u003d TRANSIENT_DESC) ?\n\nIf you dont want to restrict this to transient desc, then the check should be :\n\nif (desc_type !\u003d TABLE_DESC) {\n\t\t\tif (((desc_type \u003d\u003d BLOCK_DESC) ||\n\t\t\t    (((desc_type \u003d\u003d PAGE_DESC) || (desc \u003d\u003d TRANSIENT_DESC) || (desc \u003d\u003d INVALID_DESC) {\n\n\n\n\nwhich can be reduced as \n\n\nif (desc_type !\u003d TABLE_DESC) {\n\t\t\tif (((desc_type \u003d\u003d BLOCK_DESC) ||\n\t\t\t    (((desc_type \u003d\u003d PAGE_DESC) || (desc_type \u003d\u003d INVALID_DESC) {",
+      "parentUuid": "faa1fcc6_0f162e0e",
+      "range": {
+        "startLine": 316,
+        "startChar": 38,
+        "endLine": 316,
+        "endChar": 60
+      },
+      "revId": "39ec59f50a8a018636eace9096f6df62a00fca18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0149724f_132babf7",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 7
