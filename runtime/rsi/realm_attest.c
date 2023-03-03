@@ -236,12 +236,12 @@ out_unmap_rd:
 
 void attest_realm_token_sign_continue_start(void)
 {
-	fpu_save_my_state();
+	simd_save_my_state();
 }
 
 void attest_realm_token_sign_continue_finish(void)
 {
-	fpu_restore_my_state();
+	simd_restore_my_state();
 }
 
 void handle_rsi_attest_token_continue(struct rec *rec,
