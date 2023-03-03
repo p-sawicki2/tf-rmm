@@ -50,7 +50,7 @@ int attestation_init(void)
 	 */
 	buffer_alloc_ctx_assign(&init_ctx);
 
-	fpu_save_my_state();
+	simd_save_my_state();
 
 	FPU_ALLOW(mbedtls_memory_buffer_alloc_init(mem_buf, sizeof(mem_buf)));
 
@@ -74,7 +74,7 @@ int attestation_init(void)
 		return ret;
 	}
 
-	fpu_restore_my_state();
+	simd_restore_my_state();
 
 	/* Retrieve the platform token from root world */
 	ret = attest_setup_platform_token();
@@ -98,9 +98,9 @@ int attestation_heap_ctx_init(unsigned char *buf, size_t buf_size)
 	}
 
 	/* Initialise the mbedTLS heap */
-	fpu_save_my_state();
+	simd_save_my_state();
 	FPU_ALLOW(mbedtls_memory_buffer_alloc_init(buf, buf_size));
-	fpu_restore_my_state();
+	simd_restore_my_state();
 
 	return 0;
 }
@@ -132,9 +132,9 @@ int attestation_heap_ctx_unassign_pe(void)
 
 inline int attestation_heap_reinit_pe(unsigned char *buf, size_t buf_size)
 {
-	fpu_save_my_state();
+	simd_save_my_state();
 	FPU_ALLOW(mbedtls_memory_buffer_alloc_init(buf, buf_size));
-	fpu_restore_my_state();
+	simd_restore_my_state();
 
 	return 0;
 }

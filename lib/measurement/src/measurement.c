@@ -51,7 +51,7 @@ static void do_hash(enum hash_algo hash_algo,
 	assert(size <= GRANULE_SIZE);
 	assert((data != NULL) && (out != NULL));
 
-	fpu_save_my_state();
+	simd_save_my_state();
 
 	if (hash_algo == HASH_ALGO_SHA256) {
 		/* 0 to indicate SHA256 not SHA224 */
@@ -67,7 +67,7 @@ static void do_hash(enum hash_algo hash_algo,
 		assert(false);
 	}
 
-	fpu_restore_my_state();
+	simd_restore_my_state();
 
 #if LOG_LEVEL >= LOG_LEVEL_VERBOSE
 	measurement_print(out, hash_algo);
@@ -158,7 +158,7 @@ void measurement_extend(enum hash_algo hash_algo,
 	assert(extend_measurement != NULL);
 	assert(out != NULL);
 
-	fpu_save_my_state();
+	simd_save_my_state();
 
 	switch (hash_algo) {
 	case HASH_ALGO_SHA256:
@@ -181,7 +181,7 @@ void measurement_extend(enum hash_algo hash_algo,
 		assert(false);
 	}
 
-	fpu_restore_my_state();
+	simd_restore_my_state();
 
 #if LOG_LEVEL >= LOG_LEVEL_VERBOSE
 	measurement_print(out, hash_algo);
