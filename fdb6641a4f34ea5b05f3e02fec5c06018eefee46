@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "948d1c0d_a834de34",
+        "filename": "plat/host/host_build/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-03T10:38:55Z",
+      "side": 1,
+      "message": "This may not be required now after moving the files.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 0
+      },
+      "revId": "fdb6641a4f34ea5b05f3e02fec5c06018eefee46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4e8886f5_523de55d",
         "filename": "plat/host/host_build/src/host_setup.c",
         "patchSetId": 2
