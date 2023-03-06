@@ -118,6 +118,11 @@ add_custom_command(
     OUTPUT rmm.elf
     DEPENDS rmm-runtime)
 
+add_custom_target(
+  generate_rmm_elf
+  DEPENDS rmm.elf
+)
+
 #
 # Create the flat binary using whatever tool comes with the toolchain.
 #

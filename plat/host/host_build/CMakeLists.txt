@@ -14,3 +14,9 @@ target_sources(rmm-plat-host_build
             "src/host_harness.c")
 
 add_library(rmm-platform ALIAS rmm-plat-host_build)
+
+add_custom_target(run-host-executable
+    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
+    COMMAND ${CMAKE_BINARY_DIR}/$<CONFIG>/rmm.elf
+)
+add_dependencies(run-host-executable generate_rmm_elf)
