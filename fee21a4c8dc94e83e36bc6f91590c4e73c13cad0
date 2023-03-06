@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "273de6ae_5219bf95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "rmm_arch_init() sets MDCR_EL2:\nHCCD, bit [23]:\nCycle counting by PMCCNTR_EL0 is prohibited at EL2.\n\nHPMD, bit [17]:\nAffected counters are prohibited from counting at EL2.\nThe counters affected by this field are:\nEvent counters PMEVCNTR\u003cn\u003e_EL0 for values of n less than MDCR_EL2.HPMN.\nIf FEAT_PMUv3_ICNTR is implemented, the instruction counter PMICNTR_EL0.\nIf PMCR_EL0.DP is 1, the cycle counter PMCCNTR_EL0.\n\nPMCR_EL0.DP is also set to 1 in rec_run_loop()",
+      "parentUuid": "a05d1880_906c4eef",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92f4c9d7_48d61941",
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "04426683_4ca2cce3",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "We can rename this macro when other data are added.",
+      "parentUuid": "92f4c9d7_48d61941",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d5328af6_eb134aeb",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 1
@@ -65,6 +101,30 @@
       "writtenOn": "2023-02-22T14:12:32Z",
       "side": 1,
       "message": "nit: \"..register definitions\".\n\nSuggest to move changes specific to PMUv3p9 to a different patch.",
+      "range": {
+        "startLine": 68,
+        "startChar": 24,
+        "endLine": 68,
+        "endChar": 34
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1777e5b_f57d25fb",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "Should the comments on lines #18, 21, 24, 28 and 33 be also changed?",
+      "parentUuid": "d5328af6_eb134aeb",
       "range": {
         "startLine": 68,
         "startChar": 24,
@@ -123,6 +183,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29e7e538_cf7e093b",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "Only PMUACR_EL1 is present when PMUv3p9 is implemented. Setting these bits allows access to all other registers which are dependant on other PMU extensions.",
+      "parentUuid": "98136708_be204836",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 34
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "857e9dbd_1214c122",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 1
@@ -134,6 +218,30 @@
       "writtenOn": "2023-02-22T14:12:32Z",
       "side": 1,
       "message": "can be removed as they will not be needed for RMM. since RME mandates v3p7, this need to check versions \u003e\u003d v3p7 only.",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 470,
+        "endChar": 39
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3672c0e0_121aad7a",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "Added for consistency. Will be removed.",
+      "parentUuid": "857e9dbd_1214c122",
       "range": {
         "startLine": 467,
         "startChar": 0,
@@ -169,6 +277,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9556a808_f947f5d3",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "PMICNTR_EL0 is present when FEAT_PMUv3_ICNTR is implemented.\nIts presence is identified by \"ID_AA64DFR1_EL1.PMICNTR, bits [39:36]:\nFEAT_PMUv3_ICNTR implements the functionality identified by the value 0b0001.\nIf FEAT_PMUv3 is not implemented, then the only permitted value is 0b0000.\"\n\n, so FEAT_PMUv3_ICNTR can be present for any version of FEAT_PMUv3.",
+      "parentUuid": "04375e8a_cbddfe52",
+      "range": {
+        "startLine": 487,
+        "startChar": 0,
+        "endLine": 493,
+        "endChar": 42
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f134840_1f6d2987",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 1
@@ -180,6 +312,30 @@
       "writtenOn": "2023-02-22T17:27:37Z",
       "side": 1,
       "message": "Do we need seperate definitions for these? We could just define a local define and use that to clear the regs. Dont see a need for separate macros for this.",
+      "range": {
+        "startLine": 689,
+        "startChar": 0,
+        "endLine": 696,
+        "endChar": 42
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0686e75_aef2e29e",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3f134840_1f6d2987",
       "range": {
         "startLine": 689,
         "startChar": 0,
@@ -203,6 +359,30 @@
       "writtenOn": "2023-02-22T17:27:37Z",
       "side": 1,
       "message": "These macros are not needed for RMM as it will not use the PMU.",
+      "range": {
+        "startLine": 698,
+        "startChar": 0,
+        "endLine": 714,
+        "endChar": 0
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "759892f3_e5ce8eab",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c3428394_7f223930",
       "range": {
         "startLine": 698,
         "startChar": 0,
@@ -238,6 +418,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "16801660_d0c5cb10",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "This register is present only when FEAT_EBEP is implemented or FEAT_PMUv3_SS is implemented.\nThese features don\u0027t depend on PMU version.",
+      "parentUuid": "648b13ed_51f8bc78",
+      "range": {
+        "startLine": 715,
+        "startChar": 3,
+        "endLine": 715,
+        "endChar": 13
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8589ce0d_642e855d",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 1
@@ -261,6 +465,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb8b4ba3_d84c713a",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "This register is present only when FEAT_PMUv3_ICNTR is implemented, doesn\u0027t depend on PMU version.",
+      "parentUuid": "8589ce0d_642e855d",
+      "range": {
+        "startLine": 726,
+        "startChar": 3,
+        "endLine": 726,
+        "endChar": 17
+      },
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b01b565_6679062d",
         "filename": "lib/arch/include/arch_features.h",
         "patchSetId": 1
@@ -272,6 +500,24 @@
       "writtenOn": "2023-02-22T17:27:37Z",
       "side": 1,
       "message": "can move to PMUv3p9 patch, similar comments below.",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70bf290c_85da7fee",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-06T11:36:36Z",
+      "side": 1,
+      "message": "This patch was tested with the latest version on PMU test from KVM unit tests with PMUv3p9 and all PMU extensions enabled. It is not clear why a separate patch is needed.",
+      "parentUuid": "5b01b565_6679062d",
       "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
