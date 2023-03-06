@@ -39,6 +39,30 @@
       },
       "revId": "b37a672f701e2b1e00df39861d15ecec9fd32fb9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7f80964_e37455a2",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-06T15:34:20Z",
+      "side": 1,
+      "message": "hmm, I have only tried to add aspects which need to be abstracted between host and target. Although it is neat to define this as well, the idea is to keep the abstraction as minimal as possible and have same code paths for host and target.",
+      "parentUuid": "b4d71769_a463f175",
+      "range": {
+        "startLine": 129,
+        "startChar": 19,
+        "endLine": 129,
+        "endChar": 50
+      },
+      "revId": "b37a672f701e2b1e00df39861d15ecec9fd32fb9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
