@@ -641,6 +641,30 @@
       },
       "revId": "14462b19baff42d250d23f96289c232aaba43110",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b8f3170_06a3b80e",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T17:16:44Z",
+      "side": 1,
+      "message": "ignore this. It seems this page_offset is largely ignored since it not used in walking the tables.",
+      "parentUuid": "16b1a27b_43a6341a",
+      "range": {
+        "startLine": 1696,
+        "startChar": 2,
+        "endLine": 1697,
+        "endChar": 25
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
