@@ -406,6 +406,241 @@
       },
       "revId": "14462b19baff42d250d23f96289c232aaba43110",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d88736a_b9ecbf1a",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "start_va is not generated. But size is. Would prefer for test to call get_start_va directly and rename this fn to get_va_size_by_lvl()",
+      "range": {
+        "startLine": 1587,
+        "startChar": 3,
+        "endLine": 1587,
+        "endChar": 22
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bea0d21_ffa03f62",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "So this is trying to cover the entire size possible given a start level. Could add this as a comment.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "553b9d1f_7fee6bbf",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1605,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "\"whose\" , similar comments for below",
+      "range": {
+        "startLine": 1605,
+        "startChar": 53,
+        "endLine": 1605,
+        "endChar": 58
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "190e9bb1_296fca54",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "give name of array here. same comment below.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ddfcf19_6e1d6595",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "tte -\u003e table",
+      "range": {
+        "startLine": 1619,
+        "startChar": 23,
+        "endLine": 1619,
+        "endChar": 27
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ce20453_23c7ad24",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1623,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "suggest : tbl_idxs",
+      "range": {
+        "startLine": 1623,
+        "startChar": 21,
+        "endLine": 1623,
+        "endChar": 30
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f163f09a_489c3a4d",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1626,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "suggest: last_level",
+      "range": {
+        "startLine": 1626,
+        "startChar": 20,
+        "endLine": 1626,
+        "endChar": 25
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "097c9f5f_acb1e67e",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1629,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "this arg is not needed here.",
+      "range": {
+        "startLine": 1629,
+        "startChar": 29,
+        "endLine": 1629,
+        "endChar": 35
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c9b63ec_1cf7b772",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1652,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "Random is probably not enough. We need to iterate over every combination of attr.",
+      "range": {
+        "startLine": 1650,
+        "startChar": 0,
+        "endLine": 1652,
+        "endChar": 33
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ac4e892_97058fed",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "say this is a dummy PA to test.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16b1a27b_43a6341a",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T16:21:50Z",
+      "side": 1,
+      "message": "not so sure about this. Should we just start from base table and iterate every valid entry and ensure it is goog ?",
+      "range": {
+        "startLine": 1696,
+        "startChar": 2,
+        "endLine": 1697,
+        "endChar": 25
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
