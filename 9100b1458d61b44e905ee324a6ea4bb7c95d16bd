@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60276114_11145be5",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T12:08:01Z",
+      "side": 1,
+      "message": "To avoid the assymetry when the test is run first vs after other tests initalizes RMM, we can call test_helpers_rmm_start().",
+      "revId": "9100b1458d61b44e905ee324a6ea4bb7c95d16bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfb6d329_9ac19929",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T12:08:01Z",
+      "side": 1,
+      "message": "Should the numbers increment for each test ?",
+      "range": {
+        "startLine": 265,
+        "startChar": 14,
+        "endLine": 265,
+        "endChar": 16
+      },
+      "revId": "9100b1458d61b44e905ee324a6ea4bb7c95d16bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

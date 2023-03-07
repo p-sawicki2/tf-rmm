@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66441619_94b5c8b1",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T12:08:01Z",
+      "side": 1,
+      "message": "Need not define a Write variant to access a RO register.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5dfa653_0a7afedf",
+        "filename": "lib/xlat/tests/st1_xlat_test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-07T12:08:01Z",
+      "side": 1,
+      "message": "use host_write_sysreg() to access RO register. This helps to clarify that the host is modifying a register which is RO as per architecture.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
