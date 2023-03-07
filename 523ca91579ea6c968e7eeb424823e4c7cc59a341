@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7904786_ca1a73fb",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-07T12:20:35Z",
+      "side": 1,
+      "message": "Memory Tagging Extension is not implemented",
+      "revId": "523ca91579ea6c968e7eeb424823e4c7cc59a341",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
