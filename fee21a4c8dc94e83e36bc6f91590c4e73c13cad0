@@ -88,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "586fc2f1_260b3024",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "04426683_4ca2cce3",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5328af6_eb134aeb",
@@ -518,6 +536,23 @@
       "side": 1,
       "message": "This patch was tested with the latest version on PMU test from KVM unit tests with PMUv3p9 and all PMU extensions enabled. It is not clear why a separate patch is needed.",
       "parentUuid": "5b01b565_6679062d",
+      "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19e8950a_3b396824",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "This can move to PMU register section",
       "revId": "fee21a4c8dc94e83e36bc6f91590c4e73c13cad0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

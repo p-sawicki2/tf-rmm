@@ -1,0 +1,244 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae749429_040ea0ee",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "remove this as I am not sure whether this is the value to be used for Realms.",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e257122e_5a1235b9",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "this may not be setting to apply for ICNTR disable all. It may involve RLH and NSH bits as well. Remove this.",
+      "range": {
+        "startLine": 685,
+        "startChar": 0,
+        "endLine": 687,
+        "endChar": 25
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5974f60d_29b598e4",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "This feature may not be needed for RMM as we want to keep all counters in the first range, i.e initialize HPMN \u003d pmcr_el0.N",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10e9012e_a23e6876",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "may not be needed for RMM.",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c8ca54d_b618410d",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "move this to PMU section",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "948a06f4_7266275e",
+        "filename": "lib/realm/include/pmu.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "perhaps this can live in lib/arch component.",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45d2b6f3_5309866f",
+        "filename": "lib/realm/src/pmu.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "this header is probably not needed.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45372cde_398231d5",
+        "filename": "lib/realm/src/pmu.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "pmu_update_rec_exit()",
+      "range": {
+        "startLine": 156,
+        "startChar": 5,
+        "endLine": 156,
+        "endChar": 25
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92434f7a_c98ce6cb",
+        "filename": "runtime/core/init.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "HPMN should be initialized with pmcr_el0.N right ?",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 30
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5418fb71_b9e80853",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "This may not be needed as HCCD, HPMD is sufficient to disable PMU at EL2. HPME can also be cleared as a good measure. TBC.",
+      "range": {
+        "startLine": 290,
+        "startChar": 1,
+        "endLine": 290,
+        "endChar": 47
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ee49207_1ec09b69",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "if PMU is not enabled, we need to set TPM and TPMCR bits in MDCR_EL2.",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3192f0b_b091d64c",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-08T17:06:19Z",
+      "side": 1,
+      "message": "This can set as part of MDCR init I think. we can disable PMU counting for all ELs by using PMCR_EL0_INIT , and trap controls TPM and TPMCR  in case PMU is not be enabled for Realm. TBC",
+      "range": {
+        "startLine": 314,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 1
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
