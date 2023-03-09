@@ -60,6 +60,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "10504675_5573ccbf",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-09T09:11:14Z",
+      "side": 1,
+      "message": "As discussed is_feat_hpmn0_present() is needed to initialise MDCR_EL2.HPMN correctly to report only requested number of event counters in PMCR_EL0.N.",
+      "parentUuid": "5974f60d_29b598e4",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "10e9012e_a23e6876",
         "filename": "lib/arch/include/arch_helpers.h",
         "patchSetId": 3
@@ -77,6 +95,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "94715037_c778b10f",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-09T09:11:14Z",
+      "side": 1,
+      "message": "lib\\timers\\src\\timers.c line #66:\nunsigned long hppir \u003d read_icc_hppir1_el1();\n\nThere is incorrect definition on line #421\nDEFINE_RENAME_SYSREG_READ_FUNC(icc_hppir1_el2, ICC_HPPIR1_EL1)\nwhich should be fixed or removed.",
+      "parentUuid": "10e9012e_a23e6876",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c8ca54d_b618410d",
         "filename": "lib/arch/include/arch_helpers.h",
         "patchSetId": 3
@@ -88,6 +124,24 @@
       "writtenOn": "2023-03-08T17:06:19Z",
       "side": 1,
       "message": "move this to PMU section",
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99714a1b_41f1823d",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-09T09:11:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c8ca54d_b618410d",
       "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -132,6 +186,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "288dce48_451ee373",
+        "filename": "lib/realm/src/pmu.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-09T09:11:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45d2b6f3_5309866f",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "45372cde_398231d5",
@@ -145,6 +223,30 @@
       "writtenOn": "2023-03-08T17:06:19Z",
       "side": 1,
       "message": "pmu_update_rec_exit()",
+      "range": {
+        "startLine": 156,
+        "startChar": 5,
+        "endLine": 156,
+        "endChar": 25
+      },
+      "revId": "86b98c0cb5f8b334dcb5aacbc890cdb3f71f554a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac217b54_537abf38",
+        "filename": "lib/realm/src/pmu.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-09T09:11:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45372cde_398231d5",
       "range": {
         "startLine": 156,
         "startChar": 5,
