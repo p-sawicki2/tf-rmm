@@ -127,6 +127,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d754181d_4829ced7",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "The optimized (actually, \"normalized\" would be a better term so I might change it) value on the mmap.base_va is part of the output expected by xlat_ctx_cfg_init(), therefore I think it should be tested as well.\n\nFurthermore, some tests later rely on that value being normalized",
+      "parentUuid": "8e67069d_47a8f62c",
+      "range": {
+        "startLine": 412,
+        "startChar": 0,
+        "endLine": 417,
+        "endChar": 53
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a64a0e2e_d762e34c",
@@ -301,6 +325,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3aefe3c8_fec9a284",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "The previous version of the xlat table would accept shuffled mmap regions and it will sort them internally. I think I just left this comment here when I refactored the code. I will remove it",
+      "parentUuid": "3d8a2365_b3fd046c",
+      "range": {
+        "startLine": 902,
+        "startChar": 16,
+        "endLine": 902,
+        "endChar": 25
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ddc5a265_a01ef57d",
         "filename": "lib/xlat/tests/stage1_xlat.cpp",
         "patchSetId": 7
@@ -433,6 +481,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09e79a29_7d21d623",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "I think if I have two separate APIs it will introduce more burden to the tests (which are already quite complicated). I think it is better to have this API that calculates the va size and start given the walk level and region, all in one go. What I can do is rename it to something more descriptive (perhaps gen_va_space_params_by_level()?)\n\nWhen needed, get_start_va() is called on its own on other tests.",
+      "parentUuid": "7d88736a_b9ecbf1a",
+      "range": {
+        "startLine": 1587,
+        "startChar": 3,
+        "endLine": 1587,
+        "endChar": 22
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7bea0d21_ffa03f62",
         "filename": "lib/xlat/tests/stage1_xlat.cpp",
         "patchSetId": 7
@@ -444,6 +516,24 @@
       "writtenOn": "2023-03-07T16:21:50Z",
       "side": 1,
       "message": "So this is trying to cover the entire size possible given a start level. Could add this as a comment.",
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5028e54_72a6ca12",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "This covers the size of a block at a given level. This way the whole VA space will fit in a table of level X. Otherwise, a table of level X-1 will be needed as well. I will add a comment for that",
+      "parentUuid": "7bea0d21_ffa03f62",
       "revId": "14462b19baff42d250d23f96289c232aaba43110",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -605,6 +695,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "480b93a0_4b2b0ba3",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1652,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "I thought about that but I think it might make the tests more complicated (plus I would need another level of iterations). I found that randomizing this and executing the tests a large number of times (few thousands) would be a good trade-off. CI could run 1000 iterations of the tests, for instance (locally, it only takes a couple of seconds).",
+      "parentUuid": "4c9b63ec_1cf7b772",
+      "range": {
+        "startLine": 1650,
+        "startChar": 0,
+        "endLine": 1652,
+        "endChar": 33
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6ac4e892_97058fed",
         "filename": "lib/xlat/tests/stage1_xlat.cpp",
         "patchSetId": 7
@@ -657,6 +771,30 @@
       "side": 1,
       "message": "ignore this. It seems this page_offset is largely ignored since it not used in walking the tables.",
       "parentUuid": "16b1a27b_43a6341a",
+      "range": {
+        "startLine": 1696,
+        "startChar": 2,
+        "endLine": 1697,
+        "endChar": 25
+      },
+      "revId": "14462b19baff42d250d23f96289c232aaba43110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c39c4d0_aa5290af",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-09T18:34:28Z",
+      "side": 1,
+      "message": "Exactly. page_offset is just to validate that a table walk can be done on an address not aligned to a page",
+      "parentUuid": "6b8f3170_06a3b80e",
       "range": {
         "startLine": 1696,
         "startChar": 2,
