@@ -193,11 +193,14 @@ struct xlat_mmap_region {
 /*
  * Structure containing a table entry and its related information.
  */
-struct xlat_tbl_info {
+struct xlat_llt_info {
 	uint64_t *table;	/* Pointer to the translation table. */
-	uintptr_t base_va;	/* Context base VA for the current entry. */
+	/* Base offset regarding the context base VA for the current table. */
+	uintptr_t llt_base_offset;
+	/* End offset regarding the context base VA for the current table. */
+	size_t llt_end_offset;
+	uintptr_t base_va;	/* Base VA for the translation context. */
 	unsigned int level;	/* Table level of the current entry. */
-	unsigned int entries;   /* Number of entries used by this table. */
 };
 
 /******************************************************************************
@@ -222,9 +225,9 @@ static inline uint64_t xlat_read_tte(uint64_t *entry)
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
-			   const struct xlat_ctx * const ctx,
-			   const uintptr_t va);
+int xlat_get_llt_from_va(struct xlat_llt_info * const retval,
+			 const struct xlat_ctx * const ctx,
+			 const uintptr_t va);
 
 /*
  * Function to unmap a physical memory page from the descriptor entry and
@@ -234,7 +237,7 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
+int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
@@ -245,7 +248,7 @@ int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_map_memory_page_with_attrs(const struct xlat_tbl_info * const table,
+int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
 				    const uintptr_t pa,
 				    const uint64_t attrs);
@@ -254,7 +257,7 @@ int xlat_map_memory_page_with_attrs(const struct xlat_tbl_info * const table,
  * This function finds the descriptor entry on a table given the corresponding
  * table entry structure and the VA for that descriptor.
  */
-uint64_t *xlat_get_tte_ptr(const struct xlat_tbl_info * const table,
+uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
