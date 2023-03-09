@@ -274,29 +274,35 @@ void xlat_tables_print(struct xlat_ctx *ctx)
  * va_offset with regards to the context va_base.
  *
  * On success, return the address of the last level table within the
- * translation table. Its lookup level is stored in '*out_level'.
+ * translation table. Its lookup level is stored in '*out_level' and
+ * the base VA mapped to the first entry of the table is returned
+ * through '*tt_base_va'.
+ *
  * On error, or if the VA is unmapped or does not correspond to a transient
  * mapping, return NULL.
  */
 static uint64_t *find_xlat_last_table(uintptr_t va_offset,
 				      const struct xlat_ctx * const ctx,
-				      unsigned int * const out_level)
+				      unsigned int * const out_level,
+				      uintptr_t * const tt_base_va)
 {
 	unsigned int start_level;
 	uint64_t *ret_table;
 	struct xlat_ctx_tbls *ctx_tbls;
 	struct xlat_ctx_cfg *ctx_cfg;
-
+	uintptr_t table_base_va;
 
 	assert(ctx != NULL);
 	assert(ctx->cfg != NULL);
 	assert(ctx->tbls != NULL);
 	assert(out_level != NULL);
+	assert(tt_base_va != NULL);
 
 	ctx_tbls = ctx->tbls;
 	ctx_cfg = ctx->cfg;
 	start_level = ctx_cfg->base_level;
 	ret_table = ctx_tbls->tables;
+	table_base_va = ctx_cfg->base_va;
 
 	for (unsigned int level = start_level;
 	     level <= XLAT_TABLE_LEVEL_MAX;
@@ -307,7 +313,7 @@ static uint64_t *find_xlat_last_table(uintptr_t va_offset,
 
 		idx = XLAT_TABLE_IDX(va_offset, level);
 		if (idx >= XLAT_TABLE_ENTRIES) {
-			WARN("Missing TTE at address 0x%lx\n",
+			WARN("Address 0x%lx not mapped\n",
 			      va_offset + ctx_cfg->base_va);
 			return NULL;
 		}
@@ -327,11 +333,16 @@ static uint64_t *find_xlat_last_table(uintptr_t va_offset,
 			    || ((desc_type == PAGE_DESC) &&
 					(level == XLAT_TABLE_LEVEL_MAX))) {
 				*out_level = level;
+				*tt_base_va = table_base_va;
 				return ret_table;
 			}
 			return NULL;
 		}
 
+		/* Get the base address mapped by the next table */
+		table_base_va += (XLAT_BLOCK_SIZE(level) * idx);
+
+		/* Get the next table */
 		ret_table = (uint64_t *)(void *)(desc & TABLE_ADDR_MASK);
 	}
 
@@ -360,7 +371,7 @@ static uint64_t *find_xlat_last_table(uintptr_t va_offset,
  * table pointed by TTE, as long as va belongs to the VA space owned by the
  * context.
  */
-int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
+int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va)
 {
 	uint64_t *tte;
@@ -403,7 +414,7 @@ int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
  * table pointed by the TTE, as long as va belongs to the VA space owned by the
  * context.
  */
-int xlat_map_memory_page_with_attrs(const struct xlat_tbl_info * const table,
+int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
 				    const uintptr_t pa,
 				    const uint64_t attrs)
@@ -441,16 +452,16 @@ int xlat_map_memory_page_with_attrs(const struct xlat_tbl_info * const table,
 }
 
 /*
- * Return a tte info structure given a context and a VA.
+ * Return a xlat_llt_info structure given a context and a VA.
  * The return structure is populated on the retval field.
  *
- * This function returns 0 on success or a Linux error code otherwise.
+ * This function returns 0 on success or a POSIX error code otherwise.
  */
-int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
-			   const struct xlat_ctx * const ctx,
-			   const uintptr_t va)
+int xlat_get_llt_from_va(struct xlat_llt_info * const llt,
+			 const struct xlat_ctx * const ctx,
+			 const uintptr_t va)
 {
-	uintptr_t page_va;
+	uintptr_t page_va, tt_base_va;
 	uint64_t *table;
 	unsigned int level;
 	struct xlat_ctx_cfg *ctx_cfg;
@@ -458,17 +469,11 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
 	assert(ctx != NULL);
 	assert(ctx->cfg != NULL);
 	assert(ctx->tbls != NULL);
-	assert(retval != NULL);
+	assert(llt != NULL);
 	assert(ctx->tbls->initialized == true);
 	assert(ctx->cfg->initialized == true);
 
 	ctx_cfg = ctx->cfg;
-
-	/* Check if the VA is within the mapped range */
-	if (((va > (ctx_cfg->max_mapped_va_offset + ctx_cfg->base_va))
-		|| (va < ctx_cfg->base_va))) {
-		return -EFAULT;
-	}
 
 	/*
 	 * From the translation tables point of view, the VA is actually an
@@ -478,65 +483,44 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
 	page_va = va - ctx_cfg->base_va;
 	page_va &= ~PAGE_SIZE_MASK; /* Page address of the VA address passed. */
 
-	table = find_xlat_last_table(page_va, ctx, &level);
+	table = find_xlat_last_table(page_va, ctx, &level, &tt_base_va);
 
 	if (table == NULL) {
 		WARN("Address 0x%lx is not mapped.\n", va);
 		return -EFAULT;
 	}
 
-	/* Maximum number of entries used by this table. */
-	if (level == ctx_cfg->base_level) {
-		retval->entries = GET_NUM_BASE_LEVEL_ENTRIES(
-					ctx->cfg->max_mapped_va_offset);
-	} else {
-		retval->entries = XLAT_TABLE_ENTRIES;
-	}
-
-	retval->table = table;
-	retval->level = level;
-	retval->base_va = ctx_cfg->base_va;
+	llt->table = table;
+	llt->level = level;
+	llt->llt_base_va = tt_base_va;
 
 	return 0;
 }
 
 /*
  * This function finds the TTE on a table given the corresponding
- * tte info structure and the VA for that descriptor.
+ * xlat_llt_info structure and the VA corresponding to the entry.
  *
- * If va is not mapped by the table pointed by entry, it returns NULL.
+ * If va is outside the valid range for the table, it returns NULL.
  *
- * For simplicity and as long as va belongs to the VA space owned by the
- * translation context, this function will not take into consideration holes
- * on the table pointed by entry either because the address is not mapped by
- * the caller or left as INVALID_DESC for future dynamic mapping.
+ * For simplicity and as long as va >= llt->llt_base_va, this function
+ * will return a pointer to a tte on the table without making any asumption
+ * about its type or validity. It is the caller responsibility to ensure
+ * that the VA passed to do the search is within the table boundaries as
+ * well as to do any necessary checks on the returned tte before using it.
  */
-uint64_t *xlat_get_tte_ptr(const struct xlat_tbl_info * const entry,
+uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const llt,
 			   const uintptr_t va)
 {
-	unsigned int index;
-	uint64_t *table;
-	uintptr_t va_offset;
+	uintptr_t offset;
 
-	assert(entry != NULL);
+	assert(llt != NULL);
 
-	if (va < entry->base_va) {
+	if (va < llt->llt_base_va) {
 		return NULL;
 	}
 
-	/*
-	 * From the translation tables point of view, the VA is actually an
-	 * offset with regards to the base address of the VA space, so before
-	 * using a VA, we need to extract the base VA from it.
-	 */
+	offset = va - llt->llt_base_va;
 
-	va_offset = va - entry->base_va;
-	table = entry->table;
-	index = XLAT_TABLE_IDX(va_offset, entry->level);
-
-	if (index >= entry->entries) {
-		return NULL;
-	}
-
-	return &table[index];
+	return &llt->table[XLAT_TABLE_IDX(offset, llt->level)];
 }

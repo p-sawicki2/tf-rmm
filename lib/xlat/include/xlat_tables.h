@@ -193,11 +193,10 @@ struct xlat_mmap_region {
 /*
  * Structure containing a table entry and its related information.
  */
-struct xlat_tbl_info {
+struct xlat_llt_info {
 	uint64_t *table;	/* Pointer to the translation table. */
-	uintptr_t base_va;	/* Context base VA for the current entry. */
+	uintptr_t llt_base_va;	/* First VA mapped to the current table. */
 	unsigned int level;	/* Table level of the current entry. */
-	unsigned int entries;   /* Number of entries used by this table. */
 };
 
 /******************************************************************************
@@ -222,9 +221,9 @@ static inline uint64_t xlat_read_tte(uint64_t *entry)
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
-			   const struct xlat_ctx * const ctx,
-			   const uintptr_t va);
+int xlat_get_llt_from_va(struct xlat_llt_info * const retval,
+			 const struct xlat_ctx * const ctx,
+			 const uintptr_t va);
 
 /*
  * Function to unmap a physical memory page from the descriptor entry and
@@ -234,7 +233,7 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
+int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
@@ -245,16 +244,24 @@ int xlat_unmap_memory_page(struct xlat_tbl_info * const table,
  *
  * This function returns 0 on success or a negative error code otherwise.
  */
-int xlat_map_memory_page_with_attrs(const struct xlat_tbl_info * const table,
+int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
 				    const uintptr_t pa,
 				    const uint64_t attrs);
 
 /*
- * This function finds the descriptor entry on a table given the corresponding
- * table entry structure and the VA for that descriptor.
+ * This function finds the TTE on a table given the corresponding
+ * xlat_llt_info structure and the VA corresponding to the entry.
+ *
+ * If va is outside the valid range for the table, it returns NULL.
+ *
+ * For simplicity and as long as va >= llt->llt_base_va, this function
+ * will return a pointer to a tte on the table without making any asumption
+ * about its type or validity. It is the caller responsibility to ensure
+ * that the VA passed to do the search is within the table boundaries as
+ * well as to do any necessary checks on the returned tte before using it.
  */
-uint64_t *xlat_get_tte_ptr(const struct xlat_tbl_info * const table,
+uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
