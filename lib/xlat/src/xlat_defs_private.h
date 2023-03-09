@@ -35,6 +35,8 @@
 #define TABLE_DESC		UL(0x3) /* Table levels 0-2 */
 /* Definition of an invalid descriptor */
 #define INVALID_DESC		UL(0x0)
+/* Definition of a valid descriptor (table or block) */
+#define VALID_DESC		UL(0x1)
 
 /*
  * A page descriptor points to a page, i.e. a memory region whose size is the
