@@ -274,28 +274,34 @@ void xlat_tables_print(struct xlat_ctx *ctx)
  * va_offset with regards to the context va_base.
  *
  * On success, return the address of the last level table within the
- * translation table. Its lookup level is stored in '*out_level'.
+ * translation table. Its lookup level is stored in '*out_level' and
+ * the base VA mapped to the first entry of the table is returned
+ * through '*tt_base_va'.
+ *
  * On error, return NULL.
  */
 static uint64_t *find_xlat_last_table(uintptr_t va_offset,
 				      const struct xlat_ctx * const ctx,
-				      unsigned int * const out_level)
+				      unsigned int * const out_level,
+				      uintptr_t * const tt_base_va)
 {
 	unsigned int start_level;
 	uint64_t *ret_table;
 	struct xlat_ctx_tbls *ctx_tbls;
 	struct xlat_ctx_cfg *ctx_cfg;
-
+	uintptr_t table_base_va;
 
 	assert(ctx != NULL);
 	assert(ctx->cfg != NULL);
 	assert(ctx->tbls != NULL);
 	assert(out_level != NULL);
+	assert(tt_base_va != NULL);
 
 	ctx_tbls = ctx->tbls;
 	ctx_cfg = ctx->cfg;
 	start_level = ctx_cfg->base_level;
 	ret_table = ctx_tbls->tables;
+	table_base_va = ctx_cfg->base_va;
 
 	for (unsigned int level = start_level;
 	     level <= XLAT_TABLE_LEVEL_MAX;
@@ -326,11 +332,16 @@ static uint64_t *find_xlat_last_table(uintptr_t va_offset,
 			    || ((desc_type == PAGE_DESC) &&
 					(level == XLAT_TABLE_LEVEL_MAX))) {
 				*out_level = level;
+				*tt_base_va = table_base_va;
 				return ret_table;
 			}
 			return NULL;
 		}
 
+		/* Get the base address mapped by the next table */
+		table_base_va += (XLAT_BLOCK_SIZE(level) * idx);
+
+		/* Get the next table */
 		ret_table = (uint64_t *)(void *)(desc & TABLE_ADDR_MASK);
 	}
 
@@ -445,7 +456,7 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
 			   const struct xlat_ctx * const ctx,
 			   const uintptr_t va)
 {
-	uintptr_t page_va;
+	uintptr_t page_va, tt_base_va;
 	uint64_t *table;
 	unsigned int level;
 	struct xlat_ctx_cfg *ctx_cfg;
@@ -479,7 +490,7 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
 	page_va = va - ctx_cfg->base_va;
 	page_va &= ~PAGE_SIZE_MASK; /* Page address of the VA address passed. */
 
-	table = find_xlat_last_table(page_va, ctx, &level);
+	table = find_xlat_last_table(page_va, ctx, &level, &tt_base_va);
 
 	if (table == NULL) {
 		WARN("Address 0x%lx is not mapped.\n", va);
@@ -496,7 +507,7 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
 
 	retval->table = table;
 	retval->level = level;
-	retval->base_va = ctx_cfg->base_va;
+	retval->base_va = tt_base_va;
 
 	return 0;
 }
@@ -507,33 +518,38 @@ int xlat_get_table_from_va(struct xlat_tbl_info * const retval,
  *
  * If va is not mapped by the table pointed by entry, it returns NULL.
  *
- * For simplicity and as long as va belongs to the VA space owned by the
- * translation context, this function will not take into consideration holes
- * on the table pointed by entry either because the address is not mapped by
- * the caller or left as INVALID_DESC for future dynamic mapping.
+ * For simplicity and as long as 'va' belongs to the VA space owned by the
+ * translation table pointed by 'entry', this function will not take into
+ * consideration holes on such table.
  */
 uint64_t *xlat_get_tte_ptr(const struct xlat_tbl_info * const entry,
 			   const uintptr_t va)
 {
 	unsigned int index;
 	uint64_t *table;
-	uintptr_t va_offset;
 
 	assert(entry != NULL);
 
+	/*
+	 * Verify that va is higher or equal than the base VA
+	 * mapped by the current tte
+	 */
 	if (va < entry->base_va) {
 		return NULL;
 	}
 
 	/*
-	 * From the translation tables point of view, the VA is actually an
-	 * offset with regards to the base address of the VA space, so before
-	 * using a VA, we need to extract the base VA from it.
+	 * Verify that va is not higher than the maximum VA
+	 * mapped by the current tte
 	 */
+	if ((va & ~HIGH_REGION_MASK) > ((entry->base_va & ~HIGH_REGION_MASK) +
+		(XLAT_BLOCK_SIZE(entry->level) << XLAT_TABLE_ENTRIES_SHIFT))) {
+		return NULL;
+	}
 
-	va_offset = va - entry->base_va;
 	table = entry->table;
-	index = XLAT_TABLE_IDX(va_offset, entry->level);
+	index = (((va & ~PAGE_SIZE_MASK) - entry->base_va)
+					>> XLAT_ADDR_SHIFT(entry->level));
 
 	if (index >= entry->entries) {
 		return NULL;
