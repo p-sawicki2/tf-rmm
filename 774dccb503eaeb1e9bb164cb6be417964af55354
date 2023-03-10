@@ -363,6 +363,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee79fbf_9fdf0702",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T14:15:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ab78557f_f5a9c385",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "669e6715_c3084741",
@@ -484,6 +502,30 @@
       "writtenOn": "2023-03-10T13:08:35Z",
       "side": 1,
       "message": "this can be removed and report what is present.",
+      "range": {
+        "startLine": 78,
+        "startChar": 33,
+        "endLine": 78,
+        "endChar": 56
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03136c68_38e91c73",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T14:15:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b49d4135_25895e99",
       "range": {
         "startLine": 78,
         "startChar": 33,
