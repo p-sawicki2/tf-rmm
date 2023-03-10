@@ -155,6 +155,30 @@
       },
       "revId": "3580460f132f059e815036880c4e4f225f7b3881",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbe2ea32_f2bfd2b6",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T19:31:28Z",
+      "side": 1,
+      "message": "Do we still need to check for PMU_NUM_CTRS if PMU_EN is not set?",
+      "parentUuid": "aa6d6405_a0f3b5de",
+      "range": {
+        "startLine": 83,
+        "startChar": 57,
+        "endLine": 83,
+        "endChar": 58
+      },
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
