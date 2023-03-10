@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31a803bd_3cdd8724",
+        "filename": "lib/realm/src/include/fake_host/slot_buf_arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0129c32e_267fec05",
+      "range": {
+        "startLine": 12,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "839d708f137be07be35f239799cc67bdc245c535",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9d61d82_d703d0ef",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-07T10:23:39Z",
       "side": 1,
       "message": "this can be removed.",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 14,
+        "endChar": 47
+      },
+      "revId": "839d708f137be07be35f239799cc67bdc245c535",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07df959a_f69bc67b",
+        "filename": "lib/realm/src/include/fake_host/slot_buf_arch.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9d61d82_d703d0ef",
       "range": {
         "startLine": 14,
         "startChar": 29,
