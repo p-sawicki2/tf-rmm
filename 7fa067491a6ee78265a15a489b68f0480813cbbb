@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8152ca35_5eb1ac3a",
+        "filename": "lib/xlat/tests/st1_xlat_test_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd3f2b94_aed88905",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 11
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "080e610d_63246c12",
@@ -76,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5bd9c51_e3f90d9d",
+        "filename": "lib/xlat/tests/st1_xlat_test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "191ff5dd_7237af70",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3aeb9d71_ad8be661",
@@ -93,6 +135,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecbf5adf_04edf4ff",
+        "filename": "lib/xlat/tests/st1_xlat_test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aeb9d71_ad8be661",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98d9b086_46fa58d5",
@@ -106,6 +166,30 @@
       "writtenOn": "2023-03-10T15:09:35Z",
       "side": 1,
       "message": "seems this can be done commonly for host_test in platform init ?",
+      "range": {
+        "startLine": 216,
+        "startChar": 1,
+        "endLine": 219,
+        "endChar": 3
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6995a06_730aecd3",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Yes, I was actually considering that",
+      "parentUuid": "98d9b086_46fa58d5",
       "range": {
         "startLine": 216,
         "startChar": 1,
@@ -141,6 +225,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8882fde6_3ffe8207",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1629,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "When I was modifying this API for the this patchset, the changes did more things with the offset, not only adding it. After some refactoring of the code I ended up just needing to add the offset to the base_va and I left it here just to try to simplify the callers, doing as much as I could on this common helper.",
+      "parentUuid": "ce3b0fd3_919780f5",
+      "range": {
+        "startLine": 1629,
+        "startChar": 26,
+        "endLine": 1629,
+        "endChar": 32
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2a76b081_c6ebe31c",
         "filename": "lib/xlat/tests/stage1_xlat.cpp",
         "patchSetId": 9
@@ -152,6 +260,30 @@
       "writtenOn": "2023-03-10T15:09:35Z",
       "side": 1,
       "message": "the caller can pass the attr to use. Thus reducing the complexity of this helper.",
+      "range": {
+        "startLine": 1631,
+        "startChar": 12,
+        "endLine": 1631,
+        "endChar": 27
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66659614_21b8facd",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1631,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "By doing that, the callers would be more complicated, probably duplicating code on them. I think it was better to let the helpers take care of all the setup (or as much of it as possible) so to reduce the complexity of the callers.",
+      "parentUuid": "2a76b081_c6ebe31c",
       "range": {
         "startLine": 1631,
         "startChar": 12,
@@ -185,6 +317,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03cfb65b_e304cc12",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1765,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1971f0be_2f622b9a",
+      "range": {
+        "startLine": 1765,
+        "startChar": 54,
+        "endLine": 1765,
+        "endChar": 59
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08800da4_cbbaaf33",
@@ -198,6 +354,30 @@
       "writtenOn": "2023-03-10T15:09:35Z",
       "side": 1,
       "message": "remove. lower levels only support blocks.",
+      "range": {
+        "startLine": 1864,
+        "startChar": 49,
+        "endLine": 1864,
+        "endChar": 55
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17debf1a_1e83876d",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1864,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "The test iterates over each level supporting pages or blocks. The first level that supports that, is Level 1 (blocks), last one, level 3 (pages), hence my comment. I will see if I can rephrase it to make it clearer.",
+      "parentUuid": "08800da4_cbbaaf33",
       "range": {
         "startLine": 1864,
         "startChar": 49,
@@ -231,6 +411,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a20a0960_e4915832",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1869,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d929da0c_41007c44",
+      "range": {
+        "startLine": 1869,
+        "startChar": 4,
+        "endLine": 1869,
+        "endChar": 10
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8172d688_09617a17",
@@ -244,6 +448,30 @@
       "writtenOn": "2023-03-10T15:09:35Z",
       "side": 1,
       "message": "the base va is supposed to be base of VA rather than va of table_base.",
+      "range": {
+        "startLine": 1871,
+        "startChar": 26,
+        "endLine": 1875,
+        "endChar": 43
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef7ac121_94ab2f62",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1875,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-10T16:39:49Z",
+      "side": 1,
+      "message": "As discussed, this base VA should be the first address mapped to the table pointed by \u0027xlat_tbl_info.table\u0027, so when doing any operation on that table (e.g by calling xlat_get_tte_ptr()) we can compute the its boundaries.\n\nI can change the name of the `base_va` field in the `xlat_tbl_info` structure, if you think it is not appropriate, but the structure should contain information related to the table itself, not about the context, which is stored in the xlat_ctx structure.",
+      "parentUuid": "8172d688_09617a17",
       "range": {
         "startLine": 1871,
         "startChar": 26,
