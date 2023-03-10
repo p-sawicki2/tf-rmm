@@ -1,0 +1,312 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bba4e053_1a05ceec",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "not needed. rmm-lib-smc should be enough",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "099dd571_262e1450",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "remove this. and correct according to comment given below.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00276965_e4a5164c",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "this should be corrected to ICC_HPPIR1_EL1",
+      "range": {
+        "startLine": 421,
+        "startChar": 31,
+        "endLine": 421,
+        "endChar": 61
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "025d4720_b5c39034",
+        "filename": "lib/arch/include/pmu.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "this may need to be retained in sys_reg structure in rec as it is easier to initialize it there during REC_CREATE",
+      "range": {
+        "startLine": 26,
+        "startChar": 15,
+        "endLine": 26,
+        "endChar": 23
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffb8a5c2_44a8468f",
+        "filename": "lib/arch/include/pmu.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "nit: start with pmu_\n\npmu_save_state()",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 19
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49383861_e75321a7",
+        "filename": "lib/arch/include/pmu.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "pmu_restore_state()",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "245ff49e_b988f192",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "nit: prefer the ({ }) way for multiline macros.",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 5
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "163ae796_2acfdbff",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5c80a84_543516d3",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "prefer (num_cnts - 1) over this form. Same comment for below line at 111",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 15
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94b858d4_74c8fd76",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "This should be initialized as CLEAR_ALL but then after that, I dont this this should be cleared every time , else REC may end up losing PMU events on reschedule.\n\nSame comments for below as well.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "669e6715_c3084741",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "nit: REC",
+      "range": {
+        "startLine": 111,
+        "startChar": 59,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bcbca56_b433d259",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "To avoid growing this function, suggest moving this code to save_ns_state().",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae712b60_665e3b22",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "move this code to restore_realm_state()",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2886c75a_cff46b8a",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "when this is made part of sysreg struct in rec, restore of this reg from rec will take care of this.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96c8e9bc_a147f244",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "should move to restore_realm_state()",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "515d5a75_87f2a0f0",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T05:54:27Z",
+      "side": 1,
+      "message": "this is not needed for EL2 as MDCR_EL2.HCCD, HPMD is sufficient. This write here may end up corrupting state for NS world. \n\nAlso move all this code to save_realm_state()/ restore_ns_state() correspondingly.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
