@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "39110b16_686cacd1",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T13:08:35Z",
+      "side": 1,
+      "message": "Yes, I meant move this line to line 421 to keep GIC regs together.",
+      "parentUuid": "42622915_7265b6a2",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00276965_e4a5164c",
         "filename": "lib/arch/include/arch_helpers.h",
         "patchSetId": 4
@@ -263,6 +281,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ab78557f_f5a9c385",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T13:08:35Z",
+      "side": 1,
+      "message": "ignore save/restore for clear regsiters.",
+      "parentUuid": "94b858d4_74c8fd76",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "669e6715_c3084741",
         "filename": "lib/realm/include/rec.h",
         "patchSetId": 4
@@ -365,6 +401,46 @@
       "writtenOn": "2023-03-10T05:54:27Z",
       "side": 1,
       "message": "this is not needed for EL2 as MDCR_EL2.HCCD, HPMD is sufficient. This write here may end up corrupting state for NS world. \n\nAlso move all this code to save_realm_state()/ restore_ns_state() correspondingly.",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b49d4135_25895e99",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T13:08:35Z",
+      "side": 1,
+      "message": "this can be removed and report what is present.",
+      "range": {
+        "startLine": 78,
+        "startChar": 33,
+        "endLine": 78,
+        "endChar": 56
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de1624f7_1ef253fe",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T13:08:35Z",
+      "side": 1,
+      "message": "We need check whether this is same value as reported by RMI_FEATURES",
       "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
