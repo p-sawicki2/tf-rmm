@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd3f2b94_aed88905",
+        "filename": "lib/xlat/tests/st1_xlat_test_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "use XLAT_TEST_ as prefix. same comment for below as well.  xlat_test_defs.h",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 11
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "080e610d_63246c12",
+        "filename": "lib/xlat/tests/st1_xlat_test_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "I am not so sure about redefining all the macros which are architectural.  I can see the we need to replicate implementation but not defined as well. I am worried that if we set this as a precedence, technically have to redefine all arch.h defines as well.",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "191ff5dd_7237af70",
+        "filename": "lib/xlat/tests/st1_xlat_test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "xlat_test_ is enough as a prefix I think.",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3aeb9d71_ad8be661",
+        "filename": "lib/xlat/tests/st1_xlat_test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "XLAT_TEST_HELPERS.H",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98d9b086_46fa58d5",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "seems this can be done commonly for host_test in platform init ?",
+      "range": {
+        "startLine": 216,
+        "startChar": 1,
+        "endLine": 219,
+        "endChar": 3
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce3b0fd3_919780f5",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1629,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "I dont get this...why cant the caller add offset to start_va and avoid this arg here?",
+      "range": {
+        "startLine": 1629,
+        "startChar": 26,
+        "endLine": 1629,
+        "endChar": 32
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a76b081_c6ebe31c",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1631,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "the caller can pass the attr to use. Thus reducing the complexity of this helper.",
+      "range": {
+        "startLine": 1631,
+        "startChar": 12,
+        "endLine": 1631,
+        "endChar": 27
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1971f0be_2f622b9a",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1765,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "nit: \"whose\"",
+      "range": {
+        "startLine": 1765,
+        "startChar": 54,
+        "endLine": 1765,
+        "endChar": 59
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08800da4_cbbaaf33",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1864,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "remove. lower levels only support blocks.",
+      "range": {
+        "startLine": 1864,
+        "startChar": 49,
+        "endLine": 1864,
+        "endChar": 55
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d929da0c_41007c44",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1869,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "whose",
+      "range": {
+        "startLine": 1869,
+        "startChar": 4,
+        "endLine": 1869,
+        "endChar": 10
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8172d688_09617a17",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1875,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T15:09:35Z",
+      "side": 1,
+      "message": "the base va is supposed to be base of VA rather than va of table_base.",
+      "range": {
+        "startLine": 1871,
+        "startChar": 26,
+        "endLine": 1875,
+        "endChar": 43
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
