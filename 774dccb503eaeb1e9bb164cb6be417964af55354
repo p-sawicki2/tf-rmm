@@ -330,6 +330,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53bbe1ec_10dd495a",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T15:12:49Z",
+      "side": 1,
+      "message": "({}) gives error with aarch64-none-elf-gcc (fsf-trunk.3293) 13.0.1:\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230130/tf-rmm/lib/arch/src/pmu.c:71:17: note: in expansion of macro \u0027READ_PMEV_EL0\u0027\n   71 |                 READ_PMEV_EL0(5);\n      |                 ^~~~~~~~~~~~~\n/mnt/d/Work/Trusted_Firmware_Org_RMM_20230130/tf-rmm/lib/arch/src/pmu.c:14:9: error: expected expression before \u0027case\u0027\n\nUsed {}",
+      "parentUuid": "eb97c189_71e1f63c",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 5
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "163ae796_2acfdbff",
