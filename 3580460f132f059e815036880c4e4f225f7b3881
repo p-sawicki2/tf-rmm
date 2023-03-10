@@ -77,6 +77,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc18a894_3ac957fd",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T19:25:04Z",
+      "side": 1,
+      "message": "restore_realm_state() is called on line #303, did you mean restore_ns_state()?\nrestore_ns_state(ns_state) is called after\nns_state-\u003esve \u003d NULL;\nns_state-\u003efpu \u003d NULL;\nns_state-\u003epmu \u003d NULL;\n\nWe can move ns_state-\u003epmu \u003d NULL; after restore_ns_state(ns_state),\nbut in that case we\u0027ll have use\nif (rec-\u003erealm_info.pmu_enabled)\ntwice: for restore_realm_state() \u0026 restore_ns_state().",
+      "parentUuid": "75ac92d8_37ae7e9c",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06bc1f32_304a3a66",
         "filename": "runtime/rmi/feature.c",
         "patchSetId": 5
