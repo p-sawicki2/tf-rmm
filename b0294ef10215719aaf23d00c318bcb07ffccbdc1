@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c48d445_ca63a693",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-10T14:33:28Z",
+      "side": 1,
+      "message": "not sure what the issue is. base_va was always meant to mean base of xlat context. Need to understand the problem trying to be solved.",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 53
+      },
+      "revId": "b0294ef10215719aaf23d00c318bcb07ffccbdc1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
