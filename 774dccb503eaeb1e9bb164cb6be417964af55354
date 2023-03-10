@@ -89,6 +89,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2994f747_50f3f5aa",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T15:01:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "39110b16_686cacd1",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00276965_e4a5164c",
@@ -288,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb97c189_71e1f63c",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T15:01:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "245ff49e_b988f192",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 5
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "163ae796_2acfdbff",
@@ -305,6 +347,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c4dd9af_d834dfe0",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T15:01:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "163ae796_2acfdbff",
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5c80a84_543516d3",
@@ -318,6 +378,30 @@
       "writtenOn": "2023-03-10T05:54:27Z",
       "side": 1,
       "message": "prefer (num_cnts - 1) over this form. Same comment for below line at 111",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 15
+      },
+      "revId": "774dccb503eaeb1e9bb164cb6be417964af55354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15701605_8620450c",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-10T15:01:24Z",
+      "side": 1,
+      "message": "if (num_cnts !\u003d 0U) {\n\t\tswitch (--num_cnts) {",
+      "parentUuid": "e5c80a84_543516d3",
       "range": {
         "startLine": 50,
         "startChar": 5,
