@@ -111,6 +111,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf85fcf5_17e16cbe",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T13:55:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "38035839_14922ea5",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3f5371a_fc0c97ba",
@@ -124,6 +142,24 @@
       "writtenOn": "2023-03-13T11:37:31Z",
       "side": 1,
       "message": "add an assert that PMU is present in hardware to catch invalid FVP args. This can be verifying that PMUv3p7 or greater is present.",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "398977fb_68569fd4",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T13:55:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b3f5371a_fc0c97ba",
       "revId": "3580460f132f059e815036880c4e4f225f7b3881",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
