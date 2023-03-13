@@ -16,6 +16,23 @@
       "message": "Static checks for host build are failing with\n\nBANNED API: in line 86 of file plat/host/common/src/host_utils.c\n\u003e\u003e\u003e \t\t(void)strncpy(\u0026(sysregs[installed_cb_idx].name[0]),\n, which is expected.\nAll other tests passed.",
       "revId": "b79ec900f8b7537015a23bdb3890c41fa870b579",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4e45a5a_8ec17c59",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T18:27:01Z",
+      "side": 1,
+      "message": "Expected failure:\n****** Banned API check on patch(es) ******\n\nResult : FAILURE\n\nChecking files modified between patches origin/main and HEAD...\n\nBANNED API: in line 86 of file plat/host/common/src/host_utils.c\n\u003e\u003e\u003e \t\t(void)strncpy(\u0026(sysregs[installed_cb_idx].name[0]),\n            ^~~~~~~~\n1 errors found",
+      "revId": "b79ec900f8b7537015a23bdb3890c41fa870b579",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
