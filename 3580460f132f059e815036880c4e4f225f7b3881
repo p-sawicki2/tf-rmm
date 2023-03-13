@@ -95,6 +95,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "38035839_14922ea5",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T10:26:18Z",
+      "side": 1,
+      "message": "right, yes, I meant restore_ns_state()\n\nyes, the double check in restore_realm_state and restore_ns_state is fine",
+      "parentUuid": "cc18a894_3ac957fd",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "83504fe9_f38178f0",
         "filename": "runtime/rmi/feature.c",
         "patchSetId": 5
@@ -106,6 +124,24 @@
       "writtenOn": "2023-03-10T19:29:40Z",
       "side": 1,
       "message": "This should be removed.",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ac0d1b4_7823b685",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T10:26:18Z",
+      "side": 1,
+      "message": "This is still needed if RMM does not want to enable PMU for realms for some reason.",
+      "parentUuid": "83504fe9_f38178f0",
       "revId": "3580460f132f059e815036880c4e4f225f7b3881",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -171,6 +207,30 @@
       "side": 1,
       "message": "Do we still need to check for PMU_NUM_CTRS if PMU_EN is not set?",
       "parentUuid": "aa6d6405_a0f3b5de",
+      "range": {
+        "startLine": 83,
+        "startChar": 57,
+        "endLine": 83,
+        "endChar": 58
+      },
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2040cb7d_6cea54b6",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T10:26:18Z",
+      "side": 1,
+      "message": "Hmm, good point. logically if PMU_EN is not set, then this check does not matter. We can ignore this field when PMU_EN is not set.",
+      "parentUuid": "fbe2ea32_f2bfd2b6",
       "range": {
         "startLine": 83,
         "startChar": 57,
