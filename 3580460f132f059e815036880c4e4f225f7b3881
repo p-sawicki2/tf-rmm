@@ -281,6 +281,30 @@
       },
       "revId": "3580460f132f059e815036880c4e4f225f7b3881",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2ed4d81_298c439c",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T10:56:37Z",
+      "side": 1,
+      "message": "It seems that Linux related tests are failing because PMU_NUM_CTRS is not set properly by fkvm which doesn\u0027t support of PMU.",
+      "parentUuid": "58675dda_d206042b",
+      "range": {
+        "startLine": 83,
+        "startChar": 57,
+        "endLine": 83,
+        "endChar": 58
+      },
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
