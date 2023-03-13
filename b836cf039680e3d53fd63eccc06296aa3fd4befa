@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "351f9a53_450dbce0",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T11:37:31Z",
+      "side": 1,
+      "message": "remove this comment",
+      "range": {
+        "startLine": 305,
+        "startChar": 1,
+        "endLine": 305,
+        "endChar": 59
+      },
+      "revId": "b836cf039680e3d53fd63eccc06296aa3fd4befa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df427b51_829d104c",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T11:37:31Z",
+      "side": 1,
+      "message": "this can also happen in save_ns_state.",
+      "range": {
+        "startLine": 306,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 20
+      },
+      "revId": "b836cf039680e3d53fd63eccc06296aa3fd4befa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8408f629_344acccc",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T11:37:31Z",
+      "side": 1,
+      "message": "move to restore_realm_state() where other sysregs are being written. I think even the configure_realm_stage2(rec) should move to restore_realm_state().",
+      "revId": "b836cf039680e3d53fd63eccc06296aa3fd4befa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34258465_55d1df07",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T11:37:31Z",
+      "side": 1,
+      "message": "Add the C and P bit as part of init.",
+      "revId": "b836cf039680e3d53fd63eccc06296aa3fd4befa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
