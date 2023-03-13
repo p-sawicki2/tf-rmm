@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e955683_d4e07021",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:53:21Z",
+      "side": 1,
+      "message": "minor comments. Otherwise looks fine.",
+      "revId": "5cb02544f11033fb1ea55cb8bc9fbfa6973ba3ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f421cb18_de527d01",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:53:21Z",
+      "side": 1,
+      "message": "Ah sorry, better to keep this in caller side to keep symmetry with line 388 https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19614/6..7/runtime/core/run.c#388\n\nin fact if this is assigned before this call, you only need *rec as input. See below related comment.",
+      "revId": "5cb02544f11033fb1ea55cb8bc9fbfa6973ba3ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "131b330c_7807aeb3",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:53:21Z",
+      "side": 1,
+      "message": "Possibly you need only *rec as arg to this function as rec-\u003ens is having right info. Anyway, no  big deal. Not sure if the compiler will generate less optimal code if using *rec throughout.",
+      "revId": "5cb02544f11033fb1ea55cb8bc9fbfa6973ba3ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
