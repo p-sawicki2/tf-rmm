@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f68e242d_2e09bb6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T16:04:39Z",
+      "side": 1,
+      "message": "Static checks for host build are failing with\n\nBANNED API: in line 86 of file plat/host/common/src/host_utils.c\n\u003e\u003e\u003e \t\t(void)strncpy(\u0026(sysregs[installed_cb_idx].name[0]),\n, which is expected.\nAll other tests passed.",
+      "revId": "b79ec900f8b7537015a23bdb3890c41fa870b579",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
