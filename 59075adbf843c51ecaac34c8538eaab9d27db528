@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f8f25bf_c9688536",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "Some rewords.",
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bcc7e89_acf5ed10",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "\"...or the address is not mapped and not a transient mapping, return NULL.\"",
+      "range": {
+        "startLine": 278,
+        "startChar": 13,
+        "endLine": 278,
+        "endChar": 24
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "caf02bb8_75fd71e7",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "this is not needed I think, the lower check is sufficient and not having this here is better for efficiency.",
+      "range": {
+        "startLine": 317,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "383464ba_a5cb4ca3",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "\"table\"",
+      "range": {
+        "startLine": 320,
+        "startChar": 21,
+        "endLine": 320,
+        "endChar": 25
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a76c5f8_cbe04a50",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "\"Function to unmap a memory page for a given VA. The TTE should have been marked transient for this API to work.\"",
+      "range": {
+        "startLine": 350,
+        "startChar": 3,
+        "endLine": 351,
+        "endChar": 21
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ea1d6fd_8b2895a6",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "/* This function must only be called on invalid transient descriptors */",
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e84916c_f1a7d40b",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T14:11:01Z",
+      "side": 1,
+      "message": "these can be asserts as this is enforcing sequence and is expected to be a integration issue.",
+      "range": {
+        "startLine": 457,
+        "startChar": 0,
+        "endLine": 464,
+        "endChar": 2
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
