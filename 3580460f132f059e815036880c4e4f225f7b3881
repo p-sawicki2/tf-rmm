@@ -148,6 +148,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d7c2aef_bace38b5",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T10:47:52Z",
+      "side": 1,
+      "message": "We always report that PMU is supported on line #34:\n/* Set support for PMUv3 */\n\tfeat_reg0 |\u003d INPLACE(RMM_FEATURE_REGISTER_0_PMU_EN,\n\t\t\t\tRMI_SUPPORTED);\n, and PMU support is not RMM build option, so there is no way for RMM not want to enable PMU for\nRealms, so this will always be false:\n(EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, feat_reg0) \u003d\u003d\n\t\t\tRMI_NOT_SUPPORTED))",
+      "parentUuid": "2ac0d1b4_7823b685",
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06bc1f32_304a3a66",
         "filename": "runtime/rmi/feature.c",
         "patchSetId": 5
@@ -231,6 +249,30 @@
       "side": 1,
       "message": "Hmm, good point. logically if PMU_EN is not set, then this check does not matter. We can ignore this field when PMU_EN is not set.",
       "parentUuid": "fbe2ea32_f2bfd2b6",
+      "range": {
+        "startLine": 83,
+        "startChar": 57,
+        "endLine": 83,
+        "endChar": 58
+      },
+      "revId": "3580460f132f059e815036880c4e4f225f7b3881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58675dda_d206042b",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-13T10:47:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2040cb7d_6cea54b6",
       "range": {
         "startLine": 83,
         "startChar": 57,
