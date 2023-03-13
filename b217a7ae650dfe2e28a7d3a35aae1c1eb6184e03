@@ -279,6 +279,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21ae1ebf_5ba01e2a",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-13T15:42:08Z",
+      "side": 1,
+      "message": "We need this check to validate that the VA is not higher than the maximum mapped by the table in \u0027entry\u0027.",
+      "parentUuid": "28300e79_b83e2861",
+      "range": {
+        "startLine": 545,
+        "startChar": 0,
+        "endLine": 548,
+        "endChar": 2
+      },
+      "revId": "b217a7ae650dfe2e28a7d3a35aae1c1eb6184e03",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7d546f6f_1bfd8ccf",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 2
@@ -302,6 +326,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "039874d2_df9b0519",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-13T15:42:08Z",
+      "side": 1,
+      "message": "Yes, I was actually considering trying with that macro. I didn\u0027t like this much.",
+      "parentUuid": "7d546f6f_1bfd8ccf",
+      "range": {
+        "startLine": 551,
+        "startChar": 9,
+        "endLine": 552,
+        "endChar": 39
+      },
+      "revId": "b217a7ae650dfe2e28a7d3a35aae1c1eb6184e03",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "88e0e42f_d6d48f10",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 2
@@ -313,6 +361,30 @@
       "writtenOn": "2023-03-13T14:31:16Z",
       "side": 1,
       "message": "mandate Va validation is done by caller and this can be made an assertion.",
+      "range": {
+        "startLine": 554,
+        "startChar": 0,
+        "endLine": 556,
+        "endChar": 2
+      },
+      "revId": "b217a7ae650dfe2e28a7d3a35aae1c1eb6184e03",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84eebe7c_6b8e0d22",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-13T15:42:08Z",
+      "side": 1,
+      "message": "This is to enforce that the VA is within the expected range. If we enforce that on the caller, nothing prevents a malicious caller to use an invalid address and obtain a valid tte for another table. That is potentially dangerous for map/unmap APIs, which rely on this one.",
+      "parentUuid": "88e0e42f_d6d48f10",
       "range": {
         "startLine": 554,
         "startChar": 0,
