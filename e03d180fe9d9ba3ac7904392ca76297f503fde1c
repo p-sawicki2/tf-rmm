@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b9b15d5_186cde03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T22:07:46Z",
+      "side": 1,
+      "message": "looks good. one comment.",
+      "revId": "e03d180fe9d9ba3ac7904392ca76297f503fde1c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44874387_f6052359",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-13T22:07:46Z",
+      "side": 1,
+      "message": "should we allocate array of struct pmu_state types rather than uint8_t ? This will ensure that the struct elements are cache_line aligned as well which is an attribute of the struct declaration.",
+      "range": {
+        "startLine": 24,
+        "startChar": 7,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "e03d180fe9d9ba3ac7904392ca76297f503fde1c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
