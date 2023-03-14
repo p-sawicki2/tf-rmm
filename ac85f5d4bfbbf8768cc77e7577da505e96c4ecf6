@@ -914,6 +914,29 @@
       },
       "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8d85f27_786f1993",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 2392,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T13:50:17Z",
+      "side": 1,
+      "message": "get_rand_mmap_array() ?",
+      "range": {
+        "startLine": 2379,
+        "startChar": 2,
+        "endLine": 2392,
+        "endChar": 0
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
