@@ -230,23 +230,34 @@ int xlat_get_llt_from_va(struct xlat_llt_info * const retval,
 			 const uintptr_t va);
 
 /*
- * Function to unmap a physical memory page from the descriptor entry and
- * VA given.
+ * Function to unmap a physical memory page or block from the descriptor
+ * entry and VA given.
  * This function implements the "Break" part of the Break-Before-Make semantics
  * mandated by the Armv8.x architecture in order to update the page descriptors.
  *
- * This function returns 0 on success or a negative error code otherwise.
+ * This function returns 0 on success or an error code otherwise.
+ *
+ * For simplicity, this function will not take into consideration holes on the
+ * table pointed by TTE, as long as va belongs to the VA space mapped by the
+ * table.
  */
 int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
- * Function to map a physical memory page from the descriptor table entry
- * and VA given. This function implements the "Make" part of the
- * Break-Before-Make semantics mandated by the armv8.x architecture in order
- * to update the page descriptors.
+ * Function to unmap a physical memory page or block from the descriptor
+ * entry and VA given.
+ * This function implements the "Break" part of the Break-Before-Make semantics
+ * mandated by the Armv8.x architecture in order to update the page descriptors.
  *
- * This function returns 0 on success or a negative error code otherwise.
+ * This function returns 0 on success or an error code otherwise.
+ *
+ * For simplicity, this function
+ *	- will not take into consideration holes on the table pointed by the
+ *	  TTE as long as va belongs to the VA space mapped by the table.
+ *	- will not check for overlaps of the PA with other mmap regions.
+ *	- will mask out the LSBs of the PA so the page/block corresponding to
+ *	  the PA will actually be mapped.
  */
 int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,

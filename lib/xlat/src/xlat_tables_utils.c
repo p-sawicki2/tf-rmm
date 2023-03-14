@@ -364,8 +364,8 @@ static uint64_t *find_xlat_last_table(uintptr_t va_offset,
  * This function returns 0 on success or an error code otherwise.
  *
  * For simplicity, this function will not take into consideration holes on the
- * table pointed by TTE, as long as va belongs to the VA space owned by the
- * context.
+ * table pointed by TTE, as long as va belongs to the VA space mapped by the
+ * table.
  */
 int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va)
@@ -399,16 +399,19 @@ int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 }
 
 /*
- * Function to map a physical memory page or block to the transient TTE
- * and the given VA. This function implements the "Make" part of the
- * Break-Before-Make semantics needed by the armv8.x architecture in order
- * to update the page descriptors.
+ * Function to unmap a physical memory page or block from the descriptor
+ * entry and VA given.
+ * This function implements the "Break" part of the Break-Before-Make semantics
+ * mandated by the Armv8.x architecture in order to update the page descriptors.
  *
- * This function eturns 0 on success or an error code otherwise.
+ * This function returns 0 on success or an error code otherwise.
  *
- * For simplicity, this function will not take into consideration holes on the
- * table pointed by the TTE, as long as va belongs to the VA space owned by the
- * context.
+ * For simplicity, this function
+ *	- will not take into consideration holes on the table pointed by the
+ *	  TTE as long as va belongs to the VA space mapped by the table.
+ *	- will not check for overlaps of the PA with other mmap regions.
+ *	- will mask out the LSBs of the PA so the page/block corresponding to
+ *	  the PA will actually be mapped.
  */
 int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
@@ -436,7 +439,8 @@ int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 	}
 
 	/* Generate the new descriptor */
-	tte = (xlat_desc(attrs, pa, table->level) | TRANSIENT_DESC);
+	tte = xlat_desc(attrs, (pa & XLAT_ADDR_MASK(table->level)),
+			table->level) | TRANSIENT_DESC;
 
 	xlat_write_tte(tte_ptr, tte);
 
