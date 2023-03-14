@@ -1,0 +1,693 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0cfcd50_a1739306",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "the rmm_start will ensure the test is in a known state ;). Suggest:\n\n/* reset the sys reg state so that we can set up custom values for the tests */",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 35
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80568d20_cf501b10",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "nit: \"for\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 38
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e8e50b2_67a106c1",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "nit: \"for\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 41,
+        "endLine": 27,
+        "endChar": 44
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e73a52d8_67575211",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "nit: \"shuffle\"",
+      "range": {
+        "startLine": 41,
+        "startChar": 19,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3934d89a_27c1ba98",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "do we need to add a random hole as well before the next region to mix it up a bit ?",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c9c86aa_f02dfef5",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "suggest: \"unaligned_va_size\"",
+      "range": {
+        "startLine": 585,
+        "startChar": 2,
+        "endLine": 585,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c260699c_c96d4f99",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "I dont understand this, isnt thre a chance the mmap region will be allocated till this region ?\n\nPerhaps this should be reduced and the unaligned va can be an offset from this ?",
+      "range": {
+        "startLine": 598,
+        "startChar": 5,
+        "endLine": 598,
+        "endChar": 27
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcf1dfeb_0c6149d3",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "I think tests 6,7,8 can be combined into a single test whcih tests various va_size and rest of args remain same. This will avoid LOC to review and maintain. The tests are trivial enough to understand as well so there should be no issue in combining them.",
+      "range": {
+        "startLine": 662,
+        "startChar": 0,
+        "endLine": 662,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e2679bd_bb1862db",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"lower\"",
+      "range": {
+        "startLine": 665,
+        "startChar": 4,
+        "endLine": 665,
+        "endChar": 12
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90f130fe_82f43101",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "suggest: \" Each entry has size of atleast 2 pages...\"",
+      "range": {
+        "startLine": 762,
+        "startChar": 36,
+        "endLine": 762,
+        "endChar": 40
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c70a2bde_1f82b038",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 813,
+        "startChar": 5,
+        "endLine": 813,
+        "endChar": 29
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdf85552_1d6783e2",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "...so PA of the regions..",
+      "range": {
+        "startLine": 813,
+        "startChar": 49,
+        "endLine": 813,
+        "endChar": 59
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51303a65_727864b4",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "We need to ensure that pa_base + size is also tested by xlat table lib to check that it is within the limit.\n\nsame comment for va_base + size limit checks.",
+      "range": {
+        "startLine": 870,
+        "startChar": 39,
+        "endLine": 870,
+        "endChar": 47
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "399a302b_c0881132",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "tests 11,12,13 can be combined",
+      "range": {
+        "startLine": 893,
+        "startChar": 4,
+        "endLine": 893,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "021666b9_ce399ffe",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "test 10 an 14 can be combined.",
+      "range": {
+        "startLine": 943,
+        "startChar": 4,
+        "endLine": 943,
+        "endChar": 17
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3561aaeb_9b861506",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "we need to review return codes returned by the lib. It seems all these errors are invalid parameters and hence error should be -EINVAL.",
+      "range": {
+        "startLine": 1111,
+        "startChar": 24,
+        "endLine": 1111,
+        "endChar": 29
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4e768f7_d6b40979",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "The holes in the mmap region will be very useful for this test ;).",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2253c8d6_04b0b601",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "this and previous test can be combined.",
+      "range": {
+        "startLine": 1224,
+        "startChar": 4,
+        "endLine": 1224,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ffd64b4_cb31ff23",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1398,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "4,5,6,7 can be combined.",
+      "range": {
+        "startLine": 1398,
+        "startChar": 4,
+        "endLine": 1398,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d36e07a9_a3a1942f",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "tbl_idx",
+      "range": {
+        "startLine": 1718,
+        "startChar": 14,
+        "endLine": 1718,
+        "endChar": 22
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ddc01fd_1e73512a",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1725,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"base\"",
+      "range": {
+        "startLine": 1725,
+        "startChar": 22,
+        "endLine": 1725,
+        "endChar": 36
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31195488_7476fd54",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1726,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"the\"",
+      "range": {
+        "startLine": 1726,
+        "startChar": 32,
+        "endLine": 1726,
+        "endChar": 36
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfdcdfb1_870f26be",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1728,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"lowest level supporting blocks\" ?",
+      "range": {
+        "startLine": 1727,
+        "startChar": 43,
+        "endLine": 1728,
+        "endChar": 16
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8421e5af_063ba7a3",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1730,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "..triplet for a base table",
+      "range": {
+        "startLine": 1730,
+        "startChar": 51,
+        "endLine": 1730,
+        "endChar": 58
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adff9e8e_9718598c",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1733,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"..the base table..\"\n\nsimilar comments below.",
+      "range": {
+        "startLine": 1733,
+        "startChar": 46,
+        "endLine": 1733,
+        "endChar": 47
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e438917f_07f46fd6",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1735,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "\"index\"",
+      "range": {
+        "startLine": 1735,
+        "startChar": 39,
+        "endLine": 1735,
+        "endChar": 43
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a022066d_fdd24c97",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "remove this.",
+      "range": {
+        "startLine": 1745,
+        "startChar": 27,
+        "endLine": 1745,
+        "endChar": 33
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "625c4c39_37f93544",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "remvove.",
+      "range": {
+        "startLine": 1750,
+        "startChar": 14,
+        "endLine": 1750,
+        "endChar": 21
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "644e9de4_c3fc6d0f",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1755,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "call this base_lvl",
+      "range": {
+        "startLine": 1755,
+        "startChar": 8,
+        "endLine": 1755,
+        "endChar": 18
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b9a4afb_0bf9f003",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1827,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "refactor comment similar to comments given above.",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46594d28_e8e51efe",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1927,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T01:26:47Z",
+      "side": 1,
+      "message": "I didn\u0027t understand how this will work for the last level table returned by API.",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
