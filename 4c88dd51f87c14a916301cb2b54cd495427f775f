@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bbd47ba_5ac3bd8f",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "\"..3 mmap regions at level 3.\"",
+      "range": {
+        "startLine": 2357,
+        "startChar": 4,
+        "endLine": 2357,
+        "endChar": 22
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "844a779e_b59bab06",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2360,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "mmap regions:",
+      "range": {
+        "startLine": 2360,
+        "startChar": 36,
+        "endLine": 2360,
+        "endChar": 59
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a202b0_a3bbb94e",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2362,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "\"- A region corresponding to the first entry of the last level table. \n- A region corresponding to the last entry of the last level table. \n- A random region corresponding to an intermediate entry of the last level table. \"",
+      "range": {
+        "startLine": 2362,
+        "startChar": 7,
+        "endLine": 2362,
+        "endChar": 31
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a13b8ca2_58487ba1",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2414,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "\"Iterate over test VAs of all 3 mmap regions to test xlat_get_tte_ptr().\"",
+      "range": {
+        "startLine": 2414,
+        "startChar": 17,
+        "endLine": 2414,
+        "endChar": 37
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45d59077_621813f5",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2422,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "remove as this is already covered in test description.",
+      "range": {
+        "startLine": 2415,
+        "startChar": 25,
+        "endLine": 2422,
+        "endChar": 25
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "452ecf10_775c018e",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "3 mmap regions mapped at Level 3.",
+      "range": {
+        "startLine": 2478,
+        "startChar": 4,
+        "endLine": 2478,
+        "endChar": 10
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4970e48f_a5c2dbbc",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "\"Then try to get a tte using xlat_get_tte() with a VA outside the range supported by the table.\"",
+      "range": {
+        "startLine": 2478,
+        "startChar": 24,
+        "endLine": 2481,
+        "endChar": 35
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "155edc8f_f7ecc74d",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2498,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T17:11:55Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 2498,
+        "startChar": 16,
+        "endLine": 2498,
+        "endChar": 61
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
