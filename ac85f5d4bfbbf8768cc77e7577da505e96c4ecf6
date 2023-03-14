@@ -543,6 +543,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f51c35f7_f45247c3",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1730,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "Actually region is not part of iteration, so suggest:\n\n\"For each possible start_lvl \u0026 end_lvl doublet...\"",
+      "parentUuid": "8421e5af_063ba7a3",
+      "range": {
+        "startLine": 1730,
+        "startChar": 51,
+        "endLine": 1730,
+        "endChar": 58
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "adff9e8e_9718598c",
         "filename": "lib/xlat/tests/xlat_tests.cpp",
         "patchSetId": 10
@@ -675,6 +699,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fa9301c_d887ee58",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1844,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "\"\nFor each possible start_lvl \u0026 end_lvl doublet, create 3 mappings that will correspond to a tte in the Last level Table. Then verify that the call to xlat_get_table_from_va() is able\nto return the right xlat_tbl_info structure with the expected values.\"\n\n\nthe detail of llt having a va such that it will have a different VA to parent table can be covered in the implementation detail.",
+      "range": {
+        "startLine": 1832,
+        "startChar": 4,
+        "endLine": 1844,
+        "endChar": 11
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b58da04_4e65c1dd",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "\"Create an offset (multiple of block size of parent table) such that \u0027end_lvl\u0027 table will be mapped to an index \u003e 0 on its parent table. This ensures that the VA mapped by \u0027end_lvl\u0027 table is different from the \u0027start_va` mapped by its predecessors.\"",
+      "range": {
+        "startLine": 1877,
+        "startChar": 7,
+        "endLine": 1880,
+        "endChar": 50
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a406fc0c_ddc21587",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1892,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "We are using init_mmap[0] as well, so this is confusing. Suggest\n\n\"Use gen_mmap_array_by_level() to generate the mmap array. The first region will correspond to the first region that can be mapped by the Last level table. The second region will be a random region mapped by a single entry in the last level table. These will be used to validate the API.\"",
+      "range": {
+        "startLine": 1889,
+        "startChar": 6,
+        "endLine": 1892,
+        "endChar": 22
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46594d28_e8e51efe",
         "filename": "lib/xlat/tests/xlat_tests.cpp",
         "patchSetId": 10
@@ -686,6 +779,139 @@
       "writtenOn": "2023-03-14T01:26:47Z",
       "side": 1,
       "message": "I didn\u0027t understand how this will work for the last level table returned by API.",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57951e3b_4be85a4e",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1927,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "Suggest: \n\n\"Get a random test address. This needs to be a valid address within the table. Use the 2nd mmap region for this last level table to get a VA to test the API.\"",
+      "parentUuid": "46594d28_e8e51efe",
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e39f365_d9e62720",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1937,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "This will still correspond to a VA for the first entry in the LLT. \n\ntest_va \u003d init_mmap[1U].base_va;\ntest_va +\u003d test_helpers_get_rand_in_range(0, init_mmap[1U].size - 1);\n\nThis will ensure that a va between the first and random end address will be used.",
+      "range": {
+        "startLine": 1936,
+        "startChar": 4,
+        "endLine": 1937,
+        "endChar": 31
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95335e63_5e8e7e48",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 2021,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "\"4K region\".",
+      "range": {
+        "startLine": 2021,
+        "startChar": 29,
+        "endLine": 2021,
+        "endChar": 33
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e9d9d37_c3090d50",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 2023,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "\"Ensure that the region will not be mapped at the first index of table so that we can test for VAs below the valid region\".",
+      "range": {
+        "startLine": 2021,
+        "startChar": 35,
+        "endLine": 2023,
+        "endChar": 46
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "109d6e6c_c67fab30",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 2027,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "ah this is a problem since you dont know whether this will be 2nd entry or last entry in which case the test logic will not work.\n\n\nJust define a region manually 2 pages ahead of start va and of size 4K.",
+      "range": {
+        "startLine": 2026,
+        "startChar": 4,
+        "endLine": 2027,
+        "endChar": 28
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb58ce3a_785f0165",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 2043,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-14T12:11:29Z",
+      "side": 1,
+      "message": "See comment above. This may have corner cases which will fail",
+      "range": {
+        "startLine": 2040,
+        "startChar": 3,
+        "endLine": 2043,
+        "endChar": 40
+      },
       "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
