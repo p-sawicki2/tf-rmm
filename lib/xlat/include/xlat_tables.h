@@ -230,23 +230,39 @@ int xlat_get_llt_from_va(struct xlat_llt_info * const retval,
 			 const uintptr_t va);
 
 /*
- * Function to unmap a physical memory page from the descriptor entry and
- * VA given.
- * This function implements the "Break" part of the Break-Before-Make semantics
- * mandated by the Armv8.x architecture in order to update the page descriptors.
+ * Function to unmap a memory page for a given VA. The TTE should have been
+ * marked transient for this API to work. If the TTE is transient-invalid
+ * the operation will not have any effect.
  *
- * This function returns 0 on success or a negative error code otherwise.
+ * This function implements the "Break" part of the Break-Before-Make
+ * semantics needed by the Armv8.x architecture in order to update the page
+ * descriptors.
+ *
+ * This function returns 0 on success or an error code otherwise.
+ *
+ * For simplicity, this function will not take into consideration holes on the
+ * table pointed by TTE, as long as va belongs to the VA space mapped by the
+ * table.
+ *
+ * 'table' must have been retrieved using xlat_get_llt_from_va().
  */
 int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va);
 
 /*
- * Function to map a physical memory page from the descriptor table entry
- * and VA given. This function implements the "Make" part of the
- * Break-Before-Make semantics mandated by the armv8.x architecture in order
+ * Function to map a physical memory page or block to the transient TTE
+ * with the given VA. This function implements the "Make" part of the
+ * Break-Before-Make semantics needed by the armv8.x architecture in order
  * to update the page descriptors.
  *
- * This function returns 0 on success or a negative error code otherwise.
+ * This function returns 0 on success or an error code otherwise.
+ *
+ * For simplicity, this function
+ *	- will not check for overlaps of the PA with other mmap regions.
+ *	- will mask out the LSBs of the PA so the page/block corresponding to
+ *	  the PA will actually be mapped.
+ *
+ * 'table' must have been retrieved using xlat_get_llt_from_va().
  */
 int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
