@@ -112,6 +112,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4461be98_8673c87b",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-15T19:07:09Z",
+      "side": 1,
+      "message": "Actually, removing this check caused the unittests to fail, as the condition will only meet if the descriptor is not a TABLE_DESC, which is always false for the XLAT_TABLE_LEVEL_MAX level.\n\nAfter revisiting this again, I realized that the whole condition can be removed. Unittests pass without it.\n\nPending to push.",
+      "parentUuid": "e046ec98_7e3f119b",
+      "range": {
+        "startLine": 317,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "383464ba_a5cb4ca3",
