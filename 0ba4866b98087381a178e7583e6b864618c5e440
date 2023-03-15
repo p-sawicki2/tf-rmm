@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20031437_091aa33d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-15T17:44:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8319933_42186286",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 38
+      },
+      "revId": "0ba4866b98087381a178e7583e6b864618c5e440",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "414de076_283c7a5c",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-13T14:34:14Z",
       "side": 1,
       "message": ".. the enum with unsigned int for functions in host_harness.h",
+      "range": {
+        "startLine": 16,
+        "startChar": 24,
+        "endLine": 18,
+        "endChar": 50
+      },
+      "revId": "0ba4866b98087381a178e7583e6b864618c5e440",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a51fa41_a1c131a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-15T17:44:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "414de076_283c7a5c",
       "range": {
         "startLine": 16,
         "startChar": 24,
