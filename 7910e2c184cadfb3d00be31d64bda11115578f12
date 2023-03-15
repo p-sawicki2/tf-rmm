@@ -22,6 +22,30 @@
       },
       "revId": "7910e2c184cadfb3d00be31d64bda11115578f12",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef210817_171388c0",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-15T18:18:49Z",
+      "side": 1,
+      "message": "Done. Also merged with the next patch, so I abandoned the latter.",
+      "parentUuid": "67ffff8c_b9af5d38",
+      "range": {
+        "startLine": 103,
+        "startChar": 35,
+        "endLine": 103,
+        "endChar": 75
+      },
+      "revId": "7910e2c184cadfb3d00be31d64bda11115578f12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
