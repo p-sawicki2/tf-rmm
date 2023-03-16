@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0f031483_077757bb",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T12:19:14Z",
+      "side": 1,
+      "message": "I\u0027m using uintptr_t on the library. for consistency, I think that this should be the same type, as I do operations between this field and some VAs later",
+      "parentUuid": "561aadde_65606a17",
+      "range": {
+        "startLine": 199,
+        "startChar": 1,
+        "endLine": 199,
+        "endChar": 11
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e04e5532_2e2c6987",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -72,6 +96,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7a1fcef3_73a9738f",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T12:19:14Z",
+      "side": 1,
+      "message": "llt-\u003ebase_va is the context base VA, not the base VA mapped by the table.\nllt-\u003ellt_base_offset is the offset of the base VA mapped by the table WRT llt-\u003ebase_va.\n\u0027va\u0027 is an absolute address (base_va + an offset)\n\nthe xlat library guarantees that base_va \u003d\u003d 0 for the lower level. Now base_va and va are both uintptr_t, which means that the comparison will always pass for the lower level.\n\nFor the high level we could have an overflow when subtracting the base_va from the va if the latter is higher, yes, but I think that shouldn\u0027t happen as the caller shouldn\u0027t use a VA outside the valid VA space, so I see that scenario very unlikely.\n\nWhat if we do the check but in an assertion?",
+      "parentUuid": "d0536c0f_5a8ce440",
+      "range": {
+        "startLine": 525,
+        "startChar": 1,
+        "endLine": 525,
+        "endChar": 8
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "718f383e_f6cd8acf",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -83,6 +131,30 @@
       "writtenOn": "2023-03-16T11:58:25Z",
       "side": 1,
       "message": "I am wondering whether this is enough :\n\nindex \u003d va \u003e\u003e XLAT_ADDR_SHIFT(level);\nif (index \u003e XLAT_TABLE_ENTRIES)\n   return NULL;\n\nreturn \u0026table[index];",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "583106bb_39ecc849",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T12:19:14Z",
+      "side": 1,
+      "message": "Hmm, it might be enough, yes. I\u0027ll try it.",
+      "parentUuid": "718f383e_f6cd8acf",
       "range": {
         "startLine": 539,
         "startChar": 1,
