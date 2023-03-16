@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "561aadde_65606a17",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:58:25Z",
+      "side": 1,
+      "message": "uint64_t",
+      "range": {
+        "startLine": 199,
+        "startChar": 1,
+        "endLine": 199,
+        "endChar": 11
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e04e5532_2e2c6987",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:58:25Z",
+      "side": 1,
+      "message": "I see why you have done this. With new xlat table structure, I think a table with XLAT_TABLE_ENTRIES is always created. So this info can be used in caller or other APIs.",
+      "range": {
+        "startLine": 497,
+        "startChar": 1,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0536c0f_5a8ce440",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:58:25Z",
+      "side": 1,
+      "message": "this will fail if va is less than base _va\n\nDo we need to separate base_va and offset ? Assume llt_base is base_va + offset :\n\nif (va \u003c llt_base)\n   return NULL;\n\nshould also work ?",
+      "range": {
+        "startLine": 525,
+        "startChar": 1,
+        "endLine": 525,
+        "endChar": 8
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "718f383e_f6cd8acf",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:58:25Z",
+      "side": 1,
+      "message": "I am wondering whether this is enough :\n\nindex \u003d va \u003e\u003e XLAT_ADDR_SHIFT(level);\nif (index \u003e XLAT_TABLE_ENTRIES)\n   return NULL;\n\nreturn \u0026table[index];",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
