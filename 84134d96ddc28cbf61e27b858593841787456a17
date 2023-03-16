@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce629767_1b045a2d",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "we can check for valid mappings. See comment below.\n\nThe restriction is : The `table` must have been retrieved using the xlat_get_llt_from_va() API.",
+      "range": {
+        "startLine": 365,
+        "startChar": 0,
+        "endLine": 368,
+        "endChar": 9
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f688c95_04b90cb5",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "(TRANSIENT_DESC | VALID bit[0]), this would ensure that the mapping being unmapped is both transient and VALID.",
+      "range": {
+        "startLine": 386,
+        "startChar": 27,
+        "endLine": 386,
+        "endChar": 41
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3126b10b_891d5cbd",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "map.",
+      "range": {
+        "startLine": 402,
+        "startChar": 15,
+        "endLine": 402,
+        "endChar": 21
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c96cb401_59b1e71d",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "correct this similar to fn declaration.",
+      "range": {
+        "startLine": 402,
+        "startChar": 53,
+        "endLine": 403,
+        "endChar": 20
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "915be1ce_b46a9c0f",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "the check for TRANSIENT_DESC will ensure this is not mapping into holes.\n\nThe restriction for this API is : The `table` must have been retrieved using the xlat_get_llt_from_va() API.",
+      "range": {
+        "startLine": 410,
+        "startChar": 4,
+        "endLine": 411,
+        "endChar": 67
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88e57591_7d159fff",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:37:30Z",
+      "side": 1,
+      "message": "this helper should do the masking.",
+      "range": {
+        "startLine": 442,
+        "startChar": 7,
+        "endLine": 442,
+        "endChar": 16
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
