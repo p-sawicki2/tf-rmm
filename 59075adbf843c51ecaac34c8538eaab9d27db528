@@ -186,6 +186,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "82d1fa63_be82f0da",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:52:43Z",
+      "side": 1,
+      "message": "Hmm, I think your check \n\n\nif ((desc_type !\u003d TABLE_DESC) || (level \u003d\u003d XLAT_TABLE_LEVEL_MAX)) {\n\nwill do the trick. I couldn\u0027t find why this is not enough.",
+      "parentUuid": "ec1d9c3a_f6277019",
+      "range": {
+        "startLine": 317,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383464ba_a5cb4ca3",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 13
