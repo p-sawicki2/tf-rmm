@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a68a8a9d_be21a1f8",
+        "filename": "plat/host/host_test/src/test_private.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T12:03:33Z",
+      "side": 1,
+      "message": "I think this still can be kept in the other header as host_util_ namespace declarations are in that header. The comments are enough to convey the intend of the usage.",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "9009d22cabd2380e8f28fec245ec8a7153faf8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
