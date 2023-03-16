@@ -162,6 +162,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ec1d9c3a_f6277019",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T11:59:28Z",
+      "side": 1,
+      "message": "Yes, I was considering that as well. if the selected entry is not a BLOCK_DESC, or a TRANSIENT_DESC or a PAGE_DESC at the last level, then it has to be a either a TABLE_DESC or an invalid one, in any case the loop will iterate to the next level. If that was the last level is reached and the entry was invalid it would mean the address wasn\u0027t mapped.\n\nI see the point that if we have an invalid entry and we iterate again in the loop, we might have a memory exception (probably not cached by the unittest). What we can do to harden this case is to add an `else` in line 329, so if the entry is invalid, return NULL and stop.\n\nI was also considering removing the check on line 326 (if the entry is a PAGE_DESC, it must be at the last level. There cannot be pages at any other level)",
+      "parentUuid": "ee3ca639_75814285",
+      "range": {
+        "startLine": 317,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383464ba_a5cb4ca3",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 13
