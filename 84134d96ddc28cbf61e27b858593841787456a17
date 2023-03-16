@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "917aabd2_ab5943a6",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T13:54:59Z",
+      "side": 1,
+      "message": "Actually, supporting the unmapping of a transient invalid entry was intentional:\n\n- The entry will remain the same and (the operation will not have any effect)\n- The check is simpler if we only check for the transient bit\n- There is a bit of overhead as after the check passes for a transient invalid entry, the rest of the function carries on, but as this is an scenario that shouldn\u0027t happen (or at least, shouldn\u0027t happen very often), I think the trade-off is worth to make this function a bit faster.",
+      "parentUuid": "9f688c95_04b90cb5",
+      "range": {
+        "startLine": 386,
+        "startChar": 27,
+        "endLine": 386,
+        "endChar": 41
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3126b10b_891d5cbd",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 2
@@ -129,6 +153,30 @@
       "writtenOn": "2023-03-16T12:37:30Z",
       "side": 1,
       "message": "this helper should do the masking.",
+      "range": {
+        "startLine": 442,
+        "startChar": 7,
+        "endLine": 442,
+        "endChar": 16
+      },
+      "revId": "84134d96ddc28cbf61e27b858593841787456a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81b605d2_04deec84",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-16T13:54:59Z",
+      "side": 1,
+      "message": "xlat_desc() was implemented, originally, to be used during the initialization to create the translation tables. It expects an already aligned PA, as the mmap regions are validated during the xlat_cfg creation, before the tables are initialized (the tables are only initialized if the mmap sanity check passes).\n\nI can do the masking inside xlat_desc(), but I think that might be redundant, at least during the initialization.",
+      "parentUuid": "88e57591_7d159fff",
       "range": {
         "startLine": 442,
         "startChar": 7,
