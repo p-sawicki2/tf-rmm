@@ -138,6 +138,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ee3ca639_75814285",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:40:38Z",
+      "side": 1,
+      "message": "Thanks for checkin this, after seeing your answer I think this check you have done was good. The latest rework may miss holes in the mapping. Perhaps the unit test is not having a case to test this, but we can hand craft one I think . Let me check this.",
+      "parentUuid": "4461be98_8673c87b",
+      "range": {
+        "startLine": 317,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "59075adbf843c51ecaac34c8538eaab9d27db528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383464ba_a5cb4ca3",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 13

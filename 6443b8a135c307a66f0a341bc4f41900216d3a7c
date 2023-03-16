@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a2b944c_07e23746",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:40:38Z",
+      "side": 1,
+      "message": "unmapped",
+      "range": {
+        "startLine": 278,
+        "startChar": 29,
+        "endLine": 278,
+        "endChar": 36
+      },
+      "revId": "6443b8a135c307a66f0a341bc4f41900216d3a7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e392f052_948c14da",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-16T11:40:38Z",
+      "side": 1,
+      "message": "and the -\u003e \"..... with the \"",
+      "range": {
+        "startLine": 392,
+        "startChar": 3,
+        "endLine": 392,
+        "endChar": 6
+      },
+      "revId": "6443b8a135c307a66f0a341bc4f41900216d3a7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
