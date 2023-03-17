@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "809c20dc_f7ef175e",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T11:02:53Z",
+      "side": 1,
+      "message": "Actually, assuming that all the tables have XLAT_TABLE_ENTRIES can be dangerous, as xlat_get_tte_ptr can end up returning a TTE for an address outside the VA space for the context.\n\nI have added a check here to avoid that: if (llt_end_offset \u003e ctx-\u003ecfg.max_mapped_va_offset) llt_end_offset \u003d ctx-\u003ecfg.max_mapped_va_offset",
+      "parentUuid": "e04e5532_2e2c6987",
+      "range": {
+        "startLine": 497,
+        "startChar": 1,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0536c0f_5a8ce440",
@@ -118,6 +142,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e088d233_b3c88034",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T11:02:53Z",
+      "side": 1,
+      "message": "I enforced va \u003c\u003d llt-\u003ebase_va through an assertion.",
+      "parentUuid": "7a1fcef3_73a9738f",
+      "range": {
+        "startLine": 525,
+        "startChar": 1,
+        "endLine": 525,
+        "endChar": 8
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "718f383e_f6cd8acf",
@@ -155,6 +203,30 @@
       "side": 1,
       "message": "Hmm, it might be enough, yes. I\u0027ll try it.",
       "parentUuid": "718f383e_f6cd8acf",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "328e63d2_befa9bdf",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T11:02:53Z",
+      "side": 1,
+      "message": "I looked into this and the solution you propose might return a TTE for a VA outside the context VA space even if index \u003c\u003d XLAT_TABLE_ENTRIES (that was true even with the current implementation). So I added few changes to address that (see comment on xlat_get_llt_from_va()). The changes should barely add any overhead.",
+      "parentUuid": "583106bb_39ecc849",
       "range": {
         "startLine": 539,
         "startChar": 1,
