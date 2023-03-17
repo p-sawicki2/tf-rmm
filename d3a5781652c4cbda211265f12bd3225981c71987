@@ -145,6 +145,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fec6915e_e234b1a0",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T16:54:04Z",
+      "side": 1,
+      "message": "If we make the assumption that all the tables have all their entries used, we can run into a situation in which the last level table doesn\u0027t use all its entries and the checks in xlat_get_tte_ptr() don\u0027t detect that condition, so the number of entries used by the last level table is needed.\n\nThat said, I found out that it was easier to just get the maximum offset used by the table (rather than the number of entries), as that way, all that is needed by xlat_get_tte_ptr() is a simple comparison between the offset passed to it and llt_end_offset (see line 539).\n\nOne alternative would have been to use the maximum VA of the context VA space instead.",
+      "parentUuid": "8b818dde_56c54166",
+      "range": {
+        "startLine": 497,
+        "startChar": 1,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0536c0f_5a8ce440",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -240,6 +264,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d17a6916_4962f0fc",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T16:54:04Z",
+      "side": 1,
+      "message": "Then I will replace the assertion with a check",
+      "parentUuid": "55c8875c_0e5381b2",
+      "range": {
+        "startLine": 525,
+        "startChar": 1,
+        "endLine": 525,
+        "endChar": 8
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "718f383e_f6cd8acf",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -323,6 +371,30 @@
       "side": 1,
       "message": "Sorry, I mean this sequence.\n\nva_offset \u003d va - llt-\u003etbl_base_va;\n\nindex \u003d va_offset \u003e\u003e XLAT_ADDR_SHIFT(level);\nif (index \u003e XLAT_TABLE_ENTRIES)\n    return NULL;\n\nreturn \u0026table[index];\n\n\nThis assumed tbl_base_va \u003d base_va + llt_base_offset. \n\nI think the 2 fields are not needed, and just the tble_base_va is enough.",
       "parentUuid": "328e63d2_befa9bdf",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f620efb0_93fc9c47",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T16:54:04Z",
+      "side": 1,
+      "message": "That is not enough. If we assume that the table uses XLAT_TABLE_ENTRIES we might return an invalid entry if VA is not mapped by the current table but it is lower than the maximum VA that could be mapped. We could even return a TTE for a VA which doesn\u0027t belong to the context VA space, which should never happen.",
+      "parentUuid": "9e0e10bb_a6b6331c",
       "range": {
         "startLine": 539,
         "startChar": 1,
