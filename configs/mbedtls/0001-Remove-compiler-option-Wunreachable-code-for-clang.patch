@@ -1,0 +1,25 @@
+From 7fc9f3209361971af228aa2422e394bd99a76639 Mon Sep 17 00:00:00 2001
+From: Mate Toth-Pal <mate.toth-pal@arm.com>
+Date: Thu, 25 May 2023 15:20:53 +0200
+Subject: [PATCH] Remove compiler option -Wunreachable-code for clang
+
+---
+ library/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/library/CMakeLists.txt b/library/CMakeLists.txt
+index 535988303..5f6bf8024 100644
+--- a/library/CMakeLists.txt
++++ b/library/CMakeLists.txt
+@@ -194,7 +194,7 @@ if(CMAKE_COMPILER_IS_GNUCC)
+ endif(CMAKE_COMPILER_IS_GNUCC)
+ 
+ if(CMAKE_COMPILER_IS_CLANG)
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync")
+ endif(CMAKE_COMPILER_IS_CLANG)
+ 
+ if(CMAKE_COMPILER_IS_MSVC)
+-- 
+2.40.1
+
