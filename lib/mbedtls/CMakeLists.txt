@@ -4,8 +4,12 @@
 #
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
+find_package(Git)
 
 add_library(rmm-mbedtls INTERFACE)
+
+set(MBEDTLS_SRC_DIR "${RMM_SOURCE_DIR}/ext/mbedtls")
+
 target_include_directories(rmm-mbedtls INTERFACE ${RMM_SOURCE_DIR}/configs/mbedtls)
 target_compile_definitions(rmm-mbedtls INTERFACE MBEDTLS_CONFIG_FILE=<mbedtls_config.h>)
 
@@ -35,10 +39,37 @@ if(RMM_FPU_USE_AT_REL2)
             " -DMBEDTLS_SHA512_USE_A64_CRYPTO_ONLY=1 ")
 endif()
 
+# Patch Mbed TLS if it is not patched yet
+# Patching is necessary because clang reports unreachable code when Mbed TLS is built with RMM's
+# config. See https://github.com/Mbed-TLS/mbedtls/issues/7625
+# Assume unpatched MbedTLS if the diff is empty.
+# TODO: Remove patching once the issue is fixed.
+set(MBEDTLS_PATCH_FILE "${RMM_SOURCE_DIR}/configs/mbedtls/0001-Remove-compiler-option-Wunreachable-code-for-clang.patch")
+set(EXECUTE_COMMAND "${GIT_EXECUTABLE}" diff "library/CMakeLists.txt")
+execute_process(COMMAND ${EXECUTE_COMMAND}
+    WORKING_DIRECTORY ${MBEDTLS_SRC_DIR}
+    RESULT_VARIABLE DIFF_STATUS
+    OUTPUT_VARIABLE DIFF_OUTPUT
+)
+if (NOT DIFF_STATUS EQUAL 0)
+    message( FATAL_ERROR "Failed to check applied Mbed TLS patch")
+endif()
+if("${DIFF_OUTPUT}" STREQUAL "")
+    set(EXECUTE_COMMAND "${GIT_EXECUTABLE}" apply --verbose ${MBEDTLS_PATCH_FILE})
+    execute_process(COMMAND ${EXECUTE_COMMAND}
+        WORKING_DIRECTORY ${MBEDTLS_SRC_DIR}
+        RESULT_VARIABLE PATCH_STATUS
+        COMMAND_ECHO STDOUT
+    )
+    if (NOT PATCH_STATUS EQUAL 0)
+        message( FATAL_ERROR "Failed to apply patches at ${WORKING_DIRECTORY}" )
+    endif()
+endif()
+
 #
 # Add the mbedtls subdirectory and exclude all targets in mbedtls from
 # default `all` target
 #
-add_subdirectory("${RMM_SOURCE_DIR}/ext/mbedtls" "${CMAKE_BINARY_DIR}/ext/mbedtls" EXCLUDE_FROM_ALL)
+add_subdirectory("${MBEDTLS_SRC_DIR}" "${CMAKE_BINARY_DIR}/ext/mbedtls" EXCLUDE_FROM_ALL)
 
 target_link_libraries(rmm-mbedtls INTERFACE mbedtls)
