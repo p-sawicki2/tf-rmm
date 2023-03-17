@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6371fc79_4bf2932b",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:33:10Z",
+      "side": 1,
+      "message": "prefer Arm ;).",
+      "range": {
+        "startLine": 412,
+        "startChar": 45,
+        "endLine": 412,
+        "endChar": 46
+      },
+      "revId": "aebad274f0c6b4391a09697c54e49811d81cc588",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
