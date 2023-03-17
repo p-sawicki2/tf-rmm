@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0a4395d5_3ba867d8",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "The types are different between base offset and end offset. ...Anyway see later comments about these fields.",
+      "parentUuid": "0f031483_077757bb",
+      "range": {
+        "startLine": 199,
+        "startChar": 1,
+        "endLine": 199,
+        "endChar": 11
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e04e5532_2e2c6987",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Actually, assuming that all the tables have XLAT_TABLE_ENTRIES can be dangerous, as xlat_get_tte_ptr can end up returning a TTE for an address outside the VA space for the context.\n\nI have added a check here to avoid that: if (llt_end_offset \u003e ctx-\u003ecfg.max_mapped_va_offset) llt_end_offset \u003d ctx-\u003ecfg.max_mapped_va_offset",
       "parentUuid": "e04e5532_2e2c6987",
+      "range": {
+        "startLine": 497,
+        "startChar": 1,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b818dde_56c54166",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "I dont get it. XLAT_BLOCK_SIZE is precisely having this assumption that table has XLAT_TABLE_ENTRIES. We can discuss this.",
+      "parentUuid": "809c20dc_f7ef175e",
       "range": {
         "startLine": 497,
         "startChar": 1,
@@ -168,6 +216,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "55c8875c_0e5381b2",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "I think this logic is not adding much. To me, the va should be greater than table_base_va and that is enough.",
+      "parentUuid": "e088d233_b3c88034",
+      "range": {
+        "startLine": 525,
+        "startChar": 1,
+        "endLine": 525,
+        "endChar": 8
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "718f383e_f6cd8acf",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 4
@@ -227,6 +299,30 @@
       "side": 1,
       "message": "I looked into this and the solution you propose might return a TTE for a VA outside the context VA space even if index \u003c\u003d XLAT_TABLE_ENTRIES (that was true even with the current implementation). So I added few changes to address that (see comment on xlat_get_llt_from_va()). The changes should barely add any overhead.",
       "parentUuid": "583106bb_39ecc849",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e0e10bb_a6b6331c",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "Sorry, I mean this sequence.\n\nva_offset \u003d va - llt-\u003etbl_base_va;\n\nindex \u003d va_offset \u003e\u003e XLAT_ADDR_SHIFT(level);\nif (index \u003e XLAT_TABLE_ENTRIES)\n    return NULL;\n\nreturn \u0026table[index];\n\n\nThis assumed tbl_base_va \u003d base_va + llt_base_offset. \n\nI think the 2 fields are not needed, and just the tble_base_va is enough.",
+      "parentUuid": "328e63d2_befa9bdf",
       "range": {
         "startLine": 539,
         "startChar": 1,

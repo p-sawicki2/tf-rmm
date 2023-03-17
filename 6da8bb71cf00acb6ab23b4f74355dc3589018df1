@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b67c07ab_212321fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "Refine this comment based on the rework comments.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 67
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed613cd7_599ba88b",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T16:25:29Z",
+      "side": 1,
+      "message": "this field can be removed.",
+      "range": {
+        "startLine": 201,
+        "startChar": 8,
+        "endLine": 201,
+        "endChar": 22
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
