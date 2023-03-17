@@ -22,6 +22,30 @@
       },
       "revId": "9009d22cabd2380e8f28fec245ec8a7153faf8a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c954f43_e8646e67",
+        "filename": "plat/host/host_test/src/test_private.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-17T11:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a68a8a9d_be21a1f8",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "9009d22cabd2380e8f28fec245ec8a7153faf8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
