@@ -45,6 +45,76 @@
       },
       "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe046b08_8bf349d0",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T15:56:06Z",
+      "side": 1,
+      "message": "Done as per our discussion",
+      "parentUuid": "ed613cd7_599ba88b",
+      "range": {
+        "startLine": 201,
+        "startChar": 8,
+        "endLine": 201,
+        "endChar": 22
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4594876c_3257a335",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T15:56:06Z",
+      "side": 1,
+      "message": "After our discussion I realized this check will always be needed (maybe with a small tweak) as a transient invalid descriptor is not a block nor a page so we always need to check for blocks or page descriptors or for the transient bit being set.\n\nWe also need to check if we are iterating at the maximum possible walk level, to avoid accessing an invalid table pointer.",
+      "range": {
+        "startLine": 324,
+        "startChar": 1,
+        "endLine": 339,
+        "endChar": 15
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6091e068_f4cc160a",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T15:56:06Z",
+      "side": 1,
+      "message": "We still need to use xlat table here as we need to mask the index bits. If we don\u0027t do that, the bits on the VA which correspond to indexes for the lower levels will be included as well.\n\nAs per our discussion and in order to simplify this, I only check that va \u003e\u003d llt-\u003ellt_base_va before I calculate the index and return the pointer. It is caller\u0027s responsibility to ensure that the VA is within the right boundaries and also the returned tte type..\n\nI updated the API documentation with that information.\n\nIf we still want to check the upper level of the table, I can calculate it based on the level and do the checks here as well.",
+      "range": {
+        "startLine": 555,
+        "startChar": 20,
+        "endLine": 555,
+        "endChar": 34
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

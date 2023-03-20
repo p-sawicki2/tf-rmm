@@ -167,6 +167,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc64c9ed_4822c383",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T15:56:06Z",
+      "side": 1,
+      "message": "Removed as per our discussion",
+      "parentUuid": "fec6915e_e234b1a0",
+      "range": {
+        "startLine": 497,
+        "startChar": 1,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0536c0f_5a8ce440",
@@ -395,6 +419,30 @@
       "side": 1,
       "message": "That is not enough. If we assume that the table uses XLAT_TABLE_ENTRIES we might return an invalid entry if VA is not mapped by the current table but it is lower than the maximum VA that could be mapped. We could even return a TTE for a VA which doesn\u0027t belong to the context VA space, which should never happen.",
       "parentUuid": "9e0e10bb_a6b6331c",
+      "range": {
+        "startLine": 539,
+        "startChar": 1,
+        "endLine": 541,
+        "endChar": 2
+      },
+      "revId": "d3a5781652c4cbda211265f12bd3225981c71987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a591609_f2662cc2",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T15:56:06Z",
+      "side": 1,
+      "message": "Removed as per our discussion.",
+      "parentUuid": "f620efb0_93fc9c47",
       "range": {
         "startLine": 539,
         "startChar": 1,
