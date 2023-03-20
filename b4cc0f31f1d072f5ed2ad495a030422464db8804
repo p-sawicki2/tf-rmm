@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e819940d_f35692bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T12:09:28Z",
+      "side": 1,
+      "message": "Static checks failed due to the use of strncpy(), which is safe in this context",
+      "revId": "b4cc0f31f1d072f5ed2ad495a030422464db8804",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
