@@ -16,6 +16,23 @@
       "message": "Static checks failed due to the use of strncpy(), which is safe in this context",
       "revId": "020cebb39d3049bb6fc0dd5f8d1a0acf9c5b139e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bec05de_f9579ba8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-20T12:06:34Z",
+      "side": 1,
+      "message": "Static checks failed due to the use of strncpy(), which is safe in this context",
+      "revId": "020cebb39d3049bb6fc0dd5f8d1a0acf9c5b139e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
