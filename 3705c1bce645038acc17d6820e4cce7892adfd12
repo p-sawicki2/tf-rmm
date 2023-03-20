@@ -62,6 +62,23 @@
       },
       "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71f3ec7_a24683b1",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-20T16:38:28Z",
+      "side": 1,
+      "message": "We still need to check index is within table but dont use this macro as it masks with 0x1FF",
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
