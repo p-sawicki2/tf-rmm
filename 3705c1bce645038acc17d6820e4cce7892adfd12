@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "829fa31d_b45fb764",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-20T16:35:07Z",
+      "side": 1,
+      "message": "Need a check here\n\nif (va_offset \u003c va_size)\n   return NULL;",
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f831020_b3571a18",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-20T16:35:07Z",
+      "side": 1,
+      "message": "With the above check , this is not needed (and may not work due to mask 0x1FF).",
+      "range": {
+        "startLine": 315,
+        "startChar": 0,
+        "endLine": 319,
+        "endChar": 3
+      },
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8163e901_16fde129",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-20T16:35:07Z",
+      "side": 1,
+      "message": "This check may not be needed as INVALID_TTE check is upto caller and this function just returns the llt corresponding to the VA.",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 334,
+        "endChar": 40
+      },
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
