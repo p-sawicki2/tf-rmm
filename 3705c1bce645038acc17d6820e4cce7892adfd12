@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1d5a36f6_832f2c19",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T11:29:59Z",
+      "side": 1,
+      "message": "you mean, if(va_offset \u003e va_size) ?",
+      "parentUuid": "829fa31d_b45fb764",
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6f831020_b3571a18",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 6
@@ -31,6 +49,30 @@
       "writtenOn": "2023-03-20T16:35:07Z",
       "side": 1,
       "message": "With the above check , this is not needed (and may not work due to mask 0x1FF).",
+      "range": {
+        "startLine": 315,
+        "startChar": 0,
+        "endLine": 319,
+        "endChar": 3
+      },
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96159002_29705f3a",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T11:29:59Z",
+      "side": 1,
+      "message": "Actually, now that I realize, this check is not needed at all as XLAT_TABLE_IDX() will always return a value \u003c XLAT_TABLE_ENTRIES. This check was used when the base table was considered to be able to have fewer entries, but since now we always consider XLAT_TABLE_ENTRIES for all tables, the check became redundant.",
+      "parentUuid": "6f831020_b3571a18",
       "range": {
         "startLine": 315,
         "startChar": 0,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2376a553_5126e7ca",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T11:29:59Z",
+      "side": 1,
+      "message": "Fixed as per our discussion",
+      "parentUuid": "8163e901_16fde129",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 334,
+        "endChar": 40
+      },
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d71f3ec7_a24683b1",
@@ -77,6 +143,24 @@
       "writtenOn": "2023-03-20T16:38:28Z",
       "side": 1,
       "message": "We still need to check index is within table but dont use this macro as it masks with 0x1FF",
+      "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b58f31eb_0f8494f9",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T11:29:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d71f3ec7_a24683b1",
       "revId": "3705c1bce645038acc17d6820e4cce7892adfd12",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

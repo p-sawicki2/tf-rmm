@@ -115,6 +115,30 @@
       },
       "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "193ae583_8f364d8f",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T11:29:59Z",
+      "side": 1,
+      "message": "Dismiss this comment, I was thinking on the VA, not the offset",
+      "parentUuid": "6091e068_f4cc160a",
+      "range": {
+        "startLine": 555,
+        "startChar": 20,
+        "endLine": 555,
+        "endChar": 34
+      },
+      "revId": "6da8bb71cf00acb6ab23b4f74355dc3589018df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
