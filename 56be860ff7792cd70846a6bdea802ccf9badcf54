@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e920f43_e0298e7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-21T16:53:33Z",
+      "side": 1,
+      "message": "CR-1 as I haven\u0027t addressed the review comments yet",
+      "revId": "56be860ff7792cd70846a6bdea802ccf9badcf54",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
