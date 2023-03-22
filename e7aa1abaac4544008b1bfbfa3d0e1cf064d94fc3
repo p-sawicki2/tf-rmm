@@ -16,6 +16,23 @@
       "message": "CI+1 Passed: https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l1/135/ (Manual run)",
       "revId": "e7aa1abaac4544008b1bfbfa3d0e1cf064d94fc3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39130cfd_808ad1a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-22T16:30:35Z",
+      "side": 1,
+      "message": "CI+2 https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/105/",
+      "revId": "e7aa1abaac4544008b1bfbfa3d0e1cf064d94fc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
