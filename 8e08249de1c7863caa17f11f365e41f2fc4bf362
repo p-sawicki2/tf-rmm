@@ -20,6 +20,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f59b8df8_8afbcdd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "some initial comments",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb9a7dba_666dafd0",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "Add comment here showing how the 3 page size was derived.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ac365e28_569799d8",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 2
@@ -84,6 +124,253 @@
       "side": 1,
       "message": "Done.\nAdded comment",
       "parentUuid": "052cef47_3a12dc0b",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b398ec0_936abbc9",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "perhaps this can be removed and only the zcr_el12 retained.",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 31
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bc9a5ac_207f8281",
+        "filename": "lib/arch/include/fpu_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "nit: `uint32_t` is more precise.",
+      "range": {
+        "startLine": 21,
+        "startChar": 58,
+        "endLine": 21,
+        "endChar": 71
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20cc59e6_c3a78a9e",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "The system_ confusing. Possible this can be done at caller directly. Let me check further.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 1
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1edc1a3_e93ae7fa",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "can we keep all FPU helpers in fpu_helpers.h ?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 3
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bfc0f38_2e3968be",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "could add MIN in the macro name\n\nSVE_Z_REG_MIN_SIZE\n\nsame comment to below macros.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 22
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f21dc820_e8de0ee6",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "prefer uint64_t",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 25
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7694a748_bca4f776",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 39,
+        "startChar": 62,
+        "endLine": 39,
+        "endChar": 75
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9ebb8e2_160b4cc1",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "hmm, interesting. I think this should be vq \u003d\u003d g_sve_max_vq ? Given that SVE can only be specified during Realm create and we verify against this global value, it does mean that all CPUs must be symmetric ? \n\nI think it would still work if vq is less than the global value. Let me check this with RMM spec team.",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 28
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa99a564_53af059c",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "\" g_ns_simd[cpuid].saved \u003d false \"\n\nAlso there seems to be 2 `saved` flags and I am not sure of the difference between them",
+      "range": {
+        "startLine": 206,
+        "startChar": 1,
+        "endLine": 207,
+        "endChar": 24
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af09e75a_edb3f680",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "would be more efficient to embed all control data to the rec and only the SIMD state can be offloaded to the AUX granule",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58e6ae32_efcbd0c9",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:28:34Z",
+      "side": 1,
+      "message": "is this a mirror of the same values in rd ?",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 17
+      },
       "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
