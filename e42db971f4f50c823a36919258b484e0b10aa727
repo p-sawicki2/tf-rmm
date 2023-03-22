@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bd0689c_8cca6786",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-22T12:59:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cba9ae71_1e8f9e3f",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a68e0703_21c2a623",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b444fb3_b802b3b6",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-22T12:59:41Z",
+      "side": 1,
+      "message": "Yes, it is \u003e\u003d on patchset 9. I don\u0027t know what I did to generate patchset 10, which seems to be behind and I can\u0027t re-push...",
+      "parentUuid": "a68e0703_21c2a623",
+      "range": {
+        "startLine": 309,
+        "startChar": 15,
+        "endLine": 309,
+        "endChar": 16
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aba2f9d9_3aa1e385",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-03-22T09:55:27Z",
       "side": 1,
       "message": "minor:\n\n\nif ((xlat_read_tte(tte) \u0026 (TRANSIENT_DESC | 0x1) \u003d\u003d 0) {\n    return -EFAULT;\n}",
+      "range": {
+        "startLine": 388,
+        "startChar": 0,
+        "endLine": 389,
+        "endChar": 46
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f02ce5e_d9be97d8",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-22T12:59:41Z",
+      "side": 1,
+      "message": "That check fails for non-transient valid entries, which are then unmaped\n\nAn alternative would be \n\n\tif((xlat_read_tte(tte) \u0026 (TRANSIENT_DESC | ULL(0x01))) \u003d\u003d\n\t\t\t\t\t(TRANSIENT_DESC | ULL(0x01))) {\n\t\txlat_write_tte(tte, TRANSIENT_DESC);\n\n\t\t/* Invalidate any cached copy of this mapping in the TLBs. */\n\t\txlat_arch_tlbi_va(va);\n\n\t\t/* Ensure completion of the invalidation. */\n\t\txlat_arch_tlbi_va_sync();\n\n\t\treturn 0;\n\t}\n\n\treturn -EFAULT;\n\nHowever I am not very happy with using magic numbers and I think this check is even more convoluted. Thoughs?",
+      "parentUuid": "aba2f9d9_3aa1e385",
       "range": {
         "startLine": 388,
         "startChar": 0,
