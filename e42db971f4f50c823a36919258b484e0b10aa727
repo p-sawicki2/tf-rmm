@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cba9ae71_1e8f9e3f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T09:55:27Z",
+      "side": 1,
+      "message": "\"fix(lib/xlat)\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a68e0703_21c2a623",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T09:55:27Z",
+      "side": 1,
+      "message": "should this be \u003e\u003d ?",
+      "range": {
+        "startLine": 309,
+        "startChar": 15,
+        "endLine": 309,
+        "endChar": 16
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba2f9d9_3aa1e385",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T09:55:27Z",
+      "side": 1,
+      "message": "minor:\n\n\nif ((xlat_read_tte(tte) \u0026 (TRANSIENT_DESC | 0x1) \u003d\u003d 0) {\n    return -EFAULT;\n}",
+      "range": {
+        "startLine": 388,
+        "startChar": 0,
+        "endLine": 389,
+        "endChar": 46
+      },
+      "revId": "e42db971f4f50c823a36919258b484e0b10aa727",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
