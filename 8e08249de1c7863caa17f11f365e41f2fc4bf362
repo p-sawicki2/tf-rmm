@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8b241ef_86962257",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-22T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac365e28_569799d8",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "052cef47_3a12dc0b",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-03-21T11:14:13Z",
       "side": 1,
       "message": "we can add a code comment here. perhaps also move to the place where other ZCR defs are (line 569).",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9366adfa_d0590321",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-22T14:51:40Z",
+      "side": 1,
+      "message": "Done.\nAdded comment",
+      "parentUuid": "052cef47_3a12dc0b",
       "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
