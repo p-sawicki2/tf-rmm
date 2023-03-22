@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8a9e7a3_e85a85dd",
+        "filename": "lib/arch/src/fake_host/sve_helpers_host.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-22T17:31:09Z",
+      "side": 1,
+      "message": "sve_helpers.c is enough as file name",
+      "revId": "e509289e63ebba756e4268437d1f1cd55a6c5550",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
