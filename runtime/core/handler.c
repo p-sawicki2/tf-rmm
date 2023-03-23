@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <buffer.h>
 #include <debug.h>
+#include <simd.h>
 #include <sizes.h>
 #include <smc-handler.h>
 #include <smc-rmi.h>
@@ -154,6 +155,19 @@ COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
 
 static bool rmi_call_log_enabled = true;
 
+#ifdef RMM_FPU_USE_AT_REL2
+static inline bool rmi_handler_needs_fpu(unsigned long id)
+{
+	if (id == SMC_RMM_REALM_CREATE || id == SMC_RMM_DATA_CREATE ||
+	    id == SMC_RMM_REC_CREATE || id == SMC_RMM_REC_ENTER ||
+	    id == SMC_RMM_RTT_INIT_RIPAS) {
+		return true;
+	}
+
+	return false;
+}
+#endif
+
 static void rmi_log_on_exit(unsigned long handler_id,
 			    unsigned long arg0,
 			    unsigned long arg1,
@@ -220,6 +234,9 @@ void handle_ns_smc(unsigned long function_id,
 {
 	unsigned long handler_id;
 	const struct smc_handler *handler = NULL;
+#ifdef RMM_FPU_USE_AT_REL2
+	bool state_saved;
+#endif
 
 	/* Ignore SVE hint bit, until RMM supports SMCCCv1.3 and SVE hint */
 	function_id &= ~MASK(SMC_SVE_HINT);
@@ -243,6 +260,19 @@ void handle_ns_smc(unsigned long function_id,
 	}
 
 	assert_cpu_slots_empty();
+
+#ifdef RMM_FPU_USE_AT_REL2
+	/* RMM can use FPU flag must be off when entry/exit of the RMM */
+	assert(simd_is_fpu_available_for_rmm() == false);
+
+	/* If the handler needs FPU, actively save NS simd context. */
+	if (rmi_handler_needs_fpu(function_id)) {
+		simd_save_ns_state();
+		state_saved = true;
+	} else {
+		state_saved = false;
+	}
+#endif
 
 	switch (handler->type) {
 	case rmi_type_0:
@@ -277,6 +307,15 @@ void handle_ns_smc(unsigned long function_id,
 		rmi_log_on_exit(handler_id, arg0, arg1, arg2, arg3, arg4, ret);
 	}
 
+	/* If the handler uses FPU, restore the saved  NS simd context. */
+#ifdef RMM_FPU_USE_AT_REL2
+	if (state_saved) {
+		simd_restore_ns_state();
+	}
+
+	/* RMM can use FPU flag must be off when entry/exit of the RMM */
+	assert(simd_is_fpu_available_for_rmm() == false);
+#endif
 	assert_cpu_slots_empty();
 }
 
