@@ -304,7 +304,7 @@ static void rec_simd_state_init(struct rec *rec)
 	rec_simd->init_done = true;
 }
 
-static void rec_simd_save_enable_trap(struct rec *rec)
+void rec_simd_save_enable_trap(struct rec *rec)
 {
 	struct rec_simd_state *rec_simd;
 	simd_t stype;
@@ -415,8 +415,10 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		/* Save REC's state based on its SVE or FPU enablement */
 		rec_simd_save_enable_trap(rec);
 
+#ifndef RMM_FPU_USE_AT_REL2
 		/* Restore NS state based on system support for SVE or FPU */
 		simd_restore_ns_state();
+#endif
 	}
 
 	report_timer_state_to_ns(rec_exit);

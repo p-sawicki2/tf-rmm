@@ -257,6 +257,8 @@ void inject_serror(struct rec *rec, unsigned long vsesr);
 void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *exit,
 			       unsigned long rtt_level);
 
+void rec_simd_save_enable_trap(struct rec *rec);
+
 void rec_simd_restore_disable_trap(struct rec *rec);
 #endif /* __ASSEMBLER__ */
 
