@@ -258,6 +258,8 @@ void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *exit,
 			       unsigned long rtt_level);
 
 void rec_simd_enable(struct rec *rec);
+
+void rec_simd_disable(struct rec *rec);
 #endif /* __ASSEMBLER__ */
 
 #endif /* REC_H */

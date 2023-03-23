@@ -24,6 +24,24 @@ struct ns_simd_state {
 
 static struct ns_simd_state g_ns_simd[MAX_CPUS];
 
+/* RMM support to use SIMD at REL2 */
+#ifdef RMM_FPU_USE_AT_REL2
+static bool g_simd_fpu_avaiable[MAX_CPUS];
+
+static void simd_set_fpu_available_for_rmm(bool flag)
+{
+	unsigned int cpu_id = my_cpuid();
+
+	assert(g_simd_fpu_avaiable[cpu_id] != flag);
+	g_simd_fpu_avaiable[cpu_id] = flag;
+}
+
+bool simd_is_fpu_available_for_rmm(void)
+{
+	return g_simd_fpu_avaiable[my_cpuid()];
+}
+#endif /* RMM_FPU_USE_AT_REL2 */
+
 /*
  * Program the ZCR_EL2.LEN field from the VQ, if current ZCR_EL2.LEN is not same
  * as the passed in VQ.
@@ -78,6 +96,9 @@ void simd_save_state(simd_t type, struct simd_state *simd)
 		assert(false);
 	}
 	simd->simd_type = type;
+#ifdef RMM_FPU_USE_AT_REL2
+	simd_set_fpu_available_for_rmm(true);
+#endif
 }
 
 /*
@@ -116,6 +137,9 @@ void simd_restore_state(simd_t type, struct simd_state *simd)
 		assert(false);
 	}
 	simd->simd_type = SIMD_NONE;
+#ifdef RMM_FPU_USE_AT_REL2
+	simd_set_fpu_available_for_rmm(false);
+#endif
 }
 
 /*
@@ -171,31 +195,6 @@ void simd_restore_ns_state(void)
 	simd_disable();
 	g_ns_simd[cpu_id].saved = false;
 }
-
-/*
- * These functions and macros will be renamed to simd_* once RMM supports
- * SIMD (FPU/SVE) at REL2
- */
-#ifdef RMM_FPU_USE_AT_REL2
-void fpu_save_my_state(void)
-{
-	/* todo */
-	assert(false);
-}
-
-void fpu_restore_my_state(void)
-{
-	assert(false);
-}
-
-bool fpu_is_my_state_saved(unsigned int cpu_id)
-{
-	assert(false);
-}
-#else /* !RMM_FPU_USE_AT_REL2 */
-void fpu_save_my_state(void) {}
-void fpu_restore_my_state(void) {}
-#endif /* RMM_FPU_USE_AT_REL */
 
 /* Return the SVE max vq discovered during init */
 uint8_t simd_sve_get_max_vq(void)

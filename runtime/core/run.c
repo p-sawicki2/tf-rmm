@@ -306,7 +306,7 @@ static void rec_simd_state_init(struct rec *rec)
 }
 
 /* Save the REC SIMD state to memory and disable simd access for the REC */
-static void rec_simd_disable(struct rec *rec)
+void rec_simd_disable(struct rec *rec)
 {
 	struct rec_simd_state *rec_simd;
 	simd_t stype;
@@ -419,8 +419,10 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		/* Save REC SIMD state to memory and disable SIMD for REC */
 		rec_simd_disable(rec);
 
+#ifndef RMM_FPU_USE_AT_REL2
 		/* Restore NS state based on system support for SVE or FPU */
 		simd_restore_ns_state();
+#endif
 	}
 
 	report_timer_state_to_ns(rec_exit);
