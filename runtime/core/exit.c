@@ -379,6 +379,18 @@ static void return_result_to_realm(struct rec *rec, struct smc_result result)
 	rec->regs[3] = result.x[3];
 }
 
+static inline bool rsi_handler_needs_fpu(unsigned int id)
+{
+#ifdef RMM_FPU_USE_AT_REL2
+	if (id == SMC_RSI_ATTEST_TOKEN_INIT ||
+	    id == SMC_RSI_ATTEST_TOKEN_CONTINUE ||
+	    id == SMC_RSI_MEASUREMENT_EXTEND) {
+		return true;
+	}
+#endif
+	return false;
+}
+
 /*
  * Return 'true' if execution should continue in the REC, otherwise return
  * 'false' to go back to the NS caller of REC.Enter.
@@ -410,7 +422,16 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	 * SIMD traps enabled
 	 */
 	if (rec_is_simd_allowed(rec)) {
-		simd_disable();
+		if (rsi_handler_needs_fpu(function_id) == true) {
+			/*
+			 * If the handler needs FPU, actively save REC simd
+			 * context. Restoring REC simd context will be handled
+			 * as part of lazy enablement.
+			 */
+			rec_simd_save_disable(rec);
+		} else {
+			simd_disable();
+		}
 	}
 
 	switch (function_id) {
@@ -460,7 +481,6 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		break;
 	case SMC_RSI_ATTEST_TOKEN_CONTINUE: {
 		struct attest_result res;
-		attest_realm_token_sign_continue_start();
 		while (true) {
 			/*
 			 * Possible outcomes:
@@ -499,7 +519,6 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 				break;
 			}
 		}
-		attest_realm_token_sign_continue_finish();
 		break;
 	}
 	case SMC_RSI_MEASUREMENT_READ:

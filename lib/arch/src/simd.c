@@ -7,6 +7,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <cpuid.h>
+#include <debug.h>
 #include <simd.h>
 
 /*
@@ -25,10 +26,21 @@ static simd_t g_cpu_simd_type = SIMD_FPU;
 struct ns_simd_state {
 	struct simd_state simd;
 	uint64_t ns_zcr_el2;
-	bool saved;
+	int saved;
 } __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
 
 static struct ns_simd_state g_ns_simd[MAX_CPUS];
+
+static bool g_simd_state_saved[MAX_CPUS];
+
+/*
+ * Returns 'true' if the current CPU's SIMD (FPU/SVE) live state is saved in
+ * memory else 'false'.
+ */
+bool simd_is_state_saved(void)
+{
+	return g_simd_state_saved[my_cpuid()];
+}
 
 /*
  * Program the ZCR_EL2.LEN field from the VQ, if current ZCR_EL2.LEN is not same
@@ -86,6 +98,7 @@ void simd_save_state(simd_t type, struct simd_state *simd)
 		assert(false);
 	}
 	simd->simd_type = type;
+	g_simd_state_saved[my_cpuid()] = true;
 }
 
 /*
@@ -124,6 +137,7 @@ void simd_restore_state(simd_t type, struct simd_state *simd)
 		assert(false);
 	}
 	simd->simd_type = SIMD_NONE;
+	g_simd_state_saved[my_cpuid()] = false;
 }
 
 /*
@@ -136,9 +150,13 @@ void simd_save_ns_state(void)
 	unsigned int cpu_id = my_cpuid();
 	simd_t stype;
 
-	assert(g_ns_simd[cpu_id].saved == false);
-	stype = g_cpu_simd_type;
+	if (g_ns_simd[cpu_id].saved > 0) {
+		INFO("------- recur inc\n");
+		goto inc_saved_cnt;
+	}
+	assert(g_ns_simd[cpu_id].saved == 0);
 
+	stype = g_cpu_simd_type;
 	simd_enable(stype);
 	/*
 	 * Save the NS zcr_el2 value since EL3 doesn't bank this. Note that the
@@ -149,7 +167,10 @@ void simd_save_ns_state(void)
 	}
 	simd_save_state(stype, &g_ns_simd[cpu_id].simd);
 	simd_disable();
-	g_ns_simd[cpu_id].saved = true;
+
+inc_saved_cnt:
+	g_ns_simd[cpu_id].saved++;
+	assert(g_ns_simd[cpu_id].saved < 16);
 }
 
 /*
@@ -162,9 +183,13 @@ void simd_restore_ns_state(void)
 	unsigned int cpu_id = my_cpuid();
 	simd_t stype;
 
-	assert(g_ns_simd[cpu_id].saved == true);
-	stype = g_cpu_simd_type;
+	if (g_ns_simd[cpu_id].saved > 1) {
+		INFO("------- recur dec\n");
+		goto dec_saved_cnt;
+	}
+	assert(g_ns_simd[cpu_id].saved == 1);
 
+	stype = g_cpu_simd_type;
 	simd_enable(stype);
 	simd_restore_state(stype, &g_ns_simd[cpu_id].simd);
 	/*
@@ -177,33 +202,11 @@ void simd_restore_ns_state(void)
 		isb();
 	}
 	simd_disable();
-	g_ns_simd[cpu_id].saved = false;
-}
 
-/*
- * These functions and macros will be renamed to simd_* once RMM supports
- * SIMD (FPU/SVE) at REL2
- */
-#ifdef RMM_FPU_USE_AT_REL2
-void fpu_save_my_state(void)
-{
-	/* todo */
-	assert(false);
+dec_saved_cnt:
+	g_ns_simd[cpu_id].saved--;
+	assert(g_ns_simd[cpu_id].saved >= 0);
 }
-
-void fpu_restore_my_state(void)
-{
-	assert(false);
-}
-
-bool fpu_is_my_state_saved(unsigned int cpu_id)
-{
-	return false;
-}
-#else /* !RMM_FPU_USE_AT_REL2 */
-void fpu_save_my_state(void) {}
-void fpu_restore_my_state(void) {}
-#endif /* RMM_FPU_USE_AT_REL */
 
 /* Return the SVE max vq discovered during init */
 unsigned int simd_sve_get_max_vq(void)
