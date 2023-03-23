@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1b4bc44_6a1a21fb",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done\nAdded comment",
+      "parentUuid": "bb9a7dba_666dafd0",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac365e28_569799d8",
@@ -151,6 +175,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aaa94279_d46e243c",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "ah yes, removed it.",
+      "parentUuid": "0b398ec0_936abbc9",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 31
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4bc9a5ac_207f8281",
@@ -164,6 +212,30 @@
       "writtenOn": "2023-03-22T17:28:34Z",
       "side": 1,
       "message": "nit: `uint32_t` is more precise.",
+      "range": {
+        "startLine": 21,
+        "startChar": 58,
+        "endLine": 21,
+        "endChar": 71
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1f265e4_f714f15b",
+        "filename": "lib/arch/include/fpu_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bc9a5ac_207f8281",
       "range": {
         "startLine": 21,
         "startChar": 58,
@@ -221,6 +293,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f97456bf_bc68a280",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done\nrenamed to cpu_simd_type",
+      "parentUuid": "9a5e5e46_9b3dcf46",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 1
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1edc1a3_e93ae7fa",
@@ -234,6 +330,30 @@
       "writtenOn": "2023-03-22T17:28:34Z",
       "side": 1,
       "message": "can we keep all FPU helpers in fpu_helpers.h ?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 3
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8e00e19_a2f42433",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "These functions are renamed to simd_* in the top level patch that adds support to use FPU at REL2. This is temporary change",
+      "parentUuid": "d1edc1a3_e93ae7fa",
       "range": {
         "startLine": 111,
         "startChar": 0,
@@ -267,6 +387,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d74e4d53_fea02ce6",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bfc0f38_2e3968be",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 22
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f21dc820_e8de0ee6",
@@ -290,6 +434,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93ac5c30_6bc1c253",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f21dc820_e8de0ee6",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 25
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7694a748_bca4f776",
@@ -303,6 +471,30 @@
       "writtenOn": "2023-03-22T17:28:34Z",
       "side": 1,
       "message": "same comment as above.",
+      "range": {
+        "startLine": 39,
+        "startChar": 62,
+        "endLine": 39,
+        "endChar": 75
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "559da820_5a0988d2",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7694a748_bca4f776",
       "range": {
         "startLine": 39,
         "startChar": 62,
@@ -338,6 +530,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8b482fe1_6414b6f3",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "\u003e vq \u003d\u003d g_sve_max_vq ? \nno, as this function can be called from RMI layer, added this assert to make sure RMI layer never passes a vq greater that the value supported by RMM.\n\n\u003e .. all CPUs must be symmetric ?\n\nI guess for VQ, all cpus must be symmetric.\n\n\n\u003e still work if vq is less than the global value. \nyes, lesser value works. this usually happens with realm created with smaller vq value than the max value supported in the h/w.",
+      "parentUuid": "c9ebb8e2_160b4cc1",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 28
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fa99a564_53af059c",
         "filename": "lib/arch/src/simd.c",
         "patchSetId": 2
@@ -349,6 +565,30 @@
       "writtenOn": "2023-03-22T17:28:34Z",
       "side": 1,
       "message": "\" g_ns_simd[cpuid].saved \u003d false \"\n\nAlso there seems to be 2 `saved` flags and I am not sure of the difference between them",
+      "range": {
+        "startLine": 206,
+        "startChar": 1,
+        "endLine": 207,
+        "endChar": 24
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f68db2ca_efdceddb",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "\u0027bool saved\u0027 flag in \u0027struct ns_simd_state \u0027 used to check if the state is saved or not.\n\u0027simd_t saved_state\u0027 in \u0027struct simd_state\u0027 used to hold what type of SIMD state is saved. if it is FPU or SVE.\n\nMaybe I can change \u0027saved_state\u0027 to \u0027stype\u0027 or \u0027simd_type\u0027..",
+      "parentUuid": "fa99a564_53af059c",
       "range": {
         "startLine": 206,
         "startChar": 1,
@@ -389,6 +629,30 @@
       "writtenOn": "2023-03-22T17:28:34Z",
       "side": 1,
       "message": "is this a mirror of the same values in rd ?",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 17
+      },
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3c89640_2f2abb33",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-23T15:10:24Z",
+      "side": 1,
+      "message": "yes, copied when rec is created",
+      "parentUuid": "58e6ae32_efcbd0c9",
       "range": {
         "startLine": 142,
         "startChar": 0,
