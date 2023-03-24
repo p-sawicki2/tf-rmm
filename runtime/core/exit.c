@@ -427,6 +427,11 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 #endif
 
+	/* Run RSI handler with FPU/SVE traps enabled */
+	if (rec_used_simd(rec)) {
+		simd_traps_enable();
+	}
+
 	switch (function_id) {
 	case SMCCC_VERSION:
 		rec->regs[0] = SMCCC_VERSION_NUMBER;
@@ -588,6 +593,10 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	default:
 		rec->regs[0] = SMC_UNKNOWN;
 		break;
+	}
+
+	if (rec_used_simd(rec)) {
+		simd_traps_disable(rec_simd_type(rec));
 	}
 
 	/* Log RSI call */
