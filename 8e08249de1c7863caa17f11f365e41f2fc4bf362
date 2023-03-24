@@ -616,6 +616,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60d5ca2c_0041b4ee",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-03-24T16:18:26Z",
+      "side": 1,
+      "message": "Done.\nAs discussed, moved the control to rec_aux_data. rec_simd_state now holds pointer to simd_state that resides in aux page.",
+      "parentUuid": "af09e75a_edb3f680",
+      "revId": "8e08249de1c7863caa17f11f365e41f2fc4bf362",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58e6ae32_efcbd0c9",
