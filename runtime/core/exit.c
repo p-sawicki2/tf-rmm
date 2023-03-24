@@ -385,6 +385,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 {
 	bool ret_to_rec = true;	/* Return to Realm */
 	unsigned int function_id = (unsigned int)rec->regs[0];
+	uint64_t flags;
 
 	RSI_LOG_SET(rec->regs[1], rec->regs[2],
 		    rec->regs[3], rec->regs[4], rec->regs[5]);
@@ -401,6 +402,9 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		rec->regs[0] = SMC_UNKNOWN;
 		return true;
 	}
+
+	/* Run RSI handler with FPU/SVE traps enabled */
+	simd_traps_enable_save(flags);
 
 	switch (function_id) {
 	case SMCCC_VERSION:
@@ -573,6 +577,8 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		rec->regs[0] = SMC_UNKNOWN;
 		break;
 	}
+
+	simd_traps_restore(flags);
 
 	/* Log RSI call */
 	RSI_LOG_EXIT(function_id, rec->regs[0], ret_to_rec);
