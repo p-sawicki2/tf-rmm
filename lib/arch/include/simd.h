@@ -86,6 +86,18 @@ static inline void simd_traps_enable(void)
 	isb();
 }
 
+#define simd_traps_enable_save(flags)		\
+	do {					\
+		flags = read_cptr_el2();	\
+		simd_traps_enable();		\
+	} while (0)
+
+#define simd_traps_restore(flags)		\
+	do {					\
+		write_cptr_el2(flags);		\
+		isb();				\
+	} while (0)
+
 static inline void simd_set_saved_state(simd_t type, struct simd_state *simd)
 {
 	assert(simd != NULL);
