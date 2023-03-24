@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe8741af_b79863aa",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-24T17:01:56Z",
+      "side": 0,
+      "message": "This needs to be double checked. Then these changes could probably be moved to their own patch",
+      "revId": "5955abce65e60d34f1fc33af699d28372302675a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
