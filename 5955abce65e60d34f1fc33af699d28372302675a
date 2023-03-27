@@ -16,6 +16,24 @@
       "message": "This needs to be double checked. Then these changes could probably be moved to their own patch",
       "revId": "5955abce65e60d34f1fc33af699d28372302675a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68b1275d_bd57db8c",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-27T13:11:08Z",
+      "side": 0,
+      "message": "We need to keep this.",
+      "parentUuid": "fe8741af_b79863aa",
+      "revId": "5955abce65e60d34f1fc33af699d28372302675a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
