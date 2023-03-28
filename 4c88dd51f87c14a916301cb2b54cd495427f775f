@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "83836e89_84795472",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2bbd47ba_5ac3bd8f",
+      "range": {
+        "startLine": 2357,
+        "startChar": 4,
+        "endLine": 2357,
+        "endChar": 22
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "844a779e_b59bab06",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-14T17:11:55Z",
       "side": 1,
       "message": "mmap regions:",
+      "range": {
+        "startLine": 2360,
+        "startChar": 36,
+        "endLine": 2360,
+        "endChar": 59
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58f141a3_eafe8e2d",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2360,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Actually the point of the test is to test certain addresses that fall in different categories. The mmap regions are designed in a way in which their addresses will match each one of these categories, so I think it this case, the current definition is more correct.",
+      "parentUuid": "844a779e_b59bab06",
       "range": {
         "startLine": 2360,
         "startChar": 36,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cac87bf_f855ac52",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2362,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Done, but replacing \"region\" with \"address\", as per my previous comment",
+      "parentUuid": "21a202b0_a3bbb94e",
+      "range": {
+        "startLine": 2362,
+        "startChar": 7,
+        "endLine": 2362,
+        "endChar": 31
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a13b8ca2_58487ba1",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-03-14T17:11:55Z",
       "side": 1,
       "message": "\"Iterate over test VAs of all 3 mmap regions to test xlat_get_tte_ptr().\"",
+      "range": {
+        "startLine": 2414,
+        "startChar": 17,
+        "endLine": 2414,
+        "endChar": 37
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f571dad5_df9441db",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2414,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a13b8ca2_58487ba1",
       "range": {
         "startLine": 2414,
         "startChar": 17,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afbd5316_4d226a22",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2422,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45d59077_621813f5",
+      "range": {
+        "startLine": 2415,
+        "startChar": 25,
+        "endLine": 2422,
+        "endChar": 25
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "452ecf10_775c018e",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-03-14T17:11:55Z",
       "side": 1,
       "message": "3 mmap regions mapped at Level 3.",
+      "range": {
+        "startLine": 2478,
+        "startChar": 4,
+        "endLine": 2478,
+        "endChar": 10
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb62e8b7_32c5bc00",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "The number of mmap regions and their level is irrelevant for this test. I just happen to use Level 3 tables for simplicity (and probably because I C\u0026P\u0027ed from the previous test), so I don\u0027t think this comment is relevant here.",
+      "parentUuid": "452ecf10_775c018e",
       "range": {
         "startLine": 2478,
         "startChar": 4,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f91664a2_4728d6c0",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "This comment was addressed on a previous rework. According to our discussions, we only need to check for and address lower than the base VA for the context. If the VA is larger than the maximum mapped by the context or the maximum VA space supported, we are supposed to return the lower level tte which was supposed to be able to map that address. It is then the caller\u0027s responsibility to check that the VA is effectively within the context boundaries.",
+      "parentUuid": "4970e48f_a5c2dbbc",
+      "range": {
+        "startLine": 2478,
+        "startChar": 24,
+        "endLine": 2481,
+        "endChar": 35
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "155edc8f_f7ecc74d",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-03-14T17:11:55Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 2498,
+        "startChar": 16,
+        "endLine": 2498,
+        "endChar": 61
+      },
+      "revId": "4c88dd51f87c14a916301cb2b54cd495427f775f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22d33c81_b9d3417e",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 2498,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "155edc8f_f7ecc74d",
       "range": {
         "startLine": 2498,
         "startChar": 16,
