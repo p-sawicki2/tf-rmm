@@ -22,6 +22,30 @@
       },
       "revId": "33b5e2c4e81c9e6a5f027d52d71f08a2dc2baa2c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ecbbe82_e54dbd01",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T14:48:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2467eba0_ac14e013",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "33b5e2c4e81c9e6a5f027d52d71f08a2dc2baa2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
