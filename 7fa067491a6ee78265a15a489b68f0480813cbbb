@@ -85,6 +85,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ba9ea33_1e9e76f6",
+        "filename": "lib/xlat/tests/st1_xlat_test_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T09:58:55Z",
+      "side": 1,
+      "message": "Yes, I agree with you, but I also have mixed feelings about this. On one hand, you are right, we shouldn\u0027t re-define architectural macros for the tests, but on the other one, what if there were bugs on the macro definitions as part of the xlat library patches?\n\nI guess we should compromise at some point (and in fact in some tests I am using the original architectural macros for simplicity). I am happy to remove the macros here if you think it is better.",
+      "parentUuid": "95913b62_519fdde0",
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "191ff5dd_7237af70",
         "filename": "lib/xlat/tests/st1_xlat_test_helpers.c",
         "patchSetId": 9
@@ -190,6 +208,30 @@
       "side": 1,
       "message": "Yes, I was actually considering that",
       "parentUuid": "98d9b086_46fa58d5",
+      "range": {
+        "startLine": 216,
+        "startChar": 1,
+        "endLine": 219,
+        "endChar": 3
+      },
+      "revId": "7fa067491a6ee78265a15a489b68f0480813cbbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21daed93_32344c45",
+        "filename": "lib/xlat/tests/stage1_xlat.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T09:58:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6995a06_730aecd3",
       "range": {
         "startLine": 216,
         "startChar": 1,
