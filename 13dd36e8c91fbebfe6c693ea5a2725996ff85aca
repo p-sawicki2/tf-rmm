@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1825fae2_db43b7ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-28T11:21:42Z",
+      "side": 1,
+      "message": "CR-1 as we might find more optimizations to add to the xlat library before merging",
+      "revId": "13dd36e8c91fbebfe6c693ea5a2725996ff85aca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
