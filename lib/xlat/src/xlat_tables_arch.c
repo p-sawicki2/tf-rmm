@@ -7,6 +7,7 @@
 /* This file is derived from xlat_table_v2 library in TF-A project */
 
 #include <arch_features.h>
+#include <assert.h>
 #include <debug.h>
 #include <errno.h>
 #include <xlat_contexts.h>
@@ -64,20 +65,15 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	uintptr_t va_space_size;
 	struct xlat_ctx_cfg *ctx_cfg;
 	struct xlat_ctx_tbls *ctx_tbls;
-	unsigned int txsz;
-	unsigned int t0sz;
-	unsigned int t1sz;
+	uint64_t t0sz, t1sz, txsz;
 
-	if (ctx == NULL) {
-		return -EINVAL;
-	}
+	assert(ctx != NULL);
 
 	ctx_cfg = ctx->cfg;
 	ctx_tbls = ctx->tbls;
 
-	if (ctx_cfg == NULL || ctx_tbls == NULL) {
-		return -EINVAL;
-	}
+	assert(ctx_cfg != NULL);
+	assert(ctx_tbls != NULL);
 
 	if (ctx->cfg->initialized == false) {
 		return -EINVAL;
@@ -131,11 +127,6 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	tcr |= TCR_EL2_IRGN1_WBWA | TCR_EL2_ORGN1_WBWA | TCR_EL2_SH1_IS;
 
 	/*
-	 * ASID and hierarchical permissions.
-	 */
-	tcr |= TCR_EL2_AS | TCR_EL2_HPD0 | TCR_EL2_HPD1;
-
-	/*
 	 * Granule size. Only 4K supported on both halfs.
 	 */
 	tcr |= TCR_EL2_TG0_4K | TCR_EL2_TG1_4K;
@@ -152,7 +143,7 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	 * Set TTBR bits as well and enable CnP bit so as to share page
 	 * tables with all PEs.
 	 */
-	ttbrx = (uint64_t)(void *)ctx_tbls->tables;
+	ttbrx = ((uint64_t)(void *)ctx_tbls->tables) & MASK(TTBRx_EL2_BADDR);
 
 	/*
 	 * The VA region is not common for the HIGH region as it is used
