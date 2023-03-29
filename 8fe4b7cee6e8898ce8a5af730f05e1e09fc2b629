@@ -16,6 +16,24 @@
       "message": "Keep this change as this it is necessary to disable Hierarchical permissions.",
       "revId": "8fe4b7cee6e8898ce8a5af730f05e1e09fc2b629",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8798677_1260539f",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 0,
+      "message": "I\u0027ll move all the changes here to the previous patch then. I put it here first to trigger the discussion",
+      "parentUuid": "348df8ba_6320debf",
+      "revId": "8fe4b7cee6e8898ce8a5af730f05e1e09fc2b629",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

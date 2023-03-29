@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ab8fdf1_e7aa804f",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45dd6478_908d456a",
+      "range": {
+        "startLine": 39,
+        "startChar": 34,
+        "endLine": 39,
+        "endChar": 60
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bbeccda7_74f68f66",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8abfece0_1b989b4d",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Yes, missed them",
+      "parentUuid": "bbeccda7_74f68f66",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 0
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "007b0a5f_c47eaf89",
@@ -60,6 +108,24 @@
       "writtenOn": "2023-03-29T01:18:30Z",
       "side": 1,
       "message": "Can use MASK() and INPLACE() conventions\n\nSee arch_helpers.h for examples. \n\nSuggest\n\nXLAT_TESTS_TBL_ADDR() as the name of eventual macro.",
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d15aa67_23e3b37b",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "007b0a5f_c47eaf89",
       "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -127,6 +193,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b8ce311_dfd8c2f2",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48e0ccaf_cc29c65c",
+      "range": {
+        "startLine": 722,
+        "startChar": 5,
+        "endLine": 722,
+        "endChar": 13
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca1e6637_e2daa02b",
@@ -140,6 +230,24 @@
       "writtenOn": "2023-03-29T01:18:30Z",
       "side": 1,
       "message": "Split tests below this to a  new patch to allow above tests to be merged.",
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d2f80b0_7db9a372",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Will do. I will fix the comments below here on a later patch introducing the rest of tests",
+      "parentUuid": "ca1e6637_e2daa02b",
       "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -167,6 +275,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65cdbc33_2143dc52",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "This helper generates mmap regions with certain constrains (start and end level, region, etc) and a set of arrays with parameters that can be used (or not) to test a set of translation tables generated from those mmap regions. Specifically, this was written as part of refactoring and breaking down the first draft of xlat_ctx_init_TC6() test, to make it easier to understand. The return arrays are fed to validate_xlat_tables() for the validation.\n\nAs I was introducing more tests later, I realized this helper could be useful to generate mmap regions with specific constrains for those tests, so I kept reusing it, even though not all the arguments were needed in those cases (such as the validation arrays)",
+      "parentUuid": "bc7b1b78_6dd40f72",
+      "range": {
+        "startLine": 1378,
+        "startChar": 28,
+        "endLine": 1378,
+        "endChar": 34
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4f3e2e3_3ece3f2a",
@@ -180,6 +312,30 @@
       "writtenOn": "2023-03-29T01:18:30Z",
       "side": 1,
       "message": "remove `final`. This function only takes in a single level as argument. Same comment below.\n\nedit: I see what you were trying to do. WE need a short discussion.",
+      "range": {
+        "startLine": 1380,
+        "startChar": 59,
+        "endLine": 1380,
+        "endChar": 64
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2aa5fa6_665f274b",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "Yes, I thought about removing this argument, but then changed my mind in order to make the API more consistent (we have three arrays for mmap regions, indexes in the final table for such mmap regions and levels for each mmap region).\n\nAlso (but less probable) I thought it might be useful this way if this helper changed in the future.",
+      "parentUuid": "c4f3e2e3_3ece3f2a",
       "range": {
         "startLine": 1380,
         "startChar": 59,
@@ -272,6 +428,30 @@
       "writtenOn": "2023-03-29T01:18:30Z",
       "side": 1,
       "message": "unused argument. Can be removed from here and caller.",
+      "range": {
+        "startLine": 1403,
+        "startChar": 20,
+        "endLine": 1403,
+        "endChar": 29
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c6326f7_0412e469",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T12:27:02Z",
+      "side": 1,
+      "message": "This argument is used to enforce the space on the mmap array where the memory regions are going to be returned, as well as the companion arrays. This function always returns 3 memory regions (plus companion arrays for validation), so we need to ensure that we have enough space for them. The assert on line 1413 enforces that condition, which reminds the test writer to allocate the space.\n\nI need to add an __unused attribute to the argument, though, for when assertions are disabled.",
+      "parentUuid": "3db367bd_2f139658",
       "range": {
         "startLine": 1403,
         "startChar": 20,
