@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9bdcc95_c65afe7a",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T12:47:14Z",
+      "side": 0,
+      "message": "we need this disables to be set.",
+      "revId": "5955abce65e60d34f1fc33af699d28372302675a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
