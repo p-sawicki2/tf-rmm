@@ -46,9 +46,108 @@
 #define XLAT_TESTS_TBL_ADDR_WIDTH	(48U - (XLAT_TESTS_TBL_ADDR_SHIFT))
 #define XLAT_TESTS_TBL_ADDR_MASK	MASK(XLAT_TESTS_TBL_ADDR)
 
+/*
+ * Redefine all the TTE attribute masks and bits so we do not need to rely
+ * on the same macros to implement and test the APIs the use them.
+ *
+ * Also, this will help to test not only the APIs that use the macros, but
+ * the macros themselves as well.
+ */
+
+/* Table descriptor attributes */
+#define XLAT_TESTS_TABLE_DESC_ATTRS_SHIFT		(51U)
+#define XLAT_TESTS_TABLE_DESC_ATTRS_SIZE		(13U)
+#define XLAT_TESTS_TABLE_DESC_ATTRS_MASK			\
+	((1ULL << XLAT_TESTS_TABLE_DESC_ATTRS_SIZE) - 1ULL)
+
+/* Block & Page descriptor lower attributes */
+#define XLAT_TESTS_ATTR_IDX_SHIFT			(0U)
+#define XLAT_TESTS_ATTR_IDX_SIZE			(3U)
+#define XLAT_TESTS_ATTR_IDX_MASK				\
+	((1ULL << XLAT_TESTS_ATTR_IDX_SIZE) - 1ULL)
+
+#define XLAT_TESTS_ATTR_NS_SHIFT			(3U)
+#define XLAT_TESTS_ATTR_NS_SIZE				(1U)
+#define XLAT_TESTS_ATTR_NS_MASK					\
+	((1ULL << XLAT_TESTS_ATTR_NS_SIZE) - 1ULL)
+
+/* NS Bit values */
+#define XLAT_TESTS_REALM				(0U)
+#define XLAT_TESTS_NON_SECURE				(1U)
+
+#define XLAT_TESTS_ATTR_AF_SHIFT			(8U)
+#define XLAT_TESTS_ATTR_AF_SIZE				(1U)
+#define XLAT_TESTS_ATTR_AF_MASK					\
+	((1ULL << XLAT_TESTS_ATTR_AF_SIZE) - 1ULL)
+
+#define XLAT_TESTS_ATTR_AP_SHIFT			(4U)
+#define XLAT_TESTS_ATTR_AP_SIZE				(2U)
+#define XLAT_TESTS_ATTR_AP_MASK					\
+	((1ULL << XLAT_TESTS_ATTR_AP_SIZE) - 1ULL)
+
+/* Access Permissions */
+#define XLAT_TESTS_RW_ACCESS				(0U)
+#define XLAT_TESTS_RO_ACCESS				(2U)
+#define XLAT_TESTS_RW_EL0_ACCESS			(1U)
+#define ST1_xLAT_RO_EL0_ACCESS				(3U)
+
+#define XLAT_TESTS_ATTR_SH_SHIFT			(6U)
+#define XLAT_TESTS_ATTR_SH_SIZE				(2U)
+#define XLAT_TESTS_ATTR_SH_MASK					\
+	((1ULL << XLAT_TESTS_ATTR_SH_SIZE) - 1ULL)
+
+/* Shareability */
+#define XLAT_TESTS_SHAREABILITY_NSH			(0U)
+#define XLAT_TESTS_SHAREABILITY_OSH			(2U)
+#define XLAT_TESTS_SHAREABILITY_ISH			(3U)
+
+#define XLAT_TESTS_LOW_ATTR_SHIFT			(2U)
+#define XLAT_TESTS_LOW_ATTR_SIZE			(10U)
+#define XLAT_TESTS_LOW_ATTR_MASK				\
+	((1ULL << XLAT_TESTS_LOW_ATTR_SIZE) - 1ULL)
+
+#define XLAT_TESTS_LOWER_ATTRS(x)				\
+	(((x) & XLAT_TESTS_LOW_ATTR_MASK) << XLAT_TESTS_LOW_ATTR_SHIFT)
+
+/* Block & Page descriptor upper attributes */
+#define XLAT_TESTS_ATTR_PXN_SHIFT			(3U)
+#define XLAT_TESTS_ATTR_PXN_SIZE			(1U)
+#define XLAT_TESTS_ATTR_PXN_MASK				\
+	((1ULL << XLAT_TESTS_ATTR_PXN_SIZE) - 1ULL)
+
+#define XLAT_TESTS_ATTR_UXN_SHIFT			(4U)
+#define XLAT_TESTS_ATTR_UXN_SIZE			(1U)
+#define XLAT_TESTS_ATTR_UXN_MASK				\
+	((1ULL << XLAT_TESTS_ATTR_UXN_SIZE) - 1ULL)
+
+/* Execute Never values */
+#define XLAT_TESTS_EXECUTE				(0U)
+#define XLAT_TESTS_EXECUTE_NEVER			(1U)
+
+#define XLAT_TESTS_UPPER_ATTR_SHIFT			(50U)
+#define XLAT_TESTS_UPPER_ATTR_SIZE			(13U)
+#define XLAT_TESTS_UPPER_ATTR_MASK				\
+	((1ULL << XLAT_TESTS_UPPER_ATTR_SIZE) - 1ULL)
+
+#define XLAT_TESTS_UPPER_ATTRS(x)				\
+	(((x) & XLAT_TESTS_UPPER_ATTR_MASK) << XLAT_TESTS_UPPER_ATTR_SHIFT)
+
+#define XLAT_TESTS_TABLE_ATTRS_MASK				\
+	(((XLAT_TESTS_UPPER_ATTR_MASK) << (XLAT_TESTS_UPPER_ATTR_SHIFT)) |	\
+	 ((XLAT_TESTS_LOW_ATTR_MASK) << (XLAT_TESTS_LOW_ATTR_SHIFT)))
+
+#define XLAT_TESTS_TABLE_OA_MASK				\
+	(~(XLAT_TESTS_TABLE_ATTRS_MASK | DESC_MASK))
+
 /*****************************************************
  * Following definitions are as per RMM xlat library
  ****************************************************/
+
+/* MAIR attrs indexes */
+
+#define XLAT_TESTS_ATTR_IWBWA_OWBWA_NTR_IDX		(0U)
+#define XLAT_TESTS_ATTR_DEVICE_IDX			(1U)
+#define XLAT_TESTS_ATTR_NON_CACHEABLE_IDX		(2U)
 
 #define XLAT_TESTS_IS_TRANSIENT_DESC(_x)			\
 	((_x) & (1ULL << TRANSIENT_FLAG_SHIFT))

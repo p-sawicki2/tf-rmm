@@ -88,6 +88,84 @@ void xlat_test_hepers_arch_init(void)
 	test_helpers_expect_assert_fail(false);
 }
 
+uintptr_t xlat_test_helpers_get_start_va(xlat_addr_region_id_t region,
+					 size_t va_size)
+{
+	return (region == VA_LOW_REGION) ?
+			0ULL : (ULONG_MAX - va_size + 1UL);
+}
+
+uint64_t xlat_test_helpers_get_mmap_attrs(void)
+{
+	const uint64_t attrs[] = {MT_CODE, MT_RO_DATA,
+				  MT_RW_DATA, MT_DEVICE, MT_TRANSIENT};
+	const uint64_t protection[] = {MT_REALM, MT_NS};
+	uint64_t ret_attrs;
+	unsigned int index;
+
+	index = (unsigned int)test_helpers_get_rand_in_range(0,
+				(sizeof(attrs) / sizeof(uint64_t)) - 1);
+
+	ret_attrs = attrs[index];
+
+	if (ret_attrs != MT_TRANSIENT) {
+		index = (unsigned int)test_helpers_get_rand_in_range(0,
+				(sizeof(protection) / sizeof(uint64_t)) - 1);
+		ret_attrs |= protection[index];
+	}
+
+	return ret_attrs;
+}
+
+void xlat_test_helpers_rand_mmap_array(struct xlat_mmap_region *mmap,
+					size_t size, uintptr_t min_va,
+					uintptr_t max_va)
+{
+
+/* Maximum number of pages allowed per region */
+#define MAX_PAGES_PER_REGION	(100U)
+
+/* Maximum separation (in pages) between regions */
+#define MAX_PAGES_SEPARATION	(10U)
+
+	unsigned int region_pages;
+	size_t region_size;
+	uintptr_t next_va_start = min_va;
+
+	assert(mmap != NULL);
+	assert(size > 0);
+	assert(max_va > min_va);
+	assert((min_va + (MAX_PAGES_PER_REGION * size * PAGE_SIZE)) <= max_va);
+
+	/* Randomize the base VA for the first memory region */
+	region_pages = test_helpers_get_rand_in_range(0, MAX_PAGES_PER_REGION);
+	next_va_start += (region_pages * PAGE_SIZE);
+
+	/* Generate an ordered list of mmap regions */
+	for (unsigned int i = 0U; i < (unsigned int)size; i++) {
+		/* Pages of memory to use for the current region */
+		region_pages = test_helpers_get_rand_in_range(2,
+							MAX_PAGES_PER_REGION);
+		region_size = region_pages * PAGE_SIZE;
+
+		mmap[i].attr = xlat_test_helpers_get_mmap_attrs();
+		mmap[i].granularity = XLAT_TESTS_MAX_BLOCK_SIZE;
+		mmap[i].base_va = next_va_start;
+		mmap[i].base_pa = next_va_start & XLAT_TESTS_PA_MASK;
+		mmap[i].size = region_size;
+
+		/*
+		 * Next region start. Add a random offset with regards the
+		 * end of the current region.
+		 */
+		next_va_start += region_size +
+			(test_helpers_get_rand_in_range(0, MAX_PAGES_SEPARATION) *
+				PAGE_SIZE);
+
+		assert(next_va_start < max_va);
+	}
+}
+
 int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 				 unsigned long long va,
 				 uint64_t *tte,
@@ -207,4 +285,130 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 
 	/* We should never get here */
 	return -EINVAL;
+}
+
+int xlat_test_helpers_gen_attrs(uint64_t *attrs, uint64_t mmap_attrs)
+{
+	uint64_t mem_type, sh_attr;
+	uint64_t lower_attrs, upper_attrs;
+
+	/* Generate the set of descriptor attributes */
+	mem_type = MT_TYPE(mmap_attrs);
+	switch (mem_type) {
+	case MT_DEVICE:
+		lower_attrs =
+			((XLAT_TESTS_ATTR_DEVICE_IDX & XLAT_TESTS_ATTR_IDX_MASK) <<
+						XLAT_TESTS_ATTR_IDX_SHIFT);
+		lower_attrs |=
+			((XLAT_TESTS_SHAREABILITY_OSH & XLAT_TESTS_ATTR_SH_MASK) <<
+						XLAT_TESTS_ATTR_SH_SHIFT);
+		upper_attrs =
+			((XLAT_TESTS_EXECUTE_NEVER & XLAT_TESTS_ATTR_PXN_MASK) <<
+			 (XLAT_TESTS_ATTR_PXN_SHIFT));
+		break;
+	case MT_NON_CACHEABLE:
+		lower_attrs =
+			((XLAT_TESTS_ATTR_NON_CACHEABLE_IDX &
+					XLAT_TESTS_ATTR_IDX_MASK) <<
+						XLAT_TESTS_ATTR_IDX_SHIFT);
+		upper_attrs = 0ULL;
+		break;
+	case MT_MEMORY:
+		lower_attrs =
+			((XLAT_TESTS_ATTR_IWBWA_OWBWA_NTR_IDX &
+					XLAT_TESTS_ATTR_IDX_MASK) <<
+						XLAT_TESTS_ATTR_IDX_SHIFT);
+		upper_attrs = 0ULL;
+		break;
+	default:
+		return -EINVAL;
+	}
+
+	/* Set AF */
+	lower_attrs |= ((XLAT_TESTS_ATTR_AF_MASK) << (XLAT_TESTS_ATTR_AF_SHIFT));
+
+	/* Set the UXN flag */
+	upper_attrs |=
+		((XLAT_TESTS_EXECUTE_NEVER & XLAT_TESTS_ATTR_UXN_MASK) <<
+		 (XLAT_TESTS_ATTR_UXN_SHIFT));
+
+	if (MT_PAS(mmap_attrs) == MT_NS) {
+		lower_attrs |=
+			((XLAT_TESTS_NON_SECURE & XLAT_TESTS_ATTR_NS_MASK) <<
+			 (XLAT_TESTS_ATTR_NS_SHIFT));
+	}
+
+	if (mmap_attrs & MT_RW) {
+		lower_attrs |=
+			((XLAT_TESTS_RW_ACCESS & XLAT_TESTS_ATTR_AP_MASK) <<
+			 (XLAT_TESTS_ATTR_AP_SHIFT));
+	} else {
+		lower_attrs |=
+			((XLAT_TESTS_RO_ACCESS & XLAT_TESTS_ATTR_AP_MASK) <<
+			 (XLAT_TESTS_ATTR_AP_SHIFT));
+	}
+
+	if (mmap_attrs & MT_EXECUTE_NEVER) {
+		upper_attrs |=
+			((XLAT_TESTS_EXECUTE_NEVER & XLAT_TESTS_ATTR_PXN_MASK) <<
+			 (XLAT_TESTS_ATTR_PXN_SHIFT));
+	}
+
+	if (mem_type == MT_DEVICE) {
+		*attrs = XLAT_TESTS_UPPER_ATTRS(upper_attrs)
+					| XLAT_TESTS_LOWER_ATTRS(lower_attrs);
+		return 0;
+	}
+
+	sh_attr = MT_SHAREABILITY(mmap_attrs);
+	switch (sh_attr) {
+	case MT_SHAREABILITY_ISH:
+		lower_attrs |=
+			((XLAT_TESTS_SHAREABILITY_ISH & XLAT_TESTS_ATTR_SH_MASK) <<
+						XLAT_TESTS_ATTR_SH_SHIFT);
+		break;
+	case MT_SHAREABILITY_OSH:
+		lower_attrs |=
+			((XLAT_TESTS_SHAREABILITY_OSH & XLAT_TESTS_ATTR_SH_MASK) <<
+						XLAT_TESTS_ATTR_SH_SHIFT);
+		break;
+	case MT_SHAREABILITY_NSH:
+		lower_attrs |=
+			((XLAT_TESTS_SHAREABILITY_NSH & XLAT_TESTS_ATTR_SH_MASK) <<
+						XLAT_TESTS_ATTR_SH_SHIFT);
+		break;
+	}
+
+	*attrs = XLAT_TESTS_UPPER_ATTRS(upper_attrs)
+				| XLAT_TESTS_LOWER_ATTRS(lower_attrs);
+	return 0;
+}
+
+int xlat_test_helpers_gen_attrs_from_va(struct xlat_ctx *ctx,
+					unsigned long long va,
+					uint64_t *attrs)
+{
+	uint64_t mmap_attrs = 0ULL;
+	unsigned int i;
+
+	assert(attrs != NULL);
+
+	for (i = 0; i < ctx->cfg->mmap_regions; i++) {
+		unsigned long long mmap_min_va =
+			ctx->cfg->base_va + ctx->cfg->mmap[i].base_va;
+		unsigned long long mmap_max_va = mmap_min_va +
+					    ctx->cfg->mmap[i].size - 1ULL;
+
+		if ((va >= mmap_min_va) && (va <= mmap_max_va)) {
+			mmap_attrs = ctx->cfg->mmap[i].attr;
+			break;
+		}
+	}
+
+	if (i >= ctx->cfg->mmap_regions) {
+		/* VA not found */
+		return -EINVAL;
+	}
+
+	return xlat_test_helpers_gen_attrs(attrs, mmap_attrs);
 }
