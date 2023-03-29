@@ -42,9 +42,10 @@
 #define XLAT_TESTS_IS_DESC(tte, desc)				\
 	(((tte) & (DESC_MASK)) == (desc))
 
-#define XLAT_TESTS_TBL_ADDR_SHIFT	(12U)
-#define XLAT_TESTS_TBL_ADDR_WIDTH	(48U - (XLAT_TESTS_TBL_ADDR_SHIFT))
-#define XLAT_TESTS_TBL_ADDR_MASK	MASK(XLAT_TESTS_TBL_ADDR)
+/* Address of the next table/page */
+#define XLAT_TESTS_TTE_ADDR_SHIFT	(12U)
+#define XLAT_TESTS_TTE_ADDR_WIDTH	(48U - (XLAT_TESTS_TTE_ADDR_SHIFT))
+#define XLAT_TESTS_TTE_ADDR_MASK	MASK(XLAT_TESTS_TTE_ADDR)
 
 /*****************************************************
  * Following definitions are as per RMM xlat library

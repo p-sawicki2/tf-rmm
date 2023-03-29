@@ -21,12 +21,6 @@ extern "C" {
 #include <xlat_test_helpers.h>
 }
 
-/* Maximum number of tables to use for tests */
-#define XLAT_TESTS_MAX_TABLES	(10U)
-
-/* Maximum number of mmap regions to use for tests */
-#define XLAT_TESTS_MAX_MMAPS	(20U)
-
 /* Reserve some memory to be used for the translation tables */
 static uint64_t xlat_tables[XLAT_TABLE_ENTRIES * XLAT_TESTS_MAX_TABLES]
 					__aligned(XLAT_TABLE_SIZE);
@@ -74,85 +68,6 @@ static void buffer_shuffle(unsigned char *buf, size_t size, unsigned int stride)
 	}
 }
 
-/* Helper function to generate a set of random attributes for a mmap region */
-static uint64_t get_mmap_attrs(void)
-{
-	const uint64_t attrs[] = {MT_CODE, MT_RO_DATA,
-				  MT_RW_DATA, MT_DEVICE, MT_TRANSIENT};
-	const uint64_t protection[] = {MT_REALM, MT_NS};
-	uint64_t ret_attrs;
-	unsigned int index;
-
-	index = (unsigned int)test_helpers_get_rand_in_range(0,
-				(sizeof(attrs) / sizeof(uint64_t)) - 1);
-
-	ret_attrs = attrs[index];
-
-	if (ret_attrs != MT_TRANSIENT) {
-		index = (unsigned int)test_helpers_get_rand_in_range(0,
-				(sizeof(protection) / sizeof(uint64_t)) - 1);
-		ret_attrs |= protection[index];
-	}
-
-	return ret_attrs;
-}
-
-/* Generate a random list of mmap structures ordered by ascending VA */
-static void gen_rand_mmap_array(struct xlat_mmap_region *mmap, size_t size,
-				uintptr_t min_va, uintptr_t max_va)
-{
-
-/* Maximum number of pages allowed per region */
-#define MAX_PAGES_PER_REGION	(100U)
-
-/* Maximum separation (in pages) between regions */
-#define MAX_PAGES_SEPARATION	(10U)
-
-	unsigned int region_pages;
-	size_t region_size;
-	uintptr_t next_va_start = min_va;
-
-	assert(mmap != NULL);
-	assert(size > 0);
-	assert(max_va > min_va);
-	assert((min_va + (MAX_PAGES_PER_REGION * size * PAGE_SIZE)) <= max_va);
-
-	/* Randomize the base VA for the first memory region */
-	region_pages = test_helpers_get_rand_in_range(0, MAX_PAGES_PER_REGION);
-	next_va_start += (region_pages * PAGE_SIZE);
-
-	/* Generate an ordered list of mmap regions */
-	for (unsigned int i = 0U; i < (unsigned int)size; i++) {
-		/* Pages of memory to use for the current region */
-		region_pages = test_helpers_get_rand_in_range(2,
-							MAX_PAGES_PER_REGION);
-		region_size = region_pages * PAGE_SIZE;
-
-		mmap[i].attr = get_mmap_attrs();
-		mmap[i].granularity = XLAT_TESTS_MAX_BLOCK_SIZE;
-		mmap[i].base_va = next_va_start;
-		mmap[i].base_pa = next_va_start & XLAT_TESTS_PA_MASK;
-		mmap[i].size = region_size;
-
-		/*
-		 * Next region start. Add a random offset with regards the
-		 * end of the current region.
-		 */
-		next_va_start += region_size +
-			(test_helpers_get_rand_in_range(0, MAX_PAGES_SEPARATION) *
-				PAGE_SIZE);
-
-		assert(next_va_start < max_va);
-	}
-}
-
-/* Return the base VA according to the region */
-static uintptr_t get_start_va(xlat_addr_region_id_t region, size_t va_size)
-{
-	return (region == VA_LOW_REGION) ?
-			0ULL : (ULONG_MAX - va_size + 1UL);
-}
-
 /*
  * Helper function to initialize and setup all the data
  * structures used for xlat_ctx_cfg_init(). This function initializes the
@@ -176,7 +91,7 @@ static void xlat_test_cfg_init_setup(struct xlat_ctx_cfg *cfg,
 	memset((void *)init_mmap, 0, sizeof(struct xlat_mmap_region) * mmaps);
 
 	/* Calculate VA boundaries for the region */
-	start_va = get_start_va(region, va_size);
+	start_va = xlat_test_helpers_get_start_va(region, va_size);
 	end_va = start_va + va_size - 1ULL;
 
 	/*
@@ -184,7 +99,8 @@ static void xlat_test_cfg_init_setup(struct xlat_ctx_cfg *cfg,
 	 * The array will be sorted in ascending order of VA, as expected
 	 * by xlat_ctx_cfg_init().
 	 */
-	gen_rand_mmap_array(&val_mmap[0], mmaps, start_va, end_va);
+	xlat_test_helpers_rand_mmap_array(&val_mmap[0], mmaps,
+					  start_va, end_va);
 
 	/*
 	 * Copy the validation memory regions array into the init one, so the
@@ -1081,11 +997,12 @@ TEST(xlat_tests_G1, xlat_ctx_init_TC1)
 		memset((void *)&tbls, 0, sizeof(struct xlat_ctx_tbls));
 
 		/* VA space boundaries */
-		start_va = get_start_va(region, MAX_VIRT_ADDR_SPACE_SIZE);
+		start_va = xlat_test_helpers_get_start_va(region,
+						MAX_VIRT_ADDR_SPACE_SIZE);
 		end_va = start_va + MAX_VIRT_ADDR_SPACE_SIZE - 1ULL;
 
-		gen_rand_mmap_array(&init_mmap[0], XLAT_TESTS_MAX_MMAPS,
-				    start_va, end_va);
+		xlat_test_helpers_rand_mmap_array(&init_mmap[0],
+				XLAT_TESTS_MAX_MMAPS, start_va, end_va);
 
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&cfg, region, &init_mmap[0],
@@ -1191,12 +1108,12 @@ TEST(xlat_tests_G1, xlat_ctx_init_TC3)
 		memset((void *)&tbls, 0, sizeof(struct xlat_ctx_tbls));
 
 		/* VA space boundaries */
-		start_va = get_start_va(region, MAX_VIRT_ADDR_SPACE_SIZE);
+		start_va = xlat_test_helpers_get_start_va(region,
+						MAX_VIRT_ADDR_SPACE_SIZE);
 		end_va = start_va + MAX_VIRT_ADDR_SPACE_SIZE - 1ULL;
 
-		gen_rand_mmap_array(&init_mmap[0], XLAT_TESTS_MAX_MMAPS,
-				    start_va,
-				    end_va);
+		xlat_test_helpers_rand_mmap_array(&init_mmap[0],
+				XLAT_TESTS_MAX_MMAPS, start_va, end_va);
 
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&cfg, region, &init_mmap[0],
@@ -1282,12 +1199,12 @@ ASSERT_TEST(xlat_tests_G1, xlat_ctx_init_TC4)
 		memset((void *)&tbls, 0, sizeof(struct xlat_ctx_tbls));
 
 		/* VA space boundaries */
-		start_va = get_start_va(region, MAX_VIRT_ADDR_SPACE_SIZE);
+		start_va = xlat_test_helpers_get_start_va(region,
+						MAX_VIRT_ADDR_SPACE_SIZE);
 		end_va = start_va + MAX_VIRT_ADDR_SPACE_SIZE - 1ULL;
 
-		gen_rand_mmap_array(&init_mmap[0], XLAT_TESTS_MAX_MMAPS,
-				    start_va,
-				    end_va);
+		xlat_test_helpers_rand_mmap_array(&init_mmap[0],
+				XLAT_TESTS_MAX_MMAPS, start_va, end_va);
 
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&cfg, region, &init_mmap[0],
@@ -1333,12 +1250,12 @@ TEST(xlat_tests_G1, xlat_ctx_init_TC5)
 		memset((void *)&tbls, 0, sizeof(struct xlat_ctx_tbls));
 
 		/* VA space boundaries */
-		start_va = get_start_va(region, MAX_VIRT_ADDR_SPACE_SIZE);
+		start_va = xlat_test_helpers_get_start_va(region,
+						MAX_VIRT_ADDR_SPACE_SIZE);
 		end_va = start_va + MAX_VIRT_ADDR_SPACE_SIZE - 1ULL;
 
-		gen_rand_mmap_array(&init_mmap[0], XLAT_TESTS_MAX_MMAPS,
-				    start_va,
-				    end_va);
+		xlat_test_helpers_rand_mmap_array(&init_mmap[0],
+				XLAT_TESTS_MAX_MMAPS, start_va, end_va);
 
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&cfg, region, &init_mmap[0],
