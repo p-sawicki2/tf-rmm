@@ -16,6 +16,24 @@
       "message": "we need this disables to be set.",
       "revId": "5955abce65e60d34f1fc33af699d28372302675a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "531a3a6d_279e2550",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-03-29T15:03:16Z",
+      "side": 0,
+      "message": "Ahh ok. I understood the opposite from your comment on https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/19743/22/lib/xlat/src/xlat_tables_arch.c#136\n\nIn any case, there are a number of bits and TTE flags that need further discussion, so I will add these to the list.\n\nFixed",
+      "parentUuid": "c9bdcc95_c65afe7a",
+      "revId": "5955abce65e60d34f1fc33af699d28372302675a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
