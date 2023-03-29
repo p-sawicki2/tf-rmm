@@ -1,0 +1,331 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45dd6478_908d456a",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "This was first confusing at first. \n\nPerhaps just use XLAT_BLOCK_SIZE(MIN_LVL_BLOCK_DESC) as this is more in line with the comments here.",
+      "range": {
+        "startLine": 39,
+        "startChar": 34,
+        "endLine": 39,
+        "endChar": 60
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbeccda7_74f68f66",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "these macros are not used and can be rmeoved.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 0
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "007b0a5f_c47eaf89",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "Can use MASK() and INPLACE() conventions\n\nSee arch_helpers.h for examples. \n\nSuggest\n\nXLAT_TESTS_TBL_ADDR() as the name of eventual macro.",
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29c60ff7_809e60c6",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "Hmm, Initially I thought it may be better to keep the attributes but the macros would need more comments (like the comments in xlat_defs_private.h) and organization to make them more readable. \n\nI assume that we would need to add macros in both places when we add more capability in xlat tables in future which is also a maintenance overhead. Hence I think to reduce the effort overall by avoiding the redefines here.",
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d101331_2c8b6c6b",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "not a comment, but this usage highlights the burden of maintaining 2 versions of macros. Hence the suggestion to remove the duplication.",
+      "range": {
+        "startLine": 616,
+        "startChar": 17,
+        "endLine": 616,
+        "endChar": 42
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48e0ccaf_cc29c65c",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "nit: Create",
+      "range": {
+        "startLine": 722,
+        "startChar": 5,
+        "endLine": 722,
+        "endChar": 13
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca1e6637_e2daa02b",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "Split tests below this to a  new patch to allow above tests to be merged.",
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc7b1b78_6dd40f72",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "\u0027offset\u0027 or better remove from here as offset is mentioned below.\n\nedit: I see what you were trying to do. WE need a short discussion.",
+      "range": {
+        "startLine": 1378,
+        "startChar": 28,
+        "endLine": 1378,
+        "endChar": 34
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4f3e2e3_3ece3f2a",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "remove `final`. This function only takes in a single level as argument. Same comment below.\n\nedit: I see what you were trying to do. WE need a short discussion.",
+      "range": {
+        "startLine": 1380,
+        "startChar": 59,
+        "endLine": 1380,
+        "endChar": 64
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "949788ec_978340e9",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "index",
+      "range": {
+        "startLine": 1382,
+        "startChar": 38,
+        "endLine": 1382,
+        "endChar": 42
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a122458e_8514d836",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "Currently this is same as `level` input arg. So need not return the same value back. but this may still be needed, wait for discussion.",
+      "range": {
+        "startLine": 1395,
+        "startChar": 1,
+        "endLine": 1396,
+        "endChar": 28
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ab72b5f_f627a945",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1398,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "\"An array (\u0027tbl_idxs\u0027) with the expected indexes mapping the regions at the last level table\".",
+      "range": {
+        "startLine": 1397,
+        "startChar": 5,
+        "endLine": 1398,
+        "endChar": 66
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3db367bd_2f139658",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "unused argument. Can be removed from here and caller.",
+      "range": {
+        "startLine": 1403,
+        "startChar": 20,
+        "endLine": 1403,
+        "endChar": 29
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f502fc9_7f452514",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "qualify as `va_region` else it is confused with mmap_region",
+      "range": {
+        "startLine": 1541,
+        "startChar": 23,
+        "endLine": 1541,
+        "endChar": 29
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "457acbe9_2866e4b4",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1564,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "nit: call this variable `va_region`",
+      "range": {
+        "startLine": 1564,
+        "startChar": 3,
+        "endLine": 1564,
+        "endChar": 10
+      },
+      "revId": "b6a098ec99e3c4a7ba558bfc4c781c51f02e6f38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

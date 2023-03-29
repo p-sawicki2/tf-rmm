@@ -719,6 +719,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e31b88d8_57effb75",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "can be a follow on patch . Please put in a JIRA.",
+      "parentUuid": "3561aaeb_9b861506",
+      "range": {
+        "startLine": 1111,
+        "startChar": 24,
+        "endLine": 1111,
+        "endChar": 29
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e4e768f7_d6b40979",
         "filename": "lib/xlat/tests/xlat_tests.cpp",
         "patchSetId": 10
@@ -1095,6 +1119,30 @@
       "side": 1,
       "message": "\u0027region\u0027, alongside with \u0027start_lvl\u0027 and \u0027end_lvl\u0027 is used to calculate the range of addresses on the mmap regions. It is the second level loop.",
       "parentUuid": "f51c35f7_f45247c3",
+      "range": {
+        "startLine": 1730,
+        "startChar": 51,
+        "endLine": 1730,
+        "endChar": 58
+      },
+      "revId": "ac85f5d4bfbbf8768cc77e7577da505e96c4ecf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e48a4c3_6eb6023f",
+        "filename": "lib/xlat/tests/xlat_tests.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1730,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T01:18:30Z",
+      "side": 1,
+      "message": "ACK I got confused with mmap region. Gave a comment",
+      "parentUuid": "a0e5e88c_471e03ea",
       "range": {
         "startLine": 1730,
         "startChar": 51,
