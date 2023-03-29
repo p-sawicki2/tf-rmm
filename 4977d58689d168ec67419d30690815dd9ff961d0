@@ -216,6 +216,24 @@
       "parentUuid": "21fc7136_7cc26d84",
       "revId": "4977d58689d168ec67419d30690815dd9ff961d0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98fc30bd_423f5e4c",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T16:05:11Z",
+      "side": 1,
+      "message": "As discussed this helps in getting coverage for a specific test group wihtout RMM init. so lets keep it for the timebeing.",
+      "parentUuid": "86828134_a727419c",
+      "revId": "4977d58689d168ec67419d30690815dd9ff961d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
