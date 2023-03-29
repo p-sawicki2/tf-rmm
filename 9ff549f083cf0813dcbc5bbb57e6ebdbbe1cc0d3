@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eee83e17_9f47be83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T12:57:01Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "9ff549f083cf0813dcbc5bbb57e6ebdbbe1cc0d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3b6cc64_7d34e8ec",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T12:57:01Z",
+      "side": 1,
+      "message": "rmm-lib should already pull in all needed dependancies in lib folder. Is this needed",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "9ff549f083cf0813dcbc5bbb57e6ebdbbe1cc0d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da33d021_438219e6",
+        "filename": "plat/host/host_test/include/utest_exit.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T12:57:01Z",
+      "side": 1,
+      "message": "does this need to be in public exported header? If not, it can remain the previous location.",
+      "revId": "9ff549f083cf0813dcbc5bbb57e6ebdbbe1cc0d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
