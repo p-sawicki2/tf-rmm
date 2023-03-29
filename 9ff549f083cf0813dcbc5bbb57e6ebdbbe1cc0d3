@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95e157d3_1c1bd6b7",
+        "filename": "configs/host_defcfg.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T12:59:08Z",
+      "side": 1,
+      "message": "...unittests on xlat lib.",
+      "range": {
+        "startLine": 36,
+        "startChar": 49,
+        "endLine": 37,
+        "endChar": 1
+      },
+      "revId": "9ff549f083cf0813dcbc5bbb57e6ebdbbe1cc0d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3b6cc64_7d34e8ec",
         "filename": "plat/host/host_test/CMakeLists.txt",
         "patchSetId": 23
