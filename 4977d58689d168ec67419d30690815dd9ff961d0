@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c175f555_e793ec24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 26
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T15:31:42Z",
+      "side": 1,
+      "message": "\"The patch also moves the rand() initialization from individual test to test_helpers_rmm_start().\"",
+      "revId": "4977d58689d168ec67419d30690815dd9ff961d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "990062b7_c9960231",
+        "filename": "plat/host/host_test/include/test_helpers.h",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T15:31:42Z",
+      "side": 1,
+      "message": "No user of this macro. Would prefer to introduce this if there is a user.",
+      "revId": "4977d58689d168ec67419d30690815dd9ff961d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20192e05_997365de",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-29T15:31:42Z",
+      "side": 1,
+      "message": "can be done in test_helpers_rmm_start()",
+      "revId": "4977d58689d168ec67419d30690815dd9ff961d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
