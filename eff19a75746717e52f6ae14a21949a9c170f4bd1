@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "489c8d7b_2a1c3d95",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-03T07:00:53Z",
+      "side": 1,
+      "message": "We can use the TABLE_ADDR_MASK in xlat lib instead of redefining.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
