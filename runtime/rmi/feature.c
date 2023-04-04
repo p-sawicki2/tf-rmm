@@ -27,16 +27,16 @@ static unsigned long get_feature_register_0(void)
 
 	/* Set support for SHA256 and SHA512 hash algorithms */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_256,
-				RMI_SUPPORTED);
+				RMI_FEATURE_TRUE);
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_512,
-				RMI_SUPPORTED);
+				RMI_FEATURE_TRUE);
 
 	/* RMM supports PMUv3p7+ */
 	assert(read_pmu_version() >= ID_AA64DFR0_EL1_PMUv3p7);
 
 	/* Set support for PMUv3 */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_EN,
-				RMI_SUPPORTED);
+				RMI_FEATURE_TRUE);
 
 	/* Set number of PMU counters available */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS,
@@ -91,7 +91,8 @@ static bool validate_feature_register_0(unsigned long value)
 	 */
 
 	/* Validate number of PMU counters if PMUv3 is enabled */
-	if ((EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, value) == RMI_SUPPORTED) &&
+	if ((EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, value) ==
+					RMI_FEATURE_TRUE) &&
 	    (EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, value) !=
 	     EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0))) {
 		return false;
