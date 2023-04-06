@@ -1,0 +1,59 @@
+/'
+ ' SPDX-License-Identifier: BSD-3-Clause
+ ' SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+ '/
+
+/'
+ ' RMM Data Flow Diagram
+ '/
+
+@startuml
+digraph rnn_dfd {
+
+    # Arrange nodes from left to right
+    rankdir="LR"
+
+    # Allow arrows to end on cluster boundaries
+    compound=true
+
+    # Default settings for edges and nodes
+    edge [minlen=2 color="#8c1b07"]
+    node [fillcolor="#ffb866" style=filled shape=box fixedsize=true width=1.6 height=0.7]
+
+    # Nodes outside RMM trust boundary
+    el3 [label="EL-3\nFirmware"]
+    rlm [label="Realms"]
+    dbg [label="Debug & Trace"]
+    logs [label="Logs\n(UART)"]
+    ram [label="Off-chip\nDynamic RAM"]
+
+    # Trust boundary cluster
+    subgraph cluster_trusted{
+        graph [style=dashed color="#f22430"]
+
+        # HW IPs cluster
+        subgraph cluster_ip{
+            label ="Hardware IPs";
+            graph [style=filled color="#000000" fillcolor="#ffd29e"]
+
+            rank="same"
+            gic [label="GIC" width=1.2 height=0.5]
+            pmu [label="PMU" width=1.2 height=0.5]
+            mmu [label="MMU" width=1.2 height=0.5]
+            etc [label="..." shape=none style=none height=0.5]
+        }
+
+        rmm [label="RMM" fillcolor="#ddffb3"];
+    }
+
+    # Interactions between nodes
+    el3 -> rmm [lhead=rmm label="DF1"]
+    logs -> rmm [dir="back" lhead=rmm label="DF2"]
+    dbg -> rmm [dir="both" lhead=rmm label="DF3"]
+    el3 -> rmm [dir="both" lhead=rmm label="DF4"]
+    rlm -> rmm [dir="both" lhead=rmm label="DF5"]
+    rmm ->  pmu [dir="both" ltail=rmm_cluster lhead=cluster_ip label="DF7" minlen=1]
+    ram -> rmm [dir="both" lhead=rmm label="DF6"]
+}
+
+@enduml
