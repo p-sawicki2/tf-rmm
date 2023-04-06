@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4adfdbf_d8e7135f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "still reviewing",
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "489c8d7b_2a1c3d95",
@@ -19,6 +36,144 @@
         "startChar": 0,
         "endLine": 48,
         "endChar": 58
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed754137_7f0802f4",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "\"..offset to the end of the current region.\"",
+      "range": {
+        "startLine": 168,
+        "startChar": 44,
+        "endLine": 168,
+        "endChar": 60
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f460a7c_46dd8a07",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "\"..to return a random attribute for a mmap region\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 33,
+        "endLine": 67,
+        "endChar": 40
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6732e8c6_3519b1f3",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "suggest : xlat_test_helpers_rand_mmap_attrs() as name.",
+      "range": {
+        "startLine": 68,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 41
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "febc08cc_37f266b8",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "\" a random array of xlat_mmap_region structures ..\"",
+      "range": {
+        "startLine": 70,
+        "startChar": 34,
+        "endLine": 70,
+        "endChar": 45
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13ca642c_dc8542a6",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "\"given the `mmap_attrs` field of a mmap region. The generated attributes are returned via the `attrs` parameter.\"",
+      "range": {
+        "startLine": 95,
+        "startChar": 42,
+        "endLine": 95,
+        "endChar": 46
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2da0eb3f_cc803ba2",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-06T07:28:39Z",
+      "side": 1,
+      "message": "It is confusing to say \"generate attr from va\". Suggest to rename the function to xlat_test_helpers_get_attrs_for_va().\n\nSuggest the reword of comment to : \"...get the attributes (lower and upper) corresponding to va as specified by mmap region array in the translation context.\"",
+      "range": {
+        "startLine": 103,
+        "startChar": 22,
+        "endLine": 104,
+        "endChar": 65
       },
       "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
