@@ -35,6 +35,13 @@ Realm Management Monitor Documentation
             </a>
             <p>Design documentation for RMM.</p>
         </li>
+        <li class="grid-item">
+            <a href="threat_model/index.html">
+               <img alt="" src="_static/images/rmm-documentation.png"/>
+               <h2>Threat Model</h2>
+            </a>
+            <p>Threat Model for RMM.</p>
+        </li>
     </ul>
 
 .. toctree::
@@ -46,4 +53,5 @@ Realm Management Monitor Documentation
    getting_started/index
    process/index
    design/index
+   threat_model/index
    glossary
