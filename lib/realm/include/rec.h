@@ -143,7 +143,7 @@ struct rec {
 		struct granule *g_rtt;
 		struct granule *g_rd;
 		bool pmu_enabled;
-		unsigned int pmu_num_cnts;
+		unsigned int pmu_num_ctrs;
 	} realm_info;
 
 	struct {
