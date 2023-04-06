@@ -12,12 +12,12 @@ void host_rmi_granule_delegate(void *granule_address, struct smc_result *ret);
 void host_rmi_granule_undelegate(void *granule_address, struct smc_result *ret);
 void host_rmi_realm_create(void *rd, void *params_ptr, struct smc_result *ret);
 void host_rmi_realm_destroy(void *rd, struct smc_result *ret);
-void host_rmi_rtt_create(void *rtt, void *rd, void *ipa,
+void host_rmi_rtt_create(void *rd, void *rtt, void *ipa,
 			 unsigned int level, struct smc_result *ret);
 void host_rmi_rtt_destroy(void *rtt, void *rd, void *ipa,
 			  unsigned int level, struct smc_result *ret);
 void host_rmi_rec_aux_count(void *rd, struct smc_result *ret);
-void host_rmi_rec_create(void *rec, void *rd, void *params_ptr,
+void host_rmi_rec_create(void *rd, void *rec, void *params_ptr,
 			 struct smc_result *ret);
 void host_rmi_rec_destroy(void *rec, struct smc_result *ret);
 void host_rmi_realm_activate(void *rd, struct smc_result *ret);
