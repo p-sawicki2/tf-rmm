@@ -123,7 +123,7 @@ static void save_realm_state(struct rec *rec, struct rmi_rec_exit *rec_exit)
 
 		/* Save PMU context */
 		pmu_save_state(rec->aux_data.pmu,
-				rec->realm_info.pmu_num_cnts);
+				rec->realm_info.pmu_num_ctrs);
 	}
 }
 
@@ -209,7 +209,7 @@ static void restore_realm_state(struct rec *rec)
 	if (rec->realm_info.pmu_enabled) {
 		/* Restore PMU context */
 		pmu_restore_state(rec->aux_data.pmu,
-				  rec->realm_info.pmu_num_cnts);
+				  rec->realm_info.pmu_num_ctrs);
 	}
 }
 
@@ -230,7 +230,7 @@ static void save_ns_state(struct rec *rec)
 
 	if (rec->realm_info.pmu_enabled) {
 		/* Save PMU context */
-		pmu_save_state(ns_state->pmu, rec->realm_info.pmu_num_cnts);
+		pmu_save_state(ns_state->pmu, rec->realm_info.pmu_num_ctrs);
 	}
 }
 
@@ -252,7 +252,7 @@ static void restore_ns_state(struct rec *rec)
 	if (rec->realm_info.pmu_enabled) {
 		/* Restore PMU state */
 		pmu_restore_state(ns_state->pmu,
-				  rec->realm_info.pmu_num_cnts);
+				  rec->realm_info.pmu_num_ctrs);
 	}
 }
 
