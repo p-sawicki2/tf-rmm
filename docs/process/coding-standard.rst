@@ -310,6 +310,8 @@ Error return values and Exception handling
   }
 
 
+.. _asserts and panic:
+
 Use of asserts and panic
 ------------------------
 
