@@ -29,8 +29,7 @@ const char *rmi_status_string[] = {
 	RMI_STATUS_STRING(ERROR_INPUT),
 	RMI_STATUS_STRING(ERROR_REALM),
 	RMI_STATUS_STRING(ERROR_REC),
-	RMI_STATUS_STRING(ERROR_RTT),
-	RMI_STATUS_STRING(ERROR_IN_USE)
+	RMI_STATUS_STRING(ERROR_RTT)
 };
 COMPILER_ASSERT(ARRAY_LEN(rmi_status_string) == RMI_ERROR_COUNT);
 
@@ -54,8 +53,21 @@ typedef unsigned long (*handler_5)(unsigned long arg0, unsigned long arg1,
 				   unsigned long arg2, unsigned long arg3,
 				   unsigned long arg4);
 typedef void (*handler_1_o)(unsigned long arg0, struct smc_result *ret);
+typedef void (*handler_2_o)(unsigned long arg0, unsigned long arg1,
+			    struct smc_result *ret);
 typedef void (*handler_3_o)(unsigned long arg0, unsigned long arg1,
 			    unsigned long arg2, struct smc_result *ret);
+typedef void (*handler_4_o)(unsigned long arg0, unsigned long arg1,
+			    unsigned long arg2, unsigned long arg3,
+			    struct smc_result *ret);
+
+/*
+ * SMC RMI handler type encoding:
+ * [0:7]  - number of arguments
+ * [8:15] - number of output values
+ */
+#define RMI_TYPE(_in, _out)	(_in | (_out << 8))
+#define rmi_type(_in, _out)	rmi_type_##_in##_out = RMI_TYPE(_in, _out)
 
 /*
  * SMC RMI handler type encoding:
@@ -73,7 +85,11 @@ enum rmi_type {
 	rmi_type(4, 0),	/* 4 arguments, 0 output values */
 	rmi_type(5, 0),	/* 5 arguments, 0 output values */
 	rmi_type(1, 1), /* 1 argument,  1 output value */
-	rmi_type(3, 4)	/* 3 arguments, 4 output values */
+	rmi_type(2, 2), /* 2 arguments, 2 output values */
+	rmi_type(3, 1),	/* 3 arguments, 1 output value */
+	rmi_type(3, 2),	/* 3 arguments, 2 output values */
+	rmi_type(3, 4),	/* 3 arguments, 4 output values */
+	rmi_type(4, 1)	/* 4 arguments, 1 output value */
 };
 
 struct smc_handler {
@@ -87,7 +103,11 @@ struct smc_handler {
 		handler_4	f_40;
 		handler_5	f_50;
 		handler_1_o	f_11;
+		handler_2_o	f_22;
+		handler_3_o	f_31;
+		handler_3_o	f_32;
 		handler_3_o	f_34;
+		handler_4_o	f_41;
 		void		*fn_dummy;
 	};
 	bool		log_exec;	/* print handler execution */
@@ -125,17 +145,17 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(REC_ENTER,		2, 0, smc_rec_enter,		 false, true),
 	HANDLER(DATA_CREATE,		5, 0, smc_data_create,		 false, false),
 	HANDLER(DATA_CREATE_UNKNOWN,	3, 0, smc_data_create_unknown,	 false, false),
-	HANDLER(DATA_DESTROY,		2, 0, smc_data_destroy,		 false, true),
+	HANDLER(DATA_DESTROY,		2, 2, smc_data_destroy,		 false, true),
 	HANDLER(RTT_CREATE,		4, 0, smc_rtt_create,		 false, true),
-	HANDLER(RTT_DESTROY,		4, 0, smc_rtt_destroy,		 false, true),
-	HANDLER(RTT_FOLD,		4, 0, smc_rtt_fold,		 false, true),
+	HANDLER(RTT_DESTROY,		3, 2, smc_rtt_destroy,		 false, true),
+	HANDLER(RTT_FOLD,		3, 1, smc_rtt_fold,		 false, true),
 	HANDLER(RTT_MAP_UNPROTECTED,	4, 0, smc_rtt_map_unprotected,	 false, false),
-	HANDLER(RTT_UNMAP_UNPROTECTED,	3, 0, smc_rtt_unmap_unprotected, false, false),
+	HANDLER(RTT_UNMAP_UNPROTECTED,	3, 1, smc_rtt_unmap_unprotected, false, false),
 	HANDLER(RTT_READ_ENTRY,		3, 4, smc_rtt_read_entry,	 false, true),
 	HANDLER(PSCI_COMPLETE,		2, 0, smc_psci_complete,	 true,  true),
 	HANDLER(REC_AUX_COUNT,		1, 1, smc_rec_aux_count,	 true,  true),
 	HANDLER(RTT_INIT_RIPAS,		3, 0, smc_rtt_init_ripas,	 false, true),
-	HANDLER(RTT_SET_RIPAS,		5, 0, smc_rtt_set_ripas,	 false, true)
+	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
 };
 
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
@@ -282,8 +302,20 @@ void handle_ns_smc(unsigned long function_id,
 	case rmi_type_11:
 		handler->f_11(arg0, ret);
 		break;
+	case rmi_type_22:
+		handler->f_22(arg0, arg1, ret);
+		break;
+	case rmi_type_31:
+		handler->f_31(arg0, arg1, arg2, ret);
+		break;
+	case rmi_type_32:
+		handler->f_32(arg0, arg1, arg2, ret);
+		break;
 	case rmi_type_34:
 		handler->f_34(arg0, arg1, arg2, ret);
+		break;
+	case rmi_type_41:
+		handler->f_41(arg0, arg1, arg2, arg3, ret);
 		break;
 	default:
 		assert(false);
