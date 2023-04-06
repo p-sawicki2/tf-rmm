@@ -48,11 +48,11 @@ void host_rmi_realm_destroy(void *rd, struct smc_result *ret)
 		ret);
 }
 
-void host_rmi_rtt_create(void *rtt, void *rd, void *ipa, unsigned int level, struct smc_result *ret)
+void host_rmi_rtt_create(void *rd, void *rtt, void *ipa, unsigned int level, struct smc_result *ret)
 {
 	handle_ns_smc(SMC_RMM_RTT_CREATE,
-		(uintptr_t)rtt,
 		(uintptr_t)rd,
+		(uintptr_t)rtt,
 		(uintptr_t)ipa,
 		level,
 		0, 0,
@@ -79,11 +79,11 @@ void host_rmi_rec_aux_count(void *rd, struct smc_result *ret)
 		ret);
 }
 
-void host_rmi_rec_create(void *rec, void *rd, void *params_ptr, struct smc_result *ret)
+void host_rmi_rec_create(void *rd, void *rec, void *params_ptr, struct smc_result *ret)
 {
 	handle_ns_smc(SMC_RMM_REC_CREATE,
-		(uintptr_t)rec,
 		(uintptr_t)rd,
+		(uintptr_t)rec,
 		(uintptr_t)params_ptr,
 		0, 0, 0,
 		ret);
