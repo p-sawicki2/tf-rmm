@@ -1587,9 +1587,9 @@ TEST(granule, find_lock_unused_granule_TC1)
 
 		CHECK_FALSE(granule == NULL);
 		CHECK_FALSE(granule ==
-			(struct granule *)status_ptr(RMI_ERROR_INPUT));
+			(struct granule *)status_ptr(1U));
 		CHECK_FALSE(granule ==
-			(struct granule *)status_ptr(RMI_ERROR_IN_USE));
+			(struct granule *)status_ptr(2U));
 		CHECK_FALSE(granule->lock.val == 0UL);
 		LONGS_EQUAL(0, granule->refcount);
 	}
@@ -1667,7 +1667,7 @@ TEST(granule, find_lock_unused_granule_TC3)
 
 		granule = find_lock_unused_granule(addrs[i], GRANULE_STATE_RD);
 
-		POINTERS_EQUAL(status_ptr(RMI_ERROR_IN_USE), granule);
+		POINTERS_EQUAL(status_ptr(2U), granule);
 	}
 }
 
