@@ -280,7 +280,7 @@ unsigned long smc_rec_create(unsigned long rec_addr,
 	rec->realm_info.g_rd = g_rd;
 
 	rec->realm_info.pmu_enabled = rd->pmu_enabled;
-	rec->realm_info.pmu_num_cnts = rd->pmu_num_cnts;
+	rec->realm_info.pmu_num_ctrs = rd->pmu_num_ctrs;
 
 	rec_params_measure(rd, &rec_params);
 
