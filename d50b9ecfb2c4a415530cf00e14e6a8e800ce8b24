@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9f98c17_cace82ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T10:06:47Z",
+      "side": 1,
+      "message": "See a comment for a similar case on https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20409/comment/7bff031c_0f4dbdbe/\n\nThis also applies to other patches on the stack",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 56
+      },
+      "revId": "d50b9ecfb2c4a415530cf00e14e6a8e800ce8b24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52087d12_2c042d32",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T10:06:47Z",
+      "side": 1,
+      "message": "This module has unittests in place (lib/realm/tests/granule.cpp) which will probably need to be updated as well. There should be a set of tests for this API named ``find_lock_unused_granule_TC*``.",
+      "range": {
+        "startLine": 215,
+        "startChar": 16,
+        "endLine": 215,
+        "endChar": 40
+      },
+      "revId": "d50b9ecfb2c4a415530cf00e14e6a8e800ce8b24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
