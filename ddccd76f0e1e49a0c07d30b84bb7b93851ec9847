@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f70df85f_9bb4406a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T12:02:49Z",
+      "side": 1,
+      "message": "The host_build variant of the fake_host platform creates and runs a fake realm. I think you need to update that as well with the changes on the rmi_realm_params struct for the tests to pass.",
+      "revId": "ddccd76f0e1e49a0c07d30b84bb7b93851ec9847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
