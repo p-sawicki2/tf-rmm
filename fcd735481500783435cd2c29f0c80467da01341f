@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34251198_2b45b25d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T12:07:35Z",
+      "side": 1,
+      "message": "Looks good to me, but I think the comment message might need review as per explained on other patches",
+      "revId": "fcd735481500783435cd2c29f0c80467da01341f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
