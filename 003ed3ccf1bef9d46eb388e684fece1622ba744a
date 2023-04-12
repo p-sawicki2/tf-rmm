@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1733060_c6a40bd4",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T09:11:53Z",
+      "side": 1,
+      "message": "remove tabs",
+      "range": {
+        "startLine": 486,
+        "startChar": 0,
+        "endLine": 486,
+        "endChar": 4
+      },
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
