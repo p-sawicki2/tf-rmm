@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11abd4d9_59fde96d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T11:18:15Z",
+      "side": 1,
+      "message": "This patch looks good to me, but I would suggest to review the commit message as per my comment on other patches",
+      "revId": "b27960dd18e9878c1a0066ad9fffabd1ba01076e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
