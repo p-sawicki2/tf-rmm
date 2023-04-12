@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bff031c_0f4dbdbe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-12T09:51:54Z",
+      "side": 1,
+      "message": "I don\u0027t know how safe it is to have links to internal repositories into the external ones (even if they are not accessible from outside), specially when they include internal names, which I think they can be considered internal IP?",
+      "range": {
+        "startLine": 13,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "7c1061b841881d2634327545e3acf13c8afb82b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
