@@ -3,6 +3,91 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "85759d51_2a415491",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "image\nOn FVP RMM runs from DRAM, should this be mentioned?",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf962e44_7aaa78f0",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "in Table? In the diagram?",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfa73681_1ef7462c",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "\"through\" used twice.\nsent in x0-x3 registers ?",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b009fcf5_694369f5",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "the rest CPUs",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48c98002_616a0bfd",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "Boot Manifest",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "01b01acd_b7bc5755",
         "filename": "docs/threat_model/dfd.rst",
         "patchSetId": 2
@@ -26,6 +111,307 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4679ba2_4e5281a5",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "remove second \"and IPs\"",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42e1b929_6c4262f0",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "in the Threat Model.",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc35d5cf_fb166754",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "; -\u003e ,",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66afb43c_562f711a",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "add space before (",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc365588_1faadb98",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80764e58_80a135f8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "implement?",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e0c54f4_0d17260c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "IDs",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "285458c4_95d36090",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c23cb3bd_72826952",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "of the service...",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c84daa8_f1f65771",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "goes",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa5b2cdb_0490bfe9",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "remove second \"to\"",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5afab5e0_4293fad2",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "attacks",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "812ff94d_19691f09",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "cryptographic",
+      "range": {
+        "startLine": 431,
+        "startChar": 33,
+        "endLine": 431,
+        "endChar": 45
+      },
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c50d9bf8_486d4bad",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "Mbed TLS",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b707c75a_6e08fdc7",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": ". -\u003e ,",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55412ccb_641378cb",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "Firmware",
+      "range": {
+        "startLine": 464,
+        "startChar": 41,
+        "endLine": 464,
+        "endChar": 48
+      },
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "005baa26_1a9f6cca",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "take",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d1733060_c6a40bd4",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 2
@@ -43,6 +429,57 @@
         "endLine": 486,
         "endChar": 4
       },
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84a58e50_bcb5c9cd",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "off-chip dynamic memory",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed3fde59_6e248611",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "what is ASLR?",
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30d4120a_867841ed",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-04-13T10:58:23Z",
+      "side": 1,
+      "message": "goes",
       "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
