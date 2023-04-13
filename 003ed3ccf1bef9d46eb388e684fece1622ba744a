@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "01b01acd_b7bc5755",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-13T09:29:13Z",
+      "side": 1,
+      "message": "PSCI interface is also a communications channel between Realms and RMM. Decide whether consider this part of DF5 or if it is a different Data Flow on its own.",
+      "range": {
+        "startLine": 70,
+        "startChar": 24,
+        "endLine": 71,
+        "endChar": 74
+      },
+      "revId": "003ed3ccf1bef9d46eb388e684fece1622ba744a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d1733060_c6a40bd4",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 2
