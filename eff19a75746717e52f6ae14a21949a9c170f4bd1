@@ -631,6 +631,305 @@
       },
       "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc73a40b_88f3b2ee",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "use 64 bit types. This is not used as pointers.",
+      "range": {
+        "startLine": 511,
+        "startChar": 1,
+        "endLine": 511,
+        "endChar": 11
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5d3444d_6b191d8f",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "\"Get VA space limits for LVL 2\"",
+      "range": {
+        "startLine": 543,
+        "startChar": 3,
+        "endLine": 543,
+        "endChar": 28
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c55acdd0_f79f28ab",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "remove as init_mmap[0] is not used specifically for test. See comment below",
+      "range": {
+        "startLine": 549,
+        "startChar": 32,
+        "endLine": 550,
+        "endChar": 54
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1e4c83f_9dbd2af5",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "\"last\"",
+      "range": {
+        "startLine": 552,
+        "startChar": 45,
+        "endLine": 552,
+        "endChar": 49
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac419521_10eba904",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "this is not used by test as test_va is recalculated below ?",
+      "range": {
+        "startLine": 580,
+        "startChar": 2,
+        "endLine": 581,
+        "endChar": 36
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c60896f_d798bcac",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "use the enum value for readability \"LOW_REGION\"",
+      "range": {
+        "startLine": 583,
+        "startChar": 12,
+        "endLine": 583,
+        "endChar": 13
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fee37069_14a3246e",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "is there a chance that the 2nd entry could be here by random ? suggest removing the 2nd entry when creating xlat tables to ensure that there is no mapping here.\n\nOr you could remove the last mmap region entry while creating tables, and try to query the va for last entry to test this.",
+      "range": {
+        "startLine": 673,
+        "startChar": 2,
+        "endLine": 674,
+        "endChar": 20
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65d2c88a_049a0e58",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine this with next series of ASSERT tests.",
+      "range": {
+        "startLine": 729,
+        "startChar": 0,
+        "endLine": 729,
+        "endChar": 49
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "313a4bbc_dff3e997",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine with previous test",
+      "range": {
+        "startLine": 749,
+        "startChar": 0,
+        "endLine": 749,
+        "endChar": 51
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "495a79b1_670c7a88",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine with previous test.",
+      "range": {
+        "startLine": 803,
+        "startChar": 0,
+        "endLine": 803,
+        "endChar": 54
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cea803e_697039a9",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine with previous test",
+      "range": {
+        "startLine": 853,
+        "startChar": 0,
+        "endLine": 853,
+        "endChar": 54
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "098b62f0_3b7809cc",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine",
+      "range": {
+        "startLine": 913,
+        "startChar": 1,
+        "endLine": 913,
+        "endChar": 57
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d3200c_07979913",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T07:49:37Z",
+      "side": 1,
+      "message": "combine",
+      "range": {
+        "startLine": 973,
+        "startChar": 0,
+        "endLine": 973,
+        "endChar": 57
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
