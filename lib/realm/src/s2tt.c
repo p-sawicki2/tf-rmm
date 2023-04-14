@@ -878,8 +878,8 @@ bool addr_is_level_aligned(unsigned long addr, long level)
 typedef bool (*s2tte_type_checker)(unsigned long s2tte);
 
 static bool __table_is_uniform_block(unsigned long *table,
-			      s2tte_type_checker s2tte_is_x,
-			      enum ripas *ripas_ptr)
+				s2tte_type_checker s2tte_is_x,
+				enum ripas *ripas_ptr)
 {
 	unsigned long s2tte = s2tte_read(&table[0]);
 	enum ripas ripas_val;
