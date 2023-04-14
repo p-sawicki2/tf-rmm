@@ -930,6 +930,121 @@
       },
       "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "740b91f3_e9a53100",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T08:52:35Z",
+      "side": 1,
+      "message": "would prefer this to be part of print rather than isolated \\n. Same comments for other such \\n prnts.",
+      "range": {
+        "startLine": 1058,
+        "startChar": 2,
+        "endLine": 1058,
+        "endChar": 16
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed57047b_c55ddd44",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1193,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T08:52:35Z",
+      "side": 1,
+      "message": "this can be added to above test as it seems wasteful to have a 3 line change and 30 lines of boiler plate. mark the comments for this test separately.",
+      "range": {
+        "startLine": 1184,
+        "startChar": 2,
+        "endLine": 1193,
+        "endChar": 0
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2447d2ea_5fcc84df",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T08:52:35Z",
+      "side": 1,
+      "message": "\"TRANSIENT_DESC\"",
+      "range": {
+        "startLine": 1361,
+        "startChar": 6,
+        "endLine": 1361,
+        "endChar": 34
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25d29d24_3249f3b2",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T08:52:35Z",
+      "side": 1,
+      "message": "use MASK() macro",
+      "range": {
+        "startLine": 1530,
+        "startChar": 22,
+        "endLine": 1530,
+        "endChar": 53
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef3607c0_51382a74",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1719,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-14T08:52:35Z",
+      "side": 1,
+      "message": "this seems to be pointless as we are masking this offset in next line.",
+      "range": {
+        "startLine": 1718,
+        "startChar": 3,
+        "endLine": 1719,
+        "endChar": 21
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
