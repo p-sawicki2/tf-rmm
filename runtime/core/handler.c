@@ -69,14 +69,6 @@ typedef void (*handler_4_o)(unsigned long arg0, unsigned long arg1,
 #define RMI_TYPE(_in, _out)	(_in | (_out << 8))
 #define rmi_type(_in, _out)	rmi_type_##_in##_out = RMI_TYPE(_in, _out)
 
-/*
- * SMC RMI handler type encoding:
- * [0:7]  - number of arguments
- * [8:15] - number of output values
- */
-#define RMI_TYPE(_in, _out)	(_in | (_out << 8))
-#define rmi_type(_in, _out)	rmi_type_##_in##_out = RMI_TYPE(_in, _out)
-
 enum rmi_type {
 	rmi_type(0, 0),	/* 0 arguments, 0 output values */
 	rmi_type(1, 0),	/* 1 argument,  0 output values */
