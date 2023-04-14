@@ -531,6 +531,22 @@ unsigned long s2tte_create_table(unsigned long pa, long level)
 }
 
 /*
+ * Returns true if s2tte has defined ripas value, namely if it is one of:
+ * - unassigned_empty
+ * - unassigned_ram
+ * - assigned_empty
+ * - assigned_ram
+ */
+bool s2tte_has_ripas(unsigned long s2tte, long level)
+{
+	if (s2tte_is_table(s2tte, level) || s2tte_is_destroyed(s2tte) ||
+	   ((s2tte & S2TTE_NS) != 0UL)) {
+		return false;
+	}
+	return true;
+}
+
+/*
  * Returns true if @s2tte has HIPAS=@hipas.
  */
 static bool s2tte_has_hipas(unsigned long s2tte, unsigned long hipas)
@@ -557,14 +573,6 @@ static bool s2tte_has_unassigned_ripas(unsigned long s2tte, unsigned long ripas)
 
 	invalid_desc_ripas = s2tte & S2TTE_INVALID_RIPAS_MASK;
 	return (invalid_desc_ripas == ripas);
-}
-
-/*
- * Returns true if @s2tte has HIPAS=UNASSIGNED or HIPAS=INVALID_NS.
- */
-bool s2tte_is_unassigned(unsigned long s2tte)
-{
-	return s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED);
 }
 
 /*
