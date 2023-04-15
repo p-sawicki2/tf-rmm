@@ -1,0 +1,383 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b41ff45_0a8f9063",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "specify name of structure precisely\n\n\"..of xlat_mmap_region structure..",
+      "range": {
+        "startLine": 70,
+        "startChar": 30,
+        "endLine": 70,
+        "endChar": 35
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc90b5e9_fdbdf466",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "nit: remove quote",
+      "range": {
+        "startLine": 95,
+        "startChar": 29,
+        "endLine": 95,
+        "endChar": 30
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90cb28da_6c7596c9",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "nit: remove quote",
+      "range": {
+        "startLine": 96,
+        "startChar": 67,
+        "endLine": 96,
+        "endChar": 68
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31578401_6fb15745",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "See Suggested rename for this fn in previous comment.",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 39
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd8e6214_6e8a7b54",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "..to the memory allocated for..",
+      "range": {
+        "startLine": 117,
+        "startChar": 26,
+        "endLine": 117,
+        "endChar": 41
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f7d7321_96121bb8",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "an ascii art will be good.\n\n\n\n\n\n\n\n\n\n                                                          ┌──────────┐\n                                          ┌───────────────┤ 3rd      |\n                                          |               | Region   │\n                                          │               ├──────────┤\n                                          │               │          │\n                                          │               │          │\n                                          │               │          │\n                                          │               │          │\n                                          │               │          │\n                                          │               │          │\n                                          │               │          │\n                   ┌──────────────┐       │               │          │\n                   │              │       │               │          │\n                   │              ├───────┘               │          │\n                   ├──────────────┤                       │          │\n                   │              │                       │          │\n                   │              │                       └──────────┘\n                   │              │\n                   │              │\n                   │              │                        ┌──────────┐\n                   │              │                        │          │\n                   │              │                        │          │\n                   │              │                        │          │\n                   ├──────────────┤                        ├──────────┤\n                   │              │                        │ Second   │\n                   │              ├────────────────────────┤ Region   │\n                   ├──────────────┤                        ├──────────┤\n                   │              │                        │          │\n                   │              │                        │          │\n                   │              │                        │          │\n                   │              │                        │          │\n                   │              │                        │          │\n                   │              │                        │          │\n                   ├──────────────┤                        └──────────┘\n                   │              │\n                   │              │\n                   ├──────────────┤                         ┌─────────┐\n                   │              │                         │         │\n                   │              ├───────┐                 │         │\n                   └──────────────┘       │                 │         │\n                                          │                 │         │\n                       First Level        │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 │         │\n                                          │                 ├─────────┤\n                                          └─────────────────┤ First   |\n                                                            | region  │\n                                                            └─────────┘\n\n                                                               Last Level",
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "545c3777_e4be3f7d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "at",
+      "range": {
+        "startLine": 63,
+        "startChar": 43,
+        "endLine": 63,
+        "endChar": 45
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63e24c90_860f4b47",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "This is true only for first entry whereas this function is creating 3 mmap regions. May need some discussion. See my follow up comment on offset.",
+      "range": {
+        "startLine": 69,
+        "startChar": 22,
+        "endLine": 70,
+        "endChar": 58
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed3f5510_900612f3",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "\u003d\u003d",
+      "range": {
+        "startLine": 98,
+        "startChar": 18,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65e9b983_066ae09c",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "add an assert that last_lvl \u003e\u003d 1.",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 17
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0192eab_df46058e",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "there should be macro for this ..XLAT_BLOCK_SIZE(lvl) ?",
+      "range": {
+        "startLine": 125,
+        "startChar": 16,
+        "endLine": 125,
+        "endChar": 49
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33c20a34_224b2553",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "This condition needs to be \nif(first_lvl \u003c last_lvl) ?",
+      "range": {
+        "startLine": 131,
+        "startChar": 5,
+        "endLine": 131,
+        "endChar": 34
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "471b57bb_84f96208",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "\"Add an offset to the mmap region base VA so that this region\nwill be mapped at the same index as specified in tbl_idxs[].\"",
+      "range": {
+        "startLine": 134,
+        "startChar": 6,
+        "endLine": 136,
+        "endChar": 35
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66f5f5a8_af5f5c82",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "use macro",
+      "range": {
+        "startLine": 139,
+        "startChar": 4,
+        "endLine": 139,
+        "endChar": 45
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ade2aa4_5d7d352b",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "\"...`base lvl` table.\"\n\nSame comments below.",
+      "range": {
+        "startLine": 261,
+        "startChar": 35,
+        "endLine": 261,
+        "endChar": 62
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bed61d46_fce74fcd",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "remove this comment as this is not needed.",
+      "range": {
+        "startLine": 462,
+        "startChar": 15,
+        "endLine": 464,
+        "endChar": 15
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d01a3591_ccfabe1d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "See comment on previous patch",
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

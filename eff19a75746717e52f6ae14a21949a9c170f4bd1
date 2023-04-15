@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e77472a6_b6e20589",
+        "filename": "lib/xlat/tests/xlat_test_defs.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "This name is confusing for me. The TTE is an entry whereas this pointing to table. I would rather fix the xlat table macros than try to redefine it here.",
+      "parentUuid": "1d991f9e_f66802fc",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f3c24ef_7fcabc85",
         "filename": "lib/xlat/tests/xlat_test_helpers.c",
         "patchSetId": 3
@@ -684,6 +708,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8be0f940_895d0987",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "The trouble is the way the function is defined and used by callers, the exp level can only be last level I think. Even if this were to be changed in future, I suspect the callers and function impl will need to be drastically changed. Either way, this function is a bit bloated with functionality and it is hard to maintain. It may be better to not add any more functionality to this fn if we can. So removing some unneeded parameters will be good.",
+      "parentUuid": "da7f8d81_1ce313f3",
+      "range": {
+        "startLine": 79,
+        "startChar": 3,
+        "endLine": 80,
+        "endChar": 28
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df736526_aa7d6c89",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -778,6 +826,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05de6adc_e7dec92f",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "ah yes true. I think the comments need some rework. The if condition check may be wrong. See comments.",
+      "parentUuid": "9cefb2a2_66d7ac78",
+      "range": {
+        "startLine": 120,
+        "startChar": 2,
+        "endLine": 120,
+        "endChar": 14
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fd9b8730_aa266fa0",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -813,6 +885,30 @@
       "side": 1,
       "message": "No, it would not cause an overflow for the third entry. \u0027offset\u0027 is intended to be used on tests for \u0027xlat_get_llt_from_va()\u0027 and \u0027xlat_get_tte_ptr()\u0027, to map the last level table (or any of its parents) to a tte on the parent table whose index is \u003e 0, so that the base VA for the last level table wouldn\u0027t match the base VA for the context. Therefore \u0027offset\u0027 would affect to where the last level table is mapped on the parent, not to the last level table itself and hence it will not cause an overflow on the third entry (which is WRT the last level table).\n\nIf I were to add this functionality to the test itself, I would need to write a new helper (\u0027offset\u0027 is used on more than one test) which would be very similar to this one, that\u0027s why I decided to combine the functionality on the same helper.\n\nI can add a comment on the use of \u0027offset\u0027, though and an assert to ensure that the offset is aligned with the the block size of \u0027last_lvl\u0027, that should be enough to avoid any misuse.",
       "parentUuid": "fd9b8730_aa266fa0",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 25
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51cb26fe_ff09f304",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "Since the last entry is meant to be mapped to the last index of the table, I dont get how adding an offset to the va will not cause the last entry VA to be outside the table. I understand the first entry case but the last VA might be outside the last index when offset is added ?",
+      "parentUuid": "2ed05545_6355218b",
       "range": {
         "startLine": 122,
         "startChar": 1,
@@ -1013,6 +1109,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a9c452b0_efd5be88",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "can be a block as well ? So it gets confusing.",
+      "parentUuid": "e67c84b8_1fbdc2e2",
+      "range": {
+        "startLine": 176,
+        "startChar": 2,
+        "endLine": 176,
+        "endChar": 14
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "50e54446_6b65a34c",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -1154,6 +1274,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c63e109_e6200e79",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "The guideline is , unless a strict type is needed, use the simplest natural type (int i).",
+      "parentUuid": "2f17675e_dd348adc",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 274,
+        "endChar": 16
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e436fb75_a2d33ed5",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -1283,6 +1427,30 @@
       "side": 1,
       "message": "Yes, it can be done for all regions after the latest changes that I made on the patch, but I forgot to update this.\n\nIn my case I was thinking on picking up a random mmap region, instead of iterating over the three of them, just to avoid another level of indentation, which is making the tests harder to read (and maintain).\n\nSince we expect CI to run the tests several times (a couple of thousands, maybe), by picking a random mmap region CI will easily cover all the combinations.",
       "parentUuid": "ee318752_1d1ce0b8",
+      "range": {
+        "startLine": 457,
+        "startChar": 7,
+        "endLine": 457,
+        "endChar": 15
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99ece0c8_272a3453",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "Yes, it is better to not rely on randomness where possible. Also the mmap ragions are created randomly which means that the test is not fully covering the possiblitites of xlat table walks.\n\nThe VA_region loop can be removed I think and made random as it is less critical to testing of xlat_get_llt_from_va() functionality. This will get rid of one level of indentation.",
+      "parentUuid": "98d95585_998d187e",
       "range": {
         "startLine": 457,
         "startChar": 7,
@@ -1624,6 +1792,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "958a666d_5907a160",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "Is this done ?",
+      "parentUuid": "a8a82df6_421941ed",
+      "range": {
+        "startLine": 673,
+        "startChar": 2,
+        "endLine": 674,
+        "endChar": 20
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "65d2c88a_049a0e58",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -1659,6 +1851,30 @@
       "side": 1,
       "message": "Assert tests cannot be combined with any other tests. As soon as an assertion happens, the test finishes. Each assertion must be tested on isolation. If the expected assertion didn\u0027t happen, the test would carry on and then must be finished by calling ``test_helpers_fail_if_no_assert_failed()``",
       "parentUuid": "65d2c88a_049a0e58",
+      "range": {
+        "startLine": 729,
+        "startChar": 0,
+        "endLine": 729,
+        "endChar": 49
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ca22081_a106016d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "IN that case, make common helper to create all valid mapping and required args. We dont want to review/maintain the same sequence for each assert test everytime.\n\nThen assert test should only be 4 to 5 lines which should be easily reviewed.",
+      "parentUuid": "c1ae2efc_e28295e1",
       "range": {
         "startLine": 729,
         "startChar": 0,
@@ -1953,6 +2169,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d5efbf8_542e8c7f",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "So \n/* Validate the output */\nCHECK_VERBOSE((val_tte \u003d\u003d tte_ptr), \"\\n Testing VA 0x%lx \\n\", test_va); \n\nis enough ?",
+      "parentUuid": "4377ae69_af5ead77",
+      "range": {
+        "startLine": 1058,
+        "startChar": 2,
+        "endLine": 1058,
+        "endChar": 16
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed57047b_c55ddd44",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 3
@@ -1988,6 +2228,30 @@
       "side": 1,
       "message": "They are actually different tests. TC1 tries to get the entry for valid addresses, whereas this one is a negative test, attempting to get an out of bounds address.",
       "parentUuid": "ed57047b_c55ddd44",
+      "range": {
+        "startLine": 1184,
+        "startChar": 2,
+        "endLine": 1193,
+        "endChar": 0
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b46ec23_7136fb9b",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1193,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T07:05:10Z",
+      "side": 1,
+      "message": "yes, that\u0027s ok but all the lines above are common with test above (and it is maintenance/review burden). Appropriate comments are sufficient.\n\n\n         /***************************************************************\n\t * TEST CASE 1:\n\t *\n\t * Initialize a translation context with a given VA space and\n\t * 3 mmap regions at level 3. Then get a tte using\n\t * xlat_get_tte_ptr() and verify that it is the correct entry.\n\t *\n\t * This test tries three different mmap areas per VA region:\n\t *\n\t * \t- An address corresponding to the first entry of the\n\t *\t  last level table.\n\t *\t- An address corresponding to the last entry of the\n\t *\t  last level table.\n\t *\t- An address corresponding to an intermediate entry\n\t *\t  of the last level table.\n\n         * The test also tests a negative case wherein it tries to get the \n\t * TTE via xlat_get_tte() for a VA lower than the base VA for the\n\t * last level table.\n\t ***************************************************************/",
+      "parentUuid": "3cab6fa6_61d10b7a",
       "range": {
         "startLine": 1184,
         "startChar": 2,
