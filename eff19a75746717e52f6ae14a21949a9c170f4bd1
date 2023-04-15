@@ -2401,6 +2401,30 @@
       },
       "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2da5ac7_364b5d8b",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1719,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-15T08:19:11Z",
+      "side": 1,
+      "message": "IN that case, add a comment to this effect.\n\n/* Add an arbitrary offset to PA to be passed to xlat_map_memory_page_with_attrs() */",
+      "parentUuid": "dc7441c1_d60a8fd9",
+      "range": {
+        "startLine": 1718,
+        "startChar": 3,
+        "endLine": 1719,
+        "endChar": 21
+      },
+      "revId": "eff19a75746717e52f6ae14a21949a9c170f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
