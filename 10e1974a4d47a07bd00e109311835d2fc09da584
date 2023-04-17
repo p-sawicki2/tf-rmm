@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5e41857_2eb0fae1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "Some minor comments",
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3505179d_ca10c2be",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "I cannot find these defines used on the patch (or at least, some of them). I would suggest leaving them as-is, as the macros defined in utils_defs.h make use of the (xxx_SHIFT, xxx_WIDTH) naming convention.",
+      "range": {
+        "startLine": 884,
+        "startChar": 1,
+        "endLine": 891,
+        "endChar": 38
+      },
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56fadb17_67bc1e80",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "When possible we should avoid the use of extern variables. Instead, add an API to return a reference to it.",
+      "range": {
+        "startLine": 29,
+        "startChar": 26,
+        "endLine": 29,
+        "endChar": 41
+      },
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e4268b4_505c67f9",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "Where else is this used? I couldn\u0027t find it anywhere else in this patch",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 16
+      },
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd593ad7_b4a54448",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "Just wondering, if both ns_state and g_pauth_data are indexed according to the current cpuid, the same struct pauth_state will always be referenced by the same struct ns_state, so instead of storing a pointer to struct pauth_state inside the struct ns_state, why not just store the whole structure? This way we save this allocation.\n\nIs it because there is a size limit/alignment restriction on struct ns_state?",
+      "range": {
+        "startLine": 340,
+        "startChar": 1,
+        "endLine": 340,
+        "endChar": 40
+      },
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc65ab77_fa8433c1",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-17T14:20:31Z",
+      "side": 1,
+      "message": "I don\u0027t think this cast is needed",
+      "range": {
+        "startLine": 341,
+        "startChar": 13,
+        "endLine": 341,
+        "endChar": 36
+      },
+      "revId": "10e1974a4d47a07bd00e109311835d2fc09da584",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
