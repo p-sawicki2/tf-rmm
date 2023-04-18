@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a23966e0_42eec041",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T15:34:52Z",
+      "side": 1,
+      "message": "Hmm, Ideally we dont want to alter code paths for configs unless there is strong reasons.",
+      "revId": "36198e67b0cbe43ca718ec2e56fbd0016048afc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
