@@ -60,6 +60,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c8be942a_92053ef2",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "Function documentation will be useful for every public exported API",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e603a7ca_8cda7e99",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "simd_set_type()\n\nAdd documentation that the type of simd need to be set prior to the simd_state being saved.",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 39
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d73b7345_75d9f224",
         "filename": "lib/arch/include/sve_helpers.h",
         "patchSetId": 8
@@ -76,6 +116,98 @@
         "startChar": 9,
         "endLine": 49,
         "endChar": 11
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcb272c0_52308437",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "Ideally these should be macros which are COMPILER_ASSERTed in C. Or, these functions can be in C I think.",
+      "range": {
+        "startLine": 34,
+        "startChar": 20,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c438013f_60e318d0",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "should be COMPILER_ASSERTed macro",
+      "range": {
+        "startLine": 111,
+        "startChar": 15,
+        "endLine": 111,
+        "endChar": 18
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b21436c_b2c774cb",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "this function can be in C as well.",
+      "range": {
+        "startLine": 120,
+        "startChar": 5,
+        "endLine": 120,
+        "endChar": 30
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9ded23a_992afc31",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "should ideally use an offset which is COMPILER_ASSERTed",
+      "range": {
+        "startLine": 200,
+        "startChar": 15,
+        "endLine": 200,
+        "endChar": 18
       },
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -438,6 +570,86 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "Add function documentation\n\n/* This function initializes the SIMD layer depending on SIMD capability of the system (FPU/SVE). The zcr_el2 will be setup to max VQ length after the init is done. */",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e5ec205_f0d8ce27",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "this may not be needed if this struct is initialized during REC_CREATE",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 16
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e54ee349_398b7dc8",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "I wonder whether disabling trap should be done outside. The simd_save_ns_state() is also enabling and disabling traps. So the trap setting and unsetting seems to be done redundantly.\n\nsimd_disable_traps()\nsimd_save_ns_state()\nsimd_restore_state(rec)\n\n\nshould be good ?",
+      "range": {
+        "startLine": 343,
+        "startChar": 1,
+        "endLine": 343,
+        "endChar": 30
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5428d97e_8e12f65d",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "similar comments to exit.c",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa21d6d9_3c59c241",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:15:48Z",
+      "side": 1,
+      "message": "can do necessary REC specific SIMD init here.",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
