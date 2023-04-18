@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b636861e_91208a56",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:17:45Z",
+      "side": 1,
+      "message": "\"until RMM supports SVE hint bit \" is enough",
+      "range": {
+        "startLine": 392,
+        "startChar": 35,
+        "endLine": 392,
+        "endChar": 57
+      },
+      "revId": "a619c52a2c60ce4ab701080930d1a5b68e942296",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f501645c_2507f9cf",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T10:17:45Z",
+      "side": 1,
+      "message": "remvove",
+      "range": {
+        "startLine": 224,
+        "startChar": 44,
+        "endLine": 224,
+        "endChar": 57
+      },
+      "revId": "a619c52a2c60ce4ab701080930d1a5b68e942296",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
