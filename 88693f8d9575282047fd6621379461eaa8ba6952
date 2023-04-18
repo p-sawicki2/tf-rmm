@@ -121,6 +121,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c47cc79_3e5c95f1",
+        "filename": "lib/arch/include/sve_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "ignore this.",
+      "parentUuid": "d73b7345_75d9f224",
+      "range": {
+        "startLine": 49,
+        "startChar": 9,
+        "endLine": 49,
+        "endChar": 11
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcb272c0_52308437",
@@ -249,6 +273,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "perhaps this feild is not needed. See comments about sve_state struct here : https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20052/8/lib/arch/include/sve_helpers.h#49\n\nthe zcr_el2 field in that structure can be used for saving the ns_value.",
+      "range": {
+        "startLine": 18,
+        "startChar": 10,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "804c49fe_aab605ff",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "ignore this.",
+      "parentUuid": "56ac31cb_892d8bcd",
       "range": {
         "startLine": 18,
         "startChar": 10,
@@ -396,6 +444,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f3c4b43_d15d9326",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "Ignore this",
+      "parentUuid": "1a6448eb_4916af85",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "567febe3_37ece726",
@@ -444,6 +510,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6e66c7e8_becaeff1",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "/* Save the NS zcr_el2 value since EL3 doesn\u0027t bank this. Note that the save of NS\nSVE context occurs with MAX_SVE_VL to prevent leakage. */",
+      "range": {
+        "startLine": 114,
+        "startChar": 1,
+        "endLine": 119,
+        "endChar": 4
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29fec6ab_ebe0967f",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "/* Note that the restore SVE state for NS state happens with MAX_SVE_VL to prevent leakage. RMM now needs to restore the NS zcr_el2 value since EL3 is not saving this.  */",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 145,
+        "endChar": 4
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ca588519_cc449518",
         "filename": "lib/arch/src/simd.c",
         "patchSetId": 8
@@ -455,6 +567,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "this will be implicity done if https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20052/8/lib/arch/include/sve_helpers.h#49 change is made and sve_restore_state() does this everytime.",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 2
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b25c45a6_288c9efe",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "Ignore this comment.",
+      "parentUuid": "ca588519_cc449518",
       "range": {
         "startLine": 146,
         "startChar": 0,
@@ -650,6 +786,24 @@
       "writtenOn": "2023-04-18T10:15:48Z",
       "side": 1,
       "message": "can do necessary REC specific SIMD init here.",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e638f6c_8543fe6d",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-18T14:21:15Z",
+      "side": 1,
+      "message": "If the AUX granule offset is calculated and and simd struct can be accessed here, then this field can be directly written to SIMD struct and this field can be removed.",
+      "parentUuid": "fa21d6d9_3c59c241",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
