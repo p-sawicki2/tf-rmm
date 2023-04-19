@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14487a39_1980c54b",
+        "filename": "lib/arch/include/fpu_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Ack\nI will make a followup patch for this.",
+      "parentUuid": "60fd40b4_83dff6fe",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0facd49_a64e486f",
@@ -48,6 +66,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "suggest : \"simd_type\" as name.",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81f8e8e0_7f241b58",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Renamed to simd_type.\nChanged the routine from simd_set_saved_state -\u003e simd_set_type",
+      "parentUuid": "b0facd49_a64e486f",
       "range": {
         "startLine": 27,
         "startChar": 8,
@@ -75,6 +117,58 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8f29b59_ca0a52dd",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nAdded comment for all exported functions",
+      "parentUuid": "c8be942a_92053ef2",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d13a9bc4_77fce7fc",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Renamed this helper routine from\nsimd_traps_disable to simd_enable",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9bb67f8_042183f4",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Renamed this helper routine from\nsimd_traps_enable to simd_disable",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e603a7ca_8cda7e99",
@@ -88,6 +182,30 @@
       "writtenOn": "2023-04-18T10:15:48Z",
       "side": 1,
       "message": "simd_set_type()\n\nAdd documentation that the type of simd need to be set prior to the simd_state being saved.",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 39
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "434715ad_2e81c929",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e603a7ca_8cda7e99",
       "range": {
         "startLine": 89,
         "startChar": 19,
@@ -168,6 +286,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "022d6760_fda7c082",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Ack.\nThese changes will be done in a followup patch to move the save zcr_el12/fpsr/fpcr to a sve_helper.c file",
+      "parentUuid": "fcb272c0_52308437",
+      "range": {
+        "startLine": 34,
+        "startChar": 20,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c438013f_60e318d0",
@@ -181,6 +323,30 @@
       "writtenOn": "2023-04-18T10:15:48Z",
       "side": 1,
       "message": "should be COMPILER_ASSERTed macro",
+      "range": {
+        "startLine": 111,
+        "startChar": 15,
+        "endLine": 111,
+        "endChar": 18
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e8e17db_3503d077",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Ack.\nThese changes will be done in a followup patch to move the save/restore of zcr_el12/fpsr/fpcr to a sve_helper.c file",
+      "parentUuid": "c438013f_60e318d0",
       "range": {
         "startLine": 111,
         "startChar": 15,
@@ -214,6 +380,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e29e35_87032491",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8b21436c_b2c774cb",
+      "range": {
+        "startLine": 120,
+        "startChar": 5,
+        "endLine": 120,
+        "endChar": 30
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9ded23a_992afc31",
@@ -237,6 +427,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7533a515_b534e643",
+        "filename": "lib/arch/src/aarch64/sve_helpers.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d9ded23a_992afc31",
+      "range": {
+        "startLine": 200,
+        "startChar": 15,
+        "endLine": 200,
+        "endChar": 18
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d44545a_abeb5797",
@@ -250,6 +464,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "nit : if size restriction is not needed, use a regular unsigned int\n\nSome documentation will be useful\n\n/* Store the max vq length supported by this CPU. We expect all CPUs in the system to support the same max vq length */",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 15
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49189854_310016df",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d44545a_abeb5797",
       "range": {
         "startLine": 13,
         "startChar": 7,
@@ -324,6 +562,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce235bd8_811e42b3",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f85a2f03_fe62bd27",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "def74c02_e2752626",
@@ -337,6 +593,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "as a note , internal functions are not needed to follow prefix conventions.\n\nSome function documentation is useful\n\n/* Function to write the vq to zcr_el2 if not the same */\n\n\nThinking about it, from a testing/coverage PoV , it is usually better to avoid this if() condition and unconditionally write the vq length (taking the penalty of isb() everytime).\n\nBut I see that zcr_el2 being different from MAX is unlikely and hence lets keep this and add a test for this coverage.\n\n\nEdit: this function may not be needed if we are restoring zcr_el2 directly.",
+      "range": {
+        "startLine": 23,
+        "startChar": 12,
+        "endLine": 23,
+        "endChar": 30
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e791b8f_477e1785",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nrenamed function to sve_config_vq, and added documentation",
+      "parentUuid": "def74c02_e2752626",
       "range": {
         "startLine": 23,
         "startChar": 12,
@@ -370,6 +650,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce0d0762_8e1e444b",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ead350dc_6bbedbd5",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 12
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16c66ff7_9c2d6d47",
@@ -383,6 +687,24 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "Add function documentation : \n\n/* Save the SVE state when entering RMM from Realm world. This function assumes that VQ in zcr_el2 is correct and will not attempt to configure VQ */",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77cb67bb_b02502dd",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16c66ff7_9c2d6d47",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -412,6 +734,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b46304aa_09621ed3",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "These changes will be done in a followup patch to move the save sequence to a sve_helper.c file",
+      "parentUuid": "63f79aa0_39224752",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 59
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b52fee4b_e609331a",
         "filename": "lib/arch/src/simd.c",
         "patchSetId": 8
@@ -423,6 +769,24 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "Add function documentation\n\n/* Restore SVE state. This will also write to zcr_el2 to set the right VQ length before restore */",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9314a435_93fc0215",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b52fee4b_e609331a",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -485,6 +849,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b007b2f0_3b41cd53",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "567febe3_37ece726",
+      "range": {
+        "startLine": 90,
+        "startChar": 17,
+        "endLine": 90,
+        "endChar": 40
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2030f10a_5e564ea9",
@@ -498,6 +886,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "nit: I prefer \"g_ns_simd[cpu_id]-\u003esaved\" and for below.",
+      "range": {
+        "startLine": 110,
+        "startChar": 8,
+        "endLine": 110,
+        "endChar": 15
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cae1ed6_4985a1df",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2030f10a_5e564ea9",
       "range": {
         "startLine": 110,
         "startChar": 8,
@@ -531,6 +943,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecf38cfe_251f2e50",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e66c7e8_becaeff1",
+      "range": {
+        "startLine": 114,
+        "startChar": 1,
+        "endLine": 119,
+        "endChar": 4
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29fec6ab_ebe0967f",
@@ -544,6 +980,30 @@
       "writtenOn": "2023-04-18T14:21:15Z",
       "side": 1,
       "message": "/* Note that the restore SVE state for NS state happens with MAX_SVE_VL to prevent leakage. RMM now needs to restore the NS zcr_el2 value since EL3 is not saving this.  */",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 145,
+        "endChar": 4
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab3be8c6_2c2f5c90",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29fec6ab_ebe0967f",
       "range": {
         "startLine": 140,
         "startChar": 1,
@@ -626,6 +1086,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0a4641b5_e908bc09",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Can I take this up as a followup task? once sve_helper.h is made as a PRIVATE header, I can add this new macro to init sve vq field.",
+      "parentUuid": "731b2220_b20dfcce",
+      "range": {
+        "startLine": 186,
+        "startChar": 14,
+        "endLine": 186,
+        "endChar": 24
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2757669a_0c4e9165",
         "filename": "lib/arch/src/simd.c",
         "patchSetId": 8
@@ -637,6 +1121,30 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "Since this is done during cold/warm boot time, it is not essential to restore this value.",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 216,
+        "endChar": 7
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a894de8a_78f48717",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nAdded a comment.",
+      "parentUuid": "2757669a_0c4e9165",
       "range": {
         "startLine": 215,
         "startChar": 0,
@@ -670,6 +1178,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6d875b9_11b6f2d6",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "A value of 0 in g_sve_max_vq is a valid VQ. As from earlier comment I have changed g_sve_max_vq from uint8_t to int32_t, I can initialize g_sve_max_vq to -1 and use that value to check if init has been called.",
+      "parentUuid": "f9cdcf90_8cc69c71",
+      "range": {
+        "startLine": 220,
+        "startChar": 1,
+        "endLine": 220,
+        "endChar": 15
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bfeb69f3_0e913162",
@@ -693,6 +1225,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0405eed_9c459c8e",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nRemoved this function and moved simd_sve_state_init to simd_init()",
+      "parentUuid": "bfeb69f3_0e913162",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 0
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c503c673_2797621c",
@@ -706,6 +1262,24 @@
       "writtenOn": "2023-04-18T09:27:18Z",
       "side": 1,
       "message": "Add function documentation\n\n/* This function initializes the SIMD layer depending on SIMD capability of the system (FPU/SVE). The zcr_el2 will be setup to max VQ length after the init is done. */",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "141f4bce_8a3aed52",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c503c673_2797621c",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -757,6 +1331,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ae07faf_1b2efc4d",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nchanged \u0027used\u0027 to \u0027simd_allowed\u0027",
+      "parentUuid": "cea98739_ab212cf0",
+      "range": {
+        "startLine": 93,
+        "startChar": 6,
+        "endLine": 93,
+        "endChar": 10
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e5ec205_f0d8ce27",
@@ -770,6 +1368,30 @@
       "writtenOn": "2023-04-18T10:15:48Z",
       "side": 1,
       "message": "this may not be needed if this struct is initialized during REC_CREATE",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 16
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0ec8e58_c50ad6d6",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "This will done as part of followup patch. Similar to comment:\nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20052/comment/fa21d6d9_3c59c241/",
+      "parentUuid": "7e5ec205_f0d8ce27",
       "range": {
         "startLine": 94,
         "startChar": 0,
@@ -844,6 +1466,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87a4eb21_89156d81",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Done\nIgnoring this based on latest comment\nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20052/comment/e54ee349_398b7dc8/",
+      "parentUuid": "5428d97e_8e12f65d",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa21d6d9_3c59c241",
@@ -875,6 +1515,24 @@
       "side": 1,
       "message": "If the AUX granule offset is calculated and and simd struct can be accessed here, then this field can be directly written to SIMD struct and this field can be removed.",
       "parentUuid": "fa21d6d9_3c59c241",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d080bc2_fbb0796b",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-19T11:01:44Z",
+      "side": 1,
+      "message": "Looks like the REC\u0027s aux_granules are not mapped in rec_create.\nCan I take this as a followup work? and change to initialize sve_vq in REC\u0027s simd state",
+      "parentUuid": "8e638f6c_8543fe6d",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
