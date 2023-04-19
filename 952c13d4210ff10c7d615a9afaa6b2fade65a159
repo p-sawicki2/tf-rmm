@@ -1,0 +1,457 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c699f293_1bdb5631",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "The SCTLR_EL2 bits are already defined below. hence keep these specific to EL1. Or change in both places and combine these 2 sections together.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd2f7978_f019aa49",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "remove this and uncomment next line.",
+      "range": {
+        "startLine": 677,
+        "startChar": 0,
+        "endLine": 677,
+        "endChar": 40
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3fb0bc_a48fe7e3",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "remove this and uncomment next line.",
+      "range": {
+        "startLine": 686,
+        "startChar": 0,
+        "endLine": 686,
+        "endChar": 40
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a61107b8_0dc86945",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "remove this and add these bits to SCTLR_EL2_INIT.",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 694,
+        "endChar": 60
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0da2aa6c_4f158bd5",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "uncomment and add bit 22 and bit 11 to 1",
+      "range": {
+        "startLine": 718,
+        "startChar": 0,
+        "endLine": 718,
+        "endChar": 46
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "decf0b87_71fa8fa8",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "nit: keep reg defs together  perhaps at line 67",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "038d36ec_9c9ae715",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "This needs to be DEFINE_RENAME_SYSREG_READ_FUNC(rndr, RNDR) I think. Please check.",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 467,
+        "endChar": 23
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95d16c9d_4a92daa5",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "we should not try to link to realm.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afe68090_140bfbd6",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "__uint128_t needs some C header. include that here.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b053680_abb48758",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "not needed.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cb06c3e_486e7ab2",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "this shouldn\u0027t in this header if it is plat_ prefix. I think we can avoid plat dependency for key initialization as we have RDNR.\n\npauth_init_key should do this (in C).",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 27
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e84c3ba_f41cd896",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "I think we should be able to do this in C. Let\u0027s discuss.",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "764b6938_fd68ec69",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "can be removed and key can be initialized in this function.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "414ec3c4_e29814b8",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "This need not be in this structure and hence avoid the dependancy on rec.h\n\nThis can be a per_cpu variable in lib/pauth.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8831ebc9_dba267f8",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "..for Realm */",
+      "range": {
+        "startLine": 165,
+        "startChar": 43,
+        "endLine": 165,
+        "endChar": 45
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88889e83_884d73d5",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "not needed. This can be made part of EL3 contract in EL3-RMM comms",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 23
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40640481_7ee28ca1",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "A better sequence would be \npauth_init --\u003e this will disbale trap and IA and initialize the keys in the regs.\npauth_enable --\u003e this will enable PAuth in El2.\n\nThis figure also will need update : https://tf-rmm.readthedocs.io/en/latest/design/cold-and-warm-boot-design.html",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 19
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adf64263_79566ee4",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "this will need to be in lib/pauth.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74872b5f_e88a022a",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "this will not work. The rec should allocate memory for this.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 51
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "735851a3_34d4ae8a",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "this needs to be called early on exit from realm (perhaps from run_realm()). \n\nCurrently run_realm is a fully asm function, but I think this needs to change and it call some C functions.\n\nwithin run_realm() asm fn:\n\n1. restore rec PAuth values.\n...\neret\n\n\nIn realm_exit() asm fn\n\n1. ---- \n  \n  restore per CPU RMM PAuth values\n  ret\n\n\nin this flow once Pauth is enabled for a CPU in RMM, it is never disabled.",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 29
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea0cf88d_02141c06",
+        "filename": "toolchains/aarch64/llvm.cmake",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-19T09:37:49Z",
+      "side": 1,
+      "message": "why is this needed? Is it because LLVM flags for PAuth are different.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
