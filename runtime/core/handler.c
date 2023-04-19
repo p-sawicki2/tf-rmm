@@ -47,6 +47,8 @@ typedef unsigned long (*handler_5)(unsigned long arg0, unsigned long arg1,
 				   unsigned long arg2, unsigned long arg3,
 				   unsigned long arg4);
 typedef void (*handler_1_o)(unsigned long arg0, struct smc_result *ret);
+typedef void (*handler_2_o)(unsigned long arg0, unsigned long arg1,
+			    struct smc_result *ret);
 typedef void (*handler_3_o)(unsigned long arg0, unsigned long arg1,
 			    unsigned long arg2, struct smc_result *ret);
 
@@ -58,6 +60,7 @@ enum rmi_type {
 	rmi_type_4,
 	rmi_type_5,
 	rmi_type_1_o,
+	rmi_type_2_o,
 	rmi_type_3_o
 };
 
@@ -72,6 +75,7 @@ struct smc_handler {
 		handler_4	f4;
 		handler_5	f5;
 		handler_1_o	f1_o;
+		handler_2_o	f2_o;
 		handler_3_o	f3_o;
 		void		*fn_dummy;
 	};
@@ -114,6 +118,10 @@ struct smc_handler {
 	.fn_name = #_id, \
 	.type = rmi_type_1_o, .f1_o = _fn, .log_exec = _exec, .log_error = _error, \
 	.out_values = _values }
+#define HANDLER_2_O(_id, _fn, _exec, _error, _values)[SMC_RMI_HANDLER_ID(_id)] = { \
+	.fn_name = #_id, \
+	.type = rmi_type_2_o, .f2_o = _fn, .log_exec = _exec, .log_error = _error, \
+	.out_values = _values }
 #define HANDLER_3_O(_id, _fn, _exec, _error, _values)[SMC_RMI_HANDLER_ID(_id)] = { \
 	.fn_name = #_id, \
 	.type = rmi_type_3_o, .f3_o = _fn, .log_exec = _exec, .log_error = _error, \
@@ -136,10 +144,10 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER_2(SMC_RMM_REC_ENTER,		 smc_rec_enter,			false, true),
 	HANDLER_5(SMC_RMM_DATA_CREATE,		 smc_data_create,		false, false),
 	HANDLER_3(SMC_RMM_DATA_CREATE_UNKNOWN,	 smc_data_create_unknown,	false, false),
-	HANDLER_2(SMC_RMM_DATA_DESTROY,		 smc_data_destroy,		false, true),
+	HANDLER_2_O(SMC_RMM_DATA_DESTROY,	 smc_data_destroy,		false, true, 2U),
 	HANDLER_4(SMC_RMM_RTT_CREATE,		 smc_rtt_create,		false, true),
-	HANDLER_4(SMC_RMM_RTT_DESTROY,		 smc_rtt_destroy,		false, true),
-	HANDLER_4(SMC_RMM_RTT_FOLD,		 smc_rtt_fold,			false, true),
+	HANDLER_3_O(SMC_RMM_RTT_DESTROY,	 smc_rtt_destroy,		false, true, 2U),
+	HANDLER_3_O(SMC_RMM_RTT_FOLD,		 smc_rtt_fold,			false, true, 1U),
 	HANDLER_4(SMC_RMM_RTT_MAP_UNPROTECTED,	 smc_rtt_map_unprotected,	false, false),
 	HANDLER_3(SMC_RMM_RTT_UNMAP_UNPROTECTED, smc_rtt_unmap_unprotected,	false, false),
 	HANDLER_3_O(SMC_RMM_RTT_READ_ENTRY,	 smc_rtt_read_entry,		false, true, 4U),
@@ -264,6 +272,9 @@ void handle_ns_smc(unsigned long function_id,
 		break;
 	case rmi_type_1_o:
 		handler->f1_o(arg0, ret);
+		break;
+	case rmi_type_2_o:
+		handler->f2_o(arg0, arg1, ret);
 		break;
 	case rmi_type_3_o:
 		handler->f3_o(arg0, arg1, arg2, ret);
