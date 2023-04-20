@@ -16,6 +16,24 @@
       "message": "Looks good to me but the commit message might need review",
       "revId": "ba344d3b70251b58b3f84fd001931a46c7fcaceb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "557c1c70_ea878662",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-20T10:50:40Z",
+      "side": 1,
+      "message": "Modified commit message.",
+      "parentUuid": "6bb5baea_ef1efa4e",
+      "revId": "ba344d3b70251b58b3f84fd001931a46c7fcaceb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
