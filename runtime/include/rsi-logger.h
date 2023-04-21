@@ -19,12 +19,14 @@
  */
 #if (RSI_LOG_LEVEL >= LOG_LEVEL_ERROR) && (RSI_LOG_LEVEL <= LOG_LEVEL)
 
-void rsi_log_on_exit(unsigned int function_id, unsigned long args[5],
-		     unsigned long res, bool exit_to_rec);
+void rsi_log_on_exit(unsigned int function_id, unsigned long args[],
+		     unsigned long regs[], bool exit_to_rec);
 
 /* Store SMC RSI parameters */
-# define RSI_LOG_SET(x0, x1, x2, x3, x4)	\
-	unsigned long rsi_log_args[5] = {x0, x1, x2, x3, x4}
+# define RSI_LOG_SET(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)	\
+	unsigned long rsi_log_args[] = {			\
+		x1, x2, x3, x4, x5, x6, x7, x8, x9, x10		\
+	}
 
 /*
  * Macro prints RSI call function name, parameters
@@ -34,7 +36,7 @@ void rsi_log_on_exit(unsigned int function_id, unsigned long args[5],
 	rsi_log_on_exit(id, rsi_log_args, res, ret)
 
 #else
-# define RSI_LOG_SET(x0, x1, x2, x3, x4)
+# define RSI_LOG_SET(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
 # define RSI_LOG_EXIT(id, res, ret)
 
 #endif /* (>= LOG_LEVEL_ERROR) && (<= LOG_LEVEL) */
