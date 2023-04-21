@@ -354,8 +354,9 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	bool ret_to_rec = true;	/* Return to Realm */
 	unsigned int function_id = (unsigned int)rec->regs[0];
 
-	RSI_LOG_SET(rec->regs[1], rec->regs[2],
-		    rec->regs[3], rec->regs[4], rec->regs[5]);
+	RSI_LOG_SET(rec->regs[1], rec->regs[2], rec->regs[3], rec->regs[4],
+		    rec->regs[5], rec->regs[6], rec->regs[7], rec->regs[8],
+		    rec->regs[9], rec->regs[10]);
 
 	/* cppcheck-suppress unsignedPositive */
 	if (!IS_SMC32_PSCI_FID(function_id) && !IS_SMC64_PSCI_FID(function_id)
@@ -533,7 +534,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	/* Log RSI call */
-	RSI_LOG_EXIT(function_id, rec->regs[0], ret_to_rec);
+	RSI_LOG_EXIT(function_id, rec->regs, ret_to_rec);
 	return ret_to_rec;
 }
 
