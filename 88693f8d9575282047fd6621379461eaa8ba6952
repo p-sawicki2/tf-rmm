@@ -1402,6 +1402,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d809ea2_358d6928",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "I think lets keep it the same as mapping of aux_granule is not done in REC_CREATE.",
+      "parentUuid": "a0ec8e58_c50ad6d6",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 16
+      },
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e54ee349_398b7dc8",
@@ -1533,6 +1557,24 @@
       "side": 1,
       "message": "Looks like the REC\u0027s aux_granules are not mapped in rec_create.\nCan I take this as a followup work? and change to initialize sve_vq in REC\u0027s simd state",
       "parentUuid": "8e638f6c_8543fe6d",
+      "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4dd7f32_93f267fc",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "Ack, I realized that if AUX is not mapped , then it is not worth the trouble. Ignore this.",
+      "parentUuid": "8d080bc2_fbb0796b",
       "revId": "88693f8d9575282047fd6621379461eaa8ba6952",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

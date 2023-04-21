@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "915ea3f8_8ea7d3c0",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "nit: discovered",
+      "range": {
+        "startLine": 33,
+        "startChar": 33,
+        "endLine": 33,
+        "endChar": 34
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95e8571f_55ee3b9e",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "/* Save SIMD state to memory pointed to by `simd` based on simd `type`. */\n\nSimilar comments for below.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 65
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd9f311e_3d3618b2",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "Currently the context is considered mem zeroed as the delegate-\u003eundelgate-\u003edelegate flow will clear the granule. When we have FEAT_MEC, then this is not strictly required for every granule and hence we cannot rely on the context being zero at first.\n\nThus, it is better fort this API to be more generic and call this simd_state_init(struct simd_state *smid, simd_t type, unsigned int vq) wherein the vq will be assigned if type is SVE and context can be zero initialized as well. \n\nThis will remove the need for simd_set_type() as well. \n\nThe documentation for this API can be :\n\n/* Initialize the simd_state before using this first time for a REC. The `vq` parameter will be used to initialize SVE VQ length in case the simd type is SVE or else it is ignored */",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 24
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb23eaf5_a5fbb14a",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "suggest:\n\n/*\nSave NS FPU or SVE state from registers to memory. This function dynamically determines the SIMD type based on CPU SIMD capability. TODO : cater for SVE hint bit.\n*/",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b510a62_1f6b7a01",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "Also add: \n\n\"As this function will modify ZCR_EL2, the caller needs to save the value in this register\nif it needs to be preserved.\"",
+      "range": {
+        "startLine": 47,
+        "startChar": 65,
+        "endLine": 47,
+        "endChar": 66
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0be1edf_c644240a",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "Suggest : \n\n\"Save NS SIMD state based on CPU SIMD type. For SVE, save the current zcr_el2 and call simd_save_state() which will save the SVE state (Z, P, FFR) after setting the zcr_el2 to max VQ.\"",
+      "range": {
+        "startLine": 122,
+        "startChar": 36,
+        "endLine": 124,
+        "endChar": 59
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79131688_4ff2746d",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "should we also cache the CPU simd type as this is will remain same everytime ?",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3feb57a0_197bc293",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "similar comment as above.",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2177e79_22c1f05a",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "unsigned int",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 8
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d09183ae_13f64cd3",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "rec_simd_enable_restore() seems a more readable name.",
+      "range": {
+        "startLine": 344,
+        "startChar": 10,
+        "endLine": 344,
+        "endChar": 16
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a45ac8f0_09815374",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T09:42:18Z",
+      "side": 1,
+      "message": "rec_simd_save_disable()",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 309,
+        "endChar": 28
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
