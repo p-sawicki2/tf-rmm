@@ -206,6 +206,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fe5d833_638fae97",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "Given comment on latest.",
+      "parentUuid": "e403657a_28d074ca",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 39
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd8e6214_6e8a7b54",
@@ -419,6 +443,30 @@
       "side": 1,
       "message": "There is no harm on passing a larger array, that\u0027s why I didn\u0027t restrict this to the exact size, only to smaller ones.",
       "parentUuid": "ed3f5510_900612f3",
+      "range": {
+        "startLine": 98,
+        "startChar": 18,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2400683_e64d45e3",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f8aaa604_6752c29d",
       "range": {
         "startLine": 98,
         "startChar": 18,
@@ -793,6 +841,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "261b2cd4_abb16691",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "ACK",
+      "parentUuid": "e30596ed_ab79cc11",
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e93b156_f7abf813",
@@ -877,6 +943,30 @@
       "side": 1,
       "message": "Actually, this should be \u0027XLAT_BLOCK_SIZE(end_lvl) - 1\u0027, the reasons being:\n\n1.- test_helpers_get_rand_in_range() only works with integers (to simplify its implementation and given the fact we mostly only use it for ints). XLAT_TESTS_MAX_PA_SIZE is a long long unsigned int, so it can be used with the former.\n\n2.- xlat_map_memory_page_with_attrs() is not supposed to do any checks on the PA (apart from checking that it is not larger than the maximum supported PA, which is a different test), only mask out the LSBs to align it to the last level page/block size, so there is no actually need to test with a wide range of PAs. The easiest address we can pick up is base_va for the mmap_region plus a random page/block offset (which should be masked out by xlat_map_memory_page_with_attrs).",
       "parentUuid": "5ba5ff7c_e828bf5f",
+      "range": {
+        "startLine": 1725,
+        "startChar": 6,
+        "endLine": 1725,
+        "endChar": 19
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c04f0f_a1273e0c",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 1725,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a38a2fab_09e07d89",
       "range": {
         "startLine": 1725,
         "startChar": 6,
@@ -1075,6 +1165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d18a145_593cc24f",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 1974,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "ok, I think the BAD address is when the sideeffect of any arguments result in an address which is bad. usually the convetion is , if the parameter is wrong, the error code is EINVAL (regardless whether the parameter is an address or not). \n\nFor now we can keep it this way.",
+      "parentUuid": "58d98fd9_5afe7423",
+      "range": {
+        "startLine": 1974,
+        "startChar": 28,
+        "endLine": 1974,
+        "endChar": 34
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8108ebaa_ce130802",
@@ -1159,6 +1273,30 @@
       "side": 1,
       "message": "This test doesn\u0027t care about other bits on id_aa64mmfr0_el1 (in fact, I think that so far we only configure the PA size on this register for all tests, ignoring the rest of fields) and after the test the register will be restored back to its previous value, so I didn\u0027t want to add the overhead.",
       "parentUuid": "5b7c138f_4ecf8ea0",
+      "range": {
+        "startLine": 2212,
+        "startChar": 4,
+        "endLine": 2212,
+        "endChar": 47
+      },
+      "revId": "e000e16376af874d46e95643615c29684b31bf34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "517d993b_ebd68557",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-21T13:12:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3dc4f75d_d0e74877",
       "range": {
         "startLine": 2212,
         "startChar": 4,
