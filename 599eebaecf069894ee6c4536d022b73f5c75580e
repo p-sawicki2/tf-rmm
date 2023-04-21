@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80de7078_f5797b46",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "915ea3f8_8ea7d3c0",
+      "range": {
+        "startLine": 33,
+        "startChar": 33,
+        "endLine": 33,
+        "endChar": 34
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95e8571f_55ee3b9e",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-21T09:42:18Z",
       "side": 1,
       "message": "/* Save SIMD state to memory pointed to by `simd` based on simd `type`. */\n\nSimilar comments for below.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 65
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "956bbace_e740beb1",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95e8571f_55ee3b9e",
       "range": {
         "startLine": 35,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20bd0717_6de6ca10",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Added a generic API simd_state_init() to set the simd type and sve_vq.\n\n \n\u003e This will remove the need for simd_set_type() as well. \nremoved.\n\n\u003e When we have FEAT_MEC, then this is not strictly required for every granule and hence we cannot rely on the context being zero at first.\nAdded a note.",
+      "parentUuid": "dd9f311e_3d3618b2",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 24
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb23eaf5_a5fbb14a",
@@ -87,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8d28dd6_3a226baa",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb23eaf5_a5fbb14a",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0b510a62_1f6b7a01",
@@ -100,6 +190,30 @@
       "writtenOn": "2023-04-21T09:42:18Z",
       "side": 1,
       "message": "Also add: \n\n\"As this function will modify ZCR_EL2, the caller needs to save the value in this register\nif it needs to be preserved.\"",
+      "range": {
+        "startLine": 47,
+        "startChar": 65,
+        "endLine": 47,
+        "endChar": 66
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23728754_a488d78e",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b510a62_1f6b7a01",
       "range": {
         "startLine": 47,
         "startChar": 65,
@@ -133,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a28a78c6_60bb2dcd",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0be1edf_c644240a",
+      "range": {
+        "startLine": 122,
+        "startChar": 36,
+        "endLine": 124,
+        "endChar": 59
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79131688_4ff2746d",
@@ -146,6 +284,24 @@
       "writtenOn": "2023-04-21T09:42:18Z",
       "side": 1,
       "message": "should we also cache the CPU simd type as this is will remain same everytime ?",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a06e672f_08962fc7",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done\nYes, added a global \u0027g_cpu_simd_type\u0027",
+      "parentUuid": "79131688_4ff2746d",
       "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -167,6 +323,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc542128_c5f513fc",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3feb57a0_197bc293",
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2177e79_22c1f05a",
@@ -180,6 +354,30 @@
       "writtenOn": "2023-04-21T09:42:18Z",
       "side": 1,
       "message": "unsigned int",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 8
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01ccd1a3_9727cd6a",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2177e79_22c1f05a",
       "range": {
         "startLine": 201,
         "startChar": 0,
@@ -213,6 +411,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3268c21d_b3b72d8a",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d09183ae_13f64cd3",
+      "range": {
+        "startLine": 344,
+        "startChar": 10,
+        "endLine": 344,
+        "endChar": 16
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a45ac8f0_09815374",
@@ -226,6 +448,30 @@
       "writtenOn": "2023-04-21T09:42:18Z",
       "side": 1,
       "message": "rec_simd_save_disable()",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 309,
+        "endChar": 28
+      },
+      "revId": "599eebaecf069894ee6c4536d022b73f5c75580e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a94f0b7_66a69d81",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-21T15:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a45ac8f0_09815374",
       "range": {
         "startLine": 309,
         "startChar": 12,
