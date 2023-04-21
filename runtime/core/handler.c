@@ -155,11 +155,8 @@ COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
 static bool rmi_call_log_enabled = true;
 
 static void rmi_log_on_exit(unsigned long handler_id,
-			    unsigned long arg0,
-			    unsigned long arg1,
-			    unsigned long arg2,
-			    unsigned long arg3,
-			    unsigned long arg4,
+			    unsigned int num_args,
+			    unsigned long args[],
 			    struct smc_result *ret)
 {
 	const struct smc_handler *handler = &smc_handlers[handler_id];
@@ -175,9 +172,7 @@ static void rmi_log_on_exit(unsigned long handler_id,
 		 * RMM_VERSION is special because it returns the
 		 * version number, not the error code.
 		 */
-		INFO("%-29s %8lx %8lx %8lx %8lx %8lx > %lx\n",
-		     handler->fn_name, arg0, arg1, arg2, arg3, arg4,
-		     ret->x[0]);
+		INFO("%-29s > %lx\n", handler->fn_name, ret->x[0]);
 		return;
 	}
 
@@ -185,12 +180,19 @@ static void rmi_log_on_exit(unsigned long handler_id,
 
 	if ((handler->log_exec) ||
 	    (handler->log_error && (rc.status != RMI_SUCCESS))) {
-		INFO("%-29s %8lx %8lx %8lx %8lx %8lx > ",
-			handler->fn_name, arg0, arg1, arg2, arg3, arg4);
+		/* Print function name */
+		INFO("%-29s", handler->fn_name);
+
+		/* Print arguments */
+		for (unsigned int i = 0U; i < num_args; i++) {
+			INFO(" %lx", args[i]);
+		}
+
+		/* Print status */
 		if (rc.status >= RMI_ERROR_COUNT) {
-			INFO("%lx", ret->x[0]);
+			INFO(" > %lx", ret->x[0]);
 		} else {
-			INFO("%s", status_handler[rc.status]);
+			INFO(" > %s", status_handler[rc.status]);
 		}
 
 		/* Check for index */
@@ -202,7 +204,7 @@ static void rmi_log_on_exit(unsigned long handler_id,
 
 		/* Print output values */
 		for (unsigned int i = 1U; i <= handler->out_values; i++) {
-			INFO(" %8lx", ret->x[i]);
+			INFO(" %lx", ret->x[i]);
 		}
 
 		INFO("\n");
@@ -218,7 +220,7 @@ void handle_ns_smc(unsigned long function_id,
 		   unsigned long arg5,
 		   struct smc_result *ret)
 {
-	unsigned long handler_id;
+	unsigned long handler_id, num_args;
 	const struct smc_handler *handler = NULL;
 
 	if (IS_SMC64_RMI_FID(function_id)) {
@@ -244,34 +246,44 @@ void handle_ns_smc(unsigned long function_id,
 	switch (handler->type) {
 	case rmi_type_0:
 		ret->x[0] = handler->f0();
+		num_args = 0U;
 		break;
 	case rmi_type_1:
 		ret->x[0] = handler->f1(arg0);
+		num_args = 1U;
 		break;
 	case rmi_type_2:
 		ret->x[0] = handler->f2(arg0, arg1);
+		num_args = 2U;
 		break;
 	case rmi_type_3:
 		ret->x[0] = handler->f3(arg0, arg1, arg2);
+		num_args = 3U;
 		break;
 	case rmi_type_4:
 		ret->x[0] = handler->f4(arg0, arg1, arg2, arg3);
+		num_args = 4U;
 		break;
 	case rmi_type_5:
 		ret->x[0] = handler->f5(arg0, arg1, arg2, arg3, arg4);
+		num_args = 5U;
 		break;
 	case rmi_type_1_o:
 		handler->f1_o(arg0, ret);
+		num_args = 1U;
 		break;
 	case rmi_type_3_o:
 		handler->f3_o(arg0, arg1, arg2, ret);
+		num_args = 3U;
 		break;
 	default:
 		assert(false);
 	}
 
 	if (rmi_call_log_enabled) {
-		rmi_log_on_exit(handler_id, arg0, arg1, arg2, arg3, arg4, ret);
+		unsigned long args[] = {arg0, arg1, arg2, arg3, arg4};
+
+		rmi_log_on_exit(handler_id, num_args, args, ret);
 	}
 
 	assert_cpu_slots_empty();
