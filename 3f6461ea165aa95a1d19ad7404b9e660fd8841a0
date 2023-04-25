@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a78aa4_aee67329",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-25T09:42:10Z",
+      "side": 1,
+      "message": "nit: It would be good to assert(res !\u003d NULL)",
+      "range": {
+        "startLine": 287,
+        "startChar": 2,
+        "endLine": 287,
+        "endChar": 5
+      },
+      "revId": "3f6461ea165aa95a1d19ad7404b9e660fd8841a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
