@@ -162,7 +162,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER_3_O(SMC_RMM_RTT_READ_ENTRY,	 smc_rtt_read_entry,		false, true, 4U),
 	HANDLER_2(SMC_RMM_PSCI_COMPLETE,	 smc_psci_complete,		true,  true),
 	HANDLER_1_O(SMC_RMM_REC_AUX_COUNT,	 smc_rec_aux_count,		true,  true, 1U),
-	HANDLER_3(SMC_RMM_RTT_INIT_RIPAS,	 smc_rtt_init_ripas,		false, true),
+	HANDLER_3_O(SMC_RMM_RTT_INIT_RIPAS,	 smc_rtt_init_ripas,		false, true, 1U),
 	HANDLER_4_O(SMC_RMM_RTT_SET_RIPAS,	 smc_rtt_set_ripas,		false, true, 1U)
 };
 
