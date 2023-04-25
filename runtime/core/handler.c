@@ -51,6 +51,9 @@ typedef void (*handler_2_o)(unsigned long arg0, unsigned long arg1,
 			    struct smc_result *ret);
 typedef void (*handler_3_o)(unsigned long arg0, unsigned long arg1,
 			    unsigned long arg2, struct smc_result *ret);
+typedef void (*handler_4_o)(unsigned long arg0, unsigned long arg1,
+			    unsigned long arg2, unsigned long arg3,
+			    struct smc_result *ret);
 
 enum rmi_type {
 	rmi_type_0,
@@ -61,7 +64,8 @@ enum rmi_type {
 	rmi_type_5,
 	rmi_type_1_o,
 	rmi_type_2_o,
-	rmi_type_3_o
+	rmi_type_3_o,
+	rmi_type_4_o
 };
 
 struct smc_handler {
@@ -77,6 +81,7 @@ struct smc_handler {
 		handler_1_o	f1_o;
 		handler_2_o	f2_o;
 		handler_3_o	f3_o;
+		handler_4_o	f4_o;
 		void		*fn_dummy;
 	};
 	bool		log_exec;	/* print handler execution */
@@ -126,6 +131,10 @@ struct smc_handler {
 	.fn_name = #_id, \
 	.type = rmi_type_3_o, .f3_o = _fn, .log_exec = _exec, .log_error = _error, \
 	.out_values = _values }
+#define HANDLER_4_O(_id, _fn, _exec, _error, _values)[SMC_RMI_HANDLER_ID(_id)] = { \
+	.fn_name = #_id, \
+	.type = rmi_type_4_o, .f4_o = _fn, .log_exec = _exec, .log_error = _error, \
+	.out_values = _values }
 
 /*
  * The 3rd value enables the execution log.
@@ -154,7 +163,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER_2(SMC_RMM_PSCI_COMPLETE,	 smc_psci_complete,		true,  true),
 	HANDLER_1_O(SMC_RMM_REC_AUX_COUNT,	 smc_rec_aux_count,		true,  true, 1U),
 	HANDLER_3(SMC_RMM_RTT_INIT_RIPAS,	 smc_rtt_init_ripas,		false, true),
-	HANDLER_5(SMC_RMM_RTT_SET_RIPAS,	 smc_rtt_set_ripas,		false, true)
+	HANDLER_4_O(SMC_RMM_RTT_SET_RIPAS,	 smc_rtt_set_ripas,		false, true, 1U)
 };
 
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
@@ -278,6 +287,9 @@ void handle_ns_smc(unsigned long function_id,
 		break;
 	case rmi_type_3_o:
 		handler->f3_o(arg0, arg1, arg2, ret);
+		break;
+	case rmi_type_4_o:
+		handler->f4_o(arg0, arg1, arg2, arg3, ret);
 		break;
 	default:
 		assert(false);
