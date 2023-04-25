@@ -13,7 +13,6 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
 foreach(language IN ITEMS ASM C CXX)
     string(APPEND CMAKE_${language}_FLAGS_INIT "-fno-common ")
-    string(APPEND CMAKE_${language}_FLAGS_INIT "-fomit-frame-pointer ")
     string(APPEND CMAKE_${language}_FLAGS_INIT "-ffunction-sections ")
     string(APPEND CMAKE_${language}_FLAGS_INIT "-fdata-sections ")
     string(APPEND CMAKE_${language}_FLAGS_INIT "-Wall -Werror ")
