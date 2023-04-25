@@ -216,9 +216,14 @@ static void rmi_log_on_exit(unsigned long handler_id,
 			INFO(" %x", rc.index);
 		}
 
-		/* Print output values */
-		for (unsigned int i = 1U; i <= handler->out_values; i++) {
-			INFO(" %8lx", ret->x[i]);
+		if ((rc.status == RMI_SUCCESS) ||
+		   ((rc.status == RMI_ERROR_RTT) &&
+		   ((function_id == SMC_RMM_RTT_DESTROY) ||
+		    (function_id == SMC_RMM_DATA_DESTROY)))) {
+			/* Print output values */
+			for (unsigned int i = 1U; i <= handler->out_values; i++) {
+				INFO(" %8lx", ret->x[i]);
+			}
 		}
 
 		INFO("\n");
