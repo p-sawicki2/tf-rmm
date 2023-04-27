@@ -87,7 +87,6 @@ static size_t print_entry(unsigned int id, unsigned long args[],
 	}
 	/* SMC32 PSCI calls */
 	case SMC32_PSCI_FID_MIN ... SMC32_PSCI_FID_MAX:
-		FALLTHROUGH;
 	case SMC64_PSCI_FID_MIN ... SMC64_PSCI_FID_MAX:
 		cnt = snprintf(buf, MAX_NAME_LEN + 1UL, "%s%08x", "PSCI_", id);
 		break;
