@@ -28,18 +28,43 @@
 #define XLAT_TABLE_SIZE_SHIFT	XLAT_GRANULARITY_SIZE_SHIFT
 #define XLAT_TABLE_SIZE		(UL(1) << XLAT_TABLE_SIZE_SHIFT)
 
-#define XLAT_TABLE_LEVEL_MAX	UL(3)
+#define XLAT_TABLE_LEVEL_MAX	(3)
 
 /* Values for number of entries in each MMU translation table */
 #define XLAT_TABLE_ENTRIES_SHIFT (XLAT_TABLE_SIZE_SHIFT - XLAT_ENTRY_SIZE_SHIFT)
 #define XLAT_TABLE_ENTRIES	(UL(1) << XLAT_TABLE_ENTRIES_SHIFT)
 #define XLAT_TABLE_ENTRIES_MASK	(XLAT_TABLE_ENTRIES - UL(1))
 
+/* Values for number of entries in a MMU translation table at level -1 */
+#define XLAT_LM1_TABLE_ENTRIES_SHIFT 	(4U)
+#define XLAT_LM1_TABLE_ENTRIES	(UL(1) << XLAT_LM1_TABLE_ENTRIES_SHIFT)
+#define XLAT_LM1_TABLE_ENTRIES_MASK	(XLAT_LM1_TABLE_ENTRIES - UL(1))
+#define XLAT_LM1_TABLE_SIZE	(UL(1) << XLAT_LM1_TABLE_ENTRIES_SHIFT)
+
+/*
+ * Return the number of entries per table base on the level.
+ * This macro does not consider whether FEAT_LPA2 is available and/or enabled
+ * and it does not make any sanity check on `_level`.
+ */
+#define XLAT_GET_TABLE_ENTRIES(_level)					\
+	((_level == XLAT_TABLE_LEVEL_MIN) ?				\
+		XLAT_LM1_TABLE_ENTRIES : XLAT_TABLE_ENTRIES)
+
+/*
+ * Return the xlat table entrie mask as per the table level.
+ * This macro does not consider whether FEAT_LPA2 is available and/or enabled
+ * and it does not make any sanity check on `_level`.
+ */
+#define XLAT_GET_TABLE_ENTRIES_MASK(_level)				\
+	((_level == XLAT_TABLE_LEVEL_MIN) ?				\
+		XLAT_LM1_TABLE_ENTRIES_MASK : XLAT_TABLE_ENTRIES_MASK)
+
 /* Values to convert a memory address to an index into a translation table */
 #define L3_XLAT_ADDRESS_SHIFT	XLAT_GRANULARITY_SIZE_SHIFT
 #define L2_XLAT_ADDRESS_SHIFT	(L3_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
 #define L1_XLAT_ADDRESS_SHIFT	(L2_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
 #define L0_XLAT_ADDRESS_SHIFT	(L1_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
+#define LM1_XLAT_ADDRESS_SHIFT	(L0_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
 #define XLAT_ADDR_SHIFT(level)	(XLAT_GRANULARITY_SIZE_SHIFT + \
 		  ((XLAT_TABLE_LEVEL_MAX - (level)) * XLAT_TABLE_ENTRIES_SHIFT))
 
@@ -68,19 +93,20 @@
  * The define below specifies the first table level that allows block
  * descriptors.
  */
-#define MIN_LVL_BLOCK_DESC	U(1)
-#define XLAT_TABLE_LEVEL_MIN	U(0)
+#define MIN_LVL_BLOCK_DESC	(1)
+#define XLAT_TABLE_LEVEL_MIN	(-1)
 
 /* Mask used to know if an address belongs to a high va region. */
-#define HIGH_REGION_MASK	(ULL(0xFFFF) << 52)
+#define HIGH_REGION_MASK	ADDR_MASK_52_TO_63
 
 /*
  * Define the architectural limits of the virtual address space in AArch64
  * state.
  *
  * TCR.TxSZ is calculated as 64 minus the width of said address space.
- * The value of TCR.TxSZ must be in the range 16 to 48 [1], which means that
- * the virtual address space width must be in the range 48 to 16 bits.
+ * The value of TCR.TxSZ must be in the range 16 ro 12 to 48 [1], which
+ * means that the virtual address space width must be in the range 48 or 52
+ * to 16 bits respectively.
  *
  * [1] See the ARMv8-A Architecture Reference Manual (DDI 0487A.j) for more
  * information:
@@ -98,9 +124,17 @@
 #define MAX_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MIN))
 
 /*
+ * With LPA2 supported, the minimum value of TCR_ELx.T(0,1)SZ is 12
+ * for a VA of 52 bits.
+ */
+#define MAX_VIRT_ADDR_SPACE_SIZE_LPA2	(UL(1) << (UL(64) - TCR_TxSZ_MIN_LPA2))
+
+/*
  * Here we calculate the initial lookup level from the value of the given
  * virtual address space size. For a 4 KB page size,
- * - level 0 supports virtual address spaces of widths 48 to 40 bits;
+ * - level -1 (if FEAT_LPA2 is supported) supports virtual addresses spaces from
+ *   52 to 49 bits;
+ * - level 0 from 48 to 40;
  * - level 1 from 39 to 31;
  * - level 2 from 30 to 22.
  * - level 3 from 21 to 16.
@@ -122,11 +156,13 @@
  * valid.
  */
 #define GET_XLAT_TABLE_LEVEL_BASE(_virt_addr_space_sz)			\
-	(((_virt_addr_space_sz) > (ULL(1) << L0_XLAT_ADDRESS_SHIFT))	\
-	? 0U								\
+	(((_virt_addr_space_sz) > (ULL(1) << LM1_XLAT_ADDRESS_SHIFT))	\
+	? -1								\
+	: (((_virt_addr_space_sz) > (ULL(1) << L0_XLAT_ADDRESS_SHIFT))	\
+	? 0								\
 	: (((_virt_addr_space_sz) > (ULL(1) << L1_XLAT_ADDRESS_SHIFT))	\
-	? 1U								\
+	? 1								\
 	: (((_virt_addr_space_sz) > (ULL(1) << L2_XLAT_ADDRESS_SHIFT))	\
-	? 2U : 3U)))
+	? 2 : 3))))
 
 #endif /* XLAT_DEFS_H */
