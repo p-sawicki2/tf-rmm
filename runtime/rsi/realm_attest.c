@@ -36,8 +36,10 @@ static void get_rpv(struct rd *rd, struct q_useful_buf_c *claim)
  */
 static void save_input_parameters(struct rec *rec)
 {
-	rec->token_sign_ctx.token_ipa = rec->regs[1];
-	(void)memcpy(rec->token_sign_ctx.challenge, &rec->regs[2],
+	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
+
+	attest_data->token_sign_ctx.token_ipa = rec->regs[1];
+	(void)memcpy(attest_data->token_sign_ctx.challenge, &rec->regs[2],
 		     ATTEST_CHALLENGE_SIZE);
 }
 
@@ -47,21 +49,24 @@ static void save_input_parameters(struct rec *rec)
  */
 static bool verify_input_parameters_consistency(struct rec *rec)
 {
-	return rec->token_sign_ctx.token_ipa == rec->regs[1];
+	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
+
+	return attest_data->token_sign_ctx.token_ipa == rec->regs[1];
 }
 
 /*
  * Function to continue with the sign operation
  */
-static void attest_token_continue_sign_state(struct rec *rec,
-					     struct rsi_result *res)
+static void attest_token_continue_sign_state(
+					struct rec_attest_data *attest_data,
+					struct rsi_result *res)
 {
 	/*
 	 * Sign and finish creating the token.
 	 */
 	enum attest_token_err_t ret =
-		attest_realm_token_sign(&(rec->token_sign_ctx.ctx),
-					&(rec->rmm_realm_token));
+		attest_realm_token_sign(&(attest_data->token_sign_ctx.ctx),
+					&(attest_data->rmm_realm_token));
 
 	if ((ret == ATTEST_TOKEN_ERR_COSE_SIGN_IN_PROGRESS) ||
 		(ret == ATTEST_TOKEN_ERR_SUCCESS)) {
@@ -74,7 +79,7 @@ static void attest_token_continue_sign_state(struct rec *rec,
 
 		/* If this was the last signing cycle */
 		if (ret == ATTEST_TOKEN_ERR_SUCCESS) {
-			rec->token_sign_ctx.state =
+			attest_data->token_sign_ctx.state =
 				ATTEST_SIGN_TOKEN_WRITE_IN_PROGRESS;
 		}
 	} else {
@@ -97,6 +102,7 @@ static void attest_token_continue_write_state(struct rec *rec,
 	struct s2_walk_result walk_res = { 0UL };
 	struct q_useful_buf attest_token_buf;
 	size_t attest_token_len;
+	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
 
 	/*
 	 * The refcount on rec will protect from any changes
@@ -135,8 +141,9 @@ static void attest_token_continue_write_state(struct rec *rec,
 	attest_token_buf.ptr = realm_att_token;
 	attest_token_buf.len = ATTEST_TOKEN_BUFFER_SIZE;
 
-	attest_token_len = attest_cca_token_create(&attest_token_buf,
-						   &rec->rmm_realm_token);
+	attest_token_len = attest_cca_token_create(
+						&attest_token_buf,
+						&attest_data->rmm_realm_token);
 
 	/* Unmap realm granule */
 	buffer_unmap(realm_att_token);
@@ -153,19 +160,26 @@ static void attest_token_continue_write_state(struct rec *rec,
 	}
 
 	/* The signing has either succeeded or failed. Reset the state. */
-	rec->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
 }
 
 void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 {
 	struct rd *rd = NULL;
-	unsigned long realm_buf_ipa = rec->regs[1];
-	struct q_useful_buf rmm_realm_token_buf = {
-		rec->rmm_realm_token_buf, sizeof(rec->rmm_realm_token_buf)};
+	unsigned long realm_buf_ipa;
+	struct rec_attest_data *attest_data;
+	struct q_useful_buf rmm_realm_token_buf;
 	struct q_useful_buf_c rpv;
 	int att_ret;
 
 	assert(rec != NULL);
+
+	realm_buf_ipa = rec->regs[1];
+	attest_data = rec->aux_data.attest_data;
+	rmm_realm_token_buf = (struct q_useful_buf) {
+		attest_data->rmm_realm_token_buf,
+		sizeof(attest_data->rmm_realm_token_buf)
+	};
 
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
@@ -174,10 +188,10 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 	 * operation.
 	 * TODO: This can be moved to attestation lib
 	 */
-	if (rec->token_sign_ctx.state != ATTEST_SIGN_NOT_STARTED) {
+	if (attest_data->token_sign_ctx.state != ATTEST_SIGN_NOT_STARTED) {
 		int restart;
 
-		rec->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+		attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
 		restart = attestation_heap_reinit_pe(rec->aux_data.attest_heap_buf,
 							REC_HEAP_SIZE);
 		if (restart != 0) {
@@ -212,14 +226,14 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 	att_ret = attest_realm_token_create(rd->algorithm, rd->measurement,
 					    MEASUREMENT_SLOT_NR,
 					    &rpv,
-					    &rec->token_sign_ctx,
+					    &attest_data->token_sign_ctx,
 					    &rmm_realm_token_buf);
 	if (att_ret != 0) {
 		ERROR("FATAL_ERROR: Realm token creation failed\n");
 		panic();
 	}
 
-	rec->token_sign_ctx.state = ATTEST_SIGN_IN_PROGRESS;
+	attest_data->token_sign_ctx.state = ATTEST_SIGN_IN_PROGRESS;
 	res->smc_res.x[0] = RSI_SUCCESS;
 
 out_unmap_rd:
@@ -240,9 +254,12 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rmi_rec_exit *rec_exit,
 				      struct rsi_result *res)
 {
+	struct rec_attest_data *attest_data;
+
 	assert(rec != NULL);
 	assert(rec_exit != NULL);
 
+	attest_data = rec->aux_data.attest_data;
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
 	if (!verify_input_parameters_consistency(rec)) {
@@ -251,7 +268,7 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 	}
 
 	while (true) {
-		switch (rec->token_sign_ctx.state) {
+		switch (attest_data->token_sign_ctx.state) {
 		case ATTEST_SIGN_NOT_STARTED:
 			/*
 			 * Before this call the initial attestation token call
@@ -261,7 +278,7 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 			res->smc_res.x[0] = RSI_ERROR_STATE;
 			break;
 		case ATTEST_SIGN_IN_PROGRESS:
-			attest_token_continue_sign_state(rec, res);
+			attest_token_continue_sign_state(attest_data, res);
 			break;
 		case ATTEST_SIGN_TOKEN_WRITE_IN_PROGRESS:
 			attest_token_continue_write_state(rec, res);
