@@ -879,36 +879,14 @@ bool addr_is_level_aligned(unsigned long addr, long level)
 typedef bool (*s2tte_type_checker)(unsigned long s2tte);
 
 static bool __table_is_uniform_block(unsigned long *table,
-				s2tte_type_checker s2tte_is_x,
-				enum ripas *ripas_ptr)
+					s2tte_type_checker s2tte_is_x)
 {
-	unsigned long s2tte = s2tte_read(&table[0]);
-	enum ripas ripas_val;
-	unsigned int i;
-
-	if (!s2tte_is_x(s2tte)) {
-		return false;
-	}
-
-	if (ripas_ptr != NULL) {
-		ripas_val = s2tte_get_ripas(s2tte);
-	}
-
-	for (i = 1U; i < S2TTES_PER_S2TT; i++) {
-		s2tte = s2tte_read(&table[i]);
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		unsigned long s2tte = s2tte_read(&table[i]);
 
 		if (!s2tte_is_x(s2tte)) {
 			return false;
 		}
-
-		if ((ripas_ptr != NULL) &&
-		    (s2tte_get_ripas(s2tte) != ripas_val)) {
-			return false;
-		}
-	}
-
-	if (ripas_ptr != NULL) {
-		*ripas_ptr = ripas_val;
 	}
 
 	return true;
