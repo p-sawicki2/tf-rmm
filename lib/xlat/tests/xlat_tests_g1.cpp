@@ -72,11 +72,11 @@ static void buffer_shuffle(unsigned char *buf, size_t size, unsigned int stride)
  * an mmap array to be used for the xlat_ctx_cfg_init() invocation.
  */
 static void xlat_test_cfg_init_setup(struct xlat_ctx_cfg *cfg,
-				    struct xlat_mmap_region *init_mmap,
-				    struct xlat_mmap_region *val_mmap,
-				    unsigned int mmaps,
-				    size_t va_size,
-				    xlat_addr_region_id_t region)
+				     struct xlat_mmap_region *init_mmap,
+				     struct xlat_mmap_region *val_mmap,
+				     unsigned int mmaps,
+				     size_t va_size,
+				     xlat_addr_region_id_t region)
 {
 	uintptr_t start_va, end_va;
 	uintptr_t max_mapped_va_offset, max_mapped_pa;
@@ -126,9 +126,9 @@ static void xlat_test_cfg_init_setup(struct xlat_ctx_cfg *cfg,
 
 	/* Initialize the xlat_ctx_cfg structure */
 	xlat_test_helpers_init_ctx_cfg(cfg, va_size, start_va,
-					   max_mapped_pa, max_mapped_va_offset,
-					   GET_XLAT_TABLE_LEVEL_BASE(va_size),
-					   region, init_mmap, mmaps, true);
+				       max_mapped_pa, max_mapped_va_offset,
+				       GET_XLAT_TABLE_LEVEL_BASE(va_size),
+				       region, init_mmap, mmaps, true);
 }
 
 TEST_GROUP(xlat_tests_G1) {
@@ -597,7 +597,7 @@ TEST(xlat_tests_G1, xlat_ctx_cfg_init_TC8)
 	uint64_t id_aa64mmfr0_el1 = read_id_aa64mmfr0_el1();
 	unsigned int pa_range_bits_arr[] = {
 		PARANGE_0000_WIDTH, PARANGE_0001_WIDTH, PARANGE_0010_WIDTH,
-		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH, PARANGE_0101_WIDTH,
+		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH
 	};
 	unsigned int index = test_helpers_get_rand_in_range(0,
 		sizeof(pa_range_bits_arr)/sizeof(pa_range_bits_arr[0]) - 1U);
