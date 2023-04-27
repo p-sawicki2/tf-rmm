@@ -17,6 +17,7 @@
 #include <psci.h>
 #include <realm.h>
 #include <rec.h>
+#include <run.h>
 #include <smc-handler.h>
 #include <smc-rmi.h>
 #include <smc.h>
@@ -200,7 +201,9 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	enum granule_state new_rec_state = GRANULE_STATE_DELEGATED;
 	unsigned long ret;
 	bool ns_access_ok;
-	unsigned int num_rec_aux;
+	unsigned long num_rec_aux;
+	void *rec_aux;
+	struct rec_attest_data *attest_data;
 
 	g_rec_params = find_granule(rec_params_addr);
 	if ((g_rec_params == NULL) || (g_rec_params->state != GRANULE_STATE_NS)) {
@@ -214,13 +217,13 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 		return RMI_ERROR_INPUT;
 	}
 
-	num_rec_aux = (unsigned int)rec_params.num_aux;
+	num_rec_aux = rec_params.num_aux;
 	if (num_rec_aux > MAX_REC_AUX_GRANULES) {
 		return RMI_ERROR_INPUT;
 	}
 
 	/* Loop through rec_aux_granules and transit them */
-	for (unsigned int i = 0U; i < num_rec_aux; i++) {
+	for (unsigned long i = 0UL; i < num_rec_aux; i++) {
 		struct granule *g_rec_aux = find_lock_granule(
 						rec_params.aux[i],
 						GRANULE_STATE_DELEGATED);
@@ -297,9 +300,16 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	new_rec_state = GRANULE_STATE_REC;
 	rec->runnable = rec_params.flags & REC_PARAMS_FLAG_RUNNABLE;
 
-	rec->alloc_info.ctx_initialised = false;
+	rec_aux = map_rec_aux(rec->g_aux, rec->num_rec_aux);
+	init_rec_aux_data(&(rec->aux_data), rec_aux, rec->num_rec_aux);
+
+	attest_data = rec->aux_data.attest_data;
+	attest_data->alloc_info.ctx_initialised = false;
+
 	/* Initialize attestation state */
-	rec->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+
+	unmap_rec_aux(rec_aux, rec->num_rec_aux);
 
 	set_rd_rec_count(rd, rec_idx + 1U);
 
