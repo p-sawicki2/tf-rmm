@@ -205,13 +205,13 @@ static int gen_mmap_array_by_level(xlat_mmap_region *mmap,
  * Note that this function expects a valid and initialized context.
  */
 static void validate_xlat_tables(xlat_ctx *ctx, unsigned int *expected_idxs,
-				 unsigned int expected_level)
+				 int expected_level)
 {
-	uint64_t tte, attrs, upper_attrs, lower_attrs, type;
+	uint64_t tte, tte_oa, attrs, upper_attrs, lower_attrs, type;
 	uint64_t exp_upper_attrs, exp_lower_attrs;
-	unsigned int level, index, granularity, addr_offset;
+	unsigned int index, granularity, addr_offset;
 	unsigned long long test_va, pa, pa_mask;
-	unsigned int retval;
+	int level, retval;
 
 	assert(ctx != NULL);
 	assert(expected_idxs != NULL);
@@ -262,7 +262,9 @@ static void validate_xlat_tables(xlat_ctx *ctx, unsigned int *expected_idxs,
 
 		/* Validate the PA */
 		pa_mask = (1ULL << XLAT_ADDR_SHIFT(level)) - 1ULL;
-		CHECK_EQUAL((tte & TABLE_ADDR_MASK), (pa & ~pa_mask));
+		tte_oa = xlat_test_helpers_get_oa_from_tte(tte);
+
+		CHECK_EQUAL(tte_oa, (pa & ~pa_mask));
 
 		/* Validate the descriptor type */
 		type = (level == XLAT_TABLE_LEVEL_MAX) ? PAGE_DESC :
@@ -927,12 +929,12 @@ TEST(xlat_tests_G2, xlat_get_tte_ptr_TC1)
 	unsigned int tbl_idx[3U];
 	uint64_t start_va, test_va;
 	xlat_addr_region_id_t va_region;
-	unsigned int level, index;
+	unsigned int index;
 	uint64_t *tte_ptr, *val_tte, *table;
 	uint64_t tte;
 	size_t granularity;
 	unsigned int base_lvl, end_lvl;
-	int retval;
+	int level, retval;
 
 	/***************************************************************
 	 * TEST CASE 1:
@@ -1200,7 +1202,8 @@ TEST(xlat_tests_G2, xlat_unmap_memory_page_TC1)
 			for (unsigned j = 0U; j < mmap_count; j++) {
 				uint64_t tte;
 				uint64_t *tbl_ptr;
-				unsigned int tte_idx, tte_lvl;
+				unsigned int tte_idx;
+				int tte_lvl;
 				struct xlat_llt_info tbl_info;
 				uint64_t offset =
 					test_helpers_get_rand_in_range(0,
@@ -1274,9 +1277,9 @@ TEST(xlat_tests_G2, xlat_unmap_memory_page_TC2)
 	uint64_t start_va, test_va;
 	size_t va_size, granularity;
 	unsigned int mmap_count;
-	unsigned int tte_idx, tte_lvl;
+	unsigned int tte_idx;
 	xlat_addr_region_id_t va_region;
-	int retval;
+	int retval, tte_lvl;
 	struct xlat_mmap_region init_mmap[3U];
 	unsigned int tbl_idx[3U];
 	struct xlat_llt_info tbl_info;
@@ -1574,7 +1577,8 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC1)
 			for (unsigned j = 0U; j < mmap_count; j++) {
 				uint64_t tte, val_tte, attrs, pa, type;
 				uint64_t *tbl_ptr;
-				unsigned int tte_idx, tte_lvl;
+				unsigned int tte_idx;
+				int tte_lvl;
 				struct xlat_llt_info tbl_info;
 				uint64_t offset =
 					test_helpers_get_rand_in_range(0,
@@ -1616,7 +1620,13 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC1)
 				 */
 				pa += test_helpers_get_rand_in_range(1,
 						XLAT_BLOCK_SIZE(end_lvl) - 1);
-				val_tte |= pa & XLAT_ADDR_MASK(end_lvl);
+				val_tte |= ((pa & XLAT_ADDR_MASK(end_lvl))
+								& ~MASK(OA_MSB));
+
+				if (is_feat_lpa2_4k_2_present() == true) {
+					val_tte |= INPLACE(TTE_OA_MSB,
+							EXTRACT(OA_MSB, pa));
+				}
 
 				/* The TTE will be a transient one */
 				val_tte |= (1ULL <<
@@ -1678,9 +1688,9 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC2)
 	uint64_t start_va, test_va, test_pa;
 	size_t va_size, granularity;
 	unsigned int mmap_count;
-	unsigned int tte_idx, tte_lvl;
+	unsigned int tte_idx;
 	xlat_addr_region_id_t va_region;
-	int retval;
+	int tte_lvl, retval;
 	struct xlat_mmap_region init_mmap[3U];
 	unsigned int tbl_idx[3U];
 	struct xlat_llt_info tbl_info;
@@ -1693,7 +1703,7 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC2)
 	};
 	unsigned int parange_index = test_helpers_get_rand_in_range(0,
 		sizeof(pa_range_bits_arr)/sizeof(pa_range_bits_arr[0]) - 1U);
-
+	uint64_t id_aa64mmfr0_el1 = read_id_aa64mmfr0_el1();
 
 	/***************************************************************
 	 * TEST CASE 2:
@@ -1856,8 +1866,7 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC2)
 		CHECK_EQUAL(val_tte, tbl_ptr[tte_idx]);
 
 		/* Restore the maximum supported PA size for next tests */
-		host_write_sysreg("id_aa64mmfr0_el1",
-				  INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5U));
+		host_write_sysreg("id_aa64mmfr0_el1", id_aa64mmfr0_el1);
 
 		/* The rest of the tests will be based on init_mmap[2] */
 		test_va = init_mmap[2U].base_va + ctx.cfg->base_va;
@@ -2058,6 +2067,11 @@ static void validate_tcr_el2(struct xlat_ctx *low_ctx,
 	parange = EXTRACT(ID_AA64MMFR0_EL1_PARANGE, read_id_aa64mmfr0_el1());
 	exp_tcr |= INPLACE(TCR_EL2_IPS, parange);
 
+	if (is_feat_lpa2_4k_2_present() == true) {
+		exp_tcr |=
+			(TCR_EL2_DS_LPA2_EN | TCR_EL2_SH0_IS | TCR_EL2_SH1_IS);
+	}
+
 	/* Validate tcr_el2*/
 	CHECK_VERBOSE((exp_tcr == tcr),
 		      "Validate TCR_EL2 against expected value: Read 0x%.16lx - Expected 0x%.16lx",
@@ -2076,7 +2090,7 @@ TEST(xlat_tests_G2, xlat_arch_setup_mmu_cfg_TC1)
 	struct xlat_mmap_region init_mmap[2U];
 	unsigned int pa_range_bits_arr[] = {
 		PARANGE_0000_WIDTH, PARANGE_0001_WIDTH, PARANGE_0010_WIDTH,
-		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH, PARANGE_0101_WIDTH,
+		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH
 	};
 	unsigned int pa_index = test_helpers_get_rand_in_range(0,
 		sizeof(pa_range_bits_arr)/sizeof(pa_range_bits_arr[0]) - 1U);
