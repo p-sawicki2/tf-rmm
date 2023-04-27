@@ -17,9 +17,16 @@ typedef struct memory_header_s memory_header_t;
 
 /* Number of pages per REC for PMU state */
 #define REC_PMU_PAGES		1
+#define	REC_PMU_SIZE		(REC_PMU_PAGES * SZ_4K)
+
+/* Number of pages per REC for 'rec_attest_data' structure */
+#define REC_ATTEST_PAGES	1
+#define	REC_ATTEST_SIZE		(REC_ATTEST_PAGES * SZ_4K)
 
 /* Number of pages per REC to be allocated */
-#define REC_NUM_PAGES		(REC_HEAP_PAGES + REC_PMU_PAGES)
+#define REC_NUM_PAGES		(REC_HEAP_PAGES + \
+				 REC_PMU_PAGES  + \
+				 REC_ATTEST_PAGES)
 
 struct buffer_alloc_ctx {
 	unsigned char		*buf;
