@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_features.h>
 #include <assert.h>
 #include <errno.h>
 #include <host_utils.h>
@@ -37,7 +38,7 @@ void xlat_test_helpers_init_ctx_cfg(struct xlat_ctx_cfg *ctx_cfg,
 				    uintptr_t base_va,
 				    uintptr_t max_mapped_pa,
 				    uintptr_t max_mapped_va_offset,
-				    unsigned int base_level,
+				    int base_level,
 				    xlat_addr_region_id_t region,
 				    struct xlat_mmap_region *mm,
 				    unsigned int mmaps,
@@ -77,12 +78,14 @@ void xlat_test_hepers_arch_init(void)
 
 	/*
 	 * Setup id_aa64mmfr0_el1 with a PA size of 48 bits
-	 * and 4K granularity support.
+	 * and 4K granularity support on stage 1.
 	 */
 	retval = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
 				INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
 				INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
-					ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED));
+					ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED) |
+				INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
+					ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
 
 	/* Initialize MMU registers to 0 */
 	retval = host_util_set_default_sysreg_cb("sctlr_el2", 0UL);
@@ -103,6 +106,7 @@ void xlat_test_helpers_set_parange(unsigned int parange)
 {
 	u_register_t reg = read_id_aa64mmfr0_el1() &
 					~MASK(ID_AA64MMFR0_EL1_PARANGE);
+
 	host_write_sysreg("id_aa64mmfr0_el1",
 			reg | INPLACE(ID_AA64MMFR0_EL1_PARANGE, parange));
 }
@@ -128,14 +132,6 @@ uint64_t xlat_test_helpers_rand_mmap_attrs(void)
 	ret_attrs = attrs[index];
 
 	if (ret_attrs != MT_TRANSIENT) {
-		if ((ret_attrs != MT_DEVICE) && (rand() & 0x1)) {
-			/*
-			 * Randomly change shareability for MT_MEMORY types.
-			 */
-			ret_attrs &= ~(MT_SHAREABILITY_ISH);
-			ret_attrs |= MT_SHAREABILITY_OSH;
-		}
-
 		index = (unsigned int)test_helpers_get_rand_in_range(0,
 				(sizeof(pas) / sizeof(uint64_t)) - 1);
 		ret_attrs |= pas[index];
@@ -194,11 +190,27 @@ void xlat_test_helpers_rand_mmap_array(struct xlat_mmap_region *mmap,
 	}
 }
 
+uint64_t xlat_test_helpers_get_oa_from_tte(uint64_t tte)
+{
+	uint64_t tte_oa;
+
+	if (is_feat_lpa2_4k_present() == true) {
+		tte_oa = BIT_MASK_ULL(TABLE_ADDR_MSB_LPA2, TABLE_ADDR_SHIFT);
+		tte_oa &= tte;
+		tte_oa |= INPLACE(OA_MSB, EXTRACT(TTE_OA_MSB, tte));
+	} else {
+		tte_oa = BIT_MASK_ULL(TABLE_ADDR_MSB, TABLE_ADDR_SHIFT);
+		tte_oa &= tte;
+	}
+
+	return tte_oa;
+}
+
 int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 				 unsigned long long va,
 				 uint64_t *tte,
 				 uint64_t **table_ptr,
-				 unsigned int *level,
+				 int *level,
 				 unsigned int *index)
 {
 	struct xlat_ctx_cfg *cfg;
@@ -234,14 +246,13 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 
 	/* Base table is the first table of the array */
 	table = &tbls->tables[0U];
-	for (unsigned int i = cfg->base_level;
-					i <= XLAT_TABLE_LEVEL_MAX; i++) {
+	for (int i = cfg->base_level; i <= XLAT_TABLE_LEVEL_MAX; i++) {
 		uint64_t tte_oa;
 		unsigned int tindex =
 			(unsigned int)(va >> XLAT_ADDR_SHIFT(i)) &
-						XLAT_TABLE_ENTRIES_MASK;
+						XLAT_GET_TABLE_ENTRIES_MASK(i);
 
-		if (tindex >= XLAT_TABLE_ENTRIES) {
+		if (tindex >= XLAT_GET_TABLE_ENTRIES(i)) {
 			return -ERANGE;
 		}
 
@@ -261,7 +272,8 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 		}
 
 		switch (i) {
-		case 0U:
+		case -1:
+		case 0:
 			/* Only table descriptors allowed here */
 			if (!XLAT_TESTS_IS_DESC(ctte, TABLE_DESC)) {
 				return -EINVAL;
@@ -272,13 +284,13 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 				return -EINVAL;
 			}
 
-			tte_oa = (EXTRACT(TABLE_ADDR, ctte) <<
-						TABLE_ADDR_SHIFT);
+			tte_oa = xlat_test_helpers_get_oa_from_tte(ctte);
+
 			table = (uint64_t *)tte_oa;
 			break;
 
-		case 1U:
-		case 2U:
+		case 1:
+		case 2:
 			if (XLAT_TESTS_IS_DESC(ctte, BLOCK_DESC)) {
 				*tte = ctte;
 				*level = i;
@@ -290,12 +302,12 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 			}
 
 			/* This is a table descriptor */
-			tte_oa = (EXTRACT(TABLE_ADDR, ctte) <<
-						TABLE_ADDR_SHIFT);
+			tte_oa = xlat_test_helpers_get_oa_from_tte(ctte);
+
 			table = (uint64_t *)tte_oa;
 			break;
 
-		case 3U:
+		case 3:
 			/* Only page descriptors allowed here */
 			if (!XLAT_TESTS_IS_DESC(ctte, PAGE_DESC)) {
 				return -EINVAL;
@@ -319,14 +331,14 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 
 int xlat_test_helpers_gen_attrs(uint64_t *attrs, uint64_t mmap_attrs)
 {
-	uint64_t mem_type, sh_attr;
-	uint64_t lower_attrs, upper_attrs;
+	uint64_t mem_type, lower_attrs, upper_attrs;
+	bool lpa2_supported = is_feat_lpa2_4k_present();
 
 	/* Generate the set of descriptor attributes */
 	mem_type = EXTRACT(MT_TYPE, mmap_attrs);
 	switch (mem_type) {
 	case MT_DEVICE:
-		lower_attrs = LOWER_ATTRS(ATTR_DEVICE_INDEX | OSH);
+		lower_attrs = LOWER_ATTRS(ATTR_DEVICE_INDEX);
 		upper_attrs = XLAT_GET_PXN_DESC();
 		break;
 	case MT_MEMORY:
@@ -335,6 +347,10 @@ int xlat_test_helpers_gen_attrs(uint64_t *attrs, uint64_t mmap_attrs)
 		break;
 	default:
 		return -EINVAL;
+	}
+
+	if (lpa2_supported == false) {
+		lower_attrs |= LOWER_ATTRS(INPLACE(LOWER_ATTR_SH, ISH));
 	}
 
 	if (mmap_attrs & MT_NG) {
@@ -361,25 +377,8 @@ int xlat_test_helpers_gen_attrs(uint64_t *attrs, uint64_t mmap_attrs)
 		upper_attrs |= XLAT_GET_PXN_DESC();
 	}
 
-	if (mem_type == MT_DEVICE) {
-		*attrs = upper_attrs | lower_attrs;
-		return 0;
-	}
-
-	sh_attr = MT_SHAREABILITY(mmap_attrs);
-	switch (sh_attr) {
-	case MT_SHAREABILITY_ISH:
-		lower_attrs |= LOWER_ATTRS(ISH);
-		break;
-	case MT_SHAREABILITY_OSH:
-		lower_attrs |= LOWER_ATTRS(OSH);
-		break;
-	case MT_SHAREABILITY_NSH:
-		lower_attrs |= LOWER_ATTRS(NSH);
-		break;
-	}
-
 	*attrs = upper_attrs | lower_attrs;
+
 	return 0;
 }
 
