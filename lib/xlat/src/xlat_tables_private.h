@@ -52,7 +52,7 @@ void xlat_tables_print(struct xlat_ctx *ctx);
 /*
  * Returns a block/page table descriptor for the given level and attributes.
  */
-uintptr_t xlat_desc(uint64_t attr, uintptr_t addr_pa, unsigned int level);
+uintptr_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level);
 
 /*
  * Return the maximum physical address supported by the hardware.
