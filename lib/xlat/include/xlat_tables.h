@@ -159,27 +159,12 @@
 #define MT_EXECUTE		INPLACE(MT_EXECUTE_FLAG, 0UL)
 #define MT_EXECUTE_NEVER	INPLACE(MT_EXECUTE_FLAG, 1UL)
 
-/*
- * Shareability defines the visibility of any cache changes to
- * all masters belonging to a shareable domain.
- *
- * MT_SHAREABILITY_ISH: For inner shareable domain
- * MT_SHAREABILITY_OSH: For outer shareable domain
- * MT_SHAREABILITY_NSH: For non shareable domain
- */
-#define MT_SHAREABILITY_ISH	INPLACE(MT_SHAREABILITY, 1UL)
-#define MT_SHAREABILITY_OSH	INPLACE(MT_SHAREABILITY, 2UL)
-#define MT_SHAREABILITY_NSH	INPLACE(MT_SHAREABILITY, 3UL)
-
 #define MT_NG			INPLACE(MT_NG, 1UL)
 
 /* Compound attributes for most common usages */
-#define MT_CODE			(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RO | MT_EXECUTE)
-#define MT_RO_DATA		(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RO | MT_EXECUTE_NEVER)
-#define MT_RW_DATA		(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RW | MT_EXECUTE_NEVER)
+#define MT_CODE			(MT_MEMORY | MT_RO | MT_EXECUTE)
+#define MT_RO_DATA		(MT_MEMORY | MT_RO | MT_EXECUTE_NEVER)
+#define MT_RW_DATA		(MT_MEMORY | MT_RW | MT_EXECUTE_NEVER)
 
 /*
  * Structure for specifying a single region of memory.
@@ -198,7 +183,7 @@ struct xlat_mmap_region {
 struct xlat_llt_info {
 	uint64_t *table;	/* Pointer to the translation table. */
 	uintptr_t llt_base_va;	/* Base VA that is applicable to this llt. */
-	unsigned int level;	/* Table level of the current entry. */
+	int level;		/* Table level of the current entry. */
 };
 
 /******************************************************************************
