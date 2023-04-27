@@ -105,28 +105,13 @@
 /* NG Flag */
 #define MT_NG_SHIFT		(MT_CONT_SHIFT + 1UL)
 
-/* Shareability attribute for the memory region */
-#define MT_SHAREABILITY_SHIFT	(MT_NG_SHIFT + 1UL)
-#define MT_SHAREABILITY_WIDTH	UL(2)
-#define MT_SHAREABILITY_MASK	MASK(MT_SHAREABILITY)
-#define MT_SHAREABILITY(_attr)	((_attr) & MT_SHAREABILITY_MASK)
-
 /* Physical address space (REALM/NS, as ROOT/SECURE do not apply to R-EL2) */
-#define MT_PAS_SHIFT		(MT_SHAREABILITY_SHIFT + MT_SHAREABILITY_WIDTH)
+#define MT_PAS_SHIFT		(MT_NG_SHIFT + 1UL)
 #define MT_PAS_WIDTH		UL(1)
 #define MT_PAS_MASK		MASK(MT_PAS)
 #define MT_PAS(_attr)		((_attr) & MT_PAS_MASK)
 
 /* All other bits are reserved */
-
-/* Macro to access translatio table lower attributes */
-#define LOWER_ATTRS_SHIFT	(2U)
-#define LOWER_ATTRS_WIDTH	(10U)
-#define LOWER_ATTRS_MASK	MASK(LOWER_ATTRS)
-#define LOWER_ATTRS(x)		(INPLACE(LOWER_ATTRS, x) & (LOWER_ATTRS_MASK))
-
-/* Public definitions to use with the LOWER_ATTRS() macro*/
-#define NS			(U(0x1) << UL(3))   /* Bit[5] absolutely */
 
 /*
  * Memory mapping attributes
@@ -159,27 +144,12 @@
 #define MT_EXECUTE		INPLACE(MT_EXECUTE_FLAG, 0UL)
 #define MT_EXECUTE_NEVER	INPLACE(MT_EXECUTE_FLAG, 1UL)
 
-/*
- * Shareability defines the visibility of any cache changes to
- * all masters belonging to a shareable domain.
- *
- * MT_SHAREABILITY_ISH: For inner shareable domain
- * MT_SHAREABILITY_OSH: For outer shareable domain
- * MT_SHAREABILITY_NSH: For non shareable domain
- */
-#define MT_SHAREABILITY_ISH	INPLACE(MT_SHAREABILITY, 1UL)
-#define MT_SHAREABILITY_OSH	INPLACE(MT_SHAREABILITY, 2UL)
-#define MT_SHAREABILITY_NSH	INPLACE(MT_SHAREABILITY, 3UL)
-
 #define MT_NG			INPLACE(MT_NG, 1UL)
 
 /* Compound attributes for most common usages */
-#define MT_CODE			(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RO | MT_EXECUTE)
-#define MT_RO_DATA		(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RO | MT_EXECUTE_NEVER)
-#define MT_RW_DATA		(MT_MEMORY | MT_SHAREABILITY_ISH \
-				 | MT_RW | MT_EXECUTE_NEVER)
+#define MT_CODE			(MT_MEMORY | MT_RO | MT_EXECUTE)
+#define MT_RO_DATA		(MT_MEMORY | MT_RO | MT_EXECUTE_NEVER)
+#define MT_RW_DATA		(MT_MEMORY | MT_RW | MT_EXECUTE_NEVER)
 
 /*
  * Structure for specifying a single region of memory.
@@ -198,7 +168,7 @@ struct xlat_mmap_region {
 struct xlat_llt_info {
 	uint64_t *table;	/* Pointer to the translation table. */
 	uintptr_t llt_base_va;	/* Base VA that is applicable to this llt. */
-	unsigned int level;	/* Table level of the current entry. */
+	int level;		/* Table level of the current entry. */
 };
 
 /******************************************************************************

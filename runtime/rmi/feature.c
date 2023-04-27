@@ -16,14 +16,11 @@
 
 static unsigned long get_feature_register_0(void)
 {
+	/* TODO: Announce FEAT_LPA2 through feat_reg0 when supported for S2TTE */
+
 	/* Set S2SZ field */
 	unsigned long s2sz = arch_feat_get_pa_width();
 	unsigned long feat_reg0 = INPLACE(RMM_FEATURE_REGISTER_0_S2SZ, s2sz);
-
-	/* Set LPA2 field */
-	if (is_feat_lpa2_4k_present()) {
-		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_LPA2, RMI_LPA2);
-	}
 
 	/* Set support for SHA256 and SHA512 hash algorithms */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_256,
