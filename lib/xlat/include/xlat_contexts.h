@@ -72,12 +72,18 @@ struct xlat_ctx_cfg {
 	uintptr_t max_mapped_va_offset;
 
 	/* Level of the base translation table. */
-	unsigned int base_level;
+	int base_level;
 
 	/*
 	 * Virtual address region handled by this context.
 	 */
 	xlat_addr_region_id_t region;
+
+	/*
+	 * When FEAT_LPA2 is in use, the shareability attributes need to be
+	 * stored in TCR_EL2, not in the table descriptors.
+	 */
+	uint64_t lpa2_sh;
 
 	bool initialized;
 };
