@@ -16,6 +16,23 @@
       "message": "waiting for build to complete.",
       "revId": "dee55974842f49b2eff0020eee84e4b1c47a221c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d55c10d3_99137d97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-04-28T07:50:18Z",
+      "side": 1,
+      "message": "Ci job failed due to some infra issue.",
+      "revId": "dee55974842f49b2eff0020eee84e4b1c47a221c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
