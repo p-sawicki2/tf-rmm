@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "41ef6b4d_a3e6efb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-02T15:08:34Z",
+      "side": 1,
+      "message": "Won\u0027t the RSI logger be called as part of RSI calls? Please explain what this unit test might do (checking the number of printed parameters and output values?).",
+      "parentUuid": "8bf90eaf_6abe1595",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd749a40_b99bf6ec",
@@ -58,6 +76,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b9024cc_e054963e",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-02T15:08:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6db6d016_e482732a",
+      "range": {
+        "startLine": 62,
+        "startChar": 15,
+        "endLine": 62,
+        "endChar": 16
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d20c081e_2ada67bc",
@@ -88,6 +130,30 @@
       "writtenOn": "2023-05-02T15:00:19Z",
       "side": 1,
       "message": "Should this be aligned with %8lx ?",
+      "range": {
+        "startLine": 170,
+        "startChar": 11,
+        "endLine": 170,
+        "endChar": 13
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "918f4958_f6438dc5",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-02T15:08:34Z",
+      "side": 1,
+      "message": "Please see my answer to Suzuki for the same question:\nhttps://gerrit.oss.arm.com/c/trusted-firmware/tf-rmm/+/259093/6/runtime/rsi/logger.c#105\n\nThe idea was to reduce the length of logging strings.\nRMM now uses DRAM bank 2, which starts from 0x880000000, which breaks %8lx alignment. Besides that RSI commands will break any alignment:\nSMC_RSI_MEASUREMENT_EXTEND    1 20 1111111111111111 1111111111111111 1111111111111111 1111111111111111 0 0 0 0 \u003e RSI_SUCCESS\nSMC_RSI_ATTEST_TOKEN_INIT     80280000 abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab \u003e RSI_SUCCESS",
+      "parentUuid": "41d17943_5a527a61",
       "range": {
         "startLine": 170,
         "startChar": 11,
