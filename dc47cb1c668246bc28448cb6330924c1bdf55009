@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "71672ee6_47af0fa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-02T17:22:38Z",
+      "side": 1,
+      "message": "I think it should be a separate patch for unit tests.",
+      "parentUuid": "9f20964e_03a3873f",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bd749a40_b99bf6ec",
         "filename": "runtime/core/exit.c",
         "patchSetId": 8
@@ -214,6 +232,30 @@
       "side": 1,
       "message": "hmm, I see, in that case, we can either add an alignment of %13lx to cater for values upto 52 bits for RMI commands. The RSI prints can also be aligned to %13lx and I think printing all the arguments of RSI_READ_MEASUREMENT, RSI_ATTEST_INIT and RSI_MEASUREMENT_EXTEND is not necessary. We just need to know the call was made and possibly the return value for these particular  RSI calls.\n\nAligning the args makes for easy reading of the  logs (if we can pull it off). This depends on the a single RMI/RSI log fitting in a single line on a (1280 x 1024) screen. If there is overflow to the next line with the alignment, then there is less point in aligning.",
       "parentUuid": "918f4958_f6438dc5",
+      "range": {
+        "startLine": 170,
+        "startChar": 11,
+        "endLine": 170,
+        "endChar": 13
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "957984ab_e10373ae",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-02T17:22:38Z",
+      "side": 1,
+      "message": "Because number of arguments and output values are different for different RSI/RMI commands (as well as the length of status code strings: e.g. RMI_SUCCESS vs RMI_ERROR_INPUT), then printed strings won\u0027t be aligned in any case, so using aligned formats like %8lx or %13lx won\u0027t produce aligned text output.",
+      "parentUuid": "5339ab24_89ddf27b",
       "range": {
         "startLine": 170,
         "startChar": 11,
