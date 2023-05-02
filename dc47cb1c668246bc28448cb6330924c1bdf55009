@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "449434fd_29e45dfb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-02T15:30:59Z",
+      "side": 1,
+      "message": "It can check for invalid cases on exercised by RMM code and ensure that call the cases are covered. Basically it can check for all values of args of the API which may be difficult to be reached when invoked by RMM. Also reaching a particular condition in RSI logger when invoked from RMM depends on test in Realm.\n\nHaving this unit tests ensures that all the corner cases are exercised and full range of arguments are tested. It also provides an easy way to verify the RSI log formatting on the host machine.",
+      "parentUuid": "41ef6b4d_a3e6efb2",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bd749a40_b99bf6ec",
         "filename": "runtime/core/exit.c",
         "patchSetId": 8
@@ -154,6 +172,30 @@
       "side": 1,
       "message": "Please see my answer to Suzuki for the same question:\nhttps://gerrit.oss.arm.com/c/trusted-firmware/tf-rmm/+/259093/6/runtime/rsi/logger.c#105\n\nThe idea was to reduce the length of logging strings.\nRMM now uses DRAM bank 2, which starts from 0x880000000, which breaks %8lx alignment. Besides that RSI commands will break any alignment:\nSMC_RSI_MEASUREMENT_EXTEND    1 20 1111111111111111 1111111111111111 1111111111111111 1111111111111111 0 0 0 0 \u003e RSI_SUCCESS\nSMC_RSI_ATTEST_TOKEN_INIT     80280000 abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab abababababababab \u003e RSI_SUCCESS",
       "parentUuid": "41d17943_5a527a61",
+      "range": {
+        "startLine": 170,
+        "startChar": 11,
+        "endLine": 170,
+        "endChar": 13
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5339ab24_89ddf27b",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-02T15:30:59Z",
+      "side": 1,
+      "message": "hmm, I see, in that case, we can either add an alignment of %13lx to cater for values upto 52 bits for RMI commands. The RSI prints can also be aligned to %13lx and I think printing all the arguments of RSI_READ_MEASUREMENT, RSI_ATTEST_INIT and RSI_MEASUREMENT_EXTEND is not necessary. We just need to know the call was made and possibly the return value for these particular  RSI calls.\n\nAligning the args makes for easy reading of the  logs (if we can pull it off). This depends on the a single RMI/RSI log fitting in a single line on a (1280 x 1024) screen. If there is overflow to the next line with the alignment, then there is less point in aligning.",
+      "parentUuid": "918f4958_f6438dc5",
       "range": {
         "startLine": 170,
         "startChar": 11,
