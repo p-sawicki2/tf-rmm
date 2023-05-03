@@ -127,6 +127,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "71419345_ba6a078f",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-03T11:52:39Z",
+      "side": 1,
+      "message": "Please see my reply.",
+      "parentUuid": "bd749a40_b99bf6ec",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6db6d016_e482732a",
         "filename": "runtime/core/handler.c",
         "patchSetId": 8
@@ -185,6 +203,24 @@
       "writtenOn": "2023-05-02T15:00:19Z",
       "side": 1,
       "message": "add : assert(num \u003c 5);",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d834a4c1_49217d1d",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-03T11:52:39Z",
+      "side": 1,
+      "message": "\u003c\u003d 5",
+      "parentUuid": "d20c081e_2ada67bc",
       "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -333,6 +369,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cdac8c59_1a1a8831",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-03T11:52:39Z",
+      "side": 1,
+      "message": "See my comment above.",
+      "parentUuid": "ffcaf5df_83a6f123",
+      "range": {
+        "startLine": 189,
+        "startChar": 12,
+        "endLine": 189,
+        "endChar": 14
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "680fe049_4cd70d4b",
         "filename": "runtime/include/rsi-logger.h",
         "patchSetId": 8
@@ -344,6 +404,30 @@
       "writtenOn": "2023-05-02T15:00:19Z",
       "side": 1,
       "message": "#if (RSI_LOG_LEVEL \u003e LOG_LEVEL_NONE) \u0026\u0026 (RSI_LOG_LEVEL \u003c\u003d LOG_LEVEL)",
+      "range": {
+        "startLine": 20,
+        "startChar": 5,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52e82664_df5b14f9",
+        "filename": "runtime/include/rsi-logger.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-03T11:52:39Z",
+      "side": 1,
+      "message": "What happens if RSI_LOG_LEVEL is set to 1...9?",
+      "parentUuid": "680fe049_4cd70d4b",
       "range": {
         "startLine": 20,
         "startChar": 5,
@@ -367,6 +451,24 @@
       "writtenOn": "2023-05-02T15:00:19Z",
       "side": 1,
       "message": "This can be defined to make the caller shorter.\n\n/* Takes an array of regs of size of atleast 11 and sets up the args for RSI log */\n\n# define RSI_LOG_SET(regs)     \\\n        unsigned long rsi_log_args[] \u003d {                        \\\n         regs[1], regs[2], regs[3], regs[4], regs[5], regs[6], regs[7], regs[8], regs[9], regs[10]               \\\n        }\n\n\nThe caller can be RSI_LOG_SET(rec-\u003eregs);",
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e03cf16_f3edf656",
+        "filename": "runtime/include/rsi-logger.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-03T11:52:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ee093ac7_65213e00",
       "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
