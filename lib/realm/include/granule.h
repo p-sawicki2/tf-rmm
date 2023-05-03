@@ -148,12 +148,14 @@ void granule_memzero_mapped(void *buf);
 /* Must be called with g->lock held */
 static inline void __granule_get(struct granule *g)
 {
+	assert(g->lock.val != 0);
 	g->refcount++;
 }
 
 /* Must be called with g->lock held */
 static inline void __granule_put(struct granule *g)
 {
+	assert(g->lock.val != 0);
 	assert(g->refcount > 0UL);
 	g->refcount--;
 }
