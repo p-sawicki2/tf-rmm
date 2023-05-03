@@ -89,6 +89,20 @@ static bool get_out_of_range_granule(unsigned long *addr, bool higher_range)
 	return true;
 }
 
+/*
+ * Function to set the lock of a granule to a non-zero value and
+ * return the value.
+ *
+ * The input granule pointer must be valid.
+ */
+static inline unsigned int set_rand_non_zero_lock_value(struct granule * granule)
+{
+	unsigned int lock =
+		(unsigned int)test_helpers_get_rand_in_range(1, INT_MAX);
+	granule->lock.val = lock;
+	return lock;
+}
+
 TEST_GROUP(granule) {
 
 
@@ -1225,6 +1239,7 @@ TEST(granule, granule_get_TC1)
 {
 	unsigned long address = get_rand_granule_addr();
 	struct granule *granule = find_granule(address);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 1:
@@ -1238,7 +1253,7 @@ TEST(granule, granule_get_TC1)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0, granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 
 	/*
 	 * __granule_get() doesn't make any check to validate the granule
@@ -1250,6 +1265,7 @@ TEST(granule, granule_put_TC1)
 {
 	unsigned long address = get_rand_granule_addr();
 	struct granule *granule = find_granule(address);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 1:
@@ -1266,7 +1282,7 @@ TEST(granule, granule_put_TC1)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0, granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 }
 
 TEST(granule, granule_put_TC2)
@@ -1274,6 +1290,7 @@ TEST(granule, granule_put_TC2)
 	unsigned long address = get_rand_granule_addr();
 	struct granule *granule = find_granule(address);
 	unsigned int get_count;
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 2:
@@ -1294,7 +1311,7 @@ TEST(granule, granule_put_TC2)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0, granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 
 	/*
 	 * __granule_put() doesn't make any check to validate the granule
@@ -1308,6 +1325,7 @@ TEST(granule, granule_refcount_inc_TC1)
 	struct granule *granule = find_granule(address);
 	unsigned long val =
 		(unsigned long)test_helpers_get_rand_in_range(1, INT_MAX);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 1:
@@ -1321,7 +1339,7 @@ TEST(granule, granule_refcount_inc_TC1)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0 ,granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 
 	/*
 	 * __granule_refcount_inc() doesn't make any check to validate
@@ -1335,6 +1353,7 @@ TEST(granule, granule_refcount_dec_TC1)
 	struct granule *granule = find_granule(address);
 	unsigned long val =
 		(unsigned long)test_helpers_get_rand_in_range(10, INT_MAX);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 1:
@@ -1352,7 +1371,7 @@ TEST(granule, granule_refcount_dec_TC1)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0, granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 }
 
 TEST(granule, granule_refcount_dec_TC2)
@@ -1361,6 +1380,7 @@ TEST(granule, granule_refcount_dec_TC2)
 	struct granule *granule = find_granule(address);
 	unsigned long val =
 		(unsigned long)test_helpers_get_rand_in_range(10, INT_MAX);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 2:
@@ -1379,7 +1399,7 @@ TEST(granule, granule_refcount_dec_TC2)
 
 	/* Verify that not other parameters of the granule are altered */
 	CHECK_EQUAL(0, granule->state);
-	CHECK_EQUAL(0, granule->lock.val);
+	CHECK_EQUAL(lock, granule->lock.val);
 
 	/*
 	 * __granule_refcount_dec() doesn't make any check to validate
@@ -1393,6 +1413,7 @@ ASSERT_TEST(granule, granule_refcount_dec_TC3)
 	struct granule *granule = find_granule(address);
 	unsigned long val =
 		(unsigned long)test_helpers_get_rand_in_range(10, INT_MAX - 1);
+	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
 	/******************************************************************
 	 * TEST CASE 3:
