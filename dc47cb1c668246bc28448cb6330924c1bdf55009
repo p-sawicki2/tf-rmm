@@ -440,6 +440,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2813ec2_74d893b1",
+        "filename": "runtime/include/rsi-logger.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:45:26Z",
+      "side": 1,
+      "message": "would it give compilation error if LOG_LEVEL is set to 1 to 9 ? If not , then it is probably fine.",
+      "parentUuid": "52e82664_df5b14f9",
+      "range": {
+        "startLine": 20,
+        "startChar": 5,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "dc47cb1c668246bc28448cb6330924c1bdf55009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee093ac7_65213e00",
         "filename": "runtime/include/rsi-logger.h",
         "patchSetId": 8
