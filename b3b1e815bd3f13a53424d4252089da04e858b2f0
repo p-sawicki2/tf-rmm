@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1846a7f3_98c09cf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-04T12:58:08Z",
+      "side": 1,
+      "message": "Hi Shale, the unit tests for granule are failing due to the new assert checks. I suppose the lock value is not set in the tests before calling these affected functions. Could you fix up the unit tests as well ?\n\nThe commands to reproduce :\n\ncmake -DRMM_CONFIG\u003dhost_defcfg -S . -B build -DHOST_VARIANT\u003dhost_test\ncmake --build build -- run-unittests",
+      "revId": "b3b1e815bd3f13a53424d4252089da04e858b2f0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
