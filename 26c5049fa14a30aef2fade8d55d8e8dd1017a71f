@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5cf8775_c870ed3a",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-04T09:56:36Z",
+      "side": 1,
+      "message": "should we add an assert here as well ?",
+      "revId": "26c5049fa14a30aef2fade8d55d8e8dd1017a71f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bfe9ebe_801e4213",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-04T09:56:36Z",
+      "side": 1,
+      "message": "and here ?",
+      "revId": "26c5049fa14a30aef2fade8d55d8e8dd1017a71f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
