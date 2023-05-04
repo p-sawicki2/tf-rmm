@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6570a621_e87a0bcb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-04T12:59:59Z",
+      "side": 1,
+      "message": "suggest:\n\nrefactor(lib/realm): add assertion checks\n\nThis patch adds assertion for lock state when calling\ngranule_put, granule_get, granule_refcount_inc, and granule_refcount_dec.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 123
+      },
+      "revId": "b3b1e815bd3f13a53424d4252089da04e858b2f0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "1846a7f3_98c09cf9",
