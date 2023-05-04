@@ -590,6 +590,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		break;
 	}
 	default:
+		ERROR("Invalid RSI function_id = %x\n", function_id);
 		rec->regs[0] = SMC_UNKNOWN;
 		break;
 	}
