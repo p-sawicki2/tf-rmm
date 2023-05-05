@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <assert.h>
 #include <buffer.h>
@@ -103,6 +104,9 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 {
 	int ret;
 	unsigned int plat_offset, cmn_offset;
+
+	/* RMM can only work with FEAT_LPA2 supported */
+	assert(is_feat_lpa2_4k_present() == true);
 
 	/* Common regions sorted by ascending VA */
 	struct xlat_mmap_region regions[COMMON_REGIONS] = {
