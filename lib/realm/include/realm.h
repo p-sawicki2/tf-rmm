@@ -81,6 +81,9 @@ struct rd {
 	/* SVE enabled flag */
 	bool sve_enabled;
 
+	/* LPA2 enabled flag */
+	bool lpa2_enabled;
+
 	/*
 	 * SVE vector length configured for the realm. Can range from 0x0 to 0xf,
 	 * each increment adds 128 bits to the vector length.
