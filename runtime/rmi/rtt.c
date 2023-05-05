@@ -131,7 +131,7 @@ unsigned long smc_rtt_create(unsigned long rtt_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, level - 1L, &wi);
 	if (wi.last_level != level - 1L) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_llt;
 	}
 
@@ -231,7 +231,7 @@ unsigned long smc_rtt_create(unsigned long rtt_addr,
 
 	} else if (s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_table;
 
 	} else {
@@ -296,7 +296,7 @@ unsigned long smc_rtt_fold(unsigned long rtt_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, level - 1L, &wi);
 	if (wi.last_level != level - 1UL) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_parent_table;
 	}
 
@@ -304,7 +304,7 @@ unsigned long smc_rtt_fold(unsigned long rtt_addr,
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 	if (!s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_parent_table;
 	}
 
@@ -314,7 +314,7 @@ unsigned long smc_rtt_fold(unsigned long rtt_addr,
 	 */
 	if (rtt_addr != s2tte_pa_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_parent_table;
 	}
 
@@ -387,7 +387,7 @@ unsigned long smc_rtt_fold(unsigned long rtt_addr,
 			parent_s2tte = s2tte_create_valid_ns(block_pa, level - 1L);
 		/* The table contains mixed entries that cannot be folded */
 		} else {
-			ret = pack_return_code(RMI_ERROR_RTT, level);
+			ret = pack_return_code(RMI_ERROR_RTT, level & 0xFF);
 			goto out_unmap_table;
 		}
 
@@ -472,7 +472,7 @@ unsigned long smc_rtt_destroy(unsigned long rtt_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, level - 1L, &wi);
 	if (wi.last_level != level - 1UL) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_parent_table;
 	}
 
@@ -480,7 +480,7 @@ unsigned long smc_rtt_destroy(unsigned long rtt_addr,
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 	if (!s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_parent_table;
 	}
 
@@ -612,7 +612,7 @@ static unsigned long map_unmap_ns(unsigned long rd_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, level, &wi);
 	if (wi.last_level != level) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_llt;
 	}
 
@@ -622,7 +622,7 @@ static unsigned long map_unmap_ns(unsigned long rd_addr,
 	if (op == MAP_NS) {
 		if (!s2tte_is_unassigned(s2tte)) {
 			ret = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)level & 0xFF);
 			goto out_unmap_table;
 		}
 
@@ -637,7 +637,7 @@ static unsigned long map_unmap_ns(unsigned long rd_addr,
 		 */
 		if (!s2tte_is_valid_ns(s2tte, level)) {
 			ret = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)level & 0xFF);
 			goto out_unmap_table;
 		}
 
@@ -867,7 +867,7 @@ static unsigned long data_create(unsigned long data_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 			     map_addr, RTT_PAGE_LEVEL, &wi);
 	if (wi.last_level != RTT_PAGE_LEVEL) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_ll_table;
 	}
 
@@ -996,7 +996,7 @@ unsigned long smc_data_destroy(unsigned long rd_addr,
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, RTT_PAGE_LEVEL, &wi);
 	if (wi.last_level != RTT_PAGE_LEVEL) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_ll_table;
 	}
 
@@ -1149,7 +1149,7 @@ unsigned long smc_rtt_init_ripas(unsigned long rd_addr,
 	rtt_walk_lock_unlock(g_rtt_root, sl, ipa_bits,
 				map_addr, level, &wi);
 	if (wi.last_level != level) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_llt;
 	}
 
@@ -1158,7 +1158,7 @@ unsigned long smc_rtt_init_ripas(unsigned long rd_addr,
 
 	/* Allowed only for HIPAS=UNASSIGNED */
 	if (s2tte_is_table(s2tte, level) || !s2tte_is_unassigned(s2tte)) {
-		ret = pack_return_code(RMI_ERROR_RTT, (unsigned int)level);
+		ret = pack_return_code(RMI_ERROR_RTT, (unsigned int)level & 0xFF);
 		goto out_unmap_llt;
 	}
 
@@ -1257,7 +1257,7 @@ unsigned long smc_rtt_set_ripas(unsigned long rd_addr,
 	rtt_walk_lock_unlock(g_rtt_root, sl, ipa_bits,
 				map_addr, level, &wi);
 	if (wi.last_level != level) {
-		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level);
+		ret = pack_return_code(RMI_ERROR_RTT, wi.last_level & 0xFF);
 		goto out_unlock_llt;
 	}
 
@@ -1267,7 +1267,7 @@ unsigned long smc_rtt_set_ripas(unsigned long rd_addr,
 	valid = s2tte_is_valid(s2tte, level);
 
 	if (!update_ripas(&s2tte, level, ripas)) {
-		ret = pack_return_code(RMI_ERROR_RTT, (unsigned int)level);
+		ret = pack_return_code(RMI_ERROR_RTT, (unsigned int)level & 0xFF);
 		goto out_unmap_llt;
 	}
 
