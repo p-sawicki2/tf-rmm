@@ -74,19 +74,33 @@ static bool s2_inconsistent_sl(unsigned int ipa_bits, int sl)
 	 * The maximum number of concatenated tables is 16,
 	 * hence we are adding 4 to the 'sl_max_ipa_bits'.
 	 */
-	sl_min_ipa_bits = levels * S2TTE_STRIDE + GRANULE_SHIFT + 1U;
+	sl_min_ipa_bits = (levels * S2TTE_STRIDE) + GRANULE_SHIFT + 1U;
 	sl_max_ipa_bits = sl_min_ipa_bits + (S2TTE_STRIDE - 1U) + 4U;
+
+	/*
+	 * MAX_IPA_BITS_LPA2 is 52bits, however, S2TTE_STRIDE can give us
+	 * a larger value, so we need to cater for that.
+	 */
+	sl_max_ipa_bits = (sl_max_ipa_bits > (MAX_IPA_BITS_LPA2 + 4U)) ?
+				(MAX_IPA_BITS_LPA2 + 4U) : sl_max_ipa_bits;
 
 	return ((ipa_bits < sl_min_ipa_bits) || (ipa_bits > sl_max_ipa_bits));
 }
 
 static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl)
 {
-	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > MAX_IPA_BITS)) {
+	bool lpa2 = is_feat_lpa2_4k_present();
+	unsigned int max_ipa_bits = (lpa2 == true) ?
+				MAX_IPA_BITS_LPA2 : MAX_IPA_BITS;
+	long min_starting_level = (lpa2 == true) ?
+				MIN_STARTING_LEVEL_LPA2 : MIN_STARTING_LEVEL;
+
+
+	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > max_ipa_bits)) {
 		return false;
 	}
 
-	if ((sl < MIN_STARTING_LEVEL) || (sl > RTT_PAGE_LEVEL)) {
+	if ((sl < min_starting_level) || (sl > RTT_PAGE_LEVEL)) {
 		return false;
 	}
 
