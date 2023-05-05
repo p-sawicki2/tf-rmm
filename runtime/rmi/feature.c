@@ -21,7 +21,7 @@ static unsigned long get_feature_register_0(void)
 	unsigned long feat_reg0 = INPLACE(RMM_FEATURE_REGISTER_0_S2SZ, s2sz);
 
 	/* Set LPA2 field */
-	if (is_feat_lpa2_4k_present()) {
+	if (is_feat_lpa2_4k_2_present()) {
 		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_LPA2, RMI_LPA2);
 	}
 
