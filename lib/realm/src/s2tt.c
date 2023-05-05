@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <attestation_token.h>
 #include <bitmap.h>
@@ -17,6 +18,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <table.h>
+#include <utils_def.h>
 
 /*
  * For prototyping we assume 4K pages
@@ -27,7 +29,7 @@
  * The maximum number of bits supported by the RMM for a stage 2 translation
  * output address (including stage 2 table entries).
  */
-#define S2TTE_OA_BITS			48
+#define S2TTE_OA_BITS			52U
 
 #define DESC_TYPE_MASK			0x3UL
 #define S2TTE_L012_TABLE		0x3UL
@@ -39,40 +41,49 @@
  * The following constants for the mapping attributes (S2_TTE_MEMATTR_*)
  * assume that HCR_EL2.FWB is set.
  */
-#define S2TTE_MEMATTR_SHIFT		2
+#define S2TTE_MEMATTR_SHIFT		2U
 #define S2TTE_MEMATTR_MASK		(0x7UL << S2TTE_MEMATTR_SHIFT)
-#define S2TTE_MEMATTR_FWB_NORMAL_WB	((1UL << 4) | (2UL << 2))
-#define S2TTE_MEMATTR_FWB_RESERVED	((1UL << 4) | (0UL << 2))
+#define S2TTE_MEMATTR_FWB_NORMAL_WB	((1UL << 4U) | (2UL << 2U))
+#define S2TTE_MEMATTR_FWB_RESERVED	((1UL << 4U) | (0UL << 2U))
 
-#define S2TTE_AP_SHIFT			6
+#define S2TTE_AP_SHIFT			6U
 #define S2TTE_AP_MASK			(3UL << S2TTE_AP_SHIFT)
 #define S2TTE_AP_RW			(3UL << S2TTE_AP_SHIFT)
 
-#define S2TTE_SH_SHIFT			8
+#define S2TTE_SH_SHIFT			8U
 #define S2TTE_SH_MASK			(3UL << S2TTE_SH_SHIFT)
 #define S2TTE_SH_NS			(0UL << S2TTE_SH_SHIFT)
 #define S2TTE_SH_RESERVED		(1UL << S2TTE_SH_SHIFT)
 #define S2TTE_SH_OS			(2UL << S2TTE_SH_SHIFT)
 #define S2TTE_SH_IS			(3UL << S2TTE_SH_SHIFT)	/* Inner Shareable */
 
+#define S2TTE_AF			(1UL << 10U)
+#define S2TTE_XN			(2UL << 53U)
+#define S2TTE_NS			(1UL << 55U)
+
+/* When FEAT_LPA2 is enabled, Shareability attributes are stored in VTCR_EL2 */
+#define S2TTE_ATTRS		(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \
+				 S2TTE_AF)
+
+#define S2TTE_TABLE		S2TTE_L012_TABLE
+#define S2TTE_BLOCK		(S2TTE_ATTRS | S2TTE_L012_BLOCK)
+#define S2TTE_PAGE		(S2TTE_ATTRS | S2TTE_L3_PAGE)
+#define S2TTE_BLOCK_NS		(S2TTE_NS | S2TTE_XN |			\
+				 S2TTE_AF | S2TTE_L012_BLOCK)
+#define S2TTE_PAGE_NS		(S2TTE_NS | S2TTE_XN |			\
+				 S2TTE_AF | S2TTE_L3_PAGE)
+#define S2TTE_INVALID		0UL
+
 /*
- * We set HCR_EL2.FWB So we set bit[4] to 1 and bits[3:2] to 2 and force
- * everyting to be Normal Write-Back
+ * When FEAT_LPA2 is enabled, the 2 MSB bits of the OA is not contiguous
+ * to the rest of the address in the TTE.
  */
-#define S2TTE_MEMATTR_FWB_NORMAL_WB	((1UL << 4) | (2UL << 2))
-#define S2TTE_AF			(1UL << 10)
-#define S2TTE_XN			(2UL << 53)
-#define S2TTE_NS			(1UL << 55)
+#define S2TTE_OA_MSB_SHIFT	50U
+#define S2TTE_OA_MSB_WIDTH	2U
 
-#define S2TTE_ATTRS	(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \
-			S2TTE_SH_IS | S2TTE_AF)
-
-#define S2TTE_TABLE	S2TTE_L012_TABLE
-#define S2TTE_BLOCK	(S2TTE_ATTRS | S2TTE_L012_BLOCK)
-#define S2TTE_PAGE	(S2TTE_ATTRS | S2TTE_L3_PAGE)
-#define S2TTE_BLOCK_NS	(S2TTE_NS | S2TTE_XN | S2TTE_AF | S2TTE_L012_BLOCK)
-#define S2TTE_PAGE_NS	(S2TTE_NS | S2TTE_XN | S2TTE_AF | S2TTE_L3_PAGE)
-#define S2TTE_INVALID	0
+/* Where the 2 MSB bits of the OA are stored in the TTE */
+#define S2TTE_ENTRY_MSB_SHIFT	8U
+#define S2TTE_ENTRY_MSB_WIDTH	S2TTE_OA_MSB_WIDTH
 
 /*
  * The type of an S2TTE is one of the following:
@@ -109,25 +120,27 @@
  * ------------------------------------------------------------------------------
  */
 
-#define S2TTE_INVALID_HIPAS_SHIFT	2
-#define S2TTE_INVALID_HIPAS_WIDTH	4
+#define S2TTE_INVALID_HIPAS_SHIFT	2U
+#define S2TTE_INVALID_HIPAS_WIDTH	4U
 #define S2TTE_INVALID_HIPAS_MASK	MASK(S2TTE_INVALID_HIPAS)
 
-#define S2TTE_INVALID_HIPAS_UNASSIGNED	(INPLACE(S2TTE_INVALID_HIPAS, 0))
-#define S2TTE_INVALID_HIPAS_ASSIGNED	(INPLACE(S2TTE_INVALID_HIPAS, 1))
-#define S2TTE_INVALID_HIPAS_DESTROYED	(INPLACE(S2TTE_INVALID_HIPAS, 2))
+#define S2TTE_INVALID_HIPAS_UNASSIGNED	(INPLACE(S2TTE_INVALID_HIPAS, 0U))
+#define S2TTE_INVALID_HIPAS_ASSIGNED	(INPLACE(S2TTE_INVALID_HIPAS, 1U))
+#define S2TTE_INVALID_HIPAS_DESTROYED	(INPLACE(S2TTE_INVALID_HIPAS, 2U))
 
-#define S2TTE_INVALID_RIPAS_SHIFT	6
-#define S2TTE_INVALID_RIPAS_WIDTH	1
+#define S2TTE_INVALID_RIPAS_SHIFT	6U
+#define S2TTE_INVALID_RIPAS_WIDTH	1U
 #define S2TTE_INVALID_RIPAS_MASK	MASK(S2TTE_INVALID_RIPAS)
 
-#define S2TTE_INVALID_RIPAS_EMPTY	(INPLACE(S2TTE_INVALID_RIPAS, 0))
-#define S2TTE_INVALID_RIPAS_RAM		(INPLACE(S2TTE_INVALID_RIPAS, 1))
+#define S2TTE_INVALID_RIPAS_EMPTY	(INPLACE(S2TTE_INVALID_RIPAS, 0U))
+#define S2TTE_INVALID_RIPAS_RAM		(INPLACE(S2TTE_INVALID_RIPAS, 1U))
 
 #define S2TTE_INVALID_DESTROYED		S2TTE_INVALID_HIPAS_DESTROYED
 #define S2TTE_INVALID_UNPROTECTED	0x0UL
 
-#define NR_RTT_LEVELS	4
+#define NR_RTT_LEVELS		(RTT_PAGE_LEVEL - RTT_MIN_STARTING_LEVEL + 1U)
+
+#define S2TTE_
 
 /*
  * Invalidates S2 TLB entries from [ipa, ipa + size] region tagged with `vmid`.
@@ -203,9 +216,11 @@ void invalidate_page(const struct realm_s2_context *s2_ctx, unsigned long addr)
  * Call this function after:
  * 1.  A L2 block desc has been removed, or
  * 2a. A L2 table desc has been removed, where
- * 2b. All S2TTEs in L3 table that the L2 table desc was pointed to were invalid.
+ * 2b. All S2TTEs in L3 table that the L2 table desc was pointed
+ *     to were invalid.
  */
-void invalidate_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
+void invalidate_block(const struct realm_s2_context *s2_ctx,
+		      unsigned long addr)
 {
 	stage2_tlbi_ipa(s2_ctx, addr, GRANULE_SIZE);
 }
@@ -214,9 +229,11 @@ void invalidate_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
  * Invalidate S2 TLB entries with "addr" IPA.
  * Call this function after:
  * 1a. A L2 table desc has been removed, where
- * 1b. Some S2TTEs in the table that the L2 table desc was pointed to were valid.
+ * 1b. Some S2TTEs in the table that the L2 table desc was pointed
+ *     to were valid.
  */
-void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
+void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx,
+			       unsigned long addr)
 {
 	stage2_tlbi_ipa(s2_ctx, addr, BLOCK_L2_SIZE);
 }
@@ -233,16 +250,20 @@ void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx, unsigned l
 static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 {
 	int levels = RTT_PAGE_LEVEL - level;
-	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	int lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
 	addr >>= lsb;
-	addr &= (1UL << S2TTE_STRIDE) - 1;
+
+	/* If level == -1, we only have four bits for the index ([48, 51]) */
+	addr &= ((level == RTT_MIN_STARTING_LEVEL) ?
+			(1UL << 4U) - 1UL :
+			(1UL << S2TTE_STRIDE) - 1UL);
 	return addr;
 }
 
 /*
  * Return the index of the entry describing @addr in the translation table
- * starting level.  This may return an index >= S2TTES_PER_S2TT when the
+ * starting level. This may return an index >= S2TTES_PER_S2TT when the
  * combination of @start_level and @ipa_bits implies concatenated
  * stage 2 tables.
  *
@@ -254,9 +275,9 @@ static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 				       unsigned long ipa_bits)
 {
 	int levels = RTT_PAGE_LEVEL - start_level;
-	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	int lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
-	addr &= (1UL << ipa_bits) - 1UL;
+	addr &= ((1UL << ipa_bits) - 1UL);
 	addr >>= lsb;
 	return addr;
 }
@@ -264,15 +285,19 @@ static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 static unsigned long addr_level_mask(unsigned long addr, long level)
 {
 	int levels = RTT_PAGE_LEVEL - level;
-	unsigned int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
-	unsigned int msb = S2TTE_OA_BITS - 1;
+	unsigned int lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
-	return addr & BIT_MASK_ULL(msb, lsb);
+	return (addr & BIT_MASK_ULL(S2TTE_OA_BITS - 1U, lsb));
 }
 
-static inline unsigned long table_entry_to_phys(unsigned long entry)
+static inline unsigned long table_entry_to_phys(unsigned long entry,
+						long level)
 {
-	return addr_level_mask(entry, RTT_PAGE_LEVEL);
+	unsigned long pa = addr_level_mask(entry, level);
+
+	/* The two MSBs of the OA is not contiguous to the rest of the OA */
+	return	((pa & ~MASK(S2TTE_OA_MSB)) |
+		 INPLACE(S2TTE_OA_MSB, EXTRACT(S2TTE_ENTRY_MSB, entry)));
 }
 
 static inline bool entry_is_table(unsigned long entry)
@@ -301,7 +326,7 @@ static struct granule *__find_next_level_idx(struct granule *g_tbl,
 		return NULL;
 	}
 
-	return addr_to_granule(table_entry_to_phys(entry));
+	return addr_to_granule(table_entry_to_phys(entry, RTT_PAGE_LEVEL));
 }
 
 static struct granule *__find_lock_next_level(struct granule *g_tbl,
@@ -320,7 +345,7 @@ static struct granule *__find_lock_next_level(struct granule *g_tbl,
 
 /*
  * Walk an RTT until level @level using @map_addr.
- * @g_root is the root (level 0) table and must be locked before the call.
+ * @g_root is the root (level 0/-1) table and must be locked before the call.
  * @start_level is the initial lookup level used for the stage 2 translation
  * tables which may depend on the configuration of the realm, factoring in the
  * IPA size of the realm and the desired starting level (within the limits
@@ -350,7 +375,7 @@ void rtt_walk_lock_unlock(struct granule *g_root,
 	unsigned long sl_idx;
 	int i, last_level;
 
-	assert(start_level >= MIN_STARTING_LEVEL);
+	assert(start_level >= RTT_MIN_STARTING_LEVEL);
 	assert(level >= start_level);
 	assert(map_addr < (1UL << ipa_bits));
 	assert(wi != NULL);
@@ -366,7 +391,7 @@ void rtt_walk_lock_unlock(struct granule *g_root,
 		g_root = g_concat_root;
 	}
 
-	g_tbls[start_level] = g_root;
+	g_tbls[start_level + 1] = g_root;
 	for (i = start_level; i < level; i++) {
 		/*
 		 * Lock next RTT level. Correct locking order is guaranteed
@@ -374,18 +399,19 @@ void rtt_walk_lock_unlock(struct granule *g_root,
 		 * (previous level). Also, hand-over-hand locking/unlocking is
 		 * used to avoid race conditions.
 		 */
-		g_tbls[i + 1] = __find_lock_next_level(g_tbls[i], map_addr, i);
-		if (g_tbls[i + 1] == NULL) {
+		g_tbls[i + 1 + 1] = __find_lock_next_level(g_tbls[i + 1],
+							map_addr, i);
+		if (g_tbls[i + 1 + 1] == NULL) {
 			last_level = i;
 			goto out;
 		}
-		granule_unlock(g_tbls[i]);
+		granule_unlock(g_tbls[i + 1]);
 	}
 
 	last_level = level;
 out:
 	wi->last_level = last_level;
-	wi->g_llt = g_tbls[last_level];
+	wi->g_llt = g_tbls[last_level + 1];
 	wi->index = s2_addr_to_idx(map_addr, last_level);
 }
 
@@ -417,6 +443,19 @@ unsigned long s2tte_create_destroyed(void)
 }
 
 /*
+ * Creates an empty TTE containing only the PA. This function does not
+ * make any checks or any assumption on the PA value.
+ */
+static unsigned long create_empty_tte(unsigned long pa)
+{
+	unsigned long tte = (pa & ~MASK(S2TTE_OA_MSB));
+
+	tte |= INPLACE(S2TTE_ENTRY_MSB, EXTRACT(S2TTE_OA_MSB, pa));
+
+	return tte;
+}
+
+/*
  * Creates an invalid s2tte with output address @pa, HIPAS=ASSIGNED and
  * RIPAS=EMPTY, at level @level.
  */
@@ -424,7 +463,10 @@ unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 {
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
-	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_EMPTY);
+
+	return (create_empty_tte(pa) |
+				S2TTE_INVALID_HIPAS_ASSIGNED |
+				S2TTE_INVALID_RIPAS_EMPTY);
 }
 
 /*
@@ -432,12 +474,18 @@ unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
  */
 unsigned long s2tte_create_valid(unsigned long pa, long level)
 {
+	unsigned long tte;
+
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
+
+	tte = create_empty_tte(pa);
+
 	if (level == RTT_PAGE_LEVEL) {
-		return (pa | S2TTE_PAGE);
+		return (tte | S2TTE_PAGE);
 	}
-	return (pa | S2TTE_BLOCK);
+
+	return (tte | S2TTE_BLOCK);
 }
 
 /*
@@ -473,8 +521,7 @@ bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 {
 	unsigned long mask = addr_level_mask(~0UL, level) |
 			     S2TTE_MEMATTR_MASK |
-			     S2TTE_AP_MASK |
-			     S2TTE_SH_MASK;
+			     S2TTE_AP_MASK;
 
 	/*
 	 * Test that all fields that are not controlled by the host are zero
@@ -493,13 +540,6 @@ bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 	}
 
 	/*
-	 * Only one value masked by S2TTE_SH_MASK is invalid/reserved.
-	 */
-	if ((s2tte & S2TTE_SH_MASK) == S2TTE_SH_RESERVED) {
-		return false;
-	}
-
-	/*
 	 * Note that all the values that are masked by S2TTE_AP_MASK are valid.
 	 */
 	return true;
@@ -510,10 +550,16 @@ bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
  */
 unsigned long host_ns_s2tte(unsigned long s2tte, long level)
 {
+	/*
+	 * When FEAT_LPA2 is enabled, the 2 MSBs of the OA are stored
+	 * on the Shareability attribute bits so they will be included anyway
+	 * by addr_level_mask().
+	 */
 	unsigned long mask = addr_level_mask(~0UL, level) |
 			     S2TTE_MEMATTR_MASK |
 			     S2TTE_AP_MASK |
 			     S2TTE_SH_MASK;
+
 	return (s2tte & mask);
 }
 
@@ -525,7 +571,7 @@ unsigned long s2tte_create_table(unsigned long pa, long level)
 	assert(level < RTT_PAGE_LEVEL);
 	assert(GRANULE_ALIGNED(pa));
 
-	return (pa | S2TTE_TABLE);
+	return (create_empty_tte(pa) | S2TTE_TABLE);
 }
 
 /*
@@ -681,7 +727,7 @@ unsigned long s2tte_map_size(int level)
 	assert(level <= RTT_PAGE_LEVEL);
 
 	levels = RTT_PAGE_LEVEL - level;
-	lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 	return 1UL << lsb;
 }
 
@@ -749,14 +795,16 @@ unsigned long s2tte_pa(unsigned long s2tte, long level)
 	    s2tte_is_table(s2tte, level)) {
 		assert(false);
 	}
-	return addr_level_mask(s2tte, level);
+
+	return table_entry_to_phys(s2tte, level);
 }
 
 /* Returns physical address of a table entry */
 unsigned long s2tte_pa_table(unsigned long s2tte, long level)
 {
 	assert(s2tte_is_table(s2tte, level));
-	return addr_level_mask(s2tte, RTT_PAGE_LEVEL);
+
+	return table_entry_to_phys(s2tte, RTT_PAGE_LEVEL);
 }
 
 bool addr_is_level_aligned(unsigned long addr, long level)
