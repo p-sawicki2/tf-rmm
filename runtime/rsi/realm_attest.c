@@ -104,12 +104,6 @@ static void attest_token_continue_write_state(struct rec *rec,
 	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
 
 	/*
-	 * The refcount on rec will protect from any changes
-	 * while REC is running.
-	 */
-	granule_lock(rec->realm_info.g_rd, GRANULE_STATE_RD);
-
-	/*
 	 * Translate realm granule IPA to PA. If returns with
 	 * WALK_SUCCESS then the last level page table (llt),
 	 * which holds the realm_att_token_buf mapping, is locked.
