@@ -158,15 +158,16 @@ void host_util_setup_sysreg_and_boot_manifest(void)
 			INPLACE(ID_AA64DFR0_EL1_PMUVer, 7UL));
 
 	/*
-	 * Setup id_aa64mmfr0_el1 with a PA size of 48 bits
-	 * and 4K granularity with 48 bits support for stages 1 and 2.
+	 * Initialize ID_AA64MMFR0_EL1 with a physical address
+	 * range of 48 bits (PARange bits set to 0b0101) and
+	 * support for 52bits PA size with 4KB granularity;
 	 */
 	ret = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
-				INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
-				INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
-					ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED) |
-				INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
-					ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
+			INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
+			INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
+				ID_AA64MMFR0_EL1_TGRAN4_LPA2) |
+			INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
+				ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
 
 	/*
 	 * Initialize ICH_VTR_EL2 with 6 preemption bits.

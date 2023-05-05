@@ -22,6 +22,7 @@
 #include <spinlock.h>
 #include <stddef.h>
 #include <string.h>
+#include <table.h>
 
 /*
  * Allocate a dummy rec_params for copying relevant parameters for measurement
@@ -88,6 +89,7 @@ static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
  * lookup to VTCR_EL2.SL0[7:6].
  */
 static const unsigned long sl0_val[] = {
+	VTCR_SL0_4K_LM1,
 	VTCR_SL0_4K_L0,
 	VTCR_SL0_4K_L1,
 	VTCR_SL0_4K_L2,
@@ -101,15 +103,20 @@ static unsigned long realm_vtcr(struct rd *rd)
 				(VTCR_FLAGS | VTCR_VS) : VTCR_FLAGS;
 	int s2_starting_level = realm_rtt_starting_level(rd);
 
-	/* TODO: Support LPA2 with -1 */
-	assert((s2_starting_level >= 0) && (s2_starting_level <= 3));
-	sl0 = sl0_val[s2_starting_level];
+	assert(s2_starting_level >= RTT_MIN_STARTING_LEVEL);
+	assert(s2_starting_level <= RTT_PAGE_LEVEL);
+
+	sl0 = sl0_val[s2_starting_level + 1];
 
 	t0sz = 64UL - realm_ipa_bits(rd);
 	t0sz &= MASK(VTCR_T0SZ);
 
+	vtcr |= INPLACE(VTCR_DS, 1U);
 	vtcr |= t0sz;
 	vtcr |= sl0;
+	if (s2_starting_level == -1) {
+		vtcr |= INPLACE(VTCR_SL2, 1U);
+	}
 
 	return vtcr;
 }
