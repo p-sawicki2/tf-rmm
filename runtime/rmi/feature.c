@@ -22,6 +22,11 @@ static unsigned long get_feature_register_0(void)
 	unsigned long s2sz = arch_feat_get_pa_width();
 	unsigned long feat_reg0 = INPLACE(RMM_FEATURE_REGISTER_0_S2SZ, s2sz);
 
+	/* Set LPA2 field */
+	if (is_feat_lpa2_4k_2_present() == true) {
+		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_LPA2, RMI_LPA2);
+	}
+
 	/* Set support for SHA256 and SHA512 hash algorithms */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_256,
 				RMI_SUPPORTED);
