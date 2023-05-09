@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60a0fc01_849b8e2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-09T09:24:05Z",
+      "side": 1,
+      "message": "Seems to be OK. The measurements are not touched in this function.",
+      "revId": "ead199e053b751aeed9e1e71671ecbfdb2d6359b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
