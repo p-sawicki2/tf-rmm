@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa67191d_2a072020",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-10T12:19:32Z",
+      "side": 1,
+      "message": "This option does not work for non-SVE cpu as well. Can this line be changed to something similar:\n\n\nThe RMM config option `RMM_FPU_USE_AT_REL2` is temporarily disabled. This will be fixed in a future release.",
+      "revId": "24f9352c4a415cacea950c8aa3a74f347ef3d6f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
