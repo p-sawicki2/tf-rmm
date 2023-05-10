@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ce54b26_3870e7c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a89d3bb_0ae16a03",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "say: `simd_t_to_save`",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 15
+      },
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "401836b9_b7c26500",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "Suggest:\n/* True when the live SIMD context has been saved and the FPU is available for use by RMM */",
+      "range": {
+        "startLine": 39,
+        "startChar": 18,
+        "endLine": 41,
+        "endChar": 18
+      },
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4847d04_e49f5436",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "a macro for this will be good :\n\nSET_SIMD_T_TO_SAVE(type)\n\nThis will also remove the RMM_FPU_USE_AT_REL2 flag from the function. The macro can be NOP when the flag is not set",
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84623391_59ee3715",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "a macro will make it more readable \nGET_SIMD_T_TO_SAVE()",
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4a170cf_6f46b8d4",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-10T13:43:07Z",
+      "side": 1,
+      "message": "should this be done at init time since this global value remains same?",
+      "revId": "fa8dd9f0a72394cecf6987f47597ba5d7d117645",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
