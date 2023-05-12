@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f3b9db5_5a96e302",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-12T12:02:01Z",
+      "side": 1,
+      "message": "nit: \"of\"",
+      "range": {
+        "startLine": 132,
+        "startChar": 22,
+        "endLine": 132,
+        "endChar": 25
+      },
+      "revId": "92a531873604bae14b5c8f1dcacc32f967d453a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
