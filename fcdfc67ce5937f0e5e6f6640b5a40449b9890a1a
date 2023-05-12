@@ -16,6 +16,52 @@
       "message": "SIMD_FPU_ALLOW() here ?",
       "revId": "fcdfc67ce5937f0e5e6f6640b5a40449b9890a1a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d62e7ce_c397d892",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-12T09:25:31Z",
+      "side": 1,
+      "message": "Is this variable necessary?\n\nThe value is only set to true if rsi_handler_needs_fpu(function_id) \u003d\u003d true and !rec_is_simd_allowed(rec). \n\nThe same condition is checked at restore, so if the logic at restore is rewritten with if/else, then the variable could be omitted",
+      "range": {
+        "startLine": 403,
+        "startChar": 6,
+        "endLine": 403,
+        "endChar": 27
+      },
+      "revId": "fcdfc67ce5937f0e5e6f6640b5a40449b9890a1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67e970d0_078a5782",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-12T09:25:31Z",
+      "side": 1,
+      "message": "Could be \u0027restore_ns_simd_state\u0027 to be analogue to the RSI implementation (or the other way around)",
+      "range": {
+        "startLine": 229,
+        "startChar": 6,
+        "endLine": 229,
+        "endChar": 17
+      },
+      "revId": "fcdfc67ce5937f0e5e6f6640b5a40449b9890a1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
