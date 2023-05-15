@@ -170,6 +170,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "41b4919a_98973a91",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-15T11:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a61107b8_0dc86945",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 694,
+        "endChar": 60
+      },
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0da2aa6c_4f158bd5",
@@ -359,6 +383,24 @@
       "writtenOn": "2023-04-19T09:37:49Z",
       "side": 1,
       "message": "__uint128_t needs some C header. include that here.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cd0108f_4d878c4d",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-15T11:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afe68090_140bfbd6",
       "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -881,6 +923,24 @@
       "writtenOn": "2023-04-19T09:37:49Z",
       "side": 1,
       "message": "why is this needed? Is it because LLVM flags for PAuth are different.",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f79a7056_5db15e32",
+        "filename": "toolchains/aarch64/llvm.cmake",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-15T11:09:49Z",
+      "side": 1,
+      "message": "Done. I didnt see any error locally after removing this.",
+      "parentUuid": "ea0cf88d_02141c06",
       "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
