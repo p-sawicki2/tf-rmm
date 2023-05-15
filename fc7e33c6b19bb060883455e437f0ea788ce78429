@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93c0c609_ac5e33a2",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "perhaps definitions these should be suffixed with _BIT to be inline with other macros.",
+      "range": {
+        "startLine": 667,
+        "startChar": 8,
+        "endLine": 667,
+        "endChar": 21
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db39230a_0faf4bc7",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "Since we dont access this in C, better to have an array of 2 64 bit values I think.",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b9e870b_bb37b5db",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "need a macro for this. and the macro can be COMPILER_ASSERTED in header.",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 15
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e553004b_411ea9ba",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "we dont need to save the RMM PAuth keys every time since it will remain the same as what is initialized first time. The array can be setup as part of key init.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94d0b6c9_1a65102c",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "need a macro which is COMPILER ASSERTed in header.",
+      "range": {
+        "startLine": 32,
+        "startChar": 20,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e5bb0ae_8b7f7009",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "nit : use tab here. Same comment below.",
+      "range": {
+        "startLine": 87,
+        "startChar": 11,
+        "endLine": 87,
+        "endChar": 16
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e113182b_19135d52",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "use macro",
+      "range": {
+        "startLine": 93,
+        "startChar": 25,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dae9a2cc_eb90f1cc",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-15T11:27:59Z",
+      "side": 1,
+      "message": "use tab",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 9
+      },
+      "revId": "fc7e33c6b19bb060883455e437f0ea788ce78429",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
