@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_helpers.h>
 #include <simd_private.h>
 
 void fpu_save_state(uint64_t fpu_state)
