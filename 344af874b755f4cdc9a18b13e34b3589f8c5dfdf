@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5d8578e_15a38083",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-16T15:12:22Z",
+      "side": 1,
+      "message": "remove extra tabs to align",
+      "revId": "344af874b755f4cdc9a18b13e34b3589f8c5dfdf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
