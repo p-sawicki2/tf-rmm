@@ -130,18 +130,19 @@ endfunc sve_rdvl
  * Inputs:
  *   x0 - address of sve_state
  *   x1 - when non-zero, save FFR
+ *   x2 - when non-zero, save ZCR_EL12
  * Clobbers:
- *   x2
+ *   x3
  * Returns:
  *   none
  */
 func sve_save_state
 .arch_extension sve
-	mov	x2, x0
+	mov	x3, x0
 
 	/* Save the z register bank to memory. */
 	mov	x0, #SVE_STATE_OFFSET_Z
-	add	x0, x0, x2
+	add	x0, x0, x3
 	str	z0, [x0, #0, MUL VL]
 	str	z1, [x0, #1, MUL VL]
 	str	z2, [x0, #2, MUL VL]
@@ -177,7 +178,7 @@ func sve_save_state
 
 	/* Save the P register bank to memory. */
 	mov	x0, #SVE_STATE_OFFSET_P
-	add	x0, x0, x2
+	add	x0, x0, x3
 	str 	p0, [x0, #0, MUL VL]
 	str 	p1, [x0, #1, MUL VL]
 	str 	p2, [x0, #2, MUL VL]
@@ -198,24 +199,26 @@ func sve_save_state
 	/* Save the ffr register, after predicates are saved. */
 	cbz	x1, 1f
 	mov	x0, #SVE_STATE_OFFSET_FFR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	rdffr	p0.B
 	str 	p0, [x0, #0, MUL VL]
 1:
 
 	/* Save the ZCR_EL12, FPSR & FPCR */
+	cbz	x2, 2f
 	mov	x0, #SVE_STATE_OFFSET_ZCR_EL12
-	add	x0, x0, x2
+	add	x0, x0, x3
 	mrs	x1, zcr_el12
 	str	x1, [x0]
+2:
 
 	mov	x0, #SVE_STATE_OFFSET_FPSR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	mrs	x1, fpsr
 	str	x1, [x0]
 
 	mov	x0, #SVE_STATE_OFFSET_FPCR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	mrs	x1, fpcr
 	str	x1, [x0]
 
@@ -233,18 +236,19 @@ endfunc sve_save_state
  * Inputs:
  *   x0 - address of sve_state
  *   x1 - when non-zero, restore FFR
+ *   x2 - when non-zero, restore ZCR_EL12
  * Clobbers:
- *   x2
+ *   x3
  * Returns:
  *   none
  */
 func sve_restore_state
 .arch_extension sve
-	mov	x2, x0
+	mov	x3, x0
 
 	/* Load the z register bank from memory. */
 	mov	x0, #SVE_STATE_OFFSET_Z
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr 	z0, [x0, #0, MUL VL]
 	ldr	z1, [x0, #1, MUL VL]
 	ldr	z2, [x0, #2, MUL VL]
@@ -281,14 +285,14 @@ func sve_restore_state
 	/* Restore the ffr register before restoring predicates */
 	cbz	x1, 1f
 	mov	x0, #SVE_STATE_OFFSET_FFR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr 	p0, [x0, #0, MUL VL]
 	wrffr	p0.B
 1:
 
 	/* Load the P register bank from memory. */
 	mov	x0, #SVE_STATE_OFFSET_P
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr 	p0, [x0, #0, MUL VL]
 	ldr 	p1, [x0, #1, MUL VL]
 	ldr 	p2, [x0, #2, MUL VL]
@@ -307,18 +311,20 @@ func sve_restore_state
 	ldr 	p15, [x0, #15, MUL VL]
 
 	/* Load the ZCR_EL12, FPSR & FPCR */
+	cbz	x2, 2f
 	mov	x0, #SVE_STATE_OFFSET_ZCR_EL12
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr	x1, [x0]
 	msr	zcr_el12, x1
+2:
 
 	mov	x0, #SVE_STATE_OFFSET_FPSR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr	x1, [x0]
 	msr	fpsr, x1
 
 	mov	x0, #SVE_STATE_OFFSET_FPCR
-	add	x0, x0, x2
+	add	x0, x0, x3
 	ldr	x1, [x0]
 	msr	fpcr, x1
 
