@@ -209,6 +209,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1642fe9f_165ebed5",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T15:05:29Z",
+      "side": 1,
+      "message": "hmm, I would think the check against 0 is more efficient for code generation rather than check for a  specific bit pattern.\nAnyway this change is not related to the patch and can be done separately.",
+      "parentUuid": "d1fa9249_a8328435",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09f9b877_7929bcf0",
         "filename": "lib/arch/include/arch_helpers.h",
         "patchSetId": 18
