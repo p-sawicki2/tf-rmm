@@ -41,7 +41,7 @@ void xlat_test_helpers_init_ctx_cfg(struct xlat_ctx_cfg *ctx_cfg,
 				    uintptr_t base_va,
 				    uintptr_t max_mapped_pa,
 				    uintptr_t max_mapped_va_offset,
-				    unsigned int base_level,
+				    int base_level,
 				    xlat_addr_region_id_t region,
 				    struct xlat_mmap_region *mm,
 				    unsigned int mmaps,
@@ -90,7 +90,7 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 				 unsigned long long va,
 				 uint64_t *tte,
 				 uint64_t **table_ptr,
-				 unsigned int *level,
+				 int *level,
 				 unsigned int *index);
 
 /*
@@ -127,5 +127,15 @@ uint64_t *xlat_test_helpers_tbls(void);
  * argument
  */
 void xlat_test_helpers_set_parange(unsigned int parange);
+
+/*
+ * Return the maximum VA space size.
+ */
+unsigned long long xlat_test_helpers_get_max_va_space_size(void);
+
+/*
+ * Return the minimum lookup level supported.
+ */
+int xlat_test_helpers_get_min_lvl(void);
 
 #endif /* XLAT_TEST_HELPERS_H */
