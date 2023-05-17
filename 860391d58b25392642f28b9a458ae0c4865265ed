@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5857dec6_703934ab",
+        "filename": "docs/design/diagrams/boot_design.drawio.png",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "Need to add a section in cold-warm-boot-design doc for the PAuth part.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cb0b0343_06730ba0",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 18
@@ -31,6 +48,23 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "Please align",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b10311df_d273883b",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "nit: align this line to rest.",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -139,6 +173,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1853eec_b17099da",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "is this right ? I think the original check is correct. Or it has to be\n\n(read_sctlr_el2() \u0026 SCTLR_ELx_C_BIT) \u003d\u003d SCTLR_ELx_C_BIT)\n\nPrefer the check with zero.",
+      "parentUuid": "a8da9854_697837dc",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09f9b877_7929bcf0",
         "filename": "lib/arch/include/arch_helpers.h",
         "patchSetId": 18
@@ -150,6 +202,93 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "\u003d\u003d 1UL",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44b2719e_ae7485a8",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "parentUuid": "09f9b877_7929bcf0",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac638bc4_6675d0bb",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "remove the tab.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 1
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6691292e_ea91174d",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "call this pauth_restore_rmm_keys",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39566b32_636eb686",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 12,
+        "startChar": 7,
+        "endLine": 12,
+        "endChar": 26
+      },
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -207,6 +346,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "11d4dae3_4d97a207",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "Add a comment : \n\n/* Get the CPU ID */",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f2bf5f38_46d6ff87",
         "filename": "lib/pauth/src/aarch64/pauth_arch.S",
         "patchSetId": 18
@@ -218,6 +374,69 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "why is X0 not used?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60aed08b_fa421acc",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "this can be removed, see comment below",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b6526a4_6ed00f2d",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "keep the `adrp` and this `add` together as it is related to getting the address of the variable.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20cd9dfc_affa3d0d",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "this can be written as :\n\n/* Offset \u003d base addr + (CPU Id * sizeof(__uint128_t));\nadd     x3, x1, x3, lsl #PAUTH_KEY_SHIFT",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 15
+      },
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -241,6 +460,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "248e6b62_f7a8e67b",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "I just found that there might be a way to init PAC in C by disabling PAC for init functions : __attribute__((target(\"branch-protection\u003dnone\")))\n\nThis may simplify these code sequences a lot.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a6b0d418_af0fbb1b",
         "filename": "lib/pauth/src/pauth_core.c",
         "patchSetId": 18
@@ -252,6 +488,52 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "/* APIAKey array */",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "add9f78e_3d085dca",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "__uint128 ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 13,
+        "endChar": 18
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "922651cb_bf556609",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "use the acronym PAUTH as it is more readable IMO.",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 31
+      },
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -275,6 +557,63 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89eb1a37_d959d63d",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "need an isb(), Can be folded into the main function as Alexei suggests.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4115c383_faf3c21c",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "\"If the instruction cannot return a genuine random number in a reasonable period of time,\nPSTATE.NZCV is set to 0b0100 and the data value returned is 0.\"\n\nWe may need to retry if the value is zero.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0f5fa79_15792638",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "should be able to use pauth_restore_rmm_keys() function for this.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f9efdd2d_78f346b7",
         "filename": "lib/pauth/src/pauth_core.c",
         "patchSetId": 18
@@ -286,6 +625,23 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "(high \u003c\u003c 64)",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a772c163_85fabdbb",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "nit: isb() needs to be after the write of apia key",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -309,6 +665,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c2b8a2d8_76ecf53b",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "Either Compiler Assert or offsetof method is OK. Since this is defined prior to the structure declaration we may trouble using offsetof.\n\nSee my comment about init PAC in C code. We may not need this 😊",
+      "parentUuid": "c0a9b14c_9a703b66",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f02c525_9cb95ea2",
         "filename": "lib/realm/include/rec.h",
         "patchSetId": 18
@@ -320,6 +694,29 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "add new line",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2647c09d_97c372bf",
+        "filename": "lib/timers/CMakeLists.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-17T13:46:24Z",
+      "side": 1,
+      "message": "nit: remove tab.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
