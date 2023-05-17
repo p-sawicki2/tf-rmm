@@ -82,12 +82,12 @@ void xlat_test_hepers_arch_init(void)
 
 	/*
 	 * Setup id_aa64mmfr0_el1 with a PA size of 48 bits
-	 * and 4K granularity support.
+	 * and 4K granularity with 52 bits support for stages 1 and 2.
 	 */
 	retval = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
 				INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
 				INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
-					ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED) |
+					ID_AA64MMFR0_EL1_TGRAN4_LPA2) |
 				INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
 					ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
 
@@ -250,14 +250,13 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 
 	/* Base table is the first table of the array */
 	table = &tbls->tables[0U];
-	for (int i = cfg->base_level;
-					i <= XLAT_TABLE_LEVEL_MAX; i++) {
+	for (int i = cfg->base_level; i <= XLAT_TABLE_LEVEL_MAX; i++) {
 		uint64_t tte_oa;
 		unsigned int tindex =
 			(unsigned int)(va >> XLAT_ADDR_SHIFT(i)) &
-						XLAT_TABLE_ENTRIES_MASK;
+						XLAT_GET_TABLE_ENTRIES_MASK(i);
 
-		if (tindex >= XLAT_TABLE_ENTRIES) {
+		if (tindex >= XLAT_GET_TABLE_ENTRIES(i)) {
 			return -ERANGE;
 		}
 
@@ -277,7 +276,8 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 		}
 
 		switch (i) {
-		case 0U:
+		case -1:
+		case 0:
 			/* Only table descriptors allowed here */
 			if (!XLAT_TESTS_IS_DESC(ctte, TABLE_DESC)) {
 				return -EINVAL;
@@ -293,8 +293,8 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 			table = (uint64_t *)tte_oa;
 			break;
 
-		case 1U:
-		case 2U:
+		case 1:
+		case 2:
 			if (XLAT_TESTS_IS_DESC(ctte, BLOCK_DESC)) {
 				*tte = ctte;
 				*level = i;
@@ -311,7 +311,7 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 			table = (uint64_t *)tte_oa;
 			break;
 
-		case 3U:
+		case 3:
 			/* Only page descriptors allowed here */
 			if (!XLAT_TESTS_IS_DESC(ctte, PAGE_DESC)) {
 				return -EINVAL;
@@ -418,4 +418,16 @@ int xlat_test_helpers_get_attrs_for_va(struct xlat_ctx *ctx,
 uint64_t *xlat_test_helpers_tbls(void)
 {
 	return &xlat_tables[0U];
+}
+
+unsigned long long xlat_test_helpers_get_max_va_space_size(void)
+{
+	return ((is_feat_lpa2_4k_present() == true) ?
+		MAX_VIRT_ADDR_SPACE_SIZE_LPA2 : MAX_VIRT_ADDR_SPACE_SIZE);
+}
+
+int xlat_test_helpers_get_min_lvl(void)
+{
+	return ((is_feat_lpa2_4k_present() == true) ?
+		XLAT_TABLE_LEVEL_MIN : XLAT_TABLE_LEVEL_MIN + 1);
 }
