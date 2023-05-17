@@ -285,6 +285,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "097ec774_f00effc9",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:16:29Z",
+      "side": 1,
+      "message": "Where is SIZEOF_PAUTH_KEY used?",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6691292e_ea91174d",
         "filename": "lib/pauth/src/aarch64/pauth_arch.S",
         "patchSetId": 18
