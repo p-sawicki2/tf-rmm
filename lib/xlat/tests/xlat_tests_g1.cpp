@@ -463,7 +463,7 @@ TEST(xlat_tests_G1, xlat_ctx_cfg_init_TC5)
 
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&test_cfg, region, &init_mmap[0], 0U,
-						MAX_VIRT_ADDR_SPACE_SIZE);
+					   MAX_VIRT_ADDR_SPACE_SIZE);
 
 		/* Verify the result */
 		CHECK_TRUE(retval == -EINVAL);
@@ -594,13 +594,13 @@ TEST(xlat_tests_G1, xlat_ctx_cfg_init_TC8)
 	xlat_addr_region_id_t region;
 	unsigned int mmap_index;
 	int retval;
+	unsigned int index;
 	uint64_t id_aa64mmfr0_el1 = read_id_aa64mmfr0_el1();
 	unsigned int pa_range_bits_arr[] = {
 		PARANGE_0000_WIDTH, PARANGE_0001_WIDTH, PARANGE_0010_WIDTH,
-		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH
+		PARANGE_0011_WIDTH, PARANGE_0100_WIDTH, PARANGE_0101_WIDTH,
+		PARANGE_0110_WIDTH
 	};
-	unsigned int index = test_helpers_get_rand_in_range(0,
-		sizeof(pa_range_bits_arr)/sizeof(pa_range_bits_arr[0]) - 1U);
 
 	/***************************************************************
 	 * TEST CASE 8:
@@ -614,6 +614,9 @@ TEST(xlat_tests_G1, xlat_ctx_cfg_init_TC8)
 	 *	- PAs on different memory regions overlap.
 	 *	- Some memory ragions have misaligned PAs.
 	 ***************************************************************/
+
+	index = sizeof(pa_range_bits_arr)/sizeof(pa_range_bits_arr[0]);
+	index = test_helpers_get_rand_in_range(0, index - 1U);
 
 	for (unsigned int i = 0U; i < (unsigned int)VA_REGIONS; i++) {
 		region = (xlat_addr_region_id_t)i;
