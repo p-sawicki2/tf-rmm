@@ -133,4 +133,14 @@ uint64_t xlat_test_helpers_get_oa_from_tte(uint64_t tte);
  */
 void xlat_test_helpers_set_parange(unsigned int parange);
 
+/*
+ * Return the maximum VA space size.
+ */
+unsigned long long xlat_test_helpers_get_max_va_space_size(void);
+
+/*
+ * Return the minimum lookup level supported.
+ */
+int xlat_test_helpers_get_min_lvl(void);
+
 #endif /* XLAT_TEST_HELPERS_H */
