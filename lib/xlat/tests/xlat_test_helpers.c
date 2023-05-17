@@ -78,12 +78,12 @@ void xlat_test_hepers_arch_init(void)
 
 	/*
 	 * Setup id_aa64mmfr0_el1 with a PA size of 48 bits
-	 * and 4K granularity support on stage 1.
+	 * and 4K granularity with 52 bits support on stage 1 and 2.
 	 */
 	retval = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
 				INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
 				INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
-					ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED) |
+					ID_AA64MMFR0_EL1_TGRAN4_LPA2) |
 				INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
 					ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
 
@@ -414,4 +414,15 @@ int xlat_test_helpers_get_attrs_for_va(struct xlat_ctx *ctx,
 uint64_t *xlat_test_helpers_tbls(void)
 {
 	return &xlat_tables[0U];
+}
+
+unsigned long long xlat_test_helpers_get_max_va_space_size(void)
+{
+	return ((is_feat_lpa2_4k_present() == true) ?
+		MAX_VIRT_ADDR_SPACE_SIZE_LPA2 : MAX_VIRT_ADDR_SPACE_SIZE);
+}
+int xlat_test_helpers_get_min_lvl(void)
+{
+	return ((is_feat_lpa2_4k_present() == true) ?
+		XLAT_TABLE_LEVEL_MIN : XLAT_TABLE_LEVEL_MIN + 1);
 }
