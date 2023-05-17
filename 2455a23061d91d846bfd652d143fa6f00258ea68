@@ -16,6 +16,23 @@
       "message": "Looks good to me",
       "revId": "2455a23061d91d846bfd652d143fa6f00258ea68",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dfce61a_db420feb",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "please remove this empty line.",
+      "revId": "2455a23061d91d846bfd652d143fa6f00258ea68",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

@@ -1,0 +1,429 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb0b0343_06730ba0",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "This comment needs to be updated, as we disable some traps.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8c5aad3_179a8876",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "Please align",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa7d8d0c_3ae8f337",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "If we plan to add support for APDAKey/APDBKey, we need to add definitions for these bits.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8221837_7246d94b",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "nTWI",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5df8e3d_0ad6f4be",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "nTWE",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de547205_2aa14815",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "nTLSMD",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e08b987_ccc9653d",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "It woould be good to align comments.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8da9854_697837dc",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "\u003d\u003d 1UL",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09f9b877_7929bcf0",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "\u003d\u003d 1UL",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1763b430_43483ba3",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "add bew line",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ddcd66_e18ba11c",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "PAuth\nremove \"which is mostly the case when we enable pauth\"",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7c09ea9_4b98920f",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "Pointer, see line #31",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2bf5f38_46d6ff87",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "why is X0 not used?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e3a16e4_127706c6",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "isb?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6b0d418_af0fbb1b",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "/* APIAKey array */",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fd3c9bc_e21ae921",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "do we need this 1 line function?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9efdd2d_78f346b7",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "(high \u003c\u003c 64)",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0a9b14c_9a703b66",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "Can we get rid of this magic number, which might be changed if struct rec is changed?\nAs this macro is used in assembler code, can it be just defined via offsetof(struct rec, pauth)?\nit is offset of pauth structure from the start of rec, not regs. Should\u0027t it be called\nOFFSETOF_REC_PAUTH?\nWe should also have\n#define OFFSETOF_REC_REGS offsetof(struct rec, regs)\nto use in the same assembler file.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f02c525_9cb95ea2",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "add new line",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43b54cf2_5a412e78",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "please add new lines before comments",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6198d0d3_40368f68",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "use tabs after ldp \u0026 msr and 1 space after x2,",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b60e6c7_e52396b2",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "[x0, #(OFFSETOF_REC_REGS * 1)]\n...",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02df6cbc_0dcca373",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "See comments above",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44511ff0_0911aec3",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "use tabs \u0026 remove extra spaces",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecc2e8ae_506712e6",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T12:14:47Z",
+      "side": 1,
+      "message": "see comments for line #32",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
