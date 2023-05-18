@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b615fc26_baf11c99",
+        "filename": "lib/pauth/src/aarch64/pauth_core.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65c30238_2b8532ed",
+      "range": {
+        "startLine": 20,
+        "startChar": 49,
+        "endLine": 20,
+        "endChar": 50
+      },
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ebca7ec3_60a3dbcb",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-05-18T12:46:50Z",
       "side": 1,
       "message": "nit: unsigned int is enough.",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "751427ee_0fe78e43",
+        "filename": "lib/pauth/src/aarch64/pauth_core.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebca7ec3_60a3dbcb",
       "range": {
         "startLine": 25,
         "startChar": 1,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c615bf3d_39c98627",
+        "filename": "lib/pauth/src/aarch64/pauth_core.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c0e0268_cdb4041d",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 21
+      },
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7ac6f36_961781a9",
@@ -83,6 +155,24 @@
       "writtenOn": "2023-05-18T12:46:50Z",
       "side": 1,
       "message": "nit : keep this just after collect entropy.",
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b424de1d_fad8e099",
+        "filename": "lib/pauth/src/aarch64/pauth_core.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7ac6f36_961781a9",
       "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -104,6 +194,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "095e24fd_61eed141",
+        "filename": "lib/pauth/src/aarch64/pauth_core.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cea47682_ad027de4",
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "809cb266_ae124a49",
@@ -117,6 +225,24 @@
       "writtenOn": "2023-05-18T12:46:50Z",
       "side": 1,
       "message": "nit: extra newline",
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26c9df9c_02dc82f2",
+        "filename": "lib/xlat/tests/xlat_tests_g1.cpp",
+        "patchSetId": 20
+      },
+      "lineNbr": 1278,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "809cb266_ae124a49",
       "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -138,6 +264,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fbc2e7f_bca955fd",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a97aaf7d_6cb36001",
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7765fca8_1c2ab02d",
@@ -151,6 +295,30 @@
       "writtenOn": "2023-05-18T12:46:50Z",
       "side": 1,
       "message": "is this needed ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 61,
+        "endLine": 14,
+        "endChar": 65
+      },
+      "revId": "5c3322cee149188e789362fc9ef4aa54faf25f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f003b031_a25afe69",
+        "filename": "toolchains/aarch64/common_aarch64.cmake",
+        "patchSetId": 20
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T13:32:48Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "7765fca8_1c2ab02d",
       "range": {
         "startLine": 14,
         "startChar": 61,
