@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad9b2130_d8bdbc79",
+        "filename": "docs/design/diagrams/boot_design.drawio.png",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5857dec6_703934ab",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb0b0343_06730ba0",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "This comment needs to be updated, as we disable some traps.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5db7e017_953674ed",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb0b0343_06730ba0",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -69,6 +105,42 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f86b3204_5e1e53f1",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b10311df_d273883b",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad140cca_793f5df3",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8c5aad3_179a8876",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa7d8d0c_3ae8f337",
@@ -82,6 +154,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "If we plan to add support for APDAKey/APDBKey, we need to add definitions for these bits.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dd3e52d_c929630a",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7d8d0c_3ae8f337",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -103,6 +193,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d196bc81_e1d0056e",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8221837_7246d94b",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5df8e3d_0ad6f4be",
@@ -116,6 +224,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "nTWE",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e752a7_42ae6289",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5df8e3d_0ad6f4be",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -137,6 +263,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "139ec27b_9094e039",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de547205_2aa14815",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e08b987_ccc9653d",
@@ -150,6 +294,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "It woould be good to align comments.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fd7d246_27702eb9",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e08b987_ccc9653d",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -225,6 +387,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4461a844_1cbb21f0",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1642fe9f_165ebed5",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09f9b877_7929bcf0",
@@ -278,6 +458,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26b814a1_99947fb0",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d8f38cb_80186f91",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac638bc4_6675d0bb",
@@ -291,6 +489,30 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "remove the tab.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 1
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6981d66c_db8f35ec",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac638bc4_6675d0bb",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -324,6 +546,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6090153f_21279ed8",
+        "filename": "lib/pauth/include/pauth.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed now",
+      "parentUuid": "097ec774_f00effc9",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6691292e_ea91174d",
@@ -337,6 +583,30 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "call this pauth_restore_rmm_keys",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff6be405_0f7173d0",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6691292e_ea91174d",
       "range": {
         "startLine": 11,
         "startChar": 7,
@@ -370,6 +640,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cdfb448_1ab7d7d5",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39566b32_636eb686",
+      "range": {
+        "startLine": 12,
+        "startChar": 7,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1763b430_43483ba3",
@@ -383,6 +677,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "add bew line",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f9fd34a_368c3115",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1763b430_43483ba3",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -404,6 +716,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a77337f0_2edf904e",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "f1ddcd66_e18ba11c",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7c09ea9_4b98920f",
@@ -417,6 +747,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "Pointer, see line #31",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9860164f_f5dfc5d7",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7c09ea9_4b98920f",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -438,6 +786,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "62db2062_532facd4",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "11d4dae3_4d97a207",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2bf5f38_46d6ff87",
@@ -451,6 +817,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "why is X0 not used?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d01519ff_f2be7b5f",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "it was to avoid saving/restoring x0 in caller function,\nremoved now",
+      "parentUuid": "f2bf5f38_46d6ff87",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -478,6 +862,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "995b9246_8e71573b",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "60aed08b_fa421acc",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b6526a4_6ed00f2d",
@@ -491,6 +899,24 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "keep the `adrp` and this `add` together as it is related to getting the address of the variable.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea9f7f58_661defbb",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b6526a4_6ed00f2d",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -518,6 +944,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f57dffd_c7be5684",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20cd9dfc_affa3d0d",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 15
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e3a16e4_127706c6",
@@ -531,6 +981,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "isb?",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3ec7064_b07935b2",
+        "filename": "lib/pauth/src/aarch64/pauth_arch.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e3a16e4_127706c6",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -570,6 +1038,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "626255ac_9b424b1f",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9e3f4e1_bae93653",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6b0d418_af0fbb1b",
@@ -583,6 +1069,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "/* APIAKey array */",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "949a7e1c_7eec2c96",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6b0d418_af0fbb1b",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -634,6 +1138,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e14a0ea9_268b9289",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29d57f69_87559b2f",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 13,
+        "endChar": 18
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "922651cb_bf556609",
@@ -647,6 +1175,30 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "use the acronym PAUTH as it is more readable IMO.",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab5bd776_ff19957a",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "922651cb_bf556609",
       "range": {
         "startLine": 16,
         "startChar": 9,
@@ -674,6 +1226,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef30a253_5bf07aba",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "inlined",
+      "parentUuid": "7fd3c9bc_e21ae921",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89eb1a37_d959d63d",
@@ -687,6 +1257,24 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "need an isb(), Can be folded into the main function as Alexei suggests.",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75908154_d963f79b",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89eb1a37_d959d63d",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -725,6 +1313,42 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae663b8c_b3d5bd79",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4115c383_faf3c21c",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d110a79_b492a12f",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bd1d629_b9166f4a",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0f5fa79_15792638",
@@ -738,6 +1362,30 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "should be able to use pauth_restore_rmm_keys() function for this.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77461bd4_237a4f35",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0f5fa79_15792638",
       "range": {
         "startLine": 35,
         "startChar": 0,
@@ -765,6 +1413,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e48274a_ba288a56",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "we need to typecast before shift",
+      "parentUuid": "f9efdd2d_78f346b7",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a772c163_85fabdbb",
@@ -778,6 +1444,24 @@
       "writtenOn": "2023-05-17T13:46:24Z",
       "side": 1,
       "message": "nit: isb() needs to be after the write of apia key",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4794f183_d7c7080a",
+        "filename": "lib/pauth/src/pauth_core.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a772c163_85fabdbb",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -835,6 +1519,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cc3305f_ab9745c9",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "PAUTH offset is no longer needed",
+      "parentUuid": "02f7a2dc_e8c4b2b3",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f02c525_9cb95ea2",
@@ -848,6 +1550,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "add new line",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f5cc5fa_8316c39e",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f02c525_9cb95ea2",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -875,6 +1595,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77646fdb_019e7540",
+        "filename": "lib/timers/CMakeLists.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2647c09d_97c372bf",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "43b54cf2_5a412e78",
@@ -888,6 +1632,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "please add new lines before comments",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4bf2ee2_8cf24a55",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43b54cf2_5a412e78",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -909,6 +1671,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93f8e7b9_da9b83c8",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "6198d0d3_40368f68",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b60e6c7_e52396b2",
@@ -922,6 +1702,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "[x0, #(OFFSETOF_REC_REGS * 1)]\n...",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49383fa8_f88ea1e3",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "reverted this file",
+      "parentUuid": "1b60e6c7_e52396b2",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -943,6 +1741,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb03800b_7b66360a",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "reverted this file",
+      "parentUuid": "02df6cbc_0dcca373",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44511ff0_0911aec3",
@@ -960,6 +1776,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05605bbf_b4588f62",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "reverted this file",
+      "parentUuid": "44511ff0_0911aec3",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ecc2e8ae_506712e6",
@@ -973,6 +1807,24 @@
       "writtenOn": "2023-05-17T12:14:47Z",
       "side": 1,
       "message": "see comments for line #32",
+      "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cbe0311_9b239f42",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 18
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T11:31:25Z",
+      "side": 1,
+      "message": "reverted this file",
+      "parentUuid": "ecc2e8ae_506712e6",
       "revId": "860391d58b25392642f28b9a458ae0c4865265ed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
