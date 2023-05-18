@@ -991,6 +991,24 @@
       "parentUuid": "ea0cf88d_02141c06",
       "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a7b27d4_5939bc4b",
+        "filename": "toolchains/aarch64/llvm.cmake",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-18T16:53:47Z",
+      "side": 1,
+      "message": "the llvm commandline is probably -msign-return-address\u003dnon-leaf,\nbut compiled binary is still missing pac instructions after adding it, will investigate",
+      "parentUuid": "f79a7056_5db15e32",
+      "revId": "952c13d4210ff10c7d615a9afaa6b2fade65a159",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
