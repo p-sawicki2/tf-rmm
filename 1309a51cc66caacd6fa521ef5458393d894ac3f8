@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e754f1f3_1bfe95bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-18T20:19:46Z",
+      "side": 1,
+      "message": "Should be fixed now",
+      "parentUuid": "58e956d7_181a602e",
+      "revId": "1309a51cc66caacd6fa521ef5458393d894ac3f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cba1de78_dad1d4d4",
         "filename": "lib/attestation/CMakeLists.txt",
         "patchSetId": 1
@@ -48,6 +66,30 @@
       "writtenOn": "2023-05-18T15:40:43Z",
       "side": 1,
       "message": "Is 0 a valid value ?What does it mean to have 0 ops ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 70,
+        "endLine": 10,
+        "endChar": 71
+      },
+      "revId": "1309a51cc66caacd6fa521ef5458393d894ac3f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79a9ae3a_62f94658",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-18T20:19:46Z",
+      "side": 1,
+      "message": "From mbedtls/include/psa/crypto.h:\n\n    ...\n     * \\param max_ops               The maximum number of ops to be executed in a\n     *                              single call. This can be a number from 0 to\n     *                              #PSA_INTERRUPTIBLE_MAX_OPS_UNLIMITED, where 0\n     *                              is the least amount of work done per call.\n     */\n    void psa_interruptible_set_max_ops(uint32_t max_ops);\n\nI added It seemed to be too long to add the explanation in the help string, and I saw no precedent in further documenting parameters in comments (i might have missed). As the constant has PSA prefix I thought it is OK to expect the user to look for the interpretation in psa/crypto.h",
+      "parentUuid": "cba1de78_dad1d4d4",
       "range": {
         "startLine": 10,
         "startChar": 70,
@@ -77,6 +119,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b29b6b4_f8b8c826",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-18T20:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6cfa6cc_e8e8b3ab",
+      "revId": "1309a51cc66caacd6fa521ef5458393d894ac3f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc1f78c6_ac6a2c2e",
         "filename": "lib/t_cose/CMakeLists.txt",
         "patchSetId": 1
@@ -88,6 +148,30 @@
       "writtenOn": "2023-05-18T15:40:43Z",
       "side": 1,
       "message": "Can be private",
+      "range": {
+        "startLine": 11,
+        "startChar": 5,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "1309a51cc66caacd6fa521ef5458393d894ac3f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b0fa4ad_be9025d8",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-05-18T20:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc1f78c6_ac6a2c2e",
       "range": {
         "startLine": 11,
         "startChar": 5,
