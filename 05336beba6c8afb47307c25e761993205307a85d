@@ -34,6 +34,24 @@
       "parentUuid": "9036a84a_8f76f8f0",
       "revId": "05336beba6c8afb47307c25e761993205307a85d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b0ffd28_93ae8801",
+        "filename": "lib/arch/src/pauth_core.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T13:33:57Z",
+      "side": 1,
+      "message": "The compiler should not generate PAC instructions when compiling this function as this is called before the RMM keys are restored.",
+      "parentUuid": "ce0551cb_e383ff56",
+      "revId": "05336beba6c8afb47307c25e761993205307a85d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
