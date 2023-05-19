@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0af99cb5_e9a08d2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "Final set of comments and we should be good.",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "981aae63_e17d61dd",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "I think this can be integrated to lib/arch component ?  Looking at the pattern we have followed for SVE and PMU, I think PAuth can also be inside the arch folder.\n\nlib/arch/include can have the public header\nlib/arch/src for sources\nand lib/arch/src/{RMM_ARCH} for pvt header.",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d91c9a4_131c8a78",
+        "filename": "lib/pauth/src/aarch64/pauth_pvt.h",
+        "patchSetId": 25
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "Add comment: \n/* Use this attribute to disable PAuth for a function */",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2566d78_73fe03fb",
+        "filename": "lib/pauth/src/fake_host/pauth_pvt.h",
+        "patchSetId": 25
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "Add comment: \n/* Use this attribute to disable PAuth for a function */",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca74e0e4_5ccd806b",
+        "filename": "lib/realm/CMakeLists.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "This will be removed with PAuth is made part of Arch",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c38f27c8_fe47922e",
+        "filename": "lib/timers/CMakeLists.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "this will be removed when PAuth is made part of arch component",
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60c0b5e3_783277f4",
+        "filename": "toolchains/aarch64/llvm.cmake",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T11:21:02Z",
+      "side": 1,
+      "message": "Nit: Add white space between # and Avoid",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 6
+      },
+      "revId": "abc1c987b62fdca3ce2057d0abf7e0e02217cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
