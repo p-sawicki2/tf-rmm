@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56d2752f_6d429448",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:59:57Z",
+      "side": 1,
+      "message": "This can be made short\n\nfeat(PAuth): add support for RMM and Realms",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 71
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b581fb67_630615d1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 23
@@ -42,6 +65,52 @@
         "startChar": 0,
         "endLine": 16,
         "endChar": 17
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4811c7c_4a4055d7",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:59:57Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t notice. this file can be in src now and fake_host should compile and use this file.",
+      "range": {
+        "startLine": 20,
+        "startChar": 17,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c54b5165_5dc4e35f",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:59:57Z",
+      "side": 1,
+      "message": "This can go into sysreg_state structure like the all other registers. This is a new comment as moving the Pauth save and restore to C allows us to better organize the data structure flexibly. \n\nThe comment can a single line comment \n\n/* PAuth registers */ \n\nand can be added after gic_cpu_state.",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 52
       },
       "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
