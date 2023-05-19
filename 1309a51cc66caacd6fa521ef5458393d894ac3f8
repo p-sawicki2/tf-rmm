@@ -100,6 +100,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5531d669_506c99d6",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T06:14:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "79a9ae3a_62f94658",
+      "range": {
+        "startLine": 10,
+        "startChar": 70,
+        "endLine": 10,
+        "endChar": 71
+      },
+      "revId": "1309a51cc66caacd6fa521ef5458393d894ac3f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cfa6cc_e8e8b3ab",
