@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bd45aa5_db143dde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-19T19:38:44Z",
+      "side": 1,
+      "message": "Marking the patch as WIP as I realized I need properly handle RmiFeatureRegister0 when LPA2 is available.",
+      "revId": "d0a99c51d30807d13d81cf20d176835bb28e2990",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
