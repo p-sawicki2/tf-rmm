@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b581fb67_630615d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:43:00Z",
+      "side": 1,
+      "message": "\"This patch adds support for use of Pointer Authentication (PAuth) feature in Realms and enable PAuth in RMM (R-EL2). The EL3 is expected to context switch the PAuth key registers and hence RMM\ndoes not need to save the NS key values. The PAuth registers corresponding to REC is restored before entering a Realm and the same is saved and RMM kays IA keys are restored on Realm exit.\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 0
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f07149fa_d083ed5d",
+        "filename": "lib/pauth/CMakeLists.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:43:00Z",
+      "side": 1,
+      "message": "this may not be needed.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f618ddf3_30e3cd83",
+        "filename": "toolchains/aarch64/llvm.cmake",
+        "patchSetId": 23
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T09:43:00Z",
+      "side": 1,
+      "message": "#void -\u003e # Avoid",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 9
+      },
+      "revId": "4dbd7ba1a7461c10b86c64c40b3bf58e6fbaa27e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
