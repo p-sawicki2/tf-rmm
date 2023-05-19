@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61b9c9a5_51a9c03a",
+        "filename": "lib/arch/include/aarch64/pauth_pvt.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T12:05:10Z",
+      "side": 1,
+      "message": "move the private header from arch/include/aarch64 to src/aarch64 folder.",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
