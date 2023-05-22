@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6010fd1d_9d9839d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-22T16:03:07Z",
+      "side": 1,
+      "message": "Expect the FVP runs to fail with this patch till TF-A has MINOR number bumped up as part of this patch : https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/20956",
+      "revId": "da3ecb189c48254d9c675e4f82651fd9a1d2a710",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
