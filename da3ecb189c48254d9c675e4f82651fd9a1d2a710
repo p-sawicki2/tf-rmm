@@ -16,6 +16,29 @@
       "message": "Expect the FVP runs to fail with this patch till TF-A has MINOR number bumped up as part of this patch : https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/20956",
       "revId": "da3ecb189c48254d9c675e4f82651fd9a1d2a710",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46382d31_becd37bc",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-22T16:14:27Z",
+      "side": 1,
+      "message": "If RMM supports receiving a NULL plat_dram, we should return E_RMM_BOOT_SUCCESS here. Otherwise, EL3 will interpret this as a boot error and will shut down R-EL2.",
+      "range": {
+        "startLine": 104,
+        "startChar": 3,
+        "endLine": 104,
+        "endChar": 40
+      },
+      "revId": "da3ecb189c48254d9c675e4f82651fd9a1d2a710",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
