@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9005365_4bb54817",
+        "filename": "docs/design/cold-and-warm-boot-design.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f08997b6_3ab10205",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1be00000_bb04e670",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac1a9b70_65ef577a",
+        "filename": "docs/design/cold-and-warm-boot-design.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be00000_bb04e670",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "082a05ab_07e5808e",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-05-19T13:20:19Z",
       "side": 1,
       "message": "can we have just \"pauth.c\" to match pmu.c \u0026 simd.c naming?",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10dce1b4_545fc03f",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 28
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "082a05ab_07e5808e",
       "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -104,6 +158,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b7fed39_7efed207",
+        "filename": "lib/arch/include/aarch64/pauth_pvt.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "313b0545_95a83179",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65890fb8_15a6eb75",
@@ -138,6 +210,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0cf1fba_3e3b7d0a",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1055c2_2c9e1a45",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72cc25c2_fb9cd0a1",
@@ -151,6 +241,24 @@
       "writtenOn": "2023-05-19T13:20:19Z",
       "side": 1,
       "message": "0UL",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94715723_3627ee95",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72cc25c2_fb9cd0a1",
       "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -172,6 +280,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "803b58b9_62b7021e",
+        "filename": "lib/arch/include/arch_helpers.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa657f6_41170bb4",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0213286_d8f2c49a",
@@ -185,6 +311,24 @@
       "writtenOn": "2023-05-19T13:20:19Z",
       "side": 1,
       "message": "remove trailing . See line #18",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb9caac1_bdfac751",
+        "filename": "lib/arch/src/pauth_core.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0213286_d8f2c49a",
       "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -206,6 +350,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed9a0cba_b3105436",
+        "filename": "lib/arch/src/pauth_core.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7d17e04_016554e9",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a8eae053_1cdd7c3b",
@@ -219,6 +381,30 @@
       "writtenOn": "2023-05-19T13:20:19Z",
       "side": 1,
       "message": "write_sctlr_el2(read_sctlr_el2() | SCTLR_ELx_EnIA_BIT);\nsee line #39",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 49
+      },
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb85cb87_1b74451b",
+        "filename": "lib/arch/src/pauth_core.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8eae053_1cdd7c3b",
       "range": {
         "startLine": 46,
         "startChar": 1,
@@ -264,6 +450,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eb979a2_312f048b",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 28
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "I will post another patch.",
+      "parentUuid": "bd9a555a_5c6d5352",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc0c5c97_c4640563",
@@ -281,6 +485,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ad02d30_d345552e",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 28
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc0c5c97_c4640563",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9fae21f_7f155268",
@@ -294,6 +516,24 @@
       "writtenOn": "2023-05-19T13:20:19Z",
       "side": 1,
       "message": "add . at the end",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2f946e8_f32b502b",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T08:45:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9fae21f_7f155268",
       "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
