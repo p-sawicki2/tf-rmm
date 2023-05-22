@@ -195,6 +195,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6f4f768c_7acc769d",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 28
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-22T13:04:02Z",
+      "side": 1,
+      "message": "This is good to do, but not the intention of this patch. We can log a JIRA or another patch can be pushed if it can be done easily.",
+      "parentUuid": "65890fb8_15a6eb75",
+      "revId": "ac4edb2c39eac247bbe0a563d7ead7cc9a8b7443",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3a1055c2_2c9e1a45",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 28
