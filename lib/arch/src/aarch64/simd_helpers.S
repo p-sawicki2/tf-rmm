@@ -4,48 +4,54 @@
  */
 
 #include <asm_macros.S>
+#include <simd.h>
 
 .globl fpu_save_state
 .globl fpu_restore_state
 
 .globl sve_rdvl
-.globl sve_save_z_state
-.globl sve_save_p_ffr_state
-.globl sve_save_zcr_fpu_state
-.globl sve_restore_z_state
-.globl sve_restore_ffr_p_state
-.globl sve_restore_zcr_fpu_state
+.globl sve_save_state
+.globl sve_restore_state
 
 /*
- * void fpu_save_state(struct fpu_state *fpu);
+ * void fpu_save_state(uint64_t fpu_state);
  *
- * This function saves the FPU state in systems supporting FPU but NOT SVE.
- * Systems with SVE support only use the SVE save/restore since these
- * registers are mapped into SVE registers.
+ * This function saves the FPU state in systems supporting FPU.
  *
- * Since we make assumptions about register fields in C structs here, there are
- * compiler asserts in simd.h to help guarantee that these assumptions are true.
+ * Since we make assumptions about register fields in 'struct fpu_state', there
+ * are compiler asserts in simd.h to help guarantee that these assumptions
+ * are true.
+ *
+ * Inputs:
+ *   x0 - address of fpu_state
+ * Clobbers:
+ *   x1, x2
+ * Returns:
+ *   none
  */
 func fpu_save_state
 	/* Save the SIMD/FPU register bank to memory. */
-	stp	q0, q1, [x0], #32
-	stp	q2, q3, [x0], #32
-	stp	q4, q5, [x0], #32
-	stp	q6, q7, [x0], #32
-	stp	q8, q9, [x0], #32
-	stp	q10, q11, [x0], #32
-	stp	q12, q13, [x0], #32
-	stp	q14, q15, [x0], #32
-	stp	q16, q17, [x0], #32
-	stp	q18, q19, [x0], #32
-	stp	q20, q21, [x0], #32
-	stp	q22, q23, [x0], #32
-	stp	q24, q25, [x0], #32
-	stp	q26, q27, [x0], #32
-	stp	q28, q29, [x0], #32
-	stp	q30, q31, [x0], #32
+	add	x1, x0, #FPU_CTX_OFFSET_Q
+
+	stp	q0, q1, [x1], #32
+	stp	q2, q3, [x1], #32
+	stp	q4, q5, [x1], #32
+	stp	q6, q7, [x1], #32
+	stp	q8, q9, [x1], #32
+	stp	q10, q11, [x1], #32
+	stp	q12, q13, [x1], #32
+	stp	q14, q15, [x1], #32
+	stp	q16, q17, [x1], #32
+	stp	q18, q19, [x1], #32
+	stp	q20, q21, [x1], #32
+	stp	q22, q23, [x1], #32
+	stp	q24, q25, [x1], #32
+	stp	q26, q27, [x1], #32
+	stp	q28, q29, [x1], #32
+	stp	q30, q31, [x1], #32
 
 	/* Save the FPSR/FPCR */
+	add	x0, x0, #FPU_CTX_OFFSET_FPSR
 	mrs	x1, fpsr
 	mrs	x2, fpcr
 	stp	x1, x2, [x0]
@@ -54,35 +60,44 @@ func fpu_save_state
 endfunc fpu_save_state
 
 /*
- * void fpu_restore_state(struct fpu_state *fpu);
+ * void fpu_restore_state(uint64_t fpu_state);
  *
- * Function to restore a saved FPU register state on systems supporting FPU/SIMD
- * but NOT SVE.  Systems with SVE support enabled only use the SVE save/restore
- * since these registers are mapped into SVE registers.
+ * Function to restore a saved FPU register state on systems supporting FPU/SIMD.
  *
- * Since we make assumptions about register fields in C structs here, there are
- * compiler asserts in simd.h to help guarantee that these assumptions are true.
+ * Since we make assumptions about register fields in 'struct fpu_state', there
+ * are compiler asserts in simd.h to help guarantee that these assumptions
+ * are true.
+ *
+ * Inputs:
+ *   x0 - address of fpu_state
+ * Clobbers:
+ *   x1, x2
+ * Returns:
+ *   none
  */
 func fpu_restore_state
 	/* Load the SIMD/FPU register bank from memory. */
-	ldp	q0, q1, [x0], #32
-	ldp	q2, q3, [x0], #32
-	ldp	q4, q5, [x0], #32
-	ldp	q6, q7, [x0], #32
-	ldp	q8, q9, [x0], #32
-	ldp	q10, q11, [x0], #32
-	ldp	q12, q13, [x0], #32
-	ldp	q14, q15, [x0], #32
-	ldp	q16, q17, [x0], #32
-	ldp	q18, q19, [x0], #32
-	ldp	q20, q21, [x0], #32
-	ldp	q22, q23, [x0], #32
-	ldp	q24, q25, [x0], #32
-	ldp	q26, q27, [x0], #32
-	ldp	q28, q29, [x0], #32
-	ldp	q30, q31, [x0], #32
+	add	x1, x0, #FPU_CTX_OFFSET_Q
+
+	ldp	q0, q1, [x1], #32
+	ldp	q2, q3, [x1], #32
+	ldp	q4, q5, [x1], #32
+	ldp	q6, q7, [x1], #32
+	ldp	q8, q9, [x1], #32
+	ldp	q10, q11, [x1], #32
+	ldp	q12, q13, [x1], #32
+	ldp	q14, q15, [x1], #32
+	ldp	q16, q17, [x1], #32
+	ldp	q18, q19, [x1], #32
+	ldp	q20, q21, [x1], #32
+	ldp	q22, q23, [x1], #32
+	ldp	q24, q25, [x1], #32
+	ldp	q26, q27, [x1], #32
+	ldp	q28, q29, [x1], #32
+	ldp	q30, q31, [x1], #32
 
 	/* Load the FPSR/FPCR */
+	add	x0, x0, #FPU_CTX_OFFSET_FPSR
 	ldp	x1, x2, [x0]
 	msr	fpsr, x1
 	msr	fpcr, x2
@@ -92,6 +107,11 @@ endfunc fpu_restore_state
 
 /*
  * uint64_t sve_rdvl(void)
+ *
+ * Inputs:
+ *   none
+ * Returns:
+ *   Return the length of one vector register in bytes
  */
 func sve_rdvl
 .arch_extension sve
@@ -101,29 +121,28 @@ func sve_rdvl
 endfunc sve_rdvl
 
 /*
- * void sve_save_zcr_fpu_state(uint8_t *regs)
+ * void sve_save_state(uint64_t sve_state, bool save_ffr)
+ *
+ * The fields in 'struct sve_state' are accessed using OFFSET macros defined in
+ * simd.h. There are compiler asserts in simd.h to help guarantee that these
+ * values matches with the offset in 'struct sve_state'.
+ *
+ * Inputs:
+ *   x0 - address of sve_state
+ *   x1 - when non-zero, save FFR
+ * Clobbers:
+ *   x2
+ * Returns:
+ *   none
  */
-func sve_save_zcr_fpu_state
+func sve_save_state
 .arch_extension sve
-	/* Save the ZCR_EL12, FPSR & FPCR */
-	mrs	x1, zcr_el12
-	mrs	x2, fpsr
-	stp	x1, x2, [x0], #16
+	mov	x2, x0
 
-	mrs	x1, fpcr
-	str	x1, [x0]
-
-	ret
-.arch_extension nosve
-endfunc sve_save_zcr_fpu_state
-
-/*
- * void sve_save_z_state(unsigned char *data)
- */
-func sve_save_z_state
-.arch_extension sve
 	/* Save the z register bank to memory. */
-	str 	z0, [x0, #0, MUL VL]
+	mov	x0, #SVE_STATE_OFFSET_Z
+	add	x0, x0, x2
+	str	z0, [x0, #0, MUL VL]
 	str	z1, [x0, #1, MUL VL]
 	str	z2, [x0, #2, MUL VL]
 	str	z3, [x0, #3, MUL VL]
@@ -156,16 +175,9 @@ func sve_save_z_state
 	str	z30, [x0, #30, MUL VL]
 	str	z31, [x0, #31, MUL VL]
 
-	ret
-.arch_extension nosve
-endfunc sve_save_z_state
-
-/*
- * void sve_save_p_ffr_state(unsigned char *data)
- */
-func sve_save_p_ffr_state
-.arch_extension sve
 	/* Save the P register bank to memory. */
+	mov	x0, #SVE_STATE_OFFSET_P
+	add	x0, x0, x2
 	str 	p0, [x0, #0, MUL VL]
 	str 	p1, [x0, #1, MUL VL]
 	str 	p2, [x0, #2, MUL VL]
@@ -184,36 +196,55 @@ func sve_save_p_ffr_state
 	str 	p15, [x0, #15, MUL VL]
 
 	/* Save the ffr register, after predicates are saved. */
+	cbz	x1, 1f
+	mov	x0, #SVE_STATE_OFFSET_FFR
+	add	x0, x0, x2
 	rdffr	p0.B
-	str 	p0, [x0, #16, MUL VL]
+	str 	p0, [x0, #0, MUL VL]
+1:
+
+	/* Save the ZCR_EL12, FPSR & FPCR */
+	mov	x0, #SVE_STATE_OFFSET_ZCR_EL12
+	add	x0, x0, x2
+	mrs	x1, zcr_el12
+	str	x1, [x0]
+
+	mov	x0, #SVE_STATE_OFFSET_FPSR
+	add	x0, x0, x2
+	mrs	x1, fpsr
+	str	x1, [x0]
+
+	mov	x0, #SVE_STATE_OFFSET_FPCR
+	add	x0, x0, x2
+	mrs	x1, fpcr
+	str	x1, [x0]
 
 	ret
 .arch_extension nosve
-endfunc sve_save_p_ffr_state
+endfunc sve_save_state
 
 /*
- * void sve_restore_zcr_fpu_state(uint8_t *regs)
+ * void sve_restore_state(struct sve_state *sve, bool restore_ffr)
+ *
+ * The fields in 'struct sve_state' are accessed using OFFSET macros defined in
+ * simd.h. There are compiler asserts in simd.h to help guarantee that these
+ * values matches with the offset in 'struct sve_state'.
+ *
+ * Inputs:
+ *   x0 - address of sve_state
+ *   x1 - when non-zero, restore FFR
+ * Clobbers:
+ *   x2
+ * Returns:
+ *   none
  */
-func sve_restore_zcr_fpu_state
+func sve_restore_state
 .arch_extension sve
-	/* Load the ZCR_EL12, FPSR & FPCR */
-	ldp	x1, x2, [x0], #16
-	msr	zcr_el12, x1
-	msr	fpsr, x2
+	mov	x2, x0
 
-	ldr	x1, [x0]
-	msr	fpcr, x1
-
-	ret
-.arch_extension nosve
-endfunc sve_restore_zcr_fpu_state
-
-/*
- * void sve_restore_z_state(unsigned char *data)
- */
-func sve_restore_z_state
-.arch_extension sve
 	/* Load the z register bank from memory. */
+	mov	x0, #SVE_STATE_OFFSET_Z
+	add	x0, x0, x2
 	ldr 	z0, [x0, #0, MUL VL]
 	ldr	z1, [x0, #1, MUL VL]
 	ldr	z2, [x0, #2, MUL VL]
@@ -247,20 +278,17 @@ func sve_restore_z_state
 	ldr	z30, [x0, #30, MUL VL]
 	ldr	z31, [x0, #31, MUL VL]
 
-	ret
-.arch_extension nosve
-endfunc sve_restore_z_state
-
-/*
- * void sve_restore_ffr_p_state(unsigned char *data)
- */
-func sve_restore_ffr_p_state
-.arch_extension sve
 	/* Restore the ffr register before restoring predicates */
-	ldr 	p0, [x0, #16, MUL VL]
+	cbz	x1, 1f
+	mov	x0, #SVE_STATE_OFFSET_FFR
+	add	x0, x0, x2
+	ldr 	p0, [x0, #0, MUL VL]
 	wrffr	p0.B
+1:
 
 	/* Load the P register bank from memory. */
+	mov	x0, #SVE_STATE_OFFSET_P
+	add	x0, x0, x2
 	ldr 	p0, [x0, #0, MUL VL]
 	ldr 	p1, [x0, #1, MUL VL]
 	ldr 	p2, [x0, #2, MUL VL]
@@ -278,6 +306,22 @@ func sve_restore_ffr_p_state
 	ldr 	p14, [x0, #14, MUL VL]
 	ldr 	p15, [x0, #15, MUL VL]
 
+	/* Load the ZCR_EL12, FPSR & FPCR */
+	mov	x0, #SVE_STATE_OFFSET_ZCR_EL12
+	add	x0, x0, x2
+	ldr	x1, [x0]
+	msr	zcr_el12, x1
+
+	mov	x0, #SVE_STATE_OFFSET_FPSR
+	add	x0, x0, x2
+	ldr	x1, [x0]
+	msr	fpsr, x1
+
+	mov	x0, #SVE_STATE_OFFSET_FPCR
+	add	x0, x0, x2
+	ldr	x1, [x0]
+	msr	fpcr, x1
+
 	ret
 .arch_extension nosve
-endfunc sve_restore_ffr_p_state
+endfunc sve_restore_state

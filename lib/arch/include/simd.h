@@ -7,9 +7,11 @@
 #define SIMD_H
 
 #include <arch.h>
+#ifndef __ASSEMBLER__
 #include <arch_features.h>
 #include <assert.h>
 #include <stddef.h>
+#endif
 
 /* Size of one FPU vector register in bytes */
 #define FPU_VEC_REG_SIZE	16U
@@ -19,7 +21,6 @@
 /* These defines are required by compiler assert to check offsets */
 #define FPU_CTX_OFFSET_Q	0x0U
 #define FPU_CTX_OFFSET_FPSR	(FPU_REGS_SIZE)
-#define FPU_CTX_OFFSET_FPCR	(FPU_CTX_OFFSET_FPSR + 8U)
 
 /*
  * Size of SVE Z, Predicate (P), First Fault predicate Register (FFR) registers
@@ -52,6 +53,8 @@
 				 SVE_FFR_REGS_SIZE(SVE_VQ_ARCH_MAX))
 #define SVE_STATE_OFFSET_FPSR	(SVE_STATE_OFFSET_ZCR_EL12 + 8U)
 #define SVE_STATE_OFFSET_FPCR	(SVE_STATE_OFFSET_FPSR + 8U)
+
+#ifndef __ASSEMBLER__
 
 typedef enum {
 	SIMD_NONE,
@@ -100,7 +103,7 @@ COMPILER_ASSERT(__builtin_offsetof(struct fpu_state, q) == FPU_CTX_OFFSET_Q);
 COMPILER_ASSERT(__builtin_offsetof(struct fpu_state, fpsr) ==
 		FPU_CTX_OFFSET_FPSR);
 COMPILER_ASSERT(__builtin_offsetof(struct fpu_state, fpcr) ==
-		FPU_CTX_OFFSET_FPCR);
+		(FPU_CTX_OFFSET_FPSR + 8U));
 
 COMPILER_ASSERT(__builtin_offsetof(struct sve_state, z) == SVE_STATE_OFFSET_Z);
 COMPILER_ASSERT(__builtin_offsetof(struct sve_state, p) == SVE_STATE_OFFSET_P);
@@ -217,5 +220,7 @@ static inline void simd_disable(void)
 #define SIMD_IS_FPU_ALLOWED() (true)
 
 #endif /* RMM_FPU_USE_AT_REL2 */
+
+#endif /* __ASSEMBLER__ */
 
 #endif /* SIMD_H */

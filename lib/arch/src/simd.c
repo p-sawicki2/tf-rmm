@@ -74,7 +74,7 @@ void simd_save_state(simd_t type, struct simd_state *simd)
 	switch (type) {
 	case SIMD_FPU:
 		assert(is_fpen_enabled());
-		fpu_save_state((uint8_t *)&simd->t.fpu);
+		fpu_save_state((uint64_t)&simd->t.fpu);
 		break;
 	case SIMD_SVE:
 		assert(is_feat_sve_present() == true);
@@ -87,12 +87,11 @@ void simd_save_state(simd_t type, struct simd_state *simd)
 		 */
 		sve_config_vq(simd->t.sve.vq);
 
-		/* Save SVE vector registers Z0-Z31 */
-		sve_save_z_state((uint8_t *)&simd->t.sve.z);
-		/* Save SVE P0-P15, FFR registers */
-		sve_save_p_ffr_state((uint8_t *)&simd->t.sve.p);
-		/* Save SVE ZCR_EL12 and FPU status register */
-		sve_save_zcr_fpu_state((uint8_t *)&simd->t.sve.zcr_el12);
+		/*
+		 * Save SVE state registers Z0-Z31, P0-P15, FFR, ZCR_EL12 and
+		 * FPU status register FPSR/FPCR.
+		 */
+		sve_save_state((uint64_t)&simd->t.sve, true);
 		break;
 	default:
 		assert(false);
@@ -113,7 +112,7 @@ void simd_restore_state(simd_t type, struct simd_state *simd)
 	case SIMD_FPU:
 		assert(is_fpen_enabled());
 		assert(simd->simd_type == SIMD_FPU);
-		fpu_restore_state((uint8_t *)&simd->t.fpu);
+		fpu_restore_state((uint64_t)&simd->t.fpu);
 		break;
 	case SIMD_SVE:
 		assert(is_feat_sve_present() == true);
@@ -126,12 +125,11 @@ void simd_restore_state(simd_t type, struct simd_state *simd)
 		 */
 		sve_config_vq(simd->t.sve.vq);
 
-		/* Restore SVE vector registers Z0-Z31 */
-		sve_restore_z_state((uint8_t *)&simd->t.sve.z);
-		/* Restore SVE FFR, P0-P15 registers */
-		sve_restore_ffr_p_state((uint8_t *)&simd->t.sve.p);
-		/* Restore SVE ZCR_EL12 and FPU status register */
-		sve_restore_zcr_fpu_state((uint8_t *)&simd->t.sve.zcr_el12);
+		/*
+		 * Restore SVE state registers Z0-Z31, P0-P15, FFR, ZCR_EL12 and
+		 * FPU status register FPSR/FPCR.
+		 */
+		sve_restore_state((uint64_t)&simd->t.sve, true);
 		break;
 	default:
 		assert(false);
