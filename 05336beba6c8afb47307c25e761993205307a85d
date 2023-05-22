@@ -70,6 +70,24 @@
       "parentUuid": "8b0ffd28_93ae8801",
       "revId": "05336beba6c8afb47307c25e761993205307a85d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee26ac1_5824e217",
+        "filename": "lib/arch/src/pauth_core.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-22T09:48:40Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fc013cce_f3424a79",
+      "revId": "05336beba6c8afb47307c25e761993205307a85d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
