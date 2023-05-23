@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "538fd4f2_33f479af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:58:57Z",
+      "side": 1,
+      "message": "Looks good to me (except for a couple of nits). I see that the only test doesn\u0027t perform any active check. I guess the aim of this is to test coverage?",
+      "revId": "970dddfa0885d3d15dfeec3e69233121e6409f09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aaa8e244_82df5f3d",
+        "filename": "runtime/tests/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:58:57Z",
+      "side": 1,
+      "message": "Since this test is for the logger, it would be more convenient to name it accordingly, for instance \u0027rsi_logger\u0027 would be enough.",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "970dddfa0885d3d15dfeec3e69233121e6409f09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "762e5914_b6fd6f33",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:58:57Z",
+      "side": 1,
+      "message": "nit: Add newline before comments for better readability",
+      "revId": "970dddfa0885d3d15dfeec3e69233121e6409f09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
