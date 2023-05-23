@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a4de57a_0627dafa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:35:48Z",
+      "side": 1,
+      "message": "There is a couple of pending nits on https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20514/1/runtime/rmi/rtt.c#1069\n\nOther than that, LGTM",
+      "revId": "42bd81dfb429c07dbd18b02ea92c47147df4972a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
