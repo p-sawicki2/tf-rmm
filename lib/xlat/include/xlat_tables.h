@@ -97,8 +97,10 @@
 #define MT_TYPE(_attr)		((_attr) & MT_TYPE_MASK)
 /* Access permissions (RO/RW) */
 #define MT_PERM_SHIFT		(MT_TYPE_SHIFT + MT_TYPE_WIDTH)
+#define MT_PERM_WIDTH		UL(1)
 /* Access permissions for instruction execution (EXECUTE/EXECUTE_NEVER) */
 #define MT_EXECUTE_FLAG_SHIFT	(MT_PERM_SHIFT + 1UL)
+#define MT_EXECUTE_FLAG_WIDTH	UL(1)
 
 /* Contiguos descriptor flag */
 #define MT_CONT_SHIFT		(MT_EXECUTE_FLAG_SHIFT + 1UL)
