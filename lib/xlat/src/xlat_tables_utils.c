@@ -78,8 +78,8 @@ static void xlat_desc_print(uint64_t desc)
 	}
 
 	VERBOSE(((desc & LOWER_ATTRS(AP_RO)) != 0ULL) ? "-RO" : "-RW");
-	VERBOSE(((desc & UPPER_ATTRS(PXN)) != 0ULL) ? "-PXN" : "-PEXEC");
-	VERBOSE(((desc & UPPER_ATTRS(XN)) != 0ULL) ? "-XN" : "-EXEC");
+	VERBOSE(((desc & PXN) != 0ULL) ? "-PXN" : "-PEXEC");
+	VERBOSE(((desc & XN) != 0ULL) ? "-XN" : "-EXEC");
 
 	if ((desc & LOWER_ATTRS(NS)) == 0ULL) {
 		VERBOSE("-RL");
