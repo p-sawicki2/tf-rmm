@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db366864_0bf4c45b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:16:47Z",
+      "side": 1,
+      "message": "A small nit. Other than that, LGTM",
+      "revId": "8ee48f7fe3a2c53dd425ce1e765e9d33d002df56",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "297402fa_8fcf7a98",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:16:47Z",
+      "side": 1,
+      "message": "nit: assigned_ram",
+      "range": {
+        "startLine": 902,
+        "startChar": 34,
+        "endLine": 902,
+        "endChar": 46
+      },
+      "revId": "8ee48f7fe3a2c53dd425ce1e765e9d33d002df56",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
