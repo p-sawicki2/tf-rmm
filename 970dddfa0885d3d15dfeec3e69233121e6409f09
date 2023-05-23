@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a2c2ce1_23c52aef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-23T15:12:46Z",
+      "side": 1,
+      "message": "yes, there is no return code from logger to test. So the test is only covering the various cases for coverage.",
+      "parentUuid": "538fd4f2_33f479af",
+      "revId": "970dddfa0885d3d15dfeec3e69233121e6409f09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aaa8e244_82df5f3d",
         "filename": "runtime/tests/CMakeLists.txt",
         "patchSetId": 2
