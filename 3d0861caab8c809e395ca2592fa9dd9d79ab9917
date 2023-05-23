@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "257f3f36_3e87ef36",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-23T08:55:12Z",
+      "side": 1,
+      "message": "Host (see line #181)",
+      "revId": "3d0861caab8c809e395ca2592fa9dd9d79ab9917",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e9651ac_bc56c52d",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-23T08:55:12Z",
+      "side": 1,
+      "message": "Realm (see line #191)",
+      "revId": "3d0861caab8c809e395ca2592fa9dd9d79ab9917",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
