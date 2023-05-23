@@ -22,6 +22,30 @@
       },
       "revId": "aedbb23bcfd645d9f5164d32bb777cb5da1f41f7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c55349a9_fa362be0",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-23T13:23:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "097e8061_7d98a83a",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "aedbb23bcfd645d9f5164d32bb777cb5da1f41f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
