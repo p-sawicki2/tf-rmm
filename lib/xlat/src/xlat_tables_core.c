@@ -451,18 +451,18 @@ uint64_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level)
 			desc |= XLAT_GET_PXN_DESC();
 		}
 
+		if ((level == XLAT_TABLE_LEVEL_MAX) &&
+			       (((attr & MT_RW) == 0UL) || ((attr & MT_EXECUTE_NEVER) == 0UL)))	{
+			/* Set GP bit for block and page code entries for BTI */
+			desc |= GP;
+		}
+
 		desc |= LOWER_ATTRS(ATTR_IWBWA_OWBWA_NTR_INDEX);
 
 		if (lpa2_enabled == false) {
 			/* Configure Inner Shareability */
 			desc |= INPLACE(LOWER_ATTR_SH, ISH);
 		}
-
-		/* Check if Branch Target Identification is enabled */
-		/* TODO: This is needed if BTI is enabled. Double check this code. */
-		/* Set GP bit for block and page code entries
-		 * if BTI mechanism is implemented.
-		 */
 	}
 
 	return desc;
