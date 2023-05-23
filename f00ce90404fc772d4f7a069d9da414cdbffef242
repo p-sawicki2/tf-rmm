@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95ca78c4_13a89d6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-23T14:38:08Z",
+      "side": 1,
+      "message": "Couple of nits in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20685/2\n\nOther than that, LGTM",
+      "revId": "f00ce90404fc772d4f7a069d9da414cdbffef242",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
