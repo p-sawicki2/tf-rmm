@@ -458,11 +458,11 @@ uint64_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level)
 			desc |= INPLACE(LOWER_ATTR_SH, ISH);
 		}
 
-		/* Check if Branch Target Identification is enabled */
-		/* TODO: This is needed if BTI is enabled. Double check this code. */
-		/* Set GP bit for block and page code entries
-		 * if BTI mechanism is implemented.
-		 */
+		/* Set GP bit for block and page code entries */
+		if  (((attr & (MT_MEMORY | MASK(MT_PERM) | MASK(MT_EXECUTE_FLAG))) == MT_CODE)
+				&& ((desc & DESC_MASK) != TABLE_DESC)) {
+			desc |= GP;
+		}
 	}
 
 	return desc;

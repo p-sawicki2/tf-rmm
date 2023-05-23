@@ -680,10 +680,12 @@
 #define SCTLR_ELx_nTLSMD_BIT		(UL(1) << 28)
 #define SCTLR_ELx_LSMAOE_BIT		(UL(1) << 29)
 #define SCTLR_ELx_EnIA_BIT		(UL(1) << 31)
+#define SCTLR_ELx_BT0_BIT		(UL(1) << 35)
+#define SCTLR_ELx_BT1_BIT		(UL(1) << 36)
 
-#define SCTLR_EL1_FLAGS (SCTLR_ELx_SPAN_BIT | SCTLR_ELx_EIS_BIT | SCTLR_ELx_nTWE_BIT | \
+#define SCTLR_EL1_FLAGS ((SCTLR_ELx_SPAN_BIT | SCTLR_ELx_EIS_BIT | SCTLR_ELx_nTWE_BIT | \
 			 SCTLR_ELx_nTWI_BIT | SCTLR_ELx_EOS_BIT | SCTLR_ELx_nAA_BIT | \
-			 SCTLR_ELx_CP15BEN_BIT | SCTLR_ELx_SA0_BIT | SCTLR_ELx_SA_BIT)
+			 SCTLR_ELx_CP15BEN_BIT | SCTLR_ELx_SA0_BIT | SCTLR_ELx_SA_BIT))
 
 #define SCTLR_EL2_INIT		(SCTLR_ELx_C_BIT	/* Data accesses are cacheable
 							 * as per translation tables */ | \
@@ -718,7 +720,7 @@
 				 SCTLR_ELx_UCI_BIT	/* Allow cache maintenance
 							 * instructions at EL0 */ | \
 				 SCTLR_ELx_nTLSMD_BIT	/* A32/T32 only */ | \
-				 SCTLR_ELx_LSMAOE_BIT	/* A32/T32 only */)
+				 SCTLR_ELx_LSMAOE_BIT	/* A32/T32 only */ )
 
 #define SCTLR_EL2_RUNTIME	(SCTLR_EL2_INIT		| \
 				 SCTLR_ELx_M_BIT	/* MMU enabled */)
