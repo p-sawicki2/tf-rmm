@@ -184,6 +184,13 @@ releases of TF-RMM :
    wrapper around the cca-platform-token and cca-realm-delegated-token, but
    the RMM implementation does so.
 
+-  When the ``RSI_ATTEST_TOKEN_CONTINUE`` call is interrupted and then resumed
+   later by host via ``RMI_REC_ENTER``, the original SMC is replayed again
+   with the original arguments rather than returning ``RSI_INCOMPLETE`` error
+   code to realm. The result is that the interrupted RSI call is continued
+   again till the RSI call is completed and then returns back to Realm with
+   the appropriate error code.
+
 ---------------------------
 
 .. _RMM Beta0 specification: https://developer.arm.com/documentation/den0137/1-0bet0/?lang=en
