@@ -1702,6 +1702,13 @@ TEST(xlat_tests_G2, xlat_map_memory_page_with_attrs_TC1)
 							BLOCK_DESC;
 				val_tte |= type;
 
+				if ((end_lvl == XLAT_TABLE_LEVEL_MAX) &&
+				    ((MT_TYPE(attrs) == MT_MEMORY) &&
+				    (((attrs & MT_RW) == 0UL) ||
+				    ((attrs & MT_EXECUTE_NEVER) == 0UL)))) {
+					val_tte |= GP;
+				}
+
 				/* Verify the test setup */
 				CHECK_TRUE(retval == 0);
 
