@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f07f19c_ceaff87c",
+        "filename": "docs/process/coding-standard.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-24T15:14:39Z",
+      "side": 1,
+      "message": "64-bit\nremove 1 space after or.",
+      "revId": "77774b9974337484400dca5f6ba936669d855719",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
