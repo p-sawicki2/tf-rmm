@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "089e9719_02940be8",
+        "filename": "cmake/BuildCppUTest.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-24T13:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "541cd98d_4d64fa3f",
+      "revId": "80d723bf2aed6fac8ce05c80868be82a11606d89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b31fc48f_067e4f6a",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-05-12T09:58:29Z",
       "side": 1,
       "message": "Same as before",
+      "revId": "80d723bf2aed6fac8ce05c80868be82a11606d89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de007628_b3af24e8",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-24T13:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b31fc48f_067e4f6a",
       "revId": "80d723bf2aed6fac8ce05c80868be82a11606d89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
