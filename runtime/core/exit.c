@@ -318,7 +318,7 @@ static bool handle_instruction_abort(struct rec *rec, struct rmi_rec_exit *rec_e
 }
 
 /*
- * Handle FPU or SVE exceptions.
+ * Handle FPU/SVE/SME exceptions.
  * Returns: true if the exception is handled.
  */
 static bool
@@ -328,8 +328,12 @@ handle_simd_exception(simd_t exp_type, struct rec *rec)
 	 * If the REC wants to use SVE and if SVE is not enabled for this REC
 	 * then inject undefined abort. This can happen when CPU implements
 	 * FEAT_SVE but the Realm didn't request this feature during creation.
+	 *
+	 * If 'exp_type' is SIMD_SME, then inject undefined abort to Realm as
+	 * Realm doesn't support SME.
 	 */
-	if (exp_type == SIMD_SVE && rec_simd_type(rec) != SIMD_SVE) {
+	if (((exp_type == SIMD_SVE) && (rec_simd_type(rec) != SIMD_SVE)) ||
+	    exp_type == SIMD_SME) {
 		realm_inject_undef_abort();
 		return true;
 	}
@@ -651,6 +655,8 @@ static bool handle_exception_sync(struct rec *rec, struct rmi_rec_exit *rec_exit
 		return handle_simd_exception(SIMD_FPU, rec);
 	case ESR_EL2_EC_SVE:
 		return handle_simd_exception(SIMD_SVE, rec);
+	case ESR_EL2_EC_SME:
+		return handle_simd_exception(SIMD_SME, rec);
 	default:
 		/*
 		 * TODO: Check if there are other exit reasons we could
