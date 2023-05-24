@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b1e46b4_1edad166",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-24T15:06:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06c9cb39_476cc3dc",
+      "revId": "e3f5830b357bcb82d1e8bfda628e5e6bf76a4c63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "586d9566_392c4aaf",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0928cb3_c13c0893",
+        "filename": "docs/process/coding-standard.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-24T15:06:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "586d9566_392c4aaf",
+      "revId": "e3f5830b357bcb82d1e8bfda628e5e6bf76a4c63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6464893_95552f02",
@@ -48,6 +84,30 @@
       "writtenOn": "2023-05-15T09:30:29Z",
       "side": 1,
       "message": "Could you add a note that use of ``u_register_t`` type is discouraged and shouldn\u0027t be used in a new code and patches?",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 2
+      },
+      "revId": "e3f5830b357bcb82d1e8bfda628e5e6bf76a4c63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4600b44_964cf08f",
+        "filename": "docs/process/coding-standard.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-24T15:06:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6464893_95552f02",
       "range": {
         "startLine": 444,
         "startChar": 0,
