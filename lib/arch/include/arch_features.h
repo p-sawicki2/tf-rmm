@@ -60,6 +60,11 @@ static inline bool is_feat_lpa2_4k_present(void)
 		read_id_aa64mmfr0_el1()) == ID_AA64MMFR0_EL1_TGRAN4_2_LPA2);
 }
 
+static inline u_register_t read_id_aa64mmfr0_el0_tgran4_field(void)
+{
+	return EXTRACT(ID_AA64MMFR0_EL1_TGRAN4, read_id_aa64mmfr0_el1());
+}
+
 /*
  * Returns Performance Monitors Extension version.
  * ID_AA64DFR0_EL1.PMUVer, bits [11:8]:
