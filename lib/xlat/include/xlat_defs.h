@@ -17,6 +17,7 @@
  *
  * Only 4K granularities are allowed on this library.
  */
+#define PAGE_SIZE_4KB		(UL(1) << 12U)
 #define PAGE_SIZE		(UL(1) << XLAT_GRANULARITY_SIZE_SHIFT)
 #define PAGE_SIZE_MASK		(PAGE_SIZE - UL(1))
 #define IS_PAGE_ALIGNED(addr)	(((addr) & PAGE_SIZE_MASK) == U(0))
