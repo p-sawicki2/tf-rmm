@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9403e869_7ac2ea84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-30T15:28:59Z",
+      "side": 1,
+      "message": "Verified through https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/191/",
+      "revId": "ed9b64bb9ae5a5ab2cffe0e4798b7cefa48203b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
