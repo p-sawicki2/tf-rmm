@@ -22,6 +22,30 @@
       },
       "revId": "b87f6d1e1db2824d7bc2ef569db350bbb4314055",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c582a69f_568b1054",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T14:21:54Z",
+      "side": 1,
+      "message": "I prefer to specify the size of exact structure, which makes reading of the code clear. It also follows the existing code examples:\nflush_dcache_range((uintptr_t)cfg, sizeof(struct xlat_ctx_cfg));\nflush_dcache_range((uintptr_t)ctx, sizeof(struct xlat_ctx));\nflush_dcache_range((uintptr_t)(void *)ctx_tbls,\n\t\t   sizeof(struct xlat_ctx_tbls));",
+      "parentUuid": "db1ac55d_697d73d6",
+      "range": {
+        "startLine": 47,
+        "startChar": 40,
+        "endLine": 47,
+        "endChar": 71
+      },
+      "revId": "b87f6d1e1db2824d7bc2ef569db350bbb4314055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
