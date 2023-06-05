@@ -46,6 +46,23 @@
       },
       "revId": "bb147111f4956b18c2995e3de8547dea00b48f1a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42094ba2_6a2ff23e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T15:06:52Z",
+      "side": 1,
+      "message": "CI failed due to some random failure not related to the change.",
+      "revId": "bb147111f4956b18c2995e3de8547dea00b48f1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
