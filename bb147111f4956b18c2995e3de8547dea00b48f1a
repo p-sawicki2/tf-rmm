@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "487ee6b2_fe714f64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-06-05T14:30:38Z",
+      "side": 1,
+      "message": "I\u0027m thinking whether it would be a good idea to add a patch to the Mbed TLS patch list that creates a patched.md or similar file in the Mbed TLS source dir that repeats this remark?\n\nUnfortunately this compilcates the cleanup process as the new file should be deleted, or use `git clean`. Or instead of a patch the file could be created with CMake \u0027write_file\u0027?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 61
+      },
+      "revId": "bb147111f4956b18c2995e3de8547dea00b48f1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
