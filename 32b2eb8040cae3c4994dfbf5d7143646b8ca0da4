@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebff113a_13c3f186",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:30:19Z",
+      "side": 1,
+      "message": "use extra ()",
+      "revId": "32b2eb8040cae3c4994dfbf5d7143646b8ca0da4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
