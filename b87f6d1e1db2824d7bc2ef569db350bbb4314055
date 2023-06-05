@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db1ac55d_697d73d6",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T13:45:43Z",
+      "side": 1,
+      "message": "can also be written as .. sizeof(*fvp_dram));",
+      "range": {
+        "startLine": 47,
+        "startChar": 40,
+        "endLine": 47,
+        "endChar": 71
+      },
+      "revId": "b87f6d1e1db2824d7bc2ef569db350bbb4314055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
