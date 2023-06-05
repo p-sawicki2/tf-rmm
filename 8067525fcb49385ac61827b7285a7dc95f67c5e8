@@ -16,6 +16,24 @@
       "message": "Is SME not supported in Realms, because according to the RMM Specification\n\"On a CCA platform which implements FEAT_SME, SMCCC version \u003e\u003d 1.4 is required.\"?\nWhat is the use case for SME in RMM iteself?",
       "revId": "8067525fcb49385ac61827b7285a7dc95f67c5e8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "facc545a_240c84cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:33:08Z",
+      "side": 1,
+      "message": "Please ignore this question.",
+      "parentUuid": "5880974c_bc456b5d",
+      "revId": "8067525fcb49385ac61827b7285a7dc95f67c5e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
