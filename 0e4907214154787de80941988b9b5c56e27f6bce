@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a44e946_84824544",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "feat(lib/xlat): add support to verify granularity support",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 73
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00f110d2_b5a073e9",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "Prefer to be part of xlat lib.\n\nread_id_aa64mmfr0_el0_tgran4() is enough as a name.",
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a988904_5d6510eb",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "do not use u_register_t. Prefer uint64_t or unsigned int",
+      "range": {
+        "startLine": 63,
+        "startChar": 13,
+        "endLine": 63,
+        "endChar": 26
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d55a29e_1e9fdbc5",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "prefer not to introduce another macro for this.\n\nor do the following\n\n#define 4KB_GRANULE_SIZE    (UL(1) \u003c\u003c 12U)\n#define PAGE_SIZE   4KB_GRANULE_SIZE",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0a20662_d30a5009",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "\"..for a CPU..\"",
+      "range": {
+        "startLine": 2156,
+        "startChar": 37,
+        "endLine": 2156,
+        "endChar": 53
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee8dd473_8ecba1de",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-05T17:13:42Z",
+      "side": 1,
+      "message": "...4KB granularity. \"",
+      "range": {
+        "startLine": 2157,
+        "startChar": 36,
+        "endLine": 2157,
+        "endChar": 49
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
