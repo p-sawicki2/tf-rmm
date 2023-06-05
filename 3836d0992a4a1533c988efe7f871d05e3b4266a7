@@ -1,0 +1,163 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5358cf1a_da6041bb",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "stp  x2, x1, [x0, #FPU_CTX_OFFSET_FPSR]\n?",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9320689a_a441d42a",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "ldp  x2, x1, [x0, #FPU_CTX_OFFSET_FPSR]?",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "611c717c_b534ff42",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "isb?",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a3786a0_9568a95d",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "Does\nadd x0, x0, #SVE_STATE_OFFSET_Z\ncompile?",
+      "range": {
+        "startLine": 143,
+        "startChar": 9,
+        "endLine": 143,
+        "endChar": 28
+      },
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dddc4ee8_d26f67b3",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "isb?",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54b4db6d_3e3085dc",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "Convert",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0c338f_0f7fa791",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "Why aren\u0027t pointers like \"uint64_t *fpu_state\" are used in these functions?",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bfa4cfb_54d0f96e",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "Please see my comment for simd_private.h",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0b9ef6_204c86f0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-05T11:53:15Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "3836d0992a4a1533c988efe7f871d05e3b4266a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
