@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8a8762_89947cf9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ee1dbe5_1da6015b",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6628a158_8b20e1ec",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "REL2 -\u003e EL2RL",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e315fec9_a16dfb7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "I thought this matches with the build flag RMM_FPU_USE_AT_REL2",
+      "parentUuid": "6628a158_8b20e1ec",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "932ef883_b016ae34",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "\u003e What is that bit field SMCR_EL2_RAZ? Why does it include SCMR_EL2_LEN?\nThe reason to include reserved bits next to LEN is to allow to write a out of range value (0x1ff, 9bits that include 4bits from LEN and 5bits from RAZ/WI) to SMCR.LEN and read its value back to find out what is the architecturally permitted value. \n\nI have added a comment in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21121/1..2/lib/arch/src/simd.c#371",
+      "parentUuid": "5bc1519e_bdb29028",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d2bf6d3b_a459a957",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 1
@@ -65,6 +119,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "EZT0?",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c6823d2_4b9a04fe",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "\u003e EZT0?\n\nadded, this can be used later.",
+      "parentUuid": "d2bf6d3b_a459a957",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -86,6 +158,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1bdf9cc_31dbee49",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5245e04c_2966ac1d",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7da9698_50970f32",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "Please see comment above",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7d8f7bc_3398d469",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "In the recent revision, I have removed this function as not used for now.",
+      "parentUuid": "d7da9698_50970f32",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -122,6 +230,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4bc1ee0f_0a428309",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Only bitmasks operations are involved and it doesn\u0027t call any other functions apart from reading and writing system register.",
+      "parentUuid": "9d694393_60a966c9",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dd75ff3b_c131b90d",
         "filename": "lib/arch/include/simd.h",
         "patchSetId": 1
@@ -133,6 +259,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "cptr |\u003d INPLACE(CPTR_EL2_SMEN, CPTR_EL2_SMEN_NO_TRAP_11) |\n        INPLACE(CPTR_EL2_ZEN, CPTR_EL2_ZEN_NO_TRAP_11) |\n        INPLACE(CPTR_EL2_FPEN, CPTR_EL2_FPEN_NO_TRAP_11);\nto avoid miltiple writes to cptr.",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b9c62f8_ca90b5f9",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd75ff3b_c131b90d",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -154,6 +298,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a1d6300_8ab5dd10",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d8c1020_787c19bb",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5c2051f_b5f365a8",
@@ -167,6 +329,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "as above",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8939781_bc2162f3",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5c2051f_b5f365a8",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -188,6 +368,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77f56826_fbadcec3",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72d4efff_6046604a",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "312c5a71_04e1d74d",
@@ -201,6 +399,30 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "return ((read_svcr() \u0026 SVCR_SM_BIT) !\u003d 0U);",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef95bab0_6af4f19c",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "312c5a71_04e1d74d",
       "range": {
         "startLine": 54,
         "startChar": 1,
@@ -234,6 +456,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d00eb254_6f669789",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00b5f8c6_4e9b639b",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 41
+      },
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca14aaed_ee4b4feb",
@@ -247,6 +493,30 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "return ((read_smcr_el2() \u0026 SMCR_EL2_FA64_BIT) !\u003d 0U);",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 53
+      },
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6d60e2a_03e3cd88",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca14aaed_ee4b4feb",
       "range": {
         "startLine": 74,
         "startChar": 1,
@@ -274,6 +544,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85e8313f_663a9af5",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4446780_6202c973",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a59f0623_017338ab",
@@ -287,6 +575,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "SIMD",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62edd0a4_3c7ebfa2",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a59f0623_017338ab",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -308,6 +614,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "495bcc5d_bf8f4c2c",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "317c28f7_7ec4fa08",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f241bf3_8ca33331",
@@ -321,6 +645,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "as above",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a60696b_00c07cbb",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f241bf3_8ca33331",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -342,6 +684,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30c67c9c_1779c18c",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fed7752_92c07c54",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4202858_3cea4578",
@@ -355,6 +715,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "Set Streaming mode...per-CPU",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae0427c2_5386af3d",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4202858_3cea4578",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -376,6 +754,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1b3c0fa_25cfab17",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fd0f144_93f34153",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f602fe2_b47ae16f",
@@ -389,6 +785,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "doesn\u0027t",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6625f0a_681efcb0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f602fe2_b47ae16f",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -416,6 +830,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d2b7fe3_53ba8307",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59ea70de_14d9e126",
+      "range": {
+        "startLine": 236,
+        "startChar": 1,
+        "endLine": 236,
+        "endChar": 36
+      },
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e4b10e6_49b70003",
@@ -429,6 +867,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "doesn\u0027t",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b157f56e_e6240349",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e4b10e6_49b70003",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -450,6 +906,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60c2f227_9cb2c1fd",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b462ab7_bffcf7ba",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e9eeae5_136486c2",
@@ -463,6 +937,24 @@
       "writtenOn": "2023-06-05T11:17:59Z",
       "side": 1,
       "message": "SMCR_EL2_RAZ_LEN inludes \nBits [8:4]\nReserved, RAZ/WI.\nWhy do we set these bits and need to extract them?",
+      "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d0d6e9a_89d8efa0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-06T10:22:05Z",
+      "side": 1,
+      "message": "Addressed similar comment in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21121/comment/5bc1519e_bdb29028/",
+      "parentUuid": "3e9eeae5_136486c2",
       "revId": "d1957f7f36f4872f4f2fd60aa6a91b278a8819e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
