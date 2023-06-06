@@ -64,6 +64,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76217807_827b5f92",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T12:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a988904_5d6510eb",
+      "range": {
+        "startLine": 63,
+        "startChar": 13,
+        "endLine": 63,
+        "endChar": 26
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23a86db9_6f6a36f4",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T12:04:23Z",
+      "side": 1,
+      "message": "Since this is a feature discovery, shouldn\u0027t it be here instead? There is a related discussion in https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/20783/comment/1ee461a9_fe8b13cf/\n\nRenaming done",
+      "parentUuid": "00f110d2_b5a073e9",
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d55a29e_1e9fdbc5",
@@ -77,6 +119,30 @@
       "writtenOn": "2023-06-05T17:13:42Z",
       "side": 1,
       "message": "prefer not to introduce another macro for this.\n\nor do the following\n\n#define 4KB_GRANULE_SIZE    (UL(1) \u003c\u003c 12U)\n#define PAGE_SIZE   4KB_GRANULE_SIZE",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eba4a562_c886a948",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T12:04:23Z",
+      "side": 1,
+      "message": "I can do that, and also replace any instance of XLAT_GRANULARITY_SIZE_SHIFT (which is a build option) by PAGE_SIZE_4KB, as only that size is supported, so I don\u0027t think we should have that build option. I can do that on a previous patch. Thoughts?",
+      "parentUuid": "2d55a29e_1e9fdbc5",
       "range": {
         "startLine": 20,
         "startChar": 8,
@@ -110,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bdd4279_a54d958d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T12:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0a20662_d30a5009",
+      "range": {
+        "startLine": 2156,
+        "startChar": 37,
+        "endLine": 2156,
+        "endChar": 53
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee8dd473_8ecba1de",
@@ -123,6 +213,30 @@
       "writtenOn": "2023-06-05T17:13:42Z",
       "side": 1,
       "message": "...4KB granularity. \"",
+      "range": {
+        "startLine": 2157,
+        "startChar": 36,
+        "endLine": 2157,
+        "endChar": 49
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6cbd869_319dd17d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T12:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee8dd473_8ecba1de",
       "range": {
         "startLine": 2157,
         "startChar": 36,
