@@ -277,7 +277,6 @@ void handle_psci(struct rec *rec,
 		 struct rmi_rec_exit *rec_exit,
 		 struct rsi_result *res)
 {
-	struct psci_result result = { false };
 	unsigned int function_id = (unsigned int)rec->regs[0];
 
 	switch (function_id) {
