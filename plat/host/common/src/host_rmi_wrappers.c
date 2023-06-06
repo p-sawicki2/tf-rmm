@@ -143,7 +143,7 @@ void host_rmi_rtt_init_ripas(void *rd, uintptr_t base, uintptr_t top,
 		ret);
 }
 
-void host_rmi_data_destroy(void *rd, uintptr_t ipa,	struct smc_result *ret)
+void host_rmi_data_destroy(void *rd, uintptr_t ipa, struct smc_result *ret)
 {
 	handle_ns_smc(SMC_RMM_DATA_DESTROY,
 		(uintptr_t)rd, ipa,
