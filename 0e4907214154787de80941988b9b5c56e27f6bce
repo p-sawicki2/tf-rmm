@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "295284c6_30dd9629",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-06T15:22:57Z",
+      "side": 1,
+      "message": "hmm, effectively this function is reading the Field in a register. If this read is converted to a higher level feature detect API, then it makes to keep here. \n\nFor TF-A , I think there is a goal to write some additional utilities for feature detection utilizing the accessors so there is a difference with TF-A in that regard.",
+      "parentUuid": "23a86db9_6f6a36f4",
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d55a29e_1e9fdbc5",
         "filename": "lib/xlat/include/xlat_defs.h",
         "patchSetId": 5
@@ -148,6 +166,70 @@
         "startChar": 8,
         "endLine": 20,
         "endChar": 23
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eb627da_d57b6ac2",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-06T15:22:57Z",
+      "side": 1,
+      "message": "Good point about the XLAT_GRANULARITY_SHIFT being a config option. I think CBMC is using that option to reduce the exploration space. \n\nSuggest to remove this macro and use SZ_4K define where required to check for 4K page explicitly.",
+      "parentUuid": "eba4a562_c886a948",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "225317a6_ad5a9fd1",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-06T15:22:57Z",
+      "side": 1,
+      "message": "remove this and sizes.h can be included for SZ_4K define.",
+      "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6b9cb64_5b729fde",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-06T15:22:57Z",
+      "side": 1,
+      "message": "use SZ_4K here.",
+      "range": {
+        "startLine": 28,
+        "startChar": 13,
+        "endLine": 28,
+        "endChar": 26
       },
       "revId": "0e4907214154787de80941988b9b5c56e27f6bce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
