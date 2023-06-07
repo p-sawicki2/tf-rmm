@@ -1,0 +1,520 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28cc8fc_962de584",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "but this line above line 67.",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e188cd6b_d6425cb8",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "This should be \u0026\u0026 ?",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 37
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac4fd75f_bc5bb91e",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "I suspect we can always hardcode ISH in TCR_EL2. There is no need to have this info in context.",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7542b62_e825a2b2",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "Add a comment saying \"Level 3 is the highest level for xlat tables\".",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2b4a92e_f76fb99c",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "this macro is not used anywhere , can be removed ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 28
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aeff37c7_faf83f20",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "nit: entries",
+      "range": {
+        "startLine": 55,
+        "startChar": 25,
+        "endLine": 55,
+        "endChar": 32
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a584d443_19498cc8",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "\"a level -1 table descriptor doesn\u0027t support\nblock translation. See section Table D8-9 of the ARMv8-A Architecture\nReference Manual (Issue I.a) for more information.\"",
+      "range": {
+        "startLine": 90,
+        "startChar": 18,
+        "endLine": 92,
+        "endChar": 55
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "892a118f_e8295972",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "this becomes 0 for LPA2 support.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 30
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f049ae3_1ed1cc99",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "make this \"12\".",
+      "range": {
+        "startLine": 108,
+        "startChar": 46,
+        "endLine": 108,
+        "endChar": 55
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d454bf8_f96ddb7f",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "52 is enough.\n\nI think this sentence need to be re-written for LPA2. \n\n\"TCR.TxSZ is calculated as 64 minus the width of said address space.\nThe value of TCR.TxSZ must be in the range 12 to 48, which means that the address space width must be in the range 52 to 16 bits respectively.\"",
+      "range": {
+        "startLine": 109,
+        "startChar": 67,
+        "endLine": 109,
+        "endChar": 75
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7a70b06_824eab13",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "48",
+      "range": {
+        "startLine": 119,
+        "startChar": 40,
+        "endLine": 119,
+        "endChar": 42
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d2f67e6_a707b70c",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd6481e4_65a10d85",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 145,
+        "startChar": 60,
+        "endLine": 147,
+        "endChar": 64
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ba3630a_b47a97e7",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "do we have a unit test to hit this conditional check ?",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f541d35_10fbf70f",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "this can be checked during xlat init and can return error if this is not present",
+      "range": {
+        "startLine": 222,
+        "startChar": 23,
+        "endLine": 222,
+        "endChar": 46
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9952239d_b0f98b7c",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "can unilaterally assume LPA2.",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 59
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7f562ea_94f14fdd",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "as above. always assume LPA2.",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2896965_2cac7c02",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "block is allowed at level 0 when LPA2 is present.",
+      "range": {
+        "startLine": 36,
+        "startChar": 47,
+        "endLine": 36,
+        "endChar": 53
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca23046d_4c6f1548",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "lower page attributes for shareability are no longer needed.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 23
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b86db018_85670d99",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 84,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 29
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3e948f7_a12751b7",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "the table addr MSB is 49 as per spec. It reads better if this can be aligned as per spec.\n\nAlso add a comment\n\n/* Table descriptor format for 52 bit OA  is [49:12] for the bits 49 -12 of the table address. For bits 51, 50 it is [9:8]  of descriptor. See D8.3.1 Table descriptor format in Issue I.a of Arm ARM. */",
+      "range": {
+        "startLine": 85,
+        "startChar": 29,
+        "endLine": 85,
+        "endChar": 32
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a47f76d_ff89b07b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 164,
+        "startChar": 1,
+        "endLine": 167,
+        "endChar": 2
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6407ed7_66d103ca",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "can remove this case.",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10edac94_ca15e837",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T10:32:00Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 469,
+        "startChar": 0,
+        "endLine": 472,
+        "endChar": 2
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
