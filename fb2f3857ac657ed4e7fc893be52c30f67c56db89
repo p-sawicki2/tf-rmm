@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "010ed58b_a478ca7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:20:27Z",
+      "side": 1,
+      "message": "Note to self: \nOther items to check : TLBI range instructions usage in RMM\nDo not allow concatenation of tables at level -1 \nTxSZ need appropriate programming based on IPA size and VA size\nCheck whether alignment of concatenated tables match arch specification.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4e8db20c_d5633e32",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 14
