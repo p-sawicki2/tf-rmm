@@ -1,0 +1,277 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29e0897e_bb3f9b7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "Also need to check whether ttbr0 (stage 1) and vttbr0 (stage 2) have the bits 50 and 51 programmed correctly",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e8db20c_d5633e32",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "This needs to be SL2 \u003d 1 and SL0 \u003d 00.",
+      "range": {
+        "startLine": 611,
+        "startChar": 8,
+        "endLine": 611,
+        "endChar": 25
+      },
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e755fc8_c87506a6",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "We need to set SL2 bit to 1 for Level -1.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "860201ad_60222117",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "Call this RTT_MIN_START_LEVEL",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "053dba17_25a277b9",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "This define is confusing. Better to abtract the whole OA as a macro together.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "058daa5c_74aee8f9",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "all extra changes can be made separate patch.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6a9f9cf_202ea967",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "Define a S2TTE_GET_OA(tte) macro here.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3074aa53_33ff75fc",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "For the sake of keeping changes to this file to a min , would prefer these extra changes to be made a separate patch.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdd21336_e36bc056",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "same comments for any unneeded change.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13b65e95_415bde36",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "define a macro for this.",
+      "range": {
+        "startLine": 258,
+        "startChar": 11,
+        "endLine": 258,
+        "endChar": 13
+      },
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c13236a_89c28bcf",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "Not sure this will cater to bits 50:51 when LPA2 is enabled.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b9ea79e_142eb6af",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "Use a defined macro for this.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1f999fb_8a39a113",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "this needs to be a runtime check part of xlat table init.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47c55e2d_e697f29e",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "The SL2 need to be validated as well",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "737cc156_99b60854",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-07T16:18:18Z",
+      "side": 1,
+      "message": "gave a comment for this.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
