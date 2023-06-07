@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16f5549f_94a5a847",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Yes.\nFixed",
+      "parentUuid": "e188cd6b_d6425cb8",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 37
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac4fd75f_bc5bb91e",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "I suspect we can always hardcode ISH in TCR_EL2. There is no need to have this info in context.",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9133d524_896537f8",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Yes, that was actually discussed, but we decided to delay it until the review. I will make the changes",
+      "parentUuid": "ac4fd75f_bc5bb91e",
       "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f3ae317_769a3a33",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7542b62_e825a2b2",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2b4a92e_f76fb99c",
@@ -88,6 +148,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "this macro is not used anywhere , can be removed ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 28
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efe3da9c_f2559e4c",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2b4a92e_f76fb99c",
       "range": {
         "startLine": 43,
         "startChar": 8,
@@ -121,6 +205,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a279be9f_61a7c44c",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "actually, entry :)",
+      "parentUuid": "aeff37c7_faf83f20",
+      "range": {
+        "startLine": 55,
+        "startChar": 25,
+        "endLine": 55,
+        "endChar": 32
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a584d443_19498cc8",
@@ -134,6 +242,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "\"a level -1 table descriptor doesn\u0027t support\nblock translation. See section Table D8-9 of the ARMv8-A Architecture\nReference Manual (Issue I.a) for more information.\"",
+      "range": {
+        "startLine": 90,
+        "startChar": 18,
+        "endLine": 92,
+        "endChar": 55
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15b82a2c_137dd9b6",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a584d443_19498cc8",
       "range": {
         "startLine": 90,
         "startChar": 18,
@@ -167,6 +299,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab2f10a6_d72a60f8",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "892a118f_e8295972",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 30
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f049ae3_1ed1cc99",
@@ -180,6 +336,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "make this \"12\".",
+      "range": {
+        "startLine": 108,
+        "startChar": 46,
+        "endLine": 108,
+        "endChar": 55
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94772723_c558ed3b",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f049ae3_1ed1cc99",
       "range": {
         "startLine": 108,
         "startChar": 46,
@@ -213,6 +393,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76a30284_31ebb25a",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d454bf8_f96ddb7f",
+      "range": {
+        "startLine": 109,
+        "startChar": 67,
+        "endLine": 109,
+        "endChar": 75
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7a70b06_824eab13",
@@ -226,6 +430,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "48",
+      "range": {
+        "startLine": 119,
+        "startChar": 40,
+        "endLine": 119,
+        "endChar": 42
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a72f589_6aad4fd4",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7a70b06_824eab13",
       "range": {
         "startLine": 119,
         "startChar": 40,
@@ -259,6 +487,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc7efbf8_0f146ebc",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "I\u0027ll also rename \u0027MAX_VIRT_ADDR_SPACE_SIZE_LPA2\u0027 to \u0027MAX_VIRT_ADDR_SPACE\u0027, as we do not support architectures w/o LPA2 supported.",
+      "parentUuid": "0d2f67e6_a707b70c",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd6481e4_65a10d85",
@@ -272,6 +524,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 145,
+        "startChar": 60,
+        "endLine": 147,
+        "endChar": 64
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "696a3e17_efcdd6f4",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd6481e4_65a10d85",
       "range": {
         "startLine": 145,
         "startChar": 60,
@@ -322,6 +598,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "931c9b00_ee43ce05",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f541d35_10fbf70f",
+      "range": {
+        "startLine": 222,
+        "startChar": 23,
+        "endLine": 222,
+        "endChar": 46
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9952239d_b0f98b7c",
@@ -335,6 +635,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "can unilaterally assume LPA2.",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 59
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cc10e38_e2c578f1",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9952239d_b0f98b7c",
       "range": {
         "startLine": 222,
         "startChar": 0,
@@ -362,6 +686,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7ba9eb9_a70f4b19",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7f562ea_94f14fdd",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2896965_2cac7c02",
@@ -375,6 +717,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "block is allowed at level 0 when LPA2 is present.",
+      "range": {
+        "startLine": 36,
+        "startChar": 47,
+        "endLine": 36,
+        "endChar": 53
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a4b8959_e39a97bc",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2896965_2cac7c02",
       "range": {
         "startLine": 36,
         "startChar": 47,
@@ -408,6 +774,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "018238e1_04fa2d3b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca23046d_4c6f1548",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 23
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b86db018_85670d99",
@@ -421,6 +811,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "can be removed.",
+      "range": {
+        "startLine": 84,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 29
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f66f7df1_4c2ffe0a",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b86db018_85670d99",
       "range": {
         "startLine": 84,
         "startChar": 1,
@@ -454,6 +868,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6be6f657_9359ff58",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3e948f7_a12751b7",
+      "range": {
+        "startLine": 85,
+        "startChar": 29,
+        "endLine": 85,
+        "endChar": 32
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a47f76d_ff89b07b",
@@ -467,6 +905,30 @@
       "writtenOn": "2023-06-07T10:32:00Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 164,
+        "startChar": 1,
+        "endLine": 167,
+        "endChar": 2
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca8d9f7e_56e45866",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a47f76d_ff89b07b",
       "range": {
         "startLine": 164,
         "startChar": 1,
@@ -494,6 +956,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73cf9e1b_e5d27d29",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6407ed7_66d103ca",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f546dec_db17f406",
@@ -507,6 +987,30 @@
       "writtenOn": "2023-06-07T11:01:39Z",
       "side": 1,
       "message": "I think it will be useful to have helper macro to do this.\n\nGET_TTE_OA()\n\nand SET_TTE_OA()",
+      "range": {
+        "startLine": 379,
+        "startChar": 2,
+        "endLine": 380,
+        "endChar": 48
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00be925a_55d0daf9",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Replaced the inline function that I originally had to get the OA by GET_TTE_OA macro. For the latter, I don\u0027t think we need a macro as that operation is done only once.",
+      "parentUuid": "4f546dec_db17f406",
       "range": {
         "startLine": 379,
         "startChar": 2,
@@ -540,6 +1044,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "342153b7_538b3e47",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10edac94_ca15e837",
+      "range": {
+        "startLine": 469,
+        "startChar": 0,
+        "endLine": 472,
+        "endChar": 2
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fc84c8a_6682394a",
@@ -553,6 +1081,30 @@
       "writtenOn": "2023-06-07T11:01:39Z",
       "side": 1,
       "message": "given a suggestion for macro name for this GET_TTE_OA()",
+      "range": {
+        "startLine": 346,
+        "startChar": 14,
+        "endLine": 346,
+        "endChar": 30
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba902544_7ecf36af",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fc84c8a_6682394a",
       "range": {
         "startLine": 346,
         "startChar": 14,
@@ -586,6 +1138,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4494c060_ff79dc22",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Yes, that is already fixed",
+      "parentUuid": "826ed267_fda0ae66",
+      "range": {
+        "startLine": 55,
+        "startChar": 5,
+        "endLine": 55,
+        "endChar": 28
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "448413f9_c6ff16cd",
@@ -603,6 +1179,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a356452b_1d74a9f4",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "This test helper is used to validate the TTE generated by the xlat library, so I don\u0027t want to rely on the same macro that I am testing.",
+      "parentUuid": "448413f9_c6ff16cd",
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd4364de_70a6350d",
@@ -616,6 +1210,30 @@
       "writtenOn": "2023-06-07T15:14:20Z",
       "side": 1,
       "message": "PARANGE_0101_WIDTH and PARANGE_0110_WIDTH need to be added here ?",
+      "range": {
+        "startLine": 600,
+        "startChar": 39,
+        "endLine": 601,
+        "endChar": 3
+      },
+      "revId": "a177ef2d564b6a617d16bbb936b40ccc4817202d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a7536f8_8d21ac84",
+        "filename": "lib/xlat/tests/xlat_tests_g1.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-07T17:26:44Z",
+      "side": 1,
+      "message": "Yes, that is added on the patch to introduce tests for LPA2 support. I was thinking on squashing the unittest patch with this one, but I decided to keep them separated instead for faster review. I changed the order though, and now the unittest patches are right after this one on the patchstack. I also fixed some test failures introduced by forcing LPA2 support.",
+      "parentUuid": "fd4364de_70a6350d",
       "range": {
         "startLine": 600,
         "startChar": 39,
