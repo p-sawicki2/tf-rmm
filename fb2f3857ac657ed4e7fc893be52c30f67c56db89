@@ -140,6 +140,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4ec15de_192bdb4b",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "860201ad_60222117",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "053dba17_25a277b9",
@@ -153,6 +177,24 @@
       "writtenOn": "2023-06-07T16:18:18Z",
       "side": 1,
       "message": "This define is confusing. Better to abtract the whole OA as a macro together.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93bf4908_b2158da5",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "This is actually only used in a static function below, (addr_level_mask()), so it can be done 52, which would make more sense. It was make 50 to cater for the 2 MSBs not be contiguous to the rest of the OA but after some refactoring it didn\u0027t need to be 50 anymore.",
+      "parentUuid": "053dba17_25a277b9",
       "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -176,6 +218,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "93ff52ab_602a5135",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "See my comment below about these changes",
+      "parentUuid": "058daa5c_74aee8f9",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a6a9f9cf_202ea967",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 14
@@ -187,6 +247,24 @@
       "writtenOn": "2023-06-07T16:18:18Z",
       "side": 1,
       "message": "Define a S2TTE_GET_OA(tte) macro here.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de8c11d5_e6b7e364",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "There is actually an inline function for that (which was there before this patch): table_entry_to_phys()",
+      "parentUuid": "a6a9f9cf_202ea967",
       "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -228,6 +306,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "19e89eb0_ce8323d2",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "I reviewed this more in detail now. I thought these were other changes. Still, if I am not wrong, it was decided at some point that any fixes, that the ones below, that had to be done on a file, they will be done next time the file had to be edited as part of a patch, right? That is the reason why I fixed this here, rather than on a separate patch.",
+      "parentUuid": "9544eaa6_47ee6732",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bdd21336_e36bc056",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 14
@@ -239,6 +335,24 @@
       "writtenOn": "2023-06-07T16:18:18Z",
       "side": 1,
       "message": "same comments for any unneeded change.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28d15d8d_922363dc",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "Some of this lines were over 80 cols. See my comment above about fixing minor existing nits on files.",
+      "parentUuid": "bdd21336_e36bc056",
       "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -268,6 +382,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2e75d4c4_8d18bee3",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "I think defining a macro just for this might be bit confusing as this is a corner case? That\u0027s why I added an explanation for that \u00274\u0027 instead.",
+      "parentUuid": "13b65e95_415bde36",
+      "range": {
+        "startLine": 258,
+        "startChar": 11,
+        "endLine": 258,
+        "endChar": 13
+      },
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9c13236a_89c28bcf",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 14
@@ -285,6 +423,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "564fd533_95060284",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "Yes it does. S2TTE_OA_BITS is now 52. if level \u003d\u003d -1, then levels \u003d\u003d 4, which makes lsb \u003d\u003d 48. Also, this function is designed to receive an address as the first argument. For the cases in which this function is recycled to receive a tte instead (three instances below, of which I\u0027ve removed two after some refactor), the MSBs are treated independently after this function returns.\n\nIf you think it will make the code clearer, I can add a counterpart to receive a tte instead so it will process the MSBs as well, tte_oa_level_mask() for instance.",
+      "parentUuid": "9c13236a_89c28bcf",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3b9ea79e_142eb6af",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 14
@@ -296,6 +452,24 @@
       "writtenOn": "2023-06-07T16:18:18Z",
       "side": 1,
       "message": "Use a defined macro for this.",
+      "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f265a9a_aaaab553",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-08T14:29:55Z",
+      "side": 1,
+      "message": "I\u0027ve just reworked this and now this is the only point where we do this bit manipulation, so I think a macro now would add a bit more of complexity.",
+      "parentUuid": "3b9ea79e_142eb6af",
       "revId": "fb2f3857ac657ed4e7fc893be52c30f67c56db89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
