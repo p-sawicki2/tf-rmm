@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4af6992_3e9589f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2023-06-08T09:52:30Z",
+      "side": 1,
+      "message": "Hold on, I just see that Alexei removed that one part already (which my original patch did also), and I just rebased and didn\u0027t check the remaining patch before pushing.\nAlexei\u0027s Coverity fix removed the error message, though I am not convinced that logging an error on an invalid SMCCC was a good idea in the first place.\n\nSo if people agree that there shouldn\u0027t be an error message, I will just abandon this patch, otherwise I will reword the commit message. Please let me know.",
+      "revId": "e5bbe6bb64067dad790a3e6cf44de81d66b6e2d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
