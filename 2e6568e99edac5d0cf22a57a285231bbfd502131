@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb68a4fe_ed91a6ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "I am a bit concerned about the overhead involved in checking LPA2 in sysreg for some critical code paths.\n\nIt might be better to cache lpa2 in xlat cfg and then use that as input to some of the macros.",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3062073_105451ea",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "not sure we need these macros as we can create them using BIT_MASK_ULL() macro ?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 50
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6698726a_f7261742",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "call this MAX_IPA_BITS_NO_LPA.",
+      "range": {
+        "startLine": 123,
+        "startChar": 19,
+        "endLine": 123,
+        "endChar": 32
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd132f15_4302f1df",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "This macro should be removed. Need to use GET_TTE_OA() macro for these puposes.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 51
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67be73aa_65bad8d6",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "have another variant of this for LPA2.",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6ebd816_5905ccfb",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "We need to be careful to not have dynamic checks for LPA2 introduced for critical paths. One design direction , we can store this info in ctx and these macro takes an arg `_lpa2`, then it selects the right variant based on this.",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d8c12e_aabdd5c9",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "call this OA_ADDR_MS. and OA_ADDR_SHIFT",
+      "range": {
+        "startLine": 162,
+        "startChar": 29,
+        "endLine": 162,
+        "endChar": 43
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbf099df_c4ecc54b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-09T16:15:35Z",
+      "side": 1,
+      "message": "this is page shift, so lets remove this macro.",
+      "range": {
+        "startLine": 73,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
