@@ -146,6 +146,9 @@ void granule_memzero(struct granule *g, enum buffer_slot slot);
 
 void granule_memzero_mapped(void *buf);
 
+void *aux_granules_map(struct granule *rec_aux_pages[], unsigned long num_aux);
+void aux_granules_unmap(void *rec_aux, unsigned long num_aux);
+
 /* Must be called with g->lock held */
 static inline void __granule_get(struct granule *g)
 {
