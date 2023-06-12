@@ -156,12 +156,16 @@
 #define RMM_FEATURE_REGISTER_0_HASH_SHA_512_SHIFT	UL(29)
 #define RMM_FEATURE_REGISTER_0_HASH_SHA_512_WIDTH	UL(1)
 
-/* The RmmRipas enumeration representing realm IPA state */
+/* RmmRipas enumeration representing realm IPA state */
 #define RMI_EMPTY	U(0)
 #define RMI_RAM		U(1)
 #define RMI_UNDEFINED	U(2)
 
-/* no parameters */
+/* RmiPmuOverflowStatus enumeration representing PMU overflow status */
+#define RMI_PMU_OVERFLOW_NOT_ACTIVE	U(0)
+#define RMI_PMU_OVERFLOW_ACTIVE		U(1)
+
+/* No parameters */
 #define SMC_RMM_VERSION				SMC64_RMI_FID(U(0x0))
 
 /*
@@ -473,13 +477,7 @@ struct rmi_rec_exit {
 	SET_MEMBER_RMI(unsigned int imm, 0x600, 0x700);	/* 0x600 */
 
 	/* PMU overflow */
-	SET_MEMBER_RMI(unsigned long pmu_ovf, 0x700, 0x708);	 /* 0x700 */
-
-	/* PMU interrupt enable */
-	SET_MEMBER_RMI(unsigned long pmu_intr_en, 0x708, 0x710); /* 0x708 */
-
-	/* PMU counter enable */
-	SET_MEMBER_RMI(unsigned long pmu_cntr_en, 0x710, 0x800); /* 0x710 */
+	SET_MEMBER_RMI(unsigned long pmu_ovf_status, 0x700, 0x701);	 /* 0x700 */
 };
 
 /*
