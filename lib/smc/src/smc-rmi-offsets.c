@@ -4,6 +4,7 @@
  */
 
 #include <smc-rmi.h>
+#include <smc-rsi.h>
 #include <stddef.h>
 
 COMPILER_ASSERT(sizeof(struct rmi_realm_params) == 0x1000);
@@ -34,7 +35,6 @@ COMPILER_ASSERT(offsetof(struct rmi_rec_entry, gprs) == 0x200);
 COMPILER_ASSERT(offsetof(struct rmi_rec_entry, gicv3_hcr) == 0x300);
 COMPILER_ASSERT(offsetof(struct rmi_rec_entry, gicv3_lrs) == 0x308);
 
-
 COMPILER_ASSERT(offsetof(struct rmi_rec_exit, exit_reason) == 0);
 COMPILER_ASSERT(offsetof(struct rmi_rec_exit, esr) == 0x100);
 COMPILER_ASSERT(offsetof(struct rmi_rec_exit, far) == 0x108);
@@ -57,3 +57,7 @@ COMPILER_ASSERT(offsetof(struct rmi_rec_exit, pmu_ovf_status) == 0x700);
 COMPILER_ASSERT(sizeof(struct rmi_rec_run) <= GRANULE_SIZE);
 COMPILER_ASSERT(offsetof(struct rmi_rec_run, entry) == 0);
 COMPILER_ASSERT(offsetof(struct rmi_rec_run, exit) == 0x800);
+
+COMPILER_ASSERT(offsetof(struct rsi_realm_config, ipa_width) == 0);
+COMPILER_ASSERT(offsetof(struct rsi_realm_config, hash_algo) == 8);
+COMPILER_ASSERT(sizeof(struct rsi_realm_config) == 0x1000);
