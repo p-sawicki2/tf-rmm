@@ -34,6 +34,24 @@
       "parentUuid": "e4af6992_3e9589f9",
       "revId": "e5bbe6bb64067dad790a3e6cf44de81d66b6e2d2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf5d897f_09b55b11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-06-13T13:12:39Z",
+      "side": 1,
+      "message": "RSI logger will print function ID, its arguments and return value of -1 which will indicate an error. We don\u0027t need this extra ERROR message.",
+      "parentUuid": "e1893514_1b7d667a",
+      "revId": "e5bbe6bb64067dad790a3e6cf44de81d66b6e2d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
