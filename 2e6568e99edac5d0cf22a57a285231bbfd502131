@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fae92ec8_a2a70735",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "I\u0027ll take a look",
+      "parentUuid": "a3062073_105451ea",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 50
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6698726a_f7261742",
         "filename": "lib/realm/include/table.h",
         "patchSetId": 11
@@ -54,6 +78,30 @@
       "writtenOn": "2023-06-09T16:15:35Z",
       "side": 1,
       "message": "call this MAX_IPA_BITS_NO_LPA.",
+      "range": {
+        "startLine": 123,
+        "startChar": 19,
+        "endLine": 123,
+        "endChar": 32
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29840140_242d4987",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "The naming convention that I\u0027ve been used on the patches is the \u003cMACRO NAME\u003e for the non-LPA2 macros and \u003cMACRO_NAME\u003e_LPA2 for the LPA2 macros.\n\nThis change will be rolled back on a later patch once s2tte is given support for LPA2",
+      "parentUuid": "6698726a_f7261742",
       "range": {
         "startLine": 123,
         "startChar": 19,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4d338a2_a8d08d2c",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "As I rolled back the changes to remove support for non-LPA2 architectures, I replaced GET_TTE_OA() macro by the get_oa_from_desc() inline function, which takes into account whether LPA2 is enabled or not.",
+      "parentUuid": "fd132f15_4302f1df",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 51
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67be73aa_65bad8d6",
@@ -104,6 +176,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2869b66e_8ac6d431",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "Yes, that was implemented on a previous patchset. I\u0027m rolling back there",
+      "parentUuid": "67be73aa_65bad8d6",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6ebd816_5905ccfb",
@@ -117,6 +207,24 @@
       "writtenOn": "2023-06-09T16:15:35Z",
       "side": 1,
       "message": "We need to be careful to not have dynamic checks for LPA2 introduced for critical paths. One design direction , we can store this info in ctx and these macro takes an arg `_lpa2`, then it selects the right variant based on this.",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b74384f1_65fa29b8",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "There is actually almost no critical paths in the stage 1 xlat library, as the contexts are initialized at boot time and the tables (almost all of them, anyway) do not change during their lifecycle.\n\nThe only critical path that I can think of is the map/unmap for slot buffers, for which I am already planning a patch to increase performance.\n\nSo I think at the moment we can leave this library as-is and I will introduce any change needed on the patch to improve the map/unmap functionality for slot buffers. That should help speed up the review process.\n\nThe s2tte library, on the other hand, will need to be very careful about critical paths, as the tables are created/modified/destroyed a large number of times, so we will need to focus on the critical paths for that patch.",
+      "parentUuid": "d6ebd816_5905ccfb",
       "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -146,6 +254,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d29380b4_c4d8c611",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "d0d8c12e_aabdd5c9",
+      "range": {
+        "startLine": 162,
+        "startChar": 29,
+        "endLine": 162,
+        "endChar": 43
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cbf099df_c4ecc54b",
         "filename": "lib/xlat/src/xlat_defs_private.h",
         "patchSetId": 11
@@ -157,6 +289,30 @@
       "writtenOn": "2023-06-09T16:15:35Z",
       "side": 1,
       "message": "this is page shift, so lets remove this macro.",
+      "range": {
+        "startLine": 73,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0ed9093_458923e6",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-13T17:25:10Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "cbf099df_c4ecc54b",
       "range": {
         "startLine": 73,
         "startChar": 8,
