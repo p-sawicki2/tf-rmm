@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4f966c3_6bed7b33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-14T12:02:11Z",
+      "side": 1,
+      "message": "Actually, this is more important to s2tte than it is for the xlat library, as the latter only initializes the tables when an CPU is turned on. \n\nThe only point where that can be critical is during mapping/unmapping of the slot buffers, for which I am planning a patch to optimize that. If any optimization is needed on the xlat library for that, I will include it on that patch (my plan for that is to \"pre-generate\" the TTEs at boot time so I only need to OR it with the address to map or AND it with the PA inverse mask to unmap).\n\nI think the changes to cache the lpa2 flags in the context and optimize the checks is not worth the gains on the particular context of the xlat library.\n\nA different story will be with the s2tte library, though....",
+      "parentUuid": "cb68a4fe_ed91a6ff",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3062073_105451ea",
@@ -55,6 +73,30 @@
       "side": 1,
       "message": "I\u0027ll take a look",
       "parentUuid": "a3062073_105451ea",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 50
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b46e96a_db2ea96a",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-14T12:02:11Z",
+      "side": 1,
+      "message": "I took a look and these macros are actually quite convenient to calculate the max PA size given an address. I can generate them with BIT_MASK_ULL instead, though",
+      "parentUuid": "fae92ec8_a2a70735",
       "range": {
         "startLine": 135,
         "startChar": 0,
@@ -276,6 +318,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b074382_a4165ca3",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-14T12:02:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d29380b4_c4d8c611",
+      "range": {
+        "startLine": 162,
+        "startChar": 29,
+        "endLine": 162,
+        "endChar": 43
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbf099df_c4ecc54b",
@@ -313,6 +379,30 @@
       "side": 1,
       "message": "ack",
       "parentUuid": "cbf099df_c4ecc54b",
+      "range": {
+        "startLine": 73,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a691a83_9cfff98b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-14T12:02:11Z",
+      "side": 1,
+      "message": "I can do that, but although technically the same value, I feel like defining the separately as they represent different things: Granule size vs. addr shift in a TTE.",
+      "parentUuid": "e0ed9093_458923e6",
       "range": {
         "startLine": 73,
         "startChar": 8,
