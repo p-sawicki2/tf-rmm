@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0557a99c_b192076a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-06-14T08:37:00Z",
+      "side": 1,
+      "message": "I don\u0027t see any obvious problem, however I\u0027m neither an expert on perl nor checkpatch.pl",
+      "revId": "a5275ab9a312afd66b5283ce64ed2bf65a2aa227",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
