@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31211b92_5dc5702f",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T10:12:22Z",
+      "side": 1,
+      "message": "simd.h ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "a11c4261683727f372c1f2ba21e969a689934075",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0be792f_4fad9d42",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T10:12:22Z",
+      "side": 1,
+      "message": "simd.h ?",
+      "range": {
+        "startLine": 64,
+        "startChar": 23,
+        "endLine": 64,
+        "endChar": 28
+      },
+      "revId": "a11c4261683727f372c1f2ba21e969a689934075",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
