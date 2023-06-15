@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ef8243c_4a41a9c4",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "The Streaming SVE LEN field is present at bits[0:3]",
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d103f37_ac2f6422",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "can also define the ZA bit even though it is not used by RMM",
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1592b0e8_3cbc0d6b",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "better to frame the name as a question \"is_sme_sm()\"",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 29
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0885d755_9bce0e40",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "may need to be removed.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "010acf8a_7cbf1c95",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "I think this needs to be\n sme_feat_fa64_enabled() || is_sme_sm()",
+      "range": {
+        "startLine": 115,
+        "startChar": 41,
+        "endLine": 115,
+        "endChar": 64
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "417732dd_45026f41",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "some doubts  on this. See below.",
+      "range": {
+        "startLine": 159,
+        "startChar": 36,
+        "endLine": 159,
+        "endChar": 52
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14479b6d_cf11dde0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "this conditionsI think this needs to be\n sme_feat_fa64_enabled() || is_sme_sm()",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 29
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92ba1e48_8bdc7928",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "This may need to be just:\n\nif (stype \u003d\u003d SIMD_SME) {\n\nssve_mode \u003d sme_smstat();\n/* Set Streaming mode status flag in per-cpu data */\ng_ns_simd[cpu_id].ssve_mode \u003d ssve_mode;\n}",
+      "range": {
+        "startLine": 215,
+        "startChar": 2,
+        "endLine": 224,
+        "endChar": 42
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b1ac24_d951f3fe",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:53:43Z",
+      "side": 1,
+      "message": "do we need to configure this reg , since RMM is not using SME.",
+      "range": {
+        "startLine": 378,
+        "startChar": 12,
+        "endLine": 378,
+        "endChar": 25
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
