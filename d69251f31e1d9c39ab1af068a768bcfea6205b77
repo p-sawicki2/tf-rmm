@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "664e261d_0d0e54ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-15T15:55:09Z",
+      "side": 1,
+      "message": "Ah, this is already the case, and hence this patch does not add this, right ? Maybe we can make this message clear.",
+      "revId": "d69251f31e1d9c39ab1af068a768bcfea6205b77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
