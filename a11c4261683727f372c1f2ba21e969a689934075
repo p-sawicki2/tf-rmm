@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2015d40_06ce8fe4",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-15T15:42:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31211b92_5dc5702f",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "a11c4261683727f372c1f2ba21e969a689934075",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0be792f_4fad9d42",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-06-15T10:12:22Z",
       "side": 1,
       "message": "simd.h ?",
+      "range": {
+        "startLine": 64,
+        "startChar": 23,
+        "endLine": 64,
+        "endChar": 28
+      },
+      "revId": "a11c4261683727f372c1f2ba21e969a689934075",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "700ef883_63f71c81",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-15T15:42:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0be792f_4fad9d42",
       "range": {
         "startLine": 64,
         "startChar": 23,
