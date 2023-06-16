@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7747ef80_cbd04aff",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Done\n\nI have added SMCR_EL2_RAZ_LEN_SHIFT/WIDTH to find the architecturally permitted SVL during sme_init(). Its a special case, where Arm SME supplement recommends to write an out of range value of 0x1ff to smcr_el2 and read the register back to find the arch limit of SVL\n\nNow I have added extra macros, so that code later can use SMCR_EL2_LEN_SHIFT/WIDTH to configure SMCR_EL2.LEN field.",
+      "parentUuid": "4ef8243c_4a41a9c4",
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5d103f37_ac2f6422",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-06-15T15:53:43Z",
       "side": 1,
       "message": "can also define the ZA bit even though it is not used by RMM",
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1000635e_e1a40a21",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d103f37_ac2f6422",
       "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdbeadfc_3f6cb89b",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1592b0e8_3cbc0d6b",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 29
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0885d755_9bce0e40",
@@ -71,6 +131,30 @@
       "writtenOn": "2023-06-15T15:53:43Z",
       "side": 1,
       "message": "may need to be removed.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d184661f_7a7fb913",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Removed, as this code path can be called for Streaming SVE or Normal SVE mode.",
+      "parentUuid": "0885d755_9bce0e40",
       "range": {
         "startLine": 106,
         "startChar": 0,
@@ -106,6 +190,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df28d5fc_8726de41",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "hmm, is_sme_sm() check is not required here as for !SSVE mode, FFR is always saved as its accessible. And FA64 can be enabled only in SSVE mode",
+      "parentUuid": "010acf8a_7cbf1c95",
+      "range": {
+        "startLine": 115,
+        "startChar": 41,
+        "endLine": 115,
+        "endChar": 64
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "417732dd_45026f41",
         "filename": "lib/arch/src/simd.c",
         "patchSetId": 4
@@ -117,6 +225,30 @@
       "writtenOn": "2023-06-15T15:53:43Z",
       "side": 1,
       "message": "some doubts  on this. See below.",
+      "range": {
+        "startLine": 159,
+        "startChar": 36,
+        "endLine": 159,
+        "endChar": 52
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11a36d45_8596b869",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "417732dd_45026f41",
       "range": {
         "startLine": 159,
         "startChar": 36,
@@ -150,6 +282,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfac5c5f_eb9cc8d0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "addressed similar comment in save state",
+      "parentUuid": "14479b6d_cf11dde0",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 29
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92ba1e48_8bdc7928",
@@ -173,6 +329,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64bee11b_cbd7ab55",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "Done\nAgree, this makes code path separate and that helps to have less code change when we want to add SME support for Realms.\n\nRequired changes are made in simd_save_state and simd_restore_state.\nAdded a helper routine handle_sve_state to save or restore Normal or Streaming SVE state. This common helper routine can be later extended to add support for SVE hint bit.",
+      "parentUuid": "92ba1e48_8bdc7928",
+      "range": {
+        "startLine": 215,
+        "startChar": 2,
+        "endLine": 224,
+        "endChar": 42
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b1ac24_d951f3fe",
@@ -186,6 +366,30 @@
       "writtenOn": "2023-06-15T15:53:43Z",
       "side": 1,
       "message": "do we need to configure this reg , since RMM is not using SME.",
+      "range": {
+        "startLine": 378,
+        "startChar": 12,
+        "endLine": 378,
+        "endChar": 25
+      },
+      "revId": "8a47b79e06dfc3b74bf2c8768bb0ae5bf8a694c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e229f7fe_7602628b",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:54:49Z",
+      "side": 1,
+      "message": "yes, we need to do this to find the arch max limit of SVL. This is based on SME supplement recommendation, write a out of range value 0x1ff (0-8 bits) and read back the register to get arch max SVL value. Mainly this is done to find if the arch max SVL is not greater than SVE_ARCH_MAX. I have a comment at line #385 for this.",
+      "parentUuid": "05b1ac24_d951f3fe",
       "range": {
         "startLine": 378,
         "startChar": 12,
