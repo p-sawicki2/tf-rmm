@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fd4436ff_78d13657",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "I think this is fine.",
+      "parentUuid": "c87440ab_f97131d5",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 1
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fba07f9b_0220d2fa",
         "filename": "lib/xlat/include/xlat_tables.h",
         "patchSetId": 15
@@ -42,6 +66,76 @@
         "startChar": 22,
         "endLine": 110,
         "endChar": 27
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cad5b31_f1251c76",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "1 seems to correct. An ascii art of the bit fields would be helpful as well.",
+      "parentUuid": "fba07f9b_0220d2fa",
+      "range": {
+        "startLine": 110,
+        "startChar": 22,
+        "endLine": 110,
+        "endChar": 27
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea8725e3_99967215",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "also add a comment for ACCESS_FLAG /* Bit[10] absolutely */",
+      "range": {
+        "startLine": 124,
+        "startChar": 21,
+        "endLine": 124,
+        "endChar": 33
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "160f4ad5_2002675d",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "Keep this alongside other lower attrs defines.",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 0
       },
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -66,6 +160,219 @@
         "endLine": 61,
         "endChar": 28
       },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35b73974_8337145d",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "and a unit test to ensure this fails would also be good",
+      "parentUuid": "0a946dbc_cb7248d1",
+      "range": {
+        "startLine": 61,
+        "startChar": 25,
+        "endLine": 61,
+        "endChar": 28
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "026ddf1a_96cf76d5",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "add: (FEAT_LPA2)",
+      "range": {
+        "startLine": 98,
+        "startChar": 40,
+        "endLine": 98,
+        "endChar": 41
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a36b2687_1dfbad13",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "add comment:\n/* Macro to set SH on tcr_el2 when LPA2 is enabled */",
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f9273e0_f7c1e0ec",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "output_addr",
+      "range": {
+        "startLine": 356,
+        "startChar": 51,
+        "endLine": 356,
+        "endChar": 58
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "def6c247_ad9aa091",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "\"set_oa_to_tte()\"\n\nThis has to function with read-modify-write semantics. so needs to take 2 args (tte, pa).\n\nBasically a counter part of get_oa_from_tte",
+      "range": {
+        "startLine": 356,
+        "startChar": 23,
+        "endLine": 356,
+        "endChar": 41
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d07d90f_3b1e4e8f",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "need to apply 48 bit mask in LPA2 case and 50 bit mask in LPA2 case.",
+      "range": {
+        "startLine": 358,
+        "startChar": 17,
+        "endLine": 358,
+        "endChar": 25
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72acfdb0_c51febf7",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "tte",
+      "range": {
+        "startLine": 369,
+        "startChar": 8,
+        "endLine": 369,
+        "endChar": 12
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdb6da3b_c6ebb296",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "move to only normal memory case.",
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba506985_5e60814e",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "\"Although there is an optimization to have a smaller table for the base table, for simplicity, all tables are allocated a page.\"",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51ad1321_02ef8f1e",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-16T13:09:24Z",
+      "side": 1,
+      "message": "add a TODO here.",
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
