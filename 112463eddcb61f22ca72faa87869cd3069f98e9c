@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c87440ab_f97131d5",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T08:11:32Z",
+      "side": 1,
+      "message": "Maybe move this to the s2tte patch",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 1
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fba07f9b_0220d2fa",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T08:11:32Z",
+      "side": 1,
+      "message": "1 (need to double check)",
+      "range": {
+        "startLine": 110,
+        "startChar": 22,
+        "endLine": 110,
+        "endChar": 27
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a946dbc_cb7248d1",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T08:11:32Z",
+      "side": 1,
+      "message": "Need to double check this",
+      "range": {
+        "startLine": 61,
+        "startChar": 25,
+        "endLine": 61,
+        "endChar": 28
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
