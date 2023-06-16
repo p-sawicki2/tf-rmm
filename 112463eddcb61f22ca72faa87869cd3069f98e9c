@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a14d9837_49aa414e",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fd4436ff_78d13657",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 1
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fba07f9b_0220d2fa",
@@ -95,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4665c2d5_6c3e2a2f",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7cad5b31_f1251c76",
+      "range": {
+        "startLine": 110,
+        "startChar": 22,
+        "endLine": 110,
+        "endChar": 27
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea8725e3_99967215",
@@ -118,6 +166,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f058b87a_774187e6",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea8725e3_99967215",
+      "range": {
+        "startLine": 124,
+        "startChar": 21,
+        "endLine": 124,
+        "endChar": 33
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "160f4ad5_2002675d",
@@ -131,6 +203,30 @@
       "writtenOn": "2023-06-16T13:09:24Z",
       "side": 1,
       "message": "Keep this alongside other lower attrs defines.",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 0
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceaf2d9b_c909422c",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Yes. This was here as it was used by the slot buffer library in the past. Not need to be public anymore.",
+      "parentUuid": "160f4ad5_2002675d",
       "range": {
         "startLine": 116,
         "startChar": 0,
@@ -188,6 +284,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26714ac0_32d52245",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "The \u0027-1\u0027 was not needed after all.\n\nWRT the test, I need to double check as well, yes. There are tests that check addresses with mismatched regions as well as different combinations of base + size going over the boundaries. In fact, I edited this because one of the tests was failing, I thought it was a bug on the code, but it was on the test itself.",
+      "parentUuid": "35b73974_8337145d",
+      "range": {
+        "startLine": 61,
+        "startChar": 25,
+        "endLine": 61,
+        "endChar": 28
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "026ddf1a_96cf76d5",
@@ -211,6 +331,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96acd91b_deccb213",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "026ddf1a_96cf76d5",
+      "range": {
+        "startLine": 98,
+        "startChar": 40,
+        "endLine": 98,
+        "endChar": 41
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a36b2687_1dfbad13",
@@ -224,6 +368,24 @@
       "writtenOn": "2023-06-16T13:09:24Z",
       "side": 1,
       "message": "add comment:\n/* Macro to set SH on tcr_el2 when LPA2 is enabled */",
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bef3b43f_5814e814",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a36b2687_1dfbad13",
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -274,6 +436,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c62b533_837ee720",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f9273e0_f7c1e0ec",
+      "range": {
+        "startLine": 356,
+        "startChar": 51,
+        "endLine": 356,
+        "endChar": 58
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36dbe10_eab1ec65",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "I don\u0027t think that is necessary, actually. This is a helper only used by xlat_desc() during the creation of the translation tables. This was inline in xlat_desc() but made an ancillary function as it was suggested that the code was not very clear.",
+      "parentUuid": "def6c247_ad9aa091",
+      "range": {
+        "startLine": 356,
+        "startChar": 23,
+        "endLine": 356,
+        "endChar": 41
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d07d90f_3b1e4e8f",
@@ -287,6 +497,30 @@
       "writtenOn": "2023-06-16T13:09:24Z",
       "side": 1,
       "message": "need to apply 48 bit mask in LPA2 case and 50 bit mask in LPA2 case.",
+      "range": {
+        "startLine": 358,
+        "startChar": 17,
+        "endLine": 358,
+        "endChar": 25
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3ce394e_298186c0",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "The address should already be sanitized:\n\n* check on line 388 ensures that the address will always be properly aligned.\n* WRT using an address \u003e 48 bits with FEAT_LPA2 disabled, the mmap regions should have been sanitized so the xlat initialization would have failed and never reached here. I can add a check, though, as xlat_desc() is used by the slot buffer library to map.",
+      "parentUuid": "9d07d90f_3b1e4e8f",
       "range": {
         "startLine": 358,
         "startChar": 17,
@@ -320,6 +554,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba8b6343_79640452",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72acfdb0_c51febf7",
+      "range": {
+        "startLine": 369,
+        "startChar": 8,
+        "endLine": 369,
+        "endChar": 12
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bdb6da3b_c6ebb296",
@@ -333,6 +591,24 @@
       "writtenOn": "2023-06-16T13:09:24Z",
       "side": 1,
       "message": "move to only normal memory case.",
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0f21e6f_4a01d70a",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdb6da3b_c6ebb296",
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -360,6 +636,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26909861_8aea6e28",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Actually, the reason is not an optimization on the base table, is just that at level -1, the base table can\u0027t have more than 4 bits. I\u0027ll update the comment.",
+      "parentUuid": "ba506985_5e60814e",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28a025b6_de44015b",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Actually, the reason is not an optimization on the base table, is just that at level -1, the base table can\u0027t have more than 4 bits. I\u0027ll update the comment.",
+      "parentUuid": "ba506985_5e60814e",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51ad1321_02ef8f1e",
@@ -373,6 +697,24 @@
       "writtenOn": "2023-06-16T13:09:24Z",
       "side": 1,
       "message": "add a TODO here.",
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60fd3306_8f20ab98",
+        "filename": "runtime/rmi/feature.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-16T18:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51ad1321_02ef8f1e",
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
