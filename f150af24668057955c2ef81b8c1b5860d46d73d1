@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "253fd9da_08c29fa2",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fb9c479_b01729c3",
+      "range": {
+        "startLine": 27,
+        "startChar": 3,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ff3d236_cf75df6d",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61acefd3_760d1a5f",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:52:54Z",
+      "side": 1,
+      "message": "Done\n\nModified CASSERT in simd.h",
+      "parentUuid": "8ff3d236_cf75df6d",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 35
+      },
+      "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dcb4abdd_ebcd5e66",
@@ -60,6 +108,24 @@
       "writtenOn": "2023-06-15T10:38:27Z",
       "side": 1,
       "message": "same comment as above.",
+      "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85c5c905_27024028",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dcb4abdd_ebcd5e66",
       "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -100,6 +166,30 @@
       "writtenOn": "2023-06-15T10:38:27Z",
       "side": 1,
       "message": "This can be written as :\n\nmov\tx2, x0\n\n/* Save the z register bank to memory. */\nadd\tx0, x0, #SVE_STATE_OFFSET_Z",
+      "range": {
+        "startLine": 140,
+        "startChar": 1,
+        "endLine": 144,
+        "endChar": 15
+      },
+      "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc711b3a_76d6ffbe",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:52:54Z",
+      "side": 1,
+      "message": "This will work for SVE_STATE_OFFSET_Z as its value is 0, but not for other offset as it is \u003e 8192 and compile fails with error:\n\nError: immediate out of range",
+      "parentUuid": "3a581a0a_36e14554",
       "range": {
         "startLine": 140,
         "startChar": 1,
@@ -240,6 +330,24 @@
       "writtenOn": "2023-06-15T13:08:45Z",
       "side": 1,
       "message": "add a sb() after the ret instruction. can be a seperate patch along with adding sb() in fpu helpers.",
+      "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51709f6f_7be970a5",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:52:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dcd41b4f_60538101",
       "revId": "f150af24668057955c2ef81b8c1b5860d46d73d1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
