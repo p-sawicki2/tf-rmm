@@ -110,6 +110,24 @@
       "message": "add a sb() after the ret instruction. can be a separate patch.",
       "revId": "a11c4261683727f372c1f2ba21e969a689934075",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08f549e9_96a05203",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T13:15:05Z",
+      "side": 1,
+      "message": "Sure, I will submit a new patch for this change.",
+      "parentUuid": "e0e182e4_b6eb52f2",
+      "revId": "a11c4261683727f372c1f2ba21e969a689934075",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
