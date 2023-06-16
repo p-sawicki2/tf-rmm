@@ -16,6 +16,24 @@
       "message": "Ah, this is already the case, and hence this patch does not add this, right ? Maybe we can make this message clear.",
       "revId": "d69251f31e1d9c39ab1af068a768bcfea6205b77",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2099007_65d685cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-06-16T11:56:02Z",
+      "side": 1,
+      "message": "That\u0027s right, I missed it.\nMade the commit message clear",
+      "parentUuid": "664e261d_0d0e54ec",
+      "revId": "d69251f31e1d9c39ab1af068a768bcfea6205b77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
