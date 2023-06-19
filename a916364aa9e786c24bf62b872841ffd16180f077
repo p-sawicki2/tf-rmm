@@ -191,6 +191,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7347c8c4_81a8842b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:51:06Z",
+      "side": 1,
+      "message": "it was a confusing usage (INPLACE(INPLACE()) and it was difficult to work out the total shift applied. \n\nIn previous code LOWER_ATTR(ISH) was done directly which is more readable IMO.\n\nSo either you could define LOWER_ATTR_SH() macro or you could define 2 ISH\u0027s: One for LOWER_ATTR and other for TCR.",
+      "parentUuid": "47a4b9c2_e8a65b3c",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 12
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc95c2b6_732a69bb",
         "filename": "lib/xlat/src/xlat_defs_private.h",
         "patchSetId": 16
@@ -631,6 +655,24 @@
       "side": 1,
       "message": "I don\u0027t understand exactly what do you mean. This function is able to handle either addresses up to 52 bits wide (when FEAT_LPA2 is enabled).",
       "parentUuid": "3c3e8959_2d1e841b",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16bf8c3b_011ec028",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:51:06Z",
+      "side": 1,
+      "message": "what I meant is, if a 52 bit address is passed to this function on a non LPA2 system, this function will end up setting bits 49 - 52 in TTE which is wrong. But the caller will not do this and hence this is probably OK.\n\n\nFor complete correctness, this can be written this way:\n\nuint64_t tte;\n\nif (is_feat_lpa2_4k_present() \u003d\u003d true) {\n  tte \u003d output_addr \u0026 BIT_MASK_ULL(TTE_OA_BIT_49_LPA2, OA_ADDR_SHIFT);\n  tte |\u003d INPLACE(TTE_OA_BITS_50_51, EXTRACT(OA_BITS_50_51, output_addr));\n} else {\n  tte \u003d output_addr \u0026 BIT_MASK_ULL(TTE_OA_ADDR_MSB, OA_ADDR_SHIFT);\n}",
+      "parentUuid": "99c60291_a859047e",
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

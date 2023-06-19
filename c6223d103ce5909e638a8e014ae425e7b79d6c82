@@ -43,6 +43,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "063d585b_e2f36ff0",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:51:06Z",
+      "side": 1,
+      "message": "nit: OA stands for \"Output address\". ADDR is a repetition.",
+      "range": {
+        "startLine": 97,
+        "startChar": 11,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "622c0d3a_0b4c3e6e",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:51:06Z",
+      "side": 1,
+      "message": "nit: ADDR is a repetition.",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 25
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea5340e2_d6b467e6",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 17
