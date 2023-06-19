@@ -273,6 +273,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c255a1d1_ac85b743",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-19T18:32:10Z",
+      "side": 1,
+      "message": "There is a discussion on this in the next patchset",
+      "parentUuid": "e96e788b_f46c555c",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 51
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67be73aa_65bad8d6",
@@ -322,6 +346,24 @@
       "side": 1,
       "message": "ok, this macro is only used in a test which is probably wrong. can be removed.",
       "parentUuid": "2869b66e_8ac6d431",
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3004d48b_ec14713b",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-19T18:32:10Z",
+      "side": 1,
+      "message": "This is also used in xlat_ctx_cfg_init()",
+      "parentUuid": "ded07728_d4518d0d",
       "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -517,6 +559,30 @@
       "side": 1,
       "message": "Actually, they are related. If GRANULE_SIZE is 4KB then addr shift is 12. If GRANULE_SIZE is 16, then addr shift is 14",
       "parentUuid": "9a691a83_9cfff98b",
+      "range": {
+        "startLine": 73,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "2e6568e99edac5d0cf22a57a285231bbfd502131",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1ae23d5_ed3fc94c",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-19T18:32:10Z",
+      "side": 1,
+      "message": "Yes, that I know. The point is that I wasn\u0027t very sure how tightly coupled the GRANULE_SIZE and the xlat granularity were (from the logic point of view, not the architectural).\n\nI think the reason of my confusion is XLAT_GRANULARITY_SIZE_SHIFT (the one I should use here instead), which to me is redundant as we also have GRANULE_SIZE. Being able to configure both separately (even if we only support one configuration) made me wonder if they were meant for different things.",
+      "parentUuid": "a4d541ea_c020b14b",
       "range": {
         "startLine": 73,
         "startChar": 8,

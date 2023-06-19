@@ -557,6 +557,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "503c2cd7_8feae20f",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-19T18:32:10Z",
+      "side": 1,
+      "message": "I don\u0027t understand what you mean by \"LPA2 address assigned to the tte first\"",
+      "parentUuid": "31bf4e0b_3b15692e",
+      "range": {
+        "startLine": 358,
+        "startChar": 17,
+        "endLine": 358,
+        "endChar": 25
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "72acfdb0_c51febf7",
         "filename": "lib/xlat/src/xlat_tables_core.c",
         "patchSetId": 15
