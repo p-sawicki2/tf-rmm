@@ -135,7 +135,11 @@
 			(((uintptr_t)_addr >= (uintptr_t)&_array[0]) && \
 			 ((((uintptr_t)_addr - (uintptr_t)&_array[0]) % \
 						sizeof(_array[0])) == UL(0)))
+#ifndef GRANULE_SHIFT
 #define GRANULE_SHIFT	(UL(12))
+#else
+#warning Constant defined by specification is overridden by build system
+#endif
 #define GRANULE_MASK	(~0xfffUL)
 
 #define HAS_MPAM 0

@@ -29,7 +29,11 @@ enum hash_algo {
 #define RIM_MEASUREMENT_SLOT		(0U)
 
 /* Maximum number of measurements */
+#ifndef MEASUREMENT_SLOT_NR
 #define MEASUREMENT_SLOT_NR		(5U)
+#else
+#warning Constant defined by specification is overridden by build system
+#endif
 
 /* Size in bytes of the SHA256 measurement */
 #define SHA256_SIZE			(32U)
@@ -45,7 +49,11 @@ enum hash_algo {
  * Size in bytes of the largest measurement type that can be supported.
  * This macro needs to be updated accordingly if new algorithms are supported.
  */
+#ifndef MAX_MEASUREMENT_SIZE
 #define MAX_MEASUREMENT_SIZE		SHA512_SIZE
+#else
+#warning Constant defined by specification is overridden by build system
+#endif
 
 /* RmmMeasurementDescriptorData type as per RMM spec */
 struct measurement_desc_data {

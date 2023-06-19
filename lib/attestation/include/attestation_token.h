@@ -68,7 +68,11 @@ struct attest_token_encode_ctx {
 	struct t_cose_psa_crypto_context              crypto_ctx;
 };
 
+#ifndef ATTEST_CHALLENGE_SIZE
 #define ATTEST_CHALLENGE_SIZE			(64)
+#else
+#warning Constant defined by specification is overridden by build system.
+#endif
 
 /*
  * The context for signing an attestation token. Each REC contains one context
