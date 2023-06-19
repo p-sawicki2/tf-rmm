@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8f92b14_8f2d4d2e",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:24:10Z",
+      "side": 1,
+      "message": "if this is an exported API, we need to apply xlat_ prefix as naming conv. Also make this inline for efficiency.",
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aefa1f83_60cbcdd3",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:24:10Z",
+      "side": 1,
+      "message": "use PAGE_SIZE_4K. There is a change in CBMC to reduce granule size and we dont want to affect this shift.",
+      "range": {
+        "startLine": 97,
+        "startChar": 24,
+        "endLine": 97,
+        "endChar": 51
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea5340e2_d6b467e6",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:24:10Z",
+      "side": 1,
+      "message": "This is more efficient as an inline function rather a regular function.",
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

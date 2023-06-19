@@ -939,6 +939,30 @@
       },
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dc9c577_b2583db4",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T19:24:10Z",
+      "side": 1,
+      "message": "yes, the API contract will have to change and all other callers will have to ensure that VA is actually a verified one (which I think it is). This can be a optimization for later.",
+      "parentUuid": "76616f56_f0cb37d8",
+      "range": {
+        "startLine": 525,
+        "startChar": 24,
+        "endLine": 525,
+        "endChar": 28
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
