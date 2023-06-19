@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d699a255_2b157e56",
+        "filename": "lib/arch/src/include/simd_private.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-19T12:09:20Z",
+      "side": 1,
+      "message": "Is it better to have this as a pointer (uint64_t *fpu_state) ?  Same comments for below.",
+      "range": {
+        "startLine": 19,
+        "startChar": 29,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "10b811b7d98007df3dc028e29ff0c7259c24c7b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
