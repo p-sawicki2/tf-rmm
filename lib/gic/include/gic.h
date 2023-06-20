@@ -6,6 +6,7 @@
 #ifndef GIC_H
 #define GIC_H
 
+#include <arch_gic.h>
 #include <stdbool.h>
 #include <utils_def.h>
 
@@ -178,14 +179,6 @@
 		 ICH_HCR_EL2_VGRP1EIE_BIT	| \
 		 ICH_HCR_EL2_VGRP1DIE_BIT	| \
 		 ICH_HCR_EL2_TDIR_BIT)
-/*
- * Maximum number of Interrupt Controller
- * Hyp Active Priorities Group 0/1 Registers [0..3]
- */
-#define ICH_MAX_APRS		4
-
-/* Maximum number of Interrupt Controller List Registers */
-#define ICH_MAX_LRS		16
 
 /*******************************************************************************
  * GICv3 and 3.1 definitions

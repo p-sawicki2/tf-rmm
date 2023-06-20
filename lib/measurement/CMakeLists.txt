@@ -10,7 +10,8 @@ target_link_libraries(rmm-lib-measurement
            rmm-lib-smc
     PRIVATE rmm-lib-arch
             rmm-lib-common
-            rmm-lib-debug)
+            rmm-lib-debug
+            rmm-platform)
 
 target_include_directories(rmm-lib-measurement
     PUBLIC "include")

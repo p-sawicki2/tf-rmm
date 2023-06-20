@@ -6,6 +6,7 @@
 #include <arch_features.h>
 #include <attestation.h>
 #include <buffer.h>
+#include <buffer_init.h>
 #include <debug.h>
 #include <rmm_el3_ifc.h>
 #include <simd.h>

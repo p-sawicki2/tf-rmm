@@ -3,9 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
-#include <arch_helpers.h>
-#include <assert.h>
-#include <buffer.h>
+#include <buffer_init.h>
 #include <cpuid.h>
 #include <debug.h>
 #include <errno.h>
@@ -13,7 +11,6 @@
 #include <plat_cmn_arch.h>
 #include <rmm_el3_ifc.h>
 #include <sizes.h>
-#include <stdint.h>
 #include <string.h>
 #include <xlat_contexts.h>
 #include <xlat_tables.h>

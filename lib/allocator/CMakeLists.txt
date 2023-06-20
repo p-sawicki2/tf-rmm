@@ -13,6 +13,7 @@ target_link_libraries(rmm-lib-allocator
     rmm-lib-libc
     rmm-lib-rmm_el3_ifc
     rmm-mbedtls
+    rmm-platform
     t_cose)
 
 target_include_directories(rmm-lib-allocator
