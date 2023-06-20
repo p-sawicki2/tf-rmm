@@ -239,6 +239,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d0688420_1c9ef644",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-20T12:35:59Z",
+      "side": 1,
+      "message": "The trouble is LOWER_ATTRS() usage is different for other lower attributes (like NS, ACCESS_FLAG). Ideally all LOWER_ATTRS should be applied the same way and defined in a same pattern.",
+      "parentUuid": "b17a2929_5a0a5655",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 12
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc95c2b6_732a69bb",
         "filename": "lib/xlat/src/xlat_defs_private.h",
         "patchSetId": 16
@@ -715,6 +739,24 @@
       "side": 1,
       "message": "This function should never receive a 52 bits address if FEAT_LPA2 is not enabled. The mmap validation will fail in such case and the xlat library will never be successfully initialized.\n\nDuring mmap validation, at initialization stage, we check that the VAs and PAs of such mmap regions are within valid ranges. For the PA, we check against max PA supported by the architecture, which can never be 52 bits for a non-LPA2 system. On the other hand, if FEAT_LPA2 is supported (and therefore we support 52 bits), it will always be used, so there are no situations in which we can receive a 52 bit address with FEAT_LPA2 unsupported and/or disabled.\n\nThe original code in main branch which is replaced by a call to this new ancillary function (line 374 in main branch) just makes \u0027desc \u003d addr_pa\u0027, which is what this function does, but catering for the case of LPA2 as well. I tried to maintain this function as simple (and closer to the original code) as possible knowing all the assumptions so it wouldn\u0027t introduce much overhead.",
       "parentUuid": "16bf8c3b_011ec028",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8573097c_8a2f5ce8",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-20T12:35:59Z",
+      "side": 1,
+      "message": "This function might get used outside the current context in future as I see many possibilities for this function. Although today it is only called in one place, in future, to reduce the chance of an error, it is better to do this properly when we are working on this IMO.\n\nThe overhead is not much different from the current implementation I think.",
+      "parentUuid": "eba7a838_7cb9512f",
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
