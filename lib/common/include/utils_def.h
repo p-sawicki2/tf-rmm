@@ -226,11 +226,15 @@
  * Defines member of structure and reserves space
  * for the next member with specified offset.
  */
+#ifdef CBMC
+#define SET_MEMBER(member, start, end) member
+#else /* CBMC */
 #define SET_MEMBER(member, start, end)	\
 	union {				\
 		member;			\
 		unsigned char reserved##end[((end) - (start))]; \
 	}
+#endif /* CBMC */
 
 #define FALLTHROUGH	__attribute__((fallthrough))
 
