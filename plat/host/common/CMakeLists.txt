@@ -16,4 +16,5 @@ target_sources(rmm-host-common
             "src/host_utils.c")
 
 target_include_directories(rmm-host-common
-    PUBLIC "include")
+    PUBLIC "include"
+    PRIVATE "../${HOST_VARIANT}/include")

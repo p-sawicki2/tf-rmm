@@ -7,7 +7,8 @@ add_library(rmm-lib-smc)
 
 target_link_libraries(rmm-lib-smc
     PRIVATE rmm-lib-arch
-            rmm-lib-common)
+            rmm-lib-common
+            rmm-platform)
 
 target_include_directories(rmm-lib-smc
     PUBLIC "include")
