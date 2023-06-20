@@ -7,6 +7,7 @@
 #ifndef SMC_RMI_H
 #define SMC_RMI_H
 
+#include <plat_smc-rmi.h>
 #include <smc.h>
 
 /*
@@ -96,9 +97,6 @@
 
 /* Maximum number of Interrupt Controller List Registers */
 #define REC_GIC_NUM_LRS			U(16)
-
-/* Maximum number of auxiliary granules required for a REC */
-#define MAX_REC_AUX_GRANULES		U(16)
 
 #define REC_ENTRY_FLAG_EMUL_MMIO	(UL(1) << 0)
 #define REC_ENTRY_FLAG_INJECT_SEA	(UL(1) << 1)

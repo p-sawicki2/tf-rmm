@@ -23,6 +23,7 @@ target_link_libraries(rmm-lib-attestation
     rmm-lib-libc
     rmm-lib-rmm_el3_ifc
     rmm-lib-smc
+    rmm-platform
 )
 
 target_link_libraries(rmm-lib-attestation
