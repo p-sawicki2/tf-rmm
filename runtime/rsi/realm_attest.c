@@ -9,6 +9,7 @@
 #include <measurement.h>
 #include <realm.h>
 #include <realm_attest.h>
+#include <rec_aux_alloc_size.h>
 #include <smc-rsi.h>
 #include <smc.h>
 #include <string.h>
