@@ -847,6 +847,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c8e3f30_daecb96a",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T20:16:41Z",
+      "side": 1,
+      "message": "Yes, but this function is receiving an address only, so I think that argument should be treated as such. If it were to receive some other bitfields to combine, shouldn\u0027t it be in a different argument? otherwise it would become very confusing IMO having an address that can also convey some other information.\n\nAlso, bear in mind that this is just a helper for xlat_desc() with the mere intention to remove a bit of logic from it and keep it separated for better readability. I think if we wanted to introduce such changes and extra functionality, it should be in that function, not in this helper",
+      "parentUuid": "5d3d80fd_e495d227",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09860ae8_f7910afc",
         "filename": "lib/xlat/src/xlat_tables_core.c",
         "patchSetId": 16
