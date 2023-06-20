@@ -263,6 +263,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7b44d4ff_5c311b62",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T18:32:19Z",
+      "side": 1,
+      "message": "Ok, I can see your point of view.\n\nSo I made LOWER_ATTR_SH_SHIFT \u003d (6 + LOWER_ATTRS_SHIFT), so now I can just use INPLACE(LOWER_ATTR_SH, ISH), getting rid of the outer LOWER_ATTRS()\n\nLet me know if this makes it easier to follow",
+      "parentUuid": "d0688420_1c9ef644",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 12
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc95c2b6_732a69bb",
         "filename": "lib/xlat/src/xlat_defs_private.h",
         "patchSetId": 16
@@ -757,6 +781,24 @@
       "side": 1,
       "message": "This function might get used outside the current context in future as I see many possibilities for this function. Although today it is only called in one place, in future, to reduce the chance of an error, it is better to do this properly when we are working on this IMO.\n\nThe overhead is not much different from the current implementation I think.",
       "parentUuid": "eba7a838_7cb9512f",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7004cf4_27121ede",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T18:32:19Z",
+      "side": 1,
+      "message": "In that case, we shouldn\u0027t mask out bits [51:49] of the OA if LPA2 is disabled. Instead, we should enable checks:\n\n* That the address is aligned to the granularity size\n* That the address is no larger than the maximum supported by the architecture\n\nThat should prevent the use of 52 bit addresses when FEAT_LPA2 is disabled.\n\nI will add these changes as assertions for simplicity (and to push the changes). If you think they should be reported as errors back to the caller, let me know and I will fix it.",
+      "parentUuid": "8573097c_8a2f5ce8",
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
