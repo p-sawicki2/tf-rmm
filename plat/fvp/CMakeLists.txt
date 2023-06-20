@@ -19,6 +19,7 @@ target_sources(rmm-fvp
             "src/fvp_memory.c")
 
 target_include_directories(rmm-fvp
-    PRIVATE "src/include")
+    PRIVATE "src/include"
+    PUBLIC "include")
 
 add_library(rmm-platform ALIAS rmm-fvp)
