@@ -16,6 +16,24 @@
       "message": "should be static inline.",
       "revId": "ff81902e46c71e8080564836c6868fa5c7473a28",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9e3564e_84df9392",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T19:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5adeb3c5_7f1f2e00",
+      "revId": "ff81902e46c71e8080564836c6868fa5c7473a28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
