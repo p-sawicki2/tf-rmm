@@ -21,6 +21,7 @@
 #include <stddef.h>
 #include <string.h>
 
+_NCBMC(
 static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 {
 	/* Set non-zero values only */
@@ -32,6 +33,7 @@ static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 	rec->sysregs.vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
 	rec->sysregs.cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
 }
+) /* NCBMC */
 
 /*
  * Starting level of the stage 2 translation
@@ -64,6 +66,7 @@ static unsigned long realm_vtcr(struct rd *rd)
 	return vtcr;
 }
 
+_NCBMC(
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
@@ -113,6 +116,7 @@ static void init_rec_regs(struct rec *rec,
 	init_rec_sysregs(rec, rec_params->mpidr);
 	init_common_sysregs(rec, rd);
 }
+) /* NCBMC */
 
 /*
  * This function will only be invoked when the REC create fails
@@ -215,8 +219,8 @@ unsigned long smc_rec_create(unsigned long rec_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
-	init_rec_regs(rec, &rec_params, rd);
-	gic_cpu_state_init(&rec->sysregs.gicstate);
+	_NCBMC(init_rec_regs(rec, &rec_params, rd);)
+	_NCBMC(gic_cpu_state_init(&rec->sysregs.gicstate);)
 
 	/* Copy addresses of auxiliary granules */
 	(void)memcpy(rec->g_aux, rec_aux_granules,
@@ -248,9 +252,9 @@ unsigned long smc_rec_create(unsigned long rec_addr,
 	new_rec_state = GRANULE_STATE_REC;
 	rec->runnable = rec_params.flags & REC_PARAMS_FLAG_RUNNABLE;
 
-	rec->alloc_info.ctx_initialised = false;
+	_NCBMC(rec->alloc_info.ctx_initialised = false;)
 	/* Initialize attestation state */
-	rec->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+	_NCBMC(rec->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;)
 
 	set_rd_rec_count(rd, rec_idx + 1U);
 
