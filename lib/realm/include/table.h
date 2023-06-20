@@ -123,4 +123,7 @@ static inline unsigned int max_ipa_size(void)
 	return ipa_size > MAX_IPA_BITS ? MAX_IPA_BITS : ipa_size;
 }
 
+_CBMC(unsigned long s2_addr_to_idx(unsigned long addr, long level);)
+_CBMC(unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level, unsigned long ipa_bits);)
+
 #endif /* TABLE_H */
