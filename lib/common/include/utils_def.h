@@ -230,11 +230,16 @@
  * Defines member of structure and reserves space
  * for the next member with specified offset.
  */
+#ifdef DISABLE_SET_MEMBER
+#warning Structures defined by RMM specification will not have correct padding
+#define SET_MEMBER(member, start, end) member;
+#else
 #define SET_MEMBER(member, start, end)	\
 	union {				\
 		member;			\
 		unsigned char reserved##end[end - start]; \
 	}
+#endif
 
 #define	FALLTHROUGH	__attribute__((fallthrough))
 
