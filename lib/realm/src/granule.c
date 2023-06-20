@@ -15,7 +15,11 @@
 #include <string.h>
 #include <utils_def.h>
 
+#ifdef CBMC
+struct granule granules[RMM_MAX_GRANULES] = { 0 };
+#else
 static struct granule granules[RMM_MAX_GRANULES];
+#endif
 
 /*
  * Takes a valid pointer to a struct granule, and returns the granule physical
