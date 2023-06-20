@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53e62f5_cc79f352",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T19:55:39Z",
+      "side": 1,
+      "message": "Passed with lpa2-support branch of TFTF as per https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/218/\n\nOnly fails on were on the host_test build as expected (unittests are fixed in a later patch)",
+      "revId": "6d8b2d2c038b40ffc76f4404ded7fb3e614958bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
