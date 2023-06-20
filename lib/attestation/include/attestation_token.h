@@ -60,12 +60,16 @@ enum attest_token_gen_state_t {
 
 struct attest_token_encode_ctx {
 	/* Private data structure */
+#ifndef CBMC
 	QCBOREncodeContext                            cbor_enc_ctx;
+#endif
 	uint32_t                                      opt_flags;
 	int32_t                                       key_select;
+#ifndef CBMC
 	struct t_cose_sign1_sign_ctx                  signer_ctx;
 	struct t_cose_signature_sign_main_restart_ctx signer_restart_ctx;
 	struct t_cose_psa_crypto_context              crypto_ctx;
+#endif
 };
 
 #ifndef ATTEST_CHALLENGE_SIZE

@@ -121,6 +121,7 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
+#ifndef CBMC
 	unsigned long regs[31];
 
 	/*
@@ -134,6 +135,7 @@ struct rec {
 
 	struct sysreg_state sysregs;
 	struct common_sysreg_state common_sysregs;
+#endif
 
 	struct {
 		unsigned long start;
@@ -156,6 +158,7 @@ struct rec {
 		uint8_t sve_vq;
 	} realm_info;
 
+#ifndef CBMC
 	struct {
 		/*
 		 * The contents of the *_EL2 system registers at the last time
@@ -181,12 +184,14 @@ struct rec {
 		 */
 		bool pending;
 	} psci_info;
+#endif
 
 	/* Number of auxiliary granules */
 	unsigned int num_rec_aux;
 
 	/* Addresses of auxiliary granules */
 	struct granule *g_aux[MAX_REC_AUX_GRANULES];
+#ifndef CBMC
 	struct rec_aux_data aux_data;
 
 	unsigned char rmm_realm_token_buf[SZ_1K];
@@ -207,6 +212,7 @@ struct rec {
 
 	/* True if host call is pending */
 	bool host_call;
+#endif
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
 
@@ -246,7 +252,11 @@ static inline simd_t rec_simd_type(struct rec *rec)
 static inline bool rec_is_simd_allowed(struct rec *rec)
 {
 	assert(rec != NULL);
+#ifdef CBMC
+	return false;
+#else
 	return rec->aux_data.rec_simd.simd_allowed;
+#endif
 }
 
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);
