@@ -285,6 +285,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db9b1dd6_468c2d48",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-20T19:16:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7b44d4ff_5c311b62",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 12
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc95c2b6_732a69bb",
@@ -799,6 +823,24 @@
       "side": 1,
       "message": "In that case, we shouldn\u0027t mask out bits [51:49] of the OA if LPA2 is disabled. Instead, we should enable checks:\n\n* That the address is aligned to the granularity size\n* That the address is no larger than the maximum supported by the architecture\n\nThat should prevent the use of 52 bit addresses when FEAT_LPA2 is disabled.\n\nI will add these changes as assertions for simplicity (and to push the changes). If you think they should be reported as errors back to the caller, let me know and I will fix it.",
       "parentUuid": "8573097c_8a2f5ce8",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d3d80fd_e495d227",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-20T19:16:06Z",
+      "side": 1,
+      "message": "Hmm, I dont think asserting the unused bits are helpful. There is a chance that unused bits will be used for software purposes (because the user knows that these will be ignored by Hardware). This is a useful way to encode state information within the descriptors. We can implement this function to do what is says on the tin , ie, set the OA to TTE. This will be a inline function exposed via header file later.",
+      "parentUuid": "b7004cf4_27121ede",
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
