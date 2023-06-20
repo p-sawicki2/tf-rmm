@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89a4d92d_da7125e5",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "True, I forgot renaming after moving it :)",
+      "parentUuid": "c8f92b14_8f2d4d2e",
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aefa1f83_60cbcdd3",
@@ -64,6 +82,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2574b671_602e9f97",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "063d585b_e2f36ff0",
+      "range": {
+        "startLine": 97,
+        "startChar": 11,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d69d9be4_b2eb2e2c",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "This is a shift. PAGE_SIZE_4K is an absolute size",
+      "parentUuid": "aefa1f83_60cbcdd3",
+      "range": {
+        "startLine": 97,
+        "startChar": 24,
+        "endLine": 97,
+        "endChar": 51
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "622c0d3a_0b4c3e6e",
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deb54041_38568996",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "622c0d3a_0b4c3e6e",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 25
+      },
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea5340e2_d6b467e6",
@@ -100,6 +190,24 @@
       "writtenOn": "2023-06-19T19:24:10Z",
       "side": 1,
       "message": "This is more efficient as an inline function rather a regular function.",
+      "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fc3bb11_d014a2aa",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea5340e2_d6b467e6",
       "revId": "c6223d103ce5909e638a8e014ae425e7b79d6c82",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

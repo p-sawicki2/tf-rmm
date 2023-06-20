@@ -215,6 +215,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b17a2929_5a0a5655",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "I don\u0027t think we should have two different macros to express exactly the same thing (in this case, the ISH value) as in my opinion this can also be very confusing and prone to errors if we have to modify it in the future. For instance, one could be modified and the other one forgotten about.\n\nISH is not a shift, e.g. it does not defines the SH field. ISH is the actual value to store in the field. It is not affected by which macro we use on it. It will always have the same value. Also, al the lower attrs are setup through the LOWER_ATTRS() macro, so I wanted to keep it consistent as the SH on the descriptor is also a lower attribute.\n\nSo in order to be able to have a single, generic ISH value that can be used on any SH field, I came up with macros for the SH in the descriptors as well as a counterpart for the TCR_EL2 register when FEAT_LPA2 is enabled.\n\nIf we don\u0027t want to use LOWER_ATTRS() macro (because of the underlying INPLACE(INPLACE())) I guess I could remove the LOWER_ATTRS() macro and replace it whit shifts everywhere for consistency. I just don\u0027t think I should use LOWER_ATTRS() for some lower attributes and not for others as it would be inconsistent and could also cause confusion.",
+      "parentUuid": "7347c8c4_81a8842b",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 12
+      },
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc95c2b6_732a69bb",
         "filename": "lib/xlat/src/xlat_defs_private.h",
         "patchSetId": 16
@@ -673,6 +697,24 @@
       "side": 1,
       "message": "what I meant is, if a 52 bit address is passed to this function on a non LPA2 system, this function will end up setting bits 49 - 52 in TTE which is wrong. But the caller will not do this and hence this is probably OK.\n\n\nFor complete correctness, this can be written this way:\n\nuint64_t tte;\n\nif (is_feat_lpa2_4k_present() \u003d\u003d true) {\n  tte \u003d output_addr \u0026 BIT_MASK_ULL(TTE_OA_BIT_49_LPA2, OA_ADDR_SHIFT);\n  tte |\u003d INPLACE(TTE_OA_BITS_50_51, EXTRACT(OA_BITS_50_51, output_addr));\n} else {\n  tte \u003d output_addr \u0026 BIT_MASK_ULL(TTE_OA_ADDR_MSB, OA_ADDR_SHIFT);\n}",
       "parentUuid": "99c60291_a859047e",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eba7a838_7cb9512f",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T09:37:25Z",
+      "side": 1,
+      "message": "This function should never receive a 52 bits address if FEAT_LPA2 is not enabled. The mmap validation will fail in such case and the xlat library will never be successfully initialized.\n\nDuring mmap validation, at initialization stage, we check that the VAs and PAs of such mmap regions are within valid ranges. For the PA, we check against max PA supported by the architecture, which can never be 52 bits for a non-LPA2 system. On the other hand, if FEAT_LPA2 is supported (and therefore we support 52 bits), it will always be used, so there are no situations in which we can receive a 52 bit address with FEAT_LPA2 unsupported and/or disabled.\n\nThe original code in main branch which is replaced by a call to this new ancillary function (line 374 in main branch) just makes \u0027desc \u003d addr_pa\u0027, which is what this function does, but catering for the case of LPA2 as well. I tried to maintain this function as simple (and closer to the original code) as possible knowing all the assumptions so it wouldn\u0027t introduce much overhead.",
+      "parentUuid": "16bf8c3b_011ec028",
       "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
