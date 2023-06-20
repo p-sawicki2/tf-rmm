@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb6b5b90_d016f1c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-20T19:56:32Z",
+      "side": 1,
+      "message": "Passed with lpa2-support branch of TFTF as per https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/217/\n",
+      "revId": "5b161af240ba924190b7203d8d13e5d8d5d4ad14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
