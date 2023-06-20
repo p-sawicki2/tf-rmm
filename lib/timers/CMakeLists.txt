@@ -14,7 +14,8 @@ target_link_libraries(rmm-lib-timers
             rmm-lib-realm
             rmm-lib-smc
             rmm-lib-debug
-            rmm-lib-xlat)
+            rmm-lib-xlat
+            rmm-platform)
 
 target_include_directories(rmm-lib-timers
     PUBLIC "include")
