@@ -117,4 +117,9 @@ static inline unsigned int max_ipa_size(void)
 	return arch_feat_get_pa_width();
 }
 
+#ifdef CBMC
+unsigned long s2_addr_to_idx(unsigned long addr, long level);
+unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level, unsigned long ipa_bits);
+#endif
+
 #endif /* TABLE_H */
