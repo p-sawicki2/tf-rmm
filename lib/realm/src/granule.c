@@ -255,11 +255,15 @@ void granule_memzero(struct granule *g, enum buffer_slot slot)
 	assert(g != NULL);
 
 	buf = granule_map(g, slot);
+#ifndef CBMC
 	(void)memset(buf, 0, GRANULE_SIZE);
+#endif
 	buffer_unmap(buf);
 }
 
 void granule_memzero_mapped(void *buf)
 {
+#ifndef CBMC
 	(void)memset(buf, 0, GRANULE_SIZE);
+#endif
 }
