@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cdc8a27_b3af694a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-21T09:49:19Z",
+      "side": 1,
+      "message": "Also check that we have unit tests to check the boundaries of PA and VA with/without LPA2 . i.e check whether max 48 bit/52 bit PAs and 64 bit VAs (subject to TzSZ) is tested.\n",
+      "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b7c88c_9ac36576",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-21T09:49:19Z",
+      "side": 1,
+      "message": "Seemed to have lost the previous conversation on this. You mentioned you wanted to decouple the test from main library I think .\n\nThis is a simple functionality and the trouble with duplicating same code in lib and test is the potential to have issues in 2 places. The converse also can be argued, but the line I am taking at the moment is that for simple functionality (macros, inline functions, small utilities), no need to replicate in test.\n\nAlso, if we write a test to validate xlat_get_oa_from_tte() [perhaps using templates for input and expected output], this will ensure correctness of this function +  alleviate any concern that about using the function for validating tests.",
+      "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e78c8c3b_01b567ce",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-21T09:49:19Z",
+      "side": 1,
+      "message": "block allowed for LPA2 at level 0.",
+      "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
