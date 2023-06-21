@@ -120,6 +120,7 @@ static inline unsigned int max_ipa_size(void)
 #ifdef CBMC
 unsigned long s2_addr_to_idx(unsigned long addr, long level);
 unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level, unsigned long ipa_bits);
+unsigned long table_entry_to_phys(unsigned long entry);
 #endif
 
 #endif /* TABLE_H */
