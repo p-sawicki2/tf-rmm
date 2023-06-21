@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85a8e5fa_fa353200",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-21T09:38:15Z",
+      "side": 0,
+      "message": "introduce XLAT_TEST_TABLE_ENTRIES_SHIFT(level)",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
