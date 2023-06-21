@@ -601,7 +601,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 
 	rd = granule_map(g_rd, SLOT_RD);
 
-	if (!validate_rtt_map_cmds(map_addr, level, rd)) {
+	if (!validate_rtt_map_cmds(map_addr, level, rd) || !validate_rtt_structure_cmds(map_addr, level, rd)) {
 		buffer_unmap(rd);
 		granule_unlock(g_rd);
 		res->x[0] = RMI_ERROR_INPUT;
