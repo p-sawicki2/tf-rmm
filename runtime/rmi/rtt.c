@@ -760,6 +760,7 @@ static void data_granule_measure(struct rd *rd, void *data,
 				 unsigned long ipa,
 				 unsigned long flags)
 {
+#ifndef CBMC
 	struct measurement_desc_data measure_desc = {0};
 
 	/* Initialize the measurement descriptior structure */
@@ -790,6 +791,7 @@ static void data_granule_measure(struct rd *rd, void *data,
 			       &measure_desc,
 			       sizeof(measure_desc),
 			       rd->measurement[RIM_MEASUREMENT_SLOT]);
+#endif
 }
 
 static unsigned long validate_data_create_unknown(unsigned long map_addr,
