@@ -246,11 +246,11 @@ void granule_memzero(struct granule *g, enum buffer_slot slot)
 	assert(g != NULL);
 
 	buf = granule_map(g, slot);
-	(void)memset(buf, 0, GRANULE_SIZE);
+	_NCBMC((void)memset(buf, 0, GRANULE_SIZE);)
 	buffer_unmap(buf);
 }
 
 void granule_memzero_mapped(void *buf)
 {
-	(void)memset(buf, 0, GRANULE_SIZE);
+	_NCBMC((void)memset(buf, 0, GRANULE_SIZE);)
 }
