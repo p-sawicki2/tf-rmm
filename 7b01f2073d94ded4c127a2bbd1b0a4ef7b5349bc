@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ade66629_6519aa48",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-23T12:18:58Z",
+      "side": 1,
+      "message": "Done + added tests for xlat_get_oa_from_tte()",
+      "parentUuid": "e1b7c88c_9ac36576",
+      "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e78c8c3b_01b567ce",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-06-21T09:49:19Z",
       "side": 1,
       "message": "block allowed for LPA2 at level 0.",
+      "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f05a5fac_1c8d100a",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-23T12:18:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e78c8c3b_01b567ce",
       "revId": "7b01f2073d94ded4c127a2bbd1b0a4ef7b5349bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
