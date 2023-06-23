@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55b3a685_a874aee7",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-23T13:08:03Z",
+      "side": 1,
+      "message": "I think the previous version was correct ?\n\noa |\u003d INPLACE(OA_BITS_50_51, EXTRACT(TTE_OA_BITS_50_51, tte));",
+      "revId": "6e0464a6c8ae6d3f5992533fe187c81a8058b72d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
