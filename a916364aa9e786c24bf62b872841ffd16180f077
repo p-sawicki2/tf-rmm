@@ -863,6 +863,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27ba8100_e59be6bd",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-23T12:18:34Z",
+      "side": 1,
+      "message": "Done as per our discussion",
+      "parentUuid": "3c8e3f30_daecb96a",
+      "revId": "a916364aa9e786c24bf62b872841ffd16180f077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09860ae8_f7910afc",
