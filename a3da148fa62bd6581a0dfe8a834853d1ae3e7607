@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4ad0e97d_d12a995c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-26T14:27:47Z",
+      "side": 1,
+      "message": "One thing I realized is that some of the arguments like root starting level depends on whether LPA2 was enabled by NS host or not. So we cannot depend on h/w capability of LPA2 for all the validations.\n\nCan discuss on this.",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0d5de5f0_13553020",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 29
