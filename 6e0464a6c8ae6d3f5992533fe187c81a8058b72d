@@ -16,6 +16,24 @@
       "message": "I think the previous version was correct ?\n\noa |\u003d INPLACE(OA_BITS_50_51, EXTRACT(TTE_OA_BITS_50_51, tte));",
       "revId": "6e0464a6c8ae6d3f5992533fe187c81a8058b72d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40a57412_be7f41ba",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-26T10:17:59Z",
+      "side": 1,
+      "message": "Yes, it was. When I wrote the unittest for this API, I accidentally tested the opposite behavior and I just trusted the buggy test 😊\n\nI will fix it",
+      "parentUuid": "55b3a685_a874aee7",
+      "revId": "6e0464a6c8ae6d3f5992533fe187c81a8058b72d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
