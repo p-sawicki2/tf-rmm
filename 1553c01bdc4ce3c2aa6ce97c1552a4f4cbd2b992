@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2bb7484_788fe2dd",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 2347,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-26T10:12:16Z",
+      "side": 1,
+      "message": "prefer to have fixed bit pattern as while testing rand() functions on host machine, we found that we get not-so-rand values and we need to have higher MSBs to be set to detect issues.\n\n~0 is a good value for this test.",
+      "range": {
+        "startLine": 2347,
+        "startChar": 12,
+        "endLine": 2347,
+        "endChar": 16
+      },
+      "revId": "1553c01bdc4ce3c2aa6ce97c1552a4f4cbd2b992",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "add258a6_50c4ed09",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 2373,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-26T10:12:16Z",
+      "side": 1,
+      "message": "this should have bits 49 to 52 masked.",
+      "range": {
+        "startLine": 2373,
+        "startChar": 28,
+        "endLine": 2373,
+        "endChar": 39
+      },
+      "revId": "1553c01bdc4ce3c2aa6ce97c1552a4f4cbd2b992",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
