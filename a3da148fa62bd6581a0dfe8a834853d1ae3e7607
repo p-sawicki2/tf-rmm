@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8e8af2d1_201d5c6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "To avoid disruption to EAC2 work, we can rebase on top of EAC2 patch stack.",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0d5de5f0_13553020",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 29
@@ -31,6 +48,69 @@
       "writtenOn": "2023-06-26T13:01:37Z",
       "side": 1,
       "message": "nit: can move to line 34",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0a394d1_11db86e9",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "avoid any unrelated changes to avoid merge conflict.",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e07315d_d750f189",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "should be able to use xlat_get_oa_from_tte()",
+      "range": {
+        "startLine": 168,
+        "startChar": 21,
+        "endLine": 168,
+        "endChar": 45
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e21d4d3_ed941b18",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "should be able to use set_oa_to_tte() instead of this.",
+      "range": {
+        "startLine": 192,
+        "startChar": 21,
+        "endLine": 192,
+        "endChar": 42
+      },
       "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -60,6 +140,53 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "818e925d_a31c0290",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "see comment below.",
+      "parentUuid": "9664df67_90b76651",
+      "range": {
+        "startLine": 335,
+        "startChar": 21,
+        "endLine": 335,
+        "endChar": 33
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "742da042_8106e3e4",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "not needed as this function will not be called for root table.",
+      "range": {
+        "startLine": 340,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 32
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0d71751d_ea10aae3",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 29
@@ -71,6 +198,29 @@
       "writtenOn": "2023-06-26T13:01:37Z",
       "side": 1,
       "message": "dont introduce unrelated changes to keep merge conflict minimal for EAC2 patches.",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0b1e5e4_c50951fe",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T11:02:46Z",
+      "side": 1,
+      "message": "this should come from realm configuration. I think every public API from this file needs an additional parameter to say whether LPA2 is enabled or not for this realm and all other calculation need to be based on that.\n\nContrary to previous discussions, since S2 will have to support both formats, I think it is easier to depend on realm config for LPA2 support and then construct the S2 table based on that (rather than depending on h/w support for LPA2 support).",
+      "range": {
+        "startLine": 442,
+        "startChar": 23,
+        "endLine": 442,
+        "endChar": 45
+      },
       "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
