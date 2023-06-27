@@ -16,6 +16,29 @@
       "message": "Verified through https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/223/ (This patch needs to be merged together with https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21028 )",
       "revId": "05a7a639c36b28f03667aaae18463b55a67fd0f2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0db50e97_f80e462c",
+        "filename": "lib/realm/tests/realm_test_utils.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-27T10:27:11Z",
+      "side": 1,
+      "message": "this is corrected in next patch...but better to correct here.",
+      "range": {
+        "startLine": 25,
+        "startChar": 19,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "05a7a639c36b28f03667aaae18463b55a67fd0f2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
