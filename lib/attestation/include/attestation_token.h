@@ -13,11 +13,19 @@
 #define ATTESTATION_TOKEN_H
 
 #include <measurement.h>
+#ifndef CBMC
 #include <qcbor/qcbor.h>
+#endif /* CBMC */
+#include <stddef.h>
+#include <stdint.h>
+#ifndef CBMC
 #include <t_cose/q_useful_buf.h>
 #include <t_cose/t_cose_sign_sign.h>
 #include <t_cose/t_cose_signature_sign_restart.h>
 #include <t_cose_psa_crypto.h>
+#endif /* CBMC */
+
+#ifndef CBMC
 
 #define ATTEST_TOKEN_BUFFER_SIZE		GRANULE_SIZE
 
@@ -93,6 +101,38 @@ struct token_sign_cntxt {
 
 	unsigned char challenge[ATTEST_CHALLENGE_SIZE];
 };
+
+#else /* CBMC */
+
+#define ATTEST_TOKEN_BUFFER_SIZE		GRANULE_SIZE
+
+enum attest_token_err_t {
+	/* Success */
+	ATTEST_TOKEN_ERR_SUCCESS = 0,
+	/* Signing is in progress, function should be called with the same
+	 * parameters again.
+	 */
+	ATTEST_TOKEN_ERR_COSE_SIGN_IN_PROGRESS
+};
+
+/* The state of the realm token generation */
+enum attest_token_gen_state_t {
+	ATTEST_SIGN_NOT_STARTED,
+	ATTEST_SIGN_IN_PROGRESS,
+	ATTEST_SIGN_TOKEN_WRITE_IN_PROGRESS,
+};
+
+struct attest_token_encode_ctx {
+	uint32_t unused;
+};
+
+struct token_sign_cntxt {
+	enum attest_token_gen_state_t state;
+};
+
+#define ATTEST_CHALLENGE_SIZE			(1)
+
+#endif /* CBMC */
 
 /*
  * Sign the realm token and complete the CBOR encoding.
