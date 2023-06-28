@@ -64,9 +64,11 @@ void xlat_test_helpers_init_ctx(struct xlat_ctx *ctx,
 	ctx->tbls = tbls;
 }
 
-void xlat_test_hepers_arch_init(void)
+void xlat_test_hepers_arch_init(bool lpa2_en)
 {
 	unsigned int retval __unused;
+	uint64_t id_aa64mmfr0_el0 = INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
+					    ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4);
 
 	/* Enable the platform with support for multiple PEs */
 	test_helpers_rmm_start(true);
@@ -77,16 +79,19 @@ void xlat_test_hepers_arch_init(void)
 	 */
 	host_util_zero_sysregs_and_cbs();
 
-	/*
-	 * Setup id_aa64mmfr0_el1 with a PA size of 52 bits
-	 * and 4K granularity with 52 bits support on stage 1 and 2.
-	 */
+	/* Setup id_aa64mmfr0_el1 */
+	if (lpa2_en == true) {
+		id_aa64mmfr0_el0 |= INPLACE(ID_AA64MMFR0_EL1_PARANGE, 6UL) |
+				    INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
+					    ID_AA64MMFR0_EL1_TGRAN4_LPA2);
+	} else {
+		id_aa64mmfr0_el0 |= INPLACE(ID_AA64MMFR0_EL1_PARANGE, 5UL) |
+				    INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
+					    ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED);
+	}
+
 	retval = host_util_set_default_sysreg_cb("id_aa64mmfr0_el1",
-				INPLACE(ID_AA64MMFR0_EL1_PARANGE, 6UL) |
-				INPLACE(ID_AA64MMFR0_EL1_TGRAN4,
-					ID_AA64MMFR0_EL1_TGRAN4_LPA2) |
-				INPLACE(ID_AA64MMFR0_EL1_TGRAN4_2,
-					ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4));
+						 id_aa64mmfr0_el0);
 
 	/* Initialize MMU registers to 0 */
 	retval = host_util_set_default_sysreg_cb("sctlr_el2", 0UL);
@@ -101,6 +106,12 @@ void xlat_test_hepers_arch_init(void)
 	host_util_set_cpuid(0U);
 
 	test_helpers_expect_assert_fail(false);
+}
+
+void xlat_test_setup(bool lpa2)
+{
+	test_helpers_init();
+	xlat_test_hepers_arch_init(lpa2);
 }
 
 void xlat_test_helpers_set_parange(unsigned int parange)
