@@ -22,6 +22,30 @@
       },
       "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f98bb62_60048657",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-28T12:12:19Z",
+      "side": 0,
+      "message": "This is only done in this helper. I think introducing a macro for an operation that is done only once will make the code harder to follow as you will need to look for the macro, read it and then come back. I also think, with the refactoring done in this function on the next patchset, the macro would be too complicated for just a single use.",
+      "parentUuid": "85a8e5fa_fa353200",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "revId": "112463eddcb61f22ca72faa87869cd3069f98e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
