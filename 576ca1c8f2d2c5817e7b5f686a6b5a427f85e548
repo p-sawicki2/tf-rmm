@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f547736_b7f7c83f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-28T11:23:08Z",
+      "side": 1,
+      "message": "This patch cannot be run on CI as is, as the unittests are not updated here. In order to verify it, CI needs to be run on https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21028/ which is currently passed",
+      "revId": "576ca1c8f2d2c5817e7b5f686a6b5a427f85e548",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
