@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9f3cce7_2b165235",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-28T08:32:15Z",
+      "side": 1,
+      "message": "would be good to create a back of original CFLAGS and restore it at end of file :\n\n# Ensure that the CFlags modifications are local in scope and only apply to\n# t_cose build\nset(BACKUP_C_CLAGS \"${CMAKE_C_FLAGS}\")",
+      "revId": "06af3a73d5b87efa74c82474b34b497d833a2a54",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ae5e5fc_db09dd2d",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-28T08:32:15Z",
+      "side": 1,
+      "message": "# Restore the original C flags.\nset(CMAKE_C_FLAGS \"${BACKUP_C_FLAGS}\")",
+      "revId": "06af3a73d5b87efa74c82474b34b497d833a2a54",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
