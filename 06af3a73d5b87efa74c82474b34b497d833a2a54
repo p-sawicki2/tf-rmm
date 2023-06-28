@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7f5ecc97_454b1c9f",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-06-28T09:05:22Z",
+      "side": 1,
+      "message": "It seems that CMAKE_C_FLAGS is app;ied after all the CMake files are processed, so restoring from the backup results in the flags not being applied on the t_cose build files.\n\nFixed with target_compile_options instead.",
+      "parentUuid": "e9f3cce7_2b165235",
+      "revId": "06af3a73d5b87efa74c82474b34b497d833a2a54",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4ae5e5fc_db09dd2d",
         "filename": "lib/t_cose/CMakeLists.txt",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2023-06-28T08:32:15Z",
       "side": 1,
       "message": "# Restore the original C flags.\nset(CMAKE_C_FLAGS \"${BACKUP_C_FLAGS}\")",
+      "revId": "06af3a73d5b87efa74c82474b34b497d833a2a54",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bec5c05c_fad8313d",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-06-28T09:05:22Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "4ae5e5fc_db09dd2d",
       "revId": "06af3a73d5b87efa74c82474b34b497d833a2a54",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
