@@ -25,6 +25,13 @@
 #ifndef __ASSEMBLER__
 
 /*
+ * Return the minimum lookup level at which a block is supported.
+ */
+#define XLAT_TEST_MIN_BLOCK_LVL()		\
+	((is_feat_lpa2_4k_present() == true) ?	\
+	MIN_LVL_BLOCK_DESC : MIN_LVL_BLOCK_DESC + 1U)
+
+/*
  * Default granularity size for a struct xlat_mmap_region.
  * Useful when no specific granularity is required.
  *
@@ -32,7 +39,8 @@
  * architectural state and granule size in order to minimize the number of page
  * tables required for the mapping.
  */
-#define REGION_DEFAULT_GRANULARITY	XLAT_BLOCK_SIZE(MIN_LVL_BLOCK_DESC)
+#define REGION_DEFAULT_GRANULARITY		\
+					XLAT_BLOCK_SIZE(XLAT_TEST_MIN_BLOCK_LVL())
 
 /*
  * Helper macro to define a struct xlat_mmap_region. This macro allows to
