@@ -100,6 +100,8 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 	uintptr_t mm_end_va = mm->base_va + mm->size - 1UL;
 	uintptr_t table_entry_end_va =
 			table_entry_base_va + XLAT_BLOCK_SIZE(level) - 1UL;
+	unsigned int min_block_level = (is_feat_lpa2_4k_present() == true) ?
+				MIN_LVL_BLOCK_DESC : MIN_LVL_BLOCK_DESC + 1U;
 
 	/*
 	 * The descriptor types allowed depend on the current table level.
@@ -159,7 +161,7 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 				 * descriptors. If not, create a table instead.
 				 */
 				if (((dest_pa & XLAT_BLOCK_MASK(level)) != 0U)
-				    || (level < MIN_LVL_BLOCK_DESC) ||
+				    || (level < min_block_level) ||
 				    (mm->granularity < XLAT_BLOCK_SIZE(level))) {
 					return ACTION_CREATE_NEW_TABLE;
 				} else {

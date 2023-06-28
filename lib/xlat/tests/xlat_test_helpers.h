@@ -16,12 +16,23 @@
 /* Maximum number of mmap regions to use for tests */
 #define XLAT_TESTS_MAX_MMAPS	(20U)
 
+/* Macros to specify LPA2 status */
+#define LPA2_ENABLED		(true)
+#define LPA2_DISABLED		(false)
+
 /*
  * Return the minimum lookup level supported.
  */
 #define XLAT_TEST_MIN_LVL()			\
 	((is_feat_lpa2_4k_present() == true) ?	\
 	XLAT_TABLE_LEVEL_MIN : XLAT_TABLE_LEVEL_MIN + 1)
+
+/*
+ * Return the minimum lookup level at which a block is supported.
+ */
+#define XLAT_TEST_MIN_BLOCK_LVL()		\
+	((is_feat_lpa2_4k_present() == true) ?	\
+	MIN_LVL_BLOCK_DESC : MIN_LVL_BLOCK_DESC + 1U)
 
 /*
  * Return the maximum VA space size.
@@ -79,12 +90,6 @@ void xlat_test_helpers_init_ctx_cfg(struct xlat_ctx_cfg *ctx_cfg,
 void xlat_test_helpers_init_ctx(struct xlat_ctx *ctx,
 				struct xlat_ctx_cfg *cfg,
 				struct xlat_ctx_tbls *tbls);
-
-/*
- * Helper function to perform any system register initialization
- * needed for the tests.
- */
-void xlat_test_hepers_arch_init(void);
 
 /* Helper function to return a random set of attributes for a mmap region */
 uint64_t xlat_test_helpers_rand_mmap_attrs(void);
@@ -149,5 +154,11 @@ uint64_t *xlat_test_helpers_tbls(void);
  * argument
  */
 void xlat_test_helpers_set_parange(unsigned int parange);
+
+/*
+ * Function to setup the environment for the tests specifying
+ * whether FEAT_LPA2 is supported or not.
+ */
+void xlat_test_setup(bool lpa2);
 
 #endif /* XLAT_TEST_HELPERS_H */
