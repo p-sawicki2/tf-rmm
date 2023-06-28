@@ -16,6 +16,10 @@
 /* Maximum number of mmap regions to use for tests */
 #define XLAT_TESTS_MAX_MMAPS	(20U)
 
+/* Macros to specify LPA2 status */
+#define LPA2_ENABLED		(true)
+#define LPA2_DISABLED		(false)
+
 /*
  * Return the minimum lookup level supported.
  */
@@ -84,7 +88,7 @@ void xlat_test_helpers_init_ctx(struct xlat_ctx *ctx,
  * Helper function to perform any system register initialization
  * needed for the tests.
  */
-void xlat_test_hepers_arch_init(void);
+void xlat_test_hepers_arch_init(bool lpa2_en);
 
 /* Helper function to return a random set of attributes for a mmap region */
 uint64_t xlat_test_helpers_rand_mmap_attrs(void);
