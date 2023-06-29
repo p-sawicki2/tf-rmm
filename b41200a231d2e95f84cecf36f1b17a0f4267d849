@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea09a185_265c297a",
+        "filename": "lib/xlat/tests/xlat_tests_g1.cpp",
+        "patchSetId": 28
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-29T14:14:28Z",
+      "side": 1,
+      "message": "nit: remote tab. Same comment for lines below.",
+      "range": {
+        "startLine": 606,
+        "startChar": 23,
+        "endLine": 606,
+        "endChar": 24
+      },
+      "revId": "b41200a231d2e95f84cecf36f1b17a0f4267d849",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
