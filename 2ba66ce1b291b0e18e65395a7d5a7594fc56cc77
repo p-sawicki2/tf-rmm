@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2f40c573_c1a1f7e0",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "XLAT_GET_TABLE_ENTRIES() returns the number of entries on a table given the level. Here we need the shift to calculate a maximum va space as per level.\n\nI could use a \u0027*\u0027 with XLAT_GET_TABLE_ENTRIES() instead of the \u0027\u003c\u003c\u0027 operator, but I think the latter might be easier to understand?",
+      "parentUuid": "0f6e7598_5dea61dc",
+      "range": {
+        "startLine": 49,
+        "startChar": 1,
+        "endLine": 51,
+        "endChar": 29
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a7ad41f4_de3a0499",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 26
@@ -37,6 +61,30 @@
       "writtenOn": "2023-06-29T06:34:35Z",
       "side": 1,
       "message": "fix up alignment. Same comment for below lines.",
+      "range": {
+        "startLine": 549,
+        "startChar": 0,
+        "endLine": 549,
+        "endChar": 4
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bb75b48_8faf8e6f",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7ad41f4_de3a0499",
       "range": {
         "startLine": 549,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc32fcb4_965afd68",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "febaef70_629a96bb",
+      "range": {
+        "startLine": 1171,
+        "startChar": 14,
+        "endLine": 1171,
+        "endChar": 22
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "782dc58e_db4bc243",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-06-29T05:33:22Z",
       "side": 1,
       "message": "This should be TTE_OA_BITS_50_51 ?",
+      "range": {
+        "startLine": 1695,
+        "startChar": 22,
+        "endLine": 1695,
+        "endChar": 35
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a925ec00_bdfa1096",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 1695,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "No. This is alright. If the PA size is \u003e 48 bits, assignation in line 1690 would have assigned the two MSB of the address to bits [50,51] of the TTE, so we need to reset those to zero, which is done here. Then we assign the MSBs to the right place in the assignment below.",
+      "parentUuid": "782dc58e_db4bc243",
       "range": {
         "startLine": 1695,
         "startChar": 22,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3eba608_94073a18",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 2143,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "This was the original code that I replaced by the assignment below (the right call here was to is_feat_lap2_4k_present() instead of is_feat_lap2_4k_2_present() although the tests used to pass because I enabled LPA2 for both stages). Somehow, in one of the rollbacks I presume, both the original and the fixed version got merged. I will remove this.",
+      "parentUuid": "46d1501b_cfb1becc",
+      "range": {
+        "startLine": 2140,
+        "startChar": 0,
+        "endLine": 2143,
+        "endChar": 2
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5442b40_b02c2797",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-06-29T05:33:22Z",
       "side": 1,
       "message": "\"checks for this\"",
+      "range": {
+        "startLine": 2323,
+        "startChar": 25,
+        "endLine": 2323,
+        "endChar": 45
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "820a7cf0_966593ef",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 2323,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5442b40_b02c2797",
       "range": {
         "startLine": 2323,
         "startChar": 25,
@@ -186,6 +330,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a6f87ad_fd9760b2",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 2389,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5e389f9_dae7c567",
+      "range": {
+        "startLine": 2389,
+        "startChar": 4,
+        "endLine": 2389,
+        "endChar": 11
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4377846_f82dea8d",
@@ -199,6 +367,30 @@
       "writtenOn": "2023-06-29T06:34:35Z",
       "side": 1,
       "message": "\"...and LPA2 4K granule support for stage 1 and stage 2.\"",
+      "range": {
+        "startLine": 162,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 22
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "268962e1_42281d98",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T10:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4377846_f82dea8d",
       "range": {
         "startLine": 162,
         "startChar": 8,
