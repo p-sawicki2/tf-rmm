@@ -311,6 +311,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bc6ccc20_f290a322",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 1695,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-29T12:44:47Z",
+      "side": 1,
+      "message": "As dicussed, the XLAT_TESTS_PA_MASK macro can be removed, The implementation would then look like:\n\n pa \u003d init_mmap[j].base_va;\n\n /*\n  * Add an arbitrary offset to PA to be passed to\n  * xlat_map_memory_page_with_attrs()\n  */\n pa +\u003d test_helpers_get_rand_in_range(1,\n\t\t\tXLAT_BLOCK_SIZE(end_lvl) - 1);\n\n tte |\u003d set_oa_to_tte(pa \u0026 XLAT_ADDR_MASK(end_lvl));",
+      "parentUuid": "0d856a2d_87880f8e",
+      "range": {
+        "startLine": 1695,
+        "startChar": 22,
+        "endLine": 1695,
+        "endChar": 35
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46d1501b_cfb1becc",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 26
