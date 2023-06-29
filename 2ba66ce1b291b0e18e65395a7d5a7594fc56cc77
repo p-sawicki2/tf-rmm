@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e25f03ae_df238c3d",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T11:24:13Z",
+      "side": 1,
+      "message": "Yeah, I think you are right. I still have this big resistance towards using macros and/or functions on the library to test to write the tests themselves....",
+      "parentUuid": "1e224bea_43af52c7",
+      "range": {
+        "startLine": 49,
+        "startChar": 1,
+        "endLine": 51,
+        "endChar": 29
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a7ad41f4_de3a0499",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 26
@@ -227,6 +251,30 @@
       "side": 1,
       "message": "hmm, it is confusing to clear the UPPER_ATTRS() (bits[50:51]) of the tte here where the PA is being assigned. And this is being done only for LPA2 case whereas non-LPA2 case , the UPPER_ATTRS() are not cleared.\n\nIdeally set_oa_to_tte() helper should be used here.",
       "parentUuid": "a925ec00_bdfa1096",
+      "range": {
+        "startLine": 1695,
+        "startChar": 22,
+        "endLine": 1695,
+        "endChar": 35
+      },
+      "revId": "2ba66ce1b291b0e18e65395a7d5a7594fc56cc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2115119a_fb2dc2dc",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 26
+      },
+      "lineNbr": 1695,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-29T11:24:13Z",
+      "side": 1,
+      "message": "set_oa_to_tte() is and internal helper indirectly tested by this test (and by any test which indirectly calls to xlat_desc() for instance, such as xlat_ctx_init()) so we cannot use it here. Actually, this bit of code here, tests that set_oa_to_tte() worked as expected and placed MSBs of the PA where they corresponded.\n\nAlso, this is only done for the case in which FEAT_LPA2 is enabled because it is the only situation in which we have PA \u003e 48 bits. It is not necessary to do it when FEAT_LPA2 is disabled as bits [51,50] of the PA will be 0 in this case. In fact, this line was before the \u0027if\u0027 in a previous patchset, but I decided to move it here as it only had effect when FEAT_LPA2 was enabled.\n\nAlso, xlat_test_helpers_get_attrs() doesn\u0027t set bits [51,50], so it is safe to apply the mask here.",
+      "parentUuid": "43ae854b_536b8f9b",
       "range": {
         "startLine": 1695,
         "startChar": 22,
