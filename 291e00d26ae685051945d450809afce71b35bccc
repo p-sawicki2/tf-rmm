@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85b47955_fa03c82f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-06-30T16:50:18Z",
+      "side": 1,
+      "message": "this is only removing an optimization and the commit message is not related to the change. Need more clarity why this is needed.",
+      "revId": "291e00d26ae685051945d450809afce71b35bccc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
