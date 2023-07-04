@@ -183,6 +183,9 @@
  * - EXTRACT(<register_field> <register_value>)
  *   A macro to extract the value of a register field shifted down so the
  *   value can be evaluated directly.
+ * - EXTRACT_UINT(<register_field> <register_value>)
+ *   A macro to extract the unsigned int value of a register field shifted down
+ *   so the value can be evaluated directly.
  * - EXTRACT_BIT(<register_field> <register_value>)
  *   A macro to extract the value of a register bit shifted down so the
  *   value can be evaluated directly.
@@ -195,6 +198,9 @@
 
 #define EXTRACT(regfield, reg) \
 	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
+
+#define EXTRACT_UINT(regfield, reg) \
+	(unsigned int)(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
 
 #define EXTRACT_BIT(regfield, reg) \
 	(((reg) >> (regfield##_SHIFT)) & UL(1))
