@@ -189,15 +189,15 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 
 	/* Validate S2SZ field */
 	if ((p->s2sz < RMM_FEATURE_MIN_IPA_SIZE) ||
-	    (p->s2sz > EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, feat_reg0))) {
+	    (p->s2sz > EXTRACT_UINT(RMM_FEATURE_REGISTER_0_S2SZ, feat_reg0))) {
 		return false;
 	}
 
 	/* Validate number of breakpoints */
 	if ((p->num_bps !=
-		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_BPS, feat_reg0)) ||
+		EXTRACT_UINT(RMM_FEATURE_REGISTER_0_NUM_BPS, feat_reg0)) ||
 	    (p->num_wps !=
-		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_WPS, feat_reg0))) {
+		EXTRACT_UINT(RMM_FEATURE_REGISTER_0_NUM_WPS, feat_reg0))) {
 		return false;
 	}
 
@@ -210,7 +210,7 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 
 		/* Validate SVE_VL value */
 		if (p->sve_vl >
-			EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL, feat_reg0)) {
+			EXTRACT_UINT(RMM_FEATURE_REGISTER_0_SVE_VL, feat_reg0)) {
 			return false;
 		}
 	}
@@ -223,7 +223,7 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	/* Validate number of PMU counters if PMUv3 is enabled */
 	if ((EXTRACT(RMI_REALM_FLAGS_PMU, p->flags) == RMI_FEATURE_TRUE) &&
 	    (p->pmu_num_ctrs !=
-		EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0))) {
+		EXTRACT_UINT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0))) {
 		return false;
 	}
 
