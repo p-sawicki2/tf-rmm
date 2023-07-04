@@ -559,7 +559,7 @@ static bool s2tte_has_unassigned_ripas(unsigned long s2tte, unsigned long ripas)
 
 	if (!s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED)) {
 		return false;
-	}
+}
 
 	invalid_desc_ripas = s2tte & S2TTE_INVALID_RIPAS_MASK;
 	return (invalid_desc_ripas == ripas);
@@ -592,7 +592,7 @@ bool s2tte_is_unassigned_ns(unsigned long s2tte)
 {
 	if (!s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED)) {
 		return false;
-	}
+}
 
 	return ((s2tte & S2TTE_NS) != 0UL);
 }
@@ -746,7 +746,7 @@ void s2tt_init_destroyed(unsigned long *s2tt)
 {
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
 		s2tt[i] = s2tte_create_destroyed();
-	}
+}
 
 	dsb(ish);
 }
