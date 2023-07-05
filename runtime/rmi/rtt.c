@@ -756,42 +756,6 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 	ret->x[0] = RMI_SUCCESS;
 }
 
-static void data_granule_measure(struct rd *rd, void *data,
-				 unsigned long ipa,
-				 unsigned long flags)
-{
-	struct measurement_desc_data measure_desc = {0};
-
-	/* Initialize the measurement descriptior structure */
-	measure_desc.desc_type = MEASURE_DESC_TYPE_DATA;
-	measure_desc.len = sizeof(struct measurement_desc_data);
-	measure_desc.ipa = ipa;
-	measure_desc.flags = flags;
-	memcpy(measure_desc.rim,
-	       &rd->measurement[RIM_MEASUREMENT_SLOT],
-	       measurement_get_size(rd->algorithm));
-
-	if (flags == RMI_MEASURE_CONTENT) {
-		/*
-		 * Hashing the data granules and store the result in the
-		 * measurement descriptor structure.
-		 */
-		measurement_hash_compute(rd->algorithm,
-					data,
-					GRANULE_SIZE,
-					measure_desc.content);
-	}
-
-	/*
-	 * Hashing the measurement descriptor structure; the result is the
-	 * updated RIM.
-	 */
-	measurement_hash_compute(rd->algorithm,
-			       &measure_desc,
-			       sizeof(measure_desc),
-			       rd->measurement[RIM_MEASUREMENT_SLOT]);
-}
-
 static unsigned long validate_data_create_unknown(unsigned long map_addr,
 						  struct rd *rd)
 {
@@ -899,7 +863,12 @@ static unsigned long data_create(unsigned long data_addr,
 		}
 
 
-		data_granule_measure(rd, data, map_addr, flags);
+		measurement_data_granule_measure(
+			rd->measurement[RIM_MEASUREMENT_SLOT],
+			rd->algorithm,
+			data,
+			map_addr,
+			flags);
 
 		buffer_unmap(data);
 	}
@@ -1076,31 +1045,6 @@ static bool update_ripas(unsigned long *s2tte, unsigned long level,
 	return false;
 }
 
-static void ripas_granule_measure(struct rd *rd,
-				  unsigned long ipa,
-				  unsigned long level)
-{
-	struct measurement_desc_ripas measure_desc = {0};
-
-	/* Initialize the measurement descriptior structure */
-	measure_desc.desc_type = MEASURE_DESC_TYPE_RIPAS;
-	measure_desc.len = sizeof(struct measurement_desc_ripas);
-	measure_desc.ipa = ipa;
-	measure_desc.level = level;
-	memcpy(measure_desc.rim,
-	       &rd->measurement[RIM_MEASUREMENT_SLOT],
-	       measurement_get_size(rd->algorithm));
-
-	/*
-	 * Hashing the measurement descriptor structure; the result is the
-	 * updated RIM.
-	 */
-	measurement_hash_compute(rd->algorithm,
-				 &measure_desc,
-				 sizeof(measure_desc),
-				 rd->measurement[RIM_MEASUREMENT_SLOT]);
-}
-
 unsigned long smc_rtt_init_ripas(unsigned long rd_addr,
 				 unsigned long map_addr,
 				 unsigned long ulevel)
@@ -1166,7 +1110,10 @@ unsigned long smc_rtt_init_ripas(unsigned long rd_addr,
 
 	s2tte_write(&s2tt[wi.index], s2tte);
 
-	ripas_granule_measure(rd, map_addr, level);
+	measurement_ripas_granule_measure(rd->measurement[RIM_MEASUREMENT_SLOT],
+					  rd->algorithm,
+					  map_addr,
+					  level);
 
 	ret = RMI_SUCCESS;
 
