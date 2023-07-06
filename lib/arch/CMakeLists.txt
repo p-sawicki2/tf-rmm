@@ -12,6 +12,7 @@ target_link_libraries(rmm-lib-arch
 target_include_directories(rmm-lib-arch
     PUBLIC  "include"
             "include/${RMM_ARCH}"
+            "include/arch/include"
     PRIVATE "src/${RMM_ARCH}"
             "src/include")
 
