@@ -8,37 +8,13 @@
 
 #include <arch.h>
 #include <arch_features.h>
-#include <assert.h>
+#include <simd_defs.h>
 #include <stddef.h>
-
-/* Size of one FPU vector register in bytes */
-#define FPU_VEC_REG_SIZE	16U
-#define FPU_VEC_REG_NUM		32U
-#define FPU_REGS_SIZE		(FPU_VEC_REG_SIZE * FPU_VEC_REG_NUM)
 
 /* These defines are required by compiler assert to check offsets */
 #define FPU_CTX_OFFSET_Q	0x0U
 #define FPU_CTX_OFFSET_FPSR	(FPU_REGS_SIZE)
 #define FPU_CTX_OFFSET_FPCR	(FPU_CTX_OFFSET_FPSR + 8U)
-
-/*
- * Size of SVE Z, Predicate (P), First Fault predicate Register (FFR) registers
- * in bytes for vector length 128 bits (0 vq). P and FFR registers are 1/8 of
- * Z register.
- */
-#define SVE_Z_REG_MIN_SIZE	U(16)
-#define SVE_P_REG_MIN_SIZE	(SVE_Z_REG_MIN_SIZE / 8)
-#define SVE_FFR_REG_MIN_SIZE	(SVE_Z_REG_MIN_SIZE / 8)
-
-/* Number of Z, P, FFR registers */
-#define SVE_Z_REG_NUM		U(32)
-#define SVE_P_REG_NUM		U(16)
-#define SVE_FFR_REG_NUM		U(1)
-
-#define SVE_Z_REGS_SIZE(vq)	((vq + 1) * (SVE_Z_REG_MIN_SIZE * SVE_Z_REG_NUM))
-#define SVE_P_REGS_SIZE(vq)	((vq + 1) * (SVE_P_REG_MIN_SIZE * SVE_P_REG_NUM))
-#define SVE_FFR_REGS_SIZE(vq)	((vq + 1) * (SVE_FFR_REG_MIN_SIZE * \
-					     SVE_FFR_REG_NUM))
 
 /* SVE vq architecture limit */
 #define SVE_VQ_ARCH_MAX		((1U << ZCR_EL2_LEN_WIDTH) - 1U)
