@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8922e4c_effe3a7c",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-07-07T15:04:09Z",
+      "side": 1,
+      "message": "We may need to clarify here why we do not take additional locks when we map and make the access to rec_aux granules.\n\nThere is a comment in granule_types.h that explains it:\n\t * Granule content is not protected by granule::lock nor the reference\n\t * count. The RMM can access the content of the auxiliary granules\n\t * only while holding a lock or reference to the parent REC granule\n\n... so it is worth adding a comment here that:\n\"The access to rec_aux granule is not protected by the lock in its granule but by the lock of the parent REC granule\".",
+      "range": {
+        "startLine": 303,
+        "startChar": 0,
+        "endLine": 303,
+        "endChar": 3
+      },
+      "revId": "ec62f81fbd6d3583a04e248ffbca29d79e38cf0e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
