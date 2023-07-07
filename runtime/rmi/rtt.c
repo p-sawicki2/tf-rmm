@@ -126,7 +126,7 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 				map_addr, level - 1L, &wi);
 	if (wi.last_level != level - 1L) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		goto out_unlock_llt;
 	}
 
@@ -247,7 +247,7 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 
 	} else if (s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_table;
 
 	} else {
@@ -312,9 +312,9 @@ void smc_rtt_fold(unsigned long rd_addr,
 
 	rtt_walk_lock_unlock(g_table_root, sl, ipa_bits,
 				map_addr, level - 1L, &wi);
-	if (wi.last_level != level - 1L) {
+	if (wi.last_level != level - 1UL) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		goto out_unlock_parent_table;
 	}
 
@@ -322,7 +322,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 	if (!s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)(level - 1L));
+					(unsigned int)((level - 1L) & 0xFF));
 		goto out_unmap_parent_table;
 	}
 
@@ -362,7 +362,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 			 * unassigned entries.
 			 */
 			ret = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)(level & 0xFF));
 			goto out_unmap_table;
 		}
 		__granule_put(wi.g_llt);
@@ -381,7 +381,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		 */
 		if (level <= RTT_MIN_BLOCK_LEVEL) {
 			ret = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)wi.last_level);
+						(unsigned int)(wi.last_level & 0xFF));
 			goto out_unmap_table;
 		}
 
@@ -404,7 +404,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		/* The table contains mixed entries that cannot be folded */
 		} else {
 			ret = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)(level & 0xFF));
 			goto out_unmap_table;
 		}
 
@@ -414,7 +414,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		 * The table holds a mixture of different types of s2ttes.
 		 */
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)level);
+					(unsigned int)(level & 0xFF));
 		goto out_unmap_table;
 	}
 
@@ -498,10 +498,10 @@ void smc_rtt_destroy(unsigned long rd_addr,
 	parent_s2tt = granule_map(wi.g_llt, SLOT_RTT);
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 
-	if ((wi.last_level != level - 1L) ||
-	    !s2tte_is_table(parent_s2tte, level - 1L)) {
+	if ((wi.last_level != level - 1UL) ||
+	    !s2tte_is_table(parent_s2tte, level - 1UL)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		skip_non_live = true;
 		goto out_unmap_parent_table;
 	}
@@ -524,7 +524,8 @@ void smc_rtt_destroy(unsigned long rd_addr,
 	 * the refcount can be accessed without atomic operations.
 	 */
 	if (g_tbl->refcount != 0UL) {
-		ret = pack_return_code(RMI_ERROR_RTT, (unsigned int)level);
+		ret = pack_return_code(RMI_ERROR_RTT,
+					(unsigned int)(level & 0xFF));
 		goto out_unlock_table;
 	}
 
@@ -633,9 +634,9 @@ static void map_unmap_ns(unsigned long rd_addr,
 	 * For UNMAP_NS, we need to map the table and look
 	 * for the end of the non-live region.
 	 */
-	if ((op == MAP_NS) && (wi.last_level != level)) {
+	if (op == MAP_NS && wi.last_level != level) {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		goto out_unlock_llt;
 	}
 
@@ -645,7 +646,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 	if (op == MAP_NS) {
 		if (!s2tte_is_unassigned_ns(s2tte)) {
 			res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)level & 0xFF);
 			goto out_unmap_table;
 		}
 
@@ -661,7 +662,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 
 		if ((wi.last_level != level) || !assigned_ns) {
 			res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)wi.last_level);
+					(unsigned int)wi.last_level & 0xFF);
 			goto out_unmap_table;
 		}
 
@@ -908,7 +909,7 @@ static unsigned long data_create(unsigned long rd_addr,
 			     map_addr, RTT_PAGE_LEVEL, &wi);
 	if (wi.last_level != RTT_PAGE_LEVEL) {
 		ret = pack_return_code(RMI_ERROR_RTT,
-					(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		goto out_unlock_ll_table;
 	}
 
@@ -1039,7 +1040,7 @@ void smc_data_destroy(unsigned long rd_addr,
 	s2tt = granule_map(wi.g_llt, SLOT_RTT);
 	if (wi.last_level != RTT_PAGE_LEVEL) {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)wi.last_level);
+					(unsigned int)(wi.last_level & 0xFF));
 		goto out_unmap_ll_table;
 	}
 
@@ -1243,7 +1244,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 	 */
 	if (addr != base) {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)level & 0xFF);
 		goto out_unmap_llt;
 	}
 
@@ -1274,7 +1275,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 		res->x[1] = addr;
 	} else {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)level & 0xFF);
 	}
 
 out_unmap_llt:
@@ -1303,7 +1304,7 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 	/* Make sure we don't touch a range below the requested range */
 	if (addr != base) {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)(level & 0xFF));
 		return;
 	}
 
@@ -1339,7 +1340,7 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 		res->x[1] = addr;
 	} else {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned int)level);
+						(unsigned int)(level & 0xFF));
 	}
 }
 
