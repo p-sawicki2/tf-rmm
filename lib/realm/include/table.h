@@ -13,15 +13,13 @@
 #define MAX_IPA_BITS		48U
 #define MAX_IPA_SIZE		(1UL << MAX_IPA_BITS)
 
-#define MIN_STARTING_LEVEL	0
-#define RTT_PAGE_LEVEL		3
-#define RTT_MIN_BLOCK_LEVEL	2
+#define MAX_IPA_BITS_LPA2	52U
+#define MAX_IPA_SIZE_LPA2	(1UL << MAX_IPA_BITS_LPA2)
 
-/* TODO: Fix this when introducing LPA2 support */
-COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
-
-/* TODO: Allow the NS caller to select the stage 2 starting level */
-#define RTT_STARTING_LEVEL	0
+#define RTT_MIN_STARTING_LEVEL		0
+#define RTT_MIN_STARTING_LEVEL_LPA2	-1
+#define RTT_PAGE_LEVEL			3
+#define RTT_MIN_BLOCK_LEVEL		2
 
 /*
  * S2TTE_STRIDE: The number of bits resolved in a single level of translation
@@ -30,6 +28,7 @@ COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
 #define S2TTE_STRIDE		(GRANULE_SHIFT - 3U)
 #define S2TTES_PER_S2TT		(1UL << S2TTE_STRIDE)
 
+void s2tt_init(void);
 unsigned long s2tte_create_unassigned_empty(void);
 unsigned long s2tte_create_unassigned_ram(void);
 unsigned long s2tte_create_unassigned_ns(void);
@@ -128,15 +127,9 @@ static inline uint64_t __tte_read(uint64_t *ttep)
 #define s1tte_read(s1ttep)	__tte_read(s1ttep)
 #define s2tte_read(s2ttep)	__tte_read(s2ttep)
 
-/*
- * At the moment, RMM doesn't support FEAT_LPA2 for stage 2 address
- * translation, so the maximum IPA size is 48 bits.
- */
 static inline unsigned int max_ipa_size(void)
 {
-	unsigned int ipa_size = arch_feat_get_pa_width();
-
-	return (ipa_size > MAX_IPA_BITS) ? MAX_IPA_BITS : ipa_size;
+	return arch_feat_get_pa_width();
 }
 
 unsigned long skip_non_live_entries(unsigned long addr,

@@ -15,6 +15,7 @@
 #include <sizes.h>
 #include <stdint.h>
 #include <string.h>
+#include <table.h>
 #include <xlat_contexts.h>
 #include <xlat_high_va.h>
 #include <xlat_tables.h>
@@ -179,6 +180,12 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 
 	/* Read supported GIC virtualization features and init GIC variables */
 	gic_get_virt_features();
+
+	/*
+	 * Initialize the stage 2 translation tables mechanism.
+	 * Must be done only once during boot up.
+	 */
+	s2tt_init();
 
 	return 0;
 }
