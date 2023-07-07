@@ -70,6 +70,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7ace782_3fec6127",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6452a34_460537f2",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0a394d1_11db86e9",
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "d0a394d1_11db86e9",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b5300fe_307c922d",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Done.\n\nNote that S2TTE_MEMATTR_FWB_NORMAL_WB was duplicated in line 48. So I removed from here.",
+      "parentUuid": "6604da5c_eef94901",
       "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -152,6 +188,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b15fbdf4_bd65fdca",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Left this as is, as discussed, to be improved on a later patch",
+      "parentUuid": "eaeacf33_0f6a2660",
+      "range": {
+        "startLine": 168,
+        "startChar": 21,
+        "endLine": 168,
+        "endChar": 45
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e21d4d3_ed941b18",
@@ -189,6 +249,30 @@
       "side": 1,
       "message": "See my comment above",
       "parentUuid": "3e21d4d3_ed941b18",
+      "range": {
+        "startLine": 192,
+        "startChar": 21,
+        "endLine": 192,
+        "endChar": 42
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4219ba9b_84096def",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Left this as is, as discussed, to be improved on a later patch",
+      "parentUuid": "5104c13c_ed927576",
       "range": {
         "startLine": 192,
         "startChar": 21,
@@ -270,6 +354,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdc2a837_96c73bb0",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Leaving this as it was, to minimize conflicts with EC2 patches.",
+      "parentUuid": "a63033b0_850da0ba",
+      "range": {
+        "startLine": 335,
+        "startChar": 21,
+        "endLine": 335,
+        "endChar": 33
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "742da042_8106e3e4",
@@ -317,6 +425,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5899d40_7dbda67a",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Double checked this. Working now.",
+      "parentUuid": "c0a59fa0_45aca1d3",
+      "range": {
+        "startLine": 340,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 32
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d71751d_ea10aae3",
@@ -348,6 +480,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "0d71751d_ea10aae3",
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcd24b61_50a10dc7",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d8236c8_de2f544b",
       "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -389,6 +539,30 @@
       "side": 1,
       "message": "When I first started implementing this feature, I couldn\u0027t find a way to pass the realm descriptor information to the APIs on this call so I decided that adding an LPA2 flag on the RD wasn\u0027t useful at all. After taking a second look, I realized that I should have missed something because it can be done (s2tt RMIs receive a pointer to the RD) so that option is back on the table.\n\nHowever, I think passing an LPA2 flag (or any other LPA2 related information such as the minimum SL) to the APIs here is not very useful. Instead we could:\n\n* When FEAT_LPA2 is available to stage 2, RMM will enable and use it, as it does now. This way the s2tt library doesn\u0027t need to query the status of lpa2 for each realm, which gives a performance improvement. The host doesn\u0027t actually care about how the TTEs are implemented internally.\n\n* On the s2tt RMI handlers (rtt.c), we validate the arguments of the RMIs (such as the start level, etc) against the LPA2 flag on the RD. If the arguments are not supported (e.g we pass level -1 when the realm doesn\u0027t have support for LPA2 enabled), the handler returns straight away with the error code. It never calls the s2tt APIs and therefore there is no need to modify them. Only validate_rtt_entry_cmds(), validate_rtt_entry_cmds() and validate_rtt_map_cmds() helpers in rtt.c need to be updated to validate the arguments against the LPA2 status of the realm in question.\n\n* The s2tt library could just check some assertions, e.g check that the SL is always allowed by the platform (as done here). This won\u0027t be needed during production (the s2tt RMI handlers should already have taken care of validating the arguments), so it shouldn\u0027t introduce any overhead later.\n\nThoughts?",
       "parentUuid": "e0b1e5e4_c50951fe",
+      "range": {
+        "startLine": 442,
+        "startChar": 23,
+        "endLine": 442,
+        "endChar": 45
+      },
+      "revId": "a3da148fa62bd6581a0dfe8a834853d1ae3e7607",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be949823_db8a62e3",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 29
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-07T14:34:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5b14937_675fd318",
       "range": {
         "startLine": 442,
         "startChar": 23,
