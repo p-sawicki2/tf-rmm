@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
@@ -114,6 +115,8 @@ int rmm_el3_ifc_get_dram_data_validated_pa(unsigned long max_num_banks,
 	for (unsigned long i = 0UL; i < num_banks; i++) {
 		uint64_t size = bank_ptr->size;
 		uintptr_t start = bank_ptr->base;
+		uintptr_t max_pa_size =
+				(uintptr_t)(1ULL << arch_feat_get_pa_width());
 
 		/* Base address, size of bank and alignments */
 		if ((start == 0UL) || (size == 0UL) ||
@@ -134,6 +137,14 @@ int rmm_el3_ifc_get_dram_data_validated_pa(unsigned long max_num_banks,
 
 		/* Update end address of the bank */
 		end = start + size - 1UL;
+
+		/*
+		 * Check that the bank does not exceed the PA range
+		 * supported by the platform.
+		 */
+		if ((start >= max_pa_size) || (end >= max_pa_size)) {
+			return E_RMM_BOOT_MANIFEST_DATA_ERROR;
+		}
 
 		/* Total number of granules */
 		num_granules += (size / GRANULE_SIZE);
