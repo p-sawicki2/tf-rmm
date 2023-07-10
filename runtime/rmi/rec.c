@@ -9,7 +9,6 @@
 #include <buffer.h>
 #include <gic.h>
 #include <granule.h>
-#include <mbedtls/memory_buffer_alloc.h>
 #include <measurement.h>
 #include <memory_alloc.h>
 #include <psci.h>
