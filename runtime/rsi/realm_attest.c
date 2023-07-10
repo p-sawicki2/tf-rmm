@@ -132,7 +132,8 @@ static void attest_token_continue_write_state(struct rec *rec,
 	realm_att_token = granule_map(gr, SLOT_RSI_CALL);
 
 	attest_token_len = attest_cca_token_create(realm_att_token,
-						ATTEST_TOKEN_BUFFER_SIZE, &attest_data->rmm_realm_token_buf,  
+						ATTEST_TOKEN_BUFFER_SIZE,
+						&attest_data->rmm_realm_token_buf,
 						attest_data->rmm_realm_token_len);
 
 	/* Unmap realm granule */
