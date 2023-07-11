@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "288fa426_15776dce",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T12:36:25Z",
+      "side": 1,
+      "message": "This is done in REC_CREATE so not needed again.",
+      "revId": "8512ee8b2b82fd79df2d182bae30807109e04e7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e317eb2f_e034b1c7",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T12:36:25Z",
+      "side": 1,
+      "message": "nit: int is enough.",
+      "range": {
+        "startLine": 204,
+        "startChar": 10,
+        "endLine": 204,
+        "endChar": 15
+      },
+      "revId": "8512ee8b2b82fd79df2d182bae30807109e04e7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
