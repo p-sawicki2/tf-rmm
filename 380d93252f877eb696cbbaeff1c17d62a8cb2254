@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55e3b69_c0826faa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T10:46:27Z",
+      "side": 1,
+      "message": "This patch does not correlate with EAC2 specification.",
+      "revId": "380d93252f877eb696cbbaeff1c17d62a8cb2254",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
