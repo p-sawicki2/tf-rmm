@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dc3974c_f0638a7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T05:23:13Z",
+      "side": 1,
+      "message": "the rework of find_lock_unused_granule can be another patch on top.\nTh duplicate lines can be removed.\n\nOtherwise looks good.",
+      "revId": "6b1603657008eaa76f07b9bf67db77f2f8dde366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "013eaa5a_4f4ba9f3",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T05:23:13Z",
+      "side": 1,
+      "message": "duplicate of below lines. can be removed.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 70
+      },
+      "revId": "6b1603657008eaa76f07b9bf67db77f2f8dde366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
