@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4aff1e5_135e09fe",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T12:10:16Z",
+      "side": 0,
+      "message": "keep this ?",
+      "revId": "c9f318671740b2a41b5744b604737824d896f55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
