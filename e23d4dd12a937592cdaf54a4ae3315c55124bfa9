@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2c7440a_0b3a6e31",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-11T12:37:38Z",
+      "side": 0,
+      "message": "I have given a comment for an earlier patch for this. this change can be moved there.",
+      "revId": "e23d4dd12a937592cdaf54a4ae3315c55124bfa9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
