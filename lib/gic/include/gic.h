@@ -182,10 +182,18 @@
  * Maximum number of Interrupt Controller
  * Hyp Active Priorities Group 0/1 Registers [0..3]
  */
+#ifndef ICH_MAX_APRS
 #define ICH_MAX_APRS		4
+#else
+#warning Constant defined by architecture is overridden by build system
+#endif
 
 /* Maximum number of Interrupt Controller List Registers */
+#ifndef ICH_MAX_LRS
 #define ICH_MAX_LRS		16
+#else
+#warning Constant defined by architecture is overridden by build system
+#endif
 
 /*******************************************************************************
  * GICv3 and 3.1 definitions
