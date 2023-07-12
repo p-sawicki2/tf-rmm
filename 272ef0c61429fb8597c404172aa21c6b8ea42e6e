@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "122a51a5_fb212d78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T05:37:32Z",
+      "side": 1,
+      "message": "suggest a one liner description similar to previous patch comment",
+      "revId": "272ef0c61429fb8597c404172aa21c6b8ea42e6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "002cfc3f_f8941d89",
+        "filename": "lib/attestation/include_cbmc/attestation.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T05:37:32Z",
+      "side": 1,
+      "message": "include a comment NOTE here as suggested in previous patch.",
+      "revId": "272ef0c61429fb8597c404172aa21c6b8ea42e6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
