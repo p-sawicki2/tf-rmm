@@ -67,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "897a01ab_17257b23",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:40:59Z",
+      "side": 1,
+      "message": "See https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21616/comment/f220a06b_831b18e3/\n\n_NCBMC(static) struct granule granules[RMM_MAX_GRANULES];",
+      "parentUuid": "d4cef85a_4e6ca656",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5efa6897_061c5144",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 4
@@ -78,6 +96,30 @@
       "writtenOn": "2023-07-12T13:25:56Z",
       "side": 1,
       "message": "perhaps we can define a macro , STATIC_IF_NOT_CBMC\n\nSTATIC_IF_NOT_CBMC unsigned long s2_addr_to_idx(....)",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 11
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbf460cd_af784757",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:40:59Z",
+      "side": 1,
+      "message": "_NCBMC(static) ...",
+      "parentUuid": "5efa6897_061c5144",
       "range": {
         "startLine": 232,
         "startChar": 0,
@@ -107,6 +149,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a38a54f5_36a934f2",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:40:59Z",
+      "side": 1,
+      "message": "or an use _NCBMC here",
+      "parentUuid": "471ba8ae_37791158",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "518eacc9_ae801e8b",
         "filename": "runtime/core/vmid.c",
         "patchSetId": 4
@@ -118,6 +178,30 @@
       "writtenOn": "2023-07-12T13:25:56Z",
       "side": 1,
       "message": "STATIC_IF_NOT_CBMC",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34ae09d2_e1113549",
+        "filename": "runtime/core/vmid.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:40:59Z",
+      "side": 1,
+      "message": "can use _NCBMC(static) unsigned...",
+      "parentUuid": "518eacc9_ae801e8b",
       "range": {
         "startLine": 21,
         "startChar": 0,
