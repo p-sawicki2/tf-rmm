@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7525fb9d_66f9f557",
+        "filename": "lib/common/include/utils_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T12:35:02Z",
+      "side": 1,
+      "message": "I think instead of introducing more implicit build flags, we can pass CBMC to the build and then just do a ifndef CBMC here.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 31
+      },
+      "revId": "ab4cd078ab7d7ff6b24c9ddb699729c8f4f7de4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
