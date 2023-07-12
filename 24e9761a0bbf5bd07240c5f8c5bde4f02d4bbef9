@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e7aed75_a078b3d8",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T12:51:33Z",
+      "side": 0,
+      "message": "These macros do not belong here, these should be moved to a header file in runtime/include.\n\ncould be `rec_aux_alloc_size.h`\n\nCan do a #ifdef CBMC for these macros.",
+      "revId": "24e9761a0bbf5bd07240c5f8c5bde4f02d4bbef9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7428a340_ad69e897",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T12:51:33Z",
+      "side": 0,
+      "message": "we can do a #ifndef CBMC here.",
+      "revId": "24e9761a0bbf5bd07240c5f8c5bde4f02d4bbef9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
