@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4da347b9_84a31868",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T04:48:47Z",
+      "side": 1,
+      "message": "minor trivial comment. Good refactoring, as it removes qcbor dependency for generic RMM code.",
+      "revId": "59a8e02008e6a22c4192e1e7cfb873202d17f6d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74eb70c8_c1992023",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T04:48:47Z",
+      "side": 1,
+      "message": "we could pass the structure by reference here (\u0026realm_token_ub). Helps to reduce the stack use , but I guess the compiler may inline the static function , so may not make much difference.",
+      "range": {
+        "startLine": 266,
+        "startChar": 11,
+        "endLine": 266,
+        "endChar": 25
+      },
+      "revId": "59a8e02008e6a22c4192e1e7cfb873202d17f6d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
