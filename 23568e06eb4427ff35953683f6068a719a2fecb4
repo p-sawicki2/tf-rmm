@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4cef85a_4e6ca656",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T13:25:56Z",
+      "side": 1,
+      "message": "we can use the granule_from_idx(0) to get the base of granule struct. The function would need to be exported for CBMC.\n\nThe RMM_MAX_GRANULES is a config exported project wide.\n\nOr you could use the STATIC_IF_NOT_CBMC macro suggested later.",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5efa6897_061c5144",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T13:25:56Z",
+      "side": 1,
+      "message": "perhaps we can define a macro , STATIC_IF_NOT_CBMC\n\nSTATIC_IF_NOT_CBMC unsigned long s2_addr_to_idx(....)",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 11
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "471ba8ae_37791158",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T13:25:56Z",
+      "side": 1,
+      "message": "can export a helper function to get the buffer from host.",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "518eacc9_ae801e8b",
+        "filename": "runtime/core/vmid.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T13:25:56Z",
+      "side": 1,
+      "message": "STATIC_IF_NOT_CBMC",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
