@@ -20,6 +20,64 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a1023a1_8a3bcc96",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:47:17Z",
+      "side": 1,
+      "message": "Ignore previous comment. We can use _CBMC and _NCBMC macros here.",
+      "parentUuid": "ea4f0de2_b150c1b6",
+      "revId": "db78d426e60e4cc6f20262bb194161cfd839abfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ca1e019_8104aa36",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:47:17Z",
+      "side": 1,
+      "message": "_NCBMC(unsigned long regs[31];\n\n\t/*\n\t * PAuth state of Realm.\n\t * Note that we do not need to save NS state as EL3 will save this as part of world switch.\n\t */\n\tstruct pauth_state pauth;\n\n\tunsigned long pc;\n\tunsigned long pstate;\n\n\tstruct sysreg_state sysregs;\n\tstruct common_sysreg_state common_sysregs;\n)",
+      "range": {
+        "startLine": 125,
+        "startChar": 1,
+        "endLine": 137,
+        "endChar": 43
+      },
+      "revId": "db78d426e60e4cc6f20262bb194161cfd839abfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "563d2daa_b193076e",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:47:17Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "db78d426e60e4cc6f20262bb194161cfd839abfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "347941ff_eaa57958",
         "filename": "lib/realm/include/rec.h",
         "patchSetId": 4
@@ -48,6 +106,24 @@
       "writtenOn": "2023-07-12T13:05:47Z",
       "side": 1,
       "message": "This can also follow a similar pattern as suggested in rec.h\n\nDefine a NOP version of this function in rec_cbmc.h.",
+      "revId": "db78d426e60e4cc6f20262bb194161cfd839abfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ce8579b_4b52bde2",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T16:47:17Z",
+      "side": 1,
+      "message": "use _NCBMC here",
+      "parentUuid": "3f404322_6dd1084c",
       "revId": "db78d426e60e4cc6f20262bb194161cfd839abfc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
