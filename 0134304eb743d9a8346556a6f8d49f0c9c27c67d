@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8087bfbf_e46c6b77",
+        "filename": "lib/gic/include/gic.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T12:52:11Z",
+      "side": 1,
+      "message": "Need some data on the difference made by there macros.",
+      "revId": "0134304eb743d9a8346556a6f8d49f0c9c27c67d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
