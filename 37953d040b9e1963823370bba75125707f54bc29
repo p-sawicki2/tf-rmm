@@ -16,6 +16,24 @@
       "message": "Eventually as fake_host testing capability grows, we may want to have the original values. The override is to be for cbmc specifically.\n\nSuggest this structure:\n\ninclude/arch/simd_defs.h  --\u003e arrch64 and fake_host.\ninclude/cbmc/simd_defs.h  --\u003e for CBMC\n\nAlso include the following comment at top of file\n\n *****************************************\n * This header is only for CBMC analysis *\n *****************************************",
       "revId": "37953d040b9e1963823370bba75125707f54bc29",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ee6addb_cd4eaaf8",
+        "filename": "lib/arch/include/fake_host/simd_defs.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-12T08:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b99fbe3_398943e7",
+      "revId": "37953d040b9e1963823370bba75125707f54bc29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
