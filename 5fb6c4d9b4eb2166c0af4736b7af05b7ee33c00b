@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f220a06b_831b18e3",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T13:29:22Z",
+      "side": 1,
+      "message": "can define a macro NOP_IF_CBMC()",
+      "revId": "5fb6c4d9b4eb2166c0af4736b7af05b7ee33c00b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
