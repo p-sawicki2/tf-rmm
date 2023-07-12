@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f07d1ae0_bb736fd3",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-12T11:58:22Z",
+      "side": 1,
+      "message": "There is also a realm_params_measure which can be moved here.",
+      "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
