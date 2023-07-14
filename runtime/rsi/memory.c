@@ -17,14 +17,24 @@ void handle_rsi_ipa_state_set(struct rec *rec,
 	unsigned long base = rec->regs[1];
 	unsigned long top = rec->regs[2];
 	enum ripas ripas = (enum ripas)rec->regs[3];
+	unsigned long flags = rec->regs[4];	
 
-	if ((ripas > RIPAS_RAM)	    ||
+	if ((ripas > RIPAS_RAM)	   ||
 	    !GRANULE_ALIGNED(base) || !GRANULE_ALIGNED(top) ||
-	    (top <= base)	    || /* Size is zero, or range overflows */
+	    (top <= base)	   || /* Size is zero, or range overflows */
 	    !region_in_rec_par(rec, base, top)) {
 		res->action = UPDATE_REC_RETURN_TO_REALM;
 		res->smc_res.x[0] = RSI_ERROR_INPUT;
 		return;
+	}
+
+	/* Check if RIPAS change from DESTROYED is permitted */
+	if ((flags & RSI_CHANGE_DESTROYED) == 0UL) {
+		if (realm_ipa_check_ripas_range(rec, base, top) != 0) {
+			res->action = UPDATE_REC_RETURN_TO_REALM;
+			res->smc_res.x[0] = RSI_ERROR_INPUT;
+			return;
+		}
 	}
 
 	rec->set_ripas.base = base;
@@ -35,7 +45,7 @@ void handle_rsi_ipa_state_set(struct rec *rec,
 	rec_exit->exit_reason = RMI_EXIT_RIPAS_CHANGE;
 	rec_exit->ripas_base = base;
 	rec_exit->ripas_top = top;
-	rec_exit->ripas_value = (unsigned int)ripas;
+	rec_exit->ripas_value = (unsigned char)ripas;
 
 	res->action = UPDATE_REC_EXIT_TO_HOST;
 }
@@ -44,7 +54,6 @@ void handle_rsi_ipa_state_get(struct rec *rec,
 			      struct rsi_result *res)
 {
 	unsigned long ipa = rec->regs[1];
-	unsigned long rtt_level;
 	enum s2_walk_status ws;
 	enum ripas ripas;
 
@@ -55,14 +64,11 @@ void handle_rsi_ipa_state_get(struct rec *rec,
 		return;
 	}
 
-	ws = realm_ipa_get_ripas(rec, ipa, &ripas, &rtt_level);
+	ws = realm_ipa_get_ripas(rec, ipa, &ripas);
 	if (ws == WALK_SUCCESS) {
 		res->smc_res.x[0] = RSI_SUCCESS;
 		res->smc_res.x[1] = ripas;
 	} else {
-		/* Exit to Host */
-		res->action = STAGE_2_TRANSLATION_FAULT;
-		res->rtt_level = rtt_level;
 		res->smc_res.x[0] = RSI_ERROR_INPUT;
 	}
 }

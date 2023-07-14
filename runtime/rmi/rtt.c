@@ -1246,7 +1246,7 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 				struct smc_result *res)
 {
 	unsigned long addr;
-	unsigned int index = wi->index;
+	unsigned long index = wi->index;
 	long level = wi->last_level;
 	unsigned long map_size = s2tte_map_size(level);
 
@@ -1259,17 +1259,15 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 		return;
 	}
 
-	for (index = wi->index; index < S2TTES_PER_S2TT;
-					index++, addr += map_size) {
-		unsigned long next = addr + map_size;
+	for (index = wi->index; index < S2TTES_PER_S2TT; addr += map_size) {
 		int ret;
 
-		/* If this entry crosses the range, abort. */
-		if (next > top) {
+		/* If this entry crosses the range, break. */
+		if (addr + map_size > top) {
 			break;
 		}
 
-		ret = update_ripas(&s2tt[index], level, ripas);
+		ret = update_ripas(&s2tt[index++], level, ripas);
 		if (ret < 0) {
 			break;
 		}

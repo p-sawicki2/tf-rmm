@@ -101,22 +101,18 @@ enum s2_walk_status realm_ipa_to_pa(struct rec *rec,
  *	[in]  @ipa:		IPA for which RIPAS is queried.
  *	[out] @ripas_ptr:	RIPAS value returned for the IPA. This is set in
  *				case of WALK_SUCCESS is returned.
- *	[out] @rtt_level:	Value of last level reached by table walk. This
- *				is set in case of WALK_FAIL is returned.
  * Returns:
  *	WALK_SUCCESS:		RIPAS of IPA found
- *	WALK_FAIL:		RIPAS of IPA not found, s2tte has RIPAS=DESTROYED
+ *	WALK_FAIL:		RIPAS of IPA not found
  */
 enum s2_walk_status realm_ipa_get_ripas(struct rec *rec, unsigned long ipa,
-					enum ripas *ripas_ptr,
-					unsigned long *rtt_level)
+					enum ripas *ripas_ptr)
 {
 	unsigned long s2tte, *ll_table;
 	struct rtt_walk wi;
 	enum s2_walk_status ws;
 
 	assert(ripas_ptr != NULL);
-	assert(rtt_level != NULL);
 	assert(GRANULE_ALIGNED(ipa));
 	assert(addr_in_rec_par(rec, ipa));
 
@@ -128,23 +124,93 @@ enum s2_walk_status realm_ipa_get_ripas(struct rec *rec, unsigned long ipa,
 			     ipa, RTT_PAGE_LEVEL, &wi);
 
 	ll_table = granule_map(wi.g_llt, SLOT_RTT);
-	s2tte = s2tte_read(&ll_table[wi.index]);
 
-	*ripas_ptr = s2tte_get_ripas(s2tte);
-	if (*ripas_ptr == RIPAS_DESTROYED) {
-		*rtt_level = wi.last_level;
-		/*
-		 * The IPA has been destroyed by NS Host. Return data_abort back
-		 * to NS Host and there is no recovery possible of this Rec
-		 * after this.
-		 */
+	s2tte = s2tte_read(&ll_table[wi.index]);
+	if (!s2tte_has_ripas(s2tte, wi.last_level)) {
 		ws = WALK_FAIL;
-	} else {
-		ws = WALK_SUCCESS;
+		goto out_unmap_unlock;
 	}
 
+	if (s2tte_is_assigned_ram(s2tte, wi.last_level) ||
+	    s2tte_is_unassigned_ram(s2tte)) {
+		*ripas_ptr = RIPAS_RAM;
+	} else if (s2tte_is_unassigned_destroyed(s2tte) ||
+		   s2tte_is_assigned_destroyed(s2tte, wi.last_level)) {
+		*ripas_ptr = RIPAS_DESTROYED;
+	} else {
+		/*
+		 * Only unassigned_empty & assigned_empty
+		 * are left as an option.
+		 */
+		*ripas_ptr = RIPAS_EMPTY;
+	}
+
+	ws = WALK_SUCCESS;
+
+out_unmap_unlock:
 	buffer_unmap(ll_table);
 	granule_unlock(wi.g_llt);
 
 	return ws;
 }
+
+/*
+ * Check IPA range for the entry with ripas=RIPAS_DESTROYED value.
+ *
+ * Returns :
+ *  < 0  - On error and the operation was aborted,
+ *	   e.g., entry cannot have a ripas.
+ *    0  - Operation was success, no entris with ripas=RIPAS_DESTROYED found.
+ *    1  - Operation was success, entry with ripas=RIPAS_DESTROYED found.
+ */
+int realm_ipa_check_ripas_range(struct rec *rec, unsigned long base,
+				unsigned long top)
+{
+	unsigned long addr, index, s2tte, map_size, *ll_table;
+	struct rtt_walk wi;
+	long level;
+	int ret = 0;
+
+	granule_lock(rec->realm_info.g_rtt, GRANULE_STATE_RTT);
+
+	rtt_walk_lock_unlock(rec->realm_info.g_rtt,
+			     rec->realm_info.s2_starting_level,
+			     rec->realm_info.ipa_bits,
+			     base, RTT_PAGE_LEVEL, &wi);
+
+	ll_table = granule_map(wi.g_llt, SLOT_RTT);
+
+	level = wi.last_level;
+	map_size = s2tte_map_size(level);
+
+	/* Align to the RTT level */
+	addr = base & ~(map_size - 1UL);
+
+	/* Make sure we don't touch a range below the requested range */
+	assert(addr == base);
+
+	for (index = wi.index; index < S2TTES_PER_S2TT; addr += map_size) {
+		/* If this entry crosses the range, break */
+		if (addr + map_size > top) {
+			break;
+		}
+
+		s2tte = s2tte_read(&ll_table[index++]);
+		if (!s2tte_has_ripas(s2tte, level)) {
+			ret = -1;
+			break;
+		}
+
+		if (s2tte_is_unassigned_destroyed(s2tte) ||
+		    s2tte_is_assigned_destroyed(s2tte, level)) {
+			ret = 1;
+			break;
+		}
+	}
+
+	buffer_unmap(ll_table);
+	granule_unlock(wi.g_llt);
+
+	return ret;
+}
+
