@@ -768,15 +768,15 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 	} else if (s2tte_is_unassigned_ns(s2tte)) {
 		ret->x[2] = RMI_UNASSIGNED;
 		ret->x[3] = 0UL;
-		ret->x[4] = RIPAS_UNDEFINED;
+		ret->x[4] = RIPAS_EMPTY;
 	} else if (s2tte_is_assigned_ns(s2tte, wi.last_level)) {
 		ret->x[2] = RMI_ASSIGNED;
 		ret->x[3] = host_ns_s2tte(s2tte, wi.last_level);
-		ret->x[4] = RIPAS_UNDEFINED;
+		ret->x[4] = RIPAS_EMPTY;
 	} else if (s2tte_is_table(s2tte, wi.last_level)) {
 		ret->x[2] = RMI_TABLE;
 		ret->x[3] = s2tte_pa_table(s2tte, wi.last_level);
-		ret->x[4] = RIPAS_UNDEFINED;
+		ret->x[4] = RIPAS_EMPTY;
 	} else {
 		assert(false);
 	}

@@ -712,8 +712,6 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 	default:
 		assert(false);
 	}
-
-	return RIPAS_UNDEFINED;
 }
 
 /*
