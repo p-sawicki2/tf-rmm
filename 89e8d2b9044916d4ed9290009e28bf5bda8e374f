@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6876a44f_80509689",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I understand. I\u0027ll see if I can rephrase this and which threats would affect this assert as it is redefined.",
+      "parentUuid": "5dc56178_9664e708",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f13661ea_066891e4",
         "filename": "docs/threat_model/threat_analysis.rst",
         "patchSetId": 4
@@ -54,6 +78,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "rootCode is part of TCB. So this should be \"Faulty code at Root Level\".",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3a63dc8_6f8926bb",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f13661ea_066891e4",
       "range": {
         "startLine": 53,
         "startChar": 5,
@@ -77,6 +125,24 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "Add that threats which needs to be mitigated by the RME hardware and EL3 Root code is not analyzed",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62d7c2c4_5405e02d",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1e71170_0d023a8b",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -106,6 +172,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2e8253dd_925439d0",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done\n\nAfter removing IoT and Mobile, the impact, likelihood and total risk rating of some threats is N/A. I guess those should be removed?",
+      "parentUuid": "00374a3f_bd11f05e",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 0
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11e919aa_ee9e39a0",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -117,6 +207,24 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "We need to make a statement that only Threats related to software and implementation specifics of RMM are covered here.",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4822c606_e89ccd6c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11e919aa_ee9e39a0",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -144,6 +252,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "864e77ff_251c3d57",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff2e4077_13da7ba7",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "50c69949_8547f1de",
@@ -157,6 +289,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "...and more subtly when logging based on sensitive data that can be used as a side-channel information by an adversary.",
+      "range": {
+        "startLine": 43,
+        "startChar": 29,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "768dea8c_1b005381",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50c69949_8547f1de",
       "range": {
         "startLine": 43,
         "startChar": 29,
@@ -192,6 +348,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "660075e3_9159ee93",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Ok, I guess in this case Faulty Code at Root Level could also be considered as a threat agent?",
+      "parentUuid": "9a489e0d_38b3f19c",
+      "range": {
+        "startLine": 54,
+        "startChar": 46,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8327e3da_4e5e1c45",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -203,6 +383,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "Reformat the sentence as :\n\nFor production releases :\n\n1. Remove logging sensitive information logging\n2. Do not conditionally log based on sensitive data\n3. Do not log high precision timing.",
+      "range": {
+        "startLine": 62,
+        "startChar": 29,
+        "endLine": 68,
+        "endChar": 74
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22619eb4_f80c6221",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8327e3da_4e5e1c45",
       "range": {
         "startLine": 62,
         "startChar": 29,
@@ -236,6 +440,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "967321d9_864294d1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fa24094_d01e15f4",
+      "range": {
+        "startLine": 70,
+        "startChar": 33,
+        "endLine": 70,
+        "endChar": 53
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38daa0d5_1863281a",
@@ -249,6 +477,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "Suggest  :\"Crash dump should be disabled in production builds.\"",
+      "range": {
+        "startLine": 73,
+        "startChar": 29,
+        "endLine": 75,
+        "endChar": 41
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869c46f4_705131f4",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Hmm, the \u0027should\u0027s got to \u0027Mitigations\u0027. Here, \u0027Mitigations Implemented\u0027 explains what we have done, not what we should do.",
+      "parentUuid": "38daa0d5_1863281a",
       "range": {
         "startLine": 73,
         "startChar": 29,
@@ -282,6 +534,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23b6701d_a2f31c78",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b2acf56_f9c7a082",
+      "range": {
+        "startLine": 87,
+        "startChar": 27,
+        "endLine": 88,
+        "endChar": 66
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c235017_2fadd9b7",
@@ -301,6 +577,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "de2ec3bd_f1cc3372",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I\u0027m not sure either. Maybe I can add it as a pending action?",
+      "parentUuid": "4c235017_2fadd9b7",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e54b7c00_10743c57",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -312,6 +606,24 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "This is a system issue and can be covered as part of RME system threats, hence remove it from the threat model for RMM.",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b10760e_976e16ad",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e54b7c00_10743c57",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -341,6 +653,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e883eb92_0781ffaa",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I read the rest of the comments related to the RMI ABI and I don\u0027t think we should combine them. They treat different threats, even though the attack vector is the same and the mitigation is closely related/similar. I think in this case, they should be treated differently (for instance, they might or might not have different Risk Ratings or these can change in the future). This is also in line with other Threat Models that I have been investigating as part of this task.\n\nWith regards to the Denial of Service being a threat or not, in my opinion it is, maybe the Risk Rating is lower than what I estimated, but I still think that if a malicious EL3 firmware or NS software could flood the system with SMC calls.",
+      "parentUuid": "79e1f27d_75ce6731",
+      "range": {
+        "startLine": 142,
+        "startChar": 29,
+        "endLine": 144,
+        "endChar": 73
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44a12b8b_4727eee5",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -352,6 +688,24 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "Combine with RMI ABI sanitization threat.",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84e4c741_8c58039c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "See my previous comment on this",
+      "parentUuid": "44a12b8b_4727eee5",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -381,6 +735,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dbaae258_c224197f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I was thinking here in the EL3 firmware providing wrong memory banks for instance, so it would make RMM fail in a way in which it could be exploited. Would that make sense?",
+      "parentUuid": "3a4b81aa_e092d669",
+      "range": {
+        "startLine": 246,
+        "startChar": 27,
+        "endLine": 246,
+        "endChar": 35
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "de1eb149_bdf8d031",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -398,6 +776,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "773e5140_e552db5f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "See my previous comment about this",
+      "parentUuid": "de1eb149_bdf8d031",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ed3be1a_88bdd78f",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -409,6 +805,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 346,
+        "startChar": 27,
+        "endLine": 347,
+        "endChar": 77
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d1a8a87_a92a34a8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ed3be1a_88bdd78f",
       "range": {
         "startLine": 346,
         "startChar": 27,
@@ -444,6 +864,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "86715b7d_a251e191",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I would like to discuss this more in detail later",
+      "parentUuid": "dfb31f5d_8ae779c6",
+      "range": {
+        "startLine": 353,
+        "startChar": 27,
+        "endLine": 353,
+        "endChar": 37
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0c1e1af5_79aee2d5",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -455,6 +899,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 367,
+        "startChar": 30,
+        "endLine": 367,
+        "endChar": 52
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95c0187c_48fd6d21",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c1e1af5_79aee2d5",
       "range": {
         "startLine": 367,
         "startChar": 30,
@@ -482,6 +950,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8775c4c8_a6aba2e0",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "218b40f1_c9881823",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "988afef3_77f547c4",
@@ -499,6 +985,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b38f1f7a_cca9ba24",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "988afef3_77f547c4",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "57206814_050e2a78",
@@ -512,6 +1016,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "RMM relies on MbedTLS library to use algorithms which are data independent when handling sensitive data.\n\nFEAT_DIT should be used in RMM.",
+      "range": {
+        "startLine": 418,
+        "startChar": 27,
+        "endLine": 425,
+        "endChar": 64
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24d88211_49287899",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "\u003e FEAT_DIT should be used in RMM.\n\nI\u0027ll move this to the list of pending actions.",
+      "parentUuid": "57206814_050e2a78",
       "range": {
         "startLine": 418,
         "startChar": 27,
@@ -541,6 +1069,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f4c3671_9d95488e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "See my previous comments about combining different threats.\n\nWRT this being in the security threat model, I guess it should be, even if it is not a threat right now, but it should be taken into account when introducing/patching new SMCs.",
+      "parentUuid": "2d06cce6_6001ee1c",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3eb3dad4_02b148ad",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -552,6 +1098,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "availability is not a concern for RMM.",
+      "range": {
+        "startLine": 445,
+        "startChar": 27,
+        "endLine": 445,
+        "endChar": 40
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20eab49e_2cdf31ce",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Bit confused here. Shouldn\u0027t we ensure that RMM is always available? What if a piece of malicious software makes it unavailable? current Realms wouldn\u0027t be able to request services...",
+      "parentUuid": "3eb3dad4_02b148ad",
       "range": {
         "startLine": 445,
         "startChar": 27,
@@ -585,6 +1155,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4c95675_eaf67abd",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "I was thinking about stage 1 here (e.g. a bug on RMM gets the xlat tables misconfigured). I will expand this threat to stage 2 as well.",
+      "parentUuid": "e9ca013f_d23fe7ab",
+      "range": {
+        "startLine": 530,
+        "startChar": 53,
+        "endLine": 531,
+        "endChar": 53
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e63d2d3e_d2a48bca",
@@ -598,6 +1192,24 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "This is out of scope and rmeove from this threat model.",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869830cd_ccfb5861",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e63d2d3e_d2a48bca",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -625,6 +1237,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea5f5204_20030a00",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee6351aa_d12f7109",
+      "range": {
+        "startLine": 682,
+        "startChar": 0,
+        "endLine": 682,
+        "endChar": 58
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98204bb9_30d081cf",
@@ -638,6 +1274,30 @@
       "writtenOn": "2023-06-14T11:07:47Z",
       "side": 1,
       "message": "It is really upto RME hardware and EL3 firmware to disable MPAM / context switch it to protect REalm world.",
+      "range": {
+        "startLine": 751,
+        "startChar": 0,
+        "endLine": 754,
+        "endChar": 61
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4723db5a_fbcbc1b1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-14T15:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98204bb9_30d081cf",
       "range": {
         "startLine": 751,
         "startChar": 0,
