@@ -96,7 +96,7 @@
  * assigned_ram         3     page[3]        n/a           n/a          0   to level
  *                      2     block[1]       n/a           n/a          0   to level
  * --------------------------------------------------------------------------------------
- * assigned_destroyed   any   invalid[0]     n/a           destroyed[2] 0   n/a
+ * assigned_destroyed   any   invalid[0]     assigned[1]   destroyed[2] 0   n/a
  * ======================================================================================
  * unassigned_ns        any   invalid[0]     unassigned[0] n/a          1   n/a
  * --------------------------------------------------------------------------------------
@@ -556,7 +556,7 @@ static bool s2tte_has_hipas(unsigned long s2tte, unsigned long hipas)
 	unsigned long desc_type = s2tte & DESC_TYPE_MASK;
 	unsigned long invalid_desc_hipas = s2tte & S2TTE_INVALID_HIPAS_MASK;
 
-	return ((desc_type == S2TTE_Lx_INVALID) && (invalid_desc_hipas == hipas));
+	return ((desc_type == S2TTE_INVALID) && (invalid_desc_hipas == hipas));
 }
 
 /*
@@ -698,7 +698,7 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 	 * bit is 1 (S2AP is set to RW for lower EL), which corresponds
 	 * to RIPAS_RAM (bits[6:5] = b01) on a valid descriptor.
 	 */
-	if (((s2tte & DESC_TYPE_MASK) != S2TTE_Lx_INVALID) &&
+	if (((s2tte & DESC_TYPE_MASK) != S2TTE_INVALID) &&
 	     (desc_ripas != S2TTE_INVALID_RIPAS_RAM)) {
 		assert(false);
 	}
