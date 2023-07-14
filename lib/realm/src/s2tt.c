@@ -713,7 +713,7 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 		assert(false);
 	}
 
-	return RIPAS_UNDEFINED;
+	return (enum ripas)UL(-1);
 }
 
 /*
