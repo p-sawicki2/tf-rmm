@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "111393be_493efd3f",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-17T11:19:46Z",
+      "side": 1,
+      "message": "BT1 and BT0 were 2 different bits in SCTLR, I missed BT0 earlier both need to be cleared.",
+      "parentUuid": "c1177b5a_2ad2f171",
+      "range": {
+        "startLine": 684,
+        "startChar": 8,
+        "endLine": 684,
+        "endChar": 25
+      },
+      "revId": "4e321b651d9db8b8b63d17e68e9bcaac02b21ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28f9b1fe_a8b69eea",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1620d706_a2c7363d",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-17T11:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28f9b1fe_a8b69eea",
+      "range": {
+        "startLine": 465,
+        "startChar": 1,
+        "endLine": 468,
+        "endChar": 3
+      },
+      "revId": "4e321b651d9db8b8b63d17e68e9bcaac02b21ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ec4c71e_454ad9d9",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-05-31T18:23:25Z",
       "side": 1,
       "message": "PXN and UXN are defined as (1 \u003c\u003c 1) and (1 \u003c\u003c 2) respectively, so we need the UPPER_ATTRS() macro to read the right values",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 21
+      },
+      "revId": "4e321b651d9db8b8b63d17e68e9bcaac02b21ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d9f5bd3_120f2a99",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-17T11:19:46Z",
+      "side": 1,
+      "message": "The utility is working as expected, extracting UXN and PXN bit correctly.\nno change needed.\nUXN is always set to 1 for RMM entries.",
+      "parentUuid": "9ec4c71e_454ad9d9",
       "range": {
         "startLine": 83,
         "startChar": 18,
