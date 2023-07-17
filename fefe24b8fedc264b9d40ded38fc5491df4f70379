@@ -43,6 +43,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2588486f_c06cc391",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-17T19:38:43Z",
+      "side": 1,
+      "message": "yes I had the same understanding that it is needed for all levels, got confused with previous comments, will change.",
+      "parentUuid": "0871ce5a_e5e2b0cd",
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0523614d_de0c820f",
         "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
         "patchSetId": 10
@@ -72,6 +90,24 @@
       "side": 1,
       "message": "Yes, I agree, xlat_test_helpers_gen_attrs() needs to be updated to add the GP bit to the upper attributes when necessary. That would propagate the change to xlat_test_helpers_get_attrs_for_va() (which calls the former) and in turn it will make xlat_ctx_init_TC6() to also check that the GP bit has been setup.",
       "parentUuid": "0523614d_de0c820f",
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2309f338_ef299133",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1705,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-17T19:38:43Z",
+      "side": 1,
+      "message": "GP bit (50) was not part of upper attr (52-63), should I add a similar utility to check GP bit separately?",
+      "parentUuid": "896eb3a1_42db8495",
       "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
