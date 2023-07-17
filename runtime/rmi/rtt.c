@@ -1151,6 +1151,12 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 	unsigned int index;
 	int sl;
 
+	/* Return error in case of invalid ripas range */
+	if (top <= base) {
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
 	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
 	if (g_rd == NULL) {
 		res->x[0] = RMI_ERROR_INPUT;
@@ -1167,7 +1173,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 	}
 
 	if (!validate_map_addr(base, RTT_PAGE_LEVEL, rd) ||
-	    !validate_rtt_entry_cmds(top, RTT_PAGE_LEVEL, rd)) {
+	    !validate_map_addr(top, RTT_PAGE_LEVEL, rd)) {
 		buffer_unmap(rd);
 		granule_unlock(g_rd);
 		res->x[0] = RMI_ERROR_INPUT;
@@ -1307,6 +1313,12 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	struct realm_s2_context s2_ctx;
 	enum ripas ripas;
 	int sl;
+
+	/* Return error in case of invalid ripas range */
+	if (top <= base) {
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
 
 	if (!find_lock_two_granules(rd_addr,
 				   GRANULE_STATE_RD,
