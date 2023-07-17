@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ccb6b25_1a7879fc",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-17T11:24:17Z",
+      "side": 1,
+      "message": "nit: Would be easier to review if these functions are at same location as previous.",
+      "revId": "17bf486cd16bd76e507a5a1522b520b195fccff4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
