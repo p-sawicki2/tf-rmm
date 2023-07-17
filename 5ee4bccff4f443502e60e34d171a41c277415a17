@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee814e7c_66bda8d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-07-17T11:38:13Z",
+      "side": 1,
+      "message": "I agree with the conversion of the asserts into the error returns.\n\nRegarding validate_realm_params, if we describe it as \"the primitive that verifies that the input arguments provided by the host are within the permitted values\" it should also check that rtt_base is a \"delegate-able\" physical page.\n\n   \n",
+      "revId": "5ee4bccff4f443502e60e34d171a41c277415a17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
