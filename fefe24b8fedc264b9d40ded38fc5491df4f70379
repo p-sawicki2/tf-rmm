@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb6c079c_f2240aa6",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T05:01:09Z",
+      "side": 1,
+      "message": "Sorry, I misread this. Ignore previous comment.\n\nPerhaps these conditions can be re-written as:\n\n if (attr !\u003d CODE) {\n    assert(attr \u003d\u003d MT_RO_DATA || attr \u003d\u003d MT_RW_DATA);\n    desc |\u003d XLAT_GET_PXN_DESC();\n } else {\n    /* Set GP bit for block and page code entries for BTI */\n    desc |\u003d GP;\n }",
+      "parentUuid": "feafd7ec_95720ea9",
+      "range": {
+        "startLine": 451,
+        "startChar": 11,
+        "endLine": 451,
+        "endChar": 28
+      },
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0871ce5a_e5e2b0cd",
         "filename": "lib/xlat/src/xlat_tables_core.c",
         "patchSetId": 10
@@ -55,6 +79,24 @@
       "side": 1,
       "message": "yes I had the same understanding that it is needed for all levels, got confused with previous comments, will change.",
       "parentUuid": "0871ce5a_e5e2b0cd",
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "053dbee7_2b222a8e",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T05:01:09Z",
+      "side": 1,
+      "message": "If not RW, it can be either RO DATA or CODE. So we should check RW \u003d\u003d 0 \u0026\u0026 XN \u003d\u003d 0.\n\nSee related comment above.",
+      "parentUuid": "2588486f_c06cc391",
       "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
