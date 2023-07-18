@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20ac50f0_2c9c6faf",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T09:08:51Z",
+      "side": 1,
+      "message": "ID_AA64MMFR0_EL1_TGRAN4_2_TGRAN4 value indicates that stage2 has the same configuration as for stage1.",
+      "parentUuid": "0c61f3a8_48f98178",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "732d269e_17c6220f",
@@ -48,6 +66,30 @@
       "writtenOn": "2023-07-18T08:48:17Z",
       "side": 1,
       "message": "nit: This function is now not called directly by test. Can be made static and private in the .c. Also there is spell error in the name : hepers -\u003e helpers",
+      "range": {
+        "startLine": 91,
+        "startChar": 5,
+        "endLine": 91,
+        "endChar": 31
+      },
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85774855_4f78fb08",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T09:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "732d269e_17c6220f",
       "range": {
         "startLine": 91,
         "startChar": 5,
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a0e6428_b1721926",
+        "filename": "lib/xlat/tests/xlat_tests_base.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T09:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87fa52ea_da70dfb6",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdb9f631_93d9834d",
@@ -92,6 +152,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07b5f982_28376a09",
+        "filename": "lib/xlat/tests/xlat_tests_base.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T09:08:51Z",
+      "side": 1,
+      "message": "Yes, makes sense, they are all for the same family of macros, although they have different names.",
+      "parentUuid": "fdb9f631_93d9834d",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bab91ae9_5aa4b120",
@@ -105,6 +183,24 @@
       "writtenOn": "2023-07-18T08:48:17Z",
       "side": 1,
       "message": "This is C header or C++ header ? If C header , needs to go in below section \"extern C\".",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65e864c1_93908702",
+        "filename": "lib/xlat/tests/xlat_tests_lpa2.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T09:08:51Z",
+      "side": 1,
+      "message": "This is a C++ header file. The functions defined there are implemented by xlat_tests_base_g{1,2}.cpp",
+      "parentUuid": "bab91ae9_5aa4b120",
       "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
