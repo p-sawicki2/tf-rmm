@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fac4225_ad0bdb16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-18T12:57:57Z",
+      "side": 1,
+      "message": "Hi can you check this change is still required as it did not move since June?\nI see it has relationship to a larger patch stack. Thanks.",
+      "revId": "4274ff434901d250ad6a90794dcb4fd085e704f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
