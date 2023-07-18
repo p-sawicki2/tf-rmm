@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bdfa890_301be643",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T15:03:55Z",
+      "side": 1,
+      "message": "this can be just (XLAT_TEST_MIN_LVL() + 1)",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 46
+      },
+      "revId": "2c9e5265b65738606343d04c86da71164a810a6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
