@@ -347,7 +347,11 @@
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
 
 /* Size of Realm Personalization Value */
+#ifndef RPV_SIZE
 #define RPV_SIZE		64
+#else
+#warning Constant defined by specification is overridden by build system.
+#endif
 
 /* RmiRealmFlags format */
 #define RMI_REALM_FLAGS_LPA2_SHIFT	UL(0)
