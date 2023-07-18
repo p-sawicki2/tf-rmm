@@ -22,6 +22,30 @@
       },
       "revId": "2c9e5265b65738606343d04c86da71164a810a6e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c679ef6_e2ddeede",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-18T16:40:56Z",
+      "side": 1,
+      "message": "Yes, I thought about that, but since I had MIN_LVL_BLOCK_DESC I thought it would be more consistent to use it rather than rely on XLAT_TEST_MIN_LVL().\n\nIn any case, I\u0027m moving this macro to the xlat library, as it is needed to fix the minimum block level calculation in other parts of the library (e.g. on MAP_REGION() macro)",
+      "parentUuid": "9bdfa890_301be643",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 46
+      },
+      "revId": "2c9e5265b65738606343d04c86da71164a810a6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
