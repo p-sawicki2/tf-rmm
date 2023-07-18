@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "216c4a37_c05e1345",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "minor comments.",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c61f3a8_48f98178",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "To be consistent, the stage 2 LPA2 can also only be enabled when lpa2_en is specified.",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "732d269e_17c6220f",
+        "filename": "lib/xlat/tests/xlat_test_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "nit: This function is now not called directly by test. Can be made static and private in the .c. Also there is spell error in the name : hepers -\u003e helpers",
+      "range": {
+        "startLine": 91,
+        "startChar": 5,
+        "endLine": 91,
+        "endChar": 31
+      },
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87fa52ea_da70dfb6",
+        "filename": "lib/xlat/tests/xlat_tests_base.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "Need header guards for this new header.",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdb9f631_93d9834d",
+        "filename": "lib/xlat/tests/xlat_tests_base.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "nit, to be consistent with the below functions, remove new line between these declarations.Keep the new line between each section.",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bab91ae9_5aa4b120",
+        "filename": "lib/xlat/tests/xlat_tests_lpa2.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T08:48:17Z",
+      "side": 1,
+      "message": "This is C header or C++ header ? If C header , needs to go in below section \"extern C\".",
+      "revId": "5a9faf2fb069303bdcb02f4e36fa19f854d95534",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
