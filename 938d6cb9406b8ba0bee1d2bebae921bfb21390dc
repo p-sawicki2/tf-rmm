@@ -16,6 +16,29 @@
       "message": "There is also a realm_params_measure which can be moved here.",
       "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e95da2e5_d57139c1",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-19T15:31:22Z",
+      "side": 1,
+      "message": "nit: First line on multiline comments is only `\\*`",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 6
+      },
+      "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
