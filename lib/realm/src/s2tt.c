@@ -1005,7 +1005,7 @@ bool table_maps_assigned_empty_block(unsigned long *table, long level)
 }
 
 /*
- * Returns true if all s2ttes are assigned_arm and
+ * Returns true if all s2ttes are assigned_ram and
  * refer to a contiguous block of granules aligned to @level - 1.
  */
 bool table_maps_assigned_ram_block(unsigned long *table, long level)
@@ -1022,6 +1022,15 @@ bool table_maps_assigned_ram_block(unsigned long *table, long level)
 bool table_maps_assigned_ns_block(unsigned long *table, long level)
 {
 	return __table_maps_block(table, level, s2tte_is_assigned_ns);
+}
+
+/*
+ * Returns true if all s2ttes are assigned_destroyed and
+ * refer to a contiguous block of granules aligned to @level - 1.
+ */
+bool table_maps_assigned_destroyed_block(unsigned long *table, long level)
+{
+	return __table_maps_block(table, level, s2tte_is_assigned_destroyed);
 }
 
 /*
