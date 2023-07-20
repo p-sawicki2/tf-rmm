@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a7731f1_cfa67662",
+        "filename": "lib/xlat/src/xlat_tables_arch.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-20T14:44:30Z",
+      "side": 1,
+      "message": "return (read_id_aa64mmfr0_el0_tgran4() \u003c 8UL);\n?",
+      "revId": "fee08eed192e8754d04e02dcad26e6fb61b5ff37",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
