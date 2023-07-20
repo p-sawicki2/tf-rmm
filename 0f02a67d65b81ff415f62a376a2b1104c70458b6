@@ -52,6 +52,24 @@
       "parentUuid": "c69b5959_05230158",
       "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b43071_7e8d6904",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-20T16:17:57Z",
+      "side": 1,
+      "message": "Yes, sorry, it was IGNORE_TEST. The message on the log is that the test is skipped, hence my confusion",
+      "parentUuid": "5b468f63_19bcf01b",
+      "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
