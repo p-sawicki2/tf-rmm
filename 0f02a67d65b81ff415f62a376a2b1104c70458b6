@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98804e9b_b7566328",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-20T15:23:20Z",
+      "side": 1,
+      "message": "Better:\n\n#if (RSI_LOG_LEVEL \u003e LOG_LEVEL_NONE) \u0026\u0026 (RSI_LOG_LEVEL \u003c\u003d LOG_LEVEL)\nTEST(rsi_logger_tests, RSI_LOGGER_TC1)\n#else\nSKIP_TEST(rsi_logger_tests, RSI_LOGGER_TC1)\n#endif\n\nThis way, this test will appear as skipped in the test report if not supported.\n\nI am not sure if you need to add guards around the call to rsi_log_test() or if the SKIP_TEST macro will exclude the test body, though (I think it would be the latter)",
+      "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
