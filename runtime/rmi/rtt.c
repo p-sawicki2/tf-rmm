@@ -1210,7 +1210,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 	rd = granule_map(g_rd, SLOT_RD);
 
 	if (!validate_map_addr(base, RTT_PAGE_LEVEL, rd) ||
-	    !validate_rtt_entry_cmds(top, RTT_PAGE_LEVEL, rd) ||
+	    !validate_map_addr(top, RTT_PAGE_LEVEL, rd) ||
 	    !addr_in_par(rd, base) || !addr_in_par(rd, top - GRANULE_SIZE)) {
 		buffer_unmap(rd);
 		granule_unlock(g_rd);
@@ -1310,8 +1310,11 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 	for (index = wi->index; index < S2TTES_PER_S2TT; addr += map_size) {
 		int ret;
 
-		/* If this entry crosses the range, break. */
-		if (addr + map_size > top) {
+		/*
+		 * Break on "top_align" failure condition,
+		 * or if this entry crosses the range.
+		 */
+		if ((addr + map_size) > top) {
 			break;
 		}
 
@@ -1405,11 +1408,6 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	 */
 	assert(validate_map_addr(base, RTT_PAGE_LEVEL, rd));
 
-	if (!validate_map_addr(top, RTT_PAGE_LEVEL, rd)) {
-		res->x[0] = RMI_ERROR_INPUT;
-		goto out_unmap_rd;
-	}
-
 	g_rtt_root = rd->s2_ctx.g_rtt;
 	sl = realm_rtt_starting_level(rd);
 	ipa_bits = realm_ipa_bits(rd);
@@ -1421,6 +1419,16 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	rtt_walk_lock_unlock(g_rtt_root, sl, ipa_bits,
 			     base, RTT_PAGE_LEVEL, &wi);
 
+	/*
+	 * Base has to be aligned to the level at which
+	 * it is mapped in RTT.
+	 */
+	if (!validate_map_addr(base, wi.last_level, rd)) {
+		res->x[0] = pack_return_code(RMI_ERROR_RTT,
+						(unsigned int)wi.last_level);
+		goto out_unlock_llt;
+	}
+
 	s2tt = granule_map(wi.g_llt, SLOT_RTT);
 
 	rtt_set_ripas_range(&s2_ctx, s2tt, base, top, &wi,
@@ -1431,8 +1439,8 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	}
 
 	buffer_unmap(s2tt);
+out_unlock_llt:
 	granule_unlock(wi.g_llt);
-out_unmap_rd:
 	buffer_unmap(rd);
 out_unmap_rec:
 	buffer_unmap(rec);
