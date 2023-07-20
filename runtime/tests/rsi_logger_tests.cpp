@@ -39,6 +39,7 @@ TEST_GROUP(rsi_logger_tests) {
 	{}
 };
 
+#if (RSI_LOG_LEVEL > LOG_LEVEL_NONE) && (RSI_LOG_LEVEL <= LOG_LEVEL)
 static void rsi_log_test(unsigned int id, unsigned int status)
 {
 	unsigned long args[10];
@@ -71,9 +72,11 @@ static void rsi_log_test(unsigned int id, unsigned int status)
 
 	rsi_log_on_exit(id, args, regs, true);
 }
+#endif
 
 TEST(rsi_logger_tests, RSI_LOGGER_TC1)
 {
+#if (RSI_LOG_LEVEL > LOG_LEVEL_NONE) && (RSI_LOG_LEVEL <= LOG_LEVEL)
 	unsigned int status, id;
 
 	for (status = LOG_SUCCESS; status <= LOG_RANDOM; status++) {
@@ -85,6 +88,6 @@ TEST(rsi_logger_tests, RSI_LOGGER_TC1)
 	rsi_log_test(SMC32_PSCI_FID_MIN, LOG_RANDOM);
 	rsi_log_test(SMC64_PSCI_FID_MAX, LOG_RANDOM);
 	rsi_log_test(SMC64_PSCI_FID_MAX + rand(), LOG_RANDOM);
-
+#endif
 	TEST_EXIT;
 }
