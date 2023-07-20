@@ -34,6 +34,24 @@
       "parentUuid": "98804e9b_b7566328",
       "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b468f63_19bcf01b",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-20T15:53:06Z",
+      "side": 1,
+      "message": "IGNORE_TEST(rsi_logger_tests, RSI_LOGGER_TC1)\n{\n}",
+      "parentUuid": "c69b5959_05230158",
+      "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
