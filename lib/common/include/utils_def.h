@@ -235,6 +235,18 @@
 
 #define FALLTHROUGH	__attribute__((fallthrough))
 
+/*
+ * Helper macros for making code parts to be conditionally compiled, depending
+ * on the current build being a CBMC build or not.
+ */
+#ifdef CBMC
+#define _NCBMC(x)
+#define _CBMC(x)	x
+#else /* CBMC */
+#define _NCBMC(x)	x
+#define _CBMC(x)
+#endif /* CBMC */
+
 #endif /* !(defined(__ASSEMBLER__) || defined(__LINKER__)) */
 
 #endif /* UTILS_DEF_H */
