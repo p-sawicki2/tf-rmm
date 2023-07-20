@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd5cd5eb_bf73d293",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-20T17:30:17Z",
+      "side": 0,
+      "message": "keep the assert and comment. It seems there is no requirement for top alignment so removing the below is correct.",
+      "revId": "9fa7a57f43b93eb6505cd0e6f85f7dc85151a067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

@@ -16,6 +16,29 @@
       "message": "Test results:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/2882/",
       "revId": "5b824a64fd54c80b51e2003649e09ea8a5cbbee0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19498cfe_eaafdbb7",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1409,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-20T17:30:17Z",
+      "side": 1,
+      "message": "this will be taken care in the next addr check.",
+      "range": {
+        "startLine": 1409,
+        "startChar": 7,
+        "endLine": 1409,
+        "endChar": 56
+      },
+      "revId": "5b824a64fd54c80b51e2003649e09ea8a5cbbee0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
