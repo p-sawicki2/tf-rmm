@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "836c2a33_2aa96c4a",
+        "filename": "lib/common/include/utils_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78fbcd85_950de935",
+      "range": {
+        "startLine": 133,
+        "startChar": 56,
+        "endLine": 133,
+        "endChar": 68
+      },
+      "revId": "d160811f9972180ece46e3b9d753c3b601dbca7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a9eafaf4_5c82d597",
         "filename": "lib/smc/include/smc-rmi.h",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2023-07-12T12:08:10Z",
       "side": 1,
       "message": "As discussed, we need to see the benefit of this size reduction. It is mainly used in Attestation and measurement APIs and if they are NOP in CBMC build, then there is a chance that this field may not make a difference.",
+      "range": {
+        "startLine": 322,
+        "startChar": 8,
+        "endLine": 322,
+        "endChar": 18
+      },
+      "revId": "d160811f9972180ece46e3b9d753c3b601dbca7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44722987_946e0a52",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:40:18Z",
+      "side": 1,
+      "message": "For now removed this change from this patch, and moved up in the stack. The fate of that patch can be decided after the effect of the change is measured: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/22129",
+      "parentUuid": "a9eafaf4_5c82d597",
       "range": {
         "startLine": 322,
         "startChar": 8,
