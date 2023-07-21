@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "506c630b_83a204b5",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "373cf6cb_06acb47f",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 6
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4cef85a_4e6ca656",
         "filename": "lib/realm/src/granule.c",
         "patchSetId": 4
@@ -79,6 +103,24 @@
       "side": 1,
       "message": "See https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/21616/comment/f220a06b_831b18e3/\n\n_NCBMC(static) struct granule granules[RMM_MAX_GRANULES];",
       "parentUuid": "d4cef85a_4e6ca656",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd158a5b_39f4a300",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "897a01ab_17257b23",
       "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -132,6 +174,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "575a7fc2_71302ff8",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbf460cd_af784757",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 11
+      },
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "471ba8ae_37791158",
         "filename": "plat/host/common/src/host_utils.c",
         "patchSetId": 4
@@ -161,6 +227,24 @@
       "side": 1,
       "message": "or an use _NCBMC here",
       "parentUuid": "471ba8ae_37791158",
+      "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "773de721_9f21289c",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a38a54f5_36a934f2",
       "revId": "23568e06eb4427ff35953683f6068a719a2fecb4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
