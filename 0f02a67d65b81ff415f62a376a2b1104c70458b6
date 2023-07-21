@@ -70,6 +70,24 @@
       "parentUuid": "5b468f63_19bcf01b",
       "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9884116b_631bba77",
+        "filename": "runtime/tests/rsi_logger_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-21T11:26:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "58b43071_7e8d6904",
+      "revId": "0f02a67d65b81ff415f62a376a2b1104c70458b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
