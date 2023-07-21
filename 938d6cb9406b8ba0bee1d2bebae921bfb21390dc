@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "84860e95_c2f7e7e6",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:37:07Z",
+      "side": 1,
+      "message": "Done, thanks for noticing. \nI missed this because the structure that is used in this function is defined in the SMC interface, instead of measurement.h",
+      "parentUuid": "f07d1ae0_bb736fd3",
+      "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e95da2e5_d57139c1",
         "filename": "lib/measurement/src/rim.c",
         "patchSetId": 2
@@ -31,6 +49,30 @@
       "writtenOn": "2023-07-19T15:31:22Z",
       "side": 1,
       "message": "nit: First line on multiline comments is only `\\*`",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 6
+      },
+      "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1e822e7_c1b7bcc9",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-21T11:37:07Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "e95da2e5_d57139c1",
       "range": {
         "startLine": 26,
         "startChar": 2,
