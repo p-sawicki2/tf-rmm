@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9860abc7_5f2710bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-07-21T15:38:52Z",
+      "side": 1,
+      "message": "I think there is an unused field in `struct granule_set`.",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a129422b_73c36fc8",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-07-21T15:38:52Z",
+      "side": 1,
+      "message": "I will leave a comment here too: this struct is only used for in `find_lock_granules` function. The later function is then only used by `find_lock_two_granules` with a fixed size of 2. Similar case for `sort_granules` function. I am not sure they are all necessary.",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
