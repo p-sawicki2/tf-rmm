@@ -3,6 +3,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "616500cc_57c412f6",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "\"Interface for RMM-EL3 communication. RMM trusts EL3 and it is part of trusted subsystem, it is out of scope of Threat model for RMM.\"",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 67,
+        "endChar": 52
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3887a1b2_00d83ae6",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "NS Host",
+      "range": {
+        "startLine": 79,
+        "startChar": 24,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77ce8e67_873db205",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 79,
+        "startChar": 39,
+        "endLine": 80,
+        "endChar": 40
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c8f4b96_96b18b50",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "EL3",
+      "range": {
+        "startLine": 81,
+        "startChar": 52,
+        "endLine": 81,
+        "endChar": 56
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "92fa9a81_9cbba369",
         "filename": "docs/threat_model/threat_analysis.rst",
         "patchSetId": 5
@@ -319,6 +411,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3cbd6b61_6f6ee313",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "A realm can claim to be another Realm. NS Host can associate PA of one Realm with another Realm. (Spoofing).\n\n\nMitigated: SMC call from realm is always associated to the Realm Descriptor(RD) and the RMM ABI does not allow spoofing of RD. NS Host always has to sent the valid RD to make requests to the corresponding Realm. RMM maintains a global granule array and every granule linked to a Realm has a specific State and reference count associated with it. Hence the NS Host cannot associate a granule to another Realm and this is part of the RMM ABI.",
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc850673_8d439fef",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 5
@@ -615,6 +724,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d3260c8c_178d8535",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "Keep this.",
+      "parentUuid": "a5e2a6b7_87da8dbe",
+      "range": {
+        "startLine": 215,
+        "startChar": 27,
+        "endLine": 221,
+        "endChar": 67
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e44788d_7ee01dc5",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 5
@@ -626,6 +759,30 @@
       "writtenOn": "2023-07-24T12:21:23Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 226,
+        "startChar": 63,
+        "endLine": 230,
+        "endChar": 65
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9f4e4a2_1b9e26a8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "Panics should return back to EL3 thus keeping the availability of the overall system. EL3 can decide to disable Realm world at this point.",
+      "parentUuid": "0e44788d_7ee01dc5",
       "range": {
         "startLine": 226,
         "startChar": 63,
@@ -1114,6 +1271,29 @@
         "startChar": 0,
         "endLine": 539,
         "endChar": 80
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3020778f_48779f0f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T15:42:01Z",
+      "side": 1,
+      "message": "Keep AMU outside threat because AMU provides info for scheduling decisions and are very coarse.",
+      "range": {
+        "startLine": 614,
+        "startChar": 36,
+        "endLine": 614,
+        "endChar": 39
       },
       "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
