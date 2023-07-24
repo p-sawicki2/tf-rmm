@@ -265,14 +265,31 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 static void realm_params_measure(struct rd *rd,
 				 struct rmi_realm_params *realm_params)
 {
-	/* By specification realm_params is 4KB */
-	unsigned char buffer[SZ_4K] = {0};
-	struct rmi_realm_params *realm_params_measured =
-		(struct rmi_realm_params *)&buffer[0];
+	/*
+	 * Allocate a zero-filled RmiRealmParams data structure
+	 * to hold the measured Realm parameters.
+	 */
+	unsigned char buffer[sizeof(struct rmi_realm_params)] = {0};
+	struct rmi_realm_params *rim_params = (struct rmi_realm_params *)buffer;
 
-	realm_params_measured->algorithm = realm_params->algorithm;
-	/* TODO: Add later */
-	/* realm_params_measured->features_0 = realm_params->features_0; */
+	/*
+	 * Copy the following attributes into the measured Realm
+	 * parameters data structure:
+	 * - flags
+	 * - s2sz
+	 * - sve_vl
+	 * - num_bps
+	 * - num_wps
+	 * - pmu_num_ctrs
+	 * - hash_algo
+	 */
+	rim_params->flags = realm_params->flags;
+	rim_params->s2sz = realm_params->s2sz;
+	rim_params->sve_vl = realm_params->sve_vl;
+	rim_params->num_bps = realm_params->num_bps;
+	rim_params->num_wps = realm_params->num_wps;
+	rim_params->pmu_num_ctrs = realm_params->pmu_num_ctrs;
+	rim_params->hash_algo = realm_params->hash_algo;
 
 	/* Measure relevant realm params this will be the init value of RIM */
 	measurement_hash_compute(rd->algorithm,
