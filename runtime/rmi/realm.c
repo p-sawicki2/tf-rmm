@@ -262,12 +262,20 @@ static void realm_params_measure(struct rd *rd,
 {
 	/* By specification realm_params is 4KB */
 	unsigned char buffer[SZ_4K] = {0};
-	struct rmi_realm_params *realm_params_measured =
-		(struct rmi_realm_params *)&buffer[0];
-
-	realm_params_measured->hash_algo = realm_params->hash_algo;
-	/* TODO: Add later */
-	/* realm_params_measured->features_0 = realm_params->features_0; */
+	/*
+	 * Copy the following attributes into the measured Realm
+	 * parameters data structure:
+	 * - flags
+	 * - s2sz
+	 * - sve_vl
+	 * - num_bps
+	 * - num_wps
+	 * - pmu_num_ctrs
+	 * - hash_algo
+	 */
+	(void)memcpy(buffer, &realm_params->flags,
+			offsetof(struct rmi_realm_params, hash_algo) +
+			sizeof(realm_params->hash_algo));
 
 	/* Measure relevant realm params this will be the init value of RIM */
 	measurement_hash_compute(rd->algorithm,
