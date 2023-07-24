@@ -619,6 +619,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8db39d02_6e58330c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "no need to list it here. Better to fix it up in CI since it is a small fix.",
+      "parentUuid": "de2ec3bd_f1cc3372",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e54b7c00_10743c57",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -701,6 +719,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "27c6fecf_0ac3344e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "ok I have reworded the comments.",
+      "parentUuid": "e883eb92_0781ffaa",
+      "range": {
+        "startLine": 142,
+        "startChar": 29,
+        "endLine": 144,
+        "endChar": 73
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44a12b8b_4727eee5",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -730,6 +772,24 @@
       "side": 1,
       "message": "See my previous comment on this",
       "parentUuid": "44a12b8b_4727eee5",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b1df865_ccbcdcf4",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "84e4c741_8c58039c",
       "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -771,6 +831,30 @@
       "side": 1,
       "message": "I was thinking here in the EL3 firmware providing wrong memory banks for instance, so it would make RMM fail in a way in which it could be exploited. Would that make sense?",
       "parentUuid": "3a4b81aa_e092d669",
+      "range": {
+        "startLine": 246,
+        "startChar": 27,
+        "endLine": 246,
+        "endChar": 35
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "092a8869_d98ec696",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "EL3 firmware should be trusted. If EL3 firmware is faulty, everything falls over and we cannot make any security analysis. So EL3 firmware being correct is the foundation of the rest of the security analysis.\n\nThere can be threats related to incorrect EL3 RMM boot arguments, but still EL3 firmware is not a threat but rather a configuration issue from integrators.",
+      "parentUuid": "dbaae258_c224197f",
       "range": {
         "startLine": 246,
         "startChar": 27,
@@ -900,6 +984,30 @@
       "side": 1,
       "message": "I would like to discuss this more in detail later",
       "parentUuid": "dfb31f5d_8ae779c6",
+      "range": {
+        "startLine": 353,
+        "startChar": 27,
+        "endLine": 353,
+        "endChar": 37
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c2fc7e4_b4d90717",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "86715b7d_a251e191",
       "range": {
         "startLine": 353,
         "startChar": 27,
@@ -1111,6 +1219,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0d2a5438_2b689a0a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "I think SMC args is covered in previous threats. This is not a new threat.",
+      "parentUuid": "1f4c3671_9d95488e",
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3eb3dad4_02b148ad",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
@@ -1146,6 +1272,30 @@
       "side": 1,
       "message": "Bit confused here. Shouldn\u0027t we ensure that RMM is always available? What if a piece of malicious software makes it unavailable? current Realms wouldn\u0027t be able to request services...",
       "parentUuid": "3eb3dad4_02b148ad",
+      "range": {
+        "startLine": 445,
+        "startChar": 27,
+        "endLine": 445,
+        "endChar": 40
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c3479fb_f26f5b2c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T12:56:22Z",
+      "side": 1,
+      "message": "the architecture always makes sure RMM is always available to Realms. The availability of Realms is not a threat as this is not considered a requirements.",
+      "parentUuid": "20eab49e_2cdf31ce",
       "range": {
         "startLine": 445,
         "startChar": 27,
