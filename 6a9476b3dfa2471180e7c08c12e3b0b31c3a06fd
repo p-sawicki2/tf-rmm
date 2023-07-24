@@ -1,0 +1,435 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92fa9a81_9cbba369",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "in Realms or within RMM itself.",
+      "range": {
+        "startLine": 28,
+        "startChar": 71,
+        "endLine": 28,
+        "endChar": 72
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "569bdab2_07ae9117",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "Realms should run only code in R-EL1/EL0 and that no escalation of privilege or code injected by an attacker should run at R-EL2.\n\nAlso, the NS host should not be able inject code into the Realm world by other mechanisms than allowed by the RMM ABI.",
+      "range": {
+        "startLine": 31,
+        "startChar": 27,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf8adfd5_06b24def",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "\"Availability of Realm world is out of scope of threat model for RMM. But Realm and RMM should not affect availability of NS Host nor Secure World.\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 26,
+        "endLine": 37,
+        "endChar": 71
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1034fed_256b55f2",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "I think root code is Out of scope for analysis. Move it out of this table and make it part of other out of scope threats.\n\nMalicious or faulty code running at Root Level  (eg: EL3 Firmware). Since RootCode is part of TCB of the system, any fault in Root code is usually critical vulnerability and not easily mitigated by RMM. This Threat is considered out-of-scope of analysis.",
+      "range": {
+        "startLine": 53,
+        "startChar": 26,
+        "endLine": 53,
+        "endChar": 78
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "579f4e3e_d1eea7bb",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "Sorry, I may have given wrong comments last time. This can be \"RootCode\"",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 20
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45b38e76_262568a0",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "using debug build of RMM or access to debug sources of the system.",
+      "range": {
+        "startLine": 67,
+        "startChar": 45,
+        "endLine": 68,
+        "endChar": 46
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09dda7e9_2a65eff8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 51,
+        "startChar": 37,
+        "endLine": 51,
+        "endChar": 62
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5a4d007_7777bede",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "\"..attack on the system by causing the Realm world/RMM to deadlock or enter into an unknown state.\"",
+      "range": {
+        "startLine": 93,
+        "startChar": 36,
+        "endLine": 94,
+        "endChar": 74
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18710bac_e6ab6a44",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "\"Malicious Host or Realm code can ..",
+      "range": {
+        "startLine": 97,
+        "startChar": 48,
+        "endLine": 97,
+        "endChar": 62
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ccd5289_214ac8dd",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 96,
+        "startChar": 26,
+        "endLine": 97,
+        "endChar": 46
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaa2f9c7_5d84cd01",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "add: \nFollow locking discipline when acquiring locks in RMM.\n\nState transitions should be designed and implemented to avoid RMM entering into invalid state. RMM specification mandates various failure conditions for input arguments. These need to be enforced. Tooling CBMC will help to enforce these rules and validate that RMM can enter into invalid state. Fuzz testing can also be implemented to ensure implementation is robust.",
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e06ba96e_17e5ba44",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "\"The RMI and RSI inputs and locking discipline is carefully reviewed as part of implementation. The validation is verified using various tests.\"\n\n\nFor pending actions :\nThe pre-conditions  validation using tools like CBMC. Also add fuzz testing to RMM ABI.",
+      "range": {
+        "startLine": 121,
+        "startChar": 29,
+        "endLine": 121,
+        "endChar": 78
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f8a2fa1_3c10889d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "..using RMM ABI\"",
+      "range": {
+        "startLine": 130,
+        "startChar": 35,
+        "endLine": 130,
+        "endChar": 44
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5f0780f_182bafe1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "NS Host as well as",
+      "range": {
+        "startLine": 132,
+        "startChar": 29,
+        "endLine": 132,
+        "endChar": 42
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc850673_8d439fef",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "DF7..smilar comment to any threat attributed to RootCode.",
+      "range": {
+        "startLine": 137,
+        "startChar": 27,
+        "endLine": 137,
+        "endChar": 30
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "391ae38f_225227af",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "NS Host",
+      "range": {
+        "startLine": 141,
+        "startChar": 27,
+        "endLine": 141,
+        "endChar": 52
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0721b84_0704d500",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "Ensure RMM protects the Realm memory by using GPT and appropriate Stage 2 protections. CPU registers and system registers should not leak any Realm details to NS host other than what is allowed by the RMM ABI. NS Host must not be able to change or access the memory and CPU registers other than what is allowed by the RMM ABI.\n\nThe RME architecture provides memory isolation to the Realm world. But when delegating memory to the Realm world, RMM needs to ensure that suitable memory scrubbing is implemented. Also RMM should ensure any architectural caches and memory is invalidated before returning back to NS Host.\n\nRMM should also take precautions to ensure prevent any side channel leakage realm execution following the best practices recommended by the Architecture.",
+      "range": {
+        "startLine": 151,
+        "startChar": 27,
+        "endLine": 154,
+        "endChar": 56
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbfeb35f_b41a7792",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "remove. Many of the threats on side channel and mitigations are evolving and RMM strives to implement the best practices recommended.",
+      "range": {
+        "startLine": 157,
+        "startChar": 28,
+        "endLine": 160,
+        "endChar": 57
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2081d922_0a8cf0cc",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "remove.\n\n\"Keep monitoring evolving threats and hardening code against this threat.\"",
+      "range": {
+        "startLine": 162,
+        "startChar": 27,
+        "endLine": 165,
+        "endChar": 62
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

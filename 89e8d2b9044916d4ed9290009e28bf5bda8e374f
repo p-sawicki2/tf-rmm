@@ -196,6 +196,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "be8615cd_0d727b45",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T10:16:59Z",
+      "side": 1,
+      "message": "hmm, depends on the threat. Perhaps we can list the threat and say out of scope of threat model for now.",
+      "parentUuid": "2e8253dd_925439d0",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 0
+      },
+      "revId": "89e8d2b9044916d4ed9290009e28bf5bda8e374f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11e919aa_ee9e39a0",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 4
