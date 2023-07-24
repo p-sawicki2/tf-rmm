@@ -128,18 +128,18 @@ void gic_cpu_state_init(struct gic_cpu_state *gicstate)
 }
 
 void gic_copy_state_from_ns(struct gic_cpu_state *gicstate,
-			    struct rmi_rec_entry *rec_entry)
+			    struct rmi_rec_enter *rec_enter)
 {
 	unsigned int i;
 
 	/* Copy List Registers */
 	for (i = 0U; i <= gic_virt_feature.nr_lrs; i++) {
-		gicstate->ich_lr_el2[i] = rec_entry->gicv3_lrs[i];
+		gicstate->ich_lr_el2[i] = rec_enter->gicv3_lrs[i];
 	}
 
 	/* Get bits from NS hypervisor */
 	gicstate->ich_hcr_el2 &= ~ICH_HCR_EL2_NS_MASK;
-	gicstate->ich_hcr_el2 |= rec_entry->gicv3_hcr & ICH_HCR_EL2_NS_MASK;
+	gicstate->ich_hcr_el2 |= rec_enter->gicv3_hcr & ICH_HCR_EL2_NS_MASK;
 }
 
 void gic_copy_state_to_ns(struct gic_cpu_state *gicstate,
