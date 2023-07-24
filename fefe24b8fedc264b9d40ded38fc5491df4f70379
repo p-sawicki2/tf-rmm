@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae25eab4_54a9e5b2",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-24T11:35:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb6c079c_f2240aa6",
+      "range": {
+        "startLine": 451,
+        "startChar": 11,
+        "endLine": 451,
+        "endChar": 28
+      },
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0871ce5a_e5e2b0cd",
@@ -97,6 +121,24 @@
       "side": 1,
       "message": "If not RW, it can be either RO DATA or CODE. So we should check RW \u003d\u003d 0 \u0026\u0026 XN \u003d\u003d 0.\n\nSee related comment above.",
       "parentUuid": "2588486f_c06cc391",
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3ecf73d_63ff251f",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-24T11:35:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "053dbee7_2b222a8e",
       "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -168,6 +210,24 @@
       "side": 1,
       "message": "GP is part of the upper attributes as per the Arm ARM. It was never used before, so I think that is the reason why it wasn\u0027t part of the upper attr on the library. \n\nI think the same goes for the contiguous bit (bit 51), that\u0027s why the library counts the upper attributes as starting on bit 52.",
       "parentUuid": "2309f338_ef299133",
+      "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8601c9bf_563888db",
+        "filename": "lib/xlat/tests/xlat_tests_g2.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 1705,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-24T11:35:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88203039_e7ad9317",
       "revId": "fefe24b8fedc264b9d40ded38fc5491df4f70379",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
