@@ -181,35 +181,36 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	unsigned long feat_reg0 = get_feature_register_0();
 
 	/* Validate LPA2 flag */
-	if ((EXTRACT(RMI_REALM_FLAGS_LPA2, p->flags) == RMI_FEATURE_TRUE) &&
+	if ((EXTRACT(RMI_REALM_FLAGS_LPA2, p->rim_params.flags) ==
+							RMI_FEATURE_TRUE) &&
 	    (EXTRACT(RMM_FEATURE_REGISTER_0_LPA2, feat_reg0) ==
 							RMI_FEATURE_FALSE)) {
 		return false;
 	}
 
 	/* Validate S2SZ field */
-	if ((p->s2sz < RMM_FEATURE_MIN_IPA_SIZE) ||
-	    (p->s2sz > EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, feat_reg0))) {
+	if ((p->rim_params.s2sz < RMM_FEATURE_MIN_IPA_SIZE) ||
+	    (p->rim_params.s2sz > EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, feat_reg0))) {
 		return false;
 	}
 
 	/* Validate number of breakpoints */
-	if ((p->num_bps !=
+	if ((p->rim_params.num_bps !=
 		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_BPS, feat_reg0)) ||
-	    (p->num_wps !=
+	    (p->rim_params.num_wps !=
 		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_WPS, feat_reg0))) {
 		return false;
 	}
 
 	/* Validate RMI_REALM_FLAGS_SVE flag */
-	if (EXTRACT(RMI_REALM_FLAGS_SVE, p->flags) == RMI_FEATURE_TRUE) {
+	if (EXTRACT(RMI_REALM_FLAGS_SVE, p->rim_params.flags) == RMI_FEATURE_TRUE) {
 		if (EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, feat_reg0) ==
 						      RMI_FEATURE_FALSE) {
 			return false;
 		}
 
 		/* Validate SVE_VL value */
-		if (p->sve_vl >
+		if (p->rim_params.sve_vl >
 			EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL, feat_reg0)) {
 			return false;
 		}
@@ -221,17 +222,19 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	 */
 
 	/* Validate number of PMU counters if PMUv3 is enabled */
-	if ((EXTRACT(RMI_REALM_FLAGS_PMU, p->flags) == RMI_FEATURE_TRUE) &&
-	    (p->pmu_num_ctrs !=
+	if ((EXTRACT(RMI_REALM_FLAGS_PMU, p->rim_params.flags) ==
+							RMI_FEATURE_TRUE) &&
+	    (p->rim_params.pmu_num_ctrs !=
 		EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0))) {
 		return false;
 	}
 
-	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start)) {
+	if (!validate_ipa_bits_and_sl(p->rim_params.s2sz, p->rtt_level_start)) {
 		return false;
 	}
 
-	if (s2_num_root_rtts(p->s2sz, p->rtt_level_start) != p->rtt_num_start) {
+	if (s2_num_root_rtts(p->rim_params.s2sz, p->rtt_level_start) !=
+							p->rtt_num_start) {
 		return false;
 	}
 
@@ -242,7 +245,7 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	 * later.
 	 */
 
-	switch (p->hash_algo) {
+	switch (p->rim_params.hash_algo) {
 	case RMI_HASH_SHA_256:
 	case RMI_HASH_SHA_512:
 		break;
@@ -262,12 +265,19 @@ static void realm_params_measure(struct rd *rd,
 {
 	/* By specification realm_params is 4KB */
 	unsigned char buffer[SZ_4K] = {0};
-	struct rmi_realm_params *realm_params_measured =
-		(struct rmi_realm_params *)&buffer[0];
-
-	realm_params_measured->hash_algo = realm_params->hash_algo;
-	/* TODO: Add later */
-	/* realm_params_measured->features_0 = realm_params->features_0; */
+	/*
+	 * Copy the following attributes into the measured Realm
+	 * parameters data structure:
+	 * - flags
+	 * - s2sz
+	 * - sve_vl
+	 * - num_bps
+	 * - num_wps
+	 * - pmu_num_ctrs
+	 * - hash_algo
+	 */
+	(void)memcpy(buffer, &realm_params->rim_params,
+			sizeof(realm_params->rim_params));
 
 	/* Measure relevant realm params this will be the init value of RIM */
 	measurement_hash_compute(rd->algorithm,
@@ -385,7 +395,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	set_rd_state(rd, REALM_STATE_NEW);
 	set_rd_rec_count(rd, 0UL);
 	rd->s2_ctx.g_rtt = find_granule(p.rtt_base);
-	rd->s2_ctx.ipa_bits = p.s2sz;
+	rd->s2_ctx.ipa_bits = p.rim_params.s2sz;
 	rd->s2_ctx.s2_starting_level = p.rtt_level_start;
 	rd->s2_ctx.num_root_rtts = p.rtt_num_start;
 	(void)memcpy(&rd->rpv[0], &p.rpv[0], RPV_SIZE);
@@ -394,19 +404,19 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 
 	rd->num_rec_aux = MAX_REC_AUX_GRANULES;
 
-	rd->sve_enabled = EXTRACT(RMI_REALM_FLAGS_SVE, p.flags);
+	rd->sve_enabled = EXTRACT(RMI_REALM_FLAGS_SVE, p.rim_params.flags);
 	if (rd->sve_enabled) {
-		rd->sve_vq = (uint8_t)p.sve_vl;
+		rd->sve_vq = (uint8_t)p.rim_params.sve_vl;
 	}
 
-	if (p.hash_algo == RMI_HASH_SHA_256) {
+	if (p.rim_params.hash_algo == RMI_HASH_SHA_256) {
 		rd->algorithm = HASH_SHA_256;
 	} else {
 		rd->algorithm = HASH_SHA_512;
 	}
 
-	rd->pmu_enabled = (bool)EXTRACT(RMI_REALM_FLAGS_PMU, p.flags);
-	rd->pmu_num_ctrs = p.pmu_num_ctrs;
+	rd->pmu_enabled = (bool)EXTRACT(RMI_REALM_FLAGS_PMU, p.rim_params.flags);
+	rd->pmu_num_ctrs = p.rim_params.pmu_num_ctrs;
 
 	realm_params_measure(rd, &p);
 

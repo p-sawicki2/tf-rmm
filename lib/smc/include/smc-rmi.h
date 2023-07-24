@@ -363,11 +363,9 @@
 #define SET_MEMBER_RMI	SET_MEMBER
 
 /*
- * The Realm attribute parameters are shared by the Host via
- * RMI_REALM_CREATE::params_ptr. The values can be observed or modified
- * either by the Host or by the Realm.
+ * The measured Realm parameters data structure.
  */
-struct rmi_realm_params {
+struct realm_params_measured {
 	/* Flags */
 	SET_MEMBER_RMI(unsigned long flags, 0, 0x8);		/* Offset 0 */
 	/* Requested IPA width */
@@ -381,7 +379,17 @@ struct rmi_realm_params {
 	/* Requested number of PMU counters */
 	SET_MEMBER_RMI(unsigned int pmu_num_ctrs, 0x28, 0x30);	/* 0x28 */
 	/* Measurement algorithm */
-	SET_MEMBER_RMI(unsigned char hash_algo, 0x30, 0x400);	/* 0x30 */
+	SET_MEMBER_RMI(unsigned char hash_algo, 0x30, 0x38);	/* 0x30 */
+};
+
+/*
+ * The Realm attribute parameters are shared by the Host via
+ * RMI_REALM_CREATE::params_ptr. The values can be observed or modified
+ * either by the Host or by the Realm.
+ */
+struct rmi_realm_params {
+	/* Measured Realm parameters */
+	SET_MEMBER_RMI(struct realm_params_measured rim_params, 0, 0x400);
 	/* Realm Personalization Value */
 	SET_MEMBER_RMI(unsigned char rpv[RPV_SIZE], 0x400, 0x800); /* 0x400 */
 	SET_MEMBER_RMI(struct {

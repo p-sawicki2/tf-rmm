@@ -7,14 +7,16 @@
 #include <smc-rsi.h>
 #include <stddef.h>
 
+COMPILER_ASSERT(offsetof(struct realm_params_measured, flags) == 0);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, s2sz) == 0x8);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, sve_vl) == 0x10);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, num_bps) == 0x18);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, num_wps) == 0x20);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, pmu_num_ctrs) == 0x28);
+COMPILER_ASSERT(offsetof(struct realm_params_measured, hash_algo) == 0x30);
+
 COMPILER_ASSERT(sizeof(struct rmi_realm_params) == 0x1000);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, flags) == 0);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, s2sz) == 0x8);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, sve_vl) == 0x10);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, num_bps) == 0x18);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, num_wps) == 0x20);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, pmu_num_ctrs) == 0x28);
-COMPILER_ASSERT(offsetof(struct rmi_realm_params, hash_algo) == 0x30);
+COMPILER_ASSERT(offsetof(struct rmi_realm_params, rim_params) == 0);
 COMPILER_ASSERT(offsetof(struct rmi_realm_params, rpv) == 0x400);
 COMPILER_ASSERT(offsetof(struct rmi_realm_params, vmid) == 0x800);
 COMPILER_ASSERT(offsetof(struct rmi_realm_params, rtt_base) == 0x808);
