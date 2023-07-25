@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd136dc6_0b38f5ce",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-25T13:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01cb5b84_abfe0ef7",
+      "range": {
+        "startLine": 1069,
+        "startChar": 36,
+        "endLine": 1069,
+        "endChar": 41
+      },
+      "revId": "6dc2832089e128e59f749eeb54177d2f7766ecde",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d0798ab_9fbc3d5c",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-19T17:22:47Z",
       "side": 1,
       "message": "nit: define variables before anything else",
+      "range": {
+        "startLine": 1072,
+        "startChar": 1,
+        "endLine": 1072,
+        "endChar": 18
+      },
+      "revId": "6dc2832089e128e59f749eeb54177d2f7766ecde",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3221d68c_5bde0819",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-25T13:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d0798ab_9fbc3d5c",
       "range": {
         "startLine": 1072,
         "startChar": 1,
