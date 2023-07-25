@@ -33,6 +33,24 @@
       "message": "better to do this on a  field-by-field basis. Else we will break this by mistake in future.",
       "revId": "845f7cdc5cadc4d68016985a1e5b69ca4c3eccb7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4fee8d4_4366141d",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-25T08:40:27Z",
+      "side": 1,
+      "message": "There are COMPILER_ASSERTs for all the members of rmi_realm_params structure, which prevent this issue. Also the length of measured data is 0x31 bytes and all other data are 0. Do we actually need 4KB buffer allocated on stack for this mesurement? Can it be done in place?",
+      "parentUuid": "3dcecde0_b990eaed",
+      "revId": "845f7cdc5cadc4d68016985a1e5b69ca4c3eccb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
