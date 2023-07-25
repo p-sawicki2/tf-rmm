@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21505230_8eafe06e",
+        "filename": "lib/arch/include/cbmc/simd_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T10:06:13Z",
+      "side": 1,
+      "message": "Sorry, I had given this comment earlier, since we are introducing a pattern for CBMC include , we need to have a single convention for the code base. Looking at the next patch, perhaps we can have this convention : \n\narch/include/\narch/include_cbmc/",
+      "revId": "aa6d928feeff51574ce67dd73a42efe0fd0f1ffc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
