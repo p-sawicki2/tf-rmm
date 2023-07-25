@@ -81,6 +81,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fd363c3_84345c4d",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T10:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb04473a_8b172ad1",
+      "range": {
+        "startLine": 350,
+        "startChar": 69,
+        "endLine": 350,
+        "endChar": 70
+      },
+      "revId": "f7a7b7b2764e0540cec0d0d1c39f828b470a65d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66142627_094345db",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T10:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1cdca58_523fbc1d",
+      "range": {
+        "startLine": 350,
+        "startChar": 38,
+        "endLine": 350,
+        "endChar": 39
+      },
+      "revId": "f7a7b7b2764e0540cec0d0d1c39f828b470a65d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8d13399_313abf0f",
@@ -94,6 +142,24 @@
       "writtenOn": "2023-07-24T12:37:34Z",
       "side": 1,
       "message": "nit: alignment is not correct.",
+      "revId": "f7a7b7b2764e0540cec0d0d1c39f828b470a65d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "918971f8_4fb52449",
+        "filename": "lib/xlat/tests/xlat_test_helpers.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T10:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8d13399_313abf0f",
       "revId": "f7a7b7b2764e0540cec0d0d1c39f828b470a65d4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
