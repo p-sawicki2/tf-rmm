@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f12bb0c7_c34a584c",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T09:55:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "84860e95_c2f7e7e6",
+      "revId": "938d6cb9406b8ba0bee1d2bebae921bfb21390dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e95da2e5_d57139c1",
