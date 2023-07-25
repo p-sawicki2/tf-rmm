@@ -16,6 +16,24 @@
       "message": "This patch does not correlate with EAC2 specification.",
       "revId": "380d93252f877eb696cbbaeff1c17d62a8cb2254",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aad6245_abe4da8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-25T13:43:52Z",
+      "side": 1,
+      "message": "1.0-bet1 (31-10-2022)\nClarifications\n• Rename HIPAS VALID_NS -\u003e UNASSIGNED (FENIMORE-631)\n\nThis change is not present in main branch, which is bet0 and was added in eac2 patchstack.",
+      "parentUuid": "e55e3b69_c0826faa",
+      "revId": "380d93252f877eb696cbbaeff1c17d62a8cb2254",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
