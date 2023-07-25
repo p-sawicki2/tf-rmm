@@ -33,6 +33,24 @@
       "message": "I will leave a comment here too: this struct is only used for in `find_lock_granules` function. The later function is then only used by `find_lock_two_granules` with a fixed size of 2. Similar case for `sort_granules` function. I am not sure they are all necessary.",
       "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d165e3ba_b30eb6df",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T14:30:47Z",
+      "side": 1,
+      "message": "Indeed, they dont seem to be read anywhere.",
+      "parentUuid": "a129422b_73c36fc8",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
