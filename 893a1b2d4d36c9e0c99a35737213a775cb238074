@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1275f239_0b77d7bf",
+        "filename": "plat/host/host_cbmc/include/host_defs.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T13:40:59Z",
+      "side": 1,
+      "message": "\"1024 bytes\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 15
+      },
+      "revId": "893a1b2d4d36c9e0c99a35737213a775cb238074",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
