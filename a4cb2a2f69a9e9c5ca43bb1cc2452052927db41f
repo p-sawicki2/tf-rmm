@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3816c9a4_6cf38cc5",
+        "filename": "lib/arch/include/aarch64/asm_macros.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-25T10:53:47Z",
+      "side": 1,
+      "message": "This adds BTI instruction for every assembler function, even for those which are called before MMU gets enabled, and BTI is NOP. Should we consider the option of not adding this fur such functions?",
+      "revId": "a4cb2a2f69a9e9c5ca43bb1cc2452052927db41f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
