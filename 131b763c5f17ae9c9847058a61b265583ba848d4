@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a7f5047_cb0e9f75",
+        "filename": "tools/CBMC/testbenches/tb_rsi_measurement_read.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T13:42:35Z",
+      "side": 1,
+      "message": "the copyright should follow RMM standard format. Not sure whether this is something after the files are generated or the generator can be fixed up for this.",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 6,
+        "endChar": 51
+      },
+      "revId": "131b763c5f17ae9c9847058a61b265583ba848d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
