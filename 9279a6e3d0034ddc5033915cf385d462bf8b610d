@@ -16,6 +16,223 @@
       "message": "This can be squashed with previous",
       "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "471b131e_93e4ef49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "Reorg the document structure around 2 topics static mappings and dynamic mappings. Then at the end S2 can be mentioned.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef363051_fcb89c3b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "Add a header :\n- Static Mappings common for all PEs\n     - RMM Code\n     - RMM RO\n     - RMM RW Data\n     - Shared page for EL3-RMM comms\n\n- Dynamic mappings which is private to a PE\n     - Realm meta data\n          --\n          --\n      - NS Data\n          --\n          --\nThe Realm meta data corresponds to the specific Realm and Realm Execution context scheduled on the PE.\n\nThe Realm data, which is memory that can be used for code and data by Realm is mapped in the IPA space of a Realm via RTTs. NS Memory can also be mapped into IPA space in which case it will be the unprotected range of the IPA space.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02f6f093_7fcfbc1d",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "the name is different in latest spec.",
+      "range": {
+        "startLine": 43,
+        "startChar": 10,
+        "endLine": 43,
+        "endChar": 19
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab210cc0_bafb0af5",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "Reorg the doc to say \"Static mappings\"",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d6ac6d7_2d023f09",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "Move rest of static mapping details here.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6cbbec7_ccdd60dd",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "MOve these to dynamic mapping section.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac300ad_6ea62d48",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "Need to describe some feature of the xlat table lib which uses context per CPU to set up tables per CPU.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c73feff_ee3627b8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "remove, this is not necessarily true. It is just that TF-A will deny a delegate request for these locations.",
+      "range": {
+        "startLine": 93,
+        "startChar": 25,
+        "endLine": 95,
+        "endChar": 0
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28e5a957_43aaf262",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "update for LPA2.",
+      "range": {
+        "startLine": 121,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 18
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e8d88ac_7f050c8c",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "update for LPA2",
+      "range": {
+        "startLine": 122,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 13
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "939ebd24_890647a8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-25T16:27:30Z",
+      "side": 1,
+      "message": "this figure shows both ranges.",
+      "range": {
+        "startLine": 161,
+        "startChar": 51,
+        "endLine": 161,
+        "endChar": 62
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
