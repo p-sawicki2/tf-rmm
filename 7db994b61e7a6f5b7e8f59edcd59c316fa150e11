@@ -39,6 +39,30 @@
       },
       "revId": "7db994b61e7a6f5b7e8f59edcd59c316fa150e11",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bbb7917_86bd291e",
+        "filename": "lib/common/include/utils_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-27T11:03:38Z",
+      "side": 1,
+      "message": "There are no cases where signed value is extracted, as all bit fields are unsigned.\nFor unsigned int EXTRACT() will perform \"\u0026\" with 64-bit value because of MASK() definition:\n#define MASK(regfield) \\\n\t((~0UL \u003e\u003e (64UL - (regfield##_WIDTH))) \u003c\u003c (regfield##_SHIFT))\nin which case 64-bit value will be returned or there will be MISRA-C 10.3 violation:\n\"The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category\"\nI\u0027ll revert this change and we can look at it later when MISRA-C check support is added.",
+      "parentUuid": "c84b23c4_1c865d1f",
+      "range": {
+        "startLine": 203,
+        "startChar": 1,
+        "endLine": 203,
+        "endChar": 16
+      },
+      "revId": "7db994b61e7a6f5b7e8f59edcd59c316fa150e11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
