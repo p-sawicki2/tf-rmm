@@ -16,6 +16,24 @@
       "message": "I have given a comment for an earlier patch for this. this change can be moved there.",
       "revId": "e23d4dd12a937592cdaf54a4ae3315c55124bfa9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12cd4293_c944590f",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-27T09:30:34Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "f2c7440a_0b3a6e31",
+      "revId": "e23d4dd12a937592cdaf54a4ae3315c55124bfa9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
