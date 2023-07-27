@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9135b13a_cd187dc1",
+        "filename": "plat/fvp/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-27T11:02:58Z",
+      "side": 1,
+      "message": "It is not. Removed.",
+      "parentUuid": "da295cb0_52c6296c",
+      "revId": "6c801088fbdfa99ee97cdb4756ce44e80309b52b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c85cfa38_bfa751da",
         "filename": "plat/host/common/CMakeLists.txt",
         "patchSetId": 7
@@ -48,6 +66,24 @@
       "writtenOn": "2023-07-25T13:34:48Z",
       "side": 1,
       "message": "see later comments which can possible avoid this dependancy.",
+      "revId": "6c801088fbdfa99ee97cdb4756ce44e80309b52b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54c45e0b_229818f5",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-27T11:02:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c85cfa38_bfa751da",
       "revId": "6c801088fbdfa99ee97cdb4756ce44e80309b52b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -71,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b8f5967_b1048dbb",
+        "filename": "plat/host/host_build/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-27T11:02:58Z",
+      "side": 1,
+      "message": "I\u0027m not sure arm_config_override would work. If HOST_MEM_SIZE is defined in plat/host/CMakeLists.txt then I would guess that target_compile_definitions is called from this file. So the value of HOST_MEM_SIZE will be added to the target\u0027s COMPILE_DEFINITIONS property before the CMake finishes parsing of plat/host/CMakeLists.txt.\nIf arm_config_override is called later, it will modify the config, but I would expect that it wouldn\u0027t have any effect on rmm-plat-host_build\u0027s property.\nHowever currently the CBMC CMakeLists doesn\u0027t include the CMakeLists, so this is not a problem.",
+      "parentUuid": "725f1cd7_4f48a1e8",
+      "revId": "6c801088fbdfa99ee97cdb4756ce44e80309b52b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b4a04d8_bb40ee90",
         "filename": "plat/host/host_test/include/host_defs.h",
         "patchSetId": 7
@@ -82,6 +136,30 @@
       "writtenOn": "2023-07-25T13:34:48Z",
       "side": 1,
       "message": "we can make this a config for host_common and by default it can be 1 GB. CBMC config can set another value for this.\n\nThis means that this header can remain where it was and not change the include heirarchy.",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "6c801088fbdfa99ee97cdb4756ce44e80309b52b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37359cc0_d3e203b4",
+        "filename": "plat/host/host_test/include/host_defs.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-27T11:02:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b4a04d8_bb40ee90",
       "range": {
         "startLine": 12,
         "startChar": 8,
