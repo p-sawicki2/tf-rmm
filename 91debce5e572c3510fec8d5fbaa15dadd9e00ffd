@@ -33,6 +33,24 @@
       "message": "If the callers are commented out using _NCBMC(), then the static functions remaining here may not be an issue for CMBC ?",
       "revId": "91debce5e572c3510fec8d5fbaa15dadd9e00ffd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c17d518f_0dec0a4a",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-27T11:03:27Z",
+      "side": 1,
+      "message": "The functions need to be commented out because they refer to fields that had been removed from struct rec with _NCBMC as well.",
+      "parentUuid": "9a4c7e33_bd467cc6",
+      "revId": "91debce5e572c3510fec8d5fbaa15dadd9e00ffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
