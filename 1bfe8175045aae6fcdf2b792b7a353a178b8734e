@@ -16,6 +16,24 @@
       "message": "nit : multi-line comment format is not correct.",
       "revId": "1bfe8175045aae6fcdf2b792b7a353a178b8734e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1090cae9_7bde2182",
+        "filename": "lib/smc/include/smc-rsi.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-28T10:43:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4a62462_0ca18de6",
+      "revId": "1bfe8175045aae6fcdf2b792b7a353a178b8734e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
