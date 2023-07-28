@@ -22,6 +22,30 @@
       },
       "revId": "df488a70e3cdc110ad3d5ce5b330fe10d5bcf1a1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb7650bc_08ebcc0d",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-28T15:11:17Z",
+      "side": 1,
+      "message": "The short answer is no.\nIn that case calls on lines #619-620 should be for both MAP_NS \u0026 UNMAP_NS.",
+      "parentUuid": "42b5caff_acf347a8",
+      "range": {
+        "startLine": 614,
+        "startChar": 1,
+        "endLine": 622,
+        "endChar": 20
+      },
+      "revId": "df488a70e3cdc110ad3d5ce5b330fe10d5bcf1a1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
