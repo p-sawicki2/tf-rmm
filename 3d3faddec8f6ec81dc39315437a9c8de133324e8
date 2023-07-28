@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c1f0643_99d49efd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-07-28T08:47:26Z",
+      "side": 1,
+      "message": "RMM main on this change: https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-main/301/",
+      "revId": "3d3faddec8f6ec81dc39315437a9c8de133324e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
