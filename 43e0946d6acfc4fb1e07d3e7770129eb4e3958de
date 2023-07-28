@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c2da59bc_5e0c7c5f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-07-28T15:07:51Z",
+      "side": 1,
+      "message": "What\u0027s about s2tte? It is not practical to check all pointers passed as parameters in all functions.",
+      "parentUuid": "d45b8271_61b6fe06",
+      "range": {
+        "startLine": 1016,
+        "startChar": 1,
+        "endLine": 1016,
+        "endChar": 35
+      },
+      "revId": "43e0946d6acfc4fb1e07d3e7770129eb4e3958de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a7ae3746_3092df75",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 2
