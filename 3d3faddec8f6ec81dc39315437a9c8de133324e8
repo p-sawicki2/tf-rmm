@@ -1,0 +1,8 @@
+Allow-CI+2: Máté Tóth-Pál <Mate.Toth-Pal@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-by: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-at: Mon, 31 Jul 2023 11:48:11 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/22264
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
