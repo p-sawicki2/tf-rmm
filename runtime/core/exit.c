@@ -356,6 +356,12 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 
 	RSI_LOG_SET(rec->regs);
 
+	/*
+	 * According to SMCCCv1.1+ if SMC call doesn't return
+	 * result in X4 register, it must preserve its value.
+	 */
+	res.smc_res.x[4] = rec->regs[4];
+
 	/* Ignore SVE hint bit, until RMM supports SVE hint bit */
 	function_id &= ~MASK(SMC_SVE_HINT);
 
