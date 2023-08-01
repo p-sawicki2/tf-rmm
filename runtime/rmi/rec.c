@@ -338,15 +338,15 @@ unsigned long smc_rec_destroy(unsigned long rec_addr)
 	struct granule *g_rec;
 	struct granule *g_rd;
 	struct rec *rec;
+	int ret;
 
 	/* REC should not be destroyed if refcount != 0 */
-	g_rec = find_lock_unused_granule(rec_addr, GRANULE_STATE_REC);
-	if (ptr_is_err(g_rec)) {
-		switch (ptr_status(g_rec)) {
-		case 1U:
+	ret = find_lock_unused_granule(rec_addr, GRANULE_STATE_REC, &g_rec);
+	if (ret != 0) {
+		switch (ret) {
+		case -EINVAL:
 			return RMI_ERROR_INPUT;
-		case 2U:
-			/* REC should not be destroyed if refcount != 0 */
+		case -EBUSY:
 			return RMI_ERROR_REC;
 		default:
 			panic();
