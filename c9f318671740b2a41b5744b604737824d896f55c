@@ -34,6 +34,24 @@
       "parentUuid": "b4aff1e5_135e09fe",
       "revId": "c9f318671740b2a41b5744b604737824d896f55c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01589cc6_b661e6b1",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-01T15:25:38Z",
+      "side": 0,
+      "message": "Just re-added and re-trigger CI.",
+      "parentUuid": "81b806ea_9ffc17ad",
+      "revId": "c9f318671740b2a41b5744b604737824d896f55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
