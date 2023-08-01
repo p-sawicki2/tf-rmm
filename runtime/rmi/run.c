@@ -167,21 +167,10 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		return RMI_ERROR_INPUT;
 	}
 
-	/* For a REC to be runnable, it should be unused (refcount = 0) */
-	g_rec = find_lock_unused_granule(rec_addr, GRANULE_STATE_REC);
-	if (ptr_is_err(g_rec)) {
-		switch (ptr_status(g_rec)) {
-		case 1U:
-			return RMI_ERROR_INPUT;
-		case 2U:
-			/*
-			 * For a REC to be runnable,
-			 * it should be not used (refcount = 0)
-			 */
-			return RMI_ERROR_REC;
-		default:
-			panic();
-		}
+	/* For a REC to be runnable, it should be not used (refcount = 0) */
+	ret = find_lock_unused_granule(rec_addr, GRANULE_STATE_REC, &g_rec);
+	if (ret != RMI_SUCCESS) {
+		return ret;
 	}
 
 	/*
