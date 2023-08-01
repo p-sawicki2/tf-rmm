@@ -46,6 +46,30 @@
       },
       "revId": "66974357a2b37c88801bf7b73aa93a802e1c6aa9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9047a822_fbae3380",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-08-01T10:51:34Z",
+      "side": 1,
+      "message": "Patch pushed:\nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/22312",
+      "parentUuid": "54c04e0d_eb0ec58e",
+      "range": {
+        "startLine": 215,
+        "startChar": 16,
+        "endLine": 215,
+        "endChar": 40
+      },
+      "revId": "66974357a2b37c88801bf7b73aa93a802e1c6aa9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
