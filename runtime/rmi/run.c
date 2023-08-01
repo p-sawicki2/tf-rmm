@@ -70,13 +70,13 @@ static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_entry *rec_e
 
 static void complete_set_ripas(struct rec *rec)
 {
-	if (rec->set_ripas.start != rec->set_ripas.end) {
+	if (rec->set_ripas.base != rec->set_ripas.top) {
 		/* Pending request from Realm */
 		rec->regs[0] = RSI_SUCCESS;
 		rec->regs[1] = rec->set_ripas.addr;
 
-		rec->set_ripas.start = 0UL;
-		rec->set_ripas.end = 0UL;
+		rec->set_ripas.base = 0UL;
+		rec->set_ripas.top = 0UL;
 	}
 }
 
@@ -170,7 +170,18 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	/* For a REC to be runnable, it should be unused (refcount = 0) */
 	g_rec = find_lock_unused_granule(rec_addr, GRANULE_STATE_REC);
 	if (ptr_is_err(g_rec)) {
-		return (unsigned long)ptr_status(g_rec);
+		switch (ptr_status(g_rec)) {
+		case 1U:
+			return RMI_ERROR_INPUT;
+		case 2U:
+			/*
+			 * For a REC to be runnable,
+			 * it should be not used (refcount = 0)
+			 */
+			return RMI_ERROR_REC;
+		default:
+			panic();
+		}
 	}
 
 	/*
@@ -270,7 +281,6 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	ret = RMI_SUCCESS;
 
 	rec_run_loop(rec, &rec_run.exit);
-	/* Undo the heap association */
 
 	gic_copy_state_to_ns(&rec->sysregs.gicstate, &rec_run.exit);
 

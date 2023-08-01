@@ -66,15 +66,9 @@
 #define RMI_ERROR_RTT			U(4)
 
 /*
- * An operation cannot be completed because a resource is in use.
- * Index is zero.
- */
-#define RMI_ERROR_IN_USE		U(5)
-
-/*
  * Number of RMI Status Errors.
  */
-#define RMI_ERROR_COUNT			U(6)
+#define RMI_ERROR_COUNT			U(5)
 
 /*
  * The number of GPRs (starting from X0) that are
@@ -124,11 +118,10 @@
 #define RMI_DESTROYED		U(1)
 #define RMI_ASSIGNED		U(2)
 #define RMI_TABLE		U(3)
-#define RMI_VALID_NS		U(4)
 
 /* RmiFeature enumerations */
-#define RMI_NOT_SUPPORTED			UL(0)
-#define RMI_SUPPORTED				UL(1)
+#define RMI_FEATURE_FALSE	UL(0)
+#define RMI_FEATURE_TRUE	UL(1)
 
 /* RmiFeatureRegister0 format */
 #define RMM_FEATURE_REGISTER_0_INDEX		UL(0)
@@ -138,29 +131,35 @@
 
 #define RMM_FEATURE_REGISTER_0_LPA2_SHIFT	UL(8)
 #define RMM_FEATURE_REGISTER_0_LPA2_WIDTH	UL(1)
-#define RMI_NO_LPA2				UL(0)
-#define RMI_LPA2				UL(1)
 
-#define RMM_FEATURE_REGISTER_0_HASH_SHA_256_SHIFT      UL(28)
-#define RMM_FEATURE_REGISTER_0_HASH_SHA_256_WIDTH      UL(1)
+#define RMM_FEATURE_REGISTER_0_SVE_EN_SHIFT	UL(9)
+#define RMM_FEATURE_REGISTER_0_SVE_EN_WIDTH	UL(1)
 
-#define RMM_FEATURE_REGISTER_0_HASH_SHA_512_SHIFT      UL(29)
-#define RMM_FEATURE_REGISTER_0_HASH_SHA_512_WIDTH      UL(1)
+#define RMM_FEATURE_REGISTER_0_SVE_VL_SHIFT	UL(10)
+#define RMM_FEATURE_REGISTER_0_SVE_VL_WIDTH	UL(4)
 
-#define RMM_FEATURE_REGISTER_0_PMU_EN_SHIFT		UL(22)
-#define RMM_FEATURE_REGISTER_0_PMU_EN_WIDTH		UL(1)
+#define RMM_FEATURE_REGISTER_0_NUM_BPS_SHIFT	UL(14)
+#define RMM_FEATURE_REGISTER_0_NUM_BPS_WIDTH	UL(4)
+
+#define RMM_FEATURE_REGISTER_0_NUM_WPS_SHIFT	UL(18)
+#define RMM_FEATURE_REGISTER_0_NUM_WPS_WIDTH	UL(4)
+
+#define RMM_FEATURE_REGISTER_0_PMU_EN_SHIFT	UL(22)
+#define RMM_FEATURE_REGISTER_0_PMU_EN_WIDTH	UL(1)
 
 #define RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS_SHIFT	UL(23)
 #define RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS_WIDTH	UL(5)
 
-#define RMM_FEATURE_REGISTER_0_SVE_EN_SHIFT		UL(9)
-#define RMM_FEATURE_REGISTER_0_SVE_EN_WIDTH		UL(1)
-#define RMM_FEATURE_REGISTER_0_SVE_VL_SHIFT		UL(10)
-#define RMM_FEATURE_REGISTER_0_SVE_VL_WIDTH		UL(4)
+#define RMM_FEATURE_REGISTER_0_HASH_SHA_256_SHIFT	UL(28)
+#define RMM_FEATURE_REGISTER_0_HASH_SHA_256_WIDTH	UL(1)
+
+#define RMM_FEATURE_REGISTER_0_HASH_SHA_512_SHIFT	UL(29)
+#define RMM_FEATURE_REGISTER_0_HASH_SHA_512_WIDTH	UL(1)
 
 /* The RmmRipas enumeration representing realm IPA state */
-#define RMI_EMPTY   (0)
-#define RMI_RAM     (1)
+#define RMI_EMPTY	U(0)
+#define RMI_RAM		U(1)
+#define RMI_UNDEFINED	U(2)
 
 /* no parameters */
 #define SMC_RMM_VERSION				SMC64_RMI_FID(U(0x0))
@@ -180,8 +179,8 @@
 #define RMI_MEASURE_CONTENT  1
 
 /*
- * arg0 == data address
- * arg1 == RD address
+ * arg0 == RD address
+ * arg1 == data address
  * arg2 == map address
  * arg3 == SRC address
  * arg4 == flags
@@ -189,8 +188,8 @@
 #define SMC_RMM_DATA_CREATE			SMC64_RMI_FID(U(0x3))
 
 /*
- * arg0 == data address
- * arg1 == RD address
+ * arg0 == RD address
+ * arg1 == data address
  * arg2 == map address
  */
 #define SMC_RMM_DATA_CREATE_UNKNOWN		SMC64_RMI_FID(U(0x4))
@@ -198,6 +197,11 @@
 /*
  * arg0 == RD address
  * arg1 == map address
+ *
+ * ret1 == Address(PA) of the DATA granule, if ret0 == RMI_SUCCESS.
+ *         Otherwise, undefined.
+ * ret2 == Top of the non-live address region. Only valid
+ *         if ret0 == RMI_SUCCESS or ret0 == (RMI_ERROR_RTT, x)
  */
 #define SMC_RMM_DATA_DESTROY			SMC64_RMI_FID(U(0x5))
 
@@ -208,7 +212,7 @@
 
 /*
  * arg0 == RD address
- * arg1 == struct rmi_realm_params addr
+ * arg1 == struct rmi_realm_params address
  */
 #define SMC_RMM_REALM_CREATE			SMC64_RMI_FID(U(0x8))
 
@@ -218,8 +222,8 @@
 #define SMC_RMM_REALM_DESTROY			SMC64_RMI_FID(U(0x9))
 
 /*
- * arg0 == REC address
- * arg1 == RD address
+ * arg0 == RD address
+ * arg1 == REC address
  * arg2 == struct rmm_rec address
  */
 #define SMC_RMM_REC_CREATE			SMC64_RMI_FID(U(0xA))
@@ -231,23 +235,27 @@
 
 /*
  * arg0 == rec address
- * arg1 == rec_run address
+ * arg1 == struct rec_run address
  */
 #define SMC_RMM_REC_ENTER			SMC64_RMI_FID(U(0xC))
 
 /*
- * arg0 == RTT address
- * arg1 == RD address
+ * arg0 == RD address
+ * arg1 == RTT address
  * arg2 == map address
  * arg3 == level
  */
 #define SMC_RMM_RTT_CREATE			SMC64_RMI_FID(U(0xD))
 
 /*
- * arg0 == RTT address
- * arg1 == RD address
- * arg2 == map address
- * arg3 == level
+ * arg0 == RD address
+ * arg1 == map address
+ * arg2 == level
+ *
+ * ret1 == Address (PA) of the RTT, if ret0 == RMI_SUCCESS
+ *         Otherwise, undefined.
+ * ret2 == Top of the non-live address region. Only valid
+ *         if ret0 == RMI_SUCCESS or ret0 == (RMI_ERROR_RTT, x)
  */
 #define SMC_RMM_RTT_DESTROY			SMC64_RMI_FID(U(0xE))
 
@@ -263,10 +271,12 @@
  * arg0 == RD address
  * arg1 == map address
  * arg2 == level
+ *
  * ret1 == level
  * ret2 == s2tte type
  * ret3 == s2tte
  * ret4 == ripas
+ * if ret0 == RMI_SUCCESS, otherwise, undefined.
  */
 #define SMC_RMM_RTT_READ_ENTRY			SMC64_RMI_FID(U(0x11))
 
@@ -289,10 +299,11 @@
 #define SMC_RMM_FEATURES			SMC64_RMI_FID(U(0x15))
 
 /*
- * arg0 == RTT address
- * arg1 == RD address
- * arg2 == map address
- * arg3 == level
+ * arg0 == RD address
+ * arg1 == map address
+ * arg2 == level
+ *
+ * ret1 == Address(PA) of the RTT folded, if ret0 == RMI_SUCCESS
  */
 #define SMC_RMM_RTT_FOLD			SMC64_RMI_FID(U(0x16))
 
@@ -302,23 +313,38 @@
 #define SMC_RMM_REC_AUX_COUNT			SMC64_RMI_FID(U(0x17))
 
 /*
- * arg1 == RD address
- * arg2 == map address
- * arg3 == level
+ * arg0 == RD address
+ * arg1 == start address
+ * arg2 == end address
+ *
+ * ret1 == Top of the address range where the RIPAS was updated,
+ * if ret0 == RMI_SUCCESS
  */
 #define SMC_RMM_RTT_INIT_RIPAS			SMC64_RMI_FID(U(0x18))
 
 /*
  * arg0 == RD address
  * arg1 == REC address
- * arg2 == map address
- * arg3 == level
- * arg4 == ripas
+ * arg2 == start address
+ * arg3 == end address
+ *
+ * ret1 == Top of the address range where the RIPAS was updated,
+ *	   if ret0 == RMI_SUCCESS
  */
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
 
 /* Size of Realm Personalization Value */
 #define RPV_SIZE		64
+
+/* RmiRealmFlags format */
+#define RMI_REALM_FLAGS_LPA2_SHIFT	UL(0)
+#define RMI_REALM_FLAGS_LPA2_WIDTH	UL(1)
+
+#define RMI_REALM_FLAGS_SVE_SHIFT	UL(1)
+#define RMI_REALM_FLAGS_SVE_WIDTH	UL(1)
+
+#define RMI_REALM_FLAGS_PMU_SHIFT	UL(2)
+#define RMI_REALM_FLAGS_PMU_WIDTH	UL(1)
 
 #ifndef __ASSEMBLER__
 /*
@@ -333,12 +359,22 @@
  * either by the Host or by the Realm.
  */
 struct rmi_realm_params {
-	/* Realm feature register 0 */
-	SET_MEMBER_RMI(unsigned long features_0, 0, 0x100);		/* Offset 0 */
+	/* Flags */
+	SET_MEMBER_RMI(unsigned long flags, 0, 0x8);		/* Offset 0 */
+	/* Requested IPA width */
+	SET_MEMBER_RMI(unsigned int s2sz, 0x8, 0x10);		/* 0x8 */
+	/* Requested SVE vector length */
+	SET_MEMBER_RMI(unsigned int sve_vl, 0x10, 0x18);	/* 0x10 */
+	/* Requested number of breakpoints */
+	SET_MEMBER_RMI(unsigned int num_bps, 0x18, 0x20);	/* 0x18 */
+	/* Requested number of watchpoints */
+	SET_MEMBER_RMI(unsigned int num_wps, 0x20, 0x28);	/* 0x20 */
+	/* Requested number of PMU counters */
+	SET_MEMBER_RMI(unsigned int pmu_num_ctrs, 0x28, 0x30);	/* 0x28 */
 	/* Measurement algorithm */
-	SET_MEMBER_RMI(unsigned char hash_algo, 0x100, 0x400);	/* 0x100 */
+	SET_MEMBER_RMI(unsigned char hash_algo, 0x30, 0x400);	/* 0x30 */
 	/* Realm Personalization Value */
-	SET_MEMBER_RMI(unsigned char rpv[RPV_SIZE], 0x400, 0x800);	/* 0x400 */
+	SET_MEMBER_RMI(unsigned char rpv[RPV_SIZE], 0x400, 0x800); /* 0x400 */
 	SET_MEMBER_RMI(struct {
 			/* Virtual Machine Identifier */
 			unsigned short vmid;			/* 0x800 */

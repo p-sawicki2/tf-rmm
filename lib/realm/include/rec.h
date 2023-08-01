@@ -135,11 +135,12 @@ struct rec {
 	struct sysreg_state sysregs;
 	struct common_sysreg_state common_sysregs;
 
+	/* Populated when the REC issues a RIPAS change request */
 	struct {
-		unsigned long start;
-		unsigned long end;
+		unsigned long base;
+		unsigned long top;
 		unsigned long addr;
-		enum ripas ripas;
+		enum ripas ripas_val;
 	} set_ripas;
 
 	/*
@@ -151,7 +152,7 @@ struct rec {
 		struct granule *g_rtt;
 		struct granule *g_rd;
 		bool pmu_enabled;
-		unsigned int pmu_num_cnts;
+		unsigned int pmu_num_ctrs;
 		bool sve_enabled;
 		uint8_t sve_vq;
 	} realm_info;
@@ -238,9 +239,8 @@ static inline simd_t rec_simd_type(struct rec *rec)
 {
 	if (rec->realm_info.sve_enabled) {
 		return SIMD_SVE;
-	} else {
-		return SIMD_FPU;
 	}
+	return SIMD_FPU;
 }
 
 static inline bool rec_is_simd_allowed(struct rec *rec)
@@ -250,21 +250,9 @@ static inline bool rec_is_simd_allowed(struct rec *rec)
 }
 
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);
-
-unsigned long smc_rec_create(unsigned long rec_addr,
-			     unsigned long rd_addr,
-			     unsigned long rec_params_addr);
-
-unsigned long smc_rec_destroy(unsigned long rec_addr);
-
-unsigned long smc_rec_enter(unsigned long rec_addr,
-			    unsigned long rec_run_addr);
-
 void inject_serror(struct rec *rec, unsigned long vsesr);
-
 void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *exit,
 			       unsigned long rtt_level);
 
 #endif /* __ASSEMBLER__ */
-
 #endif /* REC_H */

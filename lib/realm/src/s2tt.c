@@ -4,6 +4,7 @@
  */
 
 #include <arch_helpers.h>
+#include <attestation_token.h>
 #include <bitmap.h>
 #include <buffer.h>
 #include <gic.h>
@@ -74,38 +75,32 @@
 #define S2TTE_INVALID	0
 
 /*
- * The type of an S2TTE is one of the following:
+ * The type of stage 2 translation table entry (s2tte) is defined by:
+ * 1. Table level where it resides
+ * 2. DESC_TYPE field[1:0]
+ * 4. HIPAS field [5:2]
+ * 4. RIPAS field [6]
+ * 5. NS field [55]
  *
- * - Invalid
- * - Valid page
- * - Valid block
- * - Table
- *
- * Within an invalid S2TTE for a Protected IPA, architecturally RES0 bits are
- * used to encode the HIPAS and RIPAS.
- *
- * A valid S2TTE for a Protected IPA implies HIPAS=ASSIGNED and RIPAS=RAM.
- *
- * An invalid S2TTE for an Unprotected IPA implies HIPAS=INVALID_NS.
- * A valid S2TTE for an Unprotected IPA implies HIPAS=VALID_NS.
- *
- * The following table defines the mapping from a (HIPAS, RIPAS) tuple to the
- * value of the S2TTE.
- *
- * ------------------------------------------------------------------------------
- * IPA		HIPAS		RIPAS		S2TTE value
- * ==============================================================================
- * Protected	UNASSIGNED	EMPTY		(S2TTE_INVALID_HIPAS_UNASSIGNED	|
- *						 S2TTE_INVALID_RIPAS_EMPTY)
- * Protected	UNASSIGNED	RAM		(S2TTE_INVALID_HIPAS_UNASSIGNED	|
- *						 S2TTE_INVALID_RIPAS_RAM)
- * Protected	ASSIGNED	EMPTY		(S2TTE_INVALID_HIPAS_ASSIGNED	|
- *						 S2TTE_INVALID_RIPAS_EMPTY)
- * Protected	ASSIGNED	RAM		Valid page / block with NS=0
- * Protected	DESTROYED	*		S2TTE_INVALID_DESTROYED
- * Unprotected	INVALID_NS	N/A		S2TTE_INVALID_UNPROTECTED
- * Unprotected	VALID_NS	N/A		Valid page / block with NS=1
- * ------------------------------------------------------------------------------
+ * s2tte type       level DESC_TYPE[1:0] HIPAS[5:2]    RIPAS[6] NS  OA alignment
+ * =============================================================================
+ * unassigned_empty any   invalid[0]     unassigned[0] empty[0]  0   n/a
+ * -----------------------------------------------------------------------------
+ * unassigned_ram   any   invalid[0]     unassigned[0] ram[1]    0   n/a
+ * -----------------------------------------------------------------------------
+ * assigned_empty   2,3   invalid[0]     assigned[1]   empty[0]  0   to level
+ * -----------------------------------------------------------------------------
+ * assigned_ram     3     page[1]        n/a           n/a       0   to level
+ *                  2     block[3]       n/a           n/a       0   to level
+ * -----------------------------------------------------------------------------
+ * destroyed        any   invalid[0]     destroyed[2]  n/a       0   n/a
+ * =============================================================================
+ * unassigned_ns    any   invalid[0]     unassigned[0] n/a       1   n/a
+ * -----------------------------------------------------------------------------
+ * assigned_ns	    3     page[1]        n/a           n/a       1   to level
+ *                  2     block[3]       n/a           n/a       1   to level
+ * =============================================================================
+ * table            <=2   table[1]       n/a           n/a       n/a to 4K
  */
 
 #define S2TTE_INVALID_HIPAS_SHIFT	2
@@ -389,22 +384,19 @@ out:
 }
 
 /*
- * Creates a value which can be OR'd with an s2tte to set RIPAS=@ripas.
+ * Creates an unassigned_empty s2tte.
  */
-unsigned long s2tte_create_ripas(enum ripas ripas)
+unsigned long s2tte_create_unassigned_empty(void)
 {
-	if (ripas == RIPAS_EMPTY) {
-		return S2TTE_INVALID_RIPAS_EMPTY;
-	}
-	return S2TTE_INVALID_RIPAS_RAM;
+	return S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_EMPTY;
 }
 
 /*
- * Creates an invalid s2tte with HIPAS=UNASSIGNED and RIPAS=@ripas.
+ * Creates an unassigned_ram s2tte.
  */
-unsigned long s2tte_create_unassigned(enum ripas ripas)
+unsigned long s2tte_create_unassigned_ram(void)
 {
-	return S2TTE_INVALID_HIPAS_UNASSIGNED | s2tte_create_ripas(ripas);
+	return S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_RAM;
 }
 
 /*
@@ -427,9 +419,9 @@ unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 }
 
 /*
- * Creates a page or block s2tte for a Protected IPA, with output address @pa.
+ * Creates an assigned_ram s2tte with output address @pa.
  */
-unsigned long s2tte_create_valid(unsigned long pa, long level)
+unsigned long s2tte_create_assigned_ram(unsigned long pa, long level)
 {
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
@@ -440,15 +432,16 @@ unsigned long s2tte_create_valid(unsigned long pa, long level)
 }
 
 /*
- * Creates an invalid s2tte with HIPAS=INVALID_NS.
+ * Creates an unassigned_ns s2tte.
  */
-unsigned long s2tte_create_invalid_ns(void)
+unsigned long s2tte_create_unassigned_ns(void)
 {
-	return S2TTE_INVALID_UNPROTECTED;
+	return S2TTE_NS | S2TTE_INVALID_HIPAS_UNASSIGNED |
+			  S2TTE_INVALID_UNPROTECTED;
 }
 
 /*
- * Creates a page or block s2tte for an Unprotected IPA at level @level.
+ * Creates an assigned_ns s2tte at level @level.
  *
  * The following S2 TTE fields are provided through @s2tte argument:
  * - The physical address
@@ -456,7 +449,7 @@ unsigned long s2tte_create_invalid_ns(void)
  * - S2AP
  * - Shareability
  */
-unsigned long s2tte_create_valid_ns(unsigned long s2tte, long level)
+unsigned long s2tte_create_assigned_ns(unsigned long s2tte, long level)
 {
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	if (level == RTT_PAGE_LEVEL) {
@@ -528,6 +521,22 @@ unsigned long s2tte_create_table(unsigned long pa, long level)
 }
 
 /*
+ * Returns true if s2tte has defined ripas value, namely if it is one of:
+ * - unassigned_empty
+ * - unassigned_ram
+ * - assigned_empty
+ * - assigned_ram
+ */
+bool s2tte_has_ripas(unsigned long s2tte, long level)
+{
+	if (s2tte_is_table(s2tte, level) || s2tte_is_destroyed(s2tte) ||
+	   ((s2tte & S2TTE_NS) != 0UL)) {
+		return false;
+	}
+	return true;
+}
+
+/*
  * Returns true if @s2tte has HIPAS=@hipas.
  */
 static bool s2tte_has_hipas(unsigned long s2tte, unsigned long hipas)
@@ -542,11 +551,50 @@ static bool s2tte_has_hipas(unsigned long s2tte, unsigned long hipas)
 }
 
 /*
- * Returns true if @s2tte has HIPAS=UNASSIGNED or HIPAS=INVALID_NS.
+ * Returns true if @s2tte has HIPAS=UNASSIGNED and RIPAS=@ripas.
  */
-bool s2tte_is_unassigned(unsigned long s2tte)
+static bool s2tte_has_unassigned_ripas(unsigned long s2tte, unsigned long ripas)
 {
-	return s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED);
+	unsigned long invalid_desc_ripas;
+
+	if (!s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED)) {
+		return false;
+	}
+
+	invalid_desc_ripas = s2tte & S2TTE_INVALID_RIPAS_MASK;
+	return (invalid_desc_ripas == ripas);
+}
+
+/*
+ * Returns true if @s2tte is an unassigned_empty.
+ */
+bool s2tte_is_unassigned_empty(unsigned long s2tte)
+{
+	if (!s2tte_has_unassigned_ripas(s2tte, S2TTE_INVALID_RIPAS_EMPTY)) {
+		return false;
+	}
+
+	return ((s2tte & S2TTE_NS) == 0UL);
+}
+
+/*
+ * Returns true if @s2tte is an unassigned_ram.
+ */
+bool s2tte_is_unassigned_ram(unsigned long s2tte)
+{
+	return s2tte_has_unassigned_ripas(s2tte, S2TTE_INVALID_RIPAS_RAM);
+}
+
+/*
+ * Returns true if @s2tte is unassigned_ns.
+ */
+bool s2tte_is_unassigned_ns(unsigned long s2tte)
+{
+	if (!s2tte_has_hipas(s2tte, S2TTE_INVALID_HIPAS_UNASSIGNED)) {
+		return false;
+	}
+
+	return ((s2tte & S2TTE_NS) != 0UL);
 }
 
 /*
@@ -558,9 +606,9 @@ bool s2tte_is_destroyed(unsigned long s2tte)
 }
 
 /*
- * Returns true if @s2tte has HIPAS=ASSIGNED.
+ * Returns true if @s2tte is an assigned_empty.
  */
-bool s2tte_is_assigned(unsigned long s2tte, long level)
+bool s2tte_is_assigned_empty(unsigned long s2tte, long level)
 {
 	(void)level;
 
@@ -587,17 +635,17 @@ static bool s2tte_check(unsigned long s2tte, long level, unsigned long ns)
 }
 
 /*
- * Returns true if @s2tte is a page or block s2tte, and NS=0.
+ * Returns true if @s2tte is an assigned_ram.
  */
-bool s2tte_is_valid(unsigned long s2tte, long level)
+bool s2tte_is_assigned_ram(unsigned long s2tte, long level)
 {
 	return s2tte_check(s2tte, level, 0UL);
 }
 
 /*
- * Returns true if @s2tte is a page or block s2tte, and NS=1.
+ * Returns true if @s2tte is an assigned_ns s2tte.
  */
-bool s2tte_is_valid_ns(unsigned long s2tte, long level)
+bool s2tte_is_assigned_ns(unsigned long s2tte, long level)
 {
 	return s2tte_check(s2tte, level, S2TTE_NS);
 }
@@ -644,15 +692,45 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 }
 
 /*
- * Populates @s2tt with s2ttes which have HIPAS=UNASSIGNED and RIPAS=@ripas.
+ * Populates @s2tt with unassigned_empty s2ttes.
  *
  * The granule is populated before it is made a table,
  * hence, don't use s2tte_write for access.
  */
-void s2tt_init_unassigned(unsigned long *s2tt, enum ripas ripas)
+void s2tt_init_unassigned_empty(unsigned long *s2tt)
 {
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
-		s2tt[i] = s2tte_create_unassigned(ripas);
+		s2tt[i] = s2tte_create_unassigned_empty();
+	}
+
+	dsb(ish);
+}
+
+/*
+ * Populates @s2tt with unassigned_ram s2ttes.
+ *
+ * The granule is populated before it is made a table,
+ * hence, don't use s2tte_write for access.
+ */
+void s2tt_init_unassigned_ram(unsigned long *s2tt)
+{
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		s2tt[i] = s2tte_create_unassigned_ram();
+	}
+
+	dsb(ish);
+}
+
+/*
+ * Populates @s2tt with unassigned_ns s2ttes.
+ *
+ * The granule is populated before it is made a table,
+ * hence, don't use s2tte_write for access.
+ */
+void s2tt_init_unassigned_ns(unsigned long *s2tt)
+{
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		s2tt[i] = s2tte_create_unassigned_ns();
 	}
 
 	dsb(ish);
@@ -694,9 +772,8 @@ unsigned long s2tte_map_size(int level)
 void s2tt_init_assigned_empty(unsigned long *s2tt, unsigned long pa, long level)
 {
 	const unsigned long map_size = s2tte_map_size(level);
-	unsigned int i;
 
-	for (i = 0U; i < S2TTES_PER_S2TT; i++) {
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
 		s2tt[i] = s2tte_create_assigned_empty(pa, level);
 		pa += map_size;
 	}
@@ -704,50 +781,86 @@ void s2tt_init_assigned_empty(unsigned long *s2tt, unsigned long pa, long level)
 }
 
 /*
- * Populates @s2tt with HIPAS=VALID, RIPAS=@ripas s2ttes that refer to a
+ * Populates @s2tt with assigned_ram s2ttes that refer to a
  * contiguous memory block starting at @pa, and mapped at level @level.
  *
  * The granule is populated before it is made a table,
  * hence, don't use s2tte_write for access.
  */
-void s2tt_init_valid(unsigned long *s2tt, unsigned long pa, long level)
+void s2tt_init_assigned_ram(unsigned long *s2tt, unsigned long pa, long level)
 {
 	const unsigned long map_size = s2tte_map_size(level);
-	unsigned int i;
 
-	for (i = 0U; i < S2TTES_PER_S2TT; i++) {
-		s2tt[i] = s2tte_create_valid(pa, level);
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		s2tt[i] = s2tte_create_assigned_ram(pa, level);
 		pa += map_size;
 	}
 	dsb(ish);
 }
 
 /*
- * Populates @s2tt with HIPAS=VALID_NS, RIPAS=@ripas s2ttes that refer to a
+ * Populates @s2tt with assigned_ns s2ttes that refer to a
  * contiguous memory block starting at @pa, and mapped at level @level.
  *
  * The granule is populated before it is made a table,
  * hence, don't use s2tte_write for access.
  */
-void s2tt_init_valid_ns(unsigned long *s2tt, unsigned long pa, long level)
+void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long pa, long level)
 {
 	const unsigned long map_size = s2tte_map_size(level);
-	unsigned int i;
 
-	for (i = 0U; i < S2TTES_PER_S2TT; i++) {
-		s2tt[i] = s2tte_create_valid_ns(pa, level);
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		s2tt[i] = s2tte_create_assigned_ns(pa, level);
 		pa += map_size;
 	}
 	dsb(ish);
 }
 
+/*
+ * Returns true if s2tte has 'output address' field, namely, if it is one of:
+ * - assigned_empty
+ * - assigned_ram
+ * - assigned_ns
+ * - table
+ */
+bool s2tte_has_pa(unsigned long s2tte, long level)
+{
+	unsigned long desc_type = s2tte & DESC_TYPE_MASK;
+
+	/*
+	 * Block, page or table
+	 */
+	if ((desc_type != S2TTE_INVALID) ||
+	     s2tte_is_assigned_empty(s2tte, level)) {
+		return true;
+	}
+
+	return false;
+}
+
+/*
+ * Returns true if s2tte is a live RTTE entry. i.e.,
+ * neither UNASSIGNED nor DESTROYED.
+ *
+ * NOTE: For now, only the RTTE with PA are live.
+ * This could change with EXPORT/IMPORT support.
+ */
+bool s2tte_is_live(unsigned long s2tte, long level)
+{
+	return s2tte_has_pa(s2tte, level);
+}
+
 /* Returns physical address of a page entry or block */
 unsigned long s2tte_pa(unsigned long s2tte, long level)
 {
-	if (s2tte_is_unassigned(s2tte) || s2tte_is_destroyed(s2tte) ||
-	    s2tte_is_table(s2tte, level)) {
+	if (!s2tte_has_pa(s2tte, level)) {
 		assert(false);
 	}
+
+	if (s2tte_is_table(s2tte, level)) {
+		return addr_level_mask(s2tte, RTT_PAGE_LEVEL);
+	}
+
 	return addr_level_mask(s2tte, level);
 }
 
@@ -766,50 +879,41 @@ bool addr_is_level_aligned(unsigned long addr, long level)
 typedef bool (*s2tte_type_checker)(unsigned long s2tte);
 
 static bool __table_is_uniform_block(unsigned long *table,
-			      s2tte_type_checker s2tte_is_x,
-			      enum ripas *ripas_ptr)
+					s2tte_type_checker s2tte_is_x)
 {
-	unsigned long s2tte = s2tte_read(&table[0]);
-	enum ripas ripas;
-	unsigned int i;
-
-	if (!s2tte_is_x(s2tte)) {
-		return false;
-	}
-
-	if (ripas_ptr != NULL) {
-		ripas = s2tte_get_ripas(s2tte);
-	}
-
-	for (i = 1U; i < S2TTES_PER_S2TT; i++) {
-		s2tte = s2tte_read(&table[i]);
+	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
+		unsigned long s2tte = s2tte_read(&table[i]);
 
 		if (!s2tte_is_x(s2tte)) {
 			return false;
 		}
-
-		if ((ripas_ptr != NULL) &&
-		    (s2tte_get_ripas(s2tte) != ripas)) {
-			return false;
-		}
-	}
-
-	if (ripas_ptr != NULL) {
-		*ripas_ptr = ripas;
 	}
 
 	return true;
 }
 
 /*
- * Returns true if all s2ttes in @table have HIPAS=UNASSIGNED and
- * have the same RIPAS.
- *
- * If return value is true, the RIPAS value is returned in @ripas.
+ * Returns true if all s2ttes in @table are unassigned_empty.
  */
-bool table_is_unassigned_block(unsigned long *table, enum ripas *ripas)
+bool table_is_unassigned_empty_block(unsigned long *table)
 {
-	return __table_is_uniform_block(table, s2tte_is_unassigned, ripas);
+	return __table_is_uniform_block(table, s2tte_is_unassigned_empty);
+}
+
+/*
+ * Returns true if all s2ttes in @table are unassigned_ram.
+ */
+bool table_is_unassigned_ram_block(unsigned long *table)
+{
+	return __table_is_uniform_block(table, s2tte_is_unassigned_ram);
+}
+
+/*
+ * Returns true if all s2ttes in @table are unassigned_ns
+ */
+bool table_is_unassigned_ns_block(unsigned long *table)
+{
+	return __table_is_uniform_block(table, s2tte_is_unassigned_ns);
 }
 
 /*
@@ -817,7 +921,7 @@ bool table_is_unassigned_block(unsigned long *table, enum ripas *ripas)
  */
 bool table_is_destroyed_block(unsigned long *table)
 {
-	return __table_is_uniform_block(table, s2tte_is_destroyed, NULL);
+	return __table_is_uniform_block(table, s2tte_is_destroyed);
 }
 
 typedef bool (*s2tte_type_level_checker)(unsigned long s2tte, long level);
@@ -858,28 +962,84 @@ static bool __table_maps_block(unsigned long *table,
 }
 
 /*
- * Returns true if all s2ttes in @table have HIPAS=ASSIGNED
+ * Returns true if all s2ttes are assigned_empty
  * and refer to a contiguous block of granules aligned to @level - 1.
  */
-bool table_maps_assigned_block(unsigned long *table, long level)
+bool table_maps_assigned_empty_block(unsigned long *table, long level)
 {
-	return __table_maps_block(table, level, s2tte_is_assigned);
+	return __table_maps_block(table, level, s2tte_is_assigned_empty);
 }
 
 /*
- * Returns true if all s2ttes in @table have HIPAS=VALID and
+ * Returns true if all s2ttes are assigned_ram and
  * refer to a contiguous block of granules aligned to @level - 1.
  */
-bool table_maps_valid_block(unsigned long *table, long level)
+bool table_maps_assigned_ram_block(unsigned long *table, long level)
 {
-	return __table_maps_block(table, level, s2tte_is_valid);
+	return __table_maps_block(table, level, s2tte_is_assigned_ram);
 }
 
 /*
- * Returns true if all s2ttes in @table have HIPAS=VALID_NS and
+ * Returns true if all s2ttes in @table are assigned_ns s2ttes and
  * refer to a contiguous block of granules aligned to @level - 1.
+ *
+ * @pre: @table maps IPA outside PAR.
  */
-bool table_maps_valid_ns_block(unsigned long *table, long level)
+bool table_maps_assigned_ns_block(unsigned long *table, long level)
 {
-	return __table_maps_block(table, level, s2tte_is_valid_ns);
+	return __table_maps_block(table, level, s2tte_is_assigned_ns);
+}
+
+/*
+ * Scan the RTT @s2tt (which is @wi.level), from the entry (@wi.index) and
+ * skip the non-live entries (i.e., HIPAS is either UNASSIGNED or DESTROYED).
+ * In other words, the scanning stops when a live RTTE is encountered or we
+ * reach the end of this RTT.
+ *
+ * For now an RTTE can be considered non-live if it doesn't have a PA.
+ * NOTE: This would change with EXPORT/IMPORT where we may have metadata stored
+ * in the RTTE.
+ *
+ * @addr is not necessarily aligned to the wi.last_level (e.g., if we were called
+ * with RMI_ERROR_RTT).
+ *
+ * Returns:
+ * - If the entry @wi.index is live, returns @addr.
+ * - If none of the entries in the @s2tt are "live", returns the address of the
+ *   first entry in the next table.
+ * - Otherwise, the address of the first live entry in @s2tt
+ */
+unsigned long skip_non_live_entries(unsigned long addr,
+				    unsigned long *s2tt,
+				    const struct rtt_walk *wi)
+{
+	unsigned int i, index = wi->index;
+	long level = wi->last_level;
+	unsigned long map_size;
+
+	/*
+	 * If the entry for the map_addr is live,
+	 * return @addr.
+	 */
+	if (s2tte_is_live(s2tte_read(&s2tt[index]), level)) {
+		return addr;
+	}
+
+	/*
+	 * Align the address DOWN to the map_size, as expected for the @level,
+	 * so that we can compute the correct address by using the index.
+	 */
+	map_size = s2tte_map_size(level);
+	addr &= ~(map_size - 1UL);
+
+	/* Skip the "index" */
+	for (i = index + 1U; i < S2TTES_PER_S2TT; i++) {
+		unsigned long s2tte = s2tte_read(&s2tt[i]);
+
+		if (s2tte_is_live(s2tte, level)) {
+			break;
+		}
+	}
+
+	return addr + (i - index) * map_size;
 }

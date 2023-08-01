@@ -5,6 +5,7 @@
 
 #include <assert.h>
 #include <buffer.h>
+#include <debug.h>
 #include <feature.h>
 #include <granule.h>
 #include <measurement.h>
@@ -17,6 +18,8 @@
 #include <string.h>
 #include <table.h>
 #include <vmid.h>
+
+#define RMM_FEATURE_MIN_IPA_SIZE	PARANGE_0000_WIDTH
 
 unsigned long smc_realm_activate(unsigned long rd_addr)
 {
@@ -106,11 +109,6 @@ static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl)
 	return !s2_inconsistent_sl(ipa_bits, sl);
 }
 
-static unsigned int requested_ipa_bits(struct rmi_realm_params *p)
-{
-	return EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, p->features_0);
-}
-
 static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 {
 	unsigned int levels = (unsigned int)(RTT_PAGE_LEVEL - sl);
@@ -128,20 +126,106 @@ static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 	return (1U << (ipa_bits - sl_ipa_bits));
 }
 
+/*
+ * Initialize the starting level of stage 2 translation tables.
+ *
+ * The protected half of the IPA space is initialized to
+ * unassigned_empty type of s2tte.
+ * The unprotected half of the IPA space is initialized to
+ * unassigned_ns type of s2tte.
+ * The remaining entries are not initialized.
+ */
+static void init_s2_starting_level(struct rd *rd)
+{
+	unsigned long current_ipa = 0U;
+	struct granule *g_rtt = rd->s2_ctx.g_rtt;
+	int levels = RTT_PAGE_LEVEL - rd->s2_ctx.s2_starting_level;
+
+	/*
+	 * The size of the IPA space that is covered by one S2TTE at
+	 * the starting level.
+	 */
+	unsigned long sl_entry_map_size =
+			1UL << (levels * S2TTE_STRIDE + GRANULE_SHIFT);
+
+	for (unsigned int rtt = 0U; rtt < rd->s2_ctx.num_root_rtts; rtt++) {
+		unsigned long *s2tt = granule_map(g_rtt, SLOT_RTT);
+
+		for (unsigned int rtte = 0U; rtte < S2TTES_PER_S2TT; rtte++) {
+			if (addr_in_par(rd, current_ipa)) {
+				s2tt[rtte] = s2tte_create_unassigned_empty();
+			} else {
+				s2tt[rtte] = s2tte_create_unassigned_ns();
+			}
+
+			current_ipa += sl_entry_map_size;
+			if (current_ipa == realm_ipa_size(rd)) {
+				buffer_unmap(s2tt);
+				return;
+			}
+
+		}
+		buffer_unmap(s2tt);
+		g_rtt++;
+	}
+
+	/*
+	 * We have come to the end of starting level s2tts but we haven't
+	 * reached the ipa size.
+	 */
+	assert(false);
+}
+
 static bool validate_realm_params(struct rmi_realm_params *p)
 {
-	if (!validate_feature_register(RMM_FEATURE_REGISTER_0_INDEX,
-					p->features_0)) {
+	unsigned long feat_reg0 = get_feature_register_0();
+
+	/* Validate LPA2 flag */
+	if ((EXTRACT(RMI_REALM_FLAGS_LPA2, p->flags) == RMI_FEATURE_TRUE) &&
+	    (EXTRACT(RMM_FEATURE_REGISTER_0_LPA2, feat_reg0) ==
+							RMI_FEATURE_FALSE)) {
 		return false;
 	}
 
-	if (!validate_ipa_bits_and_sl(requested_ipa_bits(p),
-					p->rtt_level_start)) {
+	/* Validate S2SZ field */
+	if ((p->s2sz < RMM_FEATURE_MIN_IPA_SIZE) ||
+	    (p->s2sz > EXTRACT(RMM_FEATURE_REGISTER_0_S2SZ, feat_reg0))) {
 		return false;
 	}
 
-	if (s2_num_root_rtts(requested_ipa_bits(p),
-				p->rtt_level_start) != p->rtt_num_start) {
+	/* Validate number of breakpoints */
+	if ((p->num_bps !=
+		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_BPS, feat_reg0)) ||
+	    (p->num_wps !=
+		EXTRACT(RMM_FEATURE_REGISTER_0_NUM_WPS, feat_reg0))) {
+		return false;
+	}
+
+	/* Validate RMI_REALM_FLAGS_SVE flag */
+	if ((EXTRACT(RMI_REALM_FLAGS_SVE, p->flags) ==
+						RMI_FEATURE_TRUE) &&
+	    (EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, feat_reg0) ==
+						RMI_FEATURE_FALSE)) {
+		return false;
+	}
+
+	/*
+	 * Skip validation of RMI_REALM_FLAGS_PMU flag
+	 * as RMM always assumes that PMUv3p7+ is present.
+	 */
+
+	/* Validate number of PMU counters if PMUv3 is enabled */
+	if ((EXTRACT(RMI_REALM_FLAGS_PMU, p->flags) == RMI_FEATURE_TRUE) &&
+	    (p->pmu_num_ctrs !=
+		EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, feat_reg0))) {
+		return false;
+	}
+
+	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start)) {
+		return false;
+	}
+
+	if (s2_num_root_rtts(p->s2sz, p->rtt_level_start) != p->rtt_num_start) {
 		return false;
 	}
 
@@ -295,7 +379,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	set_rd_state(rd, REALM_STATE_NEW);
 	set_rd_rec_count(rd, 0UL);
 	rd->s2_ctx.g_rtt = find_granule(p.rtt_base);
-	rd->s2_ctx.ipa_bits = requested_ipa_bits(&p);
+	rd->s2_ctx.ipa_bits = p.s2sz;
 	rd->s2_ctx.s2_starting_level = p.rtt_level_start;
 	rd->s2_ctx.num_root_rtts = p.rtt_num_start;
 	(void)memcpy(&rd->rpv[0], &p.rpv[0], RPV_SIZE);
@@ -304,10 +388,10 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 
 	rd->num_rec_aux = MAX_REC_AUX_GRANULES;
 
-	rd->sve_enabled = EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, p.features_0);
+	rd->sve_enabled = EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, p.flags);
 	if (rd->sve_enabled) {
 		rd->sve_vq = EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL,
-				     p.features_0);
+				     p.flags);
 	}
 
 	rd->algorithm = p.hash_algo;
@@ -321,10 +405,12 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 		break;
 	}
 
-	rd->pmu_enabled = EXTRACT(RMM_FEATURE_REGISTER_0_PMU_EN, p.features_0);
-	rd->pmu_num_cnts = EXTRACT(RMM_FEATURE_REGISTER_0_PMU_NUM_CTRS, p.features_0);
+	rd->pmu_enabled = (bool)EXTRACT(RMI_REALM_FLAGS_PMU, p.flags);
+	rd->pmu_num_ctrs = p.pmu_num_ctrs;
 
 	realm_params_measure(rd, &p);
+
+	init_s2_starting_level(rd);
 
 	buffer_unmap(rd);
 
@@ -369,7 +455,15 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	/* RD should not be destroyed if refcount != 0. */
 	g_rd = find_lock_unused_granule(rd_addr, GRANULE_STATE_RD);
 	if (ptr_is_err(g_rd)) {
-		return (unsigned long)ptr_status(g_rd);
+		switch (ptr_status(g_rd)) {
+		case 1U:
+			return RMI_ERROR_INPUT;
+		case 2U:
+			/* RD should not be destroyed if refcount != 0 */
+			return RMI_ERROR_REALM;
+		default:
+			panic();
+		}
 	}
 
 	rd = granule_map(g_rd, SLOT_RD);
@@ -388,7 +482,7 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	/* Check if granules are unused */
 	if (total_root_rtt_refcount(g_rtt, num_rtts) != 0UL) {
 		granule_unlock(g_rd);
-		return RMI_ERROR_IN_USE;
+		return RMI_ERROR_REALM;
 	}
 
 	free_sl_rtts(g_rtt, num_rtts);
