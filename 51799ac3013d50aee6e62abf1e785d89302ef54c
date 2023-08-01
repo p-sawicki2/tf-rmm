@@ -22,6 +22,30 @@
       },
       "revId": "51799ac3013d50aee6e62abf1e785d89302ef54c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb4024b3_4db612ba",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-08-01T09:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72650ac9_6b9f9995",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 70
+      },
+      "revId": "51799ac3013d50aee6e62abf1e785d89302ef54c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
