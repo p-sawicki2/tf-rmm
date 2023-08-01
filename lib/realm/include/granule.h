@@ -210,33 +210,36 @@ static inline void atomic_granule_put_release(struct granule *g)
  * @expected_state, and the granule at @addr is unused.
  *
  * Returns:
- *     struct granule if @addr is a valid granule physical address.
- *     1 if @addr is not aligned to the size of a granule.
- *     1 if @addr is out of range.
- *     1 if the state of the granule at @addr is not @expected_state.
- *     2 if the granule at @addr has a non-zero reference count.
+ * RMI_SUCCESS, @*g - address of the granule,
+ *	if @addr is a valid granule physical address.
+ * RMI_ERROR_INPUT, @*g = NULL,
+ *	if @addr is not aligned to the size of a granule,
+ *	@addr is out of range, or if the state of the granule at @addr
+ *	is not @expected_state.
+ * RMI_ERROR_REC, @*g = NULL,
+ *	if the granule at @addr has a non-zero reference count.
  */
-static inline
-struct granule *find_lock_unused_granule(unsigned long addr,
-					 enum granule_state expected_state)
+static inline unsigned long find_lock_unused_granule(
+					unsigned long addr,
+					enum granule_state expected_state,
+					struct granule **g)
 {
-	struct granule *g;
-
-	g = find_lock_granule(addr, expected_state);
-	if (g == NULL) {
-		return (struct granule *)status_ptr(1U);
+	*g = find_lock_granule(addr, expected_state);
+	if (*g == NULL) {
+		return RMI_ERROR_INPUT;
 	}
 
 	/*
 	 * Granules can have lock-free access (e.g. REC), thus using acquire
 	 * semantics to avoid race conditions.
 	 */
-	if (granule_refcount_read_acquire(g)) {
-		granule_unlock(g);
-		return (struct granule *)status_ptr(2U);
+	if (granule_refcount_read_acquire(*g) != 0UL) {
+		granule_unlock(*g);
+		*g = NULL;
+		return RMI_ERROR_REC;
 	}
 
-	return g;
+	return RMI_SUCCESS;
 }
 
 #endif /* GRANULE_H */
