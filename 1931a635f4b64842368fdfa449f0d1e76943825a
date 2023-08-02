@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64b15c60_aff7cb49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-02T14:42:42Z",
+      "side": 1,
+      "message": "This patch is not needed other than the comments removed. Can be merged with a previous patch.",
+      "revId": "1931a635f4b64842368fdfa449f0d1e76943825a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
