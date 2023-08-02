@@ -289,7 +289,7 @@ static void realm_params_measure(struct rd *rd,
 	rim_params->num_bps = realm_params->num_bps;
 	rim_params->num_wps = realm_params->num_wps;
 	rim_params->pmu_num_ctrs = realm_params->pmu_num_ctrs;
-	rim_params->hash_algo = realm_params->hash_algo;
+	rim_params->algorithm = realm_params->algorithm;
 
 	/* Measure relevant realm params this will be the init value of RIM */
 	measurement_hash_compute(rd->algorithm,
