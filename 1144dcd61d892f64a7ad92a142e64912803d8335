@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df559f80_07f0595c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-02T12:57:41Z",
+      "side": 1,
+      "message": "Pushed patch to EAC2 branch : https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/22362/1\n",
+      "revId": "1144dcd61d892f64a7ad92a142e64912803d8335",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
