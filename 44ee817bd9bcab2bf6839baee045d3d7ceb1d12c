@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c933949f_360adbf2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-02T10:31:18Z",
+      "side": 1,
+      "message": "Propagating CI score from : https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/20979",
+      "revId": "44ee817bd9bcab2bf6839baee045d3d7ceb1d12c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
