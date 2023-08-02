@@ -23,9 +23,9 @@ unsigned long get_feature_register_0(void)
 
 	/* Set support for SHA256 and SHA512 hash algorithms */
 	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_256,
-				RMI_FEATURE_TRUE);
-	feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_512,
-				RMI_FEATURE_TRUE);
+						RMI_FEATURE_TRUE) |
+		     INPLACE(RMM_FEATURE_REGISTER_0_HASH_SHA_512,
+						RMI_FEATURE_TRUE);
 
 	/* RMM supports PMUv3p7+ */
 	assert(read_pmu_version() >= ID_AA64DFR0_EL1_PMUv3p7);
@@ -41,25 +41,24 @@ unsigned long get_feature_register_0(void)
 	/* Set SVE fields */
 	if (is_feat_sve_present()) {
 		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_SVE_EN,
-				     RMI_FEATURE_TRUE);
-
-		feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_SVE_VL,
-				     simd_sve_get_max_vq());
+						RMI_FEATURE_TRUE) |
+			     INPLACE(RMM_FEATURE_REGISTER_0_SVE_VL,
+						simd_sve_get_max_vq());
 	}
 
 	return feat_reg0;
 }
 
 void smc_read_feature_register(unsigned long index,
-				struct smc_result *ret_struct)
+				struct smc_result *res)
 {
 	switch (index) {
 	case RMM_FEATURE_REGISTER_0_INDEX:
-		ret_struct->x[0] = RMI_SUCCESS;
-		ret_struct->x[1] = get_feature_register_0();
+		res->x[0] = RMI_SUCCESS;
+		res->x[1] = get_feature_register_0();
 		break;
 	default:
-		ret_struct->x[0] = RMI_ERROR_INPUT;
-		ret_struct->x[1] = 0UL;
+		res->x[0] = RMI_ERROR_INPUT;
+		res->x[1] = 0UL;
 	}
 }

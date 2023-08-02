@@ -202,11 +202,17 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	}
 
 	/* Validate RMI_REALM_FLAGS_SVE flag */
-	if ((EXTRACT(RMI_REALM_FLAGS_SVE, p->flags) ==
-						RMI_FEATURE_TRUE) &&
-	    (EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, feat_reg0) ==
-						RMI_FEATURE_FALSE)) {
-		return false;
+	if (EXTRACT(RMI_REALM_FLAGS_SVE, p->flags) == RMI_FEATURE_TRUE) {
+		if (EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, feat_reg0) ==
+						      RMI_FEATURE_FALSE) {
+			return false;
+		}
+
+		/* Validate SVE_VL value */
+		if (p->sve_vl >
+			EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL, feat_reg0)) {
+			return false;
+		}
 	}
 
 	/*
@@ -388,10 +394,9 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 
 	rd->num_rec_aux = MAX_REC_AUX_GRANULES;
 
-	rd->sve_enabled = EXTRACT(RMM_FEATURE_REGISTER_0_SVE_EN, p.flags);
+	rd->sve_enabled = EXTRACT(RMI_REALM_FLAGS_SVE, p.flags);
 	if (rd->sve_enabled) {
-		rd->sve_vq = EXTRACT(RMM_FEATURE_REGISTER_0_SVE_VL,
-				     p.flags);
+		rd->sve_vq = (uint8_t)p.sve_vl;
 	}
 
 	rd->algorithm = p.hash_algo;
