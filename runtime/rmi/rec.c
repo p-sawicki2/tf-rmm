@@ -403,11 +403,13 @@ void smc_rec_aux_count(unsigned long rd_addr, struct smc_result *res)
 }
 
 unsigned long smc_psci_complete(unsigned long calling_rec_addr,
-				unsigned long target_rec_addr)
+				unsigned long target_rec_addr,
+				unsigned long status)
 {
 	struct granule *g_calling_rec, *g_target_rec;
 	struct rec  *calling_rec, *target_rec;
 	unsigned long ret;
+	unsigned int val;
 
 	if (!GRANULE_ALIGNED(calling_rec_addr)) {
 		return RMI_ERROR_INPUT;
@@ -444,7 +446,22 @@ unsigned long smc_psci_complete(unsigned long calling_rec_addr,
 	calling_rec = granule_map(g_calling_rec, SLOT_REC);
 	target_rec = granule_map(g_target_rec, SLOT_REC2);
 
-	ret = psci_complete_request(calling_rec, target_rec);
+	/* Check whether a PSCI return code is permitted */
+	val = (unsigned int)status;
+
+	if ((val == (unsigned int)PSCI_RETURN_SUCCESS) ||
+	   /*
+	    * Host is permitted to deny a PSCI_CPU_ON request,
+	    * if the target CPU is not already on.
+	    */
+	    (((calling_rec->regs[0] == SMC32_PSCI_CPU_ON) ||
+	      (calling_rec->regs[0] == SMC64_PSCI_CPU_ON)) &&
+	     ((val == (unsigned int)PSCI_RETURN_DENIED) &&
+	      !target_rec->runnable))) {
+		ret = psci_complete_request(calling_rec, target_rec);
+	} else {
+		ret = RMI_ERROR_INPUT;
+	}
 
 	buffer_unmap(target_rec);
 	buffer_unmap(calling_rec);
