@@ -85,8 +85,8 @@
 #define REC_EXIT_NR_GPRS		U(31)
 
 /* RmiHashAlgorithm type */
-#define RMI_HASH_ALGO_SHA256	0
-#define RMI_HASH_ALGO_SHA512	1
+#define RMI_HASH_SHA_256	0
+#define RMI_HASH_SHA_512	1
 
 /* Maximum number of Interrupt Controller List Registers */
 #define REC_GIC_NUM_LRS			U(16)
@@ -114,10 +114,9 @@
 #define RMI_EXIT_SERROR			U(6)
 
 /* RmiRttEntryState represents the state of an RTTE */
-#define RMI_UNASSIGNED		U(0)
-#define RMI_DESTROYED		U(1)
-#define RMI_ASSIGNED		U(2)
-#define RMI_TABLE		U(3)
+#define RMI_UNASSIGNED		UL(0)
+#define RMI_ASSIGNED		UL(1)
+#define RMI_TABLE		UL(2)
 
 /* RmiFeature enumerations */
 #define RMI_FEATURE_FALSE	UL(0)
@@ -156,12 +155,22 @@
 #define RMM_FEATURE_REGISTER_0_HASH_SHA_512_SHIFT	UL(29)
 #define RMM_FEATURE_REGISTER_0_HASH_SHA_512_WIDTH	UL(1)
 
-/* The RmmRipas enumeration representing realm IPA state */
-#define RMI_EMPTY	U(0)
-#define RMI_RAM		U(1)
-#define RMI_UNDEFINED	U(2)
+/* The RmiRipas enumeration represents realm IPA state */
 
-/* no parameters */
+/* Address where no Realm resources are mapped */
+#define RMI_EMPTY	UL(0)
+
+/* Address where private code or data owned by the Realm is mapped */
+#define RMI_RAM		UL(1)
+
+/* Address which is inaccessible to the Realm due to an action taken by the Host */
+#define RMI_DESTROYED	UL(2)
+
+/* RmiPmuOverflowStatus enumeration representing PMU overflow status */
+#define RMI_PMU_OVERFLOW_NOT_ACTIVE	U(0)
+#define RMI_PMU_OVERFLOW_ACTIVE		U(1)
+
+/* No parameters */
 #define SMC_RMM_VERSION				SMC64_RMI_FID(U(0x0))
 
 /*
@@ -471,15 +480,8 @@ struct rmi_rec_exit {
 		   }, 0x500, 0x600);
 	/* Host call immediate value */
 	SET_MEMBER_RMI(unsigned int imm, 0x600, 0x700);	/* 0x600 */
-
-	/* PMU overflow */
-	SET_MEMBER_RMI(unsigned long pmu_ovf, 0x700, 0x708);	 /* 0x700 */
-
-	/* PMU interrupt enable */
-	SET_MEMBER_RMI(unsigned long pmu_intr_en, 0x708, 0x710); /* 0x708 */
-
-	/* PMU counter enable */
-	SET_MEMBER_RMI(unsigned long pmu_cntr_en, 0x710, 0x800); /* 0x710 */
+	/* PMU overflow status */
+	SET_MEMBER_RMI(unsigned long pmu_ovf_status, 0x700, 0x800);	/* 0x700 */
 };
 
 /*

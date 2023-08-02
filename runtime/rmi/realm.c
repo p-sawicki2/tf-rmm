@@ -243,8 +243,8 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	 */
 
 	switch (p->hash_algo) {
-	case RMI_HASH_ALGO_SHA256:
-	case RMI_HASH_ALGO_SHA512:
+	case RMI_HASH_SHA_256:
+	case RMI_HASH_SHA_512:
 		break;
 	default:
 		return false;
@@ -399,15 +399,10 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 		rd->sve_vq = (uint8_t)p.sve_vl;
 	}
 
-	rd->algorithm = p.hash_algo;
-
-	switch (p.hash_algo) {
-	case RMI_HASH_ALGO_SHA256:
-		rd->algorithm = HASH_ALGO_SHA256;
-		break;
-	case RMI_HASH_ALGO_SHA512:
-		rd->algorithm = HASH_ALGO_SHA512;
-		break;
+	if (p.hash_algo == RMI_HASH_SHA_256) {
+		rd->algorithm = HASH_SHA_256;
+	} else {
+		rd->algorithm = HASH_SHA_512;
 	}
 
 	rd->pmu_enabled = (bool)EXTRACT(RMI_REALM_FLAGS_PMU, p.flags);
@@ -475,6 +470,13 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	g_rtt = rd->s2_ctx.g_rtt;
 	num_rtts = rd->s2_ctx.num_root_rtts;
 
+	/* Check if granules are unused */
+	if (total_root_rtt_refcount(g_rtt, num_rtts) != 0UL) {
+		buffer_unmap(rd);
+		granule_unlock(g_rd);
+		return RMI_ERROR_REALM;
+	}
+
 	/*
 	 * All the mappings in the Realm have been removed and the TLB caches
 	 * are invalidated. Therefore, there are no TLB entries tagged with
@@ -483,12 +485,6 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	 */
 	vmid_free(rd->s2_ctx.vmid);
 	buffer_unmap(rd);
-
-	/* Check if granules are unused */
-	if (total_root_rtt_refcount(g_rtt, num_rtts) != 0UL) {
-		granule_unlock(g_rd);
-		return RMI_ERROR_REALM;
-	}
 
 	free_sl_rtts(g_rtt, num_rtts);
 
