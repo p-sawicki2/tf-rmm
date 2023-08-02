@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6ed05c9_78a26853",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-02T09:43:32Z",
+      "side": 1,
+      "message": "This patch needs to be moved to top and may differ based on OSS kernel and kvm-unit-tests.",
+      "revId": "8d9570208878f0069082d8fa84c5a4c5ae88f4f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
