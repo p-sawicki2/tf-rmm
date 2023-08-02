@@ -4,7 +4,6 @@
  */
 
 #include <arch_helpers.h>
-#include <attestation_token.h>
 #include <bitmap.h>
 #include <buffer.h>
 #include <gic.h>
@@ -82,25 +81,29 @@
  * 4. RIPAS field [6:5]
  * 5. NS field [55]
  *
- * s2tte type       level DESC_TYPE[1:0] HIPAS[5:2]    RIPAS[6] NS  OA alignment
- * =============================================================================
- * unassigned_empty any   invalid[0]     unassigned[0] empty[0]  0   n/a
- * -----------------------------------------------------------------------------
- * unassigned_ram   any   invalid[0]     unassigned[0] ram[1]    0   n/a
- * -----------------------------------------------------------------------------
- * assigned_empty   2,3   invalid[0]     assigned[1]   empty[0]  0   to level
- * -----------------------------------------------------------------------------
- * assigned_ram     3     page[1]        n/a           n/a       0   to level
- *                  2     block[3]       n/a           n/a       0   to level
- * -----------------------------------------------------------------------------
- * destroyed        any   invalid[0]     destroyed[2]  n/a       0   n/a
- * =============================================================================
- * unassigned_ns    any   invalid[0]     unassigned[0] n/a       1   n/a
- * -----------------------------------------------------------------------------
- * assigned_ns	    3     page[1]        n/a           n/a       1   to level
- *                  2     block[3]       n/a           n/a       1   to level
- * =============================================================================
- * table            <=2   table[1]       n/a           n/a       n/a to 4K
+ * ======================================================================================
+ * s2tte type           level DESC_TYPE[1:0] HIPAS[4:2]    RIPAS[6:5]   NS  OA alignment
+ * ======================================================================================
+ * unassigned_empty     any   invalid[0]     unassigned[0] empty[0]     0   n/a
+ * --------------------------------------------------------------------------------------
+ * unassigned_ram       any   invalid[0]     unassigned[0] ram[1]       0   n/a
+ * --------------------------------------------------------------------------------------
+ * unassigned_destroyed any   invalid[0]     unassigned[0] destroyed[2] 0   n/a
+ * --------------------------------------------------------------------------------------
+ * assigned_empty       2,3   invalid[0]     assigned[1]   empty[0]     0   to level
+ * --------------------------------------------------------------------------------------
+ * assigned_ram         3     page[3]        n/a           n/a          0   to level
+ *                      2     block[1]       n/a           n/a          0   to level
+ * --------------------------------------------------------------------------------------
+ * assigned_destroyed   any   invalid[0]     assigned[1]   destroyed[2] 0   n/a
+ * ======================================================================================
+ * unassigned_ns        any   invalid[0]     unassigned[0] n/a          1   n/a
+ * --------------------------------------------------------------------------------------
+ * assigned_ns	        3     page[3]        n/a           n/a          1   to level
+ *                      2     block[1]       n/a           n/a          1   to level
+ * ======================================================================================
+ * table              <=2     table[3]       n/a           n/a          n/a to 4K
+ * ======================================================================================
  */
 
 #define S2TTE_INVALID_HIPAS_SHIFT	2
@@ -254,7 +257,7 @@ static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 	return addr;
 }
 
-static unsigned long addr_level_mask(unsigned long addr, long level)
+unsigned long addr_level_mask(unsigned long addr, long level)
 {
 	int levels = RTT_PAGE_LEVEL - level;
 	unsigned int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
@@ -552,7 +555,7 @@ static bool s2tte_has_hipas(unsigned long s2tte, unsigned long hipas)
 	unsigned long desc_type = s2tte & DESC_TYPE_MASK;
 	unsigned long invalid_desc_hipas = s2tte & S2TTE_INVALID_HIPAS_MASK;
 
-	return ((desc_type == S2TTE_Lx_INVALID) && (invalid_desc_hipas == hipas));
+	return ((desc_type == S2TTE_INVALID) && (invalid_desc_hipas == hipas));
 }
 
 /*
@@ -694,7 +697,7 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 	 * bit is 1 (S2AP is set to RW for lower EL), which corresponds
 	 * to RIPAS_RAM (bits[6:5] = b01) on a valid descriptor.
 	 */
-	if (((s2tte & DESC_TYPE_MASK) != S2TTE_Lx_INVALID) &&
+	if (((s2tte & DESC_TYPE_MASK) != S2TTE_INVALID) &&
 	     (desc_ripas != S2TTE_INVALID_RIPAS_RAM)) {
 		assert(false);
 	}
@@ -857,22 +860,21 @@ void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long pa, long level)
  * - assigned_empty
  * - assigned_ram
  * - assigned_ns
+ * - assigned_destroyed
  * - table
  */
 bool s2tte_has_pa(unsigned long s2tte, long level)
 {
 	unsigned long desc_type = s2tte & DESC_TYPE_MASK;
 
-	/*
-	 * Block, page or table
-	 */
-	return ((desc_type != S2TTE_INVALID) ||
-		s2tte_is_assigned_empty(s2tte, level));
+	return ((desc_type != S2TTE_INVALID) ||	/* block, page or table */
+		s2tte_is_assigned_empty(s2tte, level) ||
+		s2tte_is_assigned_destroyed(s2tte, level));
 }
 
 /*
  * Returns true if s2tte is a live RTTE entry. i.e.,
- * neither UNASSIGNED nor DESTROYED.
+ * HIPAS is ASSIGNED.
  *
  * NOTE: For now, only the RTTE with PA are live.
  * This could change with EXPORT/IMPORT support.
@@ -1023,8 +1025,17 @@ bool table_maps_assigned_ns_block(unsigned long *table, long level)
 }
 
 /*
+ * Returns true if all s2ttes are assigned_destroyed and
+ * refer to a contiguous block of granules aligned to @level - 1.
+ */
+bool table_maps_assigned_destroyed_block(unsigned long *table, long level)
+{
+	return __table_maps_block(table, level, s2tte_is_assigned_destroyed);
+}
+
+/*
  * Scan the RTT @s2tt (which is @wi.level), from the entry (@wi.index) and
- * skip the non-live entries (i.e., HIPAS is either UNASSIGNED or DESTROYED).
+ * skip the non-live entries (i.e., HIPAS=UNASSIGNED).
  * In other words, the scanning stops when a live RTTE is encountered or we
  * reach the end of this RTT.
  *
