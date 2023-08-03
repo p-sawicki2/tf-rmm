@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "efdee25a_7c134ab3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-03T12:32:16Z",
+      "side": 1,
+      "message": "The granule lock functions can be optimized for just locks in future. Raised a github issue for the same https://github.com/TF-RMM/tf-rmm/blob/main/lib/realm/src/granule.c#L186C13-L186C31",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a129422b_73c36fc8",
