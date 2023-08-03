@@ -53,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8e0532d_e7556a47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-03T12:54:59Z",
+      "side": 1,
+      "message": "The issue looks good to me, thanks for raising it. I think there is noting more I will change on this merge request.",
+      "parentUuid": "4899b083_66ce9e72",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a129422b_73c36fc8",
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Indeed, they dont seem to be read anywhere.",
       "parentUuid": "a129422b_73c36fc8",
+      "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a117a2b3_4c2f28b4",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-03T12:54:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d165e3ba_b30eb6df",
       "revId": "73f211233c6872bcbf4569ac8b2ec05db295b9be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
