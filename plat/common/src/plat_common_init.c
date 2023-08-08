@@ -24,6 +24,7 @@ IMPORT_SYM(uintptr_t, rmm_text_end, RMM_CODE_END);
 IMPORT_SYM(uintptr_t, rmm_ro_start, RMM_RO_START);
 IMPORT_SYM(uintptr_t, rmm_ro_end, RMM_RO_END);
 IMPORT_SYM(uintptr_t, rmm_rw_start, RMM_RW_START);
+IMPORT_SYM(uintptr_t, rmm_rw_flat_end, RMM_RW_FLAT_END);
 IMPORT_SYM(uintptr_t, rmm_rw_end, RMM_RW_END);
 
 /*
@@ -31,7 +32,7 @@ IMPORT_SYM(uintptr_t, rmm_rw_end, RMM_RW_END);
  */
 #define RMM_CODE_SIZE		(RMM_CODE_END - RMM_CODE_START)
 #define RMM_RO_SIZE		(RMM_RO_END - RMM_RO_START)
-#define RMM_RW_SIZE		(RMM_RW_END - RMM_RW_START)
+#define RMM_RW_FLAT_SIZE	(RMM_RW_FLAT_END - RMM_RW_START)
 
 #define RMM_CODE		MAP_REGION_FLAT(			\
 					RMM_CODE_START,			\
@@ -45,7 +46,7 @@ IMPORT_SYM(uintptr_t, rmm_rw_end, RMM_RW_END);
 
 #define RMM_RW			MAP_REGION_FLAT(			\
 					RMM_RW_START,			\
-					RMM_RW_SIZE,			\
+					RMM_RW_FLAT_SIZE,		\
 					MT_RW_DATA | MT_REALM)
 
 /*

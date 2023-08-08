@@ -67,16 +67,21 @@ SECTIONS
 		rmm_rela_end = .;
 	} >RAM
 
-	.percpu ALIGN(GRANULE_SIZE) (NOLOAD) : {
-		stack_start = .;
-		. = . + (RMM_NUM_PAGES_PER_STACK * GRANULE_SIZE * MAX_CPUS);
-		stack_end = .;
-	} >RAM
-
 	.bss ALIGN(16) (NOLOAD) : {
 		bss_start = .;
 		*(.bss*)
 		bss_end = .;
+	} >RAM
+
+	. = ALIGN(GRANULE_SIZE);
+	rmm_rw_flat_end = .;
+
+	ASSERT(rmm_rw_flat_end == ALIGN(GRANULE_SIZE), "rmm_rw_flat_end is not page aligned")
+
+	.percpu ALIGN(GRANULE_SIZE) (NOLOAD) : {
+		stack_start = .;
+		. = . + (RMM_NUM_PAGES_PER_STACK * GRANULE_SIZE * MAX_CPUS);
+		stack_end = .;
 	} >RAM
 
 	. = ALIGN(GRANULE_SIZE);

@@ -109,6 +109,12 @@
 	mov	x3, x23
 .endm
 
+.macro set_sp_to_high_va_range
+	adrp	x0, cpu_stack_bottom_va
+	ldr	x0, [x0, :lo12:cpu_stack_bottom_va]
+	mov	sp, x0
+.endm
+
 /*
  * This is the main entry for both Primary and secondary PEs.
  */
@@ -121,6 +127,7 @@ func rmm_entry
 	 */
 	bl	plat_setup
 	bl	xlat_enable_mmu_el2
+	set_sp_to_high_va_range
 	bl	pauth_init_enable_el2
 
 	bl	rmm_main
@@ -132,6 +139,7 @@ skip_to_warmboot:
 	 */
 	bl	plat_warmboot_setup
 	bl	xlat_enable_mmu_el2
+	set_sp_to_high_va_range
 	bl	pauth_init_enable_el2
 
 	bl	rmm_warmboot_main
