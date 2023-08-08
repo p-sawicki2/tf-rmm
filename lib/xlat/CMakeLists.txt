@@ -9,7 +9,8 @@ target_link_libraries(rmm-lib-xlat
     PRIVATE rmm-lib-common
             rmm-lib-libc
             rmm-lib-arch
-            rmm-lib-debug)
+            rmm-lib-debug
+            rmm-plat-common)
 
 target_include_directories(rmm-lib-xlat
     PUBLIC "include")
@@ -21,7 +22,8 @@ target_sources(rmm-lib-xlat
     PRIVATE "src/xlat_tables_core.c"
             "src/xlat_tables_utils.c"
             "src/xlat_tables_arch.c"
-            "src/xlat_contexts.c")
+            "src/xlat_contexts.c"
+            "src/xlat_high_va.c")
 
 if(RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-xlat
@@ -44,6 +46,11 @@ if(NOT(XLAT_GRANULARITY_SIZE_SHIFT EQUAL "12"))
 endif()
 
 target_compile_definitions(rmm-lib-xlat
-    PUBLIC "XLAT_GRANULARITY_SIZE_SHIFT=UL(${XLAT_GRANULARITY_SIZE_SHIFT})")
+    PRIVATE
+        "RMM_NUM_PAGES_PER_STACK=U(${RMM_NUM_PAGES_PER_STACK})"
+        "NUM_OF_SLOT=U(${NUM_OF_SLOT})"
+        "SLOT_VIRT=${SLOT_VIRT}"
+    PUBLIC
+        "XLAT_GRANULARITY_SIZE_SHIFT=UL(${XLAT_GRANULARITY_SIZE_SHIFT})")
 
 include (tests/CMakeLists.txt)

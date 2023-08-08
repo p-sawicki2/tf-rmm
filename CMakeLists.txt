@@ -62,6 +62,20 @@ if(RMM_STATIC_ANALYSIS_CPPCHECK)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 
+arm_config_option(
+    NAME NUM_OF_SLOT
+    HELP "The maximum number of slots that can fit in the slot buffer VA space."
+    TYPE STRING
+    DEFAULT 25
+    ADVANCED)
+
+arm_config_option(
+    NAME RMM_NUM_PAGES_PER_STACK
+    HELP "Number of pages to use per CPU stack"
+    TYPE STRING
+    DEFAULT 5
+    ADVANCED)
+
 #
 # Include the platform makefile
 #
@@ -81,6 +95,10 @@ include(UnitTestFramework)
 # Include the common configuration options
 #
 include("cmake/CommonConfigs.cmake")
+
+# Calculate the slot buffer's virtual address
+math(EXPR SLOT_VIRT_LOWER "0xffffffff - ${NUM_OF_SLOT} * ${GRANULE_SIZE} + 1" OUTPUT_FORMAT HEXADECIMAL)
+set(SLOT_VIRT "((UL(0xffffffff) << 32U) | UL(${SLOT_VIRT_LOWER}))")
 
 #
 # Load in our C standard library and link it to any targets created after this

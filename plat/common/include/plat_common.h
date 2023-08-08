@@ -6,6 +6,8 @@
 #ifndef PLAT_COMMON_H
 #define PLAT_COMMON_H
 
+#include <stdint.h>
+
 /* Forward declaration */
 struct xlat_mmap_region;
 
@@ -14,5 +16,7 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 		   struct xlat_mmap_region *plat_regions,
 		   unsigned int nregions);
 int plat_cmn_warmboot_setup(void);
+
+uintptr_t plat_get_rmm_stack_end(void);
 
 #endif /* PLAT_COMMON_H */

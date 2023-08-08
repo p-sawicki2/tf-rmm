@@ -17,7 +17,11 @@ if(VIRT_ADDR_SPACE_WIDTH EQUAL 0x0)
 endif()
 
 target_compile_definitions(rmm-lib-realm
-    PUBLIC "VIRT_ADDR_SPACE_SIZE=(1ULL << ULL(${VIRT_ADDR_SPACE_WIDTH}))")
+    PRIVATE
+        "NUM_OF_SLOT=U(${NUM_OF_SLOT})"
+        "SLOT_VIRT=${SLOT_VIRT}"
+    PUBLIC
+        "VIRT_ADDR_SPACE_SIZE=(1ULL << ULL(${VIRT_ADDR_SPACE_WIDTH}))")
 
 target_link_libraries(rmm-lib-realm
     PRIVATE rmm-lib-arch
