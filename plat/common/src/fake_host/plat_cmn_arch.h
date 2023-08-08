@@ -17,7 +17,8 @@
 #define rmm_ro_start	0x20000000UL
 #define rmm_ro_end	0x40000000UL
 #define rmm_rw_start	0x40000000UL
-#define rmm_rw_end	0x50000000UL
+#define rmm_rw_flat_end	0x50000000UL
+#define rmm_stack_end	0x60000000UL
 
 /*
  * Since fake_host architecture does not have VA address translation, we
@@ -32,6 +33,6 @@
  * here as it may collide with the dummy values in mmap regions and cause
  * xlat_table init to fail.
  */
-#define get_shared_buf_pa()	rmm_rw_end
+#define get_shared_buf_pa()	rmm_rw_flat_end
 
 #endif /* PLAT_CMN_ARCH_H */
