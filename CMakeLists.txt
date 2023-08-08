@@ -62,6 +62,13 @@ if(RMM_STATIC_ANALYSIS_CPPCHECK)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 
+arm_config_option(
+    NAME PLAT_NUM_PAGES_PER_STACK
+    HELP "Number of pages to use per CPU stack"
+    TYPE STRING
+    DEFAULT 5
+    ADVANCED)
+
 #
 # Include the platform makefile
 #
