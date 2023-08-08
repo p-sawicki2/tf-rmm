@@ -34,10 +34,10 @@ arm_config_option(
     TYPE STRING)
 
 target_compile_definitions(rmm-plat-common
-    PRIVATE "PLAT_CMN_CTX_MAX_XLAT_TABLES=U(${PLAT_CMN_CTX_MAX_XLAT_TABLES})")
-
-target_compile_definitions(rmm-plat-common
-    PRIVATE "PLAT_CMN_EXTRA_MMAP_REGIONS=U(${PLAT_CMN_EXTRA_MMAP_REGIONS})")
+    PRIVATE
+        "PLAT_CMN_CTX_MAX_XLAT_TABLES=U(${PLAT_CMN_CTX_MAX_XLAT_TABLES})"
+        "PLAT_CMN_EXTRA_MMAP_REGIONS=U(${PLAT_CMN_EXTRA_MMAP_REGIONS})"
+        "PLAT_NUM_PAGES_PER_STACK=U(${PLAT_NUM_PAGES_PER_STACK})")
 
 target_include_directories(rmm-plat-common
     PUBLIC "include"

@@ -19,15 +19,8 @@ arm_config_option(
 target_compile_definitions(rmm-runtime
     PRIVATE "RSI_LOG_LEVEL=${RSI_LOG_LEVEL}")
 
-arm_config_option(
-    NAME RMM_NUM_PAGES_PER_STACK
-    HELP "Number of pages to use per CPU stack"
-    TYPE STRING
-    DEFAULT 5
-    ADVANCED)
-
 target_compile_definitions(rmm-runtime
-    PRIVATE "RMM_NUM_PAGES_PER_STACK=${RMM_NUM_PAGES_PER_STACK}")
+    PRIVATE "PLAT_NUM_PAGES_PER_STACK=${PLAT_NUM_PAGES_PER_STACK}")
 
 target_link_libraries(rmm-runtime
     PRIVATE rmm-lib
@@ -104,7 +97,7 @@ if(NOT RMM_ARCH STREQUAL fake_host)
         PROPERTY COMPILE_DEFINITIONS "RMM_MAX_SIZE=UL(${RMM_MAX_SIZE})")
 
     set_property(TARGET rmm-runtime-lds APPEND
-        PROPERTY COMPILE_DEFINITIONS "RMM_NUM_PAGES_PER_STACK=UL(${RMM_NUM_PAGES_PER_STACK})")
+        PROPERTY COMPILE_DEFINITIONS "PLAT_NUM_PAGES_PER_STACK=UL(${PLAT_NUM_PAGES_PER_STACK})")
 endif()
 
 include (tests/CMakeLists.txt)

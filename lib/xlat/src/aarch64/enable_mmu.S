@@ -35,6 +35,14 @@
 		orr	x4, x4, x5
 		msr	sctlr_el2, x4
 
+		/*
+		 * Update SP to point to the VA of the stack bottom for this
+		 * CPU after enabling MMU
+		 */
+		adrp	x5, cpu_stack_bottom_va
+		ldr	x5, [x5, :lo12:cpu_stack_bottom_va]
+		mov	sp, x5
+
 		isb
 
 		ret
