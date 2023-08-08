@@ -55,7 +55,15 @@
 	mov	x0, x20
 	bl	rmm_el3_ifc_validate_cpuid
 
-	/* Setup stack on this CPU. X0 already contains the CPU Id */
+	/*
+	 * Setup stack on this CPU. X0 already contains the CPU Id. The stack
+	 * address set here is the physical address of the stack buffer. During
+	 * RMM boot the stack for this CPU is going to be mapped in the high VA
+	 * space of this CPU, and the SP is updated to the VA of the stack
+	 * bottom after MMU activation. After that, accessing the physical stack
+	 * address causes exception as the stack buffer is not flat-mapped in
+	 * the VA space of the CPU.
+	 */
 	bl	rmm_get_my_stack
 	mov	sp, x0
 
