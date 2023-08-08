@@ -17,6 +17,7 @@ if(VIRT_ADDR_SPACE_WIDTH EQUAL 0x0)
 endif()
 
 target_compile_definitions(rmm-lib-realm
+    PRIVATE "RMM_NUM_PAGES_PER_STACK=${RMM_NUM_PAGES_PER_STACK}"
     PUBLIC "VIRT_ADDR_SPACE_SIZE=(1ULL << ULL(${VIRT_ADDR_SPACE_WIDTH}))")
 
 target_link_libraries(rmm-lib-realm

@@ -17,6 +17,7 @@
 #define rmm_ro_start	0x20000000UL
 #define rmm_ro_end	0x40000000UL
 #define rmm_rw_start	0x40000000UL
+#define rmm_rw_flat_end	0x4f000000UL
 #define rmm_rw_end	0x50000000UL
 
 /*

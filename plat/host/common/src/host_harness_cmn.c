@@ -110,6 +110,9 @@ static uint8_t sample_attest_priv_key[] = {
 	0xEB, 0x1A, 0x41, 0x85, 0xBD, 0x11, 0x7F, 0x68
 };
 
+__attribute__((aligned(GRANULE_SIZE)))
+unsigned long stack_end [1];
+
 bool host_memcpy_ns_read(void *dest, const void *ns_src, unsigned long size)
 {
 	(void)memcpy(dest, ns_src, size);

@@ -92,6 +92,13 @@ add_subdirectory("lib/libc")
 
 link_libraries(rmm-lib-libc)
 
+arm_config_option(
+    NAME RMM_NUM_PAGES_PER_STACK
+    HELP "Number of pages to use per CPU stack"
+    TYPE STRING
+    DEFAULT 5
+    ADVANCED)
+
 #
 # Recurse into the various component subdirectories
 #

@@ -18,6 +18,7 @@
 #include <slot_buf_arch.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
 #include <table.h>
 #include <xlat_contexts.h>
 #include <xlat_tables.h>
@@ -26,21 +27,30 @@
  * All the slot buffers for a given PE must be mapped by a single translation
  * table, which means the max VA size should be <= 4KB * 512
  */
-COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) <= (GRANULE_SIZE * XLAT_TABLE_ENTRIES));
+COMPILER_ASSERT((RMM_SLOT_BUF_SIZE) <= (GRANULE_SIZE * XLAT_TABLE_ENTRIES));
 
 /*
  * For all translation stages if FEAT_TTST is implemented, while
  * the PE is executing in AArch64 state and is using 4KB
  * translation granules, the min address space size is 64KB
  */
-COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) >= (1 << 16U));
+COMPILER_ASSERT((ROUNDED_VA_SIZE) >= (1 << 16U));
 
 #define RMM_SLOT_BUF_MMAP	MAP_REGION_TRANSIENT(			\
 					SLOT_VIRT,			\
-					RMM_SLOT_BUF_VA_SIZE,		\
+					RMM_SLOT_BUF_SIZE,		\
 					PAGE_SIZE)
 
-#define SLOT_BUF_MMAP_REGIONS		UL(1)
+/* TODO: Do we need Ng? */
+#define STACK_ATTR		(MT_RW_DATA | MT_NG)
+
+#define RMM_STACK_MMAP		MAP_REGION_FULL_SPEC(			\
+				0, /* PA is different for each CPU */	\
+				STACK_VIRT,				\
+				CPU_STACK_SIZE,				\
+				STACK_ATTR,				\
+				PAGE_SIZE)
+
 
 /*
  * Attributes for a buffer slot page descriptor.
@@ -49,6 +59,17 @@ COMPILER_ASSERT((RMM_SLOT_BUF_VA_SIZE) >= (1 << 16U));
  * need to be specified here.
  */
 #define SLOT_DESC_ATTR		(MT_RW_DATA | MT_NG)
+
+/*
+ * Global symbol set by the C code
+ * The stack bottom VA is calculated using CLZ operation which is not supported
+ * by the preprocessor. So the C code sets the address in this variable, and
+ * the assembly init function loads it from here when setting SP to the stack
+ * VA.
+ */
+uintptr_t cpu_stack_bottom_va;
+
+extern unsigned long stack_end[];
 
 /*
  * The base tables for all the contexts are manually allocated as a continous
@@ -60,8 +81,8 @@ static uint64_t slot_buf_s1tt[XLAT_TABLE_ENTRIES * MAX_CPUS]
 /* Allocate per-cpu xlat_ctx_tbls */
 static struct xlat_ctx_tbls slot_buf_tbls[MAX_CPUS];
 
-/* Allocate xlat_ctx_cfg for high VA which will be common to all PEs */
-static struct xlat_ctx_cfg slot_buf_xlat_ctx_cfg;
+/* Allocate xlat_ctx_cfg for high VA which will be specific to PEs */
+static struct xlat_ctx_cfg slot_buf_xlat_ctx_cfgs[MAX_CPUS];
 
 /* context definition */
 static struct xlat_ctx slot_buf_xlat_ctx[MAX_CPUS];
@@ -98,19 +119,48 @@ __unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
 	return xlat_read_tte(entry);
 }
 
+static void copy_to_region(
+	struct xlat_mmap_region mm_regions[2],
+	unsigned int index,
+	struct xlat_mmap_region *mm_region)
+{
+	memcpy (&(mm_regions[index]),
+		mm_region,
+		sizeof(struct xlat_mmap_region));
+}
+
 int slot_buf_coldboot_init(void)
 {
-	static struct xlat_mmap_region slot_buf_regions[] = {
-		RMM_SLOT_BUF_MMAP,
-	};
+	static struct xlat_mmap_region mm_regions_array[MAX_CPUS][2];
+	struct xlat_mmap_region rmm_slot_buf_mmap = RMM_SLOT_BUF_MMAP;
+	struct xlat_mmap_region rmm_stack_mmap = RMM_STACK_MMAP;
+	unsigned int cpuid = my_cpuid();
+	size_t index;
+	int ret;
 
-	/*
-	 * Initialize the common configuration used for all
-	 * translation contexts
-	 */
-	return xlat_ctx_cfg_init(&slot_buf_xlat_ctx_cfg, VA_HIGH_REGION,
-				 &slot_buf_regions[0], 1U,
-				 RMM_SLOT_BUF_VA_SIZE);
+	cpu_stack_bottom_va = STACK_VIRT + (RMM_NUM_PAGES_PER_STACK * GRANULE_SIZE);
+
+	for (cpuid = 0; cpuid < MAX_CPUS; ++cpuid) {
+		index = 0;
+		/* Set stack VA for this CPU */
+		rmm_stack_mmap.base_pa = (unsigned long)stack_end - (cpuid + 1) * CPU_STACK_SIZE;
+		copy_to_region(mm_regions_array[cpuid], index++, &rmm_stack_mmap);
+
+		copy_to_region(mm_regions_array[cpuid], index++, &rmm_slot_buf_mmap);
+
+		/*
+		* Initialize the common configuration used for all
+		* translation contexts
+		*/
+		ret = xlat_ctx_cfg_init(&slot_buf_xlat_ctx_cfgs[cpuid], VA_HIGH_REGION,
+					&mm_regions_array[cpuid][0],
+					index,
+					ROUNDED_VA_SIZE);
+		if (ret != 0) {
+			return ret;
+		}
+	}
+	return 0;
 }
 
 /*
@@ -127,7 +177,7 @@ void slot_buf_setup_xlat(void)
 	 * This is done on the first boot of each PE.
 	 */
 	int ret = xlat_ctx_init(slot_buf_ctx,
-				&slot_buf_xlat_ctx_cfg,
+				&slot_buf_xlat_ctx_cfgs[cpuid],
 				&slot_buf_tbls[cpuid],
 				&slot_buf_s1tt[XLAT_TABLE_ENTRIES * cpuid], 1U);
 
