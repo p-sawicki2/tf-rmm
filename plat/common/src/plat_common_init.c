@@ -16,6 +16,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <xlat_contexts.h>
+#include <xlat_high_va.h>
 #include <xlat_tables.h>
 
 
@@ -25,13 +26,14 @@ IMPORT_SYM(uintptr_t, rmm_ro_start, RMM_RO_START);
 IMPORT_SYM(uintptr_t, rmm_ro_end, RMM_RO_END);
 IMPORT_SYM(uintptr_t, rmm_rw_start, RMM_RW_START);
 IMPORT_SYM(uintptr_t, rmm_rw_end, RMM_RW_END);
+IMPORT_SYM(uintptr_t, rmm_stack_end, RMM_STACK_END);
 
 /*
  * Memory map REGIONS used for the RMM runtime (static mappings)
  */
 #define RMM_CODE_SIZE		(RMM_CODE_END - RMM_CODE_START)
 #define RMM_RO_SIZE		(RMM_RO_END - RMM_RO_START)
-#define RMM_RW_SIZE		(RMM_RW_END - RMM_RW_START)
+#define RMM_RW_FLAT_SIZE	(RMM_RW_END - RMM_RW_START)
 
 #define RMM_CODE		MAP_REGION_FLAT(			\
 					RMM_CODE_START,			\
@@ -45,7 +47,7 @@ IMPORT_SYM(uintptr_t, rmm_rw_end, RMM_RW_END);
 
 #define RMM_RW			MAP_REGION_FLAT(			\
 					RMM_RW_START,			\
-					RMM_RW_SIZE,			\
+					RMM_RW_FLAT_SIZE,		\
 					MT_RW_DATA | MT_REALM)
 
 /*
@@ -179,8 +181,7 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 	/* Read supported GIC virtualization features and init GIC variables */
 	gic_get_virt_features();
 
-	/* Perform coold boot initialization of the slot buffer mechanism */
-	return slot_buf_coldboot_init();
+	return 0;
 }
 
 /*
@@ -202,8 +203,8 @@ int plat_cmn_warmboot_setup(void)
 		return ret;
 	}
 
-	/* Setup the MMU cfg for the slot buffer context (high region) */
-	slot_buf_setup_xlat();
+	/* Perform warm boot initialization of the high VA region */
+	xlat_high_va_setup();
 
 	VERBOSE("xlat tables configured for CPU[%u]\n", my_cpuid());
 	return 0;
