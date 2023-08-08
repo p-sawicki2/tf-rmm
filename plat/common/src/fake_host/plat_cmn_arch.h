@@ -18,6 +18,7 @@
 #define rmm_ro_end	0x40000000UL
 #define rmm_rw_start	0x40000000UL
 #define rmm_rw_end	0x50000000UL
+#define rmm_stack_end	0x60000000UL
 
 /*
  * Since fake_host architecture does not have VA address translation, we

@@ -21,14 +21,17 @@ target_sources(rmm-lib-xlat
     PRIVATE "src/xlat_tables_core.c"
             "src/xlat_tables_utils.c"
             "src/xlat_tables_arch.c"
-            "src/xlat_contexts.c")
+            "src/xlat_contexts.c"
+            "src/xlat_high_va.c")
 
 if(RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-xlat
-        PRIVATE "src/fake_host/enable_mmu.c")
+        PRIVATE "src/fake_host/enable_mmu.c"
+                "src/fake_host/xlat_helpers.c")
 else()
     target_sources(rmm-lib-xlat
-        PRIVATE "src/aarch64/enable_mmu.S")
+        PRIVATE "src/aarch64/enable_mmu.S"
+                "src/aarch64/xlat_helper.S")
 endif()
 
 arm_config_option(
@@ -39,11 +42,19 @@ arm_config_option(
     DEFAULT "12"
     ADVANCED)
 
+arm_config_option(
+    NAME XLAT_NUM_PAGES_PER_STACK
+    HELP "Number of pages to use per CPU stack"
+    TYPE STRING
+    DEFAULT 5
+    ADVANCED)
+
 if(NOT(XLAT_GRANULARITY_SIZE_SHIFT EQUAL "12"))
     message(FATAL_ERROR "Only 4K granularity is supported at the moment")
 endif()
 
 target_compile_definitions(rmm-lib-xlat
+    PRIVATE "XLAT_NUM_PAGES_PER_STACK=${XLAT_NUM_PAGES_PER_STACK}"
     PUBLIC "XLAT_GRANULARITY_SIZE_SHIFT=UL(${XLAT_GRANULARITY_SIZE_SHIFT})")
 
 include (tests/CMakeLists.txt)

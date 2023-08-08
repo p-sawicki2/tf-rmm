@@ -4,6 +4,8 @@
  */
 
 #include <sizes.h>
+#include <xlat_defs.h>
+#include <xlat_high_va.h>
 
 ENTRY(rmm_entry)
 
@@ -67,12 +69,6 @@ SECTIONS
 		rmm_rela_end = .;
 	} >RAM
 
-	.percpu ALIGN(GRANULE_SIZE) (NOLOAD) : {
-		stack_start = .;
-		. = . + (RMM_NUM_PAGES_PER_STACK * GRANULE_SIZE * MAX_CPUS);
-		stack_end = .;
-	} >RAM
-
 	.bss ALIGN(16) (NOLOAD) : {
 		bss_start = .;
 		*(.bss*)
@@ -81,9 +77,19 @@ SECTIONS
 
 	. = ALIGN(GRANULE_SIZE);
 	rmm_rw_end = .;
-	rmm_end = rmm_rw_end;
 
 	ASSERT(rmm_rw_end == ALIGN(GRANULE_SIZE), "rmm_rw_end is not page aligned")
+
+	.percpu ALIGN(GRANULE_SIZE) (NOLOAD) : {
+		stack_start = .;
+		. = . + STACK_BUFFER_SIZE;
+		rmm_stack_end = .;
+	} >RAM
+
+	. = ALIGN(GRANULE_SIZE);
+	rmm_end = .;
+
+	ASSERT(rmm_end == ALIGN(GRANULE_SIZE), "rmm_end is not page aligned")
 
 	/DISCARD/ : { *(.dynstr*) }
 	/DISCARD/ : { *(.dynsym*) }
