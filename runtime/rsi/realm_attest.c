@@ -8,6 +8,7 @@
 #include <granule.h>
 #include <measurement.h>
 #include <realm.h>
+#include <rec_aux_alloc_size.h>
 #include <rsi-handler.h>
 #include <smc-rsi.h>
 #include <smc.h>
