@@ -148,4 +148,5 @@ unsigned long skip_non_live_entries(unsigned long addr,
 
 _CBMC(unsigned long s2_addr_to_idx(unsigned long addr, long level);)
 _CBMC(unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level, unsigned long ipa_bits);)
+_CBMC(unsigned long table_entry_to_phys(unsigned long entry);)
 #endif /* TABLE_H */

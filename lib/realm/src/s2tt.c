@@ -267,10 +267,12 @@ unsigned long addr_level_mask(unsigned long addr, long level)
 	return (addr & BIT_MASK_ULL(msb, lsb));
 }
 
+_NCBMC(
 static inline unsigned long table_entry_to_phys(unsigned long entry)
 {
 	return addr_level_mask(entry, RTT_PAGE_LEVEL);
 }
+) /* _NCBMC */
 
 static inline bool entry_is_table(unsigned long entry)
 {
