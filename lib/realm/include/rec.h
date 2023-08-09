@@ -106,6 +106,9 @@ struct ns_state {
 	struct pmu_state *pmu;
 } __attribute__((aligned(CACHE_WRITEBACK_GRANULE)));
 
+
+
+_NCBMC(
 /*
  * Data used when handling attestation requests
  */
@@ -122,6 +125,7 @@ struct rec_attest_data {
 	} alloc_info;
 };
 COMPILER_ASSERT(sizeof(struct rec_attest_data) <= GRANULE_SIZE);
+) /* _NCBMC */
 
 /*
  * This structure contains pointers to data that are allocated
@@ -146,6 +150,7 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
+_NCBMC(
 	unsigned long regs[31];
 
 	/*
@@ -159,6 +164,7 @@ struct rec {
 
 	struct sysreg_state sysregs;
 	struct common_sysreg_state common_sysregs;
+) /* _NCBMC */
 
 	/* Populated when the REC issues a RIPAS change request */
 	struct {
@@ -184,6 +190,7 @@ struct rec {
 		uint8_t sve_vq;
 	} realm_info;
 
+_NCBMC(
 	struct {
 		/*
 		 * The contents of the *_EL2 system registers at the last time
@@ -209,12 +216,14 @@ struct rec {
 		 */
 		bool pending;
 	} psci_info;
+) /* _NCBMC */
 
 	/* Number of auxiliary granules */
 	unsigned int num_rec_aux;
 
 	/* Addresses of auxiliary granules */
 	struct granule *g_aux[MAX_REC_AUX_GRANULES];
+_NCBMC(
 	struct rec_aux_data aux_data;
 	struct {
 		unsigned long vsesr_el2;
@@ -223,6 +232,7 @@ struct rec {
 
 	/* True if host call is pending */
 	bool host_call;
+) /* _NCBMC */
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
 
@@ -261,7 +271,8 @@ static inline simd_t rec_simd_type(struct rec *rec)
 static inline bool rec_is_simd_allowed(struct rec *rec)
 {
 	assert(rec != NULL);
-	return rec->aux_data.rec_simd.simd_allowed;
+	_NCBMC(return rec->aux_data.rec_simd.simd_allowed;)
+	_CBMC(return false;)
 }
 
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);

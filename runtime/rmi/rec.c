@@ -23,6 +23,7 @@
 #include <stddef.h>
 #include <string.h>
 
+_NCBMC(
 static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 {
 	/* Set non-zero values only */
@@ -34,6 +35,7 @@ static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 	rec->sysregs.vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
 	rec->sysregs.cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
 }
+) /* NCBMC */
 
 /*
  * Starting level of the stage 2 translation
@@ -66,6 +68,7 @@ static unsigned long realm_vtcr(struct rd *rd)
 	return vtcr;
 }
 
+_NCBMC(
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
@@ -116,6 +119,18 @@ static void init_rec_regs(struct rec *rec,
 	init_common_sysregs(rec, rd);
 }
 
+static void init_attest_data(struct rec *rec)
+{
+	struct rec_attest_data *attest_data;
+
+	attest_data = rec->aux_data.attest_data;
+	attest_data->alloc_info.ctx_initialised = false;
+
+	/* Initialize attestation state */
+	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+}
+) /* NCBMC */
+
 /*
  * This function will only be invoked when the REC create fails
  * or when REC is being destroyed. Hence the REC will not be in
@@ -153,7 +168,6 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	bool ns_access_ok;
 	unsigned int num_rec_aux;
 	void *rec_aux;
-	struct rec_attest_data *attest_data;
 
 	g_rec_params = find_granule(rec_params_addr);
 	if ((g_rec_params == NULL) || (g_rec_params->state != GRANULE_STATE_NS)) {
@@ -219,8 +233,8 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
-	init_rec_regs(rec, &rec_params, rd);
-	gic_cpu_state_init(&rec->sysregs.gicstate);
+	_NCBMC(init_rec_regs(rec, &rec_params, rd);)
+	_NCBMC(gic_cpu_state_init(&rec->sysregs.gicstate);)
 
 	/* Copy addresses of auxiliary granules */
 	(void)memcpy(rec->g_aux, rec_aux_granules,
@@ -257,13 +271,8 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	 * in its granule but by the lock of the parent REC granule.
 	 */
 	rec_aux = map_rec_aux(rec->g_aux, rec->num_rec_aux);
-	init_rec_aux_data(&(rec->aux_data), rec_aux, rec->num_rec_aux);
-
-	attest_data = rec->aux_data.attest_data;
-	attest_data->alloc_info.ctx_initialised = false;
-
-	/* Initialize attestation state */
-	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+	_NCBMC(init_rec_aux_data(&(rec->aux_data), rec_aux, rec->num_rec_aux);)
+	_NCBMC(init_attest_data(rec);)
 
 	unmap_rec_aux(rec_aux, rec->num_rec_aux);
 
