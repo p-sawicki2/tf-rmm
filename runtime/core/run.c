@@ -12,6 +12,7 @@
 #include <exit.h>
 #include <pmu.h>
 #include <rec.h>
+#include <rec_aux_alloc_size.h>
 #include <run.h>
 #include <simd.h>
 #include <smc-rmi.h>
