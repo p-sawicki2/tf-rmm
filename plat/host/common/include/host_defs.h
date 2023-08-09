@@ -8,8 +8,11 @@
 
 #include <utils_def.h>
 
-/* Allocate 1GB of space to be used as physical granules */
-#define HOST_MEM_SIZE			UL(0x40000000)
+/*
+ * Wrap the macro UL in another macro, so that HOST_MEM_SIZE_VALUE can be
+ * substituted before being stringified.
+ */
+#define ULx(_x) UL(_x)
 
 /* Total number of granules on the current platform */
 #define HOST_NR_GRANULES		(HOST_MEM_SIZE/GRANULE_SIZE)
