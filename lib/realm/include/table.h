@@ -145,4 +145,7 @@ static inline unsigned int max_ipa_size(void)
 unsigned long skip_non_live_entries(unsigned long addr,
 				    unsigned long *s2tt,
 				    const struct rtt_walk *wi);
+
+_CBMC(unsigned long s2_addr_to_idx(unsigned long addr, long level);)
+_CBMC(unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level, unsigned long ipa_bits);)
 #endif /* TABLE_H */

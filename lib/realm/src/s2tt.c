@@ -226,7 +226,7 @@ void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx, unsigned l
  * aarch64/translation/vmsa_addrcalc/AArch64.TTEntryAddress on which this is
  * modeled.
  */
-static unsigned long s2_addr_to_idx(unsigned long addr, long level)
+_NCBMC(static) unsigned long s2_addr_to_idx(unsigned long addr, long level)
 {
 	int levels = RTT_PAGE_LEVEL - level;
 	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
@@ -246,8 +246,9 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
  * aarch64/translation/vmsa_addrcalc/AArch64.S2SLTTEntryAddress on which
  * this is modeled.
  */
-static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
-				       unsigned long ipa_bits)
+_NCBMC(static)
+unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
+				unsigned long ipa_bits)
 {
 	int levels = RTT_PAGE_LEVEL - start_level;
 	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
