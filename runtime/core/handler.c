@@ -7,6 +7,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <buffer.h>
+#include <cpuid.h>
 #include <debug.h>
 #include <run.h>
 #include <simd.h>
@@ -15,6 +16,7 @@
 #include <smc.h>
 #include <status.h>
 #include <utils_def.h>
+#include <xlat_high_va.h>
 
 /* Maximum number of supported arguments */
 #define MAX_NUM_ARGS		5U
@@ -427,6 +429,20 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
 	return false;
 }
 
+static bool is_el2_stack_overflow(unsigned long esr)
+{
+	if (((esr & MASK(ESR_EL2_EC)) == ESR_EL2_EC_DATA_ABORT_SEL) &&
+		/* FAR is valid */
+		((esr & ESR_EL2_ABORT_FNV_BIT) == 0U) &&
+		/* Instruction Syndrome is valid */
+		((esr & ESR_EL2_ABORT_ISV_BIT) == ESR_EL2_ABORT_ISV_BIT) &&
+		/* The stack operand of the instruction was SP */
+		(EXTRACT(ESR_EL2_ABORT_SRT, esr) == 31)) {
+		return true;
+	}
+	return false;
+}
+
 /*
  * Handles the RMM's aborts.
  * It compares the PC at the time of the abort with the registered addresses.
@@ -442,14 +458,14 @@ unsigned long handle_rmm_trap(void)
 	/*
 	 * Only the GPF data aborts are recoverable.
 	 */
-	if (!is_el2_data_abort_gpf(esr)) {
-		fatal_abort();
-	}
-
-	for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
-		if (rmm_trap_list[i].aborted_pc == elr) {
-			return rmm_trap_list[i].new_pc;
+	if (is_el2_data_abort_gpf(esr)) {
+		for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
+			if (rmm_trap_list[i].aborted_pc == elr) {
+				return rmm_trap_list[i].new_pc;
+			}
 		}
+	} else if (is_el2_stack_overflow(esr)) {
+		ERROR("FATAL: Stack overflow on CPU #%u.\n", my_cpuid());
 	}
 
 	fatal_abort();
