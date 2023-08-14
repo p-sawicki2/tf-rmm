@@ -69,7 +69,20 @@ el2_serror_lel:
 ENDPROC(el2_serror_lel)
 
 el2_sync_cel:
+
+	/* switch to exception handler stack */
+	msr	spsel, #0
+
 	stp	x0, x1, [sp, #-16]!
+
+	/*
+	 * The register alias SP_EL2 cannot be read in EL2, so switching back
+	 * SP to SP_EL2, and pass it as a parameter in x0
+	 */
+	msr	spsel, #1
+	mov	x0, sp
+	msr	spsel, #0
+
 	stp	x2, x3, [sp, #-16]!
 	stp	x4, x5, [sp, #-16]!
 	stp	x6, x7, [sp, #-16]!
@@ -100,6 +113,9 @@ el2_sync_cel:
 	ldp	x4, x5, [sp], #16
 	ldp	x2, x3, [sp], #16
 	ldp	x0, x1, [sp], #16
+
+	/* switch back to normal stack */
+	msr	spsel, #1
 
 	eret
 	sb
