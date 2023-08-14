@@ -82,6 +82,9 @@ SECTIONS
 		stack_start = .;
 		. = . + (PLAT_NUM_PAGES_PER_STACK * GRANULE_SIZE * MAX_CPUS);
 		rmm_stack_end = .;
+		handler_stack_start = .;
+		. = . + (GRANULE_SIZE * MAX_CPUS);
+		rmm_handler_stack_end = .;
 	} >RAM
 
 	. = ALIGN(GRANULE_SIZE);

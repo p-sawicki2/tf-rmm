@@ -12,13 +12,14 @@
  * Define dummy symbols for fake_host build.
  * These must be defined as constant qualifiers for IMPORT_SYM to work.
  */
-#define rmm_text_start	0x10000000UL
-#define rmm_text_end	0x20000000UL
-#define rmm_ro_start	0x20000000UL
-#define rmm_ro_end	0x40000000UL
-#define rmm_rw_start	0x40000000UL
-#define rmm_rw_flat_end	0x50000000UL
-#define rmm_stack_end	0x60000000UL
+#define rmm_text_start		0x10000000UL
+#define rmm_text_end		0x20000000UL
+#define rmm_ro_start		0x20000000UL
+#define rmm_ro_end		0x40000000UL
+#define rmm_rw_start		0x40000000UL
+#define rmm_rw_flat_end		0x50000000UL
+#define rmm_stack_end		0x60000000UL
+#define rmm_handler_stack_end	0x68000000UL
 
 /*
  * Since fake_host architecture does not have VA address translation, we
