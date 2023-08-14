@@ -28,6 +28,7 @@ IMPORT_SYM(uintptr_t, rmm_ro_end, RMM_RO_END);
 IMPORT_SYM(uintptr_t, rmm_rw_start, RMM_RW_START);
 IMPORT_SYM(uintptr_t, rmm_rw_flat_end, RMM_RW_FLAT_END);
 IMPORT_SYM(uintptr_t, rmm_stack_end, RMM_STACK_END);
+IMPORT_SYM(uintptr_t, rmm_handler_stack_end, RMM_HANDLER_STACK_END);
 
 /*
  * Memory map REGIONS used for the RMM runtime (static mappings)
@@ -80,8 +81,6 @@ IMPORT_SYM(uintptr_t, rmm_stack_end, RMM_STACK_END);
 #define GAP_PAGE_COUNT		1U
 #define CPU_STACK_GAP		(GAP_PAGE_COUNT * PAGE_SIZE)
 
-#define CPU_STACK_SIZE		(PLAT_NUM_PAGES_PER_STACK * PAGE_SIZE)
-
 #define RMM_STACK_MMAP		MAP_REGION_FULL_SPEC(			\
 				0, /* PA is different for each CPU */	\
 				0, /* VA is calculated based on slot buf VA */ \
@@ -89,7 +88,14 @@ IMPORT_SYM(uintptr_t, rmm_stack_end, RMM_STACK_END);
 				STACK_ATTR,				\
 				PAGE_SIZE)
 
-#define MMAP_REGION_COUNT	2U
+#define RMM_HANDLER_STACK_MMAP	MAP_REGION_FULL_SPEC(			\
+				0, /* PA is different for each CPU */	\
+				0, /* VA is calculated based on slot buf VA */ \
+				GRANULE_SIZE,				\
+				STACK_ATTR,				\
+				PAGE_SIZE)
+
+#define MMAP_REGION_COUNT	3U
 
 /*
  * A single L3 page is used to map the slot buffers as well as the stack, so
@@ -138,6 +144,7 @@ static struct xlat_ctx high_va_xlat_ctx[MAX_CPUS];
  * VA.
  */
 uintptr_t cpu_stack_bottom_va;
+uintptr_t cpu_handler_stack_bottom_va;
 
 /*
  * Platform common cold boot setup for RMM.
@@ -255,23 +262,31 @@ static int high_va_warmboot_init(void)
 		mm_regions_array[MAX_CPUS][MMAP_REGION_COUNT];
 	struct xlat_mmap_region rmm_slot_buf_mmap;
 	struct xlat_mmap_region rmm_stack_mmap = RMM_STACK_MMAP;
+	struct xlat_mmap_region rmm_handler_stack_mmap = RMM_HANDLER_STACK_MMAP;
 	unsigned int cpuid = my_cpuid();
 	uintptr_t slot_buffer_va;
 	uintptr_t stack_va;
+	uintptr_t handler_stack_va;
 	size_t index = 0;
 
 	slot_buf_get_mmap(&rmm_slot_buf_mmap);
 
 	slot_buffer_va = rmm_slot_buf_mmap.base_va;
 	stack_va = slot_buffer_va - CPU_STACK_GAP - CPU_STACK_SIZE;
+	handler_stack_va = stack_va - CPU_STACK_GAP - GRANULE_SIZE;
 
 	cpu_stack_bottom_va =
-		stack_va + (PLAT_NUM_PAGES_PER_STACK * GRANULE_SIZE);
+		stack_va + CPU_STACK_SIZE;
+	cpu_handler_stack_bottom_va =
+		handler_stack_va + GRANULE_SIZE;
 
 	/* Set stack VA for this CPU */
 	rmm_stack_mmap.base_pa = RMM_STACK_END - (cpuid + 1U) * CPU_STACK_SIZE;
 	rmm_stack_mmap.base_va = stack_va;
+	rmm_handler_stack_mmap.base_pa = RMM_HANDLER_STACK_END - (cpuid + 1U) * GRANULE_SIZE;
+	rmm_handler_stack_mmap.base_va = handler_stack_va;
 
+	copy_to_region(mm_regions_array[cpuid], index++, &rmm_handler_stack_mmap);
 	copy_to_region(mm_regions_array[cpuid], index++, &rmm_stack_mmap);
 	copy_to_region(mm_regions_array[cpuid], index++, &rmm_slot_buf_mmap);
 

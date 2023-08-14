@@ -24,6 +24,7 @@ target_compile_definitions(rmm-runtime
 
 target_link_libraries(rmm-runtime
     PRIVATE rmm-lib
+            rmm-plat-common
             rmm-platform)
 
 target_include_directories(rmm-runtime
