@@ -7,6 +7,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <buffer.h>
+#include <cpuid.h>
 #include <debug.h>
 #include <run.h>
 #include <simd.h>
@@ -15,6 +16,7 @@
 #include <smc.h>
 #include <status.h>
 #include <utils_def.h>
+#include <xlat_high_va.h>
 
 /* Maximum number of supported arguments */
 #define MAX_NUM_ARGS		5U
@@ -431,6 +433,24 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
 	return false;
 }
 
+static bool is_el2_stack_overflow(unsigned long esr,
+				  unsigned long sp_el2,
+				  unsigned long far_el2)
+{
+	if (((esr & MASK(ESR_EL2_EC)) == ESR_EL2_EC_DATA_ABORT_SEL) &&
+	    /* FAR is valid */
+	    ((esr & ESR_EL2_ABORT_FNV_BIT) == 0U) &&
+	    /* The stack frame starts below the CPU stack buffer */
+	    (sp_el2 < CPU_STACK_VIRT) &&
+	    /* the address is outside of the CPU stack buffer */
+	    (far_el2 < CPU_STACK_VIRT) &&
+	    /* The fault address is inside a stack frame */
+	    (far_el2 >= sp_el2)) {
+		return true;
+	}
+	return false;
+}
+
 /*
  * Handles the RMM's aborts.
  * It compares the PC at the time of the abort with the registered addresses.
@@ -438,22 +458,24 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
  * continue from. Other register values are preserved.
  * If no match is found, it aborts the RMM.
  */
-unsigned long handle_rmm_trap(void)
+unsigned long handle_rmm_trap(unsigned long sp_el2)
 {
 	unsigned long esr = read_esr_el2();
 	unsigned long elr = read_elr_el2();
+	unsigned long far_el2 = read_far_el2();
 
 	/*
 	 * Only the GPF data aborts are recoverable.
 	 */
-	if (!is_el2_data_abort_gpf(esr)) {
-		fatal_abort();
-	}
-
-	for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
-		if (rmm_trap_list[i].aborted_pc == elr) {
-			return rmm_trap_list[i].new_pc;
+	if (is_el2_data_abort_gpf(esr)) {
+		for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
+			if (rmm_trap_list[i].aborted_pc == elr) {
+				return rmm_trap_list[i].new_pc;
+			}
 		}
+	} else if (is_el2_stack_overflow(esr, sp_el2, far_el2)) {
+		rmm_log("Stack overflow on CPU #%u.\n", my_cpuid());
+		panic();
 	}
 
 	fatal_abort();
