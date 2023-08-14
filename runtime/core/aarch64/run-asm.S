@@ -44,6 +44,8 @@ func run_realm
 	ldp	x26, x27, [x0, #(16 * 13)]
 	ldp	x28, x29, [x0, #(16 * 14)]
 	ldr	x30,      [x0, #(16 * 15)]
+	ldr	x1,       [x0, #(16 * 15 + 8)]
+	msr	sp_el0, x1
 	ldp	x0,  x1,  [x0, #(16 * 0)]
 
 	eret
@@ -77,6 +79,13 @@ func realm_exit
 	stp	x26, x27, [x1, #(16 * 13)]
 	stp	x28, x29, [x1, #(16 * 14)]
 	str	x30,      [x1, #(16 * 15)]
+	mrs	x2, sp_el0
+	str	x2,       [x1, #(16 * 15 + 8)]
+
+	/* Load the handler stack bottom to SP_EL0 */
+	adrp	x2, cpu_handler_stack_bottom_va
+	ldr	x2, [x2, :lo12:cpu_handler_stack_bottom_va]
+	msr	sp_el0, x2
 
 	/* x0 and x1 as stored by el2_vectors */
 	ldp	x2, x3,	  [sp]

@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <buffer.h>
 #include <debug.h>
+#include <cpuid.h>
+#include <plat_common.h>
 #include <simd.h>
 #include <smc-handler.h>
 #include <smc-rmi.h>
@@ -412,6 +414,22 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
 	return false;
 }
 
+extern uintptr_t cpu_stack_bottom_va;
+
+static bool is_el2_stack_overflow(unsigned long esr,
+				  unsigned long sp_el2,
+				  unsigned long far_el2)
+{
+	if (((esr & MASK(ESR_EL2_EC)) == ESR_EL2_EC_DATA_ABORT_SEL) &&
+	    ((esr & ESR_EL2_ABORT_FNV_BIT) == 0) &&
+	    far_el2 < cpu_stack_bottom_va &&
+	    far_el2 >= sp_el2 &&
+	    far_el2 <= cpu_stack_bottom_va - CPU_STACK_SIZE) {
+		return true;
+	}
+	return false;
+}
+
 /*
  * Handles the RMM's aborts.
  * It compares the PC at the time of the abort with the registered addresses.
@@ -419,22 +437,24 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
  * continue from. Other register values are preserved.
  * If no match is found, it aborts the RMM.
  */
-unsigned long handle_rmm_trap(void)
+unsigned long handle_rmm_trap(unsigned long sp_el2)
 {
 	unsigned long esr = read_esr_el2();
 	unsigned long elr = read_elr_el2();
+	unsigned long far_el2 = read_far_el2();
 
 	/*
 	 * Only the GPF data aborts are recoverable.
 	 */
-	if (!is_el2_data_abort_gpf(esr)) {
-		fatal_abort();
-	}
-
-	for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
-		if (rmm_trap_list[i].aborted_pc == elr) {
-			return rmm_trap_list[i].new_pc;
+	if (is_el2_data_abort_gpf(esr)) {
+		for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
+			if (rmm_trap_list[i].aborted_pc == elr) {
+				return rmm_trap_list[i].new_pc;
+			}
 		}
+	} else if (is_el2_stack_overflow(esr, sp_el2, far_el2)) {
+		rmm_log("Stack overflow on CPU #%u.\n", my_cpuid());
+		panic();
 	}
 
 	fatal_abort();
