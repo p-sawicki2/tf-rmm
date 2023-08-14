@@ -138,7 +138,7 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
-	unsigned long regs[31];
+	unsigned long regs[32]; /* X0-X30, SP_EL0 */
 
 	/*
 	 * PAuth state of Realm.
