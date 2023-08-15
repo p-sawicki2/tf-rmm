@@ -55,6 +55,8 @@
 enum simd_tflags {
 	/* Flag set when SVE is enabled */
 	SIMD_TFLAG_SVE = 1 << 0U,
+	/* Flag set when SME is enabled */
+	SIMD_TFLAG_SME = 1 << 1U,
 };
 
 /* Flags for SIMD status */
@@ -114,6 +116,9 @@ struct simd_config {
 	 * 0xf - 2048 bits VL (arch max)
 	 */
 	uint32_t sve_vq;
+
+	/* SME enabled flag */
+	bool sme_en;
 };
 
 /*
@@ -137,6 +142,12 @@ struct simd_context {
 
 	/* EL2 trap register for this context */
 	uint64_t cptr_el2;
+
+	/*
+	 * SME specific Streaming vector control register. Contains CPU global
+	 * PSTATE.SM and PSTATE.ZA flags.
+	 */
+	uint64_t svcr;
 
 	/*
 	 * EL2 config registers.
