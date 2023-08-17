@@ -306,7 +306,8 @@ static bool find_lock_rd_granules(unsigned long rd_addr,
 	}
 
 	for (; i < num_rtts; i++) {
-		unsigned long rtt_addr = rtt_base_addr + i * GRANULE_SIZE;
+		unsigned long rtt_addr = rtt_base_addr +
+					(unsigned long)i * GRANULE_SIZE;
 		struct granule *g_rtt;
 
 		g_rtt = find_lock_granule(rtt_addr, GRANULE_STATE_DELEGATED);
@@ -366,7 +367,8 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	 * starting level RTT address(es)
 	 */
 	if (addr_is_contained(p.rtt_base,
-			      p.rtt_base + p.rtt_num_start * GRANULE_SIZE,
+			      p.rtt_base +
+			      (unsigned long)p.rtt_num_start * GRANULE_SIZE,
 			      rd_addr)) {
 
 		/* Free reserved VMID before returning */
