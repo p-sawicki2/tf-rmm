@@ -198,7 +198,7 @@ struct xlat_mmap_region {
 	uintptr_t	base_pa;	/* Base PA for the current region. */
 	uintptr_t	base_va;	/* Base VA for the current region. */
 	size_t		size;		/* Size of the current region. */
-	uint64_t	attr;		/* Attrs for the current region. */
+	unsigned long	attr;		/* Attrs for the current region. */
 	size_t		granularity;    /* Region granularity. */
 };
 
