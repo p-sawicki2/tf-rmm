@@ -157,7 +157,7 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 				 * Also, check if the current level allows block
 				 * descriptors. If not, create a table instead.
 				 */
-				if (((dest_pa & XLAT_BLOCK_MASK(level)) != 0U)
+				if (((dest_pa & XLAT_BLOCK_MASK(level)) != 0UL)
 				    || (level < XLAT_MIN_BLOCK_LVL()) ||
 				    (mm->granularity < XLAT_BLOCK_SIZE(level))) {
 					return ACTION_CREATE_NEW_TABLE;
