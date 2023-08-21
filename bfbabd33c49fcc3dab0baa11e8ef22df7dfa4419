@@ -16,6 +16,29 @@
       "message": "Thanks for the reviews!",
       "revId": "bfbabd33c49fcc3dab0baa11e8ef22df7dfa4419",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c5dc330_86f1aa5e",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-21T11:13:15Z",
+      "side": 1,
+      "message": "nit: I think all this fits in the same line",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 27
+      },
+      "revId": "bfbabd33c49fcc3dab0baa11e8ef22df7dfa4419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
