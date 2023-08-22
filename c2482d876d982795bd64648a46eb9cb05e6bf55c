@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0b0aa9e_4a383b43",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-22T08:41:50Z",
+      "side": 1,
+      "message": "Fix this diagram. There is a \"SLOT_RSI_CALL\" that doesn\u0027t seem to belong there",
+      "range": {
+        "startLine": 237,
+        "startChar": 2,
+        "endLine": 237,
+        "endChar": 18
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
