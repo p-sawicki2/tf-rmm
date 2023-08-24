@@ -1,0 +1,233 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da2b3920_bb3b1309",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "\"for an Arm A Class CPU with Realm Management Extension.\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3946b025_0e7ca592",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "Suggest to reframe the sentence as :\n If RMM runs out of off-chip DRAM, then RMM is vulnerable to DRAM attacks (like row hammer) and attackers who can probe and tamper off-chip memory.",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba46dcd1_dab11a80",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "Suggest moving this block to within red-broken lines as it is within trust boundary.",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 13
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a029fd9_b894b717",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "Add:\nRMM also interacts with EL3 services at runtime as described by EL3-RMM Comms specification \u003cinsert link\u003e.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94dc94c1_d4345a46",
+        "filename": "docs/threat_model/diagrams/rmm_dfd.drawio.png",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "Move EL3 firmware blob to within the red dotted lines.\n\nAlso correct the \"Offchip Dynamic RRAM\" to \"Offchip DRAM\"\n\nAlso add \"Timers\" to hardware IPs.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "620512da_9fc59210",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "\"These include sensitive RMM and Realm data that an attacker must not be able to tamper with. Also RMM should protect the confidentiality of such data.\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 27,
+        "endLine": 29,
+        "endChar": 52
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ffbcf11_2f0c3c83",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "\"This represents the requirement that Realms should only run code in R-EL1/EL0 that is allowed by the RMM ABI. The Realm code execution cannot be hijacked by an attacker.\n\nAlso it represents the requirement that RMM should protect itself from privilege escalation  and code injection by an attacker into R-EL2. The RMM execution cannot be hijacked by an attacker.\"",
+      "range": {
+        "startLine": 31,
+        "startChar": 27,
+        "endLine": 37,
+        "endChar": 71
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ae80b36_0de17521",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "\"However, RMM should be designed in such a way that neither Realm nor RMM should significantly affect the availability of NS Host and Secure World.\"",
+      "range": {
+        "startLine": 40,
+        "startChar": 46,
+        "endLine": 42,
+        "endChar": 58
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dda7f88b_21207d31",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "We need to have 2 tables for threat agents. One table listing agents which are in scope and another table listing threat agents which are out of scope.\n\nMove RootCode and PhysicalAccess to table which are out of scope.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e5b2fdd_029c5971",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "This is similar to Physical attacker I think ? Can be combined into a single row in the new table.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fef6861a_92153be6",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-24T08:21:08Z",
+      "side": 1,
+      "message": "This can go to line 13.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 63
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
