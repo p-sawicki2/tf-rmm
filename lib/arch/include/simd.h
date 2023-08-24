@@ -66,6 +66,11 @@ enum simd_sflags {
 	 * back to CPU registers.
 	 */
 	SIMD_SFLAG_SAVED = 1 << 1U,
+	/*
+	 * SVE hint bit passed by SMCCC. If true, denotes the absence of SVE
+	 * specific live state.
+	 */
+	SIMD_SFLAG_SVE_HINT = 1 << 2U,
 };
 
 /*
@@ -207,6 +212,9 @@ struct simd_context *simd_context_switch(struct simd_context *ctx_in,
  * memory else 'false'.
  */
 bool simd_is_state_saved(void);
+
+/* Set or clear SVE hint bit passed by SMCCCv1.3 to SIMD context status */
+void simd_update_smc_sve_hint(struct simd_context *ctx, bool sve_hint);
 
 static inline void simd_context_save(struct simd_context *ctx)
 {
