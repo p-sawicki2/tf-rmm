@@ -249,8 +249,10 @@ void handle_ns_smc(unsigned long function_id,
 	const struct smc_handler *handler = NULL;
 	bool restore_ns_simd_state = false;
 	struct simd_context *ns_simd_ctx;
+	bool sve_hint;
 
-	/* Ignore SVE hint bit, until RMM supports SVE hint bit */
+	/* Save the SVE hint bit and clear it from the function ID */
+	sve_hint = ((function_id & SMC_SVE_HINT) != 0UL);
 	function_id &= ~SMC_SVE_HINT;
 
 	if (IS_SMC64_RMI_FID(function_id)) {
@@ -278,6 +280,9 @@ void handle_ns_smc(unsigned long function_id,
 
 	/* Get current CPU's NS SIMD context */
 	ns_simd_ctx = get_cpu_ns_simd_context();
+
+	/* Set or clear SVE hint bit in the NS SIMD context */
+	simd_update_smc_sve_hint(ns_simd_ctx, sve_hint);
 
 	/* If the handler needs FPU, actively save NS simd context. */
 	if (rmi_handler_needs_fpu(function_id) == true) {
