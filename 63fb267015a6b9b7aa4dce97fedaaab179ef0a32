@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9eb4872_18a6ee7c",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da2b3920_bb3b1309",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3946b025_0e7ca592",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-08-24T08:21:08Z",
       "side": 1,
       "message": "Suggest to reframe the sentence as :\n If RMM runs out of off-chip DRAM, then RMM is vulnerable to DRAM attacks (like row hammer) and attackers who can probe and tamper off-chip memory.",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6eeeb9d3_0ac47bfb",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3946b025_0e7ca592",
       "range": {
         "startLine": 23,
         "startChar": 2,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "663c50a4_c9446e55",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "I wrote a comment about this below. I think it is better if we discuss it later",
+      "parentUuid": "ba46dcd1_dab11a80",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 13
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7a029fd9_b894b717",
         "filename": "docs/threat_model/dfd.rst",
         "patchSetId": 7
@@ -83,6 +155,24 @@
       "writtenOn": "2023-08-24T08:21:08Z",
       "side": 1,
       "message": "Add:\nRMM also interacts with EL3 services at runtime as described by EL3-RMM Comms specification \u003cinsert link\u003e.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6bd44da_5d7ff92a",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "I will add the link on DF4",
+      "parentUuid": "7a029fd9_b894b717",
       "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -106,6 +196,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9dd5852c_3577fae6",
+        "filename": "docs/threat_model/diagrams/rmm_dfd.drawio.png",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Not sure about moving EL3 Firmware within the inner boundary. I agree that RMM trusts EL3 Firmware, but it is still a separate component.\n\nI think we can discuss this further at the office.\n\nI will address the rest of the issues here afterwards.",
+      "parentUuid": "94dc94c1_d4345a46",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "620512da_9fc59210",
         "filename": "docs/threat_model/threat_analysis.rst",
         "patchSetId": 7
@@ -117,6 +225,30 @@
       "writtenOn": "2023-08-24T08:21:08Z",
       "side": 1,
       "message": "\"These include sensitive RMM and Realm data that an attacker must not be able to tamper with. Also RMM should protect the confidentiality of such data.\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 27,
+        "endLine": 29,
+        "endChar": 52
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d74815_3128d538",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "620512da_9fc59210",
       "range": {
         "startLine": 25,
         "startChar": 27,
@@ -150,6 +282,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f16629f3_c9415648",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ffbcf11_2f0c3c83",
+      "range": {
+        "startLine": 31,
+        "startChar": 27,
+        "endLine": 37,
+        "endChar": 71
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ae80b36_0de17521",
@@ -163,6 +319,30 @@
       "writtenOn": "2023-08-24T08:21:08Z",
       "side": 1,
       "message": "\"However, RMM should be designed in such a way that neither Realm nor RMM should significantly affect the availability of NS Host and Secure World.\"",
+      "range": {
+        "startLine": 40,
+        "startChar": 46,
+        "endLine": 42,
+        "endChar": 58
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e116bfd8_e11ff2f5",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ae80b36_0de17521",
       "range": {
         "startLine": 40,
         "startChar": 46,
@@ -190,6 +370,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d311432e_ab954f95",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dda7f88b_21207d31",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e5b2fdd_029c5971",
@@ -207,6 +405,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c65dd737_d3f39767",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e5b2fdd_029c5971",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fef6861a_92153be6",
@@ -220,6 +436,30 @@
       "writtenOn": "2023-08-24T08:21:08Z",
       "side": 1,
       "message": "This can go to line 13.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 63
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a825fc97_e32b03c2",
+        "filename": "docs/threat_model/threat_analysis.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-24T17:14:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fef6861a_92153be6",
       "range": {
         "startLine": 91,
         "startChar": 0,
