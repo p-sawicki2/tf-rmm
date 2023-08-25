@@ -74,7 +74,7 @@ uintptr_t slot_to_va(enum buffer_slot slot)
 {
 	assert(slot < NR_CPU_SLOTS);
 
-	return (uintptr_t)(SLOT_VIRT + (GRANULE_SIZE * slot));
+	return (uintptr_t)(SLOT_VIRT + (GRANULE_SIZE * (unsigned int)slot));
 }
 
 static inline struct xlat_ctx *get_slot_buf_xlat_ctx(void)
@@ -178,9 +178,7 @@ void slot_buf_finish_warmboot_init(void)
  */
 void assert_cpu_slots_empty(void)
 {
-	unsigned int i;
-
-	for (i = 0; i < NR_CPU_SLOTS; i++) {
+	for (unsigned int i = 0U; i < NR_CPU_SLOTS; i++) {
 		assert(slot_to_descriptor(i) == TRANSIENT_DESC);
 	}
 }
