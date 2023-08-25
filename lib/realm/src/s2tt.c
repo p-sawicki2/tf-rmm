@@ -232,7 +232,7 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 	int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
 
 	addr >>= lsb;
-	addr &= (1UL << S2TTE_STRIDE) - 1;
+	addr &= (1UL << S2TTE_STRIDE) - 1UL;
 	return addr;
 }
 
@@ -261,7 +261,7 @@ static unsigned long addr_level_mask(unsigned long addr, long level)
 {
 	int levels = RTT_PAGE_LEVEL - level;
 	unsigned int lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
-	unsigned int msb = S2TTE_OA_BITS - 1;
+	unsigned int msb = S2TTE_OA_BITS - 1U;
 
 	return (addr & BIT_MASK_ULL(msb, lsb));
 }
