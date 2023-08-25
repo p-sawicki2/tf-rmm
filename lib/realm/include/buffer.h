@@ -33,8 +33,10 @@ enum buffer_slot {
 	SLOT_RTT = SLOT_REC_AUX0 + MAX_REC_AUX_GRANULES,
 	SLOT_RTT2,		/* Some commands access two RTT granules at a time*/
 	SLOT_RSI_CALL,
-	NR_CPU_SLOTS
+	NUM_CPU_SLOTS
 };
+
+#define NR_CPU_SLOTS	(unsigned int)NUM_CPU_SLOTS
 
 struct granule;
 
