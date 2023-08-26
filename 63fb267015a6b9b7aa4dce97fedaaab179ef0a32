@@ -895,6 +895,604 @@
       "message": "RMM can add more sanitizers like ASAN, MSAN, UBSAN. Implement further Architecture capabilities to enhance protection. RMM needs to implement per-CPU stack protection and also provide capability to add compiler stack protection features as a user option.",
       "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb39883a_42330b6e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 318,
+        "startChar": 27,
+        "endLine": 318,
+        "endChar": 36
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a685913f_3daf29a9",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 322,
+        "startChar": 27,
+        "endLine": 322,
+        "endChar": 35
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66b0fa1a_b3de3745",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "\"mitigations\"",
+      "range": {
+        "startLine": 332,
+        "startChar": 61,
+        "endLine": 332,
+        "endChar": 73
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9122b43_bfde2edc",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "make numbered list.",
+      "range": {
+        "startLine": 332,
+        "startChar": 27,
+        "endLine": 332,
+        "endChar": 29
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33a1ef1c_e778490f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "\"protection in hardware\".",
+      "range": {
+        "startLine": 336,
+        "startChar": 29,
+        "endLine": 336,
+        "endChar": 40
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdbce67d_840c380d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "1) Yes.\n2) No. FEAT_DIT should be enabled for RMM.\n3) Yes. RMM relies on MbedTLS library to use algorithms which are data independent when handling sensitive data.\n4) Yes. The Slot buffer design for dynamically mapping memory ensures that only required memory is mapped into RMM.",
+      "range": {
+        "startLine": 345,
+        "startChar": 27,
+        "endLine": 345,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f31bbfda_01565f0a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "all mitigations provided by Architecture.",
+      "range": {
+        "startLine": 355,
+        "startChar": 48,
+        "endLine": 355,
+        "endChar": 59
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca265b6e_6301590d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "\" or operate incorrectly.\"",
+      "range": {
+        "startLine": 366,
+        "startChar": 29,
+        "endLine": 366,
+        "endChar": 43
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "222e535b_f4b9898b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "This already covered in earlier threat. Remove.",
+      "range": {
+        "startLine": 368,
+        "startChar": 27,
+        "endLine": 372,
+        "endChar": 48
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "664092bc_3073705b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "Remove. already covered.",
+      "range": {
+        "startLine": 394,
+        "startChar": 27,
+        "endLine": 397,
+        "endChar": 53
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "235232b9_a7368a3f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 407,
+        "startChar": 27,
+        "endLine": 407,
+        "endChar": 43
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97241bf4_ad257e5e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 409,
+        "startChar": 28,
+        "endLine": 410,
+        "endChar": 47
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "747a59a0_45e2adaa",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "R-EL2 S1 and S2",
+      "range": {
+        "startLine": 416,
+        "startChar": 49,
+        "endLine": 416,
+        "endChar": 52
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d01bab91_c3b170d0",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 424,
+        "startChar": 27,
+        "endLine": 424,
+        "endChar": 31
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce9c06da_46f2fe26",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 428,
+        "startChar": 27,
+        "endLine": 428,
+        "endChar": 35
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3233be59_23f6b5b5",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "1. Ensure proper testing of S1 tables management code in RMM.\n\n2. The RMM specification mandates the rules for assigning memory to a Realm and S2 permissions to be assigned.  Ensure that the S2 table management code is properly tested.\n\n3. Ensure the rules mandated by the RMM specification are validated.",
+      "range": {
+        "startLine": 438,
+        "startChar": 27,
+        "endLine": 438,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19be7626_a3fa1e2e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "1. Yes\n2. Partial.\n3. Yes. The CBMC validation ensure that the implementation complies with the rules in the specification.",
+      "range": {
+        "startLine": 449,
+        "startChar": 27,
+        "endLine": 449,
+        "endChar": 34
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0638aadf_51f6503a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "REC metadata",
+      "range": {
+        "startLine": 458,
+        "startChar": 63,
+        "endLine": 458,
+        "endChar": 66
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f774282f_dca9a9d1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 467,
+        "startChar": 27,
+        "endLine": 467,
+        "endChar": 39
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b61ba2_fef1c49c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 471,
+        "startChar": 27,
+        "endLine": 471,
+        "endChar": 44
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d03ea200_af61b1f1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "\"The RMM specification mandates that sensitive medadata like REC should be stored in Realm PAS. Also the specification does not allow NS Host to manipulate REC contents via RMI once Realm is activated.\n\nEnsure the RMM spec guidelines are enforced.\"",
+      "range": {
+        "startLine": 479,
+        "startChar": 26,
+        "endLine": 479,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "287464b9_cad04123",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove this threat as this is covered by RMM ABI in detail. There are various details and is part of the ABI.",
+      "range": {
+        "startLine": 492,
+        "startChar": 2,
+        "endLine": 495,
+        "endChar": 54
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b58f727_455a50f9",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "use numbered list as above.",
+      "range": {
+        "startLine": 546,
+        "startChar": 27,
+        "endLine": 546,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03c5a4cb_e3d1d5a2",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "1) Code reviews\n2) Testing on FVPs and other hardware and emulation platforms to check for correct behaviour",
+      "range": {
+        "startLine": 586,
+        "startChar": 27,
+        "endLine": 586,
+        "endChar": 54
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42aff273_0c8ddcce",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 588,
+        "startChar": 29,
+        "endLine": 588,
+        "endChar": 50
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ac8257e_a6624e3f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T08:47:26Z",
+      "side": 1,
+      "message": "1) Yes\n2) Yes. RMM is tested regularly tested on FVPs and more platforms will be added in future as they become available.",
+      "range": {
+        "startLine": 590,
+        "startChar": 29,
+        "endLine": 590,
+        "endChar": 32
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
