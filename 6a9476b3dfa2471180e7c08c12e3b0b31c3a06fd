@@ -684,6 +684,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8a46a7c_9dd1f690",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "Lets remove RootCode since it is within Trust Boundary.",
+      "parentUuid": "79e44d53_00196590",
+      "range": {
+        "startLine": 106,
+        "startChar": 27,
+        "endLine": 106,
+        "endChar": 52
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eaa2f9c7_5d84cd01",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 5
@@ -1225,6 +1249,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "665e3beb_e7cd39ae",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "RootCode can be removed.",
+      "parentUuid": "e8211631_2fce198a",
+      "range": {
+        "startLine": 192,
+        "startChar": 26,
+        "endLine": 192,
+        "endChar": 52
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29f01e12_04325c21",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 5
@@ -1484,6 +1532,30 @@
       "side": 1,
       "message": "I think Panic() behavior should be added as a mitigation for Threat ID 2 rather than here. Here, we should just mention that Panic() is there to halt RMM upon catastrophic/unrecoverable error.",
       "parentUuid": "e9f4e4a2_1b9e26a8",
+      "range": {
+        "startLine": 226,
+        "startChar": 63,
+        "endLine": 230,
+        "endChar": 65
+      },
+      "revId": "6a9476b3dfa2471180e7c08c12e3b0b31c3a06fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5f87a36_fcfac841",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "70cd926b_0457f448",
       "range": {
         "startLine": 226,
         "startChar": 63,

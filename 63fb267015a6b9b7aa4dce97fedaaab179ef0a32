@@ -468,6 +468,385 @@
       },
       "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdc0b709_569e7478",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "We need more uniformity in describing the mitigations, mitigations implemented and pending actions.\n\nPropose this format.\n\nFor mitigations: List the mitigations one by one using a numbered list. the mitigations need not be specific but can explain the concept in a generic manner. for example, when we say bounded model checking, we dont need to specify CBMC in this section.\n\nMitigations implemented : For every entry in mitigation, say Yes/No/Partial with following comment if the answer needs to be qualified.\n\nPending actions:\nFor every item which has a pending action, list here. The list need not be numbered. Skip items which do not have any pending action.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0fb8f50_07673137",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "1) For default release build :\n   - Remove secret information logging.\n   - Do not conditionally log based on secret data.\n   - Do not log high precision timing information.\n   - Do not log register contents which may reveal secrets during crash although Error syndrome registers may be printed to allow fault analysis.\n\n2) Provide option to fully disable RMM logging for production release.",
+      "range": {
+        "startLine": 61,
+        "startChar": 29,
+        "endLine": 61,
+        "endChar": 55
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a84d9f2_910be2a4",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "1) Yes, The default log level does not output verbose log. RMM does not implement crash reporting. Messages produced by the platform code should use the appropriate level of verbosity so as not to leak sensitive information in production builds.\n2) Yes, RMM provides ``LOG_LEVEL`` build option which can be used to disable all logging.",
+      "range": {
+        "startLine": 68,
+        "startChar": 27,
+        "endLine": 68,
+        "endChar": 29
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f6eb081_033f77d0",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "After reading this threat again, there are many mitigations combined in this threat so it would be better to split it.\n\n\"An adversary can perform a denial-of-service attack on the system by causing the RMM to deadlock, crash or enter into an unknown state. The system can no longer be recovered without reboot.\"\n\nAsset: Availability\nMitigation: \n\n1. Upon an unrecoverable/catastrophic condition, RMM should issue a panic(). This call would\nreturn to EL3 software, keeping the availability of the overall system. It would be EL3\nresponsibility to to decide how to proceed (e.g. by disabling the whole Realm world).\n\n2. EL3 firmware needs to implement a watchdog mechanism to recover CPUs from Realm world.\n\n\nMitigation implemented:\n\n1. No.\n\n2. Mitigation to be done by EL3 firmware.\n\n\nPending actions? \npanic() needs appropriate implementation to return to EL3 firmware.\n\n\n2nd threat: \n\n\" Malicious Host or Realm code can attempt to place the RMM into an inconsistent state due to incorrect implementation of RMM state machines. This inconsistency can be exploited to lead to incorrect operation of RMM.\"\n\nAsset: Sensitive Data, Code Execution\nMitigation: \n\n1. State machines should be tested for all the transitions and that all invalid transitions and inputs are rejected.\n\n2. The RMM ABI mandates pre and post conditions for each ABI. The implementation should be verified that these conditions are adhered to.\n\n3. Static analyzers and model checkers can be used to uncover bugs in implementation.\n\n4. Fuzz testing can be employed to uncover an further issues in implementation.\n\n5. Upon an unrecoverable/catastrophic condition occur, RMM should issue a ``panic()`` to prevent further corruption of data/propagation of Error.\n\nMitigation implemented:\n\n1. Partial. There are various tests in TFTF, ACS and kvm-unit-tests for exercising the ABI which trigger the state machine. Unit tests are also present for some components to exercise internal API which can further test conditions and invalid cases which cannot be triggered via RMM ABI.\n\n2. Partial. Code reviews to ensure the implementation complies the required conditions. Automated checking via CBMC to validate the same is also being implemented.\n\n3. Yes. CPPCheck and Coverity scan are used to detect issues. CBMC is also utilized as a model checker.\n\n4. No.\n\n5. Yes.\n\nPending Actions:\n\nExpand coverage of unittests in RMM. Evolve tests in other test frameworks in an ongoing manner. Integrate CBMC into RMM testing. Implement Fuzz testing for RMM.\n\n3rd threat:\n\n\"Malicious Host or Realm code can attack RMM by calling unimplemented SMC calls or by passing invalid arguments to the ABI.\"\n\nAsset: Sensitive Data, Code Execution\nMitigation: \n\n1. Validate SMC function IDs and arguments before using them.\n\n2. Invalid/unimplemented SMCs should return back to caller with error code.\n\n3. Tests to exercise invalid arguments and unimplemented SMCs.\n\nMitigation implemented:\n\n1. Yes.\n2. Yes.\n3. Partial. The ACS test utility exercises many invalid inputs. Unit tests also test various invalid cases.\n\nPending Actions\n\nExpand unit tests to cover the RMM ABI interface and test for invalid inputs.\n\n\n4th Threat:\n\n\" Incorrect implementation of concurrent sections in RMM can lead to data corruption, or deadlock/livelock.\"\n\nAsset: Sensitive Data, Availability\nMitigation: \n\n1. Follow locking discipline \u003clink to document\u003e when implementing concurrent sections in RMM.\n\n2. Validate locking discipline using tests which can run multiple threads in RMM.\n\n3. Fuzz test RMM with multiple threads.\n\nMitigation implemented:\n\n1. Yes.\n2. Yes, the TF-X test has tests which can test concurrent sections in RMM. Also stress tests in CI will also test this scenario.\n3. No, need further investigation.\n\nPending Actions:\n\nEnhance TF-X tests to test more concurrent section in RMM. Investigate possibility of multithreaded Fuzz testing.",
+      "range": {
+        "startLine": 92,
+        "startChar": 27,
+        "endLine": 92,
+        "endChar": 28
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0552599e_eafaaa64",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 102,
+        "startChar": 27,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7368357_03703d06",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "We can remove RootCode since it is within TrustBoundary.",
+      "range": {
+        "startLine": 106,
+        "startChar": 27,
+        "endLine": 106,
+        "endChar": 35
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f0aa3e4_41750867",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 168,
+        "startChar": 27,
+        "endLine": 168,
+        "endChar": 31
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6075623_9cfb60eb",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 172,
+        "startChar": 27,
+        "endLine": 172,
+        "endChar": 36
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e82c1638_a710134f",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "Can break this into 2 points and small reorder :\n\n1. Ensure that RMM protects the Realm memory by using GPT service provided by EL3 firmware and appropriate Stage 2 protections. NS Host must not be able to change or access Realm memory.\n\n2. NS host nor Realms must not be able to change or access each others CPU register contents other than what is allowed by RMM ABI. Root Code should perform proper context switching of certain subset of CPU registers as mandated in EL3-RMM comms spec when entering and exiting Realm world. Similarly RMM should context switch any registers not managed by EL3 when entering/exiting Realms.",
+      "range": {
+        "startLine": 182,
+        "startChar": 32,
+        "endLine": 182,
+        "endChar": 34
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfbdae17_f48e1ea5",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "after reading this again, I think the detail of mitigation can go into next row. We can mention the general mitigation here:\n\n3. Realm should not be able to spoof another realm. The NSHost must not be able to assign a granule/metadata to a Realm which is already assigned to another Realm.\n\n\nMitigation implemented:\n\n3. Yes. This mitigation is inherently supported by the RMM ABI. SMC call from realm is always associated to the Realm Descriptor (RD) and the RMM ABI does not allow spoofing of RD. NS Host always has to send the valid RD to make requests to the corresponding Realm. RMM maintains a global granule array and every granule linked to a Realm has a specific State and reference count associated with it. Hence, the NS Host cannot associate a granule to another Realm.",
+      "range": {
+        "startLine": 202,
+        "startChar": 29,
+        "endLine": 202,
+        "endChar": 32
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30843b0e_7bdb0f2a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "remove \"MM\"",
+      "range": {
+        "startLine": 210,
+        "startChar": 72,
+        "endLine": 210,
+        "endChar": 74
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "844c27c5_dc2bed3b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "Also add: \n\"If the control flow can be changed by Stack overflow, code execution can also be subverted by an adversary.\"",
+      "range": {
+        "startLine": 229,
+        "startChar": 25,
+        "endLine": 229,
+        "endChar": 26
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c1189f_66e6d482",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 241,
+        "startChar": 27,
+        "endLine": 241,
+        "endChar": 31
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dad30ecf_2d148449",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 245,
+        "startChar": 27,
+        "endLine": 245,
+        "endChar": 35
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd663221_313adc27",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "Also add:\n2) Enable Architecture security features to mitigate buffer overflow, and ROP/JOP issues. \n3) Utilize stack protection mechanisms provided by compiler.\n4) Design suitable per CPU stack protection , so another CPU cannot corrupt stack which does not belong to it.\n5) Suitable testing to test bounds of inputs. \n6) Employ secure coding guidelines like MISRA. MISRA guidelines removes many of the type safety issues associated with the C language.\n7) Employ static analyzers to check for common issues. Also employ tooling to validate loops bounds and other bounds in the source code.",
+      "range": {
+        "startLine": 257,
+        "startChar": 32,
+        "endLine": 257,
+        "endChar": 54
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5852c55a_35338aa8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "I think this column can have a brief of the mitigations implemented in RMM\n\n\n1) Yes\n2) Yes, RMM enables many Architecture security features like PAC and BTI but there is an ongoing action to enable more architectural security features.\n3) No\n4) No\n5) Partial. Some tests are present, but more tests need to added to ensure the bounds are validated.\n6) Yes.\n7) Partial. RMM uses CPPCheck, Coverity scan to detect issues. RMM also utilizes CBMC to ensure that bounds in loops and other program constructs are proper.",
+      "range": {
+        "startLine": 261,
+        "startChar": 29,
+        "endLine": 261,
+        "endChar": 55
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9df6bb1_2b9e9831",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:01:24Z",
+      "side": 1,
+      "message": "RMM can add more sanitizers like ASAN, MSAN, UBSAN. Implement further Architecture capabilities to enhance protection. RMM needs to implement per-CPU stack protection and also provide capability to add compiler stack protection features as a user option.",
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
