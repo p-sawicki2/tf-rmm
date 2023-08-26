@@ -144,6 +144,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6eb517c8_120ffa86",
+        "filename": "docs/threat_model/dfd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:04:08Z",
+      "side": 1,
+      "message": "Yes, please ping me on this",
+      "parentUuid": "663c50a4_c9446e55",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 13
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7a029fd9_b894b717",
         "filename": "docs/threat_model/dfd.rst",
         "patchSetId": 7
@@ -707,6 +731,30 @@
       "writtenOn": "2023-08-26T07:01:24Z",
       "side": 1,
       "message": "remove \"MM\"",
+      "range": {
+        "startLine": 210,
+        "startChar": 72,
+        "endLine": 210,
+        "endChar": 74
+      },
+      "revId": "63fb267015a6b9b7aa4dce97fedaaab179ef0a32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e0cd891_325d089e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-26T07:04:08Z",
+      "side": 1,
+      "message": "Ignore",
+      "parentUuid": "30843b0e_7bdb0f2a",
       "range": {
         "startLine": 210,
         "startChar": 72,
