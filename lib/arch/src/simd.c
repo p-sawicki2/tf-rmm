@@ -199,7 +199,7 @@ unsigned int simd_sve_get_max_vq(void)
 {
 	assert(is_feat_sve_present() == true);
 	assert(g_sve_max_vq != -1);
-	return g_sve_max_vq;
+	return (unsigned int)g_sve_max_vq;
 }
 
 /*
@@ -245,7 +245,7 @@ static void sve_init(void)
 	 * as this is called only once during cold boot.
 	 */
 	sve_config_vq(SVE_VQ_ARCH_MAX);
-	g_sve_max_vq = SVE_VL_TO_VQ(sve_rdvl());
+	g_sve_max_vq = (int32_t)SVE_VL_TO_VQ(sve_rdvl());
 	g_cpu_simd_type = SIMD_SVE;
 
 	simd_disable();
