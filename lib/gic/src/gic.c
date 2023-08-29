@@ -71,7 +71,8 @@ void gic_get_virt_features(void)
 	unsigned long nr_pri_bits;
 
 	/* Number of implemented List registers, minus 1 */
-	gic_virt_feature.nr_lrs = EXTRACT(ICH_VTR_EL2_LIST_REGS, vtr);
+	gic_virt_feature.nr_lrs = (unsigned int)EXTRACT(ICH_VTR_EL2_LIST_REGS,
+							vtr);
 	assert(gic_virt_feature.nr_lrs < ICH_MAX_LRS);
 
 	/* Number of virtual preemption bits implemented */
