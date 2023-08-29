@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1230b068_5d102431",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-29T14:08:44Z",
+      "side": 1,
+      "message": "Thank you very much for the detailed review.\n\nI did all the changes the best I could. There is one thing missing I think, for that I added a TODO in the code and a review comment.",
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
