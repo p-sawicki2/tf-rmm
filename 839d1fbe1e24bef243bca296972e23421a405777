@@ -51,6 +51,24 @@
       "parentUuid": "dbf123ff_aeb89deb",
       "revId": "839d1fbe1e24bef243bca296972e23421a405777",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6915ac9d_75d1ad3e",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-29T10:15:35Z",
+      "side": 1,
+      "message": "yes, some form of assertion is required to prevent issues in future when some value is changed in future.",
+      "parentUuid": "36a21b1b_0a66df3b",
+      "revId": "839d1fbe1e24bef243bca296972e23421a405777",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
