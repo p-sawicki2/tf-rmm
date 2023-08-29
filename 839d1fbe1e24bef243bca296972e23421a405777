@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbf123ff_aeb89deb",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-29T10:05:58Z",
+      "side": 1,
+      "message": "second thought, \nshould we add : \n\n\tassert(cnt \u003c ARRAY_LEN(rec-\u003eregs));\n\nat this line ?",
+      "revId": "839d1fbe1e24bef243bca296972e23421a405777",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
