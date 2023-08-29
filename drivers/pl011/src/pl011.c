@@ -64,7 +64,7 @@ int uart_init(uintptr_t base_addr,
 void uart_putc(char ch)
 {
 	uart_wait();
-	write8(ch, (void *)((RMM_UART_ADDR) + UARTDR));
+	write8((uint8_t)ch, (void *)((RMM_UART_ADDR) + UARTDR));
 }
 
 /* Serial output - called from printf */
