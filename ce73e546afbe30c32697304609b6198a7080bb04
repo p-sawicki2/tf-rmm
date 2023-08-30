@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2f31c07_691149a4",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T13:18:47Z",
+      "side": 0,
+      "message": "This should be updated on its *.c counterpart as well, for consistency",
+      "range": {
+        "startLine": 238,
+        "startChar": 4,
+        "endLine": 238,
+        "endChar": 24
+      },
+      "revId": "ce73e546afbe30c32697304609b6198a7080bb04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
