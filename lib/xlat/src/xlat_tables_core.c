@@ -61,7 +61,7 @@ static inline uint64_t *xlat_table_get_empty(struct xlat_ctx *ctx)
  */
 static uintptr_t xlat_tables_find_start_va(struct xlat_mmap_region *mm,
 					   const uintptr_t table_base_va,
-					   const unsigned int level)
+					   const int level)
 {
 	uintptr_t table_idx_va;
 
