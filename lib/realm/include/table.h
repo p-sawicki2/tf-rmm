@@ -27,7 +27,7 @@ COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
  * S2TTE_STRIDE: The number of bits resolved in a single level of translation
  * walk (except for the starting level which may resolve more or fewer bits).
  */
-#define S2TTE_STRIDE		(GRANULE_SHIFT - 3UL)
+#define S2TTE_STRIDE		(GRANULE_SHIFT - 3U)
 #define S2TTES_PER_S2TT		(1U << S2TTE_STRIDE)
 
 struct rd;
