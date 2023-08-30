@@ -92,7 +92,7 @@ int attest_init_realm_attestation_key(void)
 	if (rmm_el3_ifc_get_realm_attest_key(buf,
 				rmm_el3_ifc_get_shared_buf_size(),
 				&attest_key_size,
-				ATTEST_KEY_CURVE_ECC_SECP384R1) != 0) {
+				ATTEST_KEY_CURVE_ECC_SECP384R1) != 0UL) {
 		rmm_el3_ifc_release_shared_buf();
 		return -EINVAL;
 	}

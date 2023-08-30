@@ -42,8 +42,8 @@ void rmm_el3_ifc_release_shared_buf(void)
  * Get the realm attestation key to sign the realm attestation token. It is
  * expected that only the private key is retrieved in raw format.
  */
-int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
-				     size_t *len, unsigned int crv)
+unsigned long rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
+						size_t *len, unsigned int crv)
 {
 	struct smc_result smc_res;
 	unsigned long buffer_pa;
