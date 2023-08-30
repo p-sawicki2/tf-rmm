@@ -92,7 +92,7 @@ int attest_init_realm_attestation_key(void)
 	if (rmm_el3_ifc_get_realm_attest_key(buf,
 				rmm_el3_ifc_get_shared_buf_size(),
 				&attest_key_size,
-				ATTEST_KEY_CURVE_ECC_SECP384R1) != 0) {
+				ATTEST_KEY_CURVE_ECC_SECP384R1) != 0UL) {
 		rmm_el3_ifc_release_shared_buf();
 		return -EINVAL;
 	}
@@ -182,10 +182,10 @@ int attest_get_realm_public_key(struct q_useful_buf_c *public_key)
 
 int attest_setup_platform_token(void)
 {
-	int ret;
 	uintptr_t shared_buf;
 	size_t platform_token_len = 0;
 	struct q_useful_buf_c rmm_pub_key_hash;
+	int ret;
 
 	/*
 	 * Copy the RAK public hash value to the token buffer. This is
@@ -203,10 +203,10 @@ int attest_setup_platform_token(void)
 	(void)memcpy((void *)shared_buf, rmm_pub_key_hash.ptr,
 					 rmm_pub_key_hash.len);
 
-	ret = rmm_el3_ifc_get_platform_token(shared_buf,
-					     rmm_el3_ifc_get_shared_buf_size(),
-					     &platform_token_len,
-					     PSA_HASH_LENGTH(PSA_ALG_SHA_256));
+	ret = (int)rmm_el3_ifc_get_platform_token(shared_buf,
+						  rmm_el3_ifc_get_shared_buf_size(),
+						  &platform_token_len,
+						  PSA_HASH_LENGTH(PSA_ALG_SHA_256));
 
 	if (ret != 0) {
 		rmm_el3_ifc_release_shared_buf();
