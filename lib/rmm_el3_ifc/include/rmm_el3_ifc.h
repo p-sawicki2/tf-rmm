@@ -248,10 +248,10 @@ int rmm_el3_ifc_get_dram_data_validated_pa(unsigned long max_num_banks,
  *	- crv:		ECC Crve type for querying attestation key from monitor.
  *
  * Return:
- *	- 0 On success or a negative error code otherwise.
+ *	- 0 On success or a non-zero error code otherwise.
  */
-int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
-				     size_t *len, unsigned int crv);
+unsigned long rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
+						size_t *len, unsigned int crv);
 
 /*
  * Get the platform token from the EL3 firmware and pass the public hash
@@ -269,10 +269,10 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
  *	- hash_size:	Size of the SHA digest used for the token generation.
  *
  * Return:
- *	- 0 On success or a negative error code otherwise.
+ *	- 0 On success or a non-zero error code otherwise.
  */
-int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
-				   size_t *len, size_t hash_size);
+unsigned long rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
+						size_t *len, size_t hash_size);
 
 static inline unsigned long rmm_el3_ifc_gtsi_delegate(unsigned long addr)
 {
