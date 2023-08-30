@@ -16,6 +16,368 @@
       "message": "Thank you very much for the detailed review.\n\nI did all the changes the best I could. There is one thing missing I think, for that I added a TODO in the code and a review comment.",
       "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4529fde8_6e6b921d",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "This is better off on the runtime/CMakeLists.txt, as the Stack is handled there",
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "696e516e_02a342f8",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be static",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 7
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa7f522d_3d727a55",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "Since this is part of the platform configuration, the name should start with \"PLAT_\". Still, I am not sure if this should be kept as a platform build option or not. I guess it would need further discussion.",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 32
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17c6c1f1_d475b657",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "PAGE_SIZE",
+      "range": {
+        "startLine": 77,
+        "startChar": 32,
+        "endLine": 77,
+        "endChar": 41
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48261487_f78b5090",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "I think we can just get by with a 1 page gap.\n\nAlso, add a compile assert to validate that (RMM_NUM_PAGE_PER_STACK + GAP_PAGES + NR_CPU_SLOTS) \u003c\u003d XLAT_TABLE_ENTRIES\n\nThe rationale for that is that we are going to use a single L3 page to map everything, so we need to enforce that everything fits within that L3 page.",
+      "range": {
+        "startLine": 77,
+        "startChar": 24,
+        "endLine": 77,
+        "endChar": 29
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5005041b_90f31e3a",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "nit: I would use PAGE_SIZE instead. They are exactly the same, but it feels to me that GRANULE_SIZE is more related to the delegate/undelegate process whereas PAGE_SIZE is more generic.",
+      "range": {
+        "startLine": 79,
+        "startChar": 51,
+        "endLine": 79,
+        "endChar": 63
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c115a668_81b54b12",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "\"high_va_tts\". The reason is that for RMM itself, there is no translation levels (is is not virtualized). I want to revisit the terminology for the xlat library at some point, because I think it is incorrect to call it \"stage 1 xlat library\" in the context of RMM, but I need to double check first.",
+      "range": {
+        "startLine": 111,
+        "startChar": 16,
+        "endLine": 111,
+        "endChar": 28
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04d6799f_55e49a4c",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "extern variables should not be used on RMM (I think the code guidelines might need update on this).\n\nAlso, I think what you are trying to do here is to access the \"stack_end\" symbol generated by the linker, right? In that case you need to use the IMPORT_SYM() macro, as done with the rest of symbols right at the top of this file.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 6
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44213bf2_ae9ce550",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "nit: Maybe renaming the arguments to src and dst would make it a bit clearer",
+      "range": {
+        "startLine": 229,
+        "startChar": 25,
+        "endLine": 229,
+        "endChar": 35
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aed726d8_2ba2593c",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "slot_buffer_va",
+      "range": {
+        "startLine": 251,
+        "startChar": 11,
+        "endLine": 251,
+        "endChar": 20
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "484971f2_e070d0b5",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "stack_va",
+      "range": {
+        "startLine": 252,
+        "startChar": 11,
+        "endLine": 252,
+        "endChar": 21
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4c04d62_47488e6b",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "as we are going to use a full L3 page, this check is not longer needed. va_size will be (XLAT_TABLE_ENTRIES * PAGE_SIZE)",
+      "range": {
+        "startLine": 274,
+        "startChar": 1,
+        "endLine": 288,
+        "endChar": 41
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16306b41_a68e7ee5",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "\"Initialize the context configuration for this CPU\"",
+      "range": {
+        "startLine": 291,
+        "startChar": 1,
+        "endLine": 292,
+        "endChar": 24
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "867b98cc_45cd91c4",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "return xlat_ctx_cfg_init(....) and you can get rid of the ret variable",
+      "range": {
+        "startLine": 294,
+        "startChar": 1,
+        "endLine": 294,
+        "endChar": 5
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec8e6701_3c83c2e4",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "nit: Adding the ret value to the error message can help debugging",
+      "range": {
+        "startLine": 362,
+        "startChar": 2,
+        "endLine": 363,
+        "endChar": 35
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fda03d1_64bb8ce0",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-30T18:30:24Z",
+      "side": 1,
+      "message": "rmm_stack_end, for consistency with the rest of imported symbols",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 11
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
