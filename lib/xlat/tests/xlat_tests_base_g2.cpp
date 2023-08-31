@@ -32,7 +32,7 @@ static uint64_t gen_va_space_params_by_lvl(int level,
 					   size_t *va_size)
 {
 	assert(level >= XLAT_TEST_MIN_LVL());
-	assert(level <= XLAT_TABLE_LEVEL_MAX);
+	assert(level <= (int)XLAT_TABLE_LEVEL_MAX);
 	assert(va_size != NULL);
 
 	*va_size = (1ULL << XLAT_ADDR_SHIFT(level)) *
@@ -138,7 +138,7 @@ static int gen_mmap_array_by_level(xlat_mmap_region *mmap,
 
 	assert(mmap_size >= 3U);
 	assert(last_lvl > XLAT_TEST_MIN_LVL());
-	assert(last_lvl <= XLAT_TABLE_LEVEL_MAX);
+	assert(last_lvl <= (int)XLAT_TABLE_LEVEL_MAX);
 	assert(first_lvl >= XLAT_TEST_MIN_LVL());
 	assert(first_lvl <= last_lvl);
 	assert(mmap != NULL);
@@ -267,8 +267,8 @@ static void validate_xlat_tables(xlat_ctx *ctx, unsigned int *expected_idxs,
 		CHECK_EQUAL(tte_oa, (pa & ~pa_mask));
 
 		/* Validate the descriptor type */
-		type = (level == XLAT_TABLE_LEVEL_MAX) ? PAGE_DESC :
-							 BLOCK_DESC;
+		type = (level == (int)XLAT_TABLE_LEVEL_MAX) ? PAGE_DESC :
+							      BLOCK_DESC;
 		CHECK_EQUAL(type, (tte & DESC_MASK));
 	}
 }
@@ -319,7 +319,7 @@ void xlat_ctx_init_tc6(void)
 	mmap_count = 3U;
 
 	end_lvl = XLAT_MIN_BLOCK_LVL();
-	for (; end_lvl <= XLAT_TABLE_LEVEL_MAX; end_lvl++) {
+	for (; end_lvl <= (int)XLAT_TABLE_LEVEL_MAX; end_lvl++) {
 		for (int i = 0U; i < VA_REGIONS; i++) {
 			va_region = (xlat_addr_region_id_t)i;
 
@@ -417,7 +417,7 @@ void xlat_get_llt_from_va_tc1(void)
 							0, VA_REGIONS - 1);
 
 	end_lvl = XLAT_MIN_BLOCK_LVL();
-	for (; end_lvl <= XLAT_TABLE_LEVEL_MAX; end_lvl++) {
+	for (; end_lvl <= (int)XLAT_TABLE_LEVEL_MAX; end_lvl++) {
 
 		for (base_lvl = XLAT_TEST_MIN_LVL();
 		     base_lvl <= end_lvl;
@@ -1167,7 +1167,7 @@ void xlat_get_tte_ptr_tc4(void)
 	test_va = ctx.cfg->base_va + init_mmap.base_va;
 
 	/* Override the xlat_llt_info structure's level field */
-	tbl_info.level = XLAT_TABLE_LEVEL_MAX + 1;
+	tbl_info.level = (int)XLAT_TABLE_LEVEL_MAX + 1;
 
 	test_helpers_expect_assert_fail(true);
 	(void)xlat_get_tte_ptr(&tbl_info, test_va);
@@ -1212,7 +1212,7 @@ void xlat_unmap_memory_page_tc1(void)
 	base_lvl = XLAT_TEST_MIN_LVL();
 
 	end_lvl = XLAT_MIN_BLOCK_LVL();
-	for (; end_lvl <= XLAT_TABLE_LEVEL_MAX; end_lvl++) {
+	for (; end_lvl <= (int)XLAT_TABLE_LEVEL_MAX; end_lvl++) {
 		for (int i = 0U; i < VA_REGIONS; i++) {
 			va_region = (xlat_addr_region_id_t)i;
 
@@ -1578,7 +1578,7 @@ void xlat_map_memory_page_with_attrs_tc1(void)
 	base_lvl = XLAT_TEST_MIN_LVL();
 
 	end_lvl = XLAT_MIN_BLOCK_LVL();
-	for (; end_lvl <= XLAT_TABLE_LEVEL_MAX; end_lvl++) {
+	for (; end_lvl <= (int)XLAT_TABLE_LEVEL_MAX; end_lvl++) {
 		for (int i = 0U; i < VA_REGIONS; i++) {
 			va_region = (xlat_addr_region_id_t)i;
 
@@ -1687,7 +1687,7 @@ void xlat_map_memory_page_with_attrs_tc1(void)
 					TRANSIENT_FLAG_SHIFT);
 
 				/* TTE type */
-				type = (end_lvl == XLAT_TABLE_LEVEL_MAX) ?
+				type = (end_lvl == (int)XLAT_TABLE_LEVEL_MAX) ?
 							PAGE_DESC :
 							BLOCK_DESC;
 				val_tte |= type;
