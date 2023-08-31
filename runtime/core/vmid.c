@@ -42,8 +42,8 @@ bool vmid_reserve(unsigned int vmid)
 		return false;
 	}
 
-	offset = vmid / BITS_PER_UL;
-	vmid %= BITS_PER_UL;
+	offset = vmid / (unsigned int)BITS_PER_UL;
+	vmid %= (unsigned int)BITS_PER_UL;
 
 	return !atomic_bit_set_acquire_release_64(&vmids[offset], vmid);
 }
@@ -61,8 +61,9 @@ void vmid_free(unsigned int vmid)
 
 	/* Check the number of supported VMID values */
 	assert(vmid < vmid_count);
-	offset = vmid / BITS_PER_UL;
-	vmid %= BITS_PER_UL;
+
+	offset = vmid / (unsigned int)BITS_PER_UL;
+	vmid %= (unsigned int)BITS_PER_UL;
 
 	atomic_bit_clear_release_64(&vmids[offset], vmid);
 }
