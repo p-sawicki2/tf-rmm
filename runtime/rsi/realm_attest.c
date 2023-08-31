@@ -382,8 +382,8 @@ void handle_rsi_measurement_read(struct rec *rec, struct rsi_result *res)
 	rd = granule_map(rec->realm_info.g_rd, SLOT_RD);
 
 	/* Number of 8-bytes words in measurement */
-	cnt = (unsigned int)measurement_get_size(rd->algorithm) /
-						sizeof(unsigned long);
+	cnt = (unsigned int)(measurement_get_size(rd->algorithm) /
+						sizeof(unsigned long));
 
 	/* Copy the part of the measurement to res->smc_res.x[] */
 	for (i = 0U; i < SMC_RESULT_REGS - 1U; i++) {
