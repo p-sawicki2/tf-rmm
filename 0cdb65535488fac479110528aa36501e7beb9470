@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f863e42e_9f5897f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-31T12:07:39Z",
+      "side": 1,
+      "message": "Couple of nits but the patch LGTM. Consider creating a new component just for the high VA region management as discussed today (either a library on its own or a new component inside runtime/core, for instance)",
+      "revId": "0cdb65535488fac479110528aa36501e7beb9470",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28098fd_18ad2b98",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-31T12:07:39Z",
+      "side": 1,
+      "message": "nit: the slot buffers as well as the stack",
+      "range": {
+        "startLine": 94,
+        "startChar": 35,
+        "endLine": 94,
+        "endChar": 45
+      },
+      "revId": "0cdb65535488fac479110528aa36501e7beb9470",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43eaa096_6b6a62e0",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-31T12:07:39Z",
+      "side": 1,
+      "message": "high VA region",
+      "range": {
+        "startLine": 307,
+        "startChar": 64,
+        "endLine": 307,
+        "endChar": 76
+      },
+      "revId": "0cdb65535488fac479110528aa36501e7beb9470",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

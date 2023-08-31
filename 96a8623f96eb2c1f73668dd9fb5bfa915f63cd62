@@ -70,6 +70,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d5b18cd_b9e8f8f6",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-31T12:07:39Z",
+      "side": 1,
+      "message": "Yes, you are right, I actually somehow got runtime and platform mixed up",
+      "parentUuid": "b767dbdc_5f5ee0f3",
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "696e516e_02a342f8",
