@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00578da9_f5d61668",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Thanks for the comments",
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4529fde8_6e6b921d",
@@ -31,6 +48,24 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "This is better off on the runtime/CMakeLists.txt, as the Stack is handled there",
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b767dbdc_5f5ee0f3",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Moving this inside untime/CMakeLists.txt makes the config invisible from the plat directory, where the page table initialisation hapens.",
+      "parentUuid": "4529fde8_6e6b921d",
       "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +93,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01e013f0_f2fcc4c1",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "696e516e_02a342f8",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 7
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa7f522d_3d727a55",
@@ -71,6 +130,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "Since this is part of the platform configuration, the name should start with \"PLAT_\". Still, I am not sure if this should be kept as a platform build option or not. I guess it would need further discussion.",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 32
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1de9c7f8_0da62832",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7f522d_3d727a55",
       "range": {
         "startLine": 40,
         "startChar": 9,
@@ -127,6 +210,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6073bcd4_a8371903",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48261487_f78b5090",
+      "range": {
+        "startLine": 77,
+        "startChar": 24,
+        "endLine": 77,
+        "endChar": 29
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d671718c_7f817175",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17c6c1f1_d475b657",
+      "range": {
+        "startLine": 77,
+        "startChar": 32,
+        "endLine": 77,
+        "endChar": 41
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5005041b_90f31e3a",
@@ -140,6 +271,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "nit: I would use PAGE_SIZE instead. They are exactly the same, but it feels to me that GRANULE_SIZE is more related to the delegate/undelegate process whereas PAGE_SIZE is more generic.",
+      "range": {
+        "startLine": 79,
+        "startChar": 51,
+        "endLine": 79,
+        "endChar": 63
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea2702ef_647e268f",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5005041b_90f31e3a",
       "range": {
         "startLine": 79,
         "startChar": 51,
@@ -173,6 +328,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dccd9e7_a1ad39eb",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c115a668_81b54b12",
+      "range": {
+        "startLine": 111,
+        "startChar": 16,
+        "endLine": 111,
+        "endChar": 28
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04d6799f_55e49a4c",
@@ -186,6 +365,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "extern variables should not be used on RMM (I think the code guidelines might need update on this).\n\nAlso, I think what you are trying to do here is to access the \"stack_end\" symbol generated by the linker, right? In that case you need to use the IMPORT_SYM() macro, as done with the rest of symbols right at the top of this file.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 6
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05b92444_53d9d742",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04d6799f_55e49a4c",
       "range": {
         "startLine": 132,
         "startChar": 0,
@@ -219,6 +422,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ee46f37_1d087c40",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44213bf2_ae9ce550",
+      "range": {
+        "startLine": 229,
+        "startChar": 25,
+        "endLine": 229,
+        "endChar": 35
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aed726d8_2ba2593c",
@@ -232,6 +459,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "slot_buffer_va",
+      "range": {
+        "startLine": 251,
+        "startChar": 11,
+        "endLine": 251,
+        "endChar": 20
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee4d917_2233d1a3",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed726d8_2ba2593c",
       "range": {
         "startLine": 251,
         "startChar": 11,
@@ -265,6 +516,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0340a96_3cca529e",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "484971f2_e070d0b5",
+      "range": {
+        "startLine": 252,
+        "startChar": 11,
+        "endLine": 252,
+        "endChar": 21
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4c04d62_47488e6b",
@@ -278,6 +553,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "as we are going to use a full L3 page, this check is not longer needed. va_size will be (XLAT_TABLE_ENTRIES * PAGE_SIZE)",
+      "range": {
+        "startLine": 274,
+        "startChar": 1,
+        "endLine": 288,
+        "endChar": 41
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dcd023d_73e6d3fb",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4c04d62_47488e6b",
       "range": {
         "startLine": 274,
         "startChar": 1,
@@ -311,6 +610,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "713a4541_f0beb15a",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16306b41_a68e7ee5",
+      "range": {
+        "startLine": 291,
+        "startChar": 1,
+        "endLine": 292,
+        "endChar": 24
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "867b98cc_45cd91c4",
@@ -324,6 +647,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "return xlat_ctx_cfg_init(....) and you can get rid of the ret variable",
+      "range": {
+        "startLine": 294,
+        "startChar": 1,
+        "endLine": 294,
+        "endChar": 5
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdb0f25a_445ea884",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "867b98cc_45cd91c4",
       "range": {
         "startLine": 294,
         "startChar": 1,
@@ -357,6 +704,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b78a3f5_0d8d3e39",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec8e6701_3c83c2e4",
+      "range": {
+        "startLine": 362,
+        "startChar": 2,
+        "endLine": 363,
+        "endChar": 35
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fda03d1_64bb8ce0",
@@ -370,6 +741,30 @@
       "writtenOn": "2023-08-30T18:30:24Z",
       "side": 1,
       "message": "rmm_stack_end, for consistency with the rest of imported symbols",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 11
+      },
+      "revId": "96a8623f96eb2c1f73668dd9fb5bfa915f63cd62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddfa1331_be73870f",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-08-31T08:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fda03d1_64bb8ce0",
       "range": {
         "startLine": 84,
         "startChar": 2,
