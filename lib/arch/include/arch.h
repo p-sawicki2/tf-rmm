@@ -818,22 +818,22 @@
  * and Aff0[7:4] of a REC MPIDR value is RES0.
  */
 #define MPIDR_EL2_AFF0_SHIFT			0
-#define MPIDR_EL2_AFF0_WIDTH			4
+#define MPIDR_EL2_AFF0_WIDTH			U(4)
 #define MPIDR_EL2_AFF0_VAL_SHIFT		0
 
 /* Aff1[15:8] - Affinity level 1 */
 #define MPIDR_EL2_AFF1_SHIFT			8
-#define MPIDR_EL2_AFF1_WIDTH			8
+#define MPIDR_EL2_AFF1_WIDTH			U(8)
 #define MPIDR_EL2_AFF1_VAL_SHIFT		4
 
 /* Aff2[23:16] - Affinity level 2 */
 #define MPIDR_EL2_AFF2_SHIFT			16
-#define MPIDR_EL2_AFF2_WIDTH			8
+#define MPIDR_EL2_AFF2_WIDTH			U(8)
 #define MPIDR_EL2_AFF2_VAL_SHIFT		4
 
 /* Aff3[39:32] - Affinity level 3 */
 #define MPIDR_EL2_AFF3_SHIFT			32
-#define MPIDR_EL2_AFF3_WIDTH			8
+#define MPIDR_EL2_AFF3_WIDTH			U(8)
 #define MPIDR_EL2_AFF3_VAL_SHIFT		12
 
 /*
