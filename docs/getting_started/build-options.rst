@@ -183,6 +183,15 @@ The above commands will automatically generate the HTML coverage report in folde
 `build/Debug/coverage` within build directory. The HTML generation can be
 disabled by setting `RMM_HTML_COV_REPORT=OFF`.
 
+15. Run CBMC analysis:
+
+Run CBMC analysis with ``COVERAGE`` config. The results are generated in
+``${RMM_SOURCE_DIR}/tools/CBMC/testbenches_results``.
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_cbmc -DRMM_CBMC_CONFIGURATION=COVERAGE -DRMM_CBMC_STATIC_ANALYSIS=ON -DRMM_STATIC_ANALYSIS=ON -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+
 .. _build_options_table:
 
 ###################
@@ -223,6 +232,8 @@ The |RMM| build system supports the following CMake build options.
    HOST_MEM_SIZE		,			,0x40000000		,"Host memory size that will be used as physical granules"
    RMM_COVERAGE 		,ON | OFF		,OFF			,"Enable coverage analysis"
    RMM_HTML_COV_REPORT		,ON | OFF		,ON			,"Enable HTML output report for coverage analysis"
+   RMM_CBMC_STATIC_ANALYSIS	,ON | OFF		,OFF			,"Enable CBMC analysis"
+   RMM_CBMC_CONFIGURATION	,COVERAGE | ASSERT | ANALYSIS	,COVERAGE	,"Configuration of the CBMC tool"
 
 .. _llvm_build:
 
