@@ -184,8 +184,8 @@
 #define SMC_RMM_GRANULE_UNDELEGATE		SMC64_RMI_FID(U(0x2))
 
 /* RmiDataMeasureContent type */
-#define RMI_NO_MEASURE_CONTENT 0
-#define RMI_MEASURE_CONTENT  1
+#define RMI_NO_MEASURE_CONTENT	U(0)
+#define RMI_MEASURE_CONTENT  	U(1)
 
 /*
  * arg0 == RD address
