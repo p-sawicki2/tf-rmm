@@ -29,7 +29,7 @@
 #define XLAT_TABLE_SIZE		(UL(1) << XLAT_TABLE_SIZE_SHIFT)
 
 /* Level 3 is the highest level for translation tables */
-#define XLAT_TABLE_LEVEL_MAX	(3)
+#define XLAT_TABLE_LEVEL_MAX	U(3)
 
 /* Values for number of entries in each MMU translation table */
 #define XLAT_TABLE_ENTRIES_SHIFT (XLAT_TABLE_SIZE_SHIFT - XLAT_ENTRY_SIZE_SHIFT)
