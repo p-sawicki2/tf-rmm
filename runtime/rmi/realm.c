@@ -77,7 +77,8 @@ static bool s2_inconsistent_sl(unsigned int ipa_bits, int sl)
 	 * The maximum number of concatenated tables is 16,
 	 * hence we are adding 4 to the 'sl_max_ipa_bits'.
 	 */
-	sl_min_ipa_bits = levels * S2TTE_STRIDE + GRANULE_SHIFT + 1U;
+	sl_min_ipa_bits = (unsigned int)levels * S2TTE_STRIDE +
+							GRANULE_SHIFT + 1U;
 	sl_max_ipa_bits = sl_min_ipa_bits + (S2TTE_STRIDE - 1U) + 4U;
 
 	return ((ipa_bits < sl_min_ipa_bits) || (ipa_bits > sl_max_ipa_bits));
@@ -146,7 +147,7 @@ static void init_s2_starting_level(struct rd *rd)
 	 * the starting level.
 	 */
 	unsigned long sl_entry_map_size =
-			1UL << (levels * S2TTE_STRIDE + GRANULE_SHIFT);
+		1UL << ((unsigned int)levels * S2TTE_STRIDE + GRANULE_SHIFT);
 
 	for (unsigned int rtt = 0U; rtt < rd->s2_ctx.num_root_rtts; rtt++) {
 		unsigned long *s2tt = granule_map(g_rtt, SLOT_RTT);
@@ -306,8 +307,9 @@ static bool find_lock_rd_granules(unsigned long rd_addr,
 		}
 	}
 
-	for (; i < num_rtts; i++) {
-		unsigned long rtt_addr = rtt_base_addr + i * GRANULE_SIZE;
+	for (; i < (int)num_rtts; i++) {
+		unsigned long rtt_addr = rtt_base_addr +
+					 (unsigned int)i * GRANULE_SIZE;
 		struct granule *g_rtt;
 
 		g_rtt = find_lock_granule(rtt_addr, GRANULE_STATE_DELEGATED);
