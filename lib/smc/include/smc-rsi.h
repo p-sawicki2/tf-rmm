@@ -139,7 +139,7 @@ struct rsi_realm_config {
 	/* IPA width in bits */
 	SET_MEMBER_RSI(unsigned long ipa_width, 0, 8);		/* Offset 0 */
 	/* Hash algorithm */
-	SET_MEMBER_RSI(unsigned long hash_algo, 8, 0x1000);	/* Offset 8 */
+	SET_MEMBER_RSI(unsigned long algorithm, 8, 0x1000);	/* Offset 8 */
 };
 
 #endif /* __ASSEMBLER__ */
