@@ -126,7 +126,7 @@ static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 		return 1U;
 	}
 
-	return (1U << (ipa_bits - sl_ipa_bits));
+	return (unsigned int)(1U << (ipa_bits - sl_ipa_bits));
 }
 
 /*
