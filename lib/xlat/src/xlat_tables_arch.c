@@ -45,7 +45,7 @@ static uint64_t tcr_physical_addr_size_bits(uintptr_t max_addr)
 {
 	if ((max_addr & ADDR_MASK_52_TO_63) != 0ULL) {
 		/* Physical address can't exceed 52 bits */
-		return ULLONG_MAX;
+		return (uint64_t)ULLONG_MAX;
 	}
 
 	/* 52 bits address */
@@ -184,7 +184,7 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	 */
 	pa_size_bits = tcr_physical_addr_size_bits(
 					xlat_arch_get_max_supported_pa());
-	if (pa_size_bits == ULLONG_MAX) {
+	if (pa_size_bits == (uint64_t)ULLONG_MAX) {
 		return -ENOMEM;
 	}
 	tcr |= pa_size_bits;

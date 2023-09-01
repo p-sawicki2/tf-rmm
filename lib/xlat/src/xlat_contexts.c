@@ -186,7 +186,7 @@ static int add_mmap_to_ctx_cfg(struct xlat_ctx_cfg *cfg,
 		 * Overwriting this field should not be a problem as its value
 		 * is expected to be always the same.
 		 */
-		cfg->base_va = (ULONG_MAX - va_size + 1ULL);
+		cfg->base_va = (unsigned long long)ULLONG_MAX - va_size + 1ULL;
 	}
 
 
