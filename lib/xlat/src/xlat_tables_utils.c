@@ -317,21 +317,21 @@ static uint64_t *find_xlat_last_table(uintptr_t va,
 	ret_table = ctx_tbls->tables;
 	table_base_va = ctx_cfg->base_va;
 
-	for (int level = start_level; level <= XLAT_TABLE_LEVEL_MAX; level++) {
+	for (int level = start_level; level <= (int)XLAT_TABLE_LEVEL_MAX; level++) {
 		unsigned int idx =
 			(unsigned int)XLAT_TABLE_IDX(va_offset, level);
 		uint64_t desc = ret_table[idx];
 		uint64_t desc_type = desc & DESC_MASK;
 
 		if ((desc_type != TABLE_DESC) ||
-		    (level == XLAT_TABLE_LEVEL_MAX)) {
+		    (level == (int)XLAT_TABLE_LEVEL_MAX)) {
 			*out_level = level;
 			*tt_base_va = table_base_va;
 			return ret_table;
 		}
 
 		/* Get the base address mapped by the next table */
-		table_base_va += (XLAT_BLOCK_SIZE(level) * idx);
+		table_base_va += (XLAT_BLOCK_SIZE((unsigned int)level) * idx);
 
 		/* Get the next table */
 		ret_table = (uint64_t *)(void *)xlat_get_oa_from_tte(desc);
@@ -433,7 +433,7 @@ int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 	}
 
 	/* Generate the new descriptor */
-	tte = xlat_desc(attrs, (pa & XLAT_ADDR_MASK(table->level)),
+	tte = xlat_desc(attrs, pa & XLAT_ADDR_MASK((unsigned int)table->level),
 			table->level) | TRANSIENT_DESC;
 
 	xlat_write_tte(tte_ptr, tte);
@@ -503,15 +503,15 @@ uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const llt,
 
 	assert(llt != NULL);
 
-	assert(llt->level <= XLAT_TABLE_LEVEL_MAX);
-	assert(llt->level >= XLAT_TABLE_LEVEL_MIN);
+	assert(llt->level <= (int)XLAT_TABLE_LEVEL_MAX);
+	assert(llt->level >= (int)XLAT_TABLE_LEVEL_MIN);
 
 	if (va < llt->llt_base_va) {
 		return NULL;
 	}
 
 	offset = va - llt->llt_base_va;
-	index = (unsigned int)(offset >> XLAT_ADDR_SHIFT(llt->level));
+	index = (unsigned int)(offset >> XLAT_ADDR_SHIFT((unsigned int)llt->level));
 
 	return (index < XLAT_GET_TABLE_ENTRIES(llt->level)) ?
 			&llt->table[index] : NULL;
