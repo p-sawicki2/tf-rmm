@@ -216,3 +216,43 @@ add_custom_target(clang-tidy-patch
     -DBUILD_DIR=${CMAKE_BINARY_DIR}
     -P ${CMAKE_SOURCE_DIR}/tools/clang-tidy/clang-tidy.cmake
   )
+
+#
+# Rules for running cbmc analysis
+#
+
+add_custom_target(cbmc-coverage
+  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+  COMMAND ${CMAKE_COMMAND}
+    -DRMM_CONFIG=host_defcfg
+    -DHOST_VARIANT=host_cbmc
+    -DRMM_CBMC_CONFIGURATION=COVERAGE
+    -DRMM_CBMC_STATIC_ANALYSIS=ON
+    -DRMM_STATIC_ANALYSIS=ON
+    -S "${CMAKE_SOURCE_DIR}"
+    -B "${CMAKE_BINARY_DIR}"
+  )
+
+add_custom_target(cbmc-analysis
+  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+  COMMAND ${CMAKE_COMMAND}
+    -DRMM_CONFIG=host_defcfg
+    -DHOST_VARIANT=host_cbmc
+    -DRMM_CBMC_CONFIGURATION=ANALYSIS
+    -DRMM_CBMC_STATIC_ANALYSIS=ON
+    -DRMM_STATIC_ANALYSIS=ON
+    -S "${CMAKE_SOURCE_DIR}"
+    -B "${CMAKE_BINARY_DIR}"
+  )
+
+add_custom_target(cbmc-assert
+  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+  COMMAND ${CMAKE_COMMAND}
+    -DRMM_CONFIG=host_defcfg
+    -DHOST_VARIANT=host_cbmc
+    -DRMM_CBMC_CONFIGURATION=ASSERT
+    -DRMM_CBMC_STATIC_ANALYSIS=ON
+    -DRMM_STATIC_ANALYSIS=ON
+    -S "${CMAKE_SOURCE_DIR}"
+    -B "${CMAKE_BINARY_DIR}"
+  )
