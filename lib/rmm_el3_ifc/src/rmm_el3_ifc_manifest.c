@@ -25,8 +25,7 @@ static bool manifest_processed;
 
 void rmm_el3_ifc_process_boot_manifest(void)
 {
-	assert((manifest_processed == false) &&
-		(is_mmu_enabled() == false));
+	assert(!manifest_processed && !is_mmu_enabled());
 
 	/*
 	 * The boot manifest is expected to be on the shared area.
@@ -62,8 +61,7 @@ unsigned int rmm_el3_ifc_get_manifest_version(void)
 /* Return a pointer to the platform manifest */
 uintptr_t rmm_el3_ifc_get_plat_manifest_pa(void)
 {
-	assert((manifest_processed == true) &&
-		(is_mmu_enabled() == false));
+	assert(manifest_processed && !is_mmu_enabled());
 
 	return local_core_manifest.plat_data;
 }
@@ -81,8 +79,7 @@ int rmm_el3_ifc_get_dram_data_validated_pa(unsigned long max_num_banks,
 	struct ns_dram_info *plat_dram;
 	struct ns_dram_bank *bank_ptr;
 
-	assert((manifest_processed == true) &&
-		(is_mmu_enabled() == false));
+	assert(manifest_processed && !is_mmu_enabled());
 
 	*plat_dram_info = NULL;
 
