@@ -3,6 +3,11 @@
 # SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
 #
 
+if(RMM_CBMC_STATIC_ANALYSIS)
+    add_library(t_cose INTERFACE)
+    return()
+endif()
+
 add_library(t_cose)
 
 set(T_COSE_SOURCE_DIR "${RMM_SOURCE_DIR}/ext/t_cose")
