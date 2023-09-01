@@ -67,7 +67,8 @@ static uintptr_t xlat_tables_find_start_va(struct xlat_mmap_region *mm,
 
 	if (mm->base_va > table_base_va) {
 		/* Find the first index of the table affected by the region. */
-		table_idx_va = mm->base_va & ~XLAT_BLOCK_MASK(level);
+		table_idx_va = mm->base_va &
+					~XLAT_BLOCK_MASK((unsigned int)level);
 	} else {
 		/* Start from the beginning of the table. */
 		table_idx_va = table_base_va;
@@ -83,7 +84,8 @@ static inline unsigned int  xlat_tables_va_to_index(const uintptr_t table_base_v
 						    const uintptr_t va,
 						    const int level)
 {
-	return (unsigned int)((va - table_base_va) >> XLAT_ADDR_SHIFT(level));
+	return (unsigned int)((va - table_base_va) >>
+					XLAT_ADDR_SHIFT((unsigned int)level));
 }
 
 /*
@@ -98,7 +100,8 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 {
 	uintptr_t mm_end_va = mm->base_va + mm->size - 1UL;
 	uintptr_t table_entry_end_va =
-			table_entry_base_va + XLAT_BLOCK_SIZE(level) - 1UL;
+		table_entry_base_va +
+		XLAT_BLOCK_SIZE((unsigned int)level) - 1UL;
 
 	/*
 	 * The descriptor types allowed depend on the current table level.
@@ -115,7 +118,7 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 		 * translation with this granularity in principle.
 		 */
 
-		if (level == 3U) {
+		if (level == 3) {
 			/*
 			 * Last level, only page descriptors are allowed.
 			 */
@@ -146,6 +149,8 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 				return ACTION_RECURSE_INTO_TABLE;
 
 			} else if (desc_type == INVALID_DESC) {
+				unsigned int ulevel = (unsigned int)level;
+
 				/*
 				 * There's nothing mapped here, create a new
 				 * entry.
@@ -157,9 +162,9 @@ static action_t xlat_tables_map_region_action(const struct xlat_mmap_region *mm,
 				 * Also, check if the current level allows block
 				 * descriptors. If not, create a table instead.
 				 */
-				if (((dest_pa & XLAT_BLOCK_MASK(level)) != 0U)
+				if (((dest_pa & XLAT_BLOCK_MASK(ulevel)) != 0U)
 				    || (level < XLAT_MIN_BLOCK_LVL()) ||
-				    (mm->granularity < XLAT_BLOCK_SIZE(level))) {
+				    (mm->granularity < XLAT_BLOCK_SIZE(ulevel))) {
 					return ACTION_CREATE_NEW_TABLE;
 				} else {
 					return ACTION_WRITE_BLOCK_ENTRY;
@@ -262,12 +267,13 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 
 	assert(ctx_cfg != NULL);
 	assert((level >= ctx_cfg->base_level) &&
-					(level <= XLAT_TABLE_LEVEL_MAX));
+	       (level <= (int)XLAT_TABLE_LEVEL_MAX));
 	assert(table_entries <= XLAT_GET_TABLE_ENTRIES(level));
 
 	mm_end_va = mm->base_va + mm->size - 1U;
 
-	if ((level < ctx_cfg->base_level) || (level > XLAT_TABLE_LEVEL_MAX)) {
+	if ((level < ctx_cfg->base_level) ||
+	    (level > (int)XLAT_TABLE_LEVEL_MAX)) {
 		ERROR("%s (%u): Level out of boundaries (%i)\n",
 			__func__, __LINE__, level);
 		panic();
@@ -313,8 +319,8 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
 					       subtable, XLAT_TABLE_ENTRIES,
 					       level + 1);
-			if (end_va !=
-				(table_idx_va + XLAT_BLOCK_SIZE(level) - 1UL)) {
+			if (end_va != (table_idx_va +
+				XLAT_BLOCK_SIZE((unsigned int)level) - 1UL)) {
 				return end_va;
 			}
 
@@ -327,8 +333,8 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
 					       subtable, XLAT_TABLE_ENTRIES,
 					       level + 1);
-			if (end_va !=
-				(table_idx_va + XLAT_BLOCK_SIZE(level) - 1UL)) {
+			if (end_va != (table_idx_va +
+				XLAT_BLOCK_SIZE((unsigned int)level) - 1UL)) {
 				return end_va;
 			}
 
@@ -341,7 +347,7 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 		}
 
 		table_idx++;
-		table_idx_va += XLAT_BLOCK_SIZE(level);
+		table_idx_va += XLAT_BLOCK_SIZE((unsigned int)level);
 
 		/* If reached the end of the region, exit */
 		if (mm_end_va <= table_idx_va) {
@@ -368,7 +374,7 @@ uint64_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level)
 	}
 
 	/* Make sure that the granularity is fine enough to map this address. */
-	assert((addr_pa & XLAT_BLOCK_MASK(level)) == 0U);
+	assert((addr_pa & XLAT_BLOCK_MASK((unsigned int)level)) == 0U);
 
 	desc = set_oa_to_tte(addr_pa);
 
@@ -376,7 +382,7 @@ uint64_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level)
 	 * There are different translation table descriptors for level 3 and the
 	 * rest.
 	 */
-	desc |= (level == XLAT_TABLE_LEVEL_MAX) ? PAGE_DESC : BLOCK_DESC;
+	desc |= (level == (int)XLAT_TABLE_LEVEL_MAX) ? PAGE_DESC : BLOCK_DESC;
 	/*
 	 * Always set the access flag, as this library assumes access flag
 	 * faults aren't managed.

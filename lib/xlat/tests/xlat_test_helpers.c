@@ -246,7 +246,7 @@ int xlat_test_helpers_table_walk(struct xlat_ctx *ctx,
 
 	/* Base table is the first table of the array */
 	table = &tbls->tables[0U];
-	for (int i = cfg->base_level; i <= XLAT_TABLE_LEVEL_MAX; i++) {
+	for (int i = cfg->base_level; i <= (int)XLAT_TABLE_LEVEL_MAX; i++) {
 		uint64_t tte_oa;
 		unsigned int tindex =
 			(unsigned int)(va >> XLAT_ADDR_SHIFT(i)) &
