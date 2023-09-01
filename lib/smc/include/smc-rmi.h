@@ -360,7 +360,8 @@
  * Defines member of structure and reserves space
  * for the next member with specified offset.
  */
-#define SET_MEMBER_RMI	SET_MEMBER
+#define SET_MEMBER_RMI(member, start, end)	\
+	SET_MEMBER((member), (start), (end))
 
 /*
  * The Realm attribute parameters are shared by the Host via
@@ -381,7 +382,7 @@ struct rmi_realm_params {
 	/* Requested number of PMU counters */
 	SET_MEMBER_RMI(unsigned int pmu_num_ctrs, 0x28, 0x30);	/* 0x28 */
 	/* Measurement algorithm */
-	SET_MEMBER_RMI(unsigned char hash_algo, 0x30, 0x400);	/* 0x30 */
+	SET_MEMBER_RMI(unsigned char algorithm, 0x30, 0x400);	/* 0x30 */
 	/* Realm Personalization Value */
 	SET_MEMBER_RMI(unsigned char rpv[RPV_SIZE], 0x400, 0x800); /* 0x400 */
 	SET_MEMBER_RMI(struct {
