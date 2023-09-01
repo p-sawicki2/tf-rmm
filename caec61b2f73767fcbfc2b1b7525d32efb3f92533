@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82f5e4e9_87a7b09b",
+        "filename": "docs/index.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1641c6b5_bc38524f",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 33
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cba93b7_5181207b",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37a5b2a9_9d8719a8",
+        "filename": "docs/process/coding-standard.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cba93b7_5181207b",
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e034718a_df5db074",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "nit: can make this unlisted bullets.",
+      "range": {
+        "startLine": 62,
+        "startChar": 31,
+        "endLine": 62,
+        "endChar": 33
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65a3bbb2_b8d0adf7",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "I tried to do that. The problem with using automatic bullets or numbered lists inside tables is that I cannot manually break the line if it gets too long (for instance, as I do in line 69 at point 4), hence we could end up with very wide tables just because of a line as well as tables with different widths. That is the reason why I do the numbered lists manually instead of using the `#` so I can then break the line to the width that I want and properly align (in this case, I introduce a line break every two lines in the table for a consistent width across all of them).\n\nIf I use the \u0027*\u0027 character after the newline one, readthedocs will just render an asterisk, not a bullet, so therefore I thought that the compromise solution would be to add another numbered sublist. I considered it to be 1.x instead of just x, but that would eat up a lot of space in my opinion.",
+      "parentUuid": "e034718a_df5db074",
       "range": {
         "startLine": 62,
         "startChar": 31,
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d6cfc12_dc0b164d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ffeb11b_ff708ffa",
+      "range": {
+        "startLine": 69,
+        "startChar": 53,
+        "endLine": 69,
+        "endChar": 61
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6071d719_1187cde5",
@@ -100,6 +190,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "nit: \"Information\"",
+      "range": {
+        "startLine": 145,
+        "startChar": 38,
+        "endLine": 145,
+        "endChar": 49
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6de48c6_7e0d92fb",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6071d719_1187cde5",
       "range": {
         "startLine": 145,
         "startChar": 38,
@@ -133,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5de0689_361bfdf7",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9e1d75b_be78bbc8",
+      "range": {
+        "startLine": 158,
+        "startChar": 32,
+        "endLine": 158,
+        "endChar": 45
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "316daf28_3822f058",
@@ -146,6 +284,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "nit: Correct the spelling.",
+      "range": {
+        "startLine": 209,
+        "startChar": 38,
+        "endLine": 209,
+        "endChar": 49
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bde8d1c_87a65c2b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "316daf28_3822f058",
       "range": {
         "startLine": 209,
         "startChar": 38,
@@ -181,6 +343,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2cf02597_453f00d5",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Any particular reason why this should be threat ID 02? For a threat model there are no restrictions on the order of the threats",
+      "parentUuid": "34ca3d29_1a95751d",
+      "range": {
+        "startLine": 280,
+        "startChar": 27,
+        "endLine": 280,
+        "endChar": 28
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "839eab32_339fb7fa",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 9
@@ -192,6 +378,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "we can remove this and the Realm specific threats can be added to Threat ID 10.",
+      "range": {
+        "startLine": 283,
+        "startChar": 37,
+        "endLine": 283,
+        "endChar": 61
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfc8c69c_23cede9b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "839eab32_339fb7fa",
       "range": {
         "startLine": 283,
         "startChar": 37,
@@ -225,6 +435,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53364e54_769bf002",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2db5b24b_6791a854",
+      "range": {
+        "startLine": 288,
+        "startChar": 27,
+        "endLine": 290,
+        "endChar": 37
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e886dc4_e82507a1",
@@ -238,6 +472,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "WE can make this specific to NS Host. So remove this.",
+      "range": {
+        "startLine": 292,
+        "startChar": 27,
+        "endLine": 292,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41ce1dd2_391e359a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e886dc4_e82507a1",
       "range": {
         "startLine": 292,
         "startChar": 27,
@@ -271,6 +529,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5e1a612_f810e524",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18d2b3a2_b213a072",
+      "range": {
+        "startLine": 311,
+        "startChar": 40,
+        "endLine": 311,
+        "endChar": 50
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "724258b7_4c4323db",
@@ -284,6 +566,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "nit: isolation",
+      "range": {
+        "startLine": 323,
+        "startChar": 32,
+        "endLine": 323,
+        "endChar": 41
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8ae1994_0d3150e1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "724258b7_4c4323db",
       "range": {
         "startLine": 323,
         "startChar": 32,
@@ -317,6 +623,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e938bc79_65c6c575",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cedc67dc_071c931c",
+      "range": {
+        "startLine": 330,
+        "startChar": 29,
+        "endLine": 330,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "380b9b4a_6d93d027",
@@ -330,6 +660,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "Suggest: \"...an already Realm associated granule to another Realm\"",
+      "range": {
+        "startLine": 349,
+        "startChar": 32,
+        "endLine": 349,
+        "endChar": 41
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "296fc404_5f2c828b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "380b9b4a_6d93d027",
       "range": {
         "startLine": 349,
         "startChar": 32,
@@ -363,6 +717,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46d0aa7d_5d33f0d1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "747dbc9c_69965b94",
+      "range": {
+        "startLine": 401,
+        "startChar": 32,
+        "endLine": 401,
+        "endChar": 38
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "180b2141_2c703857",
@@ -376,6 +754,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "\"Use\"",
+      "range": {
+        "startLine": 404,
+        "startChar": 32,
+        "endLine": 404,
+        "endChar": 39
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1594816_cfa2cf11",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "180b2141_2c703857",
       "range": {
         "startLine": 404,
         "startChar": 32,
@@ -409,6 +811,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f193e3f0_3c55fd2a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff25e8f2_8f19ce2a",
+      "range": {
+        "startLine": 405,
+        "startChar": 46,
+        "endLine": 405,
+        "endChar": 53
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4225a87d_ba239b4e",
@@ -422,6 +848,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "\"Add sanitizers like ASAN...\"",
+      "range": {
+        "startLine": 427,
+        "startChar": 29,
+        "endLine": 427,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bc449b9_b8b61a9d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4225a87d_ba239b4e",
       "range": {
         "startLine": 427,
         "startChar": 29,
@@ -455,6 +905,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b14144f_d0a62fb4",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd2d8ac5_ada22c5b",
+      "range": {
+        "startLine": 429,
+        "startChar": 29,
+        "endLine": 429,
+        "endChar": 42
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93fb643d_c48e56bd",
@@ -468,6 +942,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "add: \".. appropriate speculation side-channel..\"",
+      "range": {
+        "startLine": 468,
+        "startChar": 51,
+        "endLine": 468,
+        "endChar": 55
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "063b913c_86721e0b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93fb643d_c48e56bd",
       "range": {
         "startLine": 468,
         "startChar": 51,
@@ -501,6 +999,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94b91be3_dbeee415",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c77bcb0_d614a193",
+      "range": {
+        "startLine": 471,
+        "startChar": 47,
+        "endLine": 471,
+        "endChar": 55
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e180d18f_801f0a0a",
@@ -520,6 +1042,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f39fc866_ebcb058b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Not sure about that. Even if we trust EL3 firmware this is still a possible point of failure if not taken care of (and even a point of attack). Platform implementers need to take this into account to implement the platform specific part of the boot protocol, so I think this shouldn\u0027t be removed. Even if we couldn\u0027t do anything about a possible threat at this point, we should record that we know about its existence.",
+      "parentUuid": "e180d18f_801f0a0a",
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f9fc554_efe97439",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 9
@@ -531,6 +1071,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "This is similar to Threat ID 06 . I think this threat can be made specific to attack from Realms.\n\nAlso remove R-EL2 from here.",
+      "range": {
+        "startLine": 543,
+        "startChar": 53,
+        "endLine": 543,
+        "endChar": 58
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c5d7662_406be671",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f9fc554_efe97439",
       "range": {
         "startLine": 543,
         "startChar": 53,
@@ -566,6 +1130,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "34849dc0_6c72ccba",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "DF5 \u0026 DF7? See my comment below",
+      "parentUuid": "06801d72_c5f6dc20",
+      "range": {
+        "startLine": 551,
+        "startChar": 27,
+        "endLine": 551,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "576d41d8_f906259d",
         "filename": "docs/threat_model/threat_assessment.rst",
         "patchSetId": 9
@@ -577,6 +1165,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "RealmCode",
+      "range": {
+        "startLine": 555,
+        "startChar": 27,
+        "endLine": 555,
+        "endChar": 77
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a66fa339_f53b6f2b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "The RealmCode can attack if the S2 MMU are misconfigured, but it is the HostSoftware the one in charge to generate the S2 tables. So the former can also be a threat agent in my opinion",
+      "parentUuid": "576d41d8_f906259d",
       "range": {
         "startLine": 555,
         "startChar": 27,
@@ -610,6 +1222,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f9ded8_4a3a7a7e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b79bca1_5166f074",
+      "range": {
+        "startLine": 557,
+        "startChar": 51,
+        "endLine": 557,
+        "endChar": 73
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc928f93_f6b293de",
@@ -623,6 +1259,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "1) Ensure proper implementation of S2 table management code in RMM. It should not be possible to trigger misconfiguration of S2 tables using RMM ABI. Appropriate tests to ensure that the implementation is robust.\n\n2) The RMM specification mandates the rules for assigning memory to a Realm and IPA management. Ensure the rules mandated by the RMM specification are validated by suitable tooling.",
+      "range": {
+        "startLine": 565,
+        "startChar": 57,
+        "endLine": 565,
+        "endChar": 59
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f01d15a_6dd95a4d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc928f93_f6b293de",
       "range": {
         "startLine": 565,
         "startChar": 57,
@@ -656,6 +1316,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52cf142c_e0fcca27",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29510c5e_5828ca3e",
+      "range": {
+        "startLine": 574,
+        "startChar": 27,
+        "endLine": 574,
+        "endChar": 43
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6498a2d_f7100418",
@@ -679,6 +1363,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6040c202_b4530b9d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6498a2d_f7100418",
+      "range": {
+        "startLine": 608,
+        "startChar": 29,
+        "endLine": 614,
+        "endChar": 42
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5665dc72_3c28af68",
@@ -692,6 +1400,30 @@
       "writtenOn": "2023-09-01T09:18:04Z",
       "side": 1,
       "message": "1. Yes.\n2. The slot-buffer mechanism in RMM is used to map metadata only when needed and it unmapped when the access is not required.",
+      "range": {
+        "startLine": 616,
+        "startChar": 28,
+        "endLine": 616,
+        "endChar": 33
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d7609c2_066dcfee",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-01T14:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5665dc72_3c28af68",
       "range": {
         "startLine": 616,
         "startChar": 28,
