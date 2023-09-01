@@ -1096,5 +1096,5 @@ unsigned long skip_non_live_entries(unsigned long addr,
 		}
 	}
 
-	return (addr + (i - index) * map_size);
+	return (addr + (unsigned long)(i - index) * map_size);
 }
