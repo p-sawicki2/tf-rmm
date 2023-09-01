@@ -1,0 +1,665 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e034718a_df5db074",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "nit: can make this unlisted bullets.",
+      "range": {
+        "startLine": 62,
+        "startChar": 31,
+        "endLine": 62,
+        "endChar": 33
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ffeb11b_ff708ffa",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "nit: are allowed to be logged.",
+      "range": {
+        "startLine": 69,
+        "startChar": 53,
+        "endLine": 69,
+        "endChar": 61
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6071d719_1187cde5",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "nit: \"Information\"",
+      "range": {
+        "startLine": 145,
+        "startChar": 38,
+        "endLine": 145,
+        "endChar": 49
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9e1d75b_be78bbc8",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 158,
+        "startChar": 32,
+        "endLine": 158,
+        "endChar": 45
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "316daf28_3822f058",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "nit: Correct the spelling.",
+      "range": {
+        "startLine": 209,
+        "startChar": 38,
+        "endLine": 209,
+        "endChar": 49
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34ca3d29_1a95751d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "this threat should be moved up (perhaps should be threat ID 02). Also, we can make this Threat agent specific to NSHost. the ID10 can handle threat from Realms.",
+      "range": {
+        "startLine": 280,
+        "startChar": 27,
+        "endLine": 280,
+        "endChar": 28
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "839eab32_339fb7fa",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "we can remove this and the Realm specific threats can be added to Threat ID 10.",
+      "range": {
+        "startLine": 283,
+        "startChar": 37,
+        "endLine": 283,
+        "endChar": 61
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2db5b24b_6791a854",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "this can be a different threat. Mitigation 4 addresses this threat.",
+      "range": {
+        "startLine": 288,
+        "startChar": 27,
+        "endLine": 290,
+        "endChar": 37
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e886dc4_e82507a1",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "WE can make this specific to NS Host. So remove this.",
+      "range": {
+        "startLine": 292,
+        "startChar": 27,
+        "endLine": 292,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18d2b3a2_b213a072",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "remove, see Threat ID 10.",
+      "range": {
+        "startLine": 311,
+        "startChar": 40,
+        "endLine": 311,
+        "endChar": 50
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "724258b7_4c4323db",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "nit: isolation",
+      "range": {
+        "startLine": 323,
+        "startChar": 32,
+        "endLine": 323,
+        "endChar": 41
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cedc67dc_071c931c",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "The spoofing attack can be a new Threat as mentioned in comments above.",
+      "range": {
+        "startLine": 330,
+        "startChar": 29,
+        "endLine": 330,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "380b9b4a_6d93d027",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "Suggest: \"...an already Realm associated granule to another Realm\"",
+      "range": {
+        "startLine": 349,
+        "startChar": 32,
+        "endLine": 349,
+        "endChar": 41
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "747dbc9c_69965b94",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "\"Employ\"",
+      "range": {
+        "startLine": 401,
+        "startChar": 32,
+        "endLine": 401,
+        "endChar": 38
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "180b2141_2c703857",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "\"Use\"",
+      "range": {
+        "startLine": 404,
+        "startChar": 32,
+        "endLine": 404,
+        "endChar": 39
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff25e8f2_8f19ce2a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "\"Also make use of model checkers to validate...\"",
+      "range": {
+        "startLine": 405,
+        "startChar": 46,
+        "endLine": 405,
+        "endChar": 53
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4225a87d_ba239b4e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "\"Add sanitizers like ASAN...\"",
+      "range": {
+        "startLine": 427,
+        "startChar": 29,
+        "endLine": 427,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd2d8ac5_ada22c5b",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "... Architecture extensions related to Security. RMM needs to..",
+      "range": {
+        "startLine": 429,
+        "startChar": 29,
+        "endLine": 429,
+        "endChar": 42
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93fb643d_c48e56bd",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "add: \".. appropriate speculation side-channel..\"",
+      "range": {
+        "startLine": 468,
+        "startChar": 51,
+        "endLine": 468,
+        "endChar": 55
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c77bcb0_d614a193",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "\"architecture\" seems better here.",
+      "range": {
+        "startLine": 471,
+        "startChar": 47,
+        "endLine": 471,
+        "endChar": 55
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e180d18f_801f0a0a",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "This is an integration issue and hence can be removed.",
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f9fc554_efe97439",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "This is similar to Threat ID 06 . I think this threat can be made specific to attack from Realms.\n\nAlso remove R-EL2 from here.",
+      "range": {
+        "startLine": 543,
+        "startChar": 53,
+        "endLine": 543,
+        "endChar": 58
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06801d72_c5f6dc20",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "DF5",
+      "range": {
+        "startLine": 551,
+        "startChar": 27,
+        "endLine": 551,
+        "endChar": 31
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "576d41d8_f906259d",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "RealmCode",
+      "range": {
+        "startLine": 555,
+        "startChar": 27,
+        "endLine": 555,
+        "endChar": 77
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b79bca1_5166f074",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 557,
+        "startChar": 51,
+        "endLine": 557,
+        "endChar": 73
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc928f93_f6b293de",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "1) Ensure proper implementation of S2 table management code in RMM. It should not be possible to trigger misconfiguration of S2 tables using RMM ABI. Appropriate tests to ensure that the implementation is robust.\n\n2) The RMM specification mandates the rules for assigning memory to a Realm and IPA management. Ensure the rules mandated by the RMM specification are validated by suitable tooling.",
+      "range": {
+        "startLine": 565,
+        "startChar": 57,
+        "endLine": 565,
+        "endChar": 59
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29510c5e_5828ca3e",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "1. Partial. There are various tests like kvm-unit-tests, TFTF, TF-X and ACS to test the implementation. Unit tests of S2 tables need to be implemented. Static analysis is in place to detect issues.\n\n2. Partial. Code reviews to ensure the implementation  complies the required conditions. Automated checking via CBMC to validate the same is also being implemented.",
+      "range": {
+        "startLine": 574,
+        "startChar": 27,
+        "endLine": 574,
+        "endChar": 43
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6498a2d_f7100418",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "1. The RMM specification mandates that sensitive metadata like REC should be stored in Realm PAS. Also, the specification does not allow NSHost to manipulate REC contests via RMI once the                       associated Realm is activated. Ensure that the RMM specification guidelines are  enforced.\n\n2. Map sensitive metadata into RMM S1 tables only when manipulating the Realm/REC. Once RMM is finished manipulating the metadata, unmap it from S1 tables. Thus the time window when RMM can access the metadata is kept to a minimum thus reducing the opportunity to corrupt the metadata.",
+      "range": {
+        "startLine": 608,
+        "startChar": 29,
+        "endLine": 614,
+        "endChar": 42
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5665dc72_3c28af68",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-01T09:18:04Z",
+      "side": 1,
+      "message": "1. Yes.\n2. The slot-buffer mechanism in RMM is used to map metadata only when needed and it unmapped when the access is not required.",
+      "range": {
+        "startLine": 616,
+        "startChar": 28,
+        "endLine": 616,
+        "endChar": 33
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
