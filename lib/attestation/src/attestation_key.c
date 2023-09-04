@@ -14,7 +14,7 @@
 #include <simd.h>
 #include <sizes.h>
 
-#define ECC_P384_PUBLIC_KEY_SIZE	PSA_KEY_EXPORT_ECC_PUBLIC_KEY_MAX_SIZE(384)
+#define ECC_P384_PUBLIC_KEY_SIZE	(PSA_KEY_EXPORT_ECC_PUBLIC_KEY_MAX_SIZE(384))
 
 /*
  * The size of X and Y coordinate in 2 parameter style EC public key. Format is
@@ -46,7 +46,7 @@ static size_t realm_attest_public_key_len;
  * The hash of the realm attestation public key is included in the Platform
  * attestation token as the challenge claim.
  */
-static uint8_t realm_attest_public_key_hash[PSA_HASH_LENGTH(PSA_ALG_SHA_256)];
+static uint8_t realm_attest_public_key_hash[(PSA_HASH_LENGTH(PSA_ALG_SHA_256))];
 static size_t realm_attest_public_key_hash_len;
 
 /*
@@ -218,7 +218,7 @@ int attest_setup_platform_token(void)
 	ret = (int)rmm_el3_ifc_get_platform_token(shared_buf,
 						  rmm_el3_ifc_get_shared_buf_size(),
 						  &platform_token_len,
-						  PSA_HASH_LENGTH(PSA_ALG_SHA_256));
+						  (PSA_HASH_LENGTH((PSA_ALG_SHA_256))));
 
 	if (ret != 0) {
 		rmm_el3_ifc_release_shared_buf();
