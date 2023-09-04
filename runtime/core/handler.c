@@ -161,6 +161,8 @@ static inline bool rmi_handler_needs_fpu(unsigned long id)
 	    id == SMC_RMM_REC_CREATE || id == SMC_RMM_RTT_INIT_RIPAS) {
 		return true;
 	}
+#else
+	(void)id;
 #endif
 	return false;
 }
@@ -241,6 +243,7 @@ void handle_ns_smc(unsigned long function_id,
 		   unsigned long arg5,
 		   struct smc_result *res)
 {
+	(void)arg5;
 	unsigned long handler_id;
 	const struct smc_handler *handler = NULL;
 	bool restore_ns_simd_state = false;
@@ -353,6 +356,8 @@ static void report_unexpected(void)
 
 __dead2 unsigned long handle_realm_trap(unsigned long *regs)
 {
+	(void)regs;
+
 	report_unexpected();
 
 	while (true) {
