@@ -30,6 +30,7 @@ static const char *rmi_status_string[] = {
 	RMI_STATUS_STRING(ERROR_REC),
 	RMI_STATUS_STRING(ERROR_RTT)
 };
+
 COMPILER_ASSERT(ARRAY_LEN(rmi_status_string) == RMI_ERROR_COUNT);
 
 /*
