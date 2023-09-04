@@ -233,7 +233,7 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 	assert(level <= RTT_PAGE_LEVEL);
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
-	lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
 	addr >>= lsb;
 	addr &= (1UL << S2TTE_STRIDE) - 1UL;
@@ -258,7 +258,7 @@ static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 	assert(start_level <= RTT_PAGE_LEVEL);
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - start_level);
-	lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
 	addr &= (1UL << ipa_bits) - 1UL;
 	addr >>= lsb;
@@ -272,7 +272,7 @@ static unsigned long addr_level_mask(unsigned long addr, long level)
 	assert(level <= RTT_PAGE_LEVEL);
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
-	lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 	msb = S2TTE_OA_BITS - 1U;
 
 	return (addr & BIT_MASK_ULL(msb, lsb));
@@ -811,7 +811,7 @@ unsigned long s2tte_map_size(long level)
 	assert(level <= RTT_PAGE_LEVEL);
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
-	lsb = levels * S2TTE_STRIDE + GRANULE_SHIFT;
+	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 	return (1UL << lsb);
 }
 
@@ -1098,5 +1098,5 @@ unsigned long skip_non_live_entries(unsigned long addr,
 		}
 	}
 
-	return (addr + (i - index) * map_size);
+	return (addr + ((i - index) * map_size));
 }
