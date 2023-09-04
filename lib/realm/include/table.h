@@ -135,7 +135,7 @@ static inline unsigned int max_ipa_size(void)
 {
 	unsigned int ipa_size = arch_feat_get_pa_width();
 
-	return ipa_size > MAX_IPA_BITS ? MAX_IPA_BITS : ipa_size;
+	return (ipa_size > MAX_IPA_BITS) ? MAX_IPA_BITS : ipa_size;
 }
 
 unsigned long skip_non_live_entries(unsigned long addr,
