@@ -24,13 +24,14 @@
 
 #define RMI_STATUS_STRING(_id)[RMI_##_id] = #_id
 
-const char *rmi_status_string[] = {
+static const char *rmi_status_string[] = {
 	RMI_STATUS_STRING(SUCCESS),
 	RMI_STATUS_STRING(ERROR_INPUT),
 	RMI_STATUS_STRING(ERROR_REALM),
 	RMI_STATUS_STRING(ERROR_REC),
 	RMI_STATUS_STRING(ERROR_RTT)
 };
+
 COMPILER_ASSERT(ARRAY_LEN(rmi_status_string) == RMI_ERROR_COUNT);
 
 /*
@@ -351,7 +352,7 @@ static void report_unexpected(void)
 	INFO("----\n");
 }
 
-unsigned long handle_realm_trap(unsigned long *regs)
+static unsigned long handle_realm_trap(unsigned long *regs)
 {
 	report_unexpected();
 
@@ -389,7 +390,7 @@ extern void *ns_write;
  */
 extern void *ns_access_ret_0;
 
-struct rmm_trap_element rmm_trap_list[] = {
+static struct rmm_trap_element rmm_trap_list[] = {
 	RMM_TRAP_HANDLER(ns_read, ns_access_ret_0),
 	RMM_TRAP_HANDLER(ns_write, ns_access_ret_0),
 };
@@ -420,7 +421,7 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
  * continue from. Other register values are preserved.
  * If no match is found, it aborts the RMM.
  */
-unsigned long handle_rmm_trap(void)
+static unsigned long handle_rmm_trap(void)
 {
 	unsigned long esr = read_esr_el2();
 	unsigned long elr = read_elr_el2();
