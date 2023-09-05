@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6880ab3c_72582907",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "why is this made long ?",
+      "range": {
+        "startLine": 78,
+        "startChar": 29,
+        "endLine": 78,
+        "endChar": 34
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82453ead_c2f8de9f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "perhaps this should be int.\n\n[See if the argument is from RMI call, in that case, it should be long here. Same comments for below]",
+      "range": {
+        "startLine": 229,
+        "startChar": 56,
+        "endLine": 229,
+        "endChar": 61
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50afa63b_4cc0298b",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "level should be int in first place ?",
+      "range": {
+        "startLine": 395,
+        "startChar": 19,
+        "endLine": 395,
+        "endChar": 24
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47d5e9bd_862ec0b1",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "same comment.",
+      "range": {
+        "startLine": 807,
+        "startChar": 29,
+        "endLine": 807,
+        "endChar": 34
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b021087_89ceec0c",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "this should be unsigned int as well.",
+      "range": {
+        "startLine": 1073,
+        "startChar": 43,
+        "endLine": 1073,
+        "endChar": 48
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fc05da2_e2f1ec29",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "prefer to keep int.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 12
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e21bd6c_4845ff40",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "return a int from here.",
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94adeec6_ffbeb770",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "return 0",
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b220cb8c_f8a9fc4e",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "same comments as above.",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 13
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10934c85_4f02c3a4",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "This seems to have been a bug.",
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9260aee_db5cd2c8",
+        "filename": "runtime/core/vmid.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T18:08:40Z",
+      "side": 1,
+      "message": "Declare this macro as U ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
