@@ -1,0 +1,7 @@
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 05 Sep 2023 18:52:55 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/22845
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/topics/rmm-eac2
