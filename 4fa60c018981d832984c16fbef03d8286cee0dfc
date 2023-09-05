@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "895f5a49_95f5eeca",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "Add a statement here\n\"\n- RME hardware threats and threats covered by the RMM ABI will be covered in a dedicated Security Risk Analysis document (to be published in future). Although there is some overlap with threats mitigated by RME hardware and RMM ABI, this threat model focuses to cover threats specific to the RMM implementation and associated data flows.\n\"",
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd2725c7_4d8d4806",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "replace with \"Realm\"",
+      "range": {
+        "startLine": 309,
+        "startChar": 32,
+        "endLine": 309,
+        "endChar": 43
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd92b49_18bfac5e",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "nit: this should be \"1)\"",
+      "range": {
+        "startLine": 360,
+        "startChar": 29,
+        "endLine": 360,
+        "endChar": 30
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0242d5_0b036a34",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "1) Yes.\n2) Yes.\n\nThe ...",
+      "range": {
+        "startLine": 552,
+        "startChar": 29,
+        "endLine": 552,
+        "endChar": 59
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "200d725e_31e86001",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "could add some actions:\n\n\"Increase testing coverage of S2 table management code in RMM. Integrate CBMC into RMM testing.\"",
+      "range": {
+        "startLine": 612,
+        "startChar": 27,
+        "endLine": 612,
+        "endChar": 31
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d79eeee0_0cf9f071",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T08:01:14Z",
+      "side": 1,
+      "message": "\"...it is unmapped...\"",
+      "range": {
+        "startLine": 657,
+        "startChar": 69,
+        "endLine": 657,
+        "endChar": 77
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
