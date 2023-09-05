@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "615cb38a_7e5cc0be",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T10:09:02Z",
+      "side": 1,
+      "message": "is it better to fixup this macro ?",
+      "range": {
+        "startLine": 861,
+        "startChar": 8,
+        "endLine": 861,
+        "endChar": 18
+      },
+      "revId": "2f1a4bdf3eb0cdbb866dd327b3fea2f53b9f362d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
