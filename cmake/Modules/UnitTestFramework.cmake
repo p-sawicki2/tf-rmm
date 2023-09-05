@@ -68,8 +68,13 @@ if(RMM_UNITTESTS)
     add_custom_target(run-unittests
         WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
         COMMAND ctest "${CMAKE_CTEST_ARGUMENTS}" -C "$<CONFIG>"
-        DEPENDS rmm.elf rmm.map
-    )
+        DEPENDS build_deps)
+
+    # Needed to build the targets, as we cannot just add rmm.elf and rmm.map
+    # to the list of dependencies for the test coverage targets.
+    add_custom_target(build_deps
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
+        DEPENDS rmm.elf rmm.map)
 endif()
 
 function(rmm_build_unittest)
@@ -137,5 +142,19 @@ function(rmm_build_unittest)
         configure_file(${CMAKE_SOURCE_DIR}/plat/host/host_test/src/test_groups.h.in
                        ${CMAKE_BINARY_DIR}/plat/host/host_test/src/test_groups.h
                        @ONLY)
+
+        # For every unittest, add a coverage specific target.
+        if(RMM_COVERAGE)
+            set(TEST_COVERAGE "run-${arg_NAME}-coverage")
+
+            add_custom_target(${TEST_COVERAGE}
+                    COMMAND ${CMAKE_BINARY_DIR}/$<CONFIG>/rmm.elf
+                            -g${arg_NAME}
+                            -r${arg_ITERATIONS}
+                    COMMAND ${CMAKE_COMMAND}
+                            --build ${CMAKE_BINARY_DIR}
+                            -- run-dev-coverage
+                    DEPENDS build_deps)
+        endif()
     endif()
 endfunction()

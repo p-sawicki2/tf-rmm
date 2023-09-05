@@ -164,20 +164,28 @@ Run checkincludes on entire codebase:
 
 14. Perform unit tests on development host:
 
-Build and run unit tests on host platform. It is recommended to do the Debug
-build of RMM.
-
-.. code-block:: bash
-
-    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
-    cmake --build ${RMM_BUILD_DIR} -- run-unittests
-
-Run coverage analysis on unit tests.
+Run coverage analysis on the whole set of unittests.
 
 .. code-block:: bash
 
     cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DRMM_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
     cmake --build ${RMM_BUILD_DIR} -- run-coverage
+
+Run coverage analysis on a specific set of unittests (e.g. unittests whose group starts with 'xlat')
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DRMM_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- build -j
+    ${RMM_BUILD_DIR}/Debug/rmm.elf -gxlat
+    cmake --build ${RMM_BUILD_DIR} -- run-dev-coverage
+
+Run coverage analysis on a specific set of unittests (e.g. xlat_tests_LPA2 group)
+
+.. code-block:: bash
+
+    cmake -DRMM_CONFIG=host_defcfg -DHOST_VARIANT=host_test -DRMM_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug -S ${RMM_SOURCE_DIR} -B ${RMM_BUILD_DIR}
+    cmake --build ${RMM_BUILD_DIR} -- run-xlat_tests_LPA2-coverage
 
 The above commands will automatically generate the HTML coverage report in folder
 `build/Debug/coverage` within build directory. The HTML generation can be

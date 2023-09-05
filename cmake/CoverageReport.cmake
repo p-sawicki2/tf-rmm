@@ -132,7 +132,7 @@ if(RMM_COVERAGE)
   #
   # Rules for coverage report generation
   #
-  add_custom_target(run-coverage
+  add_custom_target(run-dev-coverage
                     COMMAND ${CMAKE_COMMAND} -E make_directory "${COVERAGE_DIRECTORY}"
                     COMMAND ${GCOVR_EXECUTABLE}
                             ${GCOVR_EXE_OPTION}
@@ -141,11 +141,14 @@ if(RMM_COVERAGE)
                             -x ${COVERAGE_OUTPUT}.xml
                             ${HTML_REPORT}
                             ${CMAKE_BINARY_DIR})
+
+  add_custom_target(run-coverage)
+
   #
   # Add dependency on unit test target if being invoked in a
   # multi-target build command line.
   #
   if(RMM_UNITTESTS)
-    add_dependencies(run-coverage run-unittests)
+    add_dependencies(run-coverage run-unittests run-dev-coverage)
   endif()
 endif() # RMM_COVERAGE
