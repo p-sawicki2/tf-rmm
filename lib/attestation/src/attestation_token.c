@@ -242,7 +242,7 @@ int attest_realm_token_create(enum hash_algo algorithm,
 			     unsigned int num_measurements,
 			     const void *rpv_buf,
 			     size_t rpv_len,
-			     struct token_sign_ctx *ctx,
+			     struct token_sign_cntxt *ctx,
 			     void *realm_token_buf,
 			     size_t realm_token_buf_size)
 {
