@@ -66,8 +66,8 @@ typedef void (*handler_4_o)(unsigned long arg0, unsigned long arg1,
  * [0:7]  - number of arguments
  * [8:15] - number of output values
  */
-#define RMI_TYPE(_in, _out)	(_in | (_out << 8))
-#define rmi_type(_in, _out)	rmi_type_##_in##_out = RMI_TYPE(_in, _out)
+#define SET_RMI_TYPE(_in, _out)	(_in | (_out << 8))
+#define rmi_type(_in, _out)	rmi_type_##_in##_out = SET_RMI_TYPE(_in, _out)
 
 enum rmi_type {
 	rmi_type(0, 0),	/* 0 arguments, 0 output values */
@@ -114,7 +114,7 @@ struct smc_handler {
 
 #define HANDLER(_id, _in, _out, _fn, _exec, _error)[RMI_HANDLER_ID(SMC_RMM_##_id)] = { \
 	.fn_name = #_id,		\
-	.type = RMI_TYPE(_in, _out),	\
+	.type = SET_RMI_TYPE(_in, _out),\
 	.f_##_in##_out = _fn,		\
 	.log_exec = _exec,		\
 	.log_error = _error		\
