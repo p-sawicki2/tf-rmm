@@ -179,7 +179,7 @@ struct rec {
 		struct granule *g_rd;
 		bool pmu_enabled;
 		unsigned int pmu_num_ctrs;
-		enum hash_algo hash_algo;
+		enum hash_algo algorithm;
 		bool sve_enabled;
 		uint8_t sve_vq;
 	} realm_info;
