@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11321384_246ef721",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T14:08:35Z",
+      "side": 1,
+      "message": "Not needed for this fix but something to cater for in SIMD refactor.",
+      "revId": "7219ca979f12d4d6d95a52172a550c02ce16bd5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ceb7683_f4cb5e12",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T14:08:35Z",
+      "side": 1,
+      "message": "we could make this an unsigned int variable and have 0xFFFF as the init value.",
+      "range": {
+        "startLine": 202,
+        "startChar": 22,
+        "endLine": 202,
+        "endChar": 34
+      },
+      "revId": "7219ca979f12d4d6d95a52172a550c02ce16bd5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7c3421c_59c93d0b",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T14:08:35Z",
+      "side": 1,
+      "message": "could make this field unsigned int.",
+      "range": {
+        "startLine": 266,
+        "startChar": 31,
+        "endLine": 266,
+        "endChar": 34
+      },
+      "revId": "7219ca979f12d4d6d95a52172a550c02ce16bd5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
