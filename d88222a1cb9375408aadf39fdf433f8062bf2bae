@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87707469_79473a2c",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-05T15:05:31Z",
+      "side": 1,
+      "message": "this argument can be `int`\n\nSimilar comments for below.",
+      "range": {
+        "startLine": 229,
+        "startChar": 61,
+        "endLine": 229,
+        "endChar": 66
+      },
+      "revId": "d88222a1cb9375408aadf39fdf433f8062bf2bae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
