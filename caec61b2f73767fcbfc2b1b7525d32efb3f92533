@@ -389,6 +389,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd5689b8_a4df12e2",
+        "filename": "docs/threat_model/threat_assessment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Ack. Done",
+      "parentUuid": "5db95571_4507e2f9",
+      "range": {
+        "startLine": 280,
+        "startChar": 27,
+        "endLine": 280,
+        "endChar": 28
+      },
+      "revId": "caec61b2f73767fcbfc2b1b7525d32efb3f92533",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "839eab32_339fb7fa",

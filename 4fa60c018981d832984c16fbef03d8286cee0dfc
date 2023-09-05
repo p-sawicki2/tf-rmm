@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99bec0d3_b169a8dd",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "895f5a49_95f5eeca",
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd2725c7_4d8d4806",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-09-05T08:01:14Z",
       "side": 1,
       "message": "replace with \"Realm\"",
+      "range": {
+        "startLine": 309,
+        "startChar": 32,
+        "endLine": 309,
+        "endChar": 43
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a4f7ecb_be82bf80",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd2725c7_4d8d4806",
       "range": {
         "startLine": 309,
         "startChar": 32,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dd3dfef_591c8008",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5dd92b49_18bfac5e",
+      "range": {
+        "startLine": 360,
+        "startChar": 29,
+        "endLine": 360,
+        "endChar": 30
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db0242d5_0b036a34",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-09-05T08:01:14Z",
       "side": 1,
       "message": "1) Yes.\n2) Yes.\n\nThe ...",
+      "range": {
+        "startLine": 552,
+        "startChar": 29,
+        "endLine": 552,
+        "endChar": 59
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e84d7c8c_149ace76",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db0242d5_0b036a34",
       "range": {
         "startLine": 552,
         "startChar": 29,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "230a8d09_faf86948",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Ohh yes, I even mentioned that mitigations are partially implemented.\nDone",
+      "parentUuid": "200d725e_31e86001",
+      "range": {
+        "startLine": 612,
+        "startChar": 27,
+        "endLine": 612,
+        "endChar": 31
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d79eeee0_0cf9f071",
@@ -123,6 +237,30 @@
       "writtenOn": "2023-09-05T08:01:14Z",
       "side": 1,
       "message": "\"...it is unmapped...\"",
+      "range": {
+        "startLine": 657,
+        "startChar": 69,
+        "endLine": 657,
+        "endChar": 77
+      },
+      "revId": "4fa60c018981d832984c16fbef03d8286cee0dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0bb01a2_6530035d",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-05T13:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d79eeee0_0cf9f071",
       "range": {
         "startLine": 657,
         "startChar": 69,
