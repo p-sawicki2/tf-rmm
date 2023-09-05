@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a68e6ee0_939ef867",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "Some initial comments about the DFD. I am still to go through the other files...",
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8355b29d_393bb0a2",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "(minor) I thought RMM standed for \"Realm Management Monitor\" (not \"Manager\")...?",
+      "range": {
+        "startLine": 13,
+        "startChar": 54,
+        "endLine": 13,
+        "endChar": 75
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "825415e2_da1e268c",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "This sentence made me wonder... Did we mean \"on-chip DRAM\" above at line 21? Or are lines 23-24 just acknowledging the additional threats that come if vendors choose the off-chip DRAM option (which is a valid option from this threat model perspective)?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 77
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54981220_6cad94d1",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "Perhaps we should explain a bit about why we choose to put these components inside RMM trust boundary, e.g. the EL3 firmware must be trusted by RMM, as it provides some security foundations for RMM functionality.",
+      "range": {
+        "startLine": 42,
+        "startChar": 37,
+        "endLine": 44,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "865b11f3_d285c85c",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "(minor) typo",
+      "range": {
+        "startLine": 54,
+        "startChar": 24,
+        "endLine": 54,
+        "endChar": 34
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5465837_fb99d97d",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "This sounds like unnecessary implementation details to me. From a data-flow perspective, this just seems to repeat lines 53-55...",
+      "range": {
+        "startLine": 56,
+        "startChar": 21,
+        "endLine": 59,
+        "endChar": 65
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47b198ea_e87b1a7a",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "Then perhaps there should not be any data flow associated with it? This information might be better placed in the \"Target of Evaluation\" section IMO.\n\nSame comment for DF1. I assume RMM trusts the parameters and boot manifest passed by EL3 firmware?",
+      "range": {
+        "startLine": 68,
+        "startChar": 57,
+        "endLine": 70,
+        "endChar": 68
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00405145_07f20386",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 73,
+        "startChar": 50,
+        "endLine": 73,
+        "endChar": 54
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c93523c_ec1f4266",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "The diagram talks about RRAM but this paragraph does not explain what this stands for (I assume it\u0027s realm RAM?).",
+      "range": {
+        "startLine": 76,
+        "startChar": 24,
+        "endLine": 78,
+        "endChar": 73
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41bafcfe_c8d5a6d0",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 80,
+        "startChar": 29,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "582321ec_60eaf059",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-05T14:27:11Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 83,
+        "startChar": 29,
+        "endLine": 83,
+        "endChar": 37
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
