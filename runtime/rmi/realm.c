@@ -248,7 +248,7 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 	 * later.
 	 */
 
-	switch (p->hash_algo) {
+	switch (p->algorithm) {
 	case RMI_HASH_SHA_256:
 	case RMI_HASH_SHA_512:
 		break;
@@ -271,7 +271,7 @@ static void realm_params_measure(struct rd *rd,
 	struct rmi_realm_params *realm_params_measured =
 		(struct rmi_realm_params *)&buffer[0];
 
-	realm_params_measured->hash_algo = realm_params->hash_algo;
+	realm_params_measured->algorithm = realm_params->algorithm;
 	/* TODO: Add later */
 	/* realm_params_measured->features_0 = realm_params->features_0; */
 
@@ -408,7 +408,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 		rd->sve_vq = (uint8_t)p.sve_vl;
 	}
 
-	if (p.hash_algo == RMI_HASH_SHA_256) {
+	if (p.algorithm == RMI_HASH_SHA_256) {
 		rd->algorithm = HASH_SHA_256;
 	} else {
 		rd->algorithm = HASH_SHA_512;
