@@ -22,6 +22,30 @@
       },
       "revId": "2f1a4bdf3eb0cdbb866dd327b3fea2f53b9f362d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91041b99_edceaafc",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-05T11:45:29Z",
+      "side": 1,
+      "message": "Are you suggesting to use UL(opN)?",
+      "parentUuid": "615cb38a_7e5cc0be",
+      "range": {
+        "startLine": 861,
+        "startChar": 8,
+        "endLine": 861,
+        "endChar": 18
+      },
+      "revId": "2f1a4bdf3eb0cdbb866dd327b3fea2f53b9f362d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
