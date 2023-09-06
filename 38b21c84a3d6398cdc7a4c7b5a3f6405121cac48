@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c877a0e_34862822",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "The arg is from NS",
+      "parentUuid": "6880ab3c_72582907",
+      "range": {
+        "startLine": 78,
+        "startChar": 29,
+        "endLine": 78,
+        "endChar": 34
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82453ead_c2f8de9f",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-05T18:08:40Z",
       "side": 1,
       "message": "perhaps this should be int.\n\n[See if the argument is from RMI call, in that case, it should be long here. Same comments for below]",
+      "range": {
+        "startLine": 229,
+        "startChar": 56,
+        "endLine": 229,
+        "endChar": 61
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "535107cd_acf2d35f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "The parameter is from RMI",
+      "parentUuid": "82453ead_c2f8de9f",
       "range": {
         "startLine": 229,
         "startChar": 56,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cf702ca_c5d14a41",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "The level is from RMI",
+      "parentUuid": "50afa63b_4cc0298b",
+      "range": {
+        "startLine": 395,
+        "startChar": 19,
+        "endLine": 395,
+        "endChar": 24
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47d5e9bd_862ec0b1",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72fd9989_a6c56a9f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "47d5e9bd_862ec0b1",
+      "range": {
+        "startLine": 807,
+        "startChar": 29,
+        "endLine": 807,
+        "endChar": 34
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b021087_89ceec0c",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-09-05T18:08:40Z",
       "side": 1,
       "message": "this should be unsigned int as well.",
+      "range": {
+        "startLine": 1073,
+        "startChar": 43,
+        "endLine": 1073,
+        "endChar": 48
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e1a3fa9_c9fe7d24",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "No change needed",
+      "parentUuid": "5b021087_89ceec0c",
       "range": {
         "startLine": 1073,
         "startChar": 43,
@@ -315,6 +435,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0998fea_fdcf37ac",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "Ah the definition is also changed. OK",
+      "parentUuid": "e8436be5_c46db640",
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9260aee_db5cd2c8",
@@ -376,6 +514,30 @@
       "side": 1,
       "message": "changed to #define BITS_PER_UL\t(unsigned int)(8 * sizeof(unsigned long))",
       "parentUuid": "c4fa36a7_ce91ba2c",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "38b21c84a3d6398cdc7a4c7b5a3f6405121cac48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8509c980_658eed00",
+        "filename": "runtime/core/vmid.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-06T12:57:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ceb823a2_e63b273c",
       "range": {
         "startLine": 44,
         "startChar": 31,
