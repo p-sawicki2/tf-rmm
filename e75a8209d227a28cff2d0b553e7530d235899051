@@ -246,6 +246,259 @@
       },
       "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b389ab91_97131f67",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 36,
+        "startChar": 52,
+        "endLine": 36,
+        "endChar": 59
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d076acf_2e275855",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "\"should be\" is repeated twice here.",
+      "range": {
+        "startLine": 44,
+        "startChar": 59,
+        "endLine": 44,
+        "endChar": 69
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec8d0132_638feef9",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "\"Threat Agents\" rather?",
+      "range": {
+        "startLine": 78,
+        "startChar": 26,
+        "endLine": 78,
+        "endChar": 33
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d37479e3_50e996a4",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "not",
+      "range": {
+        "startLine": 81,
+        "startChar": 34,
+        "endLine": 81,
+        "endChar": 36
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ecd4246_ba82eba3",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "In TF-A threat model, threats which must be partly mitigated by platform code are more clearly identified in the \"Mitigations Implemented\" box. They indicate \"Yes / Platform-specific\", see threat #2 for example. The goal is to help platform integrators spotting the threats they are responsible for mitigating.\n\nI didn\u0027t see this in RMM threat model. The text does state the platform\u0027s responsibilities but this isn\u0027t summarized at the top. Perhaps something to improve?",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f14f0a40_f4b8c520",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "accesses?",
+      "range": {
+        "startLine": 96,
+        "startChar": 37,
+        "endLine": 96,
+        "endChar": 43
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1bd60b1_77a09327",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 175,
+        "startChar": 36,
+        "endLine": 175,
+        "endChar": 43
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df9226ab_401c0539",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 512,
+        "startChar": 48,
+        "endLine": 512,
+        "endChar": 54
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11fe36d2_c4b21e07",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "This threat confuses me because the threat assessment previously stated that root code was considered as trusted (part of the TCB) and that threats associated with it would be out of scope. But threat 10 contradicts that...",
+      "range": {
+        "startLine": 524,
+        "startChar": 1,
+        "endLine": 524,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6389dbb2_1e8d1eb0",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "These 2 paragraphs sound redundant to me. How about aggregating them, like that for example:\n\n\"Misconfiguration of the S2 MMU tables may allow Realms to access sensitive data belonging to other Realms or even NS Host memory.\"",
+      "range": {
+        "startLine": 568,
+        "startChar": 29,
+        "endLine": 574,
+        "endChar": 52
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4715ff2a_c1345424",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-06T08:11:31Z",
+      "side": 1,
+      "message": "Would Realms also be able to exploit this?",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 42
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
