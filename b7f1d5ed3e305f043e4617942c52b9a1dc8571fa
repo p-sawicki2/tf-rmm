@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecae50ed_54cab6c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-06T13:57:45Z",
+      "side": 1,
+      "message": "Thanks for the review.\n\nThe refactoring to move the high VA init to its own lib/component is still to be done.",
+      "revId": "b7f1d5ed3e305f043e4617942c52b9a1dc8571fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
