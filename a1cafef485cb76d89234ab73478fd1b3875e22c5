@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49617152_7beefcef",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T13:57:43Z",
+      "side": 1,
+      "message": "this can be UL ?",
+      "range": {
+        "startLine": 185,
+        "startChar": 1,
+        "endLine": 185,
+        "endChar": 6
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9fb9d4c_47e259f5",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T13:57:43Z",
+      "side": 1,
+      "message": "this may not be needed anymore.",
+      "range": {
+        "startLine": 322,
+        "startChar": 21,
+        "endLine": 322,
+        "endChar": 35
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40443f39_554fd818",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T13:57:43Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f99540f6_ad8991f0",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T13:57:43Z",
+      "side": 1,
+      "message": "can be removed.\n\nSame comment for below lines.",
+      "range": {
+        "startLine": 141,
+        "startChar": 20,
+        "endLine": 141,
+        "endChar": 25
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99c29853_aefb55c2",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T13:57:43Z",
+      "side": 1,
+      "message": "Is this change in loop necessary ?",
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
