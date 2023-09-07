@@ -118,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "390b1839_60699ac4",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T14:19:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40443f39_554fd818",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f99540f6_ad8991f0",
@@ -131,6 +155,30 @@
       "writtenOn": "2023-09-07T13:57:43Z",
       "side": 1,
       "message": "can be removed.\n\nSame comment for below lines.",
+      "range": {
+        "startLine": 141,
+        "startChar": 20,
+        "endLine": 141,
+        "endChar": 25
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5646c211_afdce7d5",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T14:19:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f99540f6_ad8991f0",
       "range": {
         "startLine": 141,
         "startChar": 20,
