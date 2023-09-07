@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "83b63e26_fe7f8f3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Thanks for the comments, Sandrine. I addressed most of them, left a couple of them open for more discussion. \n\nI also updated my ratings for the threats, which are also open for discussion",
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8355b29d_393bb0a2",
@@ -31,6 +48,30 @@
       "writtenOn": "2023-09-05T14:27:11Z",
       "side": 1,
       "message": "(minor) I thought RMM standed for \"Realm Management Monitor\" (not \"Manager\")...?",
+      "range": {
+        "startLine": 13,
+        "startChar": 54,
+        "endLine": 13,
+        "endChar": 75
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cdd593f_1fcef79c",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Yes, it is \"Management\", that\u0027s a typo.",
+      "parentUuid": "8355b29d_393bb0a2",
       "range": {
         "startLine": 13,
         "startChar": 54,
@@ -64,6 +105,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93a59a7f_63beddf6",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Lines 23-24 acknowledge the additional threats coming from using off-chip DRAM.\n\nI think this needs some rephrasing, though, as it can be confusing, now that you brought it up.",
+      "parentUuid": "825415e2_da1e268c",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 77
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54981220_6cad94d1",
@@ -77,6 +142,30 @@
       "writtenOn": "2023-09-05T14:27:11Z",
       "side": 1,
       "message": "Perhaps we should explain a bit about why we choose to put these components inside RMM trust boundary, e.g. the EL3 firmware must be trusted by RMM, as it provides some security foundations for RMM functionality.",
+      "range": {
+        "startLine": 42,
+        "startChar": 37,
+        "endLine": 44,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a3400fa_8b1f6e40",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54981220_6cad94d1",
       "range": {
         "startLine": 42,
         "startChar": 37,
@@ -110,6 +199,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c69123b_63ee6ce4",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "865b11f3_d285c85c",
+      "range": {
+        "startLine": 54,
+        "startChar": 24,
+        "endLine": 54,
+        "endChar": 34
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5465837_fb99d97d",
@@ -123,6 +236,30 @@
       "writtenOn": "2023-09-05T14:27:11Z",
       "side": 1,
       "message": "This sounds like unnecessary implementation details to me. From a data-flow perspective, this just seems to repeat lines 53-55...",
+      "range": {
+        "startLine": 56,
+        "startChar": 21,
+        "endLine": 59,
+        "endChar": 65
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "307ae975_ee2296d9",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5465837_fb99d97d",
       "range": {
         "startLine": 56,
         "startChar": 21,
@@ -158,6 +295,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bdab19ef_1ae17c41",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "There was actually a lot of discussion about whether or not to include DF1 and DF4 on the threat model and I could really use more points of view on this (especially from people more experienced than me in security aspects :)).\n\nIn my opinion, even though we trust EL3 Firmware, if it were compromised it would also compromise the whole system and Realm Wold in particular. So even though RMM might not be able to do anything about that, I feel like we should at least add that possible threat to the threat model for awareness.\n\nIn addition to that, the platform implementer is responsible for the implementation of the platform part of the Boot Interface, which is modeled through DF1 so I feel this also should be included in the TM.\n\nThoughts?",
+      "parentUuid": "47b198ea_e87b1a7a",
+      "range": {
+        "startLine": 68,
+        "startChar": 57,
+        "endLine": 70,
+        "endChar": 68
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00405145_07f20386",
         "filename": "docs/security/threat_model/dfd.rst",
         "patchSetId": 11
@@ -169,6 +330,30 @@
       "writtenOn": "2023-09-05T14:27:11Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 73,
+        "startChar": 50,
+        "endLine": 73,
+        "endChar": 54
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb903139_d2baf7e0",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00405145_07f20386",
       "range": {
         "startLine": 73,
         "startChar": 50,
@@ -202,6 +387,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9f794af_06bd01ad",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "It stands for the large data structures that are stored in off-chip DRAM. I will rephrase it to make it less misleading.",
+      "parentUuid": "9c93523c_ec1f4266",
+      "range": {
+        "startLine": 76,
+        "startChar": 24,
+        "endLine": 78,
+        "endChar": 73
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41bafcfe_c8d5a6d0",
@@ -215,6 +424,30 @@
       "writtenOn": "2023-09-05T14:27:11Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 80,
+        "startChar": 29,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4353433f_1ee78cc5",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41bafcfe_c8d5a6d0",
       "range": {
         "startLine": 80,
         "startChar": 29,
@@ -248,6 +481,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc94ea5c_6e87f3b2",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "582321ec_60eaf059",
+      "range": {
+        "startLine": 83,
+        "startChar": 29,
+        "endLine": 83,
+        "endChar": 37
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b389ab91_97131f67",
@@ -261,6 +518,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 36,
+        "startChar": 52,
+        "endLine": 36,
+        "endChar": 59
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41cf2587_0556c8b2",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b389ab91_97131f67",
       "range": {
         "startLine": 36,
         "startChar": 52,
@@ -294,6 +575,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f6c348_d12c44c3",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d076acf_2e275855",
+      "range": {
+        "startLine": 44,
+        "startChar": 59,
+        "endLine": 44,
+        "endChar": 69
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec8d0132_638feef9",
@@ -307,6 +612,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "\"Threat Agents\" rather?",
+      "range": {
+        "startLine": 78,
+        "startChar": 26,
+        "endLine": 78,
+        "endChar": 33
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aee1e8cf_0f7083b1",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec8d0132_638feef9",
       "range": {
         "startLine": 78,
         "startChar": 26,
@@ -340,6 +669,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c8c567e_134c079a",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d37479e3_50e996a4",
+      "range": {
+        "startLine": 81,
+        "startChar": 34,
+        "endLine": 81,
+        "endChar": 36
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ecd4246_ba82eba3",
@@ -353,6 +706,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "In TF-A threat model, threats which must be partly mitigated by platform code are more clearly identified in the \"Mitigations Implemented\" box. They indicate \"Yes / Platform-specific\", see threat #2 for example. The goal is to help platform integrators spotting the threats they are responsible for mitigating.\n\nI didn\u0027t see this in RMM threat model. The text does state the platform\u0027s responsibilities but this isn\u0027t summarized at the top. Perhaps something to improve?",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2fc8f3a_44f9a761",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Actually we had the same approach in previous versions of the patch but after some discussions that was removed (I don\u0027t remember the exact reason, though). I will reintroduce it as you made a very good point for them to stay.",
+      "parentUuid": "2ecd4246_ba82eba3",
       "range": {
         "startLine": 13,
         "startChar": 9,
@@ -386,6 +763,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5393414e_ca59d684",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f14f0a40_f4b8c520",
+      "range": {
+        "startLine": 96,
+        "startChar": 37,
+        "endLine": 96,
+        "endChar": 43
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1bd60b1_77a09327",
@@ -409,6 +810,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f6d7d8_2767bbd0",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1bd60b1_77a09327",
+      "range": {
+        "startLine": 175,
+        "startChar": 36,
+        "endLine": 175,
+        "endChar": 43
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df9226ab_401c0539",
@@ -422,6 +847,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 512,
+        "startChar": 48,
+        "endLine": 512,
+        "endChar": 54
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9892e4b4_74876c9b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df9226ab_401c0539",
       "range": {
         "startLine": 512,
         "startChar": 48,
@@ -457,6 +906,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ef85660e_c08c3e94",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Yes, see my previous comment on dfd.rst about this. If we decide to keep this for informational purposes, I can rephrase the previous statement to indicate it.",
+      "parentUuid": "11fe36d2_c4b21e07",
+      "range": {
+        "startLine": 524,
+        "startChar": 1,
+        "endLine": 524,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6389dbb2_1e8d1eb0",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 11
@@ -468,6 +941,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "These 2 paragraphs sound redundant to me. How about aggregating them, like that for example:\n\n\"Misconfiguration of the S2 MMU tables may allow Realms to access sensitive data belonging to other Realms or even NS Host memory.\"",
+      "range": {
+        "startLine": 568,
+        "startChar": 29,
+        "endLine": 574,
+        "endChar": 52
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7c8c51f_eea2891c",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "Yes, that actually sounds better. Thanks",
+      "parentUuid": "6389dbb2_1e8d1eb0",
       "range": {
         "startLine": 568,
         "startChar": 29,
@@ -491,6 +988,30 @@
       "writtenOn": "2023-09-06T08:11:31Z",
       "side": 1,
       "message": "Would Realms also be able to exploit this?",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 42
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78acf0b5_5e76a89b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-07T14:26:30Z",
+      "side": 1,
+      "message": "That\u0027s actually a good question. I will double check.",
+      "parentUuid": "4715ff2a_c1345424",
       "range": {
         "startLine": 676,
         "startChar": 27,
