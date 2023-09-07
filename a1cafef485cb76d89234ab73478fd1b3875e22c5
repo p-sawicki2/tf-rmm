@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "769ff888_b319fb8b",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T14:18:13Z",
+      "side": 1,
+      "message": "OK, keep it this way",
+      "parentUuid": "c3e5ed5c_525194ae",
+      "range": {
+        "startLine": 185,
+        "startChar": 1,
+        "endLine": 185,
+        "endChar": 6
+      },
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f9fb9d4c_47e259f5",
         "filename": "lib/xlat/src/xlat_tables_utils.c",
         "patchSetId": 15
@@ -148,6 +172,24 @@
       "side": 1,
       "message": "Yes. because i is unsigned now.",
       "parentUuid": "99c29853_aefb55c2",
+      "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9993ad4_9021dc1d",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T14:18:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "080ef08a_8d46fa72",
       "revId": "a1cafef485cb76d89234ab73478fd1b3875e22c5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
