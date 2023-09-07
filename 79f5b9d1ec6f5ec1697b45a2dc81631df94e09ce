@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b3bcaf6_0b9d3024",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "This is unrelated to MISRA , would prefer to not change. Similar comments to below change.",
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5084d5fc_a28c3f32",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "nit: replace white space with tabs.",
+      "range": {
+        "startLine": 188,
+        "startChar": 27,
+        "endLine": 188,
+        "endChar": 29
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d597abfc_91cf2943",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "level can be -1 and it needs to stay as -1.\n\nThis should perhaps be :\n~((unsigned long)(XLAT_BLOCK_MASK(level))) or change the XLAT_ADDR_SHIFT to return U.",
+      "range": {
+        "startLine": 71,
+        "startChar": 36,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b4c46e7_68ffb302",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 46
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cde4123f_2d01f311",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "maybe XLAT_TABLE_LEVEL_MAX needs to be signed int.",
+      "range": {
+        "startLine": 128,
+        "startChar": 18,
+        "endLine": 128,
+        "endChar": 38
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89a94604_e03e3d97",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "can change this macro to give output as U",
+      "range": {
+        "startLine": 322,
+        "startChar": 35,
+        "endLine": 322,
+        "endChar": 49
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f89f983_b5456ec4",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "this macro is already signed int",
+      "range": {
+        "startLine": 509,
+        "startChar": 27,
+        "endLine": 509,
+        "endChar": 47
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d8e7251_61c78d24",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "make this unsigned int.",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95190ba0_7f98d688",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "this can be unsigned int",
+      "range": {
+        "startLine": 145,
+        "startChar": 1,
+        "endLine": 145,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49416843_fd77dc25",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-07T10:13:50Z",
+      "side": 1,
+      "message": "unsigned int.",
+      "range": {
+        "startLine": 305,
+        "startChar": 1,
+        "endLine": 305,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
