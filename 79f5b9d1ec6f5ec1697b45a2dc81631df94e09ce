@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4557c2b8_e6f1805f",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Rule 10.4 violation reported. Added cast to bool.",
+      "parentUuid": "0b3bcaf6_0b9d3024",
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5084d5fc_a28c3f32",
         "filename": "lib/smc/include/smc-rmi.h",
         "patchSetId": 10
@@ -31,6 +49,30 @@
       "writtenOn": "2023-09-07T10:13:50Z",
       "side": 1,
       "message": "nit: replace white space with tabs.",
+      "range": {
+        "startLine": 188,
+        "startChar": 27,
+        "endLine": 188,
+        "endChar": 29
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "622160a8_c47e6e5f",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5084d5fc_a28c3f32",
       "range": {
         "startLine": 188,
         "startChar": 27,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "651cf4af_28cf7faa",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d597abfc_91cf2943",
+      "range": {
+        "startLine": 71,
+        "startChar": 36,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b4c46e7_68ffb302",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-09-07T10:13:50Z",
       "side": 1,
       "message": "same comment as above.",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 46
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84a3589f_86507ba9",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4b4c46e7_68ffb302",
       "range": {
         "startLine": 152,
         "startChar": 4,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6199337f_7cd8eb6a",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cde4123f_2d01f311",
+      "range": {
+        "startLine": 128,
+        "startChar": 18,
+        "endLine": 128,
+        "endChar": 38
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89a94604_e03e3d97",
@@ -123,6 +237,30 @@
       "writtenOn": "2023-09-07T10:13:50Z",
       "side": 1,
       "message": "can change this macro to give output as U",
+      "range": {
+        "startLine": 322,
+        "startChar": 35,
+        "endLine": 322,
+        "endChar": 49
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cd40ab9_93460b9d",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "89a94604_e03e3d97",
       "range": {
         "startLine": 322,
         "startChar": 35,
@@ -156,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d4f883b_ea3227bd",
+        "filename": "lib/xlat/src/xlat_tables_utils.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4f89f983_b5456ec4",
+      "range": {
+        "startLine": 509,
+        "startChar": 27,
+        "endLine": 509,
+        "endChar": 47
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d8e7251_61c78d24",
@@ -169,6 +331,30 @@
       "writtenOn": "2023-09-07T10:13:50Z",
       "side": 1,
       "message": "make this unsigned int.",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c390c8b8_11684afd",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d8e7251_61c78d24",
       "range": {
         "startLine": 75,
         "startChar": 1,
@@ -202,6 +388,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef5a9011_89043125",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95190ba0_7f98d688",
+      "range": {
+        "startLine": 145,
+        "startChar": 1,
+        "endLine": 145,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49416843_fd77dc25",
@@ -215,6 +425,30 @@
       "writtenOn": "2023-09-07T10:13:50Z",
       "side": 1,
       "message": "unsigned int.",
+      "range": {
+        "startLine": 305,
+        "startChar": 1,
+        "endLine": 305,
+        "endChar": 5
+      },
+      "revId": "79f5b9d1ec6f5ec1697b45a2dc81631df94e09ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d08ad877_ef602f5e",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-07T12:04:29Z",
+      "side": 1,
+      "message": "There is check for \"i \u003e\u003d 0\" on line #342 when \"i \u003d i - 1\"\nI\u0027ll change it to:\nwhile (i-- !\u003d 0U) {\n    granule_unlock(g_rtt_base + i);\n}",
+      "parentUuid": "49416843_fd77dc25",
       "range": {
         "startLine": 305,
         "startChar": 1,
