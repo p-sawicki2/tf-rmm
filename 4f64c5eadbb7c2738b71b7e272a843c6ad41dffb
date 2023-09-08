@@ -143,6 +143,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0430ae6e_d9a65318",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-08T11:16:43Z",
+      "side": 1,
+      "message": "remove this from this mitigation as LOG_LEVEL is a generic config of RMM and does not depend on platform implementation.",
+      "range": {
+        "startLine": 82,
+        "startChar": 35,
+        "endLine": 82,
+        "endChar": 55
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad824665_e0797bdf",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 12
