@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e27b0685_74299aab",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-08T10:59:27Z",
+      "side": 1,
+      "message": "Ah OK. So this is something like that the realm internal state (memory/register content, (including the program counter)) cannot be changed by the attacker",
+      "parentUuid": "68302185_8ff13443",
+      "range": {
+        "startLine": 35,
+        "startChar": 51,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a4456480_e484d76c",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 12
