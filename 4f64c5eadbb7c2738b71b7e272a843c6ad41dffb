@@ -72,6 +72,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "068c6065_41bb131f",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Yes, this was exactly as stated by Sandrine. I\u0027ll make it clearer",
+      "parentUuid": "e27b0685_74299aab",
+      "range": {
+        "startLine": 35,
+        "startChar": 51,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4456480_e484d76c",
@@ -85,6 +109,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "\u0027vulnerabilities\u0027 or \u0027flaws\u0027? \u0027fault\u0027 doesn\u0027t really fit here I think",
+      "range": {
+        "startLine": 70,
+        "startChar": 46,
+        "endLine": 70,
+        "endChar": 52
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91e4f06c_a0b3487e",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4456480_e484d76c",
       "range": {
         "startLine": 70,
         "startChar": 46,
@@ -118,6 +166,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4462984e_4c878e87",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "These are all the possible ones, yes.",
+      "parentUuid": "d3294e87_2c895cb8",
+      "range": {
+        "startLine": 79,
+        "startChar": 7,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7783bc51_e7bde7a5",
@@ -131,6 +203,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "\u0027Straightforward\u0027 is a single word",
+      "range": {
+        "startLine": 12,
+        "startChar": 71,
+        "endLine": 13,
+        "endChar": 7
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfaaf7b5_0a23b06e",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7783bc51_e7bde7a5",
       "range": {
         "startLine": 12,
         "startChar": 71,
@@ -236,6 +332,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98b5ebff_e6ffa5c1",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Yes, that\u0027s right. I got misled by the \"... which can be used to disable all logging\". Removing it.",
+      "parentUuid": "d5d6e700_121a6410",
+      "range": {
+        "startLine": 82,
+        "startChar": 35,
+        "endLine": 82,
+        "endChar": 55
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad824665_e0797bdf",
@@ -249,6 +369,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "RootCode?",
+      "range": {
+        "startLine": 122,
+        "startChar": 55,
+        "endLine": 122,
+        "endChar": 64
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b244280e_df8cb86a",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Not actually. We use \"Root code\" in a generic way, not to refer to it as a threat agent. I replaced all the wrong \"RootCode\" on the text for consistency.",
+      "parentUuid": "ad824665_e0797bdf",
       "range": {
         "startLine": 122,
         "startChar": 55,
@@ -282,6 +426,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4b6cf57_060a031c",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7121e6d5_d1847041",
+      "range": {
+        "startLine": 130,
+        "startChar": 53,
+        "endLine": 130,
+        "endChar": 68
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ceb29a8_1bc4d0d3",
@@ -295,6 +463,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "This threat is about information leak from the realm world, so should this be \u0027undelegating memory from\u0027 instead?",
+      "range": {
+        "startLine": 133,
+        "startChar": 32,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "403c156c_e3879f63",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ceb29a8_1bc4d0d3",
       "range": {
         "startLine": 133,
         "startChar": 32,
@@ -328,6 +520,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d89ae8db_335f9282",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "We need to invalidate the cache so the next access will cause a cache fault that will refill the cache entry with the scrubbed value.",
+      "parentUuid": "575a577f_cc8a6a37",
+      "range": {
+        "startLine": 136,
+        "startChar": 64,
+        "endLine": 136,
+        "endChar": 74
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9225b6d4_203fdc58",
@@ -341,6 +557,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "This is referred as \u0027EL3 Firmware\u0027 in all the other cases (Although the capitailzation ([F|f]irmware) varies).",
+      "range": {
+        "startLine": 170,
+        "startChar": 42,
+        "endLine": 170,
+        "endChar": 54
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b06c5455_e07420b5",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Well spotted :). Fixed and made it consistent",
+      "parentUuid": "9225b6d4_203fdc58",
       "range": {
         "startLine": 170,
         "startChar": 42,
@@ -374,6 +614,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64430d59_92c389fd",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b36efb24_a06dacf6",
+      "range": {
+        "startLine": 323,
+        "startChar": 36,
+        "endLine": 323,
+        "endChar": 40
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "346ea7df_93781b92",
@@ -397,6 +661,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea9155e5_66521aee",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "346ea7df_93781b92",
+      "range": {
+        "startLine": 337,
+        "startChar": 29,
+        "endLine": 337,
+        "endChar": 66
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "500ee298_0f6391bd",
@@ -410,6 +698,30 @@
       "writtenOn": "2023-09-08T07:45:11Z",
       "side": 1,
       "message": "\u0027pass the address of a \u0027",
+      "range": {
+        "startLine": 365,
+        "startChar": 54,
+        "endLine": 365,
+        "endChar": 62
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bee5a51_e6b39af1",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T18:37:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "500ee298_0f6391bd",
       "range": {
         "startLine": 365,
         "startChar": 54,
