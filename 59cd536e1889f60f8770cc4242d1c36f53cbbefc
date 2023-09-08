@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37baddd9_3e6cf247",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T15:34:32Z",
+      "side": 1,
+      "message": "nit: Add a comment to indicate what is this mapping for. You already have an mmap region for a handler above, so this can be bit confusing IMO.",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 30
+      },
+      "revId": "59cd536e1889f60f8770cc4242d1c36f53cbbefc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "676a5ee6_9b9d2a3e",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T15:34:32Z",
+      "side": 1,
+      "message": "You also need to update this. Since you are giving 1 page per exception stack and leaving a page gap, I think it should be something like\n\nCOMPILER_ASSERT(PLAT_NUM_PAGES_PER_STACK + GRANULE_SIZE + (2 * GAP_PAGE_COUNT) + NR_CPU_SLOTS \u003c\u003d XLAT_TABLE_ENTRIES);",
+      "revId": "59cd536e1889f60f8770cc4242d1c36f53cbbefc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fed96f91_e96707de",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T15:34:32Z",
+      "side": 1,
+      "message": "nit: Add a comment to explain what this stack is for, as we cannot add \"exception\" to the variable name or otherwise would be too long.",
+      "range": {
+        "startLine": 147,
+        "startChar": 10,
+        "endLine": 147,
+        "endChar": 37
+      },
+      "revId": "59cd536e1889f60f8770cc4242d1c36f53cbbefc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6233a6fd_bb35410f",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T15:34:32Z",
+      "side": 1,
+      "message": "I think it is better to create a macro for this, maybe CPU_EHANDLER_STACK_SIZE or similar. It would make things clearer and easier to maintain, specially since you use this in several places",
+      "range": {
+        "startLine": 276,
+        "startChar": 47,
+        "endLine": 276,
+        "endChar": 59
+      },
+      "revId": "59cd536e1889f60f8770cc4242d1c36f53cbbefc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef504f18_98771d9b",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T15:34:32Z",
+      "side": 1,
+      "message": "We try to avoid the use of extern variables as much as possible. Recommend to define this variable in a common module and write accessors for it.",
+      "range": {
+        "startLine": 417,
+        "startChar": 0,
+        "endLine": 417,
+        "endChar": 37
+      },
+      "revId": "59cd536e1889f60f8770cc4242d1c36f53cbbefc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
