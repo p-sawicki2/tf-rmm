@@ -319,6 +319,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c6d26a0_b106ca6b",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-08T09:57:29Z",
+      "side": 1,
+      "message": "OK, I see your point.\n\nBesides, even TF-A threat model today [1] shows data flows within its trust boundary. I now realize they might be useful to understand what all components within the trust boundary are \"infected\" if the corresponding threats are exploited. This helps understanding consequences of an attack. So I agree with you, let\u0027s keep DF4 here.\n\nHowever, I still think the highlighted text is confusing in this context:\n\n \"RMM trusts EL3, which is part of a trusted subsystem. Therefore, this\n  is out of scope of the Threat Model for RMM.\"\n\nI would just remove it and stick to the first sentence only, which I think correctly describes what this DF is about.\n\n[1] https://trustedfirmware-a.readthedocs.io/en/latest/threat_model/threat_model.html",
+      "parentUuid": "bdab19ef_1ae17c41",
+      "range": {
+        "startLine": 68,
+        "startChar": 57,
+        "endLine": 70,
+        "endChar": 68
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00405145_07f20386",
         "filename": "docs/security/threat_model/dfd.rst",
         "patchSetId": 11
@@ -918,6 +942,30 @@
       "side": 1,
       "message": "Yes, see my previous comment on dfd.rst about this. If we decide to keep this for informational purposes, I can rephrase the previous statement to indicate it.",
       "parentUuid": "11fe36d2_c4b21e07",
+      "range": {
+        "startLine": 524,
+        "startChar": 1,
+        "endLine": 524,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1d1bde2_25c32a1a",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-08T09:57:29Z",
+      "side": 1,
+      "message": "I think every threat should be associated with a data flow that crosses the trust boundary. This is not the case here. If, say, some flaw could be initiated by the host software and that this would trickle down to EL3 firmware then we could have a threat about it, which is associated with both DF7 and DF1.\n\nBut DF1 on its own does not make sense to me. It cannot be directly exploited by any of the threat agents outside of the trust boundary.\n\nBesides, the way the threat is described at lines 526-529 makes it sound more like a robustness threat rather than a security threat.\n\nFor all these reasons, I think this does not belong in the threat assessment section. If you want to keep it in some form, then maybe it could be moved to some informational section about robustness?",
+      "parentUuid": "ef85660e_c08c3e94",
       "range": {
         "startLine": 524,
         "startChar": 1,
