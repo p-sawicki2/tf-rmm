@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "68302185_8ff13443",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-08T09:34:28Z",
+      "side": 1,
+      "message": "I guess this was trying to explain that all accesses to a realm go through RMM through a well-defined ABI, which gives *some* level of protection to realms, as they cannot be *directly* hijacked by an attacker. RMM is responsible for setting up this safe runtime environment to realms. Was that the intended message? If so, I agree it could be made clearer.",
+      "parentUuid": "175ae053_67a7861c",
+      "range": {
+        "startLine": 35,
+        "startChar": 51,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a4456480_e484d76c",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 12
