@@ -42,6 +42,9 @@ void sve_save_vector_registers(struct sve_regs *regs, bool save_ffr);
  */
 void sve_restore_vector_registers(struct sve_regs *regs, bool restore_ffr);
 
+/* Clear SVE P and FFR registers */
+void sve_clear_p_ffr_registers(void);
+
 /* Returns 'true' when CPU in Streaming SVE mode, else 'false' */
 static inline bool is_sme_sm(void)
 {
