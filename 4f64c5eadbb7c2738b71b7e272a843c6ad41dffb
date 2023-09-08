@@ -166,6 +166,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "de0b918a_782d6174",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-09-08T11:29:35Z",
+      "side": 1,
+      "message": "I think the idea is that platforms can add prints to the console and in this way reveal sensitive information. So it\u0027s also platform integrators\u0027 responsibility to review what information exactly they reveal.",
+      "parentUuid": "0430ae6e_d9a65318",
+      "range": {
+        "startLine": 82,
+        "startChar": 35,
+        "endLine": 82,
+        "endChar": 55
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad824665_e0797bdf",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 12
