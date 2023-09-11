@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e2c9bd2_58ddc586",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T12:34:11Z",
+      "side": 1,
+      "message": "Some initial comments",
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aab236b_d1e7493a",
+        "filename": "lib/realm/src/include/buffer_private.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T12:34:11Z",
+      "side": 1,
+      "message": "How is the chance maximized when slot buffers are mapped at top of VA ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c222f47_e14b05c6",
+        "filename": "plat/common/include/plat_common.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T12:34:11Z",
+      "side": 1,
+      "message": "as a starter, this can go into xlat lib itself (perhaps xlat_high_va).\n\nThe reason is that, unlike the low VA, the high VA is generic (there is a define to control pages for stack).  Slot buffer is also generic.  If in future there is a platform requirement to map memory dynamically, we can enhance the xlat_high_va part to include that as well.\n\nSo going by that , you could call this API.\n\nxlat_high_va_setup()",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
