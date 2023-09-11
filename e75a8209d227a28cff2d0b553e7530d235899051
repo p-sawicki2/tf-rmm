@@ -978,6 +978,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17de0e26_7bf827ca",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T10:09:09Z",
+      "side": 1,
+      "message": "Yes, I agree this threat should be removed from the Threat model and moved to a platform integration guide (to be done later).",
+      "parentUuid": "d1d1bde2_25c32a1a",
+      "range": {
+        "startLine": 524,
+        "startChar": 1,
+        "endLine": 524,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6389dbb2_1e8d1eb0",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 11
@@ -1060,6 +1084,30 @@
       "side": 1,
       "message": "That\u0027s actually a good question. I will double check.",
       "parentUuid": "4715ff2a_c1345424",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 42
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a44f3f45_81192dfa",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T10:09:09Z",
+      "side": 1,
+      "message": "Yes, theoretically if RMM didn\u0027t save and restore PMU and MPAM regs, it would be possible for Realm to attack other realms.",
+      "parentUuid": "78acf0b5_5e76a89b",
       "range": {
         "startLine": 676,
         "startChar": 27,

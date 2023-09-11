@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9bb3d57_5f799bf6",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T10:09:09Z",
+      "side": 1,
+      "message": "Not sure of this sentence. Can be removed perhaps.",
+      "range": {
+        "startLine": 41,
+        "startChar": 67,
+        "endLine": 43,
+        "endChar": 69
+      },
+      "revId": "945e4dac866512badfa85aaf5d697696041cea95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dddfd598_aa532d78",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T10:09:09Z",
+      "side": 1,
+      "message": "we could use a different numbering scheme for the subpoints , like i) ii) or a) b) etc.",
+      "range": {
+        "startLine": 63,
+        "startChar": 31,
+        "endLine": 63,
+        "endChar": 32
+      },
+      "revId": "945e4dac866512badfa85aaf5d697696041cea95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "700d812a_985085f7",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T10:09:09Z",
+      "side": 1,
+      "message": "add one more mitigation: \n\n6) When memory is delegated to the Realm world, RMM should ensure that the initial contents cannot be controlled by NS host unless allowed by the ABI. Implement software scrubbing or\nother hardware techniques when memory is delegated to Realm world.\n\nIn mitigations implemented:\n\n6) Yes, RMM memsets the memory to 0 zero when a granule is delegated to Realm world.",
+      "revId": "945e4dac866512badfa85aaf5d697696041cea95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
