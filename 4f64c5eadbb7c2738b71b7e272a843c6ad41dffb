@@ -190,6 +190,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dc7e885_7f43a708",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-11T10:45:41Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "4462984e_4c878e87",
+      "range": {
+        "startLine": 79,
+        "startChar": 7,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7783bc51_e7bde7a5",
@@ -403,6 +427,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35be2a13_bbf9dd77",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-11T10:45:41Z",
+      "side": 1,
+      "message": "That makes sense",
+      "parentUuid": "b244280e_df8cb86a",
+      "range": {
+        "startLine": 122,
+        "startChar": 55,
+        "endLine": 122,
+        "endChar": 64
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7121e6d5_d1847041",
@@ -534,6 +582,30 @@
       "side": 1,
       "message": "We need to invalidate the cache so the next access will cause a cache fault that will refill the cache entry with the scrubbed value.",
       "parentUuid": "575a577f_cc8a6a37",
+      "range": {
+        "startLine": 136,
+        "startChar": 64,
+        "endLine": 136,
+        "endChar": 74
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b48e9a7f_788dc0c8",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-11T10:45:41Z",
+      "side": 1,
+      "message": "Sorry, I still don\u0027t understand what memory here refers to. I get the part that \u0027architectural caches\u0027 needs to be invalidated. But what is the \u0027memory\u0027 (or \u0027architectural memory\u0027) that needs to be invalidated? (As memory scrubbing was mentioned in the previous sentence)",
+      "parentUuid": "d89ae8db_335f9282",
       "range": {
         "startLine": 136,
         "startChar": 64,
