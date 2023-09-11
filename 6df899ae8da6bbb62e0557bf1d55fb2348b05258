@@ -43,6 +43,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3be3e51e_7a4b107e",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T13:08:43Z",
+      "side": 1,
+      "message": "As mentioned earlier, this can be a config option to xlat table lib (specifically xlat_high_va.c file).",
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c222f47_e14b05c6",
         "filename": "plat/common/include/plat_common.h",
         "patchSetId": 9
@@ -59,6 +76,46 @@
         "startChar": 5,
         "endLine": 28,
         "endChar": 23
+      },
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8a5602_c7f5d38b",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T13:08:43Z",
+      "side": 1,
+      "message": "would be useful to have an ASCII art diagram for the High VA.",
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbc5e24d_e79cb86a",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-11T13:08:43Z",
+      "side": 1,
+      "message": "If the high VA functionality is moved to xlat lib and lib/realm is a consumer of lib/xlat, then  SLOT_VIRT (slot_buffer_va) can be passed via Cmake config system to the xlat_high_va entity. Even the NUM_OF_SLOT can also be a config which is CASSERTED against NR_CPU_SLOTS in buffer.c.\n\nSo we can avoid the need for the API to retrieve mmap from slot buffer.",
+      "range": {
+        "startLine": 265,
+        "startChar": 1,
+        "endLine": 265,
+        "endChar": 16
       },
       "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
