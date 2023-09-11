@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee1313f3_18d54531",
+        "filename": "cmake/CoverageReport.cmake",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T17:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39a7f696_8993594c",
+      "revId": "bb17d0958518de77b88f030ffc8a45f7c6b6d4e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da3a7d21_5a70c355",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2481f1a3_7627d2db",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T17:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da3a7d21_5a70c355",
+      "revId": "bb17d0958518de77b88f030ffc8a45f7c6b6d4e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ecce478_35e5a606",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-09-11T16:22:33Z",
       "side": 1,
       "message": "Add a new guideline for coverage:\n\n15. Generate coverage report\n\nIt is possible to generate coverage report for a last execution of the host platform by using the `run-coverage` build target.\n\nFor example, to generate coverage report on whole set of unittests:\n\n....\n\nTo generate coverage report on specific group of unit tests :\n\n.....\n\n\nTo generate coverage report on `host_build` variant of host platform :\n\n....",
+      "revId": "bb17d0958518de77b88f030ffc8a45f7c6b6d4e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab964d23_d900ca55",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T17:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ecce478_35e5a606",
       "revId": "bb17d0958518de77b88f030ffc8a45f7c6b6d4e8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
