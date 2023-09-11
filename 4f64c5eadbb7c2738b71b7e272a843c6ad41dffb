@@ -616,6 +616,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50cb8b9b_197ebc4a",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T16:03:02Z",
+      "side": 1,
+      "message": "Ok, see your point after re-reading. that \"memory\" shouldn\u0027t be there 😊\n\nRemoving it.",
+      "parentUuid": "b48e9a7f_788dc0c8",
+      "range": {
+        "startLine": 136,
+        "startChar": 64,
+        "endLine": 136,
+        "endChar": 74
+      },
+      "revId": "4f64c5eadbb7c2738b71b7e272a843c6ad41dffb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9225b6d4_203fdc58",

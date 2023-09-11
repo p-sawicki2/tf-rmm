@@ -341,6 +341,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b82a24a_fb4001c3",
+        "filename": "docs/security/threat_model/dfd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T16:03:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c6d26a0_b106ca6b",
+      "range": {
+        "startLine": 68,
+        "startChar": 57,
+        "endLine": 70,
+        "endChar": 68
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00405145_07f20386",
@@ -1000,6 +1024,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ebb9a87_801a1a16",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T16:03:02Z",
+      "side": 1,
+      "message": "Done. Removed",
+      "parentUuid": "17de0e26_7bf827ca",
+      "range": {
+        "startLine": 524,
+        "startChar": 1,
+        "endLine": 524,
+        "endChar": 32
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6389dbb2_1e8d1eb0",
@@ -1108,6 +1156,30 @@
       "side": 1,
       "message": "Yes, theoretically if RMM didn\u0027t save and restore PMU and MPAM regs, it would be possible for Realm to attack other realms.",
       "parentUuid": "78acf0b5_5e76a89b",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 42
+      },
+      "revId": "e75a8209d227a28cff2d0b553e7530d235899051",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca78ab6b_78ea2ed9",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-11T16:03:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a44f3f45_81192dfa",
       "range": {
         "startLine": 676,
         "startChar": 27,
