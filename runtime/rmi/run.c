@@ -280,6 +280,10 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		rec->sysregs.hcr_el2 |= HCR_TWE;
 	}
 
+	rec->set_ripas.response =
+		((rec_run.enter.flags & REC_ENTRY_FLAG_RIPAS_RESPONSE) == 0UL) ?
+			RMI_ACCEPT : RMI_REJECT;
+
 	ret = RMI_SUCCESS;
 
 	rec_run_loop(rec, &rec_run.exit);
