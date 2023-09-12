@@ -750,6 +750,30 @@
       },
       "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "941f2a40_9311551e",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T15:20:44Z",
+      "side": 1,
+      "message": "After thinking this for a while, it is likely that issues in RMM are being utilized by a threat  agent outside RMM (Host/realm). So even if RMM does end up configuring hardware IPs wrongly, it could only be exploited from Host or Realm side to force RMM to leak some data.\n\nSo lets keep Realm and Host Software and the threat agent and remove the RmmCode threat actor.",
+      "parentUuid": "0f120750_0b4d2df3",
+      "range": {
+        "startLine": 671,
+        "startChar": 27,
+        "endLine": 671,
+        "endChar": 34
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

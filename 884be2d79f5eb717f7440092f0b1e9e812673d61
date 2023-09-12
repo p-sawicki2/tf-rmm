@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7af5aa94_8ef02d15",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T15:20:44Z",
+      "side": 1,
+      "message": "Hmm, this is a tricky one. Although the vulnerabilities and bugs are in RMM, the eventual threat agent will be Host Software/realm code. Perhaps we should remove this threat agent ?",
+      "range": {
+        "startLine": 75,
+        "startChar": 57,
+        "endLine": 75,
+        "endChar": 59
+      },
+      "revId": "884be2d79f5eb717f7440092f0b1e9e812673d61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "753dc211_8f289592",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T15:20:44Z",
+      "side": 1,
+      "message": "To frame this as a threat, suggest :\n\n\"An adversary can make use of incorrect implementation of concurrent sections in RMM to cause  data corruption or dead/live locks.\"",
+      "range": {
+        "startLine": 297,
+        "startChar": 29,
+        "endLine": 297,
+        "endChar": 72
+      },
+      "revId": "884be2d79f5eb717f7440092f0b1e9e812673d61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "182bdfc1_17e1c425",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T15:20:44Z",
+      "side": 1,
+      "message": "\"...or incorrect mapping of NS memory may allow Realms to corrupt NSHost memory.\" should be enough for the purpose of threat model.",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 532,
+        "endChar": 52
+      },
+      "revId": "884be2d79f5eb717f7440092f0b1e9e812673d61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1c4d44a_bd3f6a6c",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T15:20:44Z",
+      "side": 1,
+      "message": "I think we can avoid mentioning this as it is a detail. Suggest to remove.",
+      "range": {
+        "startLine": 533,
+        "startChar": 27,
+        "endLine": 537,
+        "endChar": 70
+      },
+      "revId": "884be2d79f5eb717f7440092f0b1e9e812673d61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
