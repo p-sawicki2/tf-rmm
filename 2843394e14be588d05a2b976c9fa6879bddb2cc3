@@ -162,6 +162,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c4e1f44_455a179f",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T12:35:41Z",
+      "side": 1,
+      "message": "Actually Soby gave a better explanation than I did, as I was only thinking on the Realm world (which is out of the scope for the TM, as this asset description states)",
+      "parentUuid": "f0812d3b_f7ce4508",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "082a2a23_3ce3bd31",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 14
@@ -503,6 +527,30 @@
       "side": 1,
       "message": "RMM is responsible for the S2 table programming. So , it is possible that RMM ends up mapping some NS memory (due to incorrect implementation) which the NS has not allowed or maps it with incorrect attributes which may lead to memory model issues for NS when NS is accessing it. It also possible that RMM has not done all the right S2/TLB invalidations in which a NS VM can cause issues for another NS VM via Realm world (this is assuming both the NS VMs have distinct counterpart Realm VMs).\n\nIn that way, a vulnerability in S2 table mapping code in RMM is potentially a threat to NS world as well. Perhaps it needs some rewording to clarify this aspect.",
       "parentUuid": "6baa26f0_3b38ec6f",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 530,
+        "endChar": 64
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d548f53a_3fbfccd4",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T12:35:41Z",
+      "side": 1,
+      "message": "Yes, Soby is right, rather than remove the statement, that needs to be reworded so the background for it can be understood. I will implement the changes",
+      "parentUuid": "a0ae9e29_98bc6243",
       "range": {
         "startLine": 530,
         "startChar": 45,
