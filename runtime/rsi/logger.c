@@ -43,7 +43,7 @@ static const struct rsi_handler rsi_logger[] = {
 	RSI_FUNCTION(ATTEST_TOKEN_INIT, 9U, 0U),	/* 0xC4000194 */
 	RSI_FUNCTION(ATTEST_TOKEN_CONTINUE, 1U, 1U),	/* 0xC4000195 */
 	RSI_FUNCTION(REALM_CONFIG, 1U, 0U),		/* 0xC4000196 */
-	RSI_FUNCTION(IPA_STATE_SET, 4U, 1U),		/* 0xC4000197 */
+	RSI_FUNCTION(IPA_STATE_SET, 4U, 2U),		/* 0xC4000197 */
 	RSI_FUNCTION(IPA_STATE_GET, 1U, 1U),		/* 0xC4000198 */
 	RSI_FUNCTION(HOST_CALL, 1U, 0U)			/* 0xC4000199 */
 };
@@ -135,44 +135,40 @@ static int print_code(char *buf, size_t len, unsigned long res)
 }
 
 void rsi_log_on_exit(unsigned int function_id, unsigned long args[],
-		     unsigned long regs[], bool exit_to_rec)
+		     unsigned long regs[])
 {
 	char buffer[BUFFER_SIZE];
 	size_t len = print_entry(function_id, args, buffer, sizeof(buffer));
+	char *buf = (char *)((uintptr_t)buffer + sizeof(buffer) - len);
+	unsigned int num = 3U;	/* results in X1-X3 */
+	int cnt;
 
-	/* Print result when execution continues in REC */
-	if (exit_to_rec) {
-		char *buf = (char *)((uintptr_t)buffer + sizeof(buffer) - len);
-		unsigned int num = 3U;	/* results in X1-X3 */
-		int cnt;
+	switch (function_id) {
+	case SMC_RSI_MEASUREMENT_READ ... SMC_RSI_HOST_CALL: {
+		const struct rsi_handler *logger =
+				fid_to_rsi_logger(function_id);
 
-		switch (function_id) {
-		case SMC_RSI_MEASUREMENT_READ ... SMC_RSI_HOST_CALL: {
-			const struct rsi_handler *logger =
-					fid_to_rsi_logger(function_id);
+		/* Print status */
+		cnt = print_status(buf, len, regs[0]);
+		num = logger->num_vals;
+		break;
+	}
+	case SMC_RSI_ABI_VERSION:
+		num = 0U;
+		FALLTHROUGH;
+	default:
+		/* Print result code */
+		cnt = print_code(buf, len, regs[0]);
+	}
 
-			/* Print status */
-			cnt = print_status(buf, len, regs[0]);
-			num = logger->num_vals;
-			break;
-		}
-		case SMC_RSI_ABI_VERSION:
-			num = 0U;
-			FALLTHROUGH;
-		default:
-			/* Print result code */
-			cnt = print_code(buf, len, regs[0]);
-		}
+	assert((cnt > 0) && (cnt < (int)len));
 
+	/* Print output values */
+	for (unsigned int i = 1U; i <= num; i++) {
+		buf = (char *)((uintptr_t)buf + (unsigned int)cnt);
+		len -= (size_t)cnt;
+		cnt = snprintf(buf, len, " %lx", regs[i]);
 		assert((cnt > 0) && (cnt < (int)len));
-
-		/* Print output values */
-		for (unsigned int i = 1U; i <= num; i++) {
-			buf = (char *)((uintptr_t)buffer + (unsigned int)cnt);
-			len -= (size_t)cnt;
-			cnt = snprintf(buf, len, " %lx", regs[i]);
-			assert((cnt > 0) && (cnt < (int)len));
-		}
 	}
 
 	rmm_log("%s\n", buffer);
