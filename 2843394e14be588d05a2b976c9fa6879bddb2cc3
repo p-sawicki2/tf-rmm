@@ -231,6 +231,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cba8c6_11ba1a4f",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "I added some rewording here.",
+      "parentUuid": "babf5f7f_8cf4988a",
+      "range": {
+        "startLine": 69,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 13
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ceddbf6e_4733ec0e",
@@ -372,6 +396,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3372d96_74369dd6",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "Removed Availability as suggested. It is actually covered by ID3",
+      "parentUuid": "f5613094_0f8f4b63",
+      "range": {
+        "startLine": 263,
+        "startChar": 27,
+        "endLine": 263,
+        "endChar": 39
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38ae9e5d_1a0c04a2",
@@ -419,6 +467,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78b69324_ff6a632b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "Reworded",
+      "parentUuid": "3a371f6e_724f44ee",
+      "range": {
+        "startLine": 297,
+        "startChar": 29,
+        "endLine": 297,
+        "endChar": 52
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3dc9fa63_d3cbde8f",
@@ -456,6 +528,30 @@
       "side": 1,
       "message": "Yes, I agree with you. The threat here is not the memory corruption per-se, mostly that it allows an adversary to put together an attack exploiting such vulnerability.\n\nAs with the previous threat you mentioned, I think that this might need some reword. I will fix it.",
       "parentUuid": "3dc9fa63_d3cbde8f",
+      "range": {
+        "startLine": 382,
+        "startChar": 29,
+        "endLine": 382,
+        "endChar": 38
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e95ce124_8a198b80",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "Reworded",
+      "parentUuid": "53db99e2_86e9cde4",
       "range": {
         "startLine": 382,
         "startChar": 29,
@@ -561,6 +657,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b144d951_5c569c9a",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "d548f53a_3fbfccd4",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 530,
+        "endChar": 64
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97b2cb9b_43f23c40",
@@ -598,6 +718,30 @@
       "side": 1,
       "message": "Yes, you are right. RMMCode is not the threat agent, but the one causing the vulnerability. I will review this threat and update it.",
       "parentUuid": "97b2cb9b_43f23c40",
+      "range": {
+        "startLine": 671,
+        "startChar": 27,
+        "endLine": 671,
+        "endChar": 34
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f120750_0b4d2df3",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T14:44:42Z",
+      "side": 1,
+      "message": "I\u0027ve been considering this more in detail and I think that a misconfiguration of the hardware IPs could be a threat on its own, for which it wouldn\u0027t be necessary the existence of another threat agent to launch an attack exploding such vulnerability.\n\nFor cases in which the misconfiguration of the HW IPs can be seen as a vulnerability exploitable by an external threat agent, this could be seen more like bugs on the code, which have already been assessed in this threat model. \n\nSo I think RMMCode should be seen as the Threat Agent for this particular threat, in which misconfiguration of the HW IP can lead to data leaks or incorrect behaviour on its own, even if RMMCode \"threats itself\", if only to raise awareness of DF8 and mitigations for this specific case, although I would like to know Soby\u0027s opinion on this.\n\nI have also reworded this threat description.",
+      "parentUuid": "d43f9adf_e1a272bf",
       "range": {
         "startLine": 671,
         "startChar": 27,
