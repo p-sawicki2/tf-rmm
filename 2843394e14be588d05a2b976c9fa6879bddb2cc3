@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "27b8773a_7c4a5738",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T11:05:58Z",
+      "side": 1,
+      "message": "Javier has explained it , but will post the answer since I had this typed already. \n\n\nMy take is that this is considering the control flow associated with code execution is considered an asset and also the execution should take place at the right exception level.\n\nThe RMM needs to protect both RMM and Realm code execution.\n\nFor the Realm, it should not be possible for NS Host to change code execution or decipher the exact  value of PC.\n\nSimilarly, Realms should not be able to break out of EL1 exception level and cause Realm code to execute with R-EL2 privileges.",
+      "parentUuid": "39563844_ab57b088",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b41e57cc_cc0746d6",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 14
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "This TM takes into consideration threats such as denial-of-service attacks, which would make RMM unavailable and, by extension, any other software running in the Realm space, which is why we consider Availability as an asset to protect as well.",
       "parentUuid": "b41e57cc_cc0746d6",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0812d3b_f7ce4508",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T11:05:58Z",
+      "side": 1,
+      "message": "The asset is that the \"availability of the system\" (NS, secure world) should not be affected by Realms/RMM.\n\nAt an implementation level, it means that RMM should allow NS and Secure events to pre-empt Realms. Similarly, RMM should be designed in such a way that any long running operations in RMM do not cause starvation issues for the NS world. Also any crash/hang of Realm world should not affect availability of Secure world.",
+      "parentUuid": "2d73115e_118144a5",
       "range": {
         "startLine": 43,
         "startChar": 4,
@@ -414,6 +462,30 @@
       "side": 1,
       "message": "Yes, you are right. This needs to be removed",
       "parentUuid": "69e731d7_7229168e",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 530,
+        "endChar": 64
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0ae9e29_98bc6243",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-12T11:05:58Z",
+      "side": 1,
+      "message": "RMM is responsible for the S2 table programming. So , it is possible that RMM ends up mapping some NS memory (due to incorrect implementation) which the NS has not allowed or maps it with incorrect attributes which may lead to memory model issues for NS when NS is accessing it. It also possible that RMM has not done all the right S2/TLB invalidations in which a NS VM can cause issues for another NS VM via Realm world (this is assuming both the NS VMs have distinct counterpart Realm VMs).\n\nIn that way, a vulnerability in S2 table mapping code in RMM is potentially a threat to NS world as well. Perhaps it needs some rewording to clarify this aspect.",
+      "parentUuid": "6baa26f0_3b38ec6f",
       "range": {
         "startLine": 530,
         "startChar": 45,
