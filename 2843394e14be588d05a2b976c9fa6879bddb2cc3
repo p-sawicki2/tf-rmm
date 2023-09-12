@@ -91,6 +91,144 @@
       },
       "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e34ed6ef_aa119e2b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "Not sure i follow how this is an attack on the RMM. I dont think RMM availability is an asset of the RMM. Availability in CCA is entirely dependent on NS world so not sure this threat applies.\nIn my mind RMM has no availability attribute since it is purely a reactive agent and nobody depends on it to be available. It is either available if called, or not if not called upon.\nThe way you crash the RMM is by attempting to exploit code or affect integrity of data for example by trying to call the RMM in unintended ways to cause attacks. Those are nto availability attacks but attacks on code or data via tampering..",
+      "range": {
+        "startLine": 151,
+        "startChar": 28,
+        "endLine": 154,
+        "endChar": 42
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21616d01_5e04f0fa",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "dont agree this affects availability as stated above.",
+      "range": {
+        "startLine": 263,
+        "startChar": 27,
+        "endLine": 263,
+        "endChar": 39
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38ae9e5d_1a0c04a2",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "this is a \"vulnerability\" as opposed to a threat. The threat is that attacker attempts to cause data corruption or deadlocks/livelocks using the RMM ABIs. The vulenrability is that concurrent sections are not implemented correction.",
+      "range": {
+        "startLine": 297,
+        "startChar": 29,
+        "endLine": 297,
+        "endChar": 52
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dc9fa63_d3cbde8f",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "not sure this is a threat (something that an attacker would try to do) like above. This is just an implementation bug. I think of threat as something threat agents attempt to do. RealmCode for example can exploit memory corruption (vulnerability), but not \"try to do memory corruption\". The threat is attacker attempting to attack the asset (code), via the vulnerability that is memory corruption/overflows, and the consequence is code execution.",
+      "range": {
+        "startLine": 382,
+        "startChar": 29,
+        "endLine": 382,
+        "endChar": 38
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69e731d7_7229168e",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "dont believe the RMM promises to protect NS host memory, does it? IF NS incorrectly allows this, dont think the RMM is responsible ?",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 530,
+        "endChar": 64
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97b2cb9b_43f23c40",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-12T03:18:57Z",
+      "side": 1,
+      "message": "dont believe the threat agent is rmm code itself. it is the TOE. IMO, the threat is the a attacker is trying to access RMM data, and the vulnerability used is misconfiguration and the consequence of the attack is data leaks or incorrect behavior.\nThe threat agent is really host software or realm..",
+      "range": {
+        "startLine": 671,
+        "startChar": 27,
+        "endLine": 671,
+        "endChar": 34
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
