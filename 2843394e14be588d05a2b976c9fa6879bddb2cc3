@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "39563844_ab57b088",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "If the code execution were altered (e.g. through JOP/ROP attacks) the system would be compromised, which is why we consider the Code Execution as an asset to protect. Additionally, RMM must protect the Realms, avoiding any escalation of privileges or altering the execution flow through the RMI/RSI, which is also covered by this asset.",
+      "parentUuid": "e2084cf7_99c84fdf",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b41e57cc_cc0746d6",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 14
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-12T01:56:59Z",
       "side": 1,
       "message": "again, not sure this is an RMM asset. IIUC, we are threat modeling the RMM so the assets really are only code and data.",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d73115e_118144a5",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "This TM takes into consideration threats such as denial-of-service attacks, which would make RMM unavailable and, by extension, any other software running in the Realm space, which is why we consider Availability as an asset to protect as well.",
+      "parentUuid": "b41e57cc_cc0746d6",
       "range": {
         "startLine": 43,
         "startChar": 4,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "babf5f7f_8cf4988a",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "The target of evaluation cannot attack itself, directly, but the Threat Model keeps into account bugs and flaws that can be present in the code and can be exploited and how we mitigate those (e.g. by performing static analysis on the code and running tests on it).",
+      "parentUuid": "082a2a23_3ce3bd31",
+      "range": {
+        "startLine": 69,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 13
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ceddbf6e_4733ec0e",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 14
@@ -83,6 +155,30 @@
       "writtenOn": "2023-09-12T01:56:59Z",
       "side": 1,
       "message": "this is changing very fast :)",
+      "range": {
+        "startLine": 192,
+        "startChar": 13,
+        "endLine": 192,
+        "endChar": 63
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8e0e798_4e6e339c",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "Yeah, we didn\u0027t think it was impossible, but for now, unlikely :)",
+      "parentUuid": "ceddbf6e_4733ec0e",
       "range": {
         "startLine": 192,
         "startChar": 13,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a92d21b5_9876865b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "One of the scenarios we contemplate here, would be for instance if an agent were able to attack RMM in a way in which it would make it enter in a deadlock. In that case, the current CPU could become unavailable, so even though RMM is a reactive agent, it can potentially cause starvation on the rest of the system. Moreover, Realms also request services from RMM. If the latter were unavailable for any reason, the former could become unavailable as well or run into other error conditions if RMM cannot provide requested services.\n\nWe also kept into account, as you rightfully pointed out, that the way of crashing RMM is by attempting to exploit code or affecting integrity of data and that those are code attacks via tampering. However, as we consider \"Availability\" itself as an asset to protect, we decided to include this specific threat to bring the attention to this type of attacks to the Availability asset, even though it can be thought as an indirect threat derived from others, as well as to bring the attention to its specific mitigations.",
+      "parentUuid": "e34ed6ef_aa119e2b",
+      "range": {
+        "startLine": 151,
+        "startChar": 28,
+        "endLine": 154,
+        "endChar": 42
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21616d01_5e04f0fa",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 14
@@ -129,6 +249,30 @@
       "writtenOn": "2023-09-12T03:18:57Z",
       "side": 1,
       "message": "dont agree this affects availability as stated above.",
+      "range": {
+        "startLine": 263,
+        "startChar": 27,
+        "endLine": 263,
+        "endChar": 39
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5613094_0f8f4b63",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "In this context, the Availability asset can be compromised if one of the SMC calls stated above causes the system (or RMM) to crash. Although after re-reading this, it would probably be possible to expand the Threat description on ID03. I will give it some thought",
+      "parentUuid": "21616d01_5e04f0fa",
       "range": {
         "startLine": 263,
         "startChar": 27,
@@ -164,6 +308,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3a371f6e_724f44ee",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "The threat is data corruption or dead/live locks due to incorrect implementation of concurrent sections (which can be exploited by an attacker or cause malfunctions on its own).\n\nI think this description needs rewording. I\u0027ll fix it.",
+      "parentUuid": "38ae9e5d_1a0c04a2",
+      "range": {
+        "startLine": 297,
+        "startChar": 29,
+        "endLine": 297,
+        "endChar": 52
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3dc9fa63_d3cbde8f",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 14
@@ -175,6 +343,30 @@
       "writtenOn": "2023-09-12T03:18:57Z",
       "side": 1,
       "message": "not sure this is a threat (something that an attacker would try to do) like above. This is just an implementation bug. I think of threat as something threat agents attempt to do. RealmCode for example can exploit memory corruption (vulnerability), but not \"try to do memory corruption\". The threat is attacker attempting to attack the asset (code), via the vulnerability that is memory corruption/overflows, and the consequence is code execution.",
+      "range": {
+        "startLine": 382,
+        "startChar": 29,
+        "endLine": 382,
+        "endChar": 38
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53db99e2_86e9cde4",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "Yes, I agree with you. The threat here is not the memory corruption per-se, mostly that it allows an adversary to put together an attack exploiting such vulnerability.\n\nAs with the previous threat you mentioned, I think that this might need some reword. I will fix it.",
+      "parentUuid": "3dc9fa63_d3cbde8f",
       "range": {
         "startLine": 382,
         "startChar": 29,
@@ -210,6 +402,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6baa26f0_3b38ec6f",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "Yes, you are right. This needs to be removed",
+      "parentUuid": "69e731d7_7229168e",
+      "range": {
+        "startLine": 530,
+        "startChar": 45,
+        "endLine": 530,
+        "endChar": 64
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "97b2cb9b_43f23c40",
         "filename": "docs/security/threat_model/threat_assessment.rst",
         "patchSetId": 14
@@ -221,6 +437,30 @@
       "writtenOn": "2023-09-12T03:18:57Z",
       "side": 1,
       "message": "dont believe the threat agent is rmm code itself. it is the TOE. IMO, the threat is the a attacker is trying to access RMM data, and the vulnerability used is misconfiguration and the consequence of the attack is data leaks or incorrect behavior.\nThe threat agent is really host software or realm..",
+      "range": {
+        "startLine": 671,
+        "startChar": 27,
+        "endLine": 671,
+        "endChar": 34
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d43f9adf_e1a272bf",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-12T10:01:26Z",
+      "side": 1,
+      "message": "Yes, you are right. RMMCode is not the threat agent, but the one causing the vulnerability. I will review this threat and update it.",
+      "parentUuid": "97b2cb9b_43f23c40",
       "range": {
         "startLine": 671,
         "startChar": 27,
