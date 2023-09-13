@@ -7,14 +7,11 @@
 
 extern "C" {
 
-	void utest_exit_fail(char *message)
-	{
+	void utest_exit_fail(char *message) {
 		FAIL_TEST(message);
 	}
 
-	void utest_exit_pass(void)
-	{
+	void utest_exit_pass(void) {
 		TEST_EXIT;
 	}
-
 }
