@@ -774,6 +774,30 @@
       },
       "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c85fbaf_e8f1d2af",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-13T08:50:40Z",
+      "side": 1,
+      "message": "Edited as per our discussion.",
+      "parentUuid": "941f2a40_9311551e",
+      "range": {
+        "startLine": 671,
+        "startChar": 27,
+        "endLine": 671,
+        "endChar": 34
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
