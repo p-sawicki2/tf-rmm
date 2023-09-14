@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05387f07_5f20444c",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-14T15:30:14Z",
+      "side": 1,
+      "message": "Hi Soby, Javier, thanks. I agree with what you say above, however, i still dont think code execution of RMM is an asset. An asset is something that you want to protect, not leak (like data, code) and has value to an attacker. Arbitrary Code execution, by itself has no value, if you cannot do anything with it (for ex, if no realms run, code execution on RMM is useless). An attacker uses arbitrary code execution to break realm code execution (get NS to change PC as mentioned above) or a malicious realm uses arbitrary code execution in RMM to break out of EL1 exception, to attack another realm or RMM data. Yet again, the asset in those examples are not the RMM Code execution itself, it is the RMM or other realms data.\nSo RMM code execution is the means to an end to attack a real asset, since by itself, it has no value.\n\nLet me know what you think.",
+      "parentUuid": "27b8773a_7c4a5738",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b41e57cc_cc0746d6",
         "filename": "docs/security/threat_model/threat_analysis.rst",
         "patchSetId": 14
@@ -174,6 +198,30 @@
       "side": 1,
       "message": "Actually Soby gave a better explanation than I did, as I was only thinking on the Realm world (which is out of the scope for the TM, as this asset description states)",
       "parentUuid": "f0812d3b_f7ce4508",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a0ccfab_18b5e597",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-14T15:30:14Z",
+      "side": 1,
+      "message": "Hi Soby, Javier, so the threat model says the target of evaluation is the RMM, but it sounds like the asset here is \"availability of the system\". Availability of system would make sense if we were threat modeling the system (i.e system is the target of evaluation). By itself, afaik, RMM provides no availability guarantees to the realms (as stated) or the system, or even NS world. A crash or hang is really a bug. The RMM is a passive entity, that simply responds to command from realms or NS world or S world, and only provides isolation guarantees between realms (let me know if you think that understanding is incorrect).\nGiven that the RMM is the target of evaluation, the assumption is RMM isnt malicous (it is the target of attack), so really, what you are probably thinking of is realms or NS doing somethng (such as causing state machine or data changes in RMM) that causes the RMM to hang or crash. Again, the availability of the system is not the RMMs asset, it is a system level asset, and the RMM can influence/affect that, if we are doing a system level threat model.\nIf RMM is the TOE, i dont think system availability should be part of it. That sounds more like it should be part of ARM CCA threat model.",
+      "parentUuid": "5c4e1f44_455a179f",
       "range": {
         "startLine": 43,
         "startChar": 4,
@@ -302,6 +350,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f95936e_4deb1304",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-14T15:30:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8e0e798_4e6e339c",
+      "range": {
+        "startLine": 192,
+        "startChar": 13,
+        "endLine": 192,
+        "endChar": 63
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e34ed6ef_aa119e2b",
@@ -339,6 +411,30 @@
       "side": 1,
       "message": "One of the scenarios we contemplate here, would be for instance if an agent were able to attack RMM in a way in which it would make it enter in a deadlock. In that case, the current CPU could become unavailable, so even though RMM is a reactive agent, it can potentially cause starvation on the rest of the system. Moreover, Realms also request services from RMM. If the latter were unavailable for any reason, the former could become unavailable as well or run into other error conditions if RMM cannot provide requested services.\n\nWe also kept into account, as you rightfully pointed out, that the way of crashing RMM is by attempting to exploit code or affecting integrity of data and that those are code attacks via tampering. However, as we consider \"Availability\" itself as an asset to protect, we decided to include this specific threat to bring the attention to this type of attacks to the Availability asset, even though it can be thought as an indirect threat derived from others, as well as to bring the attention to its specific mitigations.",
       "parentUuid": "e34ed6ef_aa119e2b",
+      "range": {
+        "startLine": 151,
+        "startChar": 28,
+        "endLine": 154,
+        "endChar": 42
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "360f39bd_383b0b8b",
+        "filename": "docs/security/threat_model/threat_assessment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-14T15:30:14Z",
+      "side": 1,
+      "message": "Same as other comment. Availability of the system makes sense if the target of evaluation is the system, but my understanding is we want to threat model the RMM (as the data flow diagrams show and i think one of the statements in the rst files).\nFor the scenario you mention, where NS or realm can cause deadlock in the RMM, the asset in question is RMM code/data again, since the attacker is trying to cause state machine or data changes in the RMM, or attack RMM code to make RMM (the threat). The vulnerability in the RMM would be poor/buggy locking design and the consequence/impact of the attack is the RMM crashes.\nYes, it does can cause availability at a system level, but i did not think that is what we are modeling. If the TOE is RMM, i think the threat model should answer what threats are applicable to the RMM, using what vulnerabilities in the RMM code, and what impact it causes to the RMM implementation in question (in this case just the crash).\nLet me know if that distinction makes sense, happy to explain in a phone convo too if needed. If we do a system level threat model, i think ARM CCA threat model covers those anyway..",
+      "parentUuid": "a92d21b5_9876865b",
       "range": {
         "startLine": 151,
         "startChar": 28,
