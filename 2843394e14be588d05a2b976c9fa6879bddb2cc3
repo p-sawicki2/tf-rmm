@@ -137,6 +137,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fc81047_6853096e",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-15T14:47:04Z",
+      "side": 1,
+      "message": "right but as I said, it has no value to the attacker if they can’t use it to get anything of value. perhaps RAK is one of those assets that you can break down it’s just code execution so I suppose I agree.",
+      "parentUuid": "63d02065_070c8b9a",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41e57cc_cc0746d6",
@@ -270,6 +294,30 @@
       "side": 1,
       "message": "Hmm, yes, probably you are right that this belongs better in system threat model. But there is no such system threat model and there are many mitigations that need to be taken by RMM so as to avoid affect the system availability.\n\nAnother angle to treat this is, RMM is part of system Root Trust Base (which includes EL3 root monitor) and is considered system software, so system considerations are part of overall RMM design and security objectives. This is a good incentive for the RMM threat model to consider those system aspects as well and ensure suitable mitigations are in place within this Threat model. So in my opinion, it is better to cover those threats here in this threat model even if it means there will be duplication in another system threat model (if it will exist).",
       "parentUuid": "4a0ccfab_18b5e597",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67cec511_a41ceb4e",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-15T14:47:04Z",
+      "side": 1,
+      "message": "thanks Soby, sure, that’s fine then it would be good to update the target of evaluation to say it is really the rmm implementation in a typical system context. if we don’t say that the documented threats don’t read cohesively at least to me. will resolve comment assuming we want to say that, no issues if you don’t think it is necessary.",
+      "parentUuid": "490a15a4_bc2ab387",
       "range": {
         "startLine": 43,
         "startChar": 4,
