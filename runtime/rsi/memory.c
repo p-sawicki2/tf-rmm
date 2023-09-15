@@ -50,7 +50,7 @@ void handle_rsi_ipa_state_get(struct rec *rec,
 {
 	unsigned long ipa = rec->regs[1];
 	enum s2_walk_status ws;
-	enum ripas ripas_val;
+	enum ripas ripas_val = RIPAS_EMPTY;
 
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
@@ -62,6 +62,7 @@ void handle_rsi_ipa_state_get(struct rec *rec,
 	ws = realm_ipa_get_ripas(rec, ipa, &ripas_val);
 	if (ws == WALK_SUCCESS) {
 		res->smc_res.x[0] = RSI_SUCCESS;
+		/* coverity[uninit_use:SUPPRESS] */
 		res->smc_res.x[1] = (unsigned long)ripas_val;
 	} else {
 		res->smc_res.x[0] = RSI_ERROR_INPUT;
