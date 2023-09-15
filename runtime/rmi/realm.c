@@ -338,6 +338,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 		return RMI_ERROR_INPUT;
 	}
 
+	/* coverity[UNINIT] */
 	if (!validate_realm_params(&p)) {
 		return RMI_ERROR_INPUT;
 	}
