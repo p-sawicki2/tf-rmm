@@ -185,6 +185,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7b54c95_bbf0942b",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-15T17:13:21Z",
+      "side": 1,
+      "message": "mild suggestion but maybe call the logical asset rmm control flow as opposed to code execution ? can relate it to control flow integrity where we prevent control flow “tampering” .",
+      "parentUuid": "41eaffbf_9f44a5be",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41e57cc_cc0746d6",
