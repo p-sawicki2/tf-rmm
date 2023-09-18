@@ -209,6 +209,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0856b30_093a5f48",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-18T08:36:35Z",
+      "side": 1,
+      "message": "For me, \"rmm control flow\" does not cover aspects like privilege escalation and code injection attacks.  Although \"code execution\" is a very broad term, given the description here, this may work for the purposes.",
+      "parentUuid": "b7b54c95_bbf0942b",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41e57cc_cc0746d6",
