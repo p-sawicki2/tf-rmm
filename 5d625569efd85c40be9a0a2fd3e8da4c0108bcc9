@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6562e382_e5706a84",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-09-18T13:48:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6b59d0_855ef128",
+      "revId": "5d625569efd85c40be9a0a2fd3e8da4c0108bcc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d85897c_ebeca82d",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-09-18T13:03:50Z",
       "side": 1,
       "message": "check for ret and assert ret.",
+      "revId": "5d625569efd85c40be9a0a2fd3e8da4c0108bcc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c958fb5_eb07adb9",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-09-18T13:48:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d85897c_ebeca82d",
       "revId": "5d625569efd85c40be9a0a2fd3e8da4c0108bcc9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -69,6 +105,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81a6f3b2_0908a4f4",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-09-18T13:48:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1809d13a_1bacb3f6",
+      "revId": "5d625569efd85c40be9a0a2fd3e8da4c0108bcc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5e82938_30b4440f",
@@ -82,6 +136,30 @@
       "writtenOn": "2023-09-18T13:03:50Z",
       "side": 1,
       "message": "\"Map REC aux granules, initialize aux data and unmap REC aux granules.\"",
+      "range": {
+        "startLine": 371,
+        "startChar": 4,
+        "endLine": 371,
+        "endChar": 48
+      },
+      "revId": "5d625569efd85c40be9a0a2fd3e8da4c0108bcc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b2dc371_88932147",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-09-18T13:48:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5e82938_30b4440f",
       "range": {
         "startLine": 371,
         "startChar": 4,
