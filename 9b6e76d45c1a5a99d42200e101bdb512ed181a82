@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26e8fd43_e592f762",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-18T21:42:56Z",
+      "side": 1,
+      "message": "LGTM, we need to RMM CI with the new command and also send out an email on this change in getting the coverage for unit tests.",
+      "revId": "9b6e76d45c1a5a99d42200e101bdb512ed181a82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
