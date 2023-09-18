@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db518d58_224bc680",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-18T12:37:14Z",
+      "side": 1,
+      "message": "nit: a new line a line 731 will be good. Similarly a new line at line 737 is also good.",
+      "revId": "02879d5d88451c2aacb0c5b9b547200e787fa16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
