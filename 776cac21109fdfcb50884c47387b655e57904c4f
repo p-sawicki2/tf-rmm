@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39f2d5a3_9d53781e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-18T16:01:22Z",
+      "side": 1,
+      "message": "The coverity job fails saying the number of MISRA errors increased by 3.\n\n\"Number of defects/coding rule violations increased by 3\"\n\nPlease check the errors in the html artefacts corresponding to the files touched by this patch.",
+      "revId": "776cac21109fdfcb50884c47387b655e57904c4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
