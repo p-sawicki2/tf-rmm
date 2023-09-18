@@ -16,6 +16,23 @@
       "message": "Thanks for the comments",
       "revId": "f3e8bd774ecde93bbc2f5ea0d6c1ed9e7cc836b0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8417965d_ca1be10f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-18T14:33:30Z",
+      "side": 1,
+      "message": "Thanks for the comments.\nPS 11 should fix all of them. \n\nI rebased the change on main, and posted the review to the integration branch. I suggest to continue the review there: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23425",
+      "revId": "f3e8bd774ecde93bbc2f5ea0d6c1ed9e7cc836b0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
