@@ -233,6 +233,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d1bc09_bb030925",
+        "filename": "docs/security/threat_model/threat_analysis.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-18T14:42:25Z",
+      "side": 1,
+      "message": "right, thats one of the reasons why i was saying code execution barely makes sense as a logical asset, since it is a means to an end for the attacker, not something that is valuable to the attacker by itself.\nOut of curiosity, why wouldnt control flow cover privilege escalation or code injection? are you thinkin of attacks where an attacker is able to add a page into the RMM and map it as executable?\n\nI would also be curious to see if you have other threat models where code execution is considered an asset. Would like to see how/what context that has been used in.",
+      "parentUuid": "c0856b30_093a5f48",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "2843394e14be588d05a2b976c9fa6879bddb2cc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41e57cc_cc0746d6",
