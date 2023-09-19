@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3030683_60e3b577",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "The xlat library should not be in charge of managing any context, as it is only a server that provides memory mapping services to its clients. It is responsibility of its clients to create and manage the translation contexts (and its mappings) via the API.\n\nTherefore, the library cannot handle the high region mappings. This should be done by a different component outside the library (could be done on a separate library or at the platform level, as it is done for the low level region for instance). Otherwise we are introducing coupling and dependencies (for instance, the xlat library needs to know about the slot buffer regions)",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e85fbe2b_27228453",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "This is not (or it shouldn\u0027t be) a build option for the xlat library. Instead, it is a system parameter.",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 27
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12a938db_3e84121f",
+        "filename": "lib/xlat/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "See my previous comments about this. This is a system build option, not an xlat one. the xlat library shouldn\u0027t know anything abut any memory mapping/areas nor should handle any translation contexts. That should be done only by the library clients.",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 33
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7af27d9d_ac40d898",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "I don\u0027t think this should be here at all. The xlat library should be generic and know nothing about the memory mappings or memory regions. The clients for the xlat library are the ones who should decide the mappings and use the library to create those.\n\nOtherwise, we are introducing coupling and dependencies on the library.\n\nThat was the reason why, originally, the mapping for the high region was all handled by the slot buffer mechanism (the slot buffer library was this library\u0027s client) or why the low region mappings are all handled by the plat_common_init.c (which is the client for the low region part).\n\nSince now the high region is used not only for the slot buffers but for the heaps, we need to look a common place where to handle those mappings (maybe plat_warmboot_setup() if the suggestions that I gave in previous comments are not ok?), but it should not be allocated here.",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3887290_ca78d2ae",
+        "filename": "lib/xlat/src/aarch64/xlat_helper.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "The functionality of this file is not part of the xlat library. The xlat library should know nothing about the stacks (or any other memory regions/mappings)",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7aa2ae33_eb9f07a3",
+        "filename": "lib/xlat/src/fake_host/xlat_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "See my previous comment on this. The xlat library only handles memory mappings. The stack management doesn\u0027t fall on its responsibilities.",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 8,
+        "endChar": 26
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2677322_fcb21bd8",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "See my previous comments with regard this. This functionality is not responsibility of the xlat library.",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c7fbcd6_33f88d45",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-19T16:58:23Z",
+      "side": 1,
+      "message": "See my previous comment about this. The number of pages per stack should be a system build option, not a xlat one",
+      "range": {
+        "startLine": 97,
+        "startChar": 38,
+        "endLine": 97,
+        "endChar": 62
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
