@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0584b907_ff49604d",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-19T14:18:30Z",
+      "side": 1,
+      "message": "As this context isn\u0027t really about the attestation, but used by the allocator module, I would prefer a less general name, like for example `alloc_ctx`",
+      "range": {
+        "startLine": 118,
+        "startChar": 25,
+        "endLine": 118,
+        "endChar": 28
+      },
+      "revId": "eccc4b8d204540db11adffc0bb02497995681171",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65bb5ef3_5ef2e533",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-19T14:18:30Z",
+      "side": 1,
+      "message": "token_sign_ctx.state \u003d ATTEST_SIGN_NOT_STARTED; is not done. Is it on purpose?",
+      "range": {
+        "startLine": 225,
+        "startChar": 12,
+        "endLine": 225,
+        "endChar": 33
+      },
+      "revId": "eccc4b8d204540db11adffc0bb02497995681171",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
