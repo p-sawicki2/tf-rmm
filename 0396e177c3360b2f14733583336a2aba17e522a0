@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f879106_b665ad53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-20T17:07:04Z",
+      "side": 1,
+      "message": "Hi Javier\nyes what you say is correct. The lower VA is platform specific and hence xlat lib does not handle this on its own. But, the high VA is generic and we can create a generic high VA space. \n\nNot the trouble is that high VA space is shared between 2 entites now (and maybe more in future) xlat_ctx cannot be shared between the 2.\n\nWe could create a separate lib for high VA but it would be creating another lib which is dependant of xlat lib and this is not different from integrating directly into xlat lib.\n\nSo this is why I suggested this solution.\n\nThe high va manager \"knows\" the different needs of high VA use in RMM (all of them are generic). The 2 needs now are per-CPU stack and slot buffer . I think for now it is better for this to be part of xlat lib (albeit a separate file called \"high_va\"). It is too much trouble designing a suitable name and API for this component when it is very much related to xlat lib.",
+      "parentUuid": "a3030683_60e3b577",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e85fbe2b_27228453",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 2
