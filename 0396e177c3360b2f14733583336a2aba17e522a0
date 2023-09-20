@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ae63fe53_315fe947",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-20T17:42:47Z",
+      "side": 1,
+      "message": "Yes, I agree that now that the high region is shared across several entities its management is trickier, which is why I suggested to create an entity to centralize its management (for instance, a library, as you mentioned). I know that this might add some hassle, which is the reason why I also suggested some other alternatives, such as plat_common_init.c, where the low region context is also handled. In my opinion it would be less problematic to have that component know about the high region mappings (or even query the slot buffer library, for instance, if necessary) and handle the high region context there rather than delegate that to the xlat library. It feels to me that the library is also its own client which I am not very happy with. Also, if in the future a different platform has different needs (such as different stack size) or some platform needs to add a different memory mapping to the high region, having that hardcoded in the xlat library I think could lead to integration problems in the future.",
+      "parentUuid": "8f879106_b665ad53",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e85fbe2b_27228453",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 2
