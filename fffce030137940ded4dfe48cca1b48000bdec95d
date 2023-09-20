@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eee6e0b3_440953c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-20T16:52:08Z",
+      "side": 1,
+      "message": "some minor comments",
+      "revId": "fffce030137940ded4dfe48cca1b48000bdec95d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77126896_a66bddeb",
+        "filename": "lib/measurement/include/measurement.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-20T16:52:08Z",
+      "side": 1,
+      "message": "order this according to arguments.",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 50
+      },
+      "revId": "fffce030137940ded4dfe48cca1b48000bdec95d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f8b3b21_4e917ba0",
+        "filename": "lib/measurement/include/measurement.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-20T16:52:08Z",
+      "side": 1,
+      "message": "algorithm",
+      "range": {
+        "startLine": 175,
+        "startChar": 5,
+        "endLine": 175,
+        "endChar": 9
+      },
+      "revId": "fffce030137940ded4dfe48cca1b48000bdec95d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32b4456f_a0cbbfba",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-20T16:52:08Z",
+      "side": 1,
+      "message": "suggest: \"measurement_init_ripas_measure\"",
+      "range": {
+        "startLine": 1244,
+        "startChar": 14,
+        "endLine": 1244,
+        "endChar": 27
+      },
+      "revId": "fffce030137940ded4dfe48cca1b48000bdec95d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
