@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "978926e4_e0abf351",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-20T14:09:15Z",
+      "side": 1,
+      "message": "Related Job to run CBMC: https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-cbmc-all/2/",
+      "revId": "e055c331e0827f3261bc93d6805beb01fce892f2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
