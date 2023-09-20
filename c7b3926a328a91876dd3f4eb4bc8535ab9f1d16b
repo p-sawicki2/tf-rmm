@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d707d158_7877e58c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-20T14:50:02Z",
+      "side": 1,
+      "message": "Coverity Scan failed: https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/292/",
+      "revId": "c7b3926a328a91876dd3f4eb4bc8535ab9f1d16b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
