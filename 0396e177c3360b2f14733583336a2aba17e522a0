@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "50da6610_3692fba8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-21T13:51:36Z",
+      "side": 1,
+      "message": "Actually the client is still the slot buffer (as it makes use of xlat lib APIs to do the work). The working model is only changed for the creation of tables and rest of table manipulation is via xlat lib APIs.\n\nPreviously the specifying the xlat_ctx creation was left to the client. Now this has moved into the xlat table lib but with a difference that the slot buffer client can specify the number of slots to create.\n\nThe overhead for creating a new component is not fully justified IMO. The new component will essentially be a wrapper for just creating the high VA context but still rely on the clients to directly interact with xlat lib for getting high VA operations.  This would not be a typical component from that PoV.\n\n\nSo the high va component in xlat high va defines the types of clients it can service and currently there are 2 (slot buffer and stack). There will be config options to control the VA allocations for these 2 clients va 2 config options.\n\nSo platforms will not have trouble changing the stack size from that PoV.\n\nIf there are more clients in future, the high va will define suitable options to control their allocations and those clients will interact with xlat lib for operating on the high va.",
+      "parentUuid": "ae63fe53_315fe947",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e85fbe2b_27228453",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 2
