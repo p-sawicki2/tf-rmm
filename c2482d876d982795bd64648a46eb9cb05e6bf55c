@@ -1,6 +1,149 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73665d6a_a7c8519e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "This commit doesn\u0027t only adds to its parent commit, but mostly rewrites it.\n\nI guess the parent commit was created earlier when the information in it was up-to-date, but has never been merged. So now it is impossible to track down which RMM commit would it be valid for. Therefore I see no value in keeping it as a separate commit.\n\nSo my suggestion is to sqash the parent commit into this (as this has review history), and drop the parent, keeping and merging only this.",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a787e76_4efff32e",
+        "filename": "docs/design/diagrams/full_va_space_diagram.png",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "in \u0027# of slot buffers * PAGE_SIZE\u0027 should contain GRANULE_SIZE instead I think. (Although they probably will always be the same)\n\nInstead of \u0027RMM Image\u0027 the lowest region should be \u0027RMM code and data\u0027 instead. One thing I can think of is that this region contains .bss, while strictly speaking that area is not part of the image (i.e. there is no space filled with zeroes in the elf file for that section)",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "421603a4_728bf5d0",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "is SLOT_VA_[START|SIZE] are the proper name?\n\nThey are more like properties of the \u0027VA space\u0027, or \u0027slot buffer (area?)\u0027",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2edd9cb6_92390425",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "Stack as well",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0938f3b_ce11aaa8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "Does this mean that in some cases the GPF fault actually takes to EL1?",
+      "range": {
+        "startLine": 90,
+        "startChar": 13,
+        "endLine": 90,
+        "endChar": 47
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f01ce69_d4b4d55f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "minimum?",
+      "range": {
+        "startLine": 141,
+        "startChar": 10,
+        "endLine": 141,
+        "endChar": 17
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36cc0285_73ae16e9",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "maybe append \u0027by the EL3 firmware, before starting RMM.\u0027",
+      "range": {
+        "startLine": 162,
+        "startChar": 17,
+        "endLine": 162,
+        "endChar": 31
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0b0aa9e_4a383b43",
@@ -19,6 +162,29 @@
         "startChar": 2,
         "endLine": 237,
         "endChar": 18
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a40ecae_f10c2332",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T12:15:32Z",
+      "side": 1,
+      "message": "Is this here by mistake, or does underscore need to be escaped by some reason?",
+      "range": {
+        "startLine": 266,
+        "startChar": 51,
+        "endLine": 266,
+        "endChar": 52
       },
       "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
