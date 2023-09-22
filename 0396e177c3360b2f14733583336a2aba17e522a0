@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e596af6_1ef74a32",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "Hmm, let\u0027s keep the name a generic one although it is consumed by xlat_table lib. I suspect the order of evaluation of linker script and pre-processor may become a dependancy which may cuase trouble later.\n\nSuggest to keep this name as RMM_NUM_PAGES_PER_STACK and add a common option in CommonConfigs.cmake. See later comments.",
+      "parentUuid": "e85fbe2b_27228453",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 27
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "12a938db_3e84121f",
         "filename": "lib/xlat/CMakeLists.txt",
         "patchSetId": 2
@@ -120,6 +144,53 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "74b2ad1f_977dc955",
+        "filename": "lib/xlat/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "Lets keep this as a common config in CommonConfigs.cmake",
+      "parentUuid": "12a938db_3e84121f",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 33
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49637a64_6f4a6652",
+        "filename": "lib/xlat/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "need to be added to commonconfig.cmake",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 57,
+        "endChar": 70
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7af27d9d_ac40d898",
         "filename": "lib/xlat/include/xlat_high_va.h",
         "patchSetId": 2
@@ -131,6 +202,93 @@
       "writtenOn": "2023-09-19T16:58:23Z",
       "side": 1,
       "message": "I don\u0027t think this should be here at all. The xlat library should be generic and know nothing about the memory mappings or memory regions. The clients for the xlat library are the ones who should decide the mappings and use the library to create those.\n\nOtherwise, we are introducing coupling and dependencies on the library.\n\nThat was the reason why, originally, the mapping for the high region was all handled by the slot buffer mechanism (the slot buffer library was this library\u0027s client) or why the low region mappings are all handled by the plat_common_init.c (which is the client for the low region part).\n\nSince now the high region is used not only for the slot buffers but for the heaps, we need to look a common place where to handle those mappings (maybe plat_warmboot_setup() if the suggestions that I gave in previous comments are not ok?), but it should not be allocated here.",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e640a358_22ffaa04",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "as discussed, the xlat_high_va can allocate the contexts on behalf of its clients. The clients then operate on high va by using the lib.",
+      "parentUuid": "7af27d9d_ac40d898",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dabe9c19_1d81422d",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "RMM_CPU_STACK_SIZE",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60194d47_1c796704",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "RMM_NUM_PAGES_PER_STACK",
+      "range": {
+        "startLine": 12,
+        "startChar": 25,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56885c89_3748a04e",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "\"RMM_CPU_STACK_BOTTOM_VA\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 30
+      },
       "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -194,6 +352,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48ad1866_fe4f0437",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "nit: remove FLAT",
+      "range": {
+        "startLine": 36,
+        "startChar": 15,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6c7fbcd6_33f88d45",
         "filename": "runtime/CMakeLists.txt",
         "patchSetId": 2
@@ -210,6 +391,75 @@
         "startChar": 38,
         "endLine": 97,
         "endChar": 62
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70f0ca84_c1e915d9",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "This is an effect of the macro evaluation. Hopefully this should not be needed after the suggested changes (moving RMM_NUM_PAGES_PER_STACK to commonconfigs).",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 100
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a88501f1_2e2f0afa",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 25
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5af79192_1ca669b0",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T13:02:22Z",
+      "side": 1,
+      "message": ". \u003d . + (RMM_NUM_PAGES_PER_STACK * GRANULE_SIZE * MAX_CPUS);",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 28
       },
       "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
