@@ -119,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d59e3d4_318d7428",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e596af6_1ef74a32",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 27
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12a938db_3e84121f",
@@ -166,6 +190,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "307e7383_36a051fa",
+        "filename": "lib/xlat/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74b2ad1f_977dc955",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 33
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49637a64_6f4a6652",
@@ -179,6 +227,30 @@
       "writtenOn": "2023-09-22T13:02:22Z",
       "side": 1,
       "message": "need to be added to commonconfig.cmake",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 57,
+        "endChar": 70
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b00e8b93_eb30275c",
+        "filename": "lib/xlat/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49637a64_6f4a6652",
       "range": {
         "startLine": 57,
         "startChar": 1,
@@ -220,6 +292,24 @@
       "side": 1,
       "message": "as discussed, the xlat_high_va can allocate the contexts on behalf of its clients. The clients then operate on high va by using the lib.",
       "parentUuid": "7af27d9d_ac40d898",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "688bac37_f3559404",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "I left it here.",
+      "parentUuid": "e640a358_22ffaa04",
       "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -270,6 +360,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95151097_c6b50ac5",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dabe9c19_1d81422d",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbff3d93_91213a46",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60194d47_1c796704",
+      "range": {
+        "startLine": 12,
+        "startChar": 25,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56885c89_3748a04e",
@@ -283,6 +421,30 @@
       "writtenOn": "2023-09-22T13:02:22Z",
       "side": 1,
       "message": "\"RMM_CPU_STACK_BOTTOM_VA\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f352d64_508a70a1",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56885c89_3748a04e",
       "range": {
         "startLine": 20,
         "startChar": 8,
@@ -373,6 +535,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76e1995f_5f49f306",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48ad1866_fe4f0437",
+      "range": {
+        "startLine": 36,
+        "startChar": 15,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c7fbcd6_33f88d45",
@@ -419,6 +605,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c70cb2bd_4132e0f5",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70f0ca84_c1e915d9",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 100
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a88501f1_2e2f0afa",
@@ -432,6 +642,30 @@
       "writtenOn": "2023-09-22T13:02:22Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 25
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b75383_98eab760",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a88501f1_2e2f0afa",
       "range": {
         "startLine": 7,
         "startChar": 0,
@@ -459,6 +693,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc13716d_1efbdc87",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fca4d66_3c9bfc4c",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6a65980_3027bbca",
@@ -472,6 +724,30 @@
       "writtenOn": "2023-09-22T14:34:07Z",
       "side": 1,
       "message": "perhaps just call this \".stack\"",
+      "range": {
+        "startLine": 83,
+        "startChar": 2,
+        "endLine": 83,
+        "endChar": 9
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76c14355_813d4cce",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6a65980_3027bbca",
       "range": {
         "startLine": 83,
         "startChar": 2,
@@ -505,6 +781,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af0adf2a_6f8f5e32",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce07f776_e7981c76",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 14
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5af79192_1ca669b0",
@@ -528,6 +828,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d15ad0b5_84d77603",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5af79192_1ca669b0",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 28
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bca782d9_1d918f11",
@@ -541,6 +865,30 @@
       "writtenOn": "2023-09-22T14:34:07Z",
       "side": 1,
       "message": "this may not be needed.",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1fe4403_ad3d9ac9",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-22T20:19:28Z",
+      "side": 1,
+      "message": "Stack is aligned at GRANULE_SIZE, and the size is a multiple of GRANULE_SIZE, so rmm_end must be aligned either way. I removed it.",
+      "parentUuid": "bca782d9_1d918f11",
       "range": {
         "startLine": 89,
         "startChar": 0,
