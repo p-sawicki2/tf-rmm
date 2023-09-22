@@ -112,6 +112,8 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 				  struct rmi_rec_exit *rec_exit,
 				  unsigned long esr)
 {
+	(void) rec_exit;
+
 	unsigned int rt;
 	unsigned long idreg, value;
 
@@ -211,6 +213,7 @@ static bool handle_icc_el1_sysreg_trap(struct rec *rec,
 				       unsigned long esr)
 {
 	__unused unsigned long sysreg = esr & ESR_EL2_SYSREG_MASK;
+	(void) rec;
 
 	/*
 	 * We should only have configured ICH_HCR_EL2 to trap on DIR and we
