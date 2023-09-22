@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9b244661_dd876079",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T14:46:59Z",
+      "side": 1,
+      "message": "Agree, this can be merged with the parent patch.",
+      "parentUuid": "73665d6a_a7c8519e",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a787e76_4efff32e",
         "filename": "docs/design/diagrams/full_va_space_diagram.png",
         "patchSetId": 2
