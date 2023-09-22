@@ -444,6 +444,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3fca4d66_3c9bfc4c",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T14:34:07Z",
+      "side": 1,
+      "message": "Could add some error checking here to ensure that the build system passed the required defines for the linker script processing.\n\n#if ((RMM_NUM_PAGES_PER_STACK \u003d\u003d 0) || (GRANULE_SIZE \u003d\u003d 0) || (MAX_CPUS\u003d\u003d 0))\n#error \"Required config options not set for the linker script.\"\n#endif",
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6a65980_3027bbca",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T14:34:07Z",
+      "side": 1,
+      "message": "perhaps just call this \".stack\"",
+      "range": {
+        "startLine": 83,
+        "startChar": 2,
+        "endLine": 83,
+        "endChar": 9
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce07f776_e7981c76",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T14:34:07Z",
+      "side": 1,
+      "message": "\"rmm_stack_start\" to align with the end name.",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 14
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5af79192_1ca669b0",
         "filename": "runtime/linker.lds",
         "patchSetId": 2
@@ -460,6 +523,29 @@
         "startChar": 2,
         "endLine": 85,
         "endChar": 28
+      },
+      "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bca782d9_1d918f11",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-22T14:34:07Z",
+      "side": 1,
+      "message": "this may not be needed.",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 25
       },
       "revId": "0396e177c3360b2f14733583336a2aba17e522a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
