@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f4662680_ce879fd1",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:17:47Z",
+      "side": 1,
+      "message": "Can be moved to line 12 to keep this together with slot buffer related defines.\nSTACK END and STACK START seem to be normal names used in RMM, so suggest some renames as below:\n\n\n\n/* The per CPU High VA space is used for Slot buffer and per-CPU stack mapping */\n\n#define XLAT_HIGH_VA_SLOT_NUM\t(U(25))\n/* Calculate the slot buffer\u0027s virtual address */\n#define SLOT_VIRT (((UL(~0)) - (XLAT_HIGH_VA_SLOT_NUM * GRANULE_SIZE)) + 1U)\n\n\n#define RMM_CPU_STACK_SIZE\t(RMM_NUM_PAGES_PER_STACK * PAGE_SIZE)\n/* Leave a page gap after the stack */\n#define GAP_PAGE_COUNT\t\t(U(1))\n#define CPU_STACK_GAP\t\t(GAP_PAGE_COUNT * PAGE_SIZE)\n#define RMM_CPU_STACK_END_VA (SLOT_VIRT - CPU_STACK_GAP)\n#define CPU_STACK_VIRT (RMM_CPU_STACK_END_VA - RMM_CPU_STACK_SIZE)",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c3bca90_2ab0f5ff",
         "filename": "lib/xlat/src/xlat_high_va.c",
         "patchSetId": 4
