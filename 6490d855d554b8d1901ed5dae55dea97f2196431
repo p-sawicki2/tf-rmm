@@ -16,6 +16,241 @@
       "message": "Thanks for the review",
       "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c3bca90_2ab0f5ff",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "Add a comment here: \"The Slot buffers are mapped/unmapped dynamically. Hence define TRANSIENT mmap region\"",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00c7219f_9141a9b8",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "This can go into xla_high_va.h \n\n/* TTE attribute for per CPU private VA (nG) Data mapping) */\n#define XLAT_NG_DATA_ATTR\n\n\nthe SLOT_DESC_ATTR can also be replaced with this.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 40
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69ee52d2_b888618c",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "Stack VA  can be statically populated I think.",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 5
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c0ea48f_5ba1cf55",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "this is not needed since the below check will cover this.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 0
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946d9f20_2d49b10d",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "is this correct ? I assumed we are allocating a VA space of 4KB x 512 and this address does not seem be (~0UL - 2MB + 1)",
+      "range": {
+        "startLine": 88,
+        "startChar": 26,
+        "endLine": 88,
+        "endChar": 27
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ca60640_b61169d9",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "struct xlat_mmap_region high_va_regions[MMAP_REGION_COUNT] \u003d {\n    RMM_STACK_MMAP,\n    RMM_SLOT_BUF_MMAP\n};\n\nSince this is no longer static, this will be on the stack and hence naturally per-CPU. Can remove the copy_to_region() function as we can construct this mmap array deterministically at compile time.",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 42
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29279eee_d5c7bb8e",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "Does not need to be per-CPU.",
+      "range": {
+        "startLine": 119,
+        "startChar": 22,
+        "endLine": 119,
+        "endChar": 29
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56935003_c7cdec38",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "could define a macro for this, HIGH_VA_SIZE.",
+      "range": {
+        "startLine": 121,
+        "startChar": 5,
+        "endLine": 121,
+        "endChar": 35
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b105999_5e55eeb5",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "let remove this panic() and return some error code back to caller. The caller can then panic().\n\nSame comment for below panic()s",
+      "range": {
+        "startLine": 125,
+        "startChar": 2,
+        "endLine": 125,
+        "endChar": 10
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e2d91c5_be1c5efd",
+        "filename": "plat/common/src/fake_host/plat_cmn_arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "not needed, can be removed.",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77b3a7c7_26b36421",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T06:00:43Z",
+      "side": 1,
+      "message": "not needed, can be removed.",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
