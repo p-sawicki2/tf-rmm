@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc1db0ed_874b1121",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T04:06:24Z",
+      "side": 1,
+      "message": "nit: remove `The`",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 4
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f21362b8_77f52716",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T04:06:24Z",
+      "side": 1,
+      "message": "Suggest: \"Please refer Contributor....\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 9
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b0ddc61_8ae2898c",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T04:06:24Z",
+      "side": 1,
+      "message": "nit: remote this space.",
+      "range": {
+        "startLine": 22,
+        "startChar": 50,
+        "endLine": 22,
+        "endChar": 51
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ae3d329_c8431a63",
+        "filename": ".github/workflows/pr_automessage.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-23T04:06:24Z",
+      "side": 1,
+      "message": "is this permission needed ? And if needed, would read be enough ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
