@@ -83,6 +83,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fffb14bd_b6044ac7",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T16:36:54Z",
+      "side": 1,
+      "message": "Another option which is simpler (and I forgot about it) is to setup the VA size for the high region to be XLAT_TABLES_ENTRIES * PAGE_SIZE, regardless of the number of pages we map.",
+      "parentUuid": "40ac5b48_5a144814",
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9eb37482_21c0560d",
         "filename": "lib/xlat/src/xlat_high_va.c",
         "patchSetId": 6
