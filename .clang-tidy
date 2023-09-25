@@ -1,0 +1,33 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+#
+# Configuration file for clang-tidy.
+#
+# Checks are specified as a comma-separated list. A '-' before the name of the
+# check will disable that check.
+#
+# The WarningsAsErrors field specifies checks which will have their warnings
+# promoted to errors. These checks are specified in the same way as above.
+#
+# HeaderFilterRegex field specifies which headers will have warnings outputted.
+#
+Checks: '-*,
+    bugprone-*,
+    -bugprone-easily-swappable-parameters,
+    -bugprone-branch-clone,
+    misc-redundant-expression,
+    misc-unused-parameters,
+    google-readability-casting,
+    cppcoreguidelines-init-variables,
+    cppcoreguidelines-avoid-magic-numbers'
+
+WarningsAsErrors: '-*,
+    bugprone-narrowing-conversions,
+    bugprone-implicit-widening-of-multiplication-result,
+    bugprone-infinite-loop,
+    bugprone-too-small-loop-variable'
+
+HeaderFilterRegex: 'drivers/|plat/|runtime/'
