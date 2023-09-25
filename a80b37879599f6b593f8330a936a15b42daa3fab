@@ -64,6 +64,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6226712_6505aa69",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T17:34:52Z",
+      "side": 1,
+      "message": "After a discussion with Soby this is not needed.",
+      "parentUuid": "62ef8665_829f5cba",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 37
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40ac5b48_5a144814",
@@ -224,6 +248,30 @@
       "writtenOn": "2023-09-25T17:06:37Z",
       "side": 1,
       "message": "besides the previous comments, this should be called only during cold boot and the rest during warm boot. The -EALREADY return value should not pass if called from the cold boot path.",
+      "range": {
+        "startLine": 99,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 2
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "265510c1_f3b097e9",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T17:34:52Z",
+      "side": 1,
+      "message": "Ignore this comment too. Today is not my day 😊",
+      "parentUuid": "3660217a_4d0c4214",
       "range": {
         "startLine": 99,
         "startChar": 1,
