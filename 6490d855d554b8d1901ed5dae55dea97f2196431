@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da77db67_172c00cf",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4662680_ce879fd1",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c3bca90_2ab0f5ff",
@@ -52,6 +70,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c50c4105_9c7b6244",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c3bca90_2ab0f5ff",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00c7219f_9141a9b8",
@@ -65,6 +101,30 @@
       "writtenOn": "2023-09-23T06:00:43Z",
       "side": 1,
       "message": "This can go into xla_high_va.h \n\n/* TTE attribute for per CPU private VA (nG) Data mapping) */\n#define XLAT_NG_DATA_ATTR\n\n\nthe SLOT_DESC_ATTR can also be replaced with this.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 40
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0140a1b_7b5a0ae7",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00c7219f_9141a9b8",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -98,6 +158,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ee81d3c_ed178236",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "True, Done",
+      "parentUuid": "69ee52d2_b888618c",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 5
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c0ea48f_5ba1cf55",
@@ -121,6 +205,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d3d7911_01ca598e",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "9c0ea48f_5ba1cf55",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 0
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "946d9f20_2d49b10d",
@@ -134,6 +242,30 @@
       "writtenOn": "2023-09-23T06:00:43Z",
       "side": 1,
       "message": "is this correct ? I assumed we are allocating a VA space of 4KB x 512 and this address does not seem be (~0UL - 2MB + 1)",
+      "range": {
+        "startLine": 88,
+        "startChar": 26,
+        "endLine": 88,
+        "endChar": 27
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b3da785_43e7cced",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "That\u0027s right, Fixed this",
+      "parentUuid": "946d9f20_2d49b10d",
       "range": {
         "startLine": 88,
         "startChar": 26,
@@ -169,6 +301,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13d9a266_6f0d548b",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "This was declared static mostly because add_mmap_to_ctx_cfg saves the regions pointer that is passed to xlat_ctx_cfg_init in xlat_ctx_cfg. If the array was declared on the stack, the saved pointer would point to the stackframe of another function once this function returned.\n\nIt is true though, currently declaring xlat_mmap_region high_va_regions on the stack wouldn\u0027t cause an exception, because the pointer is used in xlat_ctx_init, which is called from this function, so the stackframe containing the array haven\u0027t been destroyed at that point. \n\nAnother functionality using the saven pointer is the table printing functionality, which we don\u0027t call currently. \n\nSo I would leave it as it is.",
+      "parentUuid": "3ca60640_b61169d9",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 42
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29279eee_d5c7bb8e",
         "filename": "lib/xlat/src/xlat_high_va.c",
         "patchSetId": 4
@@ -180,6 +336,30 @@
       "writtenOn": "2023-09-23T06:00:43Z",
       "side": 1,
       "message": "Does not need to be per-CPU.",
+      "range": {
+        "startLine": 119,
+        "startChar": 22,
+        "endLine": 119,
+        "endChar": 29
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bf9017c_9de6985f",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "I think it should. Please see comment above",
+      "parentUuid": "29279eee_d5c7bb8e",
       "range": {
         "startLine": 119,
         "startChar": 22,
@@ -213,6 +393,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "621910f1_8bd7b737",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56935003_c7cdec38",
+      "range": {
+        "startLine": 121,
+        "startChar": 5,
+        "endLine": 121,
+        "endChar": 35
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b105999_5e55eeb5",
@@ -226,6 +430,30 @@
       "writtenOn": "2023-09-23T06:00:43Z",
       "side": 1,
       "message": "let remove this panic() and return some error code back to caller. The caller can then panic().\n\nSame comment for below panic()s",
+      "range": {
+        "startLine": 125,
+        "startChar": 2,
+        "endLine": 125,
+        "endChar": 10
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "498cc72b_e92a7fe3",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b105999_5e55eeb5",
       "range": {
         "startLine": 125,
         "startChar": 2,
@@ -253,6 +481,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "076cfe5d_7a74f3e5",
+        "filename": "plat/common/src/fake_host/plat_cmn_arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Right, Done",
+      "parentUuid": "0e2d91c5_be1c5efd",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "77b3a7c7_26b36421",
@@ -266,6 +512,24 @@
       "writtenOn": "2023-09-23T06:00:43Z",
       "side": 1,
       "message": "not needed, can be removed.",
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4a72f29_ac4d99e8",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T09:00:20Z",
+      "side": 1,
+      "message": "Right, Done",
+      "parentUuid": "77b3a7c7_26b36421",
       "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
