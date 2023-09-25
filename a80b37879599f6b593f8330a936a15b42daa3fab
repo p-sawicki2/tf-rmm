@@ -66,6 +66,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "40ac5b48_5a144814",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T16:00:23Z",
+      "side": 1,
+      "message": "The VA space size for the high region needs to be a power of two, so round (RMM_NUM_PAGES_PER_STACK + GAP_PAGE_COUNT + XLAT_HIGH_VA_SLOT_NUM) up to the closest power of two so any addition or deletion of slot buffers won\u0027t make the xlat library to crash (see https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23425/6/lib/realm/src/include/buffer_private.h#9 for an example)\n\nAnother option would be to map the CPU Stacks right at the end of the current L3 page, for instance you can redefine GAP_PAGE_COUNT as\n\n#define GAP_PAGE_COUNT (XLAT_TABLE_ENTRIES - XLAT_HIGH_VA_SLOT_NUM - RMM_NUM_PAGES_PER_STACK)\n\nand\n\nCOMPILER_ASSERT((XLAT_HIGH_VA_SLOT_NUM + RMM_NUM_PAGES_PER_STACK) \u003c XLAT_TABLE_ENTRIES)\n\nThis way you know that your high VA region will use the whole L3 level table and you don\u0027t need to worry about the number of pages mapped.",
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9eb37482_21c0560d",
         "filename": "lib/xlat/src/xlat_high_va.c",
         "patchSetId": 6
