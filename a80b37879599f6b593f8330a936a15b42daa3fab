@@ -209,6 +209,29 @@
       },
       "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3660217a_4d0c4214",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T17:06:37Z",
+      "side": 1,
+      "message": "besides the previous comments, this should be called only during cold boot and the rest during warm boot. The -EALREADY return value should not pass if called from the cold boot path.",
+      "range": {
+        "startLine": 99,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 2
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
