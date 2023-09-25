@@ -325,6 +325,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6f0618c1_0e484088",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-25T09:22:45Z",
+      "side": 1,
+      "message": "Ah, yes, you are right. I get confused with Tf-A which has a separate copy.\n\nCan we not do the below :\n\n\nstatic struct xlat_mmap_region high_va_regions[MAX_CPUS][MMAP_REGION_COUNT] \u003d {\n    RMM_STACK_MMAP,\n    RMM_SLOT_BUF_MMAP\n};\n\n\nhigh_va_regions[cpu_id][0U].base_pa \u003d rmm_get_my_stack(cpuid) - RMM_CPU_STACK_SIZE;\n\n\nret \u003d xlat_ctx_cfg_init(\u0026high_va_xlat_ctx_cfgs[cpuid], VA_HIGH_REGION,\n\t\t\t\t \u0026high_va_regions[cpuid][0U],\n                                  ...\n\n\nAnd avoid the memcpy?",
+      "parentUuid": "13d9a266_6f0d548b",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 42
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29279eee_d5c7bb8e",
         "filename": "lib/xlat/src/xlat_high_va.c",
         "patchSetId": 4
@@ -360,6 +384,30 @@
       "side": 1,
       "message": "I think it should. Please see comment above",
       "parentUuid": "29279eee_d5c7bb8e",
+      "range": {
+        "startLine": 119,
+        "startChar": 22,
+        "endLine": 119,
+        "endChar": 29
+      },
+      "revId": "6490d855d554b8d1901ed5dae55dea97f2196431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f7a3899_87acb319",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-25T09:22:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4bf9017c_9de6985f",
       "range": {
         "startLine": 119,
         "startChar": 22,
