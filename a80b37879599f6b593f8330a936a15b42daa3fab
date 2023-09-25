@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10ce4cb6_e5381070",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-25T10:21:24Z",
+      "side": 1,
+      "message": "Rewritten using Designated Initializers as we discussed offline",
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
