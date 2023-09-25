@@ -16,6 +16,98 @@
       "message": "Rewritten using Designated Initializers as we discussed offline",
       "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4288fbb_3e2887cb",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T15:43:22Z",
+      "side": 1,
+      "message": "why do we need this?",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62ef8665_829f5cba",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T15:43:22Z",
+      "side": 1,
+      "message": "NR_CPU_SLOTS",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 37
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eb37482_21c0560d",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T15:43:22Z",
+      "side": 1,
+      "message": "struct xlat_ctx_cfg contains the immutable part of the xlat context so it only needs to be initialized once and can be used by all the contexts.\n\nThe workflow should be as follows:\n\n  - xlat_ctx_cfg_init() is called during cold boot. This will initialize the only struct xlat_ctx_cfg that you will need for all the contexts.\n  - the rest of the initialization (xlat_ctx_init() and xlat_arch_setup_mmu_cfg()) is done on the warm boot path. xlat_ctx_init() will accept the xlat_ctx_cfg structure that you initialized during cold boot.",
+      "range": {
+        "startLine": 79,
+        "startChar": 28,
+        "endLine": 79,
+        "endChar": 49
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "654b6546_7d309186",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T15:43:22Z",
+      "side": 1,
+      "message": "As per the workflow above, you only need one array of xlat_mmap_region structures, which will be shared across all the CPUs (all the CPUs use the same mappings). This memory mappings array will be used passed to xlat_ctx_cfg_init() only once during cold boot.",
+      "range": {
+        "startLine": 83,
+        "startChar": 32,
+        "endLine": 83,
+        "endChar": 48
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
