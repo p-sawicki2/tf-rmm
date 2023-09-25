@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5608762_bd7ad0be",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T18:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc1db0ed_874b1121",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 4
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f21362b8_77f52716",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-23T04:06:24Z",
       "side": 1,
       "message": "Suggest: \"Please refer Contributor....\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 9
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2a3fe00_8e67c683",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T18:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f21362b8_77f52716",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b0175b7_c253bd8d",
+        "filename": ".github/pr_message.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T18:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b0ddc61_8ae2898c",
+      "range": {
+        "startLine": 22,
+        "startChar": 50,
+        "endLine": 22,
+        "endChar": 51
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ae3d329_c8431a63",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-09-23T04:06:24Z",
       "side": 1,
       "message": "is this permission needed ? And if needed, would read be enough ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "b654839edcd7d5d2978946c8c6c7069b877c03fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c54d0c05_04c40c9f",
+        "filename": ".github/workflows/pr_automessage.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-25T18:09:47Z",
+      "side": 1,
+      "message": "Yes, this permission needs to be set to \"write\" as the workflow needs to write the message on the PR",
+      "parentUuid": "5ae3d329_c8431a63",
       "range": {
         "startLine": 5,
         "startChar": 2,
