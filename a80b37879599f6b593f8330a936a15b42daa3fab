@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dd13a96_23074545",
+        "filename": "lib/xlat/include/xlat_defs.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-26T08:01:18Z",
+      "side": 1,
+      "message": "I got Misra warnings similar to this:\n  1. misra_c_2012_rule_12_2_violation: In expression \"1U \u003c\u003c 9U\", shifting more than 7 bits, the number of bits in the essential type of the left expression, \"1U\", is not allowed.  The shift amount is 9.\nHere the shifting amount is also 9 (XLAT_GRANULARITY_SIZE_SHIFT - XLAT_ENTRY_SIZE_SHIFT, 9 - 3)",
+      "parentUuid": "b4288fbb_3e2887cb",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62ef8665_829f5cba",
@@ -313,6 +337,30 @@
       "writtenOn": "2023-09-26T04:58:12Z",
       "side": 1,
       "message": "Is this needed ? Can we not just return the error code ?",
+      "range": {
+        "startLine": 121,
+        "startChar": 58,
+        "endLine": 121,
+        "endChar": 62
+      },
+      "revId": "a80b37879599f6b593f8330a936a15b42daa3fab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89189f18_56388087",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-09-26T08:01:18Z",
+      "side": 1,
+      "message": "You are right.",
+      "parentUuid": "6fea8e83_6b54035c",
       "range": {
         "startLine": 121,
         "startChar": 58,
