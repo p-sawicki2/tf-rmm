@@ -116,6 +116,7 @@
 #define S2TTE_INVALID_RIPAS_SHIFT	5
 #define S2TTE_INVALID_RIPAS_WIDTH	2U
 #define S2TTE_INVALID_RIPAS_MASK	MASK(S2TTE_INVALID_RIPAS)
+#define S2TTE_RIPAS_MASK		S2TTE_INVALID_RIPAS_MASK
 
 #define S2TTE_INVALID_RIPAS_EMPTY	(INPLACE(S2TTE_INVALID_RIPAS, 0UL))
 #define S2TTE_INVALID_RIPAS_RAM		(INPLACE(S2TTE_INVALID_RIPAS, 1UL))
@@ -456,6 +457,29 @@ unsigned long s2tte_create_assigned_ram(unsigned long pa, long level)
 		return (pa | S2TTE_PAGE);
 	}
 	return (pa | S2TTE_BLOCK);
+}
+
+/*
+ * Creates an assigned s2tte with output address @pa and the the same
+ * RIPAS as the passed @s2tte.
+ */
+unsigned long s2tte_create_assigned_unchanged(unsigned long s2tte,
+					      unsigned long pa,
+					      long level)
+{
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(addr_is_level_aligned(pa, level));
+
+	unsigned long ripas = s2tte & S2TTE_RIPAS_MASK;
+	unsigned long ret;
+
+	if (ripas == S2TTE_INVALID_RIPAS_RAM) {
+		ret = s2tte_create_assigned_ram(pa, level);
+	} else {
+		ret = (pa | S2TTE_INVALID_HIPAS_ASSIGNED | ripas);
+	}
+
+	return ret;
 }
 
 /*

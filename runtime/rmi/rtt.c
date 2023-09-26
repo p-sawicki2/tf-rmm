@@ -952,7 +952,7 @@ static unsigned long data_create(unsigned long rd_addr,
 
 	new_data_state = GRANULE_STATE_DATA;
 
-	s2tte = s2tte_create_assigned_ram(data_addr, RTT_PAGE_LEVEL);
+	s2tte = s2tte_create_assigned_unchanged(s2tte, data_addr, RTT_PAGE_LEVEL);
 
 	s2tte_write(&s2tt[wi.index], s2tte);
 	__granule_get(wi.g_llt);
