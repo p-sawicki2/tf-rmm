@@ -1,0 +1,7 @@
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 26 Sep 2023 11:49:10 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23492
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
