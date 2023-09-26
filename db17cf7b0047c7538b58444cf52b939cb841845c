@@ -39,6 +39,24 @@
       "message": "should we add calling_rec-\u003eregs[0] \u003d PSCI_RETURN_DENIED here?",
       "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9803b1e7_43439f57",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-09-26T11:55:47Z",
+      "side": 1,
+      "message": "also we might need to clear calling_rec-\u003epsci_info.pending \u003d false; \nto be able to run calling rec again and notify failure",
+      "parentUuid": "b7d7af38_cde3eb2a",
+      "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
