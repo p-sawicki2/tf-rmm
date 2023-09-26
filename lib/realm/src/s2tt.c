@@ -459,6 +459,33 @@ unsigned long s2tte_create_assigned_ram(unsigned long pa, long level)
 }
 
 /*
+ * Creates an assigned s2tte with output address @pa and the the same
+ * RIPAS as passed on @s2tte.
+ */
+unsigned long s2tte_create_assigned_unchanged(unsigned long s2tte,
+					      unsigned long pa,
+					      long level)
+{
+	unsigned long current_ripas = s2tte & S2TTE_INVALID_RIPAS_MASK;
+	unsigned long ret;
+
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(addr_is_level_aligned(pa, level));
+	assert(EXTRACT(S2TTE_INVALID_RIPAS, current_ripas) >=
+						S2TTE_INVALID_RIPAS_EMPTY);
+	assert(EXTRACT(S2TTE_INVALID_RIPAS, current_ripas) <=
+						S2TTE_INVALID_RIPAS_DESTROYED);
+
+	if (current_ripas != S2TTE_INVALID_RIPAS_RAM) {
+		ret = (pa | S2TTE_INVALID_HIPAS_ASSIGNED | current_ripas);
+	} else {
+		ret = s2tte_create_assigned_ram(pa, level);
+	}
+
+	return ret;
+}
+
+/*
  * Creates an unassigned_ns s2tte.
  */
 unsigned long s2tte_create_unassigned_ns(void)
