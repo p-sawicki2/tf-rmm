@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "404a751c_93a30fa9",
+        "filename": "lib/smc/include/smc.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T12:31:22Z",
+      "side": 1,
+      "message": "If this remains U(), I suppose all the type cast to unsigned int can be removed ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "f57aada9f470ce8719c0a057d232e37dc391ca86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
