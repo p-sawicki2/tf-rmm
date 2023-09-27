@@ -1,0 +1,618 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3f6b07a_bc2319a3",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "nit : could move to line 53.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e069f4_bc324817",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "make this REL1 or just RL. The comment can be :\n\n\"Context belongs to Realm EL1\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 14,
+        "endLine": 64,
+        "endChar": 17
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eac8f93_6e05c07e",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "nit: REL1 or just RL",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 15
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e336d3b1_c6fcc2d4",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "remove as this structure is to save the Realm related config as well.",
+      "range": {
+        "startLine": 105,
+        "startChar": 55,
+        "endLine": 108,
+        "endChar": 3
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e90696a8_b5675b14",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "There is an argument that we can include cptr_el2 which is currently in sysreg_state structure here.\n\nThis means that this structure will hold all el2 based simd regs.\n\nInside simd_context, there can be 2 instances of this structure:\n\n/* Initialized based on simd_config and is written to sysregs before save and restore. */\nstruct simd_el2_regs el2_config_regs;\n\n\n/* RMM will need to save the incoming EL2 regs corresponding to the NS world. This will be done only for SIMD_OWNER_NWD).*/\nstruct simd_el2_regs ns_el2_regs;",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ce5184e_2960006c",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "remove this as we dont want the EL3 to save this.",
+      "range": {
+        "startLine": 138,
+        "startChar": 53,
+        "endLine": 138,
+        "endChar": 69
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd098f14_16839474",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"...control and status sysregs. These registers need to be handled separately from the actual SIMD vector registers. ....\"",
+      "range": {
+        "startLine": 144,
+        "startChar": 26,
+        "endLine": 144,
+        "endChar": 35
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c377b153_ea322d5a",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "Suggest: \"ctl_sts_sysregs;\"",
+      "range": {
+        "startLine": 154,
+        "startChar": 3,
+        "endLine": 154,
+        "endChar": 17
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d4a630f_1256785f",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "perhaps : replace \"system\" with \"cpu\".",
+      "range": {
+        "startLine": 185,
+        "startChar": 13,
+        "endLine": 185,
+        "endChar": 19
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "097165df_bcd5ec46",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"...context in RMM corresponding to NS world..\"",
+      "range": {
+        "startLine": 187,
+        "startChar": 31,
+        "endLine": 187,
+        "endChar": 33
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbae9831_584979a0",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "I think it may be worth separating this as a separate helper as I suspect FFR will need to handled separately in future with legacy SVE and SME.\n\nsve_save_ffr_state()\n\nsimilar comment for restore()",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 2
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ace239a7_3c677a3d",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "This allows checks to figure out whether it is OK to use SIMD registers for RMM\u0027s own purposes at R-EL2.",
+      "range": {
+        "startLine": 19,
+        "startChar": 69,
+        "endLine": 19,
+        "endChar": 71
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cad18ced_a010183f",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "this will be only called for NS. So the name can be specific to NS.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd1e918d_4bd841fd",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "see related comment about cptr_el2.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12517856_4d22c784",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"It is possible to just have only save or restore operation if the corresponding param is NULL.\"",
+      "range": {
+        "startLine": 107,
+        "startChar": 44,
+        "endLine": 107,
+        "endChar": 45
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a86c7ec_76915707",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "...or if nothing is restored, returns NULL.",
+      "range": {
+        "startLine": 108,
+        "startChar": 11,
+        "endLine": 108,
+        "endChar": 12
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05a40943_1f6beb08",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "suggest : ctx_save and ctx_restore as the arg name.",
+      "range": {
+        "startLine": 110,
+        "startChar": 66,
+        "endLine": 110,
+        "endChar": 68
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bcd737c_82749519",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "could move this to save_simd_context() as part of restoring the simd config to sysregs.",
+      "range": {
+        "startLine": 126,
+        "startChar": 2,
+        "endLine": 128,
+        "endChar": 9
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82450939_c521b832",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"RMM saves these registers as EL3 may not save it as part of world switch.\"",
+      "range": {
+        "startLine": 133,
+        "startChar": 27,
+        "endLine": 134,
+        "endChar": 35
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bc39824_271fd693",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "could move this to restore_simd_context() as part of restoring the simd config to sysregs.",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 3
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22fb5197_b16aad35",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "similar comment as above.",
+      "range": {
+        "startLine": 162,
+        "startChar": 33,
+        "endLine": 163,
+        "endChar": 48
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ad9817d_29b70aaf",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "... Need to be only done once per context. Can be invoked after simd_init().\"\n\nAlso document the in and out params + return value as it is not clear from function signature which is in and which is out param.",
+      "range": {
+        "startLine": 196,
+        "startChar": 60,
+        "endLine": 196,
+        "endChar": 62
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd46863d_899cd643",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "Realm/R-EL1",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 8
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70ea3012_45536bff",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "The fact that Realm state is considered saved may not be direct effect of lazy save. This will need to be the case even without lazy save.\n\nSo suggest:\n\n\"The Realm SIMD context is considered to be saved as part of initialization. We need to restore this context when enabling SIMD for Realm.\"",
+      "range": {
+        "startLine": 222,
+        "startChar": 43,
+        "endLine": 223,
+        "endChar": 10
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0673c6f_91e66244",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "/* Construct the cptr_el2 to be used when this context needs to be saved and used by the owner.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fca0fe13_a7e3dc4b",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"...and update the global system SVE config.\"",
+      "range": {
+        "startLine": 265,
+        "startChar": 52,
+        "endLine": 265,
+        "endChar": 54
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc776bf5_6ded6f00",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "\"...which is not a problem as NS is not running yet and the reset value of zcr_el2 is unknown as per Arm ARM.\"",
+      "range": {
+        "startLine": 287,
+        "startChar": 4,
+        "endLine": 287,
+        "endChar": 49
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d3297b2_8a3131ce",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:07:05Z",
+      "side": 1,
+      "message": "can be in SIMD context, see related comment.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
