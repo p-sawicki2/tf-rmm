@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "daa2b700_ce777f5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "overall good design. Some cptr_el2 related code can be managed in SIMD layer I think.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3f6b07a_bc2319a3",
@@ -611,6 +628,103 @@
       "writtenOn": "2023-09-27T05:07:05Z",
       "side": 1,
       "message": "can be in SIMD context, see related comment.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16b3892b_6d37d2c3",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "must not be ?",
+      "range": {
+        "startLine": 314,
+        "startChar": 17,
+        "endLine": 314,
+        "endChar": 23
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a91b98f0_6d10462b",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "this can be initilzed as per simd context and written to cptr_el2 as par of context switch.",
+      "range": {
+        "startLine": 323,
+        "startChar": 1,
+        "endLine": 328,
+        "endChar": 2
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f94d6ba4_e93dec8e",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "This needs to happen outside this while loop. Perhaps line 296. we may need a new API simd_prepare_rec_entry() for this programming.",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ede16a4_4f1481ab",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "can happen within simd context switch",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61898e8e_a4a321fa",
+        "filename": "runtime/core/run.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T05:43:02Z",
+      "side": 1,
+      "message": "I think these will be removed when cptr_el2 is also managed by simd layer.",
       "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
