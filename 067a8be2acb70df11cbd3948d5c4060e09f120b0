@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d70e5eae_366c33c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-27T12:30:02Z",
+      "side": 1,
+      "message": "Also add:\n\"The patch to explicitly clear SVE P and FFR registers if SVE hint was set while restoring SVE context will be done later.\"",
+      "revId": "067a8be2acb70df11cbd3948d5c4060e09f120b0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
