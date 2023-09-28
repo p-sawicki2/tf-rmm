@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24688e2b_7ae5098a",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T12:50:52Z",
+      "side": 1,
+      "message": "Shall we use ~(0UL) instead of this macro ?",
+      "range": {
+        "startLine": 189,
+        "startChar": 18,
+        "endLine": 189,
+        "endChar": 28
+      },
+      "revId": "d3cf22a0353e468e07e17c57b8103262fd9c1a4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
