@@ -131,6 +131,7 @@ uintptr_t xlat_test_helpers_get_start_va(xlat_addr_region_id_t region,
 					 size_t va_size)
 {
 	return (region == VA_LOW_REGION) ?
+			/* coverity[misra_c_2012_rule_10_4_violation:SUPPRESS] */
 			0ULL : (ULONG_MAX - va_size + 1UL);
 }
 

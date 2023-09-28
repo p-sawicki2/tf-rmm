@@ -185,6 +185,7 @@ static int add_mmap_to_ctx_cfg(struct xlat_ctx_cfg *cfg,
 		 * Overwriting this field should not be a problem as its value
 		 * is expected to be always the same.
 		 */
+		/* coverity[misra_c_2012_rule_10_4_violation:SUPPRESS] */
 		cfg->base_va = (ULONG_MAX - va_size + 1ULL);
 	}
 
