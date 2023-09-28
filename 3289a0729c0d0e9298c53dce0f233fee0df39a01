@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa6ad741_2bd7ce3b",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T08:37:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd0ce4b2_31ad561e",
+      "revId": "3289a0729c0d0e9298c53dce0f233fee0df39a01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "689683de_538e4be4",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-28T08:29:37Z",
       "side": 1,
       "message": "Remove \"ret\" and:\nif (current_ripas !\u003d S2TTE_INVALID_RIPAS_RAM) {\n\t\treturn (pa | S2TTE_INVALID_HIPAS_ASSIGNED | current_ripas);\n}\nreturn s2tte_create_assigned_ram(pa, level);",
+      "revId": "3289a0729c0d0e9298c53dce0f233fee0df39a01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb53866f_840cb17a",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T08:37:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "689683de_538e4be4",
       "revId": "3289a0729c0d0e9298c53dce0f233fee0df39a01",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
