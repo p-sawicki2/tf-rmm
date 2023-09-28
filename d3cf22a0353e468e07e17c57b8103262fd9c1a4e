@@ -22,6 +22,30 @@
       },
       "revId": "d3cf22a0353e468e07e17c57b8103262fd9c1a4e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e09c15a0_83ee23bb",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-28T12:59:35Z",
+      "side": 1,
+      "message": "We can define\nRMM_ULONG_MAX ~(0UL)\nRMM_ULLONG_MAX ~(0ULL)",
+      "parentUuid": "24688e2b_7ae5098a",
+      "range": {
+        "startLine": 189,
+        "startChar": 18,
+        "endLine": 189,
+        "endChar": 28
+      },
+      "revId": "d3cf22a0353e468e07e17c57b8103262fd9c1a4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
