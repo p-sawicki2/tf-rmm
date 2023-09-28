@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98286cd1_3c95e8ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T05:44:50Z",
+      "side": 1,
+      "message": "I think this is good , Although I initially thought that there is an optimization by not transitioning the SM bit, this is needed to preserve security in case the VL between the 2 streaming modes are different.",
+      "revId": "f9eda59432ecf4cef7589454793d6315cdb99f0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d48ca48_5f4f84eb",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T05:44:50Z",
+      "side": 1,
+      "message": "need a comment that this is LEN + RAZ fields",
+      "range": {
+        "startLine": 612,
+        "startChar": 73,
+        "endLine": 612,
+        "endChar": 75
+      },
+      "revId": "f9eda59432ecf4cef7589454793d6315cdb99f0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1e992e5_bdc35aa0",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T05:44:50Z",
+      "side": 1,
+      "message": "suggest to frame like a boolean question:\n\n/* Check whether the SVE is being used in Streaming mode */\nis_sve_mode_streaming()\n/* Check whether SVE is being used in normal (non-streaming) mode by the context. The SVE hint bit is not set which implies that the full normal SVE reg context is in use */\nis_sve_mode_normal()",
+      "revId": "f9eda59432ecf4cef7589454793d6315cdb99f0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
