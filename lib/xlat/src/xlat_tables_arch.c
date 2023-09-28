@@ -45,13 +45,15 @@ static uint64_t tcr_physical_addr_size_bits(uintptr_t max_addr)
 {
 	if ((max_addr & ADDR_MASK_52_TO_63) != 0ULL) {
 		/* Physical address can't exceed 52 bits */
+		/* coverity[misra_c_2012_rule_10_4_violation:SUPPRESS] */
 		return ULLONG_MAX;
 	}
 
 	/* 52 bits address */
 	if ((max_addr & ADDR_MASK_48_TO_51) != 0ULL) {
 		return (is_feat_lpa2_4k_present() == true) ?
-						TCR_PS_BITS_4PB : ULLONG_MAX;
+			/* coverity[misra_c_2012_rule_10_4_violation:SUPPRESS] */
+			TCR_PS_BITS_4PB : ULLONG_MAX;
 	}
 
 	/* 48 bits address */
@@ -184,6 +186,7 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	 */
 	pa_size_bits = tcr_physical_addr_size_bits(
 					xlat_arch_get_max_supported_pa());
+	/* coverity[misra_c_2012_rule_10_4_violation:SUPPRESS] */
 	if (pa_size_bits == ULLONG_MAX) {
 		return -ENOMEM;
 	}
