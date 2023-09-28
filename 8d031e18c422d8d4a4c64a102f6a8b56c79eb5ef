@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23a7a59a_32b81f06",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T06:01:51Z",
+      "side": 1,
+      "message": "/*\n * This is a special case where an SVE Realm accessing certain SVE or SME\n * instructions will be reported as SME exception if RMM was REC entered\n * with PSTATE.SM\u003d1. RMM needs to distinguish between lazy save-restore for SVE and\n * access to SME. Some cases:\n * 1. If SVE is disabled for the realm, then RMM needs to inject UNDEF.\n * 2. If SVE is enabled for the realm, RMM will restore SVE SIMD\n * context of the REC and will resume the Realm (this will get the CPU\n * out of streaming mode). While re-trying the faulting instruction\n * if it generates a SME exception, then RMM will inject undefined\n * abort since SME is not supported for Realm.\n */",
+      "range": {
+        "startLine": 312,
+        "startChar": 1,
+        "endLine": 320,
+        "endChar": 4
+      },
+      "revId": "8d031e18c422d8d4a4c64a102f6a8b56c79eb5ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
