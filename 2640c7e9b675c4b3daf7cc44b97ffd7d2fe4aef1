@@ -229,6 +229,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a60c0835_15362454",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T16:11:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d1dd507b_68e93f2d",
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ce5184e_2960006c",
@@ -525,6 +543,30 @@
       "side": 1,
       "message": "hmm, if this is separated as a new helper routine then ordering must be enforced like save ffr after saving predicates. If the caller can invoke in this function sve_save_ffr_state() in any order, then the helper routine need to save and restore the predicate register that the \u0027rdffr\u0027 is using. That will require a stack space to the size of max FFR length.",
       "parentUuid": "dbae9831_584979a0",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 2
+      },
+      "revId": "2640c7e9b675c4b3daf7cc44b97ffd7d2fe4aef1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7e2bda0_c4050cf3",
+        "filename": "lib/arch/src/aarch64/simd_helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-28T16:11:28Z",
+      "side": 1,
+      "message": "Since this is internal helper of SIMD layer, the caller in SIMD layer can fix the ordering. BUt this is not important to fix now, can be done even later if it is needed.",
+      "parentUuid": "757fda8d_55c1c760",
       "range": {
         "startLine": 174,
         "startChar": 0,
