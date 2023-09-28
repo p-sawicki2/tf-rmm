@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cc78c6b_f7434dc9",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-28T16:16:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "06e8d512_dfa59a0b",
+      "range": {
+        "startLine": 387,
+        "startChar": 38,
+        "endLine": 387,
+        "endChar": 39
+      },
+      "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7d7af38_cde3eb2a",
@@ -55,6 +79,24 @@
       "side": 1,
       "message": "also we might need to clear calling_rec-\u003epsci_info.pending \u003d false; \nto be able to run calling rec again and notify failure",
       "parentUuid": "b7d7af38_cde3eb2a",
+      "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a422f442_44d3ed8d",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-28T16:16:58Z",
+      "side": 1,
+      "message": "I don\u0027t think that we need to set\ncalling_rec-\u003eregs[0] \u003d PSCI_RETURN_DENIED\n, because all previous cases that return RMI_ERROR_INPUT don\u0027t set it, and the Specification sets Rec(calling_rec).gprs[0] only on success conditions.",
+      "parentUuid": "9803b1e7_43439f57",
       "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
