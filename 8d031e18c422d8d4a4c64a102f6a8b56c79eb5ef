@@ -22,6 +22,30 @@
       },
       "revId": "8d031e18c422d8d4a4c64a102f6a8b56c79eb5ef",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2c07ce9_d1bfab77",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-09-28T15:14:39Z",
+      "side": 1,
+      "message": "Updated comment",
+      "parentUuid": "23a7a59a_32b81f06",
+      "range": {
+        "startLine": 312,
+        "startChar": 1,
+        "endLine": 320,
+        "endChar": 4
+      },
+      "revId": "8d031e18c422d8d4a4c64a102f6a8b56c79eb5ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
