@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70659752_f6084f4e",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "{0} can cause MISRA defects, because of\ntypedef struct q_useful_buf_c {\n    const void *ptr;\n    size_t      len;\n} UsefulBufC;\n, so full initialisation might be required: {NULL, 0UL}",
+      "parentUuid": "469b9411_2a8c40ea",
+      "range": {
+        "startLine": 131,
+        "startChar": 41,
+        "endLine": 131,
+        "endChar": 42
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e499fe1e_eb7e2660",
         "filename": "lib/attestation/src/attestation_token.c",
         "patchSetId": 7
@@ -54,6 +78,30 @@
       "writtenOn": "2023-09-28T12:57:43Z",
       "side": 1,
       "message": "\u003d {0} to suppress the coverity error ?",
+      "range": {
+        "startLine": 184,
+        "startChar": 25,
+        "endLine": 184,
+        "endChar": 40
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be2c4f68_36befabf",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "See my comment above",
+      "parentUuid": "e499fe1e_eb7e2660",
       "range": {
         "startLine": 184,
         "startChar": 25,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb784fac_0371f5b7",
+        "filename": "lib/measurement/src/measurement.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "0UL",
+      "parentUuid": "a2e110f1_dd666693",
+      "range": {
+        "startLine": 51,
+        "startChar": 17,
+        "endLine": 51,
+        "endChar": 18
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0aa09cb4_896b830b",
         "filename": "lib/measurement/src/measurement.c",
         "patchSetId": 7
@@ -112,6 +184,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bba611a8_b9e319d6",
+        "filename": "lib/measurement/src/measurement.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "0aa09cb4_896b830b",
+      "range": {
+        "startLine": 93,
+        "startChar": 17,
+        "endLine": 93,
+        "endChar": 18
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "193f3337_4fbe7fe0",
         "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
         "patchSetId": 7
@@ -123,6 +219,30 @@
       "writtenOn": "2023-09-28T12:57:43Z",
       "side": 1,
       "message": "\u003d {0} ; ?",
+      "range": {
+        "startLine": 48,
+        "startChar": 26,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "536de677_caa89960",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "0UL. Will set 5*8\u003d40 bytes to 0. Do we want to go with that?",
+      "parentUuid": "193f3337_4fbe7fe0",
       "range": {
         "startLine": 48,
         "startChar": 26,
@@ -169,6 +289,30 @@
       "writtenOn": "2023-09-28T12:57:43Z",
       "side": 1,
       "message": "\u003d RIPAS_EMPTY ?",
+      "range": {
+        "startLine": 53,
+        "startChar": 21,
+        "endLine": 53,
+        "endChar": 22
+      },
+      "revId": "783aa25ce17408e2f40fa19aec552528340a7c8e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ec6bb53_07fa5790",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T10:52:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ebfd6df4_16e2c4bf",
       "range": {
         "startLine": 53,
         "startChar": 21,
