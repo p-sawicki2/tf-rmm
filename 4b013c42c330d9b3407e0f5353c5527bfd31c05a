@@ -22,6 +22,30 @@
       },
       "revId": "4b013c42c330d9b3407e0f5353c5527bfd31c05a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01509787_57e4b3e1",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T11:39:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "052623cf_6c62669b",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 37
+      },
+      "revId": "4b013c42c330d9b3407e0f5353c5527bfd31c05a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
