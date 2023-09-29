@@ -135,6 +135,24 @@
       "parentUuid": "973b00b2_ea660ee7",
       "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fce9febd_c41d86b7",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-29T11:26:32Z",
+      "side": 1,
+      "message": "Since the PSCI_CCOMPLETE is not completes successfully due to invalid arguments, the calling rec cannot be scheduled again till this is done correctly by the host. That is how I understand.",
+      "parentUuid": "2d328d5d_62d191e0",
+      "revId": "db17cf7b0047c7538b58444cf52b939cb841845c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
