@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eddc292_8309d499",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-29T08:54:34Z",
+      "side": 1,
+      "message": "The commit message needs modification. Other wise the changes look alright.",
+      "revId": "7674757513317a0477faedafce8eb1772edec703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
