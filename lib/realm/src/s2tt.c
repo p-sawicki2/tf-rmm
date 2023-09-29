@@ -65,6 +65,8 @@
 
 #define S2TTE_ATTRS	(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \
 			S2TTE_SH_IS | S2TTE_AF)
+#define S2TTE_HOST_NS_ATTR_MASK (S2TTE_MEMATTR_MASK | S2TTE_AP_MASK | \
+				 S2TTE_SH_MASK)
 
 #define S2TTE_TABLE	S2TTE_L012_TABLE
 #define S2TTE_BLOCK	(S2TTE_ATTRS | S2TTE_L012_BLOCK)
@@ -497,14 +499,18 @@ unsigned long s2tte_create_unassigned_ns(void)
  * - MemAttr
  * - S2AP
  * - Shareability
+ * Any other field on @s2tte is masked out.
  */
-unsigned long s2tte_create_assigned_ns(unsigned long pa, long level)
+unsigned long s2tte_create_assigned_ns(unsigned long s2tte, long level)
 {
+	unsigned long new_s2tte = s2tte &
+		(S2TTE_HOST_NS_ATTR_MASK | addr_level_mask(~0UL, level));
+
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	if (level == RTT_PAGE_LEVEL) {
-		return (pa | S2TTE_PAGE_NS);
+		return (new_s2tte | S2TTE_PAGE_NS);
 	}
-	return (pa | S2TTE_BLOCK_NS);
+	return (new_s2tte | S2TTE_BLOCK_NS);
 }
 
 /*
@@ -513,9 +519,7 @@ unsigned long s2tte_create_assigned_ns(unsigned long pa, long level)
 bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 {
 	unsigned long mask = addr_level_mask(~0UL, level) |
-			     S2TTE_MEMATTR_MASK |
-			     S2TTE_AP_MASK |
-			     S2TTE_SH_MASK;
+						S2TTE_HOST_NS_ATTR_MASK;
 
 	/*
 	 * Test that all fields that are not controlled by the host are zero
@@ -552,9 +556,7 @@ bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 unsigned long host_ns_s2tte(unsigned long s2tte, long level)
 {
 	unsigned long mask = addr_level_mask(~0UL, level) |
-			     S2TTE_MEMATTR_MASK |
-			     S2TTE_AP_MASK |
-			     S2TTE_SH_MASK;
+						S2TTE_HOST_NS_ATTR_MASK;
 	return (s2tte & mask);
 }
 
@@ -874,18 +876,41 @@ void s2tt_init_assigned_ram(unsigned long *s2tt, unsigned long pa, long level)
 }
 
 /*
- * Populates @s2tt with assigned_ns s2ttes that refer to a
+ * Creates an assigned_ns s2tte at level @level mapping to @pa.
+ *
+ * The following S2 TTE fields are provided through @s2tte argument:
+ * - MemAttr
+ * - S2AP
+ * - Shareability
+ * The rest of the attributes @s2tte are masked out.
+ *
+ * The caller is responsible for pa to be properly masked.
+ */
+static unsigned long s2tte_create_assigned_ns_with_pa(unsigned long s2tte,
+						      unsigned long pa,
+						      long level)
+{
+	assert(addr_is_level_aligned(pa, level));
+
+	return s2tte_create_assigned_ns((s2tte & S2TTE_HOST_NS_ATTR_MASK) | pa,
+					 level);
+}
+
+/*
+ * Populates @s2tt with assigned_ns attributes that refer to a
  * contiguous memory block starting at @pa, and mapped at level @level.
  *
  * The granule is populated before it is made a table,
  * hence, don't use s2tte_write for access.
  */
-void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long pa, long level)
+void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long host_attrs,
+			   unsigned long pa, long level)
 {
 	const unsigned long map_size = s2tte_map_size(level);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
-		s2tt[i] = s2tte_create_assigned_ns(pa, level);
+		s2tt[i] = s2tte_create_assigned_ns_with_pa(host_attrs,
+							   pa, level);
 		pa += map_size;
 	}
 	dsb(ish);
@@ -1031,6 +1056,46 @@ static bool __table_maps_block(unsigned long *table,
 	return true;
 }
 
+static bool table_maps_block_with_att(unsigned long *table,
+					  long level,
+					  s2tte_type_level_checker s2tte_is_x)
+{
+	unsigned long base_pa;
+	unsigned long map_size = s2tte_map_size(level);
+	unsigned long s2tte = s2tte_read(&table[0]);
+	unsigned long attrs = s2tte & S2TTE_HOST_NS_ATTR_MASK;
+	unsigned int i;
+
+	if (!s2tte_is_x(s2tte, level)) {
+		return false;
+	}
+
+	base_pa = s2tte_pa(s2tte, level);
+	if (!addr_is_level_aligned(base_pa, level - 1L)) {
+		return false;
+	}
+
+	for (i = 1U; i < S2TTES_PER_S2TT; i++) {
+		unsigned long expected_pa = base_pa + (i * map_size);
+
+		s2tte = s2tte_read(&table[i]);
+
+		if (!s2tte_is_x(s2tte, level)) {
+			return false;
+		}
+
+		if (s2tte_pa(s2tte, level) != expected_pa) {
+			return false;
+		}
+
+		if ((s2tte & S2TTE_HOST_NS_ATTR_MASK) != attrs) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
 /*
  * Returns true if all s2ttes are assigned_empty
  * and refer to a contiguous block of granules aligned to @level - 1.
@@ -1050,14 +1115,16 @@ bool table_maps_assigned_ram_block(unsigned long *table, long level)
 }
 
 /*
- * Returns true if all s2ttes in @table are assigned_ns s2ttes and
- * refer to a contiguous block of granules aligned to @level - 1.
+ * Returns true if
+ *    - all s2ttes in @table are assigned_ns s2ttes and
+ *    - they refer to a contiguous block of granules aligned to @level - 1 and
+ *    - all the s2tte attributes in @table controlled by the host are identical
  *
  * @pre: @table maps IPA outside PAR.
  */
-bool table_maps_assigned_ns_block(unsigned long *table, long level)
+bool table_maps_assigned_ns_block_with_attrs(unsigned long *table, long level)
 {
-	return __table_maps_block(table, level, s2tte_is_assigned_ns);
+	return table_maps_block_with_att(table, level, s2tte_is_assigned_ns);
 }
 
 /*
