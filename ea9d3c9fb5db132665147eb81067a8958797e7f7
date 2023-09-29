@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2eaf1ca6_624ec34c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-09-29T11:47:58Z",
+      "side": 1,
+      "message": "Internal Coverity scan:\nNumber of Coverity defects decreased by 5\nNumber of MISRA C defects/coding rule violations didn\u0027t change",
+      "revId": "ea9d3c9fb5db132665147eb81067a8958797e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
