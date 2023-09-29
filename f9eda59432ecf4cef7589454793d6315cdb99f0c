@@ -227,6 +227,30 @@
       },
       "revId": "f9eda59432ecf4cef7589454793d6315cdb99f0c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19198426_5bbd0c68",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-29T08:31:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "abb5247a_c25c40c1",
+      "range": {
+        "startLine": 167,
+        "startChar": 25,
+        "endLine": 167,
+        "endChar": 26
+      },
+      "revId": "f9eda59432ecf4cef7589454793d6315cdb99f0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
