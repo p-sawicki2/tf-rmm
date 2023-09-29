@@ -395,7 +395,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	/* Ignore SVE hint bit, until RMM supports SVE hint bit */
-	function_id &= (unsigned int)~SMC_SVE_HINT;
+	function_id &= ~SMC_SVE_HINT;
 
 	if (rsi_handler_needs_fpu(function_id) == true) {
 		simd_context_save(rec->active_simd_ctx);
