@@ -252,9 +252,9 @@ void handle_ns_smc(unsigned int function_id,
 	bool sve_hint = false;
 
 	/* Save the SVE hint bit and clear it from the function ID */
-	if ((function_id & (unsigned int)SMC_SVE_HINT) != 0U) {
+	if ((function_id & SMC_SVE_HINT) != 0U) {
 		sve_hint = true;
-		function_id &= (unsigned int)~SMC_SVE_HINT;
+		function_id &= ~SMC_SVE_HINT;
 	}
 
 	if (IS_SMC64_RMI_FID(function_id)) {
