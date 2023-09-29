@@ -31,7 +31,7 @@
 #define SMC_MBZ_ZERO		U(0x0)
 
 /* SVE Hint bit (SMCCCv1.3), denoting the absence of SVE specific live state */
-#define SMC_SVE_HINT		(UL(1) << 16)
+#define SMC_SVE_HINT		((unsigned int)(1U << 16U))
 
 /* FID: Function number */
 #define SMC_FNUM_SHIFT		U(0)
