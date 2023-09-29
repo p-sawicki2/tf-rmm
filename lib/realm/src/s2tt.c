@@ -65,6 +65,7 @@
 
 #define S2TTE_ATTRS	(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \
 			S2TTE_SH_IS | S2TTE_AF)
+#define S2TTE_ATTRS_MASK (S2TTE_MEMATTR_MASK | S2TTE_AP_MASK | S2TTE_SH_MASK)
 
 #define S2TTE_TABLE	S2TTE_L012_TABLE
 #define S2TTE_BLOCK	(S2TTE_ATTRS | S2TTE_L012_BLOCK)
@@ -498,13 +499,15 @@ unsigned long s2tte_create_unassigned_ns(void)
  * - S2AP
  * - Shareability
  */
-unsigned long s2tte_create_assigned_ns(unsigned long pa, long level)
+unsigned long s2tte_create_assigned_ns(unsigned long s2tte, long level)
 {
+	unsigned long inv_s2tte = s2tte & ~DESC_TYPE_MASK;
+
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	if (level == RTT_PAGE_LEVEL) {
-		return (pa | S2TTE_PAGE_NS);
+		return (inv_s2tte | S2TTE_PAGE_NS);
 	}
-	return (pa | S2TTE_BLOCK_NS);
+	return (inv_s2tte | S2TTE_BLOCK_NS);
 }
 
 /*
@@ -874,18 +877,39 @@ void s2tt_init_assigned_ram(unsigned long *s2tt, unsigned long pa, long level)
 }
 
 /*
+ * Creates an assigned_ns s2tte at level @level mapping to @pa.
+ *
+ * The following S2 TTE fields are provided through @s2tte argument:
+ * - MemAttr
+ * - S2AP
+ * - Shareability
+ *
+ * The caller is responsible for pa to be properly masked.
+ */
+static unsigned long s2tte_create_assigned_ns_with_params(unsigned long s2tte,
+							  unsigned long pa,
+							  long level)
+{
+	assert(addr_is_level_aligned(pa, level));
+
+	return s2tte_create_assigned_ns((s2tte & S2TTE_ATTRS_MASK) | pa, level);
+}
+
+/*
  * Populates @s2tt with assigned_ns s2ttes that refer to a
  * contiguous memory block starting at @pa, and mapped at level @level.
  *
  * The granule is populated before it is made a table,
  * hence, don't use s2tte_write for access.
  */
-void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long pa, long level)
+void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long parent_s2tte,
+			   unsigned long pa, long level)
 {
 	const unsigned long map_size = s2tte_map_size(level);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
-		s2tt[i] = s2tte_create_assigned_ns(pa, level);
+		s2tt[i] = s2tte_create_assigned_ns_with_params(parent_s2tte,
+							       pa, level);
 		pa += map_size;
 	}
 	dsb(ish);

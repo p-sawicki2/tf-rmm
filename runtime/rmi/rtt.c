@@ -242,7 +242,7 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 
 		block_pa = s2tte_pa(parent_s2tte, level - 1L);
 
-		s2tt_init_assigned_ns(s2tt, block_pa, level);
+		s2tt_init_assigned_ns(s2tt, parent_s2tte, block_pa, level);
 
 		/*
 		 * Increase the refcount to mark the granule as in-use. refcount
@@ -258,7 +258,6 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 	} else {
 		assert(false);
 	}
-
 	ret = RMI_SUCCESS;
 
 	granule_set_state(g_tbl, GRANULE_STATE_RTT);
@@ -361,10 +360,8 @@ void smc_rtt_fold(unsigned long rd_addr,
 			parent_s2tte = s2tte_create_unassigned_ns();
 		} else if (table_maps_assigned_ns_block(table, level)) {
 			unsigned long s2tte = s2tte_read(&table[0]);
-			unsigned long block_pa = s2tte_pa(s2tte, level);
 
-			parent_s2tte = s2tte_create_assigned_ns(block_pa,
-								level - 1L);
+			parent_s2tte = s2tte_create_assigned_ns(s2tte, level - 1L);
 		} else {
 			/*
 			 * The table holds a mixture of destroyed and
@@ -410,6 +407,9 @@ void smc_rtt_fold(unsigned long rd_addr,
 		} else if (table_maps_assigned_destroyed_block(table, level)) {
 			parent_s2tte = s2tte_create_assigned_destroyed(block_pa,
 								 level - 1L);
+		} else if (table_maps_assigned_ns_block(table, level)) {
+			parent_s2tte = s2tte_create_assigned_ns(s2tte,
+								level - 1L);
 		/* The table contains mixed entries that cannot be folded */
 		} else {
 			ret = pack_return_code(RMI_ERROR_RTT,
@@ -667,6 +667,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 
 		s2tte = s2tte_create_assigned_ns(host_s2tte, level);
 		s2tte_write(&s2tt[wi.index], s2tte);
+		__granule_get(wi.g_llt);
 
 	} else if (op == UNMAP_NS) {
 		/*
@@ -683,6 +684,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 
 		s2tte = s2tte_create_unassigned_ns();
 		s2tte_write(&s2tt[wi.index], s2tte);
+		__granule_put(wi.g_llt);
 		if (level == RTT_PAGE_LEVEL) {
 			invalidate_page(&s2_ctx, map_addr);
 		} else {
