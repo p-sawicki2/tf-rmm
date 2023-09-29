@@ -242,13 +242,13 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 
 		block_pa = s2tte_pa(parent_s2tte, level - 1L);
 
-		s2tt_init_assigned_ns(s2tt, block_pa, level);
+		s2tt_init_assigned_ns(s2tt, parent_s2tte, block_pa, level);
 
 		/*
-		 * Increase the refcount to mark the granule as in-use. refcount
-		 * is incremented by S2TTES_PER_S2TT (ref RTT unfolding).
+		 * Increment the refcount on the parent as for NS tables it was
+		 * always 0 (ref RTT unfolding).
 		 */
-		__granule_refcount_inc(g_tbl, S2TTES_PER_S2TT);
+		__granule_get(wi.g_llt);
 
 	} else if (s2tte_is_table(parent_s2tte, level - 1L)) {
 		ret = pack_return_code(RMI_ERROR_RTT,
@@ -359,12 +359,18 @@ void smc_rtt_fold(unsigned long rd_addr,
 			parent_s2tte = s2tte_create_unassigned_ram();
 		} else if (table_is_unassigned_ns_block(table)) {
 			parent_s2tte = s2tte_create_unassigned_ns();
-		} else if (table_maps_assigned_ns_block(table, level)) {
+		} else if (table_maps_assigned_ns_block_with_attrs(table,
+								   level)) {
 			unsigned long s2tte = s2tte_read(&table[0]);
-			unsigned long block_pa = s2tte_pa(s2tte, level);
 
-			parent_s2tte = s2tte_create_assigned_ns(block_pa,
-								level - 1L);
+			/*
+			 * We can safely copy the PA from the first entry in
+			 * the table  as that PA is aligned to the level below
+			 * (level -1), as otherwise
+			 * table_maps_assigned_ns_block_with_attrs() would have
+			 * failed.
+			 */
+			parent_s2tte = s2tte_create_assigned_ns(s2tte, level - 1L);
 		} else {
 			/*
 			 * The table holds a mixture of destroyed and
