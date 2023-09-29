@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31d14b70_c73d74c5",
+        "filename": "tools/CBMC/CMakeLists.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-29T08:53:15Z",
+      "side": 1,
+      "message": "It will be good we if can use `host_cbmc` cmake build target to get the file list in the regular build flow and invoke cbmc instead of gcc.",
+      "revId": "4910fc5c65d7f1a0ada6c494b01a9b600db42dfe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
