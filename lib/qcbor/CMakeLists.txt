@@ -6,6 +6,10 @@
 #
 # Add the qcbor subdirectory.
 #
+
+set(QCBOR_OPT_DISABLE_FLOAT_HW_USE  ON CACHE BOOL "Override QCBOR flag" FORCE)
+set(QCBOR_OPT_DISABLE_FLOAT_ALL     ON CACHE BOOL "Override QCBOR flag" FORCE)
+
 add_subdirectory("${RMM_SOURCE_DIR}/ext/qcbor" "${CMAKE_BINARY_DIR}/ext/qcbor")
 
 target_link_libraries(qcbor
@@ -31,6 +35,3 @@ target_compile_options(qcbor
     PRIVATE
         ${qcbor_C_FLAGS}
 )
-
-target_compile_definitions(qcbor PRIVATE QCBOR_DISABLE_FLOAT_HW_USE)
-target_compile_definitions(qcbor PRIVATE USEFULBUF_DISABLE_ALL_FLOAT)
