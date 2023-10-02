@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e73f3917_c2cb94da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-02T10:34:16Z",
+      "side": 1,
+      "message": "I\u0027m not a CMake expert myself, but the fix seems to be legit. ",
+      "revId": "d2e8674c3b50b90047ffaecdb1aa1f38c639046d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
