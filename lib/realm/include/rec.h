@@ -131,6 +131,9 @@ struct rec_aux_data {
 
 	/* Pointer to attestation-related data */
 	struct rec_attest_data *attest_data;
+
+	/* Pointer to the attestation buffer */
+	uint8_t *attest_buffer;
 };
 
 struct rec {
