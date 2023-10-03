@@ -140,8 +140,7 @@ void gic_copy_state_from_ns(struct gic_cpu_state *gicstate,
 	}
 
 	/* Get bits from NS hypervisor */
-	gicstate->ich_hcr_el2 &= ~ICH_HCR_EL2_NS_MASK;
-	gicstate->ich_hcr_el2 |= rec_entry->gicv3_hcr & ICH_HCR_EL2_NS_MASK;
+	gicstate->ich_hcr_el2 = rec_entry->gicv3_hcr;
 }
 
 void gic_copy_state_to_ns(struct gic_cpu_state *gicstate,
@@ -181,6 +180,12 @@ static bool is_valid_vintid(unsigned long intid)
 bool gic_validate_state(struct gic_cpu_state *gicstate)
 {
 	unsigned int i, j;
+	unsigned long hcr = gicstate->ich_hcr_el2;
+
+	/* Validate entry.gicv3_hcr fields */
+	if ((hcr & ~ICH_HCR_EL2_NS_MASK) != 0UL) {
+		return false;
+	}
 
 	for (i = 0U; i <= gic_virt_feature.nr_lrs; i++) {
 		unsigned long lr = gicstate->ich_lr_el2[i];
