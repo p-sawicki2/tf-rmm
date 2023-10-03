@@ -217,6 +217,45 @@ static inline void simd_context_restore(struct simd_context *ctx)
 	(void)simd_context_switch(NULL, ctx);
 }
 
+#define CPTR_EL2_MASK_ALL_SIMD_FLAGS	(MASK(CPTR_EL2_VHE_FPEN) |	\
+					 MASK(CPTR_EL2_VHE_ZEN) |	\
+					 MASK(CPTR_EL2_VHE_SMEN))
+
+/*
+ * Enable SIMD related flags like FPEN, ZEN, SMEN in 'cptr_val' based on SIMD
+ * configuration.
+ */
+#define CPTR_ENABLE_SIMD_FLAGS(simd_cfg, cptr_val)				\
+	do {									\
+		(cptr_val) &= ~(CPTR_EL2_MASK_ALL_SIMD_FLAGS);			\
+										\
+		(cptr_val) |= INPLACE(CPTR_EL2_VHE_FPEN,			\
+				      CPTR_EL2_VHE_FPEN_NO_TRAP_11);		\
+										\
+		if ((simd_cfg)->sve_en) {					\
+			(cptr_val) |= INPLACE(CPTR_EL2_VHE_ZEN,			\
+					      CPTR_EL2_VHE_ZEN_NO_TRAP_11);	\
+		}								\
+										\
+		if ((simd_cfg)->sme_en) {					\
+			(cptr_val) |= INPLACE(CPTR_EL2_VHE_SMEN,		\
+					      CPTR_EL2_VHE_SMEN_NO_TRAP_11);	\
+		}								\
+	} while (false)
+
+/* Disable all SIMD related flags like FPEN, ZEN, SMEN in 'cptr_val' */
+#define CPTR_DISABLE_ALL_SIMD_FLAGS(cptr_val)					\
+	do {									\
+		(cptr_val) &= ~(CPTR_EL2_MASK_ALL_SIMD_FLAGS);			\
+										\
+		(cptr_val) |= INPLACE(CPTR_EL2_VHE_FPEN,			\
+				      CPTR_EL2_VHE_FPEN_TRAP_ALL_00) |		\
+			      INPLACE(CPTR_EL2_VHE_ZEN,				\
+				      CPTR_EL2_VHE_ZEN_TRAP_ALL_00) |		\
+			      INPLACE(CPTR_EL2_VHE_SMEN,			\
+				      CPTR_EL2_VHE_SMEN_TRAP_ALL_00);		\
+	} while (false)
+
 /*
  * RMM support to use SIMD (FPU) at REL2
  */
