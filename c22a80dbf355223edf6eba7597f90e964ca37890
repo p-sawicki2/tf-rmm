@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dba7249_3f595ddb",
+        "filename": "lib/gic/src/gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-03T15:21:59Z",
+      "side": 1,
+      "message": "if ((hcr \u0026 ~ICH_HCR_EL2_NS_MASK) !\u003d OUL)",
+      "range": {
+        "startLine": 224,
+        "startChar": 1,
+        "endLine": 224,
+        "endChar": 34
+      },
+      "revId": "c22a80dbf355223edf6eba7597f90e964ca37890",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
