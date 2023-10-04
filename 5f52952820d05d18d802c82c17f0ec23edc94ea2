@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "158d95f0_6471f6fc",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-04T09:03:07Z",
+      "side": 1,
+      "message": "By aligning here in the declaration the size of the structure will become equal to the alignment. This causes that on the unittests, every memcmp() is going to compare the \"garbage\" stored in the padding area, causing the tests to fail.\n\nSo we need to either:\n\n* explicitly initialize all the structures defined in the unittests to zero or\n* do the alignment on the definition, not the declaration.",
+      "range": {
+        "startLine": 41,
+        "startChar": 13,
+        "endLine": 41,
+        "endChar": 36
+      },
+      "revId": "5f52952820d05d18d802c82c17f0ec23edc94ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eeb74c58_8a982664",
         "filename": "lib/xlat/src/xlat_contexts.c",
         "patchSetId": 1
