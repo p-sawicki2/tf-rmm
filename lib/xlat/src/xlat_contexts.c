@@ -222,6 +222,8 @@ int xlat_ctx_cfg_init(struct xlat_ctx_cfg *cfg,
 	size_t max_va_size = (is_feat_lpa2_4k_present() == true) ?
 		MAX_VIRT_ADDR_SPACE_SIZE_LPA2 : MAX_VIRT_ADDR_SPACE_SIZE;
 
+	assert(is_mmu_enabled() == false);
+
 	if (cfg == NULL) {
 		return -EINVAL;
 	}
@@ -270,6 +272,8 @@ int xlat_ctx_init(struct xlat_ctx *ctx,
 		  uint64_t *tables_ptr,
 		  unsigned int ntables)
 {
+	assert(is_mmu_enabled() == false);
+
 	if ((ctx == NULL) || (tbls_ctx == NULL) || (cfg == NULL)) {
 		return -EINVAL;
 	}
