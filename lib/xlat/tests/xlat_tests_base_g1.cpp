@@ -1301,11 +1301,13 @@ void xlat_ctx_init_tc5(void)
 		xlat_test_helpers_rand_mmap_array(&init_mmap[0],
 				XLAT_TESTS_MAX_MMAPS, start_va, end_va);
 
+		test_helpers_expect_assert_fail(true);
 		/* Initialize the test structure */
 		retval = xlat_ctx_cfg_init(&cfg, region, &init_mmap[0],
 					   XLAT_TESTS_MAX_MMAPS,
 					   max_va_size);
 
+		test_helpers_fail_if_no_assert_failed();
 		/* Verify that the context cfg is properly created */
 		CHECK_TRUE(retval == 0);
 

@@ -2247,6 +2247,8 @@ void xlat_arch_setup_mmu_cfg_tc2(void)
 	/* Generate only a single mmap region for each region */
 	xlat_test_helpers_rand_mmap_array(&init_mmap, 1U, start_va, end_va);
 
+	test_helpers_expect_assert_fail(false);
+
 	retval = xlat_ctx_cfg_init(&cfg, VA_LOW_REGION, &init_mmap,
 					1U, max_va_size);
 	CHECK_TRUE(retval == 0);
@@ -2256,11 +2258,14 @@ void xlat_arch_setup_mmu_cfg_tc2(void)
 			       XLAT_TESTS_MAX_TABLES);
 	CHECK_TRUE(retval == 0);
 
-	/* Force the MMU enblement */
+	/* Force the MMU enablement */
 	xlat_enable_mmu_el2();
 
+	test_helpers_expect_assert_fail(true);
 	/* Try to initialize MMU for the given context */
 	retval = xlat_arch_setup_mmu_cfg(&ctx);
+
+	test_helpers_fail_if_no_assert_failed();
 
 	/* Verify that the MMU has failed to be initialized */
 	CHECK_TRUE(retval == -EPERM);

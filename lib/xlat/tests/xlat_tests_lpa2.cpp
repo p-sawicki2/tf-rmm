@@ -122,7 +122,7 @@ ASSERT_TEST(xlat_tests_LPA2, xlat_ctx_init_TC4)
 	xlat_ctx_init_tc4();
 }
 
-TEST(xlat_tests_LPA2, xlat_ctx_init_TC5)
+ASSERT_TEST(xlat_tests_LPA2, xlat_ctx_init_TC5)
 {
 	xlat_ctx_init_tc5();
 }
@@ -232,7 +232,7 @@ TEST(xlat_tests_LPA2, xlat_arch_setup_mmu_cfg_TC1)
 	xlat_arch_setup_mmu_cfg_tc1();
 }
 
-TEST(xlat_tests_LPA2, xlat_arch_setup_mmu_cfg_TC2)
+ASSERT_TEST(xlat_tests_LPA2, xlat_arch_setup_mmu_cfg_TC2)
 {
 	xlat_arch_setup_mmu_cfg_tc2();
 }
