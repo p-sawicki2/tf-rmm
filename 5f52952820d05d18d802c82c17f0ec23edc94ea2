@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ef525b3_daa9a4dd",
+        "filename": "lib/xlat/include/xlat_contexts.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-05T10:41:09Z",
+      "side": 1,
+      "message": "The child patch should solve the issue.",
+      "parentUuid": "158d95f0_6471f6fc",
+      "range": {
+        "startLine": 41,
+        "startChar": 13,
+        "endLine": 41,
+        "endChar": 36
+      },
+      "revId": "5f52952820d05d18d802c82c17f0ec23edc94ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eeb74c58_8a982664",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-10-04T06:47:07Z",
       "side": 1,
       "message": "maybe better to flush at beginning of API and INV here.\n\nThis will enable primary to create some fields of the data structures on behalf of secondary with MMU ON. Then Secondary comes along and invokes the API with MMU OFF.\n\nThe code doesn\u0027t do this now.",
+      "revId": "5f52952820d05d18d802c82c17f0ec23edc94ea2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adef89c3_36b39730",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-05T10:41:09Z",
+      "side": 1,
+      "message": "This is not a usecase at the moment and hence not doing this now.",
+      "parentUuid": "eeb74c58_8a982664",
       "revId": "5f52952820d05d18d802c82c17f0ec23edc94ea2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
