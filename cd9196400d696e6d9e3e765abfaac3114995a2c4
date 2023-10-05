@@ -33,6 +33,24 @@
       "message": "we need to copy first before checking else we are open to PoC PoU attack.",
       "revId": "cd9196400d696e6d9e3e765abfaac3114995a2c4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa388abb_72701c04",
+        "filename": "runtime/rmi/run.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-05T12:45:11Z",
+      "side": 1,
+      "message": "This is not direct access to NS despite the name. The check is being performed on a local RMM copy.",
+      "parentUuid": "bd154da5_cd52c3e6",
+      "revId": "cd9196400d696e6d9e3e765abfaac3114995a2c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
