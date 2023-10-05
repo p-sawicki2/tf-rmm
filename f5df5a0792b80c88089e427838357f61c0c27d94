@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b9f823d_d7b07342",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-05T12:47:16Z",
+      "side": 1,
+      "message": "This change had been moved from the eac2 branch to integration (here). The part where the handler stack mm region is added had been refactored due to the stack protection patch reworks. Reviews are welcome!",
+      "revId": "f5df5a0792b80c88089e427838357f61c0c27d94",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
