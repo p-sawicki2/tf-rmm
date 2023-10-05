@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "319b41e2_2b56c72e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-05T10:58:12Z",
+      "side": 1,
+      "message": "Hi Javier, \nWe need more info on the problems being solved by the patch.",
+      "revId": "9c7a2862d601e60165f7a326f2d6cbc7c0bbe01a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
