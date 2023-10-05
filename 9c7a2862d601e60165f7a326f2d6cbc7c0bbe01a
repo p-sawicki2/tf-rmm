@@ -16,6 +16,24 @@
       "message": "Hi Javier, \nWe need more info on the problems being solved by the patch.",
       "revId": "9c7a2862d601e60165f7a326f2d6cbc7c0bbe01a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65bd8125_9a85cd22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T12:16:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "319b41e2_2b56c72e",
+      "revId": "9c7a2862d601e60165f7a326f2d6cbc7c0bbe01a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
