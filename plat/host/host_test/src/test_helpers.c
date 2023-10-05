@@ -155,7 +155,7 @@ int test_helpers_unregister_cb(enum cb_ids id)
 }
 
 /* Assertion control */
-void __assert_fail(const char *assertion, const char *file,
+void assert_fail(const char *assertion, const char *file,
 		   unsigned int line, const char *function)
 {
 	(void)function;
