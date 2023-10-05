@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "980d71a9_fe1fff68",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37dfc416_49ca1d94",
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d3b1157b_084fb6c4",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-05T14:52:16Z",
       "side": 1,
       "message": "we dont need full parent s2tte, but just the attr to be passed.",
+      "range": {
+        "startLine": 245,
+        "startChar": 30,
+        "endLine": 245,
+        "endChar": 42
+      },
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "540c1ae1_3666b671",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "Yes, I agree with that, but I think it might be easier to just pass the whole parent s2tte and let the s2tt_init_assigned_ns() do the masking, so we don\u0027t need to worry about masking here and then validating the attrs (or masking again) on s2tt_init_assigned_ns().\n\nAlso, the attributes mask is defined in s2tt.c, which depends on other definitions on the same file, where this is rtt.c. In order to mask the attributes here, we would need to move all the definitions from rtt.c into a header file and import them here, and I think it is better to keep them private to rtt.c, at least for now.",
+      "parentUuid": "d3b1157b_084fb6c4",
       "range": {
         "startLine": 245,
         "startChar": 30,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33802428_9729f660",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "The rationale with regards to the attributes is the same as on the previous comments. Also, since the s2tte carries the PA (this is the first entry of the table) we don\u0027t need to explicitly pass the PA, it can be derived (and we save the call to s2tte_pa)",
+      "parentUuid": "f21cfabe_cc65c0b2",
+      "range": {
+        "startLine": 364,
+        "startChar": 43,
+        "endLine": 364,
+        "endChar": 48
+      },
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80055036_b512e1f0",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-10-05T14:52:16Z",
       "side": 1,
       "message": "this case will not happen since NS mapping are not to be ref counted.",
+      "range": {
+        "startLine": 410,
+        "startChar": 8,
+        "endLine": 413,
+        "endChar": 62
+      },
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb4a808_2081f1ad",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80055036_b512e1f0",
       "range": {
         "startLine": 410,
         "startChar": 8,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "274a1385_57025431",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "da073127_b6b222f7",
+      "range": {
+        "startLine": 670,
+        "startChar": 2,
+        "endLine": 670,
+        "endChar": 26
+      },
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddac37e7_9279ccf8",
@@ -123,6 +237,24 @@
       "writtenOn": "2023-10-05T14:52:16Z",
       "side": 1,
       "message": "same comment as above.",
+      "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dad12885_87f80911",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-05T16:54:07Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "ddac37e7_9279ccf8",
       "revId": "75c84d2a33dad9a4c8ea68cd812c425fdaf741ac",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
