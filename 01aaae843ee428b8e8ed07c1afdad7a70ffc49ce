@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ff70762_cc8d1ca9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "Mostly nits all of them related to naming. Other than that, LGTM",
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c9f942e_94fe14d7",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "nit: This name feels misleading to me.\n\nWhat about something like rmm_get_eh_per_cpu() for instance?",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8712a59b_33ef17af",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "ni: RMM_SEH_STACK_MMAP_IDX or any other name that also makes reference to the \"exception\". I feel just \"Handler\" might be confusing or misleading.",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44821452_4a4205f2",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "nit: The indentation doesn\u0027t match the regions below",
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aab25a23_84dcdcfe",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "RMM exception handler stack",
+      "range": {
+        "startLine": 85,
+        "startChar": 9,
+        "endLine": 85,
+        "endChar": 16
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54158423_90656bc0",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "exception handler",
+      "range": {
+        "startLine": 47,
+        "startChar": 13,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f14055b1_0caf14f1",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-06T12:02:21Z",
+      "side": 1,
+      "message": "Same as on my comments above. We should mention the exception somehow on the name",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
