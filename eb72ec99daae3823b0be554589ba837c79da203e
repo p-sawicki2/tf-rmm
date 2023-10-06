@@ -206,6 +206,52 @@
       },
       "revId": "eb72ec99daae3823b0be554589ba837c79da203e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b84c774_f2a2a329",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-06T13:38:05Z",
+      "side": 1,
+      "message": "It is obvious that we can just copy SH, AF, MEM.ATTR \u0026 PERMS from parent table.\nIt is less obvious that we can do the same with PA without further alignment so a comment here would be useful, e.g.:\n\n/*\n * We can safely copy the PA from the first entry in \u0027table\u0027 because that PA is aligned\n * to the level below (`level`- 1), as, otherwise, `table_maps_assigned_ns_block_with_attrs` would have failed.\n */",
+      "range": {
+        "startLine": 364,
+        "startChar": 43,
+        "endLine": 364,
+        "endChar": 48
+      },
+      "revId": "eb72ec99daae3823b0be554589ba837c79da203e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9756afce_746bcefe",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-06T13:38:05Z",
+      "side": 1,
+      "message": "This is undocumented use of this primitive as here we pass ALL fields.\nCan we remove everything else except: PA, SH, AF, MEM.ATTR \u0026 PERMS)?",
+      "range": {
+        "startLine": 364,
+        "startChar": 18,
+        "endLine": 364,
+        "endChar": 42
+      },
+      "revId": "eb72ec99daae3823b0be554589ba837c79da203e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
