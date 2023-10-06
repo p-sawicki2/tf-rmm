@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc57d045_b58621f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-06T10:29:54Z",
+      "side": 1,
+      "message": "Suggest to have static check tool name\nfix(runtime): clang-tidy unused parameter warnings\n\nSimilar changes can be done for all the patches",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "dfaf3fbdaa0da6f116d0f377b236bf0b0ca858eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "602d880f_ddb4f756",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-06T10:29:54Z",
+      "side": 1,
+      "message": "nit: I think line break is 72 for commit message",
+      "revId": "dfaf3fbdaa0da6f116d0f377b236bf0b0ca858eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74908038_511ead7f",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-06T10:29:54Z",
+      "side": 1,
+      "message": "can be moved after variable declarations  (line 119)",
+      "revId": "dfaf3fbdaa0da6f116d0f377b236bf0b0ca858eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa4688ef_906520b5",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-06T10:29:54Z",
+      "side": 1,
+      "message": "nit: add a line break after 215",
+      "revId": "dfaf3fbdaa0da6f116d0f377b236bf0b0ca858eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
