@@ -46,6 +46,30 @@
       },
       "revId": "c9a0136dbc918bdbb24667d912c291ac9634a6f1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05f245e3_01227db0",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-09T17:33:30Z",
+      "side": 0,
+      "message": "__assert_fail() is part of the assert() interface. We use it here, overwriting the default implementation (which, as stated by Arun is a weak symbol), so we can test assert failures on the unittests. Instead of executing the default handler (which just panics and exits), we execute this one which makes a series of checks and passes or fails the test.\n\nThe reason the build doesn\u0027t fail is just that by renaming, the linker falls back to the original weak symbol whilst its garbage collector removes this one.\n\nUnfortunately, this symbol cannot be renamed on the libc library or else the linker stage will fail.",
+      "parentUuid": "31d9bb9a_815aae49",
+      "range": {
+        "startLine": 158,
+        "startChar": 1,
+        "endLine": 158,
+        "endChar": 19
+      },
+      "revId": "c9a0136dbc918bdbb24667d912c291ac9634a6f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
