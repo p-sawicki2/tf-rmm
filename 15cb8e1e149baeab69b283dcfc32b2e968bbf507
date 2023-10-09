@@ -68,6 +68,24 @@
       "parentUuid": "1eca3551_16360a54",
       "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e031bd51_2f5d8264",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-09T14:50:22Z",
+      "side": 1,
+      "message": "Yes, but if I\u0027m not wrong, the consensus with regards assertions was that libraries should not assert and instead they should return error codes and let the caller decide whether to assert or to take any other action upon incorrect state.\n\nasserting only on the check of the MMU enabled and not doing it on the other checks feels arbitrary and inconsistent to me.",
+      "parentUuid": "cf3f0f8a_7f23a916",
+      "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
