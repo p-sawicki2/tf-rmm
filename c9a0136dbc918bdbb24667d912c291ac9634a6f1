@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90922fce_6d9827fd",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:28:13Z",
+      "side": 0,
+      "message": "Looks like this is overriding a weak symbol in lib/libc/src/assert.c:__assert_fail ?",
+      "range": {
+        "startLine": 158,
+        "startChar": 1,
+        "endLine": 158,
+        "endChar": 19
+      },
+      "revId": "c9a0136dbc918bdbb24667d912c291ac9634a6f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
