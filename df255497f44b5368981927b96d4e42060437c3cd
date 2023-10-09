@@ -16,6 +16,24 @@
       "message": "align?",
       "revId": "df255497f44b5368981927b96d4e42060437c3cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e0e9d5d_33d143ae",
+        "filename": "runtime/include/smc-handler.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-09T13:25:29Z",
+      "side": 1,
+      "message": "Yes, could you rework the same ?",
+      "parentUuid": "4ee3e568_09f878c1",
+      "revId": "df255497f44b5368981927b96d4e42060437c3cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
