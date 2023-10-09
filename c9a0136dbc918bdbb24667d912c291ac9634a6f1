@@ -22,6 +22,30 @@
       },
       "revId": "c9a0136dbc918bdbb24667d912c291ac9634a6f1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31d9bb9a_815aae49",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-09T15:32:00Z",
+      "side": 0,
+      "message": "The code still builds if it\u0027s changed to `assert_fail` but yes, I did wonder if this is being used anywhere else. If this is indeed the case then I guess we should also rename it in lib/libc?",
+      "parentUuid": "90922fce_6d9827fd",
+      "range": {
+        "startLine": 158,
+        "startChar": 1,
+        "endLine": 158,
+        "endChar": 19
+      },
+      "revId": "c9a0136dbc918bdbb24667d912c291ac9634a6f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
