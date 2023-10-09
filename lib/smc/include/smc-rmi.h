@@ -19,7 +19,7 @@
  * The major version number of the RMI implementation.  Increase this whenever
  * the binary format or semantics of the SMC calls change.
  */
-#define RMI_ABI_VERSION_MAJOR		U(66)
+#define RMI_ABI_VERSION_MAJOR		U(1)
 
 /*
  * The minor version number of the RMI implementation.  Increase this when

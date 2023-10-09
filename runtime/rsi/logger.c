@@ -37,7 +37,7 @@ struct rsi_handler {
 }
 
 static const struct rsi_handler rsi_logger[] = {
-	RSI_FUNCTION(ABI_VERSION, 1U, 1U),		/* 0xC4000190 */
+	RSI_FUNCTION(ABI_VERSION, 1U, 2U),		/* 0xC4000190 */
 	RSI_FUNCTION(FEATURES, 1U, 1U),			/* 0xC4000191 */
 	RSI_FUNCTION(MEASUREMENT_READ, 1U, 8U),		/* 0xC4000192 */
 	RSI_FUNCTION(MEASUREMENT_EXTEND, 10U, 0U),	/* 0xC4000193 */

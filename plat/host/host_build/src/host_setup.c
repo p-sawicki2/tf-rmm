@@ -80,7 +80,7 @@ static int realm_start(unsigned long *regs)
 
 static int realm_continue(unsigned long *regs)
 {
-	INFO("RSI Version is 0x%lx\n", regs[1]);
+	INFO("RSI Version is 0x%lx : 0x%lx\n", regs[1], regs[2]);
 
 	if (regs[0] != RSI_SUCCESS) {
 		ERROR("RSI_VERSION command failed 0x%lx\n", regs[0]);
