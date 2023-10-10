@@ -42,8 +42,13 @@
 #define SMC_FNUM_SHIFT		U(0)
 #define SMC_FNUM_MASK		U(0xFFFF)
 
+#ifdef __ASSEMBLER__
 #define SMC_FIELD_VAL(_field, _val)					    \
 	(((_val) & SMC_##_field##_MASK) << SMC_##_field##_SHIFT)
+#else
+#define SMC_FIELD_VAL(_field, _val)					    \
+	((unsigned long)((_val) & SMC_##_field##_MASK) << SMC_##_field##_SHIFT)
+#endif
 
 #define SMC_SET_FIELD(_init_val, _field, _val)                              \
 	(((_init_val) & ~SMC_FIELD_VAL(_field, SMC_##_field##_MASK)) |	    \
