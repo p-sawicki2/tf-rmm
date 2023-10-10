@@ -27,8 +27,8 @@
  */
 #define RMI_ABI_VERSION_MINOR		U(0)
 
-#define RMI_ABI_VERSION			((RMI_ABI_VERSION_MAJOR << U(16)) | \
-					RMI_ABI_VERSION_MINOR)
+#define RMI_ABI_VERSION	((unsigned long)(RMI_ABI_VERSION_MAJOR << U(16)) | \
+			 RMI_ABI_VERSION_MINOR)
 
 #define RMI_ABI_VERSION_GET_MAJOR(_version) ((_version) >> U(16))
 #define RMI_ABI_VERSION_GET_MINOR(_version) ((_version) & U(0xFFFF))

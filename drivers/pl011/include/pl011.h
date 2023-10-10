@@ -9,30 +9,37 @@
 #include <stdint.h>
 
 /* PL011 Registers */
-#define UARTDR                    0x00U
-#define UARTECR                   0x04U
-#define UARTFR                    0x18U
+#define UARTDR			0x00U
+#define UARTECR			0x04U
+#define UARTFR			0x18U
 
 /* PL011 registers (out of the SBSA specification) */
-#define UARTIBRD                  0x24U
-#define UARTFBRD                  0x28U
-#define UARTLCR_H                 0x2CU
-#define UARTCR                    0x30U
+#define UARTIBRD		0x24U
+#define UARTFBRD		0x28U
+#define UARTLCR_H		0x2CU
+#define UARTCR			0x30U
 
 /* Flag reg bits */
-#define PL011_UARTFR_TXFF         (1U << 5)	/* Transmit FIFO full */
+
+/* Transmit FIFO full */
+#define PL011_UARTFR_TXFF	((unsigned long)(1U << 5))
 
 /* Control reg bits */
-#define PL011_UARTCR_RXE          (1U << 9)	/* Receive enable */
-#define PL011_UARTCR_TXE          (1U << 8)	/* Transmit enable */
-#define PL011_UARTCR_UARTEN       (1U << 0)	/* UART Enable */
+
+/* Receive enable */
+#define PL011_UARTCR_RXE	((unsigned long)(1U << 9))
+/* Transmit enable */
+#define PL011_UARTCR_TXE	((unsigned long)(1U << 8))
+/* UART Enable */
+#define PL011_UARTCR_UARTEN	((unsigned long)(1U << 0))
 
 /* FIFO Enabled / No Parity / 8 Data bit / One Stop Bit */
-#define PL011_LINE_CONTROL  (PL011_UARTLCR_H_FEN | PL011_UARTLCR_H_WLEN_8)
+#define PL011_LINE_CONTROL	(PL011_UARTLCR_H_FEN | PL011_UARTLCR_H_WLEN_8)
 
 /* Line Control Register Bits */
-#define PL011_UARTLCR_H_WLEN_8    (3U << 5)
-#define PL011_UARTLCR_H_FEN       (1U << 4)	/* FIFOs Enable */
+#define PL011_UARTLCR_H_WLEN_8	((unsigned long)(3U << 5))
+/* FIFOs Enable */
+#define PL011_UARTLCR_H_FEN	((unsigned long)(1U << 4))
 
 /*
  * Function that initiates UART for console output
