@@ -11,24 +11,24 @@
 /* FID: Type - Fast Call */
 #define SMC_TYPE_SHIFT		U(31)
 #define SMC_TYPE_MASK		U(1)
-#define SMC_TYPE_FAST		U(1)
+#define SMC_TYPE_FAST		UL(1)
 
 /* FID: Calling convention - SMC32/SMC64 */
 #define SMC_CC_SHIFT		U(30)
 #define SMC_CC_MASK		U(1)
-#define SMC_CC_SMC32		U(0)
-#define SMC_CC_SMC64		U(1)
+#define SMC_CC_SMC32		UL(0)
+#define SMC_CC_SMC64		UL(1)
 
 /* FID: Owning entity number - Standard Secure Service Calls */
 #define SMC_OEN_SHIFT		U(24)
 #define SMC_OEN_MASK		U(0x3F)
-#define SMC_OEN_STD		U(0x4)
-#define SMC_OEN_ARCH		U(0x0)
+#define SMC_OEN_STD		UL(0x4)
+#define SMC_OEN_ARCH		UL(0x0)
 
 /* FID: Must be zero (MBZ) */
 #define SMC_MBZ_SHIFT		U(16)
-#define SMC_MBZ_MASK		U(0xFF)
-#define SMC_MBZ_ZERO		U(0x0)
+#define SMC_MBZ_MASK		UL(0xFF)
+#define SMC_MBZ_ZERO		UL(0x0)
 
 /*
  * SVE Hint bit (SMCCCv1.3), denoting the absence of SVE specific live state.
