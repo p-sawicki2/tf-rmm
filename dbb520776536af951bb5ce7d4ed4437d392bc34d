@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "915de5bf_0a37567e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-10T09:08:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "359ff5f6_8dfa061b",
+      "revId": "dbb520776536af951bb5ce7d4ed4437d392bc34d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73b5e985_dde40230",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-10-10T03:27:08Z",
       "side": 1,
       "message": "would be good to print RMI versions here as well.",
+      "revId": "dbb520776536af951bb5ce7d4ed4437d392bc34d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07df616a_d1fc85b5",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-10T09:08:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73b5e985_dde40230",
       "revId": "dbb520776536af951bb5ce7d4ed4437d392bc34d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
