@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "359ff5f6_8dfa061b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:19:00Z",
+      "side": 1,
+      "message": "Also add that the Versions are reset to 1.0 to match the specification. Make it a \"NOTE:\"",
+      "revId": "dbb520776536af951bb5ce7d4ed4437d392bc34d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
