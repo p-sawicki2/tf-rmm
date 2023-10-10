@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d102311e_461545a0",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "add documentation for this in userguide.",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "185b9a53_207eed60",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "\"RMM_CCA_TOKEN_BUFFER\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 9,
+        "endLine": 59,
+        "endChar": 32
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54dc42ea_ed38bfec",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "\"Number of pages to allocate in Aux granule for Realm CCA token\"",
+      "range": {
+        "startLine": 60,
+        "startChar": 10,
+        "endLine": 60,
+        "endChar": 17
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab154843_85b66ca6",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "The sample app needs to only do this once. Can remove the 2nd token init and continue.",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f56e0b2_fb3d963f",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "call this rec_attest_buffer",
+      "range": {
+        "startLine": 82,
+        "startChar": 10,
+        "endLine": 82,
+        "endChar": 20
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e34587e0_ee81288d",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "if size is 0, then the copied_len will remain 0 even if the token is created in first call. \n\n2 options:\n\n1. return early if size is 0 without any operation (preferable ?)\n2. Need another state variable for CCA TOKEN creation.\n\n\nAlso there is an optimization that\n\nif !(`size` \u003c REC_ATTEST_BUFFER_SIZE), then we could use realm_att_token as the destination buffer directly and avoid another memcpy.\n\nif the implementation becomes convoluted, ignore the 2nd optimization.",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f2b84b4_ac12b97d",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "these types should be uintptr_t in first place. same comment for realm_att_token.",
+      "range": {
+        "startLine": 137,
+        "startChar": 27,
+        "endLine": 137,
+        "endChar": 37
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ba52ceb_699b747d",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "need to ensure size is also less than GRANULE_SIZE (check eac5)",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c306b5c6_a1a6cbd8",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T03:17:06Z",
+      "side": 1,
+      "message": "this can be replaced with:\n\n\nif(!addr_in_rec_par(rec, realm_buf_ipa)) {\n   res-\u003esmc_res.x[0] \u003d RSI_ERROR_INPUT;\n   return;\n}\n\n\nno need to acquire any locks.",
+      "range": {
+        "startLine": 264,
+        "startChar": 1,
+        "endLine": 275,
+        "endChar": 38
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
