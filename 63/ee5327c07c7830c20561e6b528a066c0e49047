@@ -1,0 +1,10 @@
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Wed, 11 Oct 2023 16:05:01 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23439
+Comments-Total: 2
+Comments-Unresolved: 1
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/topics/rmm-1.0-eac4
