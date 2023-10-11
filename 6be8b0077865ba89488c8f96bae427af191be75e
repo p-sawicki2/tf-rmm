@@ -320,6 +320,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e6267d23_e575d348",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-11T15:57:50Z",
+      "side": 1,
+      "message": "cca_token_buf can be OK. I would just like to have `tok` or `token` in the name, as the object taht is stored in the buffer is an attestation token, While the attestation thing (process? act?) can have other properties as well. Also having `attest_data` and `attest_buffer` the same time feels a bit confusing.",
+      "parentUuid": "96c58970_6f7fc5d6",
+      "range": {
+        "startLine": 136,
+        "startChar": 10,
+        "endLine": 136,
+        "endChar": 23
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b7f16db9_6b5e4b7d",
         "filename": "plat/host/host_build/src/host_setup.c",
         "patchSetId": 5
@@ -773,6 +797,30 @@
       "side": 1,
       "message": "Hi Mate, yes we lost the loop logic as part of RSI handler rework. This is not a problem of this patch. Let me see if I can do something for this.",
       "parentUuid": "9b2af92a_3143efd6",
+      "range": {
+        "startLine": 302,
+        "startChar": 1,
+        "endLine": 303,
+        "endChar": 27
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a91ac952_087a5baf",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-11T15:57:50Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "24fdc9c1_a0a33d92",
       "range": {
         "startLine": 302,
         "startChar": 1,
