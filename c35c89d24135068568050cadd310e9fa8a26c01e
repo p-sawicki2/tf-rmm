@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3ea177e_1b57b753",
+        "filename": ".clang-tidy",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "Will this only check file starting with this regex?\nMaybe we can add a comment..",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c865eb5e_9d21c020",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "nit: ,",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b940d146_71bc889d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "Looks good overall, few minor comments..",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83fafb5a_3bde06fc",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "Can you also update the documentation and add this target. Similar to https://git.trustedfirmware.org/TF-RMM/tf-rmm.git/tree/docs/getting_started/build-options.rst#n119",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f9537e8_7209f397",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "This variable is not used, may be use this is run_clangtidy()?",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6208660_ae9c81d0",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "Path to build directory as \u0027build\u0027 can\u0027t be hard-coded.\nI think you can get the build path from a Cmake variable.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 54
+      },
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b542208e_e19a4a96",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T16:04:33Z",
+      "side": 1,
+      "message": "Same comment as #167",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 54
+      },
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
