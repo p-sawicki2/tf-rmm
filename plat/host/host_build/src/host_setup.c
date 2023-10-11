@@ -71,13 +71,13 @@ static int realm_start(unsigned long *regs)
 	INFO("###########################\n");
 
 	regs[0] = SMC_RSI_ABI_VERSION;
+	regs[1] = RSI_ABI_VERSION;
 	return host_util_rsi_helper(realm_continue);
 }
 
 static int realm_continue(unsigned long *regs)
 {
-	INFO("RSI Version is 0x%lx\n", regs[0]);
-
+	INFO("RSI Version is 0x%lx\n", regs[1]);
 
 	srand((int)time(NULL));
 
@@ -145,6 +145,8 @@ static int create_realm(void)
 	struct rmi_rec_params *rec_params = allocate_granule();
 	struct rmi_rec_run *rec_run = allocate_granule();
 
+	host_rmi_version(RMI_ABI_VERSION, &result);
+	CHECK_RMI_RESULT();
 	host_rmi_granule_delegate(rd, &result);
 	CHECK_RMI_RESULT();
 	host_rmi_granule_delegate(rec, &result);

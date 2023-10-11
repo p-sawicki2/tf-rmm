@@ -311,9 +311,12 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->realm_info.algorithm = rd->algorithm;
 	rec->realm_info.simd_cfg = rd->simd_cfg;
 
-	measurement_rec_params_measure(rd->measurement[RIM_MEASUREMENT_SLOT],
-				       rd->algorithm,
-				       &rec_params);
+	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
+	if (rec->runnable) {
+		measurement_rec_params_measure(rd->measurement[RIM_MEASUREMENT_SLOT],
+					       rd->algorithm,
+					       &rec_params);
+	}
 
 	/*
 	 * RD has a lock-free access from RMI_REC_DESTROY, hence increment
@@ -323,7 +326,6 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	 */
 	atomic_granule_get(g_rd);
 	new_rec_state = GRANULE_STATE_REC;
-	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
 
 	/*
 	 * Map REC aux granules, initialize aux data and unmap REC aux
@@ -418,7 +420,8 @@ void smc_rec_aux_count(unsigned long rd_addr, struct smc_result *res)
 }
 
 unsigned long smc_psci_complete(unsigned long calling_rec_addr,
-				unsigned long target_rec_addr)
+				unsigned long target_rec_addr,
+				unsigned long status)
 {
 	struct granule *g_calling_rec, *g_target_rec;
 	struct rec  *calling_rec, *target_rec;
@@ -462,7 +465,7 @@ unsigned long smc_psci_complete(unsigned long calling_rec_addr,
 	target_rec = granule_map(g_target_rec, SLOT_REC2);
 	assert(target_rec != NULL);
 
-	ret = psci_complete_request(calling_rec, target_rec);
+	ret = psci_complete_request(calling_rec, target_rec, status);
 
 	buffer_unmap(target_rec);
 	buffer_unmap(calling_rec);

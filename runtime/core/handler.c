@@ -126,7 +126,7 @@ struct smc_handler {
  * The 4th value enables the error log.
  */
 static const struct smc_handler smc_handlers[] = {
-	HANDLER(VERSION,		0, 0, smc_version,		 true,  true),
+	HANDLER(VERSION,		1, 1, smc_version,		 true,  true),
 	HANDLER(FEATURES,		1, 1, smc_read_feature_register, true,  true),
 	HANDLER(GRANULE_DELEGATE,	1, 0, smc_granule_delegate,	 false, true),
 	HANDLER(GRANULE_UNDELEGATE,	1, 0, smc_granule_undelegate,	 false, true),
@@ -145,7 +145,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_MAP_UNPROTECTED,	4, 0, smc_rtt_map_unprotected,	 false, false),
 	HANDLER(RTT_UNMAP_UNPROTECTED,	3, 1, smc_rtt_unmap_unprotected, false, false),
 	HANDLER(RTT_READ_ENTRY,		3, 4, smc_rtt_read_entry,	 false, true),
-	HANDLER(PSCI_COMPLETE,		2, 0, smc_psci_complete,	 true,  true),
+	HANDLER(PSCI_COMPLETE,		3, 0, smc_psci_complete,	 true,  true),
 	HANDLER(REC_AUX_COUNT,		1, 1, smc_rec_aux_count,	 true,  true),
 	HANDLER(RTT_INIT_RIPAS,		3, 1, smc_rtt_init_ripas,	 false, true),
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
@@ -178,15 +178,6 @@ static void rmi_log_on_exit(unsigned int handler_id,
 	unsigned int num;
 
 	if (!handler->log_exec && !handler->log_error) {
-		return;
-	}
-
-	if (function_id == SMC_RMM_VERSION) {
-		/*
-		 * RMM_VERSION is special because it returns the
-		 * version number, not the error code.
-		 */
-		INFO("SMC_RMM_%-21s > %lx\n", handler->fn_name, res->x[0]);
 		return;
 	}
 
