@@ -129,6 +129,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a04a7d4d_046fb95d",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bd3b536_5a1feec3",
+      "range": {
+        "startLine": 87,
+        "startChar": 9,
+        "endLine": 87,
+        "endChar": 14
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "43f2e420_5982b856",
@@ -152,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26fd56a8_4770f8ce",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43f2e420_5982b856",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 17
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a1961ef_07e5ebe3",
@@ -165,6 +213,30 @@
       "writtenOn": "2023-10-10T13:03:17Z",
       "side": 1,
       "message": "Maybe something more specific, like \u0027Number of CCA token bytes returned to the realm\u0027",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 26
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50f76dd1_10f88db1",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1961ef_07e5ebe3",
       "range": {
         "startLine": 89,
         "startChar": 4,
@@ -200,6 +272,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "88e86136_142d4743",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Isn\u0027t it too long?",
+      "parentUuid": "7814b54a_6b743da4",
+      "range": {
+        "startLine": 136,
+        "startChar": 10,
+        "endLine": 136,
+        "endChar": 23
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b7f16db9_6b5e4b7d",
         "filename": "plat/host/host_build/src/host_setup.c",
         "patchSetId": 5
@@ -211,6 +307,30 @@
       "writtenOn": "2023-10-10T13:03:17Z",
       "side": 1,
       "message": "This should probably be called ATTEST_TOKEN_BUFFER_SIZE as the thing that is referred in this code as realm buffer has the size of a granule",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "040c4389_9830df9f",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7f16db9_6b5e4b7d",
       "range": {
         "startLine": 28,
         "startChar": 8,
@@ -234,6 +354,24 @@
       "writtenOn": "2023-10-10T03:17:06Z",
       "side": 1,
       "message": "The sample app needs to only do this once. Can remove the 2nd token init and continue.",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "969b4754_2ae9476f",
+        "filename": "plat/host/host_build/src/host_setup.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab154843_85b66ca6",
       "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -327,6 +465,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fd388aa3_4ef23ffc",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "1) Will return RSI_SUCCESS and len \u003d 0 after checking that state !\u003d ATTEST_SIGN_NOT_STARTED. \n\n2) We can only create token in realm_att_token, if attest_token_len \u003c\u003d size, but attest_token_len gets set after attest_cca_token_create() call, which requires buffer to create token in.",
+      "parentUuid": "e34587e0_ee81288d",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f2b84b4_ac12b97d",
         "filename": "runtime/rsi/realm_attest.c",
         "patchSetId": 5
@@ -409,6 +565,42 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89b2b90e_6a983626",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "(offset + size) \u003e GRANULE_SIZE) also checks that (size \u003e GRANULE_SIZE)",
+      "parentUuid": "7b9bf4ae_43460313",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14aa8ba0_88cb72f9",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "check\n(offset \u003e\u003d GRANULE_SIZE) || (offset + size \u003e GRANULE_SIZE)\ncovers\n(size \u003e GRANULE_SIZE) case which is not present in the Specification.",
+      "parentUuid": "7b9bf4ae_43460313",
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c306b5c6_a1a6cbd8",
         "filename": "runtime/rsi/realm_attest.c",
         "patchSetId": 5
@@ -420,6 +612,30 @@
       "writtenOn": "2023-10-10T03:17:06Z",
       "side": 1,
       "message": "this can be replaced with:\n\n\nif(!addr_in_rec_par(rec, realm_buf_ipa)) {\n   res-\u003esmc_res.x[0] \u003d RSI_ERROR_INPUT;\n   return;\n}\n\n\nno need to acquire any locks.",
+      "range": {
+        "startLine": 264,
+        "startChar": 1,
+        "endLine": 275,
+        "endChar": 38
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f4971a6_b707671b",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c306b5c6_a1a6cbd8",
       "range": {
         "startLine": 264,
         "startChar": 1,
@@ -443,6 +659,30 @@
       "writtenOn": "2023-10-10T13:03:17Z",
       "side": 1,
       "message": "In the previous version if the token generation was in ATTEST_SIGN_IN_PROGRESS state, and the crypto signing operation returned not-complete, and there was no pending IRQ, the logic automatically executed the next iteration without returning to the realm with incomplete. \n\nThis now seems to be changed, the implementation always returns to the realm (or the host if there is interrupt.). Is this on purpose?",
+      "range": {
+        "startLine": 302,
+        "startChar": 1,
+        "endLine": 303,
+        "endChar": 27
+      },
+      "revId": "6be8b0077865ba89488c8f96bae427af191be75e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b2af92a_3143efd6",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-11T12:50:30Z",
+      "side": 1,
+      "message": "Yes, as I understand \"D1.7.1 Attestation token generation flow\" correctly.",
+      "parentUuid": "fe208f84_dcf8e9ad",
       "range": {
         "startLine": 302,
         "startChar": 1,
