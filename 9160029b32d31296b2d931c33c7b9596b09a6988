@@ -16,6 +16,24 @@
       "message": "Please note that this is not part of EAC5, but is part of  the 1.1-alp0. Please drop this change.",
       "revId": "9160029b32d31296b2d931c33c7b9596b09a6988",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f640114b_536cce38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-12T13:10:40Z",
+      "side": 1,
+      "message": "1.0-eac5 (05-10-2023)\nRMI_DATA_CREATE: move RIPAS\u003dRAM from being a pre-condition to a post-condition (FENIMORE-721)",
+      "parentUuid": "f4413adf_0b18bfc6",
+      "revId": "9160029b32d31296b2d931c33c7b9596b09a6988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
