@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c07be20a_265887dd",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T09:52:04Z",
+      "side": 1,
+      "message": "The comment above should have been modified I think",
+      "range": {
+        "startLine": 91,
+        "startChar": 30,
+        "endLine": 91,
+        "endChar": 42
+      },
+      "revId": "20f158f341105966fea94704827a82674154bf5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e22a231_536bdf6b",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T09:52:04Z",
+      "side": 1,
+      "message": "Strange that this is not reported by checkpatch as trailing whitespace",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 2
+      },
+      "revId": "20f158f341105966fea94704827a82674154bf5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
