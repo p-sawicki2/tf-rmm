@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "97eff32b_d53f7ae7",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-12T10:19:09Z",
+      "side": 1,
+      "message": "/* Number of CCA token bytes left to copy to the Realm */\nsize_t cca_token_len;\n\n/* Number of CCA token bytes copied to the Realm */\nsize_t copied_len;",
+      "parentUuid": "a154e22d_67a9a22f",
+      "range": {
+        "startLine": 88,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 38
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "055087a8_068bc135",
         "filename": "lib/realm/include/rec.h",
         "patchSetId": 9
@@ -227,6 +251,30 @@
       "side": 1,
       "message": "That\u0027s right, I missed that. Leave it as it is then.",
       "parentUuid": "4eb65a2e_fd0279d9",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c726aba_799f8b56",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-12T10:19:09Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c121ba97_860572ff",
       "range": {
         "startLine": 82,
         "startChar": 1,
