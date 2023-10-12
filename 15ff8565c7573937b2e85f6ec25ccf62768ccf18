@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bfd03aa_b2f839e3",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "seems all the callers are ensuring this is enforced. If this is a matter of ensuring that callers are adhering to this, prefer an assert here.",
+      "range": {
+        "startLine": 506,
+        "startChar": 27,
+        "endLine": 507,
+        "endChar": 59
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1e26a272_7d1dbfcd",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 7
@@ -31,6 +54,75 @@
       "writtenOn": "2023-10-12T10:02:28Z",
       "side": 1,
       "message": "minor nit: For clarity, please could we rename s2tte \u003d\u003e attrs or host_attrs even ? The caller passes the host_attrs and having this s2tte, makes use wonder why we need the pa separately.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ec79ef5_eeb1bb1f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "It seems it is better for caller to OR and call s2tte_create_assigned_ns() instead of this intermediate helper.\n\nIt is not being invoked in other places, so I dont see the need for this.",
+      "range": {
+        "startLine": 889,
+        "startChar": 21,
+        "endLine": 889,
+        "endChar": 53
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9711d616_94e89492",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "s2tte_create_assigned_ns(host_attrs | pa, level)",
+      "range": {
+        "startLine": 912,
+        "startChar": 45,
+        "endLine": 912,
+        "endChar": 55
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01c7908c_f1e4c01b",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1026,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "add an argument:\n\n`bool check_ns_attrs`\n\nand add the checks for attrs as well.",
+      "range": {
+        "startLine": 1026,
+        "startChar": 45,
+        "endLine": 1026,
+        "endChar": 46
+      },
       "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -71,6 +163,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13bb0080_e547dca3",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "can be added to __table_maps_block, controlled by an argument.",
+      "range": {
+        "startLine": 1091,
+        "startChar": 0,
+        "endLine": 1093,
+        "endChar": 3
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c429760_3c133926",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 7
@@ -82,6 +197,29 @@
       "writtenOn": "2023-10-12T10:02:28Z",
       "side": 1,
       "message": "minor nit: We always check for ns block with attributes hence this change may be superfluous and confusing as to we ever check ns block without attributes elsewhere.\n\nwe could simply leave it as : table_maps_assigned_ns_block()",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69d751b9_5160af80",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T11:37:53Z",
+      "side": 1,
+      "message": "see comment above.",
+      "range": {
+        "startLine": 1127,
+        "startChar": 8,
+        "endLine": 1127,
+        "endChar": 33
+      },
       "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
