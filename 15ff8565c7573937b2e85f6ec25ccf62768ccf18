@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "607c65d1_a39bed83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "The patch looks good to me. There are some minor comments below.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e26a272_7d1dbfcd",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "minor nit: For clarity, please could we rename s2tte \u003d\u003e attrs or host_attrs even ? The caller passes the host_attrs and having this s2tte, makes use wonder why we need the pa separately.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3a87e32_6897fb59",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "super minor nit: alignment.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "beb94100_90c7f3e4",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "It may be worth adding a comment about the usage of S2TTE_HOST_NS_ATTR_MASK, as it might be giving a feel that we are only concerned about the \"NS\" attributes, while this mask covers all the attributes possible in an s2tte, except the AF bit. Something like:\n\n //* We match all the attributes in the S2TTE except the AF bit *//",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c429760_3c133926",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "minor nit: We always check for ns block with attributes hence this change may be superfluous and confusing as to we ever check ns block without attributes elsewhere.\n\nwe could simply leave it as : table_maps_assigned_ns_block()",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cafa483c_eca029b3",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T10:02:28Z",
+      "side": 1,
+      "message": "That is a bit confusing. Shouldn\u0027t that be something like \n\n    Increment the refcount on the parent for the new RTT we are about to add.\n    The NS block entry doesn\u0027t have a refcount on the parent RTT.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
