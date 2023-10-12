@@ -4,7 +4,6 @@
  */
 
 #include <debug.h>
-#include <fvp_dram.h>
 #include <fvp_private.h>
 #include <pl011.h>
 #include <plat_common.h>
@@ -84,7 +83,7 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 	}
 
 	/* Set up FVP DRAM layout */
-	fvp_set_dram_layout(plat_dram);
+	plat_set_dram_layout(plat_dram);
 
 	plat_warmboot_setup(x0, x1, x2, x3);
 }
