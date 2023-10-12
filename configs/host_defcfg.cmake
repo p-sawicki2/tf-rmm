@@ -36,3 +36,8 @@ arm_config_option_override(NAME RMM_MAX_GRANULES DEFAULT 0x80000)
 # Add a large number of MMAP regions to exercise unittests on xlat lib.
 #
 arm_config_option_override(NAME PLAT_CMN_MAX_MMAP_REGIONS DEFAULT 0xff)
+
+#
+# Maximum number of DRAM Banks allowed to be managed.
+#
+arm_config_option_override(NAME RMM_MAX_DRAM_NUM_BANKS DEFAULT 2)

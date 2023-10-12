@@ -50,3 +50,8 @@ arm_config_option_override(NAME RMM_FPU_USE_AT_REL2 DEFAULT OFF)
 # for the case that DT has not catered for the 64 MB carveout.
 #
 arm_config_option_override(NAME RMM_MAX_GRANULES DEFAULT 0x100000)
+
+#
+# Maximum number of DRAM Banks allowed to be managed.
+#
+arm_config_option_override(NAME RMM_MAX_DRAM_NUM_BANKS DEFAULT 2)
