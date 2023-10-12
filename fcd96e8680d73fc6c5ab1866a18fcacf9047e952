@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad0eaeb6_1a06dfda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T10:34:10Z",
+      "side": 1,
+      "message": "I\u0027m ok with how my comments have been fixed/answered. Thanks.",
+      "revId": "fcd96e8680d73fc6c5ab1866a18fcacf9047e952",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
