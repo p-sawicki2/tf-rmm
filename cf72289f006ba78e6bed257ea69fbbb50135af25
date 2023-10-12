@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fabb61f_20d15706",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T14:40:35Z",
+      "side": 1,
+      "message": "minor comment",
+      "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09538a1d_2db3368b",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T14:40:35Z",
+      "side": 1,
+      "message": "PUBLIC \"HOST_MEM_SIZE\u003dUL(${HOST_MEM_SIZE})\")\n\n\nshould be good.",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 22,
+        "endChar": 48
+      },
+      "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a53555b6_96550bd7",
+        "filename": "plat/host/common/include/host_defs.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T14:40:35Z",
+      "side": 1,
+      "message": "see prev comment",
+      "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
