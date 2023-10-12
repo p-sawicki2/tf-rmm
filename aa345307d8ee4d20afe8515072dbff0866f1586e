@@ -143,6 +143,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a9ab5c2_c6edb345",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-12T10:52:37Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "97eff32b_d53f7ae7",
+      "range": {
+        "startLine": 88,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 38
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "055087a8_068bc135",
@@ -299,6 +323,30 @@
       "side": 1,
       "message": "Perhaps cca_token_buf can be uintptr_t",
       "parentUuid": "c121ba97_860572ff",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cd07de_7543426a",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-12T10:52:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "197ebca9_efcaaa45",
       "range": {
         "startLine": 82,
         "startChar": 1,
