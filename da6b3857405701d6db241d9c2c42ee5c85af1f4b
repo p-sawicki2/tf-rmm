@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ec6c737_b56a226f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T12:33:11Z",
+      "side": 1,
+      "message": "This patch needs to be on EAC4, hence the coy pushed to integration will be abandoned.",
+      "revId": "da6b3857405701d6db241d9c2c42ee5c85af1f4b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
