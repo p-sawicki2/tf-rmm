@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91158ec7_c61d9b26",
+        "filename": "lib/allocator/include/memory_alloc.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T08:16:19Z",
+      "side": 1,
+      "message": "Would REC_ATTEST_TOKEN_BUF_SIZE be too long?\nI think it would be good if \u0027token\u0027 could be somehow be included in the name",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 30
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "511c1319_b7ae13d4",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T08:16:19Z",
+      "side": 1,
+      "message": "Sorry, I just realised that cca_token_len is actually set in every iteration, not in the first only. So while the comment strictly speaking is true, isn\u0027t really helpful, if not misleading.\n\nSo this should better be something like \u0027Number of CCA token bytes that are not copied yet.\u0027",
+      "range": {
+        "startLine": 88,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 38
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "055087a8_068bc135",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T08:16:19Z",
+      "side": 1,
+      "message": "add \u0027token\u0027",
+      "range": {
+        "startLine": 135,
+        "startChar": 30,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a4c6ad0_b0477c00",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-12T08:16:19Z",
+      "side": 1,
+      "message": "I think declaring this a `void*` would eliminate the need for some typecasts.",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "aa345307d8ee4d20afe8515072dbff0866f1586e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
