@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4413adf_0b18bfc6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001127
+      },
+      "writtenOn": "2023-10-12T11:37:10Z",
+      "side": 1,
+      "message": "Please note that this is not part of EAC5, but is part of  the 1.1-alp0. Please drop this change.",
+      "revId": "9160029b32d31296b2d931c33c7b9596b09a6988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
