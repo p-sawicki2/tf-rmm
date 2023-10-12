@@ -50,6 +50,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f08cdf8c_b1175799",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-12T10:25:46Z",
+      "side": 1,
+      "message": "prefer uintptr_t where possible.",
+      "range": {
+        "startLine": 136,
+        "startChar": 1,
+        "endLine": 136,
+        "endChar": 9
+      },
+      "revId": "20f158f341105966fea94704827a82674154bf5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e22a231_536bdf6b",
         "filename": "runtime/rsi/realm_attest.c",
         "patchSetId": 10
