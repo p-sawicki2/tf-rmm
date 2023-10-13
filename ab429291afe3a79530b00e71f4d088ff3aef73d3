@@ -75,6 +75,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98de61b5_24ecf4c2",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94c3e8a6_9e2853a0",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7715cec_1b80ddfe",
@@ -88,6 +106,30 @@
       "writtenOn": "2023-10-13T08:46:26Z",
       "side": 1,
       "message": "nit: keep this along with LPA2 ones.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c0ee2c_ec02efb1",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7715cec_1b80ddfe",
       "range": {
         "startLine": 70,
         "startChar": 0,
@@ -138,6 +180,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50065a84_b59d1241",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d1bdde8_4b6f717c",
+      "range": {
+        "startLine": 91,
+        "startChar": 14,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "860d2ce8_76b2ceec",
@@ -151,6 +217,24 @@
       "writtenOn": "2023-10-13T08:46:26Z",
       "side": 1,
       "message": "somehow this will need to be in RD.\n\nAnother alternative:\ninstead of function pointer, these can be conditional macros which invokes one or the other based on an input arg (LPA2 or non LPA2).\n\nWill need further thoughts which is the better way.",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae65fe80_32677647",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T14:09:30Z",
+      "side": 1,
+      "message": "Will rework this as per our discussion",
+      "parentUuid": "860d2ce8_76b2ceec",
       "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
