@@ -96,6 +96,24 @@
       "message": "Suggest: \n\n/* Since table_maps_assigned_ns_block() has succeeded, the pa in first entry of table is aligned to parent level. Use the tte from the first entry directly as it also has the NS Attributes to be sued for the parent block entry */",
       "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27d1a2cb_a89b1779",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T16:40:09Z",
+      "side": 1,
+      "message": "*used",
+      "parentUuid": "180afc58_2804fb4f",
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
