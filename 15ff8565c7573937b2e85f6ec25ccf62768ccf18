@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bddfa34_95e4f22c",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bfd03aa_b2f839e3",
+      "range": {
+        "startLine": 506,
+        "startChar": 27,
+        "endLine": 507,
+        "endChar": 59
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e26a272_7d1dbfcd",
@@ -81,6 +105,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "073a6d5a_8b2a5ef2",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Removed as per Soby\u0027s comment.",
+      "parentUuid": "1e26a272_7d1dbfcd",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bf0b625_55a33784",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ec79ef5_eeb1bb1f",
+      "range": {
+        "startLine": 889,
+        "startChar": 21,
+        "endLine": 889,
+        "endChar": 53
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9711d616_94e89492",
@@ -94,6 +160,30 @@
       "writtenOn": "2023-10-12T11:37:53Z",
       "side": 1,
       "message": "s2tte_create_assigned_ns(host_attrs | pa, level)",
+      "range": {
+        "startLine": 912,
+        "startChar": 45,
+        "endLine": 912,
+        "endChar": 55
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8b75d84_5e88b96d",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9711d616_94e89492",
       "range": {
         "startLine": 912,
         "startChar": 45,
@@ -127,6 +217,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56aa2d5a_cd484176",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1026,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01c7908c_f1e4c01b",
+      "range": {
+        "startLine": 1026,
+        "startChar": 45,
+        "endLine": 1026,
+        "endChar": 46
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3a87e32_6897fb59",
@@ -144,6 +258,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f9aaed5_db5508c0",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "This function was removed",
+      "parentUuid": "e3a87e32_6897fb59",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "beb94100_90c7f3e4",
@@ -157,6 +289,24 @@
       "writtenOn": "2023-10-12T10:02:28Z",
       "side": 1,
       "message": "It may be worth adding a comment about the usage of S2TTE_HOST_NS_ATTR_MASK, as it might be giving a feel that we are only concerned about the \"NS\" attributes, while this mask covers all the attributes possible in an s2tte, except the AF bit. Something like:\n\n //* We match all the attributes in the S2TTE except the AF bit *//",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7fe6429_3842a0d1",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "If I understand correctly, these are actually the NS attributes, right? Actually this mask is concerned about the NS attributes.",
+      "parentUuid": "beb94100_90c7f3e4",
       "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -184,6 +334,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdf42d63_670169e5",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13bb0080_e547dca3",
+      "range": {
+        "startLine": 1091,
+        "startChar": 0,
+        "endLine": 1093,
+        "endChar": 3
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c429760_3c133926",
@@ -197,6 +371,24 @@
       "writtenOn": "2023-10-12T10:02:28Z",
       "side": 1,
       "message": "minor nit: We always check for ns block with attributes hence this change may be superfluous and confusing as to we ever check ns block without attributes elsewhere.\n\nwe could simply leave it as : table_maps_assigned_ns_block()",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb0ea0be_0d80c519",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c429760_3c133926",
       "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -224,6 +416,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4de8a84d_0ca2b39b",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69d751b9_5160af80",
+      "range": {
+        "startLine": 1127,
+        "startChar": 8,
+        "endLine": 1127,
+        "endChar": 33
+      },
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cafa483c_eca029b3",
@@ -237,6 +453,24 @@
       "writtenOn": "2023-10-12T10:02:28Z",
       "side": 1,
       "message": "That is a bit confusing. Shouldn\u0027t that be something like \n\n    Increment the refcount on the parent for the new RTT we are about to add.\n    The NS block entry doesn\u0027t have a refcount on the parent RTT.",
+      "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6139e9c2_4163c945",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-13T16:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cafa483c_eca029b3",
       "revId": "15ff8565c7573937b2e85f6ec25ccf62768ccf18",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
