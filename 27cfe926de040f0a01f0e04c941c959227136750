@@ -51,6 +51,24 @@
       "parentUuid": "d52ceb6e_bb7c1fd5",
       "revId": "27cfe926de040f0a01f0e04c941c959227136750",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d506743_1a8df66c",
+        "filename": "lib/gic/include/gic.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T15:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16568c2f_06ac399f",
+      "revId": "27cfe926de040f0a01f0e04c941c959227136750",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
