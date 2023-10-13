@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b2903a1_e38fd510",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Included \u0027eh\u0027 in the function name. I think adding \u0027_per_cpu\u0027 is not necessary, the parameter suggest that this operation returns the value for the CPU in the parameter.",
+      "parentUuid": "9c9f942e_94fe14d7",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8712a59b_33ef17af",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-10-06T12:02:21Z",
       "side": 1,
       "message": "ni: RMM_SEH_STACK_MMAP_IDX or any other name that also makes reference to the \"exception\". I feel just \"Handler\" might be confusing or misleading.",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e4ce84_69027c29",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Renamed the constant. Dropped \u0027S\u0027 from the name, not sure what it stands for.",
+      "parentUuid": "8712a59b_33ef17af",
       "range": {
         "startLine": 23,
         "startChar": 8,
@@ -81,6 +129,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00f308a2_89c3da5c",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Fixed the indentation",
+      "parentUuid": "44821452_4a4205f2",
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aab25a23_84dcdcfe",
@@ -94,6 +160,30 @@
       "writtenOn": "2023-10-06T12:02:21Z",
       "side": 1,
       "message": "RMM exception handler stack",
+      "range": {
+        "startLine": 85,
+        "startChar": 9,
+        "endLine": 85,
+        "endChar": 16
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "481fe303_c78757c1",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aab25a23_84dcdcfe",
       "range": {
         "startLine": 85,
         "startChar": 9,
@@ -127,6 +217,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1fea3df_c3d4d59a",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "54158423_90656bc0",
+      "range": {
+        "startLine": 47,
+        "startChar": 13,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f14055b1_0caf14f1",
@@ -140,6 +254,30 @@
       "writtenOn": "2023-10-06T12:02:21Z",
       "side": 1,
       "message": "Same as on my comments above. We should mention the exception somehow on the name",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3867aacb_0dfc9c22",
+        "filename": "runtime/linker.lds",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T14:47:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f14055b1_0caf14f1",
       "range": {
         "startLine": 89,
         "startChar": 2,
