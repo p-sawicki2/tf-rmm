@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca9a808e_6fe64e96",
+        "filename": ".clang-tidy",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T15:38:40Z",
+      "side": 1,
+      "message": "Given the importance of lib, lets add it to the check and fix the errors if possible.",
+      "parentUuid": "7ffb7baf_4d7e1a0b",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c865eb5e_9d21c020",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -266,6 +284,24 @@
       "side": 1,
       "message": "Similarly to above, I did an experiment to see how many warnings/errors this would add. Using fvp_defcfg:\n- lib/ excluded: 16 warnings, 0 errors\n- lib/ included: 65 warnings, 2 errors\n\nThat doesn\u0027t seem too bad so I think we could definitely include lib/ if you think it would be better to?",
       "parentUuid": "9a31cb43_89832eb1",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1d61588_71d593ae",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T15:38:40Z",
+      "side": 1,
+      "message": "Yes, lets add lib.",
+      "parentUuid": "5f186252_e5f26fc2",
       "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
