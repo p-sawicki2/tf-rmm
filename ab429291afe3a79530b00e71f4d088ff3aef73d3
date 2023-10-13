@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ccfe0fc_88c3f21e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T04:05:54Z",
+      "side": 1,
+      "message": "this may not work as the attributes described are different between the 2 formats when NS pages are mapped to S2 (NS_ATTR_MASK).\n\nWe would need to use the LPA2 in S2 depending on whether Host has enabled it or not.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "fcd415e2_b2c25719",
@@ -14,6 +37,40 @@
       "writtenOn": "2023-10-09T14:09:11Z",
       "side": 1,
       "message": "Verified through https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/341/",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f19e4bd8_04a83a5c",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T04:05:54Z",
+      "side": 1,
+      "message": "For T0SZ, Arm ARM says this :\n\nFor the 4KB translation granule, if FEAT_LPA2 is implemented and this field is less than 16, the\ntranslation table walk begins with a level -1 initial lookup.\n\n\nThis means some of the validation we perform when the tables are created will need to change (especially when Contiguous root tables are specified).",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94c3e8a6_9e2853a0",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T04:05:54Z",
+      "side": 1,
+      "message": "define LM1 for SL2 as well.",
       "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
