@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "176a8a5e_eb9098ac",
+        "filename": "plat/host/common/CMakeLists.txt",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T13:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09538a1d_2db3368b",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 22,
+        "endChar": 48
+      },
+      "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a53555b6_96550bd7",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-10-12T14:40:35Z",
       "side": 1,
       "message": "see prev comment",
+      "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de961eff_5e5bbf92",
+        "filename": "plat/host/common/include/host_defs.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T13:37:58Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "a53555b6_96550bd7",
       "revId": "cf72289f006ba78e6bed257ea69fbbb50135af25",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
