@@ -1,4 +1,97 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dda1848a_5f6f76bc",
+        "filename": "lib/smc/include/smc-rsi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T15:40:35Z",
+      "side": 1,
+      "message": "8",
+      "range": {
+        "startLine": 102,
+        "startChar": 36,
+        "endLine": 102,
+        "endChar": 37
+      },
+      "revId": "71fd32b05de540d388e2de010aa8d8f56d8b1f6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "576919e6_26875738",
+        "filename": "lib/smc/include/smc-rsi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T15:40:35Z",
+      "side": 1,
+      "message": "8",
+      "range": {
+        "startLine": 117,
+        "startChar": 35,
+        "endLine": 117,
+        "endChar": 36
+      },
+      "revId": "71fd32b05de540d388e2de010aa8d8f56d8b1f6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2770f849_529d4b96",
+        "filename": "lib/smc/include/smc-rsi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T15:40:35Z",
+      "side": 1,
+      "message": "8",
+      "range": {
+        "startLine": 131,
+        "startChar": 34,
+        "endLine": 131,
+        "endChar": 35
+      },
+      "revId": "71fd32b05de540d388e2de010aa8d8f56d8b1f6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30e94043_9f43730c",
+        "filename": "lib/smc/include/smc-rsi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-13T15:40:35Z",
+      "side": 1,
+      "message": "* arg1: IPA of the Granule to which the token will be written\n     * arg2: Offset within Granule to start of buffer in bytes\n     * arg3: Size of buffer in bytes\n     * ret0: Status / error\n     * ret1: Number of bytes written to buffer",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 41
+      },
+      "revId": "71fd32b05de540d388e2de010aa8d8f56d8b1f6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ],
   "submitRequirementResults": []
 }
