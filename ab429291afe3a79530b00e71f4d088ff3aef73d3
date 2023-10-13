@@ -73,6 +73,109 @@
       "message": "define LM1 for SL2 as well.",
       "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7715cec_1b80ddfe",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T08:46:26Z",
+      "side": 1,
+      "message": "nit: keep this along with LPA2 ones.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbdd738d_2d622ef7",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T08:46:26Z",
+      "side": 1,
+      "message": "I wonder we can do some macro magic to pick the right variant with or without LPA2.\n\n#define S2TTE_ATTRS_LPA2   ...\n#define S2TTE_ATTRS_NORMAL ...\n\n#define S2TTE_ATTRS(x)     S2TTE_ATTRS_##(x)\n\n\nAnd then prameterize all the other macros which use this, so you need only one version of the macro, ...something to think about.",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d1bdde8_4b6f717c",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T08:46:26Z",
+      "side": 1,
+      "message": "Suggest: _ENTRY_ can be removed as TTE itself has \"entry\" in it.",
+      "range": {
+        "startLine": 91,
+        "startChar": 14,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "860d2ce8_76b2ceec",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T08:46:26Z",
+      "side": 1,
+      "message": "somehow this will need to be in RD.\n\nAnother alternative:\ninstead of function pointer, these can be conditional macros which invokes one or the other based on an input arg (LPA2 or non LPA2).\n\nWill need further thoughts which is the better way.",
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57292a7f_a36b304f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T08:46:26Z",
+      "side": 1,
+      "message": "I read that for LPA2 , TLBI range needs the argument to be aligned to 16 K, Need to check whether the single page TLBI has a similar need.",
+      "range": {
+        "startLine": 382,
+        "startChar": 1,
+        "endLine": 382,
+        "endChar": 16
+      },
+      "revId": "ab429291afe3a79530b00e71f4d088ff3aef73d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
