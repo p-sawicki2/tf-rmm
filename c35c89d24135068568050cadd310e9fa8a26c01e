@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8dff99f9_28280f82",
+        "filename": ".clang-tidy",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T03:29:14Z",
+      "side": 1,
+      "message": "Can we add lib as well ? Or does it throw out too many errors ?",
+      "parentUuid": "a3ea177e_1b57b753",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c865eb5e_9d21c020",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -60,6 +78,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e2cfade4_44465d59",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T03:29:14Z",
+      "side": 1,
+      "message": "I am beginning to think we should move all tool build targets to a cmakefile in tools/ directory.\n\nMaybe that can be a patch on top of this one.",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "83fafb5a_3bde06fc",
         "filename": "CMakeLists.txt",
         "patchSetId": 3
@@ -94,6 +129,40 @@
         "endLine": 15,
         "endChar": 36
       },
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a31cb43_89832eb1",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T03:29:14Z",
+      "side": 1,
+      "message": "we should be including lib ideally.",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f824590e_928ee495",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-13T03:29:14Z",
+      "side": 1,
+      "message": "use \"message()\" here to print ?",
       "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
