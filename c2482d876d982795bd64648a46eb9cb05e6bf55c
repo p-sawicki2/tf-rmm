@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ee84fed6_872a9d7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "Yes, the plan has always been to squash the two patches together before merging. The reason for having two was to help reviewing the things that changed on a smaller patch.",
+      "parentUuid": "9b244661_dd876079",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a787e76_4efff32e",
         "filename": "docs/design/diagrams/full_va_space_diagram.png",
         "patchSetId": 2
@@ -93,6 +111,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65386055_3e1dc492",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2edd9cb6_92390425",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0938f3b_ce11aaa8",
@@ -106,6 +148,30 @@
       "writtenOn": "2023-09-22T12:15:32Z",
       "side": 1,
       "message": "Does this mean that in some cases the GPF fault actually takes to EL1?",
+      "range": {
+        "startLine": 90,
+        "startChar": 13,
+        "endLine": 90,
+        "endChar": 47
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e3c5839_dd4abe62",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "Yes. A realm must be able to take a GPF fault if trying to access to an address outside its PAR.",
+      "parentUuid": "c0938f3b_ce11aaa8",
       "range": {
         "startLine": 90,
         "startChar": 13,
@@ -139,6 +205,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e76c71f_88abef8f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "maximum, although \"all the way down\" 😊\n\nI guess reading it as a new reader might be quite misleading. I will see how can I rephrase it.",
+      "parentUuid": "2f01ce69_d4b4d55f",
+      "range": {
+        "startLine": 141,
+        "startChar": 10,
+        "endLine": 141,
+        "endChar": 17
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36cc0285_73ae16e9",
@@ -152,6 +242,30 @@
       "writtenOn": "2023-09-22T12:15:32Z",
       "side": 1,
       "message": "maybe append \u0027by the EL3 firmware, before starting RMM.\u0027",
+      "range": {
+        "startLine": 162,
+        "startChar": 17,
+        "endLine": 162,
+        "endChar": 31
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cc67d53_092b405e",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "This is actually updated by RMM as part of the cold boot process.",
+      "parentUuid": "36cc0285_73ae16e9",
       "range": {
         "startLine": 162,
         "startChar": 17,
@@ -198,6 +312,30 @@
       "writtenOn": "2023-09-22T12:15:32Z",
       "side": 1,
       "message": "Is this here by mistake, or does underscore need to be escaped by some reason?",
+      "range": {
+        "startLine": 266,
+        "startChar": 51,
+        "endLine": 266,
+        "endChar": 52
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "017f8350_a98e9751",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "This seems a typo. Thanks for spotting it.",
+      "parentUuid": "5a40ecae_f10c2332",
       "range": {
         "startLine": 266,
         "startChar": 51,

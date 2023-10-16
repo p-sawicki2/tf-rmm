@@ -134,6 +134,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85a548ac_49133d25",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "RmiRecRun",
+      "parentUuid": "3fac20e0_79639472",
+      "range": {
+        "startLine": 43,
+        "startChar": 10,
+        "endLine": 43,
+        "endChar": 19
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab210cc0_bafb0af5",
@@ -186,6 +210,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f273cc68_ca48e578",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "I don\u0027t think that would apply here. Here I am making a brief classification of the VA space based on the PAS type, whereas later I make a more in depth description classified as dynamic/static memory regions.",
+      "parentUuid": "9d6ac6d7_2d023f09",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6cbbec7_ccdd60dd",
@@ -199,6 +241,24 @@
       "writtenOn": "2023-07-25T16:27:30Z",
       "side": 1,
       "message": "MOve these to dynamic mapping section.",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3cf32e9_b8fb5d80",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "See my previous comment",
+      "parentUuid": "c6cbbec7_ccdd60dd",
       "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -308,6 +368,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3e99d32_2696ccac",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "This was discussed and decided to leave as is.",
+      "parentUuid": "5c915550_2dabf808",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 30
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28e5a957_43aaf262",
@@ -355,6 +439,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da117836_bfe74e9f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "Done. LPA2 for stage 1 xlat has been merged.",
+      "parentUuid": "cbd320b3_6c2d5cee",
+      "range": {
+        "startLine": 121,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 18
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e8d88ac_7f050c8c",
@@ -392,6 +500,30 @@
       "side": 1,
       "message": "See my comment above about LPA2",
       "parentUuid": "5e8d88ac_7f050c8c",
+      "range": {
+        "startLine": 122,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 13
+      },
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdbd2fde_e1635585",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T18:32:29Z",
+      "side": 1,
+      "message": "Done. LPA2 for stage 1 xlat has been merged.",
+      "parentUuid": "5b6392f9_909fd96b",
       "range": {
         "startLine": 122,
         "startChar": 2,
