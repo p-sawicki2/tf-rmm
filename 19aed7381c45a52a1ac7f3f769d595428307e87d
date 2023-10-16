@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fd03c64_ccc5abdb",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-16T13:55:57Z",
+      "side": 1,
+      "message": "\u003e Can you print a message in clang-tidy.cmake to include this flag if this target is invoked without this flag.\n\nIgnore this..\nIts already there in clang-tidy.cmake",
+      "parentUuid": "2692aa5e_9ccf6471",
+      "range": {
+        "startLine": 172,
+        "startChar": 55,
+        "endLine": 172,
+        "endChar": 89
+      },
+      "revId": "19aed7381c45a52a1ac7f3f769d595428307e87d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10d86f07_08156305",
