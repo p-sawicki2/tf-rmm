@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb9f2360_cf5e7f51",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-16T11:19:06Z",
+      "side": 1,
+      "message": "Hmm, that is not the precedence for other macros defined in this file. We favor NS over HOST.",
+      "parentUuid": "258cfd79_e756633a",
+      "range": {
+        "startLine": 68,
+        "startChar": 14,
+        "endLine": 68,
+        "endChar": 19
+      },
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d6c3059c_e7c07f96",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 9
@@ -96,6 +120,24 @@
       "side": 1,
       "message": "I don\u0027t think check_ns_attr is appropriate either. The meaning of this argument is as a flag indicating whether the table is in the unprotected space or not, which is more generic than check_ns_attr. I don\u0027t want to give the impression that we can check the NS attributes on any table, rather that we can pass protected and unprotected tables here and let the function take care of any checks needed.\n\nMaybe I can rename it to something like table_is_(un)protected or is_(un)protected?",
       "parentUuid": "d6c3059c_e7c07f96",
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b339a205_7d8a2eec",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-16T11:19:06Z",
+      "side": 1,
+      "message": "The internal helpers in S2TTE usually are hidden from high level abstractions of IPA space like \"protected\" and \"unprotected\". Introducing the notion of \"unprotected\" IPA into this internal helper is not very scalable in IMO as this notion can change based on the context. At this level, the helpers know only about blocks, Attributes, and RIPAS/HIPAS. Hence it is better to stick to this level of abstraction.\n\nThe argument name is clear that this is checking `ns_attr`, so this should be only issued on entries which is mapping NS memory. Maybe we can add an assert for this check that the TTE is \"s2tte_is_ns()\" but I dont see that is needed as this should be clear from the name.",
+      "parentUuid": "402a577a_7eb6dcef",
       "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
