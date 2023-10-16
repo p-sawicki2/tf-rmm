@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "258cfd79_e756633a",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T11:03:40Z",
+      "side": 1,
+      "message": "I rather lose the \"NS\". This mask is for the attributes for unprotected S2TTEs setup by the host",
+      "parentUuid": "554cacfd_edac8a68",
+      "range": {
+        "startLine": 68,
+        "startChar": 14,
+        "endLine": 68,
+        "endChar": 19
+      },
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d6c3059c_e7c07f96",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 9
@@ -60,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "402a577a_7eb6dcef",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T11:03:40Z",
+      "side": 1,
+      "message": "I don\u0027t think check_ns_attr is appropriate either. The meaning of this argument is as a flag indicating whether the table is in the unprotected space or not, which is more generic than check_ns_attr. I don\u0027t want to give the impression that we can check the NS attributes on any table, rather that we can pass protected and unprotected tables here and let the function take care of any checks needed.\n\nMaybe I can rename it to something like table_is_(un)protected or is_(un)protected?",
+      "parentUuid": "d6c3059c_e7c07f96",
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "617a10ce_008c8433",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 9
@@ -71,6 +113,30 @@
       "writtenOn": "2023-10-13T16:39:06Z",
       "side": 1,
       "message": "nit: can be on same line ?",
+      "range": {
+        "startLine": 363,
+        "startChar": 47,
+        "endLine": 363,
+        "endChar": 48
+      },
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e209ef74_acac0c35",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T11:03:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "617a10ce_008c8433",
       "range": {
         "startLine": 363,
         "startChar": 47,
@@ -112,6 +178,24 @@
       "side": 1,
       "message": "*used",
       "parentUuid": "180afc58_2804fb4f",
+      "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c1b5f83_39b90ad3",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-16T11:03:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "27d1a2cb_a89b1779",
       "revId": "ab4399fc6f2c8c6b5e78b94d842a86b942a6fad9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
