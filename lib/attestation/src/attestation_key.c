@@ -225,7 +225,7 @@ int attest_setup_platform_token(void)
 		return -EINVAL;
 	}
 
-	(void)memcpy(rmm_platform_token_buf,
+	(void)memcpy((void *)rmm_platform_token_buf,
 		     (void *)shared_buf,
 		     platform_token_len);
 
