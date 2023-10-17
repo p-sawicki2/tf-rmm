@@ -51,6 +51,24 @@
       "parentUuid": "56215640_ec361c4b",
       "revId": "6c5569fed64c3c629779a0fd914cce96256d610e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "046859d6_2848efb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T13:29:21Z",
+      "side": 1,
+      "message": "Memsetting the structure to all 0 shouldn\u0027t be necessary. For every field in that structure there should be an init function that are called before any operation is done with them. So in theory the code doesn\u0027t rely on the structure being initialised to 0.\n\nHowever to stay on the safe side, proactively working around similar bugs, memsetting the structure probably wouldn\u0027t do any harm.",
+      "parentUuid": "bec40897_e12556ca",
+      "revId": "6c5569fed64c3c629779a0fd914cce96256d610e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
