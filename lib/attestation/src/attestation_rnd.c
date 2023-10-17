@@ -35,7 +35,7 @@ static int get_random_seed(unsigned char *output, size_t len)
 	assert(((len & 7UL) == 0UL) && (((uintptr_t)output & 7UL) == 0UL));
 
 	random_output = (uint64_t *)output;
-	random_end = (uint64_t *)(output + len);
+	random_end = (uint64_t *)((uintptr_t)output + len);
 
 	for (; random_output < random_end; ++random_output) {
 		bool rc = false;

@@ -310,8 +310,9 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 			/* Recurse to write into subtable */
 			/* FIXME: This violates misra-c2012-17.2 */
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
-					       subtable, XLAT_TABLE_ENTRIES,
-					       level + 1);
+							subtable,
+							XLAT_TABLE_ENTRIES,
+							level + 1);
 			if (end_va != (table_idx_va + XLAT_BLOCK_SIZE(level) - 1UL)) {
 				return end_va;
 			}
@@ -323,8 +324,9 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
 			/* Recurse to write into subtable */
 			/* FIXME: This violates misra-c2012-17.2 */
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
-					       subtable, XLAT_TABLE_ENTRIES,
-					       level + 1);
+							subtable,
+							XLAT_TABLE_ENTRIES,
+							level + 1);
 			if (end_va != (table_idx_va + XLAT_BLOCK_SIZE(level) - 1UL)) {
 				return end_va;
 			}
