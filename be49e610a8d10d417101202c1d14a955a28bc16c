@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b19c9fd5_bfa58374",
+        "filename": "docs/design/diagrams/full_va_space_diagram.png",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "Yes, added to the next figure",
+      "parentUuid": "09b6a272_eae3aa71",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2614b650_ce820548",
@@ -37,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1a6b2305_ecab2693",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "Yes, that is a typo, should be N-1",
+      "parentUuid": "2614b650_ce820548",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f866285_214eac1a",
         "filename": "docs/design/memory-management.rst",
         "patchSetId": 6
@@ -48,6 +84,30 @@
       "writtenOn": "2023-10-17T15:23:54Z",
       "side": 1,
       "message": "Stack is not mapped in the static region anymore.",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6827280f_659b7a58",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "The stacks are static mappings in the sense that once created they don\u0027t change during the lifetime of the system (as opposed to the slot buffers which change). I explained below that although static, they are mapped on the high VA region and there is a different mapping per CPU.",
+      "parentUuid": "2f866285_214eac1a",
       "range": {
         "startLine": 26,
         "startChar": 5,
@@ -81,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3af8a89_2a3fbfac",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "See my previous comment",
+      "parentUuid": "38272c89_9a1811e4",
+      "range": {
+        "startLine": 37,
+        "startChar": 28,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d283274_18bf4c30",
@@ -104,6 +188,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b42c03e0_8c22d889",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d283274_18bf4c30",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 6
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "39e90a51_73a08a42",
@@ -117,6 +225,24 @@
       "writtenOn": "2023-10-17T15:23:54Z",
       "side": 1,
       "message": "Considering the name of this document, should this section be in a separate file?",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4cb751f_d693f746",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T15:58:16Z",
+      "side": 1,
+      "message": "Actually, the document is called \"Memory management\", but this patch covers only the part related to stage 1. Although given the fact that we introduce the documentation from scratch on this patch, I guess it makes sense to not include anything related to stage 2 for now (specially give the status of that documentation).\n\nRemoving.",
+      "parentUuid": "39e90a51_73a08a42",
       "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
