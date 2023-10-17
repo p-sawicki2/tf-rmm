@@ -49,13 +49,14 @@ int uart_init(uintptr_t base_addr,
 	write32(div & 0x3fU, (void *)((RMM_UART_ADDR) + UARTFBRD));
 
 	/* Enable FIFO and set word length, parity and number of stop bits */
-	write32(PL011_LINE_CONTROL, (void *)((RMM_UART_ADDR) + UARTLCR_H));
+	write32((unsigned int)PL011_LINE_CONTROL,
+		(void *)((RMM_UART_ADDR) + UARTLCR_H));
 
 	/* Clear any pending errors */
 	write32(0U, (void *)((RMM_UART_ADDR) + UARTECR));
 
 	/* Enable Tx, Rx, and UART overall */
-	write32(PL011_UARTCR_RXE | PL011_UARTCR_TXE | PL011_UARTCR_UARTEN,
+	write32((unsigned int)PL011_CONTROL,
 		(void *)((RMM_UART_ADDR) + UARTCR));
 	return 0;
 }
