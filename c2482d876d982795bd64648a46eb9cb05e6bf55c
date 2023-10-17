@@ -124,6 +124,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be2e590a_d35a8ef5",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "4d84bca7_79cd2fdc",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2edd9cb6_92390425",
@@ -218,6 +236,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e6dfe9_7e5817ba",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "6e3c5839_dd4abe62",
+      "range": {
+        "startLine": 90,
+        "startChar": 13,
+        "endLine": 90,
+        "endChar": 47
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f01ce69_d4b4d55f",
@@ -265,6 +307,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe3a0c44_f4a6b117",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "3e76c71f_88abef8f",
+      "range": {
+        "startLine": 141,
+        "startChar": 10,
+        "endLine": 141,
+        "endChar": 17
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36cc0285_73ae16e9",
@@ -302,6 +368,30 @@
       "side": 1,
       "message": "This is actually updated by RMM as part of the cold boot process.",
       "parentUuid": "36cc0285_73ae16e9",
+      "range": {
+        "startLine": 162,
+        "startChar": 17,
+        "endLine": 162,
+        "endChar": 31
+      },
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d3b2b5f_618c1d77",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "3cc67d53_092b405e",
       "range": {
         "startLine": 162,
         "startChar": 17,

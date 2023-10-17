@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09b6a272_eae3aa71",
+        "filename": "docs/design/diagrams/full_va_space_diagram.png",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "As now the per-cpu stack mapping is included in the document, stack should probably be added to the high region",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2614b650_ce820548",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "N usually means the number of CPUs. Should the mappings go from `CPU 0` to `CPU N-1`? I can accept the argument that it would unnecessarily complicate the diagram and leave as is.",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f866285_214eac1a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Stack is not mapped in the static region anymore.",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38272c89_9a1811e4",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Please add stack",
+      "range": {
+        "startLine": 37,
+        "startChar": 28,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d283274_18bf4c30",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Could RD and REC be added to the glossary, or the acronym be resolved here?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 6
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39e90a51_73a08a42",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-17T15:23:54Z",
+      "side": 1,
+      "message": "Considering the name of this document, should this section be in a separate file?",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
