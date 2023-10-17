@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a448e9ea_e0ae89dc",
+        "filename": "plat/host/common/include/host_defs.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-17T15:14:26Z",
+      "side": 1,
+      "message": "Is this needed ?",
+      "revId": "0a3ee8377243cc0ea9b38b045dcffb29553bf048",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
