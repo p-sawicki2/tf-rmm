@@ -189,6 +189,9 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 	if (attest_data->token_sign_ctx.state != ATTEST_SIGN_NOT_STARTED) {
 		int restart;
 
+		(void)memset(&attest_data->token_sign_ctx, 0,
+				sizeof(struct token_sign_cntxt));
+
 		attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
 		restart = attestation_heap_reinit_pe(rec->aux_data.attest_heap_buf,
 							REC_HEAP_SIZE);
