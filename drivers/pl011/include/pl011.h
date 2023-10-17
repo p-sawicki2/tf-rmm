@@ -29,6 +29,10 @@
 #define PL011_UARTCR_TXE	(1UL << 8)	/* Transmit enable */
 #define PL011_UARTCR_UARTEN	(1UL << 0)	/* UART Enable */
 
+/* Tx, Rx, UART Enabled */
+#define PL011_CONTROL		(PL011_UARTCR_RXE | PL011_UARTCR_TXE | \
+				 PL011_UARTCR_UARTEN)
+
 /* FIFO Enabled / No Parity / 8 Data bit / One Stop Bit */
 #define PL011_LINE_CONTROL	(PL011_UARTLCR_H_FEN | PL011_UARTLCR_H_WLEN_8)
 
