@@ -298,6 +298,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc7493d_adaa9db4",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T14:31:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b4c7594_25723e5c",
+      "revId": "9279a6e3d0034ddc5033915cf385d462bf8b610d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c73feff_ee3627b8",
