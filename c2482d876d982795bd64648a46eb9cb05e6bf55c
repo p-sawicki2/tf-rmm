@@ -71,6 +71,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5586177c_7fe1f64f",
+        "filename": "docs/design/diagrams/full_va_space_diagram.png",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T09:52:17Z",
+      "side": 1,
+      "message": "Hmm, I used \"PAGE_SIZE\" because that is closer to the terminology used on the MMU description, although now that you mention it, define the size of the slot buffers in terms of \"Granules\", so I guess you are right, I\u0027ll edit it.",
+      "parentUuid": "6a787e76_4efff32e",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "421603a4_728bf5d0",
@@ -84,6 +102,24 @@
       "writtenOn": "2023-09-22T12:15:32Z",
       "side": 1,
       "message": "is SLOT_VA_[START|SIZE] are the proper name?\n\nThey are more like properties of the \u0027VA space\u0027, or \u0027slot buffer (area?)\u0027",
+      "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d84bca7_79cd2fdc",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-17T09:52:17Z",
+      "side": 1,
+      "message": "I reworked this diagram to introduce the per-cpu stacks",
+      "parentUuid": "421603a4_728bf5d0",
       "revId": "c2482d876d982795bd64648a46eb9cb05e6bf55c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
