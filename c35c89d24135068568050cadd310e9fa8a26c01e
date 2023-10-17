@@ -72,6 +72,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ddad732_4229a18e",
+        "filename": ".clang-tidy",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ca9a808e_6fe64e96",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c865eb5e_9d21c020",
@@ -167,6 +185,24 @@
       "side": 1,
       "message": "That seems like a good idea. There is a CMakeLists.txt in the tools/ directory but currently it just has some stuff for cppcheck.",
       "parentUuid": "e2cfade4_44465d59",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa8f1ca5_5600cb6f",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c9cb6a8d_a2fa5fb0",
       "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -302,6 +338,24 @@
       "side": 1,
       "message": "Yes, lets add lib.",
       "parentUuid": "5f186252_e5f26fc2",
+      "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95b2260a_610d3329",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1d61588_71d593ae",
       "revId": "c35c89d24135068568050cadd310e9fa8a26c01e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

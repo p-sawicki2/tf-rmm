@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aa34dcb_c757e68e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Updated the patch according to comments. Also made a minor change in the warnings/error counting function to deal with the fact Clang 14.0.0 forced coloured output for clang-tidy.",
+      "revId": "7a3f02a124f32ab15f80f35ac309d91940d0f50d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

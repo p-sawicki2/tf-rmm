@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "032ec940_833a502b",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Thanks, I did a docs build and it seems to be all good.",
+      "parentUuid": "fc5381ce_cb1a3526",
+      "revId": "19aed7381c45a52a1ac7f3f769d595428307e87d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2692aa5e_9ccf6471",
@@ -78,6 +96,24 @@
       "writtenOn": "2023-10-16T13:49:07Z",
       "side": 1,
       "message": "find_program() doesn\u0027t fail I believe. Also check if this program exists, if not then print a message like \n\nif(NOT EXISTS ${CLANGTIDY_EXECUTABLE})                                            \n  message(FATAL_ERROR \"required dependencies not found\")                          \nendif()",
+      "revId": "19aed7381c45a52a1ac7f3f769d595428307e87d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "942669c9_889f7e59",
+        "filename": "tools/clang-tidy/clang-tidy.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-10-17T09:31:16Z",
+      "side": 1,
+      "message": "Thanks, good point. Added a check for if the executable exists.",
+      "parentUuid": "10d86f07_08156305",
       "revId": "19aed7381c45a52a1ac7f3f769d595428307e87d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
