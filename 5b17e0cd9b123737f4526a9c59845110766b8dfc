@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd748210_58e4bca7",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "I would expect a separate document about memory used (1)by the RMM and (2)by the Realm as they are very distinctive in (i) the problems they try to solve (ii) the target audience.\n\n(1) is about internal design of the RMM and managing its own stage 1 mapping at r-el2, while\n(2) is concerned about managing the memory of Realm through stage 2 mapping.\n\nThe (only) two categories bellow that belong to (2) are:\n- Static Mappings -\u003e Realm Data \n- Dynamic mappings -\u003e NS data -\u003e Non-secure memory which is mapped into the IPA space of a Realm, outside the PAR",
+      "range": {
+        "startLine": 7,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 67
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a62400df_0659382c",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "It is obvious from the list above that they correspond to a RD, REC (or RTT). An important property of these mappings (worth mentioning) is that they exist only during the execution of RMI/RSI handlers (as they are all removed before the handlers exit).",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8950f9f5_009e0951",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "Do we still have Rec list?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c459e483_cff7d849",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "Strictly speaking, not all DRAM has to be represented in by granule objects.\nTherefore,  this is proportional to amount of DRAM that can be delegated/undelegated.",
+      "range": {
+        "startLine": 80,
+        "startChar": 47,
+        "endLine": 80,
+        "endChar": 70
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0b4e19_8e64d505",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "or to Realm PAS too, (because the RMM doesn\u0027t reference count NS granules when they are used e.g. in Realms).",
+      "range": {
+        "startLine": 88,
+        "startChar": 32,
+        "endLine": 88,
+        "endChar": 63
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f7a2ae4_31a35e74",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "Again, this can be just a subset of NS pages, e.g. those pages that the NS world may need to delegate/undelegate.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 49
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba71a4b8_b11361f1",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "I believe that this is description for the locking and ref. counting of REC granule, not RecRun.\n\nRecRun is a NS granule and as such, the access is not protected by any lock and instead, the RMM must be able to deal with GPF.",
+      "range": {
+        "startLine": 239,
+        "startChar": 27,
+        "endLine": 239,
+        "endChar": 36
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "335eaa5b_d92af117",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "RmiRecEnter, not RmiRecRun",
+      "range": {
+        "startLine": 241,
+        "startChar": 28,
+        "endLine": 241,
+        "endChar": 31
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b85cb08_bd5c73e8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "up to 4 levels, e.g. it can also run just 2 levels (L2 to L3).",
+      "range": {
+        "startLine": 282,
+        "startChar": 3,
+        "endLine": 282,
+        "endChar": 11
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6047840_2186ae09",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "The Root Level. Sometimes it is L0 but it can also be L1 or L2.",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 11
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5d07398_9e83168f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2023-10-17T16:06:49Z",
+      "side": 1,
+      "message": "The RTTs on other levels than root level...",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 13
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
