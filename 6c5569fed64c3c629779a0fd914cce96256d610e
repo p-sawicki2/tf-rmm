@@ -33,6 +33,24 @@
       "message": "Thanks for the fix. This seems to be a bug not in RMM, but in t_cose. It looks like t_cose misses to initialise the context for the Mbed TLS (PSA) call. \n\nThe fix in t_cose would look like\n```\ndiff --git a/crypto_adapters/t_cose_psa_crypto.c b/crypto_adapters/t_cose_psa_crypto.c\nindex 04235f1..d4ea40c 100644\n--- a/crypto_adapters/t_cose_psa_crypto.c\n+++ b/crypto_adapters/t_cose_psa_crypto.c\n@@ -306,6 +306,7 @@ t_cose_crypto_sign_restart(bool                   started,\n     psa_crypto_context \u003d (struct t_cose_psa_crypto_context *)crypto_context;\n \n     if(!started) {\n+        psa_crypto_context-\u003eoperation \u003d psa_sign_hash_interruptible_operation_init();\n         psa_result \u003d psa_sign_hash_start(\n                             \u0026psa_crypto_context-\u003eoperation,\n                             signing_key_psa,\n```\n\nI\u0027ll create a PR for this.\n\nTo fix the issue in RMM, a more localised memset would be enough:\n```\ndiff --git a/lib/attestation/src/attestation_token.c b/lib/attestation/src/attestation_token.c\nindex 765d1b7..f3bc3f5 100644\n--- a/lib/attestation/src/attestation_token.c\n+++ b/lib/attestation/src/attestation_token.c\n@@ -90,6 +90,7 @@ attest_token_encode_start(struct attest_token_encode_ctx *me,\n        me-\u003eopt_flags  \u003d opt_flags;\n        me-\u003ekey_select \u003d key_select;\n \n+       memset(\u0026(me-\u003ecrypto_ctx), 0, sizeof(me-\u003ecrypto_ctx));\n        t_cose_signature_sign_restart_init(\u0026me-\u003erestartable_signer_ctx, cose_alg_id);\n        t_cose_signature_sign_restart_set_crypto_context(\u0026me-\u003erestartable_signer_ctx, \u0026(me-\u003ecrypto_ctx));\n        t_cose_sign_sign_init(\u0026me-\u003esign_ctx, T_COSE_OPT_MESSAGE_TYPE_SIGN1);\n```\n\nThis is just a suggestion however, so I\u0027m ok to go with the fix in this review.",
       "revId": "6c5569fed64c3c629779a0fd914cce96256d610e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bec40897_e12556ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-17T13:11:56Z",
+      "side": 1,
+      "message": "Thanks for the review, we could do a localized fix on top of this. There are many fields in that data structure and it does seem better to ensure that the structure is set to deterministic value (0) before using them.\n\nGenerally it is better to not assume zero initialize memory for any of the data structure allocated in aux granule and always do the necessary initialization as required.\n\n\nSo perhaps we should do a memset() regardless whether it is restart or not ?",
+      "parentUuid": "56215640_ec361c4b",
+      "revId": "6c5569fed64c3c629779a0fd914cce96256d610e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
