@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12b7dadb_4a1c6f8b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Yes, you are right, originally this document was meant to talk about RMM and Realm memory, then only about the former. I guess I missed some bits to remove.",
+      "parentUuid": "cd748210_58e4bca7",
+      "range": {
+        "startLine": 7,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 67
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a62400df_0659382c",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-17T16:06:49Z",
       "side": 1,
       "message": "It is obvious from the list above that they correspond to a RD, REC (or RTT). An important property of these mappings (worth mentioning) is that they exist only during the execution of RMI/RSI handlers (as they are all removed before the handlers exit).",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a75cdad0_38851e0c",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a62400df_0659382c",
       "range": {
         "startLine": 39,
         "startChar": 21,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f6a1355_9f1df923",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "No. Removed",
+      "parentUuid": "8950f9f5_009e0951",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c459e483_cff7d849",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-10-17T16:06:49Z",
       "side": 1,
       "message": "Strictly speaking, not all DRAM has to be represented in by granule objects.\nTherefore,  this is proportional to amount of DRAM that can be delegated/undelegated.",
+      "range": {
+        "startLine": 80,
+        "startChar": 47,
+        "endLine": 80,
+        "endChar": 70
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8057771c_856764c6",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Yes, you are right, although in the current implementation it tracks all the DRAM. This is actually platform-dependent, so I will rephrase this.",
+      "parentUuid": "c459e483_cff7d849",
       "range": {
         "startLine": 80,
         "startChar": 47,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5a23915e_69915378",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Theoretically yes, but the only entity able to change the PAS of a granule from NS to Realm (delegate) is (or should be) the RMM (through EL3 Firmware). AFAIK, RMM should take care of not delegating a granule whilst it is already using it, even if it is NS, right?",
+      "parentUuid": "5e0b4e19_8e64d505",
+      "range": {
+        "startLine": 88,
+        "startChar": 32,
+        "endLine": 88,
+        "endChar": 63
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f7a2ae4_31a35e74",
         "filename": "docs/design/memory-management.rst",
         "patchSetId": 7
@@ -129,6 +249,30 @@
       "writtenOn": "2023-10-17T16:06:49Z",
       "side": 1,
       "message": "Again, this can be just a subset of NS pages, e.g. those pages that the NS world may need to delegate/undelegate.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 49
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "818efe02_2250819b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f7a2ae4_31a35e74",
       "range": {
         "startLine": 102,
         "startChar": 0,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ebe934c_32c6c746",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba71a4b8_b11361f1",
+      "range": {
+        "startLine": 239,
+        "startChar": 27,
+        "endLine": 239,
+        "endChar": 36
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "335eaa5b_d92af117",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-10-17T16:06:49Z",
       "side": 1,
       "message": "RmiRecEnter, not RmiRecRun",
+      "range": {
+        "startLine": 241,
+        "startChar": 28,
+        "endLine": 241,
+        "endChar": 31
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e48e7753_674e3e87",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "335eaa5b_d92af117",
       "range": {
         "startLine": 241,
         "startChar": 28,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eae50a4a_74a842e5",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "This whole chapter has been removed",
+      "parentUuid": "3b85cb08_bd5c73e8",
+      "range": {
+        "startLine": 282,
+        "startChar": 3,
+        "endLine": 282,
+        "endChar": 11
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6047840_2186ae09",
@@ -231,6 +447,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d33aef34_287b5892",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "e6047840_2186ae09",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 11
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5d07398_9e83168f",
@@ -244,6 +484,30 @@
       "writtenOn": "2023-10-17T16:06:49Z",
       "side": 1,
       "message": "The RTTs on other levels than root level...",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 13
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a8fdaa4_12dc89d6",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-18T16:23:32Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "d5d07398_9e83168f",
       "range": {
         "startLine": 292,
         "startChar": 0,
