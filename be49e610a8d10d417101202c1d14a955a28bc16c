@@ -136,6 +136,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16728243_33ccf437",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-18T07:37:02Z",
+      "side": 1,
+      "message": "Ok, I see",
+      "parentUuid": "6827280f_659b7a58",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38272c89_9a1811e4",
@@ -173,6 +197,30 @@
       "side": 1,
       "message": "See my previous comment",
       "parentUuid": "38272c89_9a1811e4",
+      "range": {
+        "startLine": 37,
+        "startChar": 28,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "168309dd_a7dd6c86",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-18T07:37:02Z",
+      "side": 1,
+      "message": "Understood",
+      "parentUuid": "c3af8a89_2a3fbfac",
       "range": {
         "startLine": 37,
         "startChar": 28,
@@ -261,6 +309,24 @@
       "side": 1,
       "message": "Actually, the document is called \"Memory management\", but this patch covers only the part related to stage 1. Although given the fact that we introduce the documentation from scratch on this patch, I guess it makes sense to not include anything related to stage 2 for now (specially give the status of that documentation).\n\nRemoving.",
       "parentUuid": "39e90a51_73a08a42",
+      "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30f2f816_af51aaca",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-18T07:37:02Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "d4cb751f_d693f746",
       "revId": "be49e610a8d10d417101202c1d14a955a28bc16c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
