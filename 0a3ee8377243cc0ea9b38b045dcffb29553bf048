@@ -16,6 +16,24 @@
       "message": "Is this needed ?",
       "revId": "0a3ee8377243cc0ea9b38b045dcffb29553bf048",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9457f242_7c0ec639",
+        "filename": "plat/host/common/include/host_defs.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-18T07:46:17Z",
+      "side": 1,
+      "message": "No, I forgot to remove this, thanks for catching",
+      "parentUuid": "a448e9ea_e0ae89dc",
+      "revId": "0a3ee8377243cc0ea9b38b045dcffb29553bf048",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
