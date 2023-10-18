@@ -16,6 +16,7 @@
 #define MIN_STARTING_LEVEL	0
 #define RTT_PAGE_LEVEL		3
 #define RTT_MIN_BLOCK_LEVEL	2
+#define RTT_MIN_TABLE_LEVEL	MIN_STARTING_LEVEL
 
 /* TODO: Fix this when introducing LPA2 support */
 COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
@@ -77,6 +78,7 @@ COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
 #define S2TTE_INVALID_RIPAS_EMPTY	(INPLACE(S2TTE_INVALID_RIPAS, 0UL))
 #define S2TTE_INVALID_RIPAS_RAM		(INPLACE(S2TTE_INVALID_RIPAS, 1UL))
 #define S2TTE_INVALID_RIPAS_DESTROYED	(INPLACE(S2TTE_INVALID_RIPAS, 2UL))
+#define S2TTE_INVALID_RIPAS_INVALID	(INPLACE(S2TTE_INVALID_RIPAS, 3UL))
 
 #define S2TTE_INVALID_UNPROTECTED	0x0UL
 
@@ -126,19 +128,7 @@ static inline bool s2tte_is_table(unsigned long s2tte, long level)
 		((s2tte & DESC_TYPE_MASK) == S2TTE_L012_TABLE));
 }
 
-/*
- * Returns true if s2tte has defined ripas value, namely if it is one of:
- * - unassigned_empty
- * - unassigned_ram
- * - unassigned_destroyed
- * - assigned_empty
- * - assigned_ram
- * - assigned_destroyed
- */
-static inline bool s2tte_has_ripas(unsigned long s2tte, long level)
-{
-	return (((s2tte & S2TTE_NS) == 0UL) && !s2tte_is_table(s2tte, level));
-}
+bool s2tte_has_ripas(unsigned long s2tte, long level);
 
 unsigned long s2tte_create_unassigned_ns(void);
 unsigned long s2tte_create_assigned_empty(unsigned long pa, long level);
@@ -178,7 +168,6 @@ void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long attrs,
 void s2tt_init_assigned_destroyed(unsigned long *s2tt, unsigned long pa, long level);
 
 unsigned long s2tte_pa(unsigned long s2tte, long level);
-unsigned long s2tte_pa_table(unsigned long s2tte, long level);
 bool addr_is_level_aligned(unsigned long addr, long level);
 unsigned long s2tte_map_size(long level);
 
