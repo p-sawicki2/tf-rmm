@@ -4,7 +4,9 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <assert.h>
 #include <buffer.h>
+#include <errno.h>
 #include <granule.h>
 #include <measurement.h>
 #include <realm.h>
@@ -137,7 +139,6 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 	s2tt = granule_map(g_tbl, SLOT_DELEGATED);
 	assert(s2tt != NULL);
-
 
 	if (s2tte_is_unassigned_empty(parent_s2tte)) {
 		s2tt_init_unassigned_empty(s2tt);
@@ -335,7 +336,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 	g_tbl = find_lock_granule(rtt_addr, GRANULE_STATE_RTT);
 
 	/*
@@ -353,13 +354,17 @@ void smc_rtt_fold(unsigned long rd_addr,
 	 */
 	if (g_tbl->refcount == 0UL) {
 		if (table_is_unassigned_destroyed_block(table)) {
-			parent_s2tte = s2tte_create_unassigned_destroyed();
+			parent_s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_DESTROYED);
 		} else if (table_is_unassigned_empty_block(table)) {
-			parent_s2tte = s2tte_create_unassigned_empty();
+			parent_s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_EMPTY);
 		} else if (table_is_unassigned_ram_block(table)) {
-			parent_s2tte = s2tte_create_unassigned_ram();
+			parent_s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_RAM);
 		} else if (table_is_unassigned_ns_block(table)) {
-			parent_s2tte = s2tte_create_unassigned_ns();
+			parent_s2tte = s2tte_create_unassigned(
+					S2TTE_UNASSIGNED_NS);
 		} else if (table_maps_assigned_ns_block(table, level)) {
 			unsigned long s2tte = s2tte_read(&table[0]);
 
@@ -408,14 +413,16 @@ void smc_rtt_fold(unsigned long rd_addr,
 		 * same type of s2tte, either Assigned or Valid.
 		 */
 		if (table_maps_assigned_empty_block(table, level)) {
-			parent_s2tte = s2tte_create_assigned_empty(block_pa,
-								   level - 1L);
+			parent_s2tte = s2tte_create_assigned(
+					block_pa, level - 1L,
+					S2TTE_INVALID_RIPAS_EMPTY);
 		} else if (table_maps_assigned_ram_block(table, level)) {
 			parent_s2tte = s2tte_create_assigned_ram(block_pa,
 								 level - 1L);
 		} else if (table_maps_assigned_destroyed_block(table, level)) {
-			parent_s2tte = s2tte_create_assigned_destroyed(block_pa,
-								 level - 1L);
+			parent_s2tte = s2tte_create_assigned(
+						block_pa, level - 1L,
+						S2TTE_INVALID_RIPAS_DESTROYED);
 		/* The table contains mixed entries that cannot be folded */
 		} else {
 			ret = pack_return_code(RMI_ERROR_RTT,
@@ -524,7 +531,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 
 	/*
 	 * Lock the RTT granule. The 'rtt_addr' is verified, thus can be treated
@@ -554,9 +561,10 @@ void smc_rtt_destroy(unsigned long rd_addr,
 	assert(table != NULL);
 
 	if (in_par) {
-		parent_s2tte = s2tte_create_unassigned_destroyed();
+		parent_s2tte = s2tte_create_unassigned(
+				S2TTE_INVALID_RIPAS_DESTROYED);
 	} else {
-		parent_s2tte = s2tte_create_unassigned_ns();
+		parent_s2tte = s2tte_create_unassigned(S2TTE_UNASSIGNED_NS);
 	}
 
 	__granule_put(wi.g_llt);
@@ -698,7 +706,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 			goto out_unmap_table;
 		}
 
-		s2tte = s2tte_create_unassigned_ns();
+		s2tte = s2tte_create_unassigned(S2TTE_UNASSIGNED_NS);
 		s2tte_write(&s2tt[wi.index], s2tte);
 		if (level == RTT_PAGE_LEVEL) {
 			invalidate_page(&s2_ctx, map_addr);
@@ -832,7 +840,7 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else if (s2tte_is_table(s2tte, wi.last_level)) {
 		res->x[2] = RMI_TABLE;
-		res->x[3] = s2tte_pa_table(s2tte, wi.last_level);
+		res->x[3] = s2tte_pa(s2tte, wi.last_level);
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else {
 		assert(false);
@@ -1069,16 +1077,16 @@ void smc_data_destroy(unsigned long rd_addr,
 
 	if (s2tte_is_assigned_ram(s2tte, RTT_PAGE_LEVEL)) {
 		data_addr = s2tte_pa(s2tte, RTT_PAGE_LEVEL);
-		s2tte = s2tte_create_unassigned_destroyed();
+		s2tte = s2tte_create_unassigned(S2TTE_INVALID_RIPAS_DESTROYED);
 		s2tte_write(&s2tt[wi.index], s2tte);
 		invalidate_page(&s2_ctx, map_addr);
 	} else if (s2tte_is_assigned_empty(s2tte, RTT_PAGE_LEVEL)) {
 		data_addr = s2tte_pa(s2tte, RTT_PAGE_LEVEL);
-		s2tte = s2tte_create_unassigned_empty();
+		s2tte = s2tte_create_unassigned(S2TTE_INVALID_RIPAS_EMPTY);
 		s2tte_write(&s2tt[wi.index], s2tte);
 	} else if (s2tte_is_assigned_destroyed(s2tte, RTT_PAGE_LEVEL)) {
 		data_addr = s2tte_pa(s2tte, RTT_PAGE_LEVEL);
-		s2tte = s2tte_create_unassigned_destroyed();
+		s2tte = s2tte_create_unassigned(S2TTE_INVALID_RIPAS_DESTROYED);
 		s2tte_write(&s2tt[wi.index], s2tte);
 	} else {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT, RTT_PAGE_LEVEL);
@@ -1125,17 +1133,19 @@ static int update_ripas(unsigned long *s2ttep, long level,
 	int ret = 0;
 
 	if (!s2tte_has_ripas(s2tte, level)) {
-		return -1;
+		return -EPERM;
 	}
 
 	if (ripas_val == RIPAS_RAM) {
 		if (s2tte_is_unassigned_empty(s2tte)) {
-			s2tte = s2tte_create_unassigned_ram();
+			s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_RAM);
 		} else if (s2tte_is_unassigned_destroyed(s2tte)) {
 			if (change_destroyed == CHANGE_DESTROYED) {
-				s2tte = s2tte_create_unassigned_ram();
+				s2tte = s2tte_create_unassigned(
+						S2TTE_INVALID_RIPAS_RAM);
 			} else {
-				return -1;
+				return -EINVAL;
 			}
 		} else if (s2tte_is_assigned_empty(s2tte, level)) {
 			pa = s2tte_pa(s2tte, level);
@@ -1145,7 +1155,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 				pa = s2tte_pa(s2tte, level);
 				s2tte = s2tte_create_assigned_ram(pa, level);
 			} else {
-				return -1;
+				return -EINVAL;
 			}
 		} else {
 			/* No action is required */
@@ -1153,26 +1163,30 @@ static int update_ripas(unsigned long *s2ttep, long level,
 		}
 	} else if (ripas_val == RIPAS_EMPTY) {
 		if (s2tte_is_unassigned_ram(s2tte)) {
-			s2tte = s2tte_create_unassigned_empty();
+			s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_EMPTY);
 		} else if (s2tte_is_unassigned_destroyed(s2tte)) {
 			if (change_destroyed == CHANGE_DESTROYED) {
-				s2tte = s2tte_create_unassigned_empty();
+				s2tte = s2tte_create_unassigned(
+						S2TTE_INVALID_RIPAS_EMPTY);
 			} else {
-				return -1;
+				return -EINVAL;
 			}
 		} else if (s2tte_is_assigned_ram(s2tte, level)) {
 			pa = s2tte_pa(s2tte, level);
-			s2tte = s2tte_create_assigned_empty(pa, level);
+			s2tte = s2tte_create_assigned(pa, level,
+						      S2TTE_INVALID_RIPAS_EMPTY);
 			/* TLBI is required */
 			ret = 1;
 		} else if (s2tte_is_assigned_destroyed(s2tte, level)) {
 			if (change_destroyed == CHANGE_DESTROYED) {
 				pa = s2tte_pa(s2tte, level);
-				s2tte = s2tte_create_assigned_empty(pa, level);
+				s2tte = s2tte_create_assigned(
+					pa, level, S2TTE_INVALID_RIPAS_EMPTY);
 				/* TLBI is required */
 				ret = 1;
 			} else {
-				return -1;
+				return -EINVAL;
 			}
 		} else {
 			/* No action is required */
@@ -1264,7 +1278,8 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 
 		s2tte = s2tte_read(&s2tt[index]);
 		if (s2tte_is_unassigned_empty(s2tte)) {
-			s2tte = s2tte_create_unassigned_ram();
+			s2tte = s2tte_create_unassigned(
+					S2TTE_INVALID_RIPAS_RAM);
 			s2tte_write(&s2tt[index], s2tte);
 		} else if (!s2tte_is_unassigned_ram(s2tte)) {
 			break;
