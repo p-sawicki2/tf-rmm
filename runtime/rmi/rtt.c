@@ -5,6 +5,7 @@
  */
 
 #include <buffer.h>
+#include <errno.h>
 #include <granule.h>
 #include <measurement.h>
 #include <realm.h>
@@ -137,7 +138,6 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 	parent_s2tte = s2tte_read(&parent_s2tt[wi.index]);
 	s2tt = granule_map(g_tbl, SLOT_DELEGATED);
 	assert(s2tt != NULL);
-
 
 	if (s2tte_is_unassigned_empty(parent_s2tte)) {
 		s2tt_init_unassigned_empty(s2tt);
@@ -335,7 +335,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 	g_tbl = find_lock_granule(rtt_addr, GRANULE_STATE_RTT);
 
 	/*
@@ -524,7 +524,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 
 	/*
 	 * Lock the RTT granule. The 'rtt_addr' is verified, thus can be treated
@@ -832,7 +832,7 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else if (s2tte_is_table(s2tte, wi.last_level)) {
 		res->x[2] = RMI_TABLE;
-		res->x[3] = s2tte_pa_table(s2tte, wi.last_level);
+		res->x[3] = s2tte_pa(s2tte, wi.last_level);
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else {
 		assert(false);
@@ -1125,7 +1125,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 	int ret = 0;
 
 	if (!s2tte_has_ripas(s2tte, level)) {
-		return -1;
+		return -EINVAL;
 	}
 
 	if (ripas_val == RIPAS_RAM) {
@@ -1135,7 +1135,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 			if (change_destroyed == CHANGE_DESTROYED) {
 				s2tte = s2tte_create_unassigned_ram();
 			} else {
-				return -1;
+				return -EPERM;
 			}
 		} else if (s2tte_is_assigned_empty(s2tte, level)) {
 			pa = s2tte_pa(s2tte, level);
@@ -1145,7 +1145,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 				pa = s2tte_pa(s2tte, level);
 				s2tte = s2tte_create_assigned_ram(pa, level);
 			} else {
-				return -1;
+				return -EPERM;
 			}
 		} else {
 			/* No action is required */
@@ -1158,7 +1158,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 			if (change_destroyed == CHANGE_DESTROYED) {
 				s2tte = s2tte_create_unassigned_empty();
 			} else {
-				return -1;
+				return -EPERM;
 			}
 		} else if (s2tte_is_assigned_ram(s2tte, level)) {
 			pa = s2tte_pa(s2tte, level);
@@ -1172,7 +1172,7 @@ static int update_ripas(unsigned long *s2ttep, long level,
 				/* TLBI is required */
 				ret = 1;
 			} else {
-				return -1;
+				return -EPERM;
 			}
 		} else {
 			/* No action is required */
