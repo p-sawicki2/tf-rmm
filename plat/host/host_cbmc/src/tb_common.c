@@ -9,7 +9,7 @@
 #include "measurement.h"
 #include "status.h"
 #include "string.h"
-#include "table.h"
+#include "s2tt.h"
 #include "tb_common.h"
 #include "tb_granules.h"
 #include "utils_def.h"

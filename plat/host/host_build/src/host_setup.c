@@ -15,7 +15,7 @@
 #include <smc-rsi.h>
 #include <stdlib.h>
 #include <string.h>
-#include <table.h>
+#include <s2tt.h>
 #include <time.h>
 
 /* Create a simple 4 level (Lvl 0 - LvL 3) RTT structure */

@@ -23,7 +23,7 @@
 #include <smc-rsi.h>
 #include <status.h>
 #include <sysreg_traps.h>
-#include <table.h>
+#include <s2tt.h>
 
 static void system_abort(void)
 {
@@ -174,7 +174,7 @@ void emulate_stage2_data_abort(struct rec *rec,
 {
 	unsigned long fipa = rec->regs[1];
 
-	assert(rtt_level <= (unsigned long)RTT_PAGE_LEVEL);
+	assert(rtt_level <= (unsigned long)S2TT_PAGE_LEVEL);
 
 	/*
 	 * Setup Exception Syndrom Register to emulate a real data abort
