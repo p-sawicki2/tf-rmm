@@ -38,6 +38,8 @@ static void stage2_tlbi_ipa(const struct realm_s2_context *s2_ctx,
 	 *   - Address range invalidation.
 	 */
 
+	assert(s2_ctx != NULL);
+
 	/*
 	 * Save the current content of vttb_el2.
 	 */
@@ -123,8 +125,6 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 {
 	unsigned int levels, lsb;
 
-	assert(level <= RTT_PAGE_LEVEL);
-
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
 	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
@@ -148,8 +148,6 @@ static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 {
 	unsigned int levels, lsb;
 
-	assert(start_level <= RTT_PAGE_LEVEL);
-
 	levels = (unsigned int)(RTT_PAGE_LEVEL - start_level);
 	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
 
@@ -163,6 +161,7 @@ static unsigned long addr_level_mask(unsigned long addr, long level)
 	unsigned int levels, lsb, msb;
 
 	assert(level <= RTT_PAGE_LEVEL);
+	assert(level >= RTT_STARTING_LEVEL);
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
 	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
@@ -254,15 +253,23 @@ void rtt_walk_lock_unlock(struct granule *g_root,
 	int i, last_level;
 
 	assert(start_level >= MIN_STARTING_LEVEL);
+	assert(start_level <= RTT_PAGE_LEVEL);
 	assert(level >= start_level);
+	assert(level <= RTT_PAGE_LEVEL);
 	assert(map_addr < (1UL << ipa_bits));
 	assert(wi != NULL);
+	assert(g_root != NULL);
+	assert(ipa_bits <= max_ipa_size());
 
 	/* Handle concatenated starting level (SL) tables */
 	sl_idx = s2_sl_addr_to_idx(map_addr, start_level, ipa_bits);
 	if (sl_idx >= S2TTES_PER_S2TT) {
 		unsigned int tt_num = (unsigned int)(sl_idx >> S2TTE_STRIDE);
-		struct granule *g_concat_root = g_root + tt_num;
+		struct granule *g_concat_root;
+
+		assert(tt_num < S2TTE_MAX_CONCAT_TABLES);
+
+		g_concat_root = g_root + tt_num;
 
 		granule_lock(g_concat_root, GRANULE_STATE_RTT);
 		granule_unlock(g_root);
@@ -334,7 +341,9 @@ unsigned long s2tte_create_assigned_destroyed(unsigned long pa, long level)
 unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 {
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
+
 	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_EMPTY);
 }
 
@@ -344,7 +353,9 @@ unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 unsigned long s2tte_create_assigned_ram(unsigned long pa, long level)
 {
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
+
 	if (level == RTT_PAGE_LEVEL) {
 		return (pa | S2TTE_PAGE);
 	}
@@ -362,6 +373,7 @@ unsigned long s2tte_create_assigned_unchanged(unsigned long s2tte,
 	unsigned long current_ripas = s2tte & S2TTE_INVALID_RIPAS_MASK;
 
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
 	assert(EXTRACT(S2TTE_INVALID_RIPAS, current_ripas) <=
 	       EXTRACT(S2TTE_INVALID_RIPAS, S2TTE_INVALID_RIPAS_DESTROYED));
@@ -390,13 +402,15 @@ unsigned long s2tte_create_unassigned_ns(void)
  * - MemAttr
  * - S2AP
  * - Shareability
- * Any other field on @s2tte is masked out.
  */
 unsigned long s2tte_create_assigned_ns(unsigned long s2tte, long level)
 {
 	unsigned long new_s2tte = s2tte & ~DESC_TYPE_MASK;
 
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
+	assert((s2tte & S2TTE_NS_ATTR_MASK) == 0UL);
+
 	if (level == RTT_PAGE_LEVEL) {
 		return (new_s2tte | S2TTE_PAGE_NS);
 	}
@@ -408,8 +422,11 @@ unsigned long s2tte_create_assigned_ns(unsigned long s2tte, long level)
  */
 bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 {
+
 	unsigned long mask = addr_level_mask(~0UL, level) |
-						S2TTE_NS_ATTR_MASK;
+						S2TTE_NS_ATTR_HOST_MASK;
+
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
 
 	/*
 	 * Test that all fields that are not controlled by the host are zero
@@ -446,7 +463,9 @@ bool host_ns_s2tte_is_valid(unsigned long s2tte, long level)
 unsigned long host_ns_s2tte(unsigned long s2tte, long level)
 {
 	unsigned long mask = addr_level_mask(~0UL, level) |
-						S2TTE_NS_ATTR_MASK;
+						S2TTE_NS_ATTR_HOST_MASK;
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+
 	return (s2tte & mask);
 }
 
@@ -456,6 +475,7 @@ unsigned long host_ns_s2tte(unsigned long s2tte, long level)
 unsigned long s2tte_create_table(unsigned long pa, long level)
 {
 	assert(level < RTT_PAGE_LEVEL);
+	assert(level >= RTT_MIN_TABLE_LEVEL);
 	assert(GRANULE_ALIGNED(pa));
 
 	return (pa | S2TTE_TABLE);
@@ -472,7 +492,36 @@ unsigned long s2tte_create_table(unsigned long pa, long level)
  */
 inline bool s2tte_has_ripas(unsigned long s2tte, long level)
 {
-	return (((s2tte & S2TTE_NS) == 0UL) && !s2tte_is_table(s2tte, level));
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(level >= MIN_STARTING_LEVEL);
+
+	/* NS or Table S2TTEs do not have RIPAS */
+	if (((s2tte & S2TTE_NS) != 0UL) ||
+		(s2tte_is_table(s2tte, level) == true)) {
+		return false;
+	}
+
+	/* Verify if RIPAS is of a valid value for an unassigned S2TTE */
+	/* TODO: Should we just add an assert() instead? */
+	if (s2tte_is_unassigned(s2tte) == true) {
+		return ((s2tte & S2TTE_INVALID_RIPAS_MASK) !=
+						S2TTE_INVALID_RIPAS_INVALID);
+	}
+
+	/*
+	 * For an invalid assigned descriptor, RIPAS can only be
+	 * DESTROYED or EMPTY.
+	 */
+	/* TODO: Should we just add an assert() instead? */
+	if ((s2tte & DESC_TYPE_MASK) == S2TTE_Lx_INVALID) {
+		return (((s2tte & S2TTE_INVALID_RIPAS_MASK) ==
+					S2TTE_INVALID_RIPAS_DESTROYED) ||
+		  ((s2tte & S2TTE_INVALID_RIPAS_MASK) ==
+					S2TTE_INVALID_RIPAS_EMPTY));
+	}
+
+	/* The S2TTE is a protected assigned one with RIPAS == RAM */
+	return true;
 }
 
 /*
@@ -630,6 +679,9 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
 	assert(!(((s2tte & DESC_TYPE_MASK) != S2TTE_INVALID) &&
 		 (desc_ripas != S2TTE_INVALID_RIPAS_RAM)));
 
+	assert(EXTRACT(S2TTE_INVALID_HIPAS, s2tte) <=
+	       EXTRACT(S2TTE_INVALID_HIPAS, S2TTE_INVALID_HIPAS_ASSIGNED));
+
 	switch (desc_ripas) {
 	case S2TTE_INVALID_RIPAS_EMPTY:
 		return RIPAS_EMPTY;
@@ -649,6 +701,8 @@ enum ripas s2tte_get_ripas(unsigned long s2tte)
  */
 void s2tt_init_unassigned_empty(unsigned long *s2tt)
 {
+	assert(s2tt != NULL);
+
 	unsigned long s2tte = s2tte_create_unassigned_empty();
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -666,6 +720,8 @@ void s2tt_init_unassigned_empty(unsigned long *s2tt)
  */
 void s2tt_init_unassigned_ram(unsigned long *s2tt)
 {
+	assert(s2tt != NULL);
+
 	unsigned long s2tte = s2tte_create_unassigned_ram();
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -683,6 +739,8 @@ void s2tt_init_unassigned_ram(unsigned long *s2tt)
  */
 void s2tt_init_unassigned_ns(unsigned long *s2tt)
 {
+	assert(s2tt != NULL);
+
 	unsigned long s2tte = s2tte_create_unassigned_ns();
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -700,6 +758,8 @@ void s2tt_init_unassigned_ns(unsigned long *s2tt)
  */
 void s2tt_init_unassigned_destroyed(unsigned long *s2tt)
 {
+	assert(s2tt != NULL);
+
 	unsigned long s2tte = s2tte_create_unassigned_destroyed();
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -717,6 +777,11 @@ void s2tt_init_unassigned_destroyed(unsigned long *s2tt)
  */
 void s2tt_init_assigned_destroyed(unsigned long *s2tt, unsigned long pa, long level)
 {
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(s2tt != NULL);
+	assert(addr_is_level_aligned(pa, level));
+
 	const unsigned long map_size = s2tte_map_size(level);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -728,9 +793,10 @@ void s2tt_init_assigned_destroyed(unsigned long *s2tt, unsigned long pa, long le
 
 unsigned long s2tte_map_size(long level)
 {
-	unsigned int levels, lsb;
-
 	assert(level <= RTT_PAGE_LEVEL);
+	assert(level >= RTT_STARTING_LEVEL);
+
+	unsigned int levels, lsb;
 
 	levels = (unsigned int)(RTT_PAGE_LEVEL - level);
 	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
@@ -746,6 +812,11 @@ unsigned long s2tte_map_size(long level)
  */
 void s2tt_init_assigned_empty(unsigned long *s2tt, unsigned long pa, long level)
 {
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(s2tt != NULL);
+	assert(addr_is_level_aligned(pa, level));
+
 	const unsigned long map_size = s2tte_map_size(level);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -764,6 +835,11 @@ void s2tt_init_assigned_empty(unsigned long *s2tt, unsigned long pa, long level)
  */
 void s2tt_init_assigned_ram(unsigned long *s2tt, unsigned long pa, long level)
 {
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(s2tt != NULL);
+	assert(addr_is_level_aligned(pa, level));
+
 	const unsigned long map_size = s2tte_map_size(level);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -783,12 +859,15 @@ void s2tt_init_assigned_ram(unsigned long *s2tt, unsigned long pa, long level)
 void s2tt_init_assigned_ns(unsigned long *s2tt, unsigned long attrs,
 			   unsigned long pa, long level)
 {
-	const unsigned long map_size = s2tte_map_size(level);
-
+	assert(level >= RTT_MIN_BLOCK_LEVEL);
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(s2tt != NULL);
 	assert(addr_is_level_aligned(pa, level));
 
+	const unsigned long map_size = s2tte_map_size(level);
+
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
-		unsigned long s2tte = attrs & S2TTE_NS_ATTR_MASK;
+		unsigned long s2tte = attrs & S2TTE_NS_ATTR_HOST_MASK;
 
 		s2tt[i] = s2tte_create_assigned_ns(s2tte | pa, level);
 		pa += map_size;
@@ -829,6 +908,9 @@ static bool s2tte_is_live(unsigned long s2tte, long level)
 /* Returns physical address of a page entry or block */
 unsigned long s2tte_pa(unsigned long s2tte, long level)
 {
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(level >= RTT_STARTING_LEVEL);
+
 	if (!s2tte_has_pa(s2tte, level)) {
 		assert(false);
 	}
@@ -843,7 +925,10 @@ unsigned long s2tte_pa(unsigned long s2tte, long level)
 /* Returns physical address of a table entry */
 unsigned long s2tte_pa_table(unsigned long s2tte, long level)
 {
+	assert(level <= RTT_PAGE_LEVEL);
+	assert(level >= RTT_STARTING_LEVEL);
 	assert(s2tte_is_table(s2tte, level));
+
 	return addr_level_mask(s2tte, RTT_PAGE_LEVEL);
 }
 
@@ -873,6 +958,8 @@ static bool table_is_uniform_block(unsigned long *table,
  */
 bool table_is_unassigned_empty_block(unsigned long *table)
 {
+	assert(table != NULL);
+
 	return table_is_uniform_block(table, s2tte_is_unassigned_empty);
 }
 
@@ -881,6 +968,8 @@ bool table_is_unassigned_empty_block(unsigned long *table)
  */
 bool table_is_unassigned_ram_block(unsigned long *table)
 {
+	assert(table != NULL);
+
 	return table_is_uniform_block(table, s2tte_is_unassigned_ram);
 }
 
@@ -889,6 +978,8 @@ bool table_is_unassigned_ram_block(unsigned long *table)
  */
 bool table_is_unassigned_ns_block(unsigned long *table)
 {
+	assert(table != NULL);
+
 	return table_is_uniform_block(table, s2tte_is_unassigned_ns);
 }
 
@@ -897,6 +988,8 @@ bool table_is_unassigned_ns_block(unsigned long *table)
  */
 bool table_is_unassigned_destroyed_block(unsigned long *table)
 {
+	assert(table != NULL);
+
 	return table_is_uniform_block(table, s2tte_is_unassigned_destroyed);
 }
 
@@ -907,6 +1000,8 @@ static bool table_maps_block(unsigned long *table,
 			     s2tte_type_level_checker s2tte_is_x,
 			     bool check_ns_attrs)
 {
+	assert(table != NULL);
+
 	unsigned long base_pa;
 	unsigned long map_size = s2tte_map_size(level);
 	unsigned long s2tte = s2tte_read(&table[0]);
@@ -935,13 +1030,14 @@ static bool table_maps_block(unsigned long *table,
 		}
 
 		if (check_ns_attrs) {
-			unsigned long ns_attrs = s2tte & S2TTE_NS_ATTR_MASK;
+			unsigned long ns_attrs =
+					s2tte & S2TTE_NS_ATTR_HOST_MASK;
 
 			/*
 			 * We match all the attributes in the S2TTE
 			 * except for the AF bit.
 			 */
-			if ((s2tte & S2TTE_NS_ATTR_MASK) != ns_attrs) {
+			if ((s2tte & S2TTE_NS_ATTR_HOST_MASK) != ns_attrs) {
 				return false;
 			}
 		}
@@ -1015,6 +1111,12 @@ unsigned long skip_non_live_entries(unsigned long addr,
 				    unsigned long *s2tt,
 				    const struct rtt_walk *wi)
 {
+	assert(s2tt != NULL);
+	assert(wi != NULL);
+	assert(wi->index <= S2TTES_PER_S2TT);
+	assert(wi->last_level >= RTT_STARTING_LEVEL);
+	assert(wi->last_level <= RTT_PAGE_LEVEL);
+
 	unsigned long i, index = wi->index;
 	long level = wi->last_level;
 	unsigned long map_size;
