@@ -335,7 +335,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 	g_tbl = find_lock_granule(rtt_addr, GRANULE_STATE_RTT);
 
 	/*
@@ -524,7 +524,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 		goto out_unmap_parent_table;
 	}
 
-	rtt_addr = s2tte_pa_table(parent_s2tte, level - 1L);
+	rtt_addr = s2tte_pa(parent_s2tte, level - 1L);
 
 	/*
 	 * Lock the RTT granule. The 'rtt_addr' is verified, thus can be treated
@@ -832,7 +832,7 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else if (s2tte_is_table(s2tte, wi.last_level)) {
 		res->x[2] = RMI_TABLE;
-		res->x[3] = s2tte_pa_table(s2tte, wi.last_level);
+		res->x[3] = s2tte_pa(s2tte, wi.last_level);
 		res->x[4] = (unsigned long)RIPAS_EMPTY;
 	} else {
 		assert(false);
