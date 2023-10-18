@@ -41,10 +41,19 @@
  */
 #define S2TTE_MEMATTR_FWB_NORMAL_WB	((1UL << 4) | (2UL << 2))
 
-#define S2TTE_ATTRS	(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \
+#define S2TTE_ATTRS	(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW |	\
 			S2TTE_SH_IS | S2TTE_AF)
-#define S2TTE_NS_ATTR_MASK (S2TTE_MEMATTR_MASK | S2TTE_AP_MASK | \
-			    S2TTE_SH_MASK)
+
+/* NS attributes set by the host */
+#define S2TTE_NS_ATTR_HOST_MASK 					\
+			(S2TTE_MEMATTR_MASK | S2TTE_AP_MASK | 		\
+			 S2TTE_SH_MASK)
+
+/*
+ * NS attributes not set by the host.
+ * It does not include the descriptor type.
+ */
+#define S2TTE_NS_ATTR_MASK	(S2TTE_AF | S2TTE_NS | S2TTE_XN)
 
 #define S2TTE_TABLE	S2TTE_L012_TABLE
 #define S2TTE_BLOCK	(S2TTE_ATTRS | S2TTE_L012_BLOCK)
@@ -52,6 +61,9 @@
 #define S2TTE_BLOCK_NS	(S2TTE_NS | S2TTE_XN | S2TTE_AF | S2TTE_L012_BLOCK)
 #define S2TTE_PAGE_NS	(S2TTE_NS | S2TTE_XN | S2TTE_AF | S2TTE_L3_PAGE)
 #define S2TTE_INVALID	S2TTE_Lx_INVALID
+
+/* Maximum number of concatenated tables for the start level */
+#define S2TTE_MAX_CONCAT_TABLES		(16U)
 
 #define NR_RTT_LEVELS	4
 
