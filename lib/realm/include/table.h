@@ -16,6 +16,7 @@
 #define MIN_STARTING_LEVEL	0
 #define RTT_PAGE_LEVEL		3
 #define RTT_MIN_BLOCK_LEVEL	2
+#define RTT_MIN_TABLE_LEVEL	MIN_STARTING_LEVEL
 
 /* TODO: Fix this when introducing LPA2 support */
 COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
@@ -77,6 +78,7 @@ COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
 #define S2TTE_INVALID_RIPAS_EMPTY	(INPLACE(S2TTE_INVALID_RIPAS, 0UL))
 #define S2TTE_INVALID_RIPAS_RAM		(INPLACE(S2TTE_INVALID_RIPAS, 1UL))
 #define S2TTE_INVALID_RIPAS_DESTROYED	(INPLACE(S2TTE_INVALID_RIPAS, 2UL))
+#define S2TTE_INVALID_RIPAS_INVALID	(INPLACE(S2TTE_INVALID_RIPAS, 3UL))
 
 #define S2TTE_INVALID_UNPROTECTED	0x0UL
 
@@ -96,7 +98,7 @@ COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
 /*
  * Creates an unassigned_empty s2tte.
  */
-inline unsigned long s2tte_create_unassigned_empty(void)
+static inline unsigned long s2tte_create_unassigned_empty(void)
 {
 	return (S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_EMPTY);
 }
@@ -104,7 +106,7 @@ inline unsigned long s2tte_create_unassigned_empty(void)
 /*
  * Creates an unassigned_ram s2tte.
  */
-inline unsigned long s2tte_create_unassigned_ram(void)
+static inline unsigned long s2tte_create_unassigned_ram(void)
 {
 	return (S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_RAM);
 }
@@ -112,7 +114,7 @@ inline unsigned long s2tte_create_unassigned_ram(void)
 /*
  * Creates an unassigned_destroyed s2tte.
  */
-inline unsigned long s2tte_create_unassigned_destroyed(void)
+static inline unsigned long s2tte_create_unassigned_destroyed(void)
 {
 	return (S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_DESTROYED);
 }
@@ -120,25 +122,13 @@ inline unsigned long s2tte_create_unassigned_destroyed(void)
 /*
  * Returns true if @s2tte is a table at level @level.
  */
-inline bool s2tte_is_table(unsigned long s2tte, long level)
+static inline bool s2tte_is_table(unsigned long s2tte, long level)
 {
 	return ((level < RTT_PAGE_LEVEL) &&
 		((s2tte & DESC_TYPE_MASK) == S2TTE_L012_TABLE));
 }
 
-/*
- * Returns true if s2tte has defined ripas value, namely if it is one of:
- * - unassigned_empty
- * - unassigned_ram
- * - unassigned_destroyed
- * - assigned_empty
- * - assigned_ram
- * - assigned_destroyed
- */
-inline bool s2tte_has_ripas(unsigned long s2tte, long level)
-{
-	return (((s2tte & S2TTE_NS) == 0UL) && !s2tte_is_table(s2tte, level));
-}
+bool s2tte_has_ripas(unsigned long s2tte, long level);
 
 unsigned long s2tte_create_unassigned_ns(void);
 unsigned long s2tte_create_assigned_empty(unsigned long pa, long level);

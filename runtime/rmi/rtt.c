@@ -1315,7 +1315,8 @@ static void rtt_set_ripas_range(struct realm_s2_context *s2_ctx,
 		return;
 	}
 
-	for (index = wi->index; index < S2TTES_PER_S2TT; ) {
+	index = wi->index;
+	while (index < S2TTES_PER_S2TT) {
 		int ret;
 
 		/*
