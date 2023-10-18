@@ -16,6 +16,7 @@
 #define MIN_STARTING_LEVEL	0
 #define RTT_PAGE_LEVEL		3
 #define RTT_MIN_BLOCK_LEVEL	2
+#define RTT_MIN_TABLE_LEVEL	MIN_STARTING_LEVEL
 
 /* TODO: Fix this when introducing LPA2 support */
 COMPILER_ASSERT(MIN_STARTING_LEVEL >= 0);
