@@ -284,6 +284,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9287127_9f61c926",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-19T08:29:09Z",
+      "side": 1,
+      "message": "Yeah, hence my latest comment. On the first one I was thinking only from the point of view of RMM as the requester of the delegate operation, but yes, a malicious agent could also request it (or even do it itself) and RMM wouldn\u0027t have a clue about that.",
+      "parentUuid": "e2c29f16_6040a61e",
+      "range": {
+        "startLine": 88,
+        "startChar": 32,
+        "endLine": 88,
+        "endChar": 63
+      },
+      "revId": "5b17e0cd9b123737f4526a9c59845110766b8dfc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f7a2ae4_31a35e74",
