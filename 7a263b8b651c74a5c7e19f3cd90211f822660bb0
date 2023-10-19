@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3dd7166_00da5808",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-19T18:46:26Z",
+      "side": 1,
+      "message": "Number of Coverity defects 0 didn\u0027t change\nNumber of MISRA C defects/coding rule violations 544 decreased by 35",
+      "revId": "7a263b8b651c74a5c7e19f3cd90211f822660bb0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
