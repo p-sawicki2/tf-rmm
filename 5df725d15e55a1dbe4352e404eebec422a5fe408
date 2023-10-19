@@ -16,6 +16,24 @@
       "message": "There are a lot of explicit typecast had to be added due to this change. I was wondering whether it would worth instead of replacing the function, adding a new one?\n\n    unsigned long test_helpers_get_rand_ulong_in_range(unsigned long min,\n                                                      unsigned long max);\n    int test_helpers_get_rand_int_in_range(long min, long max);\n\nIt might not help, I\u0027m not sure. I see there are typecasts due to signedness differences as well.",
       "revId": "5df725d15e55a1dbe4352e404eebec422a5fe408",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "417feebe_83dfd38b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-19T13:53:44Z",
+      "side": 1,
+      "message": "I agree with you, actually but as you said there is a lot of typecasting (to avoid MISRA warnings, mostly) so if we want to get rid of all that we should write several different flavors of the helper. On the other hand, just having the two that you mentioned could help reduce the number of castings as well.\n\nI guess there is no a \"right\" way of doing it, so let\u0027s wait for other comments on this subject",
+      "parentUuid": "ac629093_77a401c9",
+      "revId": "5df725d15e55a1dbe4352e404eebec422a5fe408",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
