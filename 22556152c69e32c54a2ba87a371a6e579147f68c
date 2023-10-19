@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d690e0d_93defd02",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "this is not needed here.",
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "921ec249_8d712daf",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "can remove this.",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32aa8b11_c77b7e4e",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "...might be...\n\nThe comments need wrap at 80 col width.",
+      "range": {
+        "startLine": 59,
+        "startChar": 73,
+        "endLine": 59,
+        "endChar": 92
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6d304a5_6ec08781",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "doesn\u0027t seem to be used anywhere.",
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a512c086_65cf0cff",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "we could use the std library implementation for this ?\n\nDoesn\u0027t seem to be used in the current patch.",
+      "range": {
+        "startLine": 57,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 12
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e4568f5_0715cc5e",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "could use host_util_get_granule_base() here.",
+      "range": {
+        "startLine": 83,
+        "startChar": 19,
+        "endLine": 83,
+        "endChar": 35
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc5c634d_4fc7ac28",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "didn\u0027t see where the used is being freed ?",
+      "range": {
+        "startLine": 173,
+        "startChar": 1,
+        "endLine": 173,
+        "endChar": 21
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c736c02e_83b0dac8",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "\"src_page\" as name",
+      "range": {
+        "startLine": 177,
+        "startChar": 18,
+        "endLine": 177,
+        "endChar": 31
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4465b6fc_5b430b70",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "\"src_size\"",
+      "range": {
+        "startLine": 178,
+        "startChar": 13,
+        "endLine": 178,
+        "endChar": 31
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50bec296_e00ef476",
+        "filename": "tools/CBMC/src/tb_granules.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T05:01:12Z",
+      "side": 1,
+      "message": "same as valid_pa() ?",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 1
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
