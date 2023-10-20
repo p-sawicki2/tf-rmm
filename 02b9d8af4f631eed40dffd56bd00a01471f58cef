@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d95247f_df10f661",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T20:03:12Z",
+      "side": 1,
+      "message": "if we want to give calling rec a chance to call psci_complete again correctly, we need to return from here, not set calling_rec-\u003epsci_info.pending \u003d false;",
+      "revId": "02b9d8af4f631eed40dffd56bd00a01471f58cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ],
   "submitRequirementResults": []
 }
