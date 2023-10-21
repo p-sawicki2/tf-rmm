@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "485d4817_1763e346",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d690e0d_93defd02",
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "921ec249_8d712daf",
@@ -64,6 +82,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b0cd06b_6aae7fc7",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "921ec249_8d712daf",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba4ce77e_6d7a3a95",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32aa8b11_c77b7e4e",
+      "range": {
+        "startLine": 59,
+        "startChar": 73,
+        "endLine": 59,
+        "endChar": 92
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6d304a5_6ec08781",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b8968d1_d41b425c",
+        "filename": "tools/CBMC/include/tb_common.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "b6d304a5_6ec08781",
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a512c086_65cf0cff",
@@ -94,6 +178,30 @@
       "writtenOn": "2023-10-19T05:01:12Z",
       "side": 1,
       "message": "we could use the std library implementation for this ?\n\nDoesn\u0027t seem to be used in the current patch.",
+      "range": {
+        "startLine": 57,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 12
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d1d056e_6b413028",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "a512c086_65cf0cff",
       "range": {
         "startLine": 57,
         "startChar": 9,
@@ -129,6 +237,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09ac5be7_b129ed1a",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Using  host_util_get_granule_base() doesn\u0027t seem to work. I don\u0027t really know why, but coverage decreases. This should be further investigated.",
+      "parentUuid": "1e4568f5_0715cc5e",
+      "range": {
+        "startLine": 83,
+        "startChar": 19,
+        "endLine": 83,
+        "endChar": 35
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cc5c634d_4fc7ac28",
         "filename": "tools/CBMC/src/tb_common.c",
         "patchSetId": 11
@@ -140,6 +272,30 @@
       "writtenOn": "2023-10-19T05:01:12Z",
       "side": 1,
       "message": "didn\u0027t see where the used is being freed ?",
+      "range": {
+        "startLine": 173,
+        "startChar": 1,
+        "endLine": 173,
+        "endChar": 21
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed8b1519_5388e0a7",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "It is not freed. Each testbench \u0027tests\u0027 a single ABI call. So no need to free them.",
+      "parentUuid": "cc5c634d_4fc7ac28",
       "range": {
         "startLine": 173,
         "startChar": 1,
@@ -173,6 +329,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74a534fc_a8dee951",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c736c02e_83b0dac8",
+      "range": {
+        "startLine": 177,
+        "startChar": 18,
+        "endLine": 177,
+        "endChar": 31
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4465b6fc_5b430b70",
@@ -186,6 +366,30 @@
       "writtenOn": "2023-10-19T05:01:12Z",
       "side": 1,
       "message": "\"src_size\"",
+      "range": {
+        "startLine": 178,
+        "startChar": 13,
+        "endLine": 178,
+        "endChar": 31
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad427597_9981d630",
+        "filename": "tools/CBMC/src/tb_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4465b6fc_5b430b70",
       "range": {
         "startLine": 178,
         "startChar": 13,
@@ -219,6 +423,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1277b49_ecfafe60",
+        "filename": "tools/CBMC/src/tb_granules.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "Call valid_pa(). I kept PaIsDelegable as it is called from the generated code.",
+      "parentUuid": "50bec296_e00ef476",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 1
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "251cd658_b13d6078",
@@ -232,6 +460,30 @@
       "writtenOn": "2023-10-19T05:40:20Z",
       "side": 1,
       "message": "need to understand why the coverage is not 100 %",
+      "range": {
+        "startLine": 4,
+        "startChar": 46,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "22556152c69e32c54a2ba87a371a6e579147f68c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ae35ffd_7271c9ce",
+        "filename": "tools/CBMC/testbenches_results/BASELINE.coverage",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-21T12:09:19Z",
+      "side": 1,
+      "message": "some of the failures were due to the granules and granules_buffer array being declared as static. I fixed that in a separate commit.\n\nThere are still uncovered paths in tb_rmi_granule_delegate.c.\nIt seems that the `failure_gran_pas_pre \u003d Granule(addr).pas !\u003d NS;` pre-condition cannot be satisfied. There can be a problem with how the granule for the address is initialised, or `Granule` is implemented. Seeds to be investigated further.",
+      "parentUuid": "251cd658_b13d6078",
       "range": {
         "startLine": 4,
         "startChar": 46,
