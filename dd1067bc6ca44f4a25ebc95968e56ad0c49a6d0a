@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f34f76d_0ee06b6b",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-23T14:22:54Z",
+      "side": 1,
+      "message": "needs to return success",
+      "range": {
+        "startLine": 340,
+        "startChar": 9,
+        "endLine": 340,
+        "endChar": 31
+      },
+      "revId": "dd1067bc6ca44f4a25ebc95968e56ad0c49a6d0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
