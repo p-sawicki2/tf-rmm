@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a93954ee_39d07b96",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-23T13:53:18Z",
+      "side": 1,
+      "message": "Good suggestion. renamed and moved to arch.h",
+      "parentUuid": "95e3c372_074fcafb",
+      "range": {
+        "startLine": 220,
+        "startChar": 8,
+        "endLine": 220,
+        "endChar": 37
+      },
+      "revId": "1c4dd20e9c66c90aadae40eaeff19c4dc501a675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ecc41663_6c19f7e7",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c237e5c6_9beb38d9",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-23T13:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecc41663_6c19f7e7",
+      "range": {
+        "startLine": 228,
+        "startChar": 8,
+        "endLine": 228,
+        "endChar": 30
+      },
+      "revId": "1c4dd20e9c66c90aadae40eaeff19c4dc501a675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7463c629_28f62b5f",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-10-23T13:27:58Z",
       "side": 1,
       "message": "SIMD_DISABLE_ALL_CPTR_FLAGS",
+      "range": {
+        "startLine": 247,
+        "startChar": 8,
+        "endLine": 247,
+        "endChar": 35
+      },
+      "revId": "1c4dd20e9c66c90aadae40eaeff19c4dc501a675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12c70b84_a226dd73",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-23T13:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7463c629_28f62b5f",
       "range": {
         "startLine": 247,
         "startChar": 8,
