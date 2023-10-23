@@ -397,14 +397,6 @@ unsigned long psci_complete_request(struct rec *calling_rec,
 						calling_rec->regs[3],
 						calling_rec->sysregs.sctlr_el1,
 						status);
-		/*
-		 * If the target CPU is already running and the Host has denied the
-		 * PSCI_CPU_ON request, then return error back to Host.
-		 */
-		if ((status == PSCI_RETURN_DENIED) &&
-		   (rec_ret == PSCI_RETURN_ALREADY_ON)) {
-			ret = RMI_ERROR_INPUT;
-		}
 		break;
 	case SMC32_PSCI_AFFINITY_INFO:
 	case SMC64_PSCI_AFFINITY_INFO:
