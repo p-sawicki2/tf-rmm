@@ -22,6 +22,30 @@
       },
       "revId": "1ef2023c32b169e354e79904bdb30e1e38037ae0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "829658c1_9f1d9a02",
+        "filename": "runtime/rsi/host_call.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-23T11:48:15Z",
+      "side": 1,
+      "message": "Yes,will fix that.",
+      "parentUuid": "4b10d3fb_95490751",
+      "range": {
+        "startLine": 135,
+        "startChar": 46,
+        "endLine": 135,
+        "endChar": 47
+      },
+      "revId": "1ef2023c32b169e354e79904bdb30e1e38037ae0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
