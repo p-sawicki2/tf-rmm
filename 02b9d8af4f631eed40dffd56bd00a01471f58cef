@@ -34,6 +34,24 @@
       "parentUuid": "1d95247f_df10f661",
       "revId": "02b9d8af4f631eed40dffd56bd00a01471f58cef",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c047eeb_f2945fe6",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-23T10:16:09Z",
+      "side": 1,
+      "message": "as we discussed, we can alternatively return success here.",
+      "parentUuid": "1d95247f_df10f661",
+      "revId": "02b9d8af4f631eed40dffd56bd00a01471f58cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ],
   "submitRequirementResults": []
