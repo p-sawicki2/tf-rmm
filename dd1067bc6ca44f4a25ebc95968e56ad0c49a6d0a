@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0de56d1_316c96b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:13:17Z",
+      "side": 1,
+      "message": "It seems the implementation was correct in the first place :)",
+      "revId": "dd1067bc6ca44f4a25ebc95968e56ad0c49a6d0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f34f76d_0ee06b6b",
@@ -61,6 +78,30 @@
       "writtenOn": "2023-10-23T16:05:49Z",
       "side": 1,
       "message": "Are we missing \"status\" failure condition for !PsciReturnCodePermitted()?",
+      "range": {
+        "startLine": 400,
+        "startChar": 2,
+        "endLine": 400,
+        "endChar": 7
+      },
+      "revId": "dd1067bc6ca44f4a25ebc95968e56ad0c49a6d0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "971dad4d_7e13ea87",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:13:17Z",
+      "side": 1,
+      "message": "You are right, status condition relevant here is :`\n\nif (fid \u003d\u003d FID_PSCI_CPU_ON\n\u0026\u0026 target_rec.flags.runnable !\u003d RUNNABLE\n\u0026\u0026 value \u003d\u003d PSCI_DENIED) then\n      return TRUE;\n\nelse return FALSE...\n\n\nSo I am mistaken, if the target \u003d\u003d RUNNABLE (ALREADY_ON), then we should return error to Host.\n\nSo I think this change is not needed.",
+      "parentUuid": "4a25bd2e_2e3309d9",
       "range": {
         "startLine": 400,
         "startChar": 2,
