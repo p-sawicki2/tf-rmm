@@ -59,6 +59,7 @@ static void do_host_call(struct rec *rec, struct rmi_rec_exit *rec_exit,
 		}
 		return;
 	case WALK_INVALID_PARAMS:
+	default:
 		assert(false);
 		break;
 	}
@@ -68,7 +69,7 @@ static void do_host_call(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	data = (unsigned char *)granule_map(gr, SLOT_RSI_CALL);
 	assert(data != NULL);
 
-	host_call = (struct rsi_host_call *)(data + (ipa - page_ipa));
+	host_call = (struct rsi_host_call *)((uintptr_t)data + (ipa - page_ipa));
 
 	if (rec_exit != NULL) {
 		/* Copy host call arguments to REC exit data structure */
