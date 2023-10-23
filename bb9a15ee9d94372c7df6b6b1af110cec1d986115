@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a02f3208_d7babac9",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:31:01Z",
+      "side": 1,
+      "message": "would prefer uintptr_t here.",
+      "range": {
+        "startLine": 27,
+        "startChar": 27,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13097105_6626026a",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:31:01Z",
+      "side": 1,
+      "message": "uintptr_t",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 11
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20b037c8_88ffef5a",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:31:01Z",
+      "side": 1,
+      "message": "this as well.",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab4c165d_5d92cd46",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:31:01Z",
+      "side": 1,
+      "message": "uintptr_t",
+      "range": {
+        "startLine": 284,
+        "startChar": 24,
+        "endLine": 284,
+        "endChar": 30
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "416a7586_6992460f",
+        "filename": "runtime/rsi/host_call.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:31:01Z",
+      "side": 1,
+      "message": "uintptr_t",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
