@@ -22,6 +22,30 @@
       },
       "revId": "dd1067bc6ca44f4a25ebc95968e56ad0c49a6d0a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82b6a675_f3925123",
+        "filename": "runtime/rsi/psci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-23T16:05:43Z",
+      "side": 1,
+      "message": "AFAICS, \nthis return is for the calling rec. The return for Host is from line 419 : https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24276/1/runtime/rsi/psci.c#419",
+      "parentUuid": "8f34f76d_0ee06b6b",
+      "range": {
+        "startLine": 340,
+        "startChar": 9,
+        "endLine": 340,
+        "endChar": 31
+      },
+      "revId": "dd1067bc6ca44f4a25ebc95968e56ad0c49a6d0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
