@@ -426,15 +426,29 @@ unsigned long s2tte_create_unassigned_destroyed(void)
 }
 
 /*
+ * Exclude the following line of code from the clang-tidy
+ * misc-unused-parameters check. This check flags up a false positive for the
+ * parameter 'level', because it cannot see that it is used in assert() calls.
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
+
+/*
  * Creates an invalid s2tte with output address @pa, HIPAS=ASSIGNED and
  * RIPAS=DESTROYED, at level @level.
  */
 unsigned long s2tte_create_assigned_destroyed(unsigned long pa, long level)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
 	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_DESTROYED);
 }
+
+/*
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
 
 /*
  * Creates an invalid s2tte with output address @pa, HIPAS=ASSIGNED and
@@ -442,6 +456,9 @@ unsigned long s2tte_create_assigned_destroyed(unsigned long pa, long level)
  */
 unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
 	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_EMPTY);
@@ -560,10 +577,17 @@ unsigned long host_ns_s2tte(unsigned long s2tte, long level)
 }
 
 /*
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
+
+/*
  * Creates a table s2tte at level @level with output address @pa.
  */
 unsigned long s2tte_create_table(unsigned long pa, long level)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 	assert(level < RTT_PAGE_LEVEL);
 	assert(GRANULE_ALIGNED(pa));
 
@@ -941,9 +965,16 @@ unsigned long s2tte_pa(unsigned long s2tte, long level)
 	return addr_level_mask(s2tte, level);
 }
 
+/*
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
+
 /* Returns physical address of a table entry */
 unsigned long s2tte_pa_table(unsigned long s2tte, long level)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 	assert(s2tte_is_table(s2tte, level));
 	return addr_level_mask(s2tte, RTT_PAGE_LEVEL);
 }

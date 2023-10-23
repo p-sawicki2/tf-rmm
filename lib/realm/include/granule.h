@@ -26,6 +26,13 @@ static inline unsigned long granule_refcount_read_acquire(struct granule *g)
 }
 
 /*
+ * Exclude the following lines of code (until NO LINT END) from the clang-tidy
+ * misc-unused-parameters check. This check flags up a false positive for the
+ * parameter 'g', because it cannot see that it is used in assert() calls.
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
+
+/*
  * Sanity-check unlocked granule invariants.
  *
  * These invariants must hold for any granule which is unlocked.
@@ -39,6 +46,9 @@ static inline unsigned long granule_refcount_read_acquire(struct granule *g)
 static inline void __granule_assert_unlocked_invariants(struct granule *g,
 							enum granule_state state)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 	switch (state) {
 	case GRANULE_STATE_NS:
 		assert(granule_refcount_read_relaxed(g) == 0UL);

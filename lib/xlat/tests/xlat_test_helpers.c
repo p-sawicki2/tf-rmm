@@ -156,10 +156,19 @@ uint64_t xlat_test_helpers_rand_mmap_attrs(void)
 	return ret_attrs;
 }
 
+/*
+ * Exclude the following lines of code (until NO LINT END) from the clang-tidy
+ * misc-unused-parameters check. This check flags up a false positive for the
+ * parameter 'max_va', because it cannot see that it is used in assert() calls.
+ * NOLINTBEGIN(misc-unused-parameters)
+ */
 void xlat_test_helpers_rand_mmap_array(struct xlat_mmap_region *mmap,
 					size_t size, uintptr_t min_va,
 					uintptr_t max_va)
 {
+/*
+ * NOLINTEND(misc-unused-parameters)
+ */
 
 /* Maximum number of pages allowed per region */
 #define MAX_PAGES_PER_REGION	(100U)
