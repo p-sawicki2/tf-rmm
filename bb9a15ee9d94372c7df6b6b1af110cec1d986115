@@ -47,6 +47,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a4fec6c_dab86261",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-24T09:05:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13097105_6626026a",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 11
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20b037c8_88ffef5a",
@@ -60,6 +84,30 @@
       "writtenOn": "2023-10-23T16:31:01Z",
       "side": 1,
       "message": "this as well.",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "840a7f32_cc12223b",
+        "filename": "lib/attestation/src/attestation_rnd.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-24T09:05:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20b037c8_88ffef5a",
       "range": {
         "startLine": 30,
         "startChar": 1,
@@ -95,6 +143,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bab6fb09_23e86506",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-24T09:05:44Z",
+      "side": 1,
+      "message": "This will require either casting or changing API of aux_granules_map():",
+      "parentUuid": "ab4c165d_5d92cd46",
+      "range": {
+        "startLine": 284,
+        "startChar": 24,
+        "endLine": 284,
+        "endChar": 30
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "416a7586_6992460f",
         "filename": "runtime/rsi/host_call.c",
         "patchSetId": 1
@@ -106,6 +178,30 @@
       "writtenOn": "2023-10-23T16:31:01Z",
       "side": 1,
       "message": "uintptr_t",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "bb9a15ee9d94372c7df6b6b1af110cec1d986115",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6317ac87_34fe0356",
+        "filename": "runtime/rsi/host_call.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-24T09:05:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "416a7586_6992460f",
       "range": {
         "startLine": 38,
         "startChar": 1,
