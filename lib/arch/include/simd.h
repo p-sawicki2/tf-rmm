@@ -74,7 +74,7 @@ typedef enum {
  */
 struct fpu_regs {
 	uint8_t q[FPU_REGS_SIZE];
-};
+} __aligned(16);
 
 /*
  * SVE registers for architecture max supported vector length of 2048 bits.
@@ -85,7 +85,7 @@ struct sve_regs {
 	uint8_t z[SVE_Z_REGS_SIZE(SVE_VQ_ARCH_MAX)];
 	uint8_t p[SVE_P_REGS_SIZE(SVE_VQ_ARCH_MAX)];
 	uint8_t ffr[SVE_FFR_REGS_SIZE(SVE_VQ_ARCH_MAX)];
-};
+} __aligned(16);
 
 /* SIMD configuration */
 struct simd_config {
