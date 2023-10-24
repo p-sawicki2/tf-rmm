@@ -693,6 +693,7 @@
 					 (UL(1) << 11)	/* TODO: ARMv8.5-CSEH, otherwise RES1 */)
 
 #define SCTLR_ELx_M_BIT			(UL(1) << 0)
+#define SCTLR_ELx_A_BIT			(UL(1) << 1)
 #define SCTLR_ELx_C_BIT			(UL(1) << 2)
 #define SCTLR_ELx_SA_BIT		(UL(1) << 3)
 #define SCTLR_ELx_SA0_BIT		(UL(1) << 4)
@@ -721,11 +722,10 @@
 			 SCTLR_ELx_nTWI_BIT | SCTLR_ELx_EOS_BIT | SCTLR_ELx_nAA_BIT | \
 			 SCTLR_ELx_CP15BEN_BIT | SCTLR_ELx_SA0_BIT | SCTLR_ELx_SA_BIT)
 
-#define SCTLR_EL2_INIT		(SCTLR_ELx_C_BIT	/* Data accesses are cacheable
+#define SCTLR_EL2_INIT		(SCTLR_ELx_A_BIT	/* Alignment fault check enable */ | \
+				 SCTLR_ELx_C_BIT	/* Data accesses are cacheable
 							 * as per translation tables */ | \
 							/* SCTLR_EL2_M = 0 (MMU disabled) */  \
-							/* SCTLR_EL2_A = 0
-							 * (No alignment checks) */  \
 				 SCTLR_ELx_SA_BIT	/* SP aligned at EL2 */ | \
 				 SCTLR_ELx_SA0_BIT	/* SP Alignment check enable for EL0 */ \
 							/* SCTLR_EL2_CP15BEN = 0 (EL0 using AArch32:
