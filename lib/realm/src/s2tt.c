@@ -431,6 +431,8 @@ unsigned long s2tte_create_unassigned_destroyed(void)
  */
 unsigned long s2tte_create_assigned_destroyed(unsigned long pa, long level)
 {
+	(void)level;
+
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
 	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_DESTROYED);
@@ -442,6 +444,8 @@ unsigned long s2tte_create_assigned_destroyed(unsigned long pa, long level)
  */
 unsigned long s2tte_create_assigned_empty(unsigned long pa, long level)
 {
+	(void)level;
+
 	assert(level >= RTT_MIN_BLOCK_LEVEL);
 	assert(addr_is_level_aligned(pa, level));
 	return (pa | S2TTE_INVALID_HIPAS_ASSIGNED | S2TTE_INVALID_RIPAS_EMPTY);
@@ -564,6 +568,8 @@ unsigned long host_ns_s2tte(unsigned long s2tte, long level)
  */
 unsigned long s2tte_create_table(unsigned long pa, long level)
 {
+	(void)level;
+
 	assert(level < RTT_PAGE_LEVEL);
 	assert(GRANULE_ALIGNED(pa));
 
@@ -944,6 +950,8 @@ unsigned long s2tte_pa(unsigned long s2tte, long level)
 /* Returns physical address of a table entry */
 unsigned long s2tte_pa_table(unsigned long s2tte, long level)
 {
+	(void)level;
+
 	assert(s2tte_is_table(s2tte, level));
 	return addr_level_mask(s2tte, RTT_PAGE_LEVEL);
 }
