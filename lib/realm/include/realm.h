@@ -82,7 +82,8 @@ struct rd {
 	struct simd_config simd_cfg;
 
 	/* Realm measurement */
-	unsigned char measurement[MEASUREMENT_SLOT_NR][MAX_MEASUREMENT_SIZE];
+	unsigned char measurement[MEASUREMENT_SLOT_NR][MAX_MEASUREMENT_SIZE] \
+					__aligned(sizeof(unsigned long));
 
 	/* Realm Personalization Value */
 	unsigned char rpv[RPV_SIZE];
