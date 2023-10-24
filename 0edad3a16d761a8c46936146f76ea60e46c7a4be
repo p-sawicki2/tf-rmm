@@ -1,0 +1,526 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ee16a28_e1835122",
+        "filename": "docs/design/diagrams/full_va_space_diagram.png",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "need to show per-CPU stack here.\n\nI think the Invalid Area also needs to be removed. \n\nThe Low VA range the only valid VA is RMM code data and EL3 shared buf\n\nIn High VA the only valid VA is slot buffer and per CPIU buffer.",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46cf74ab_f4fce001",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "The Stack can be renamed as per-CPU Stack..Also make it bigger to show relative sizes. currently it looks like an entry the TT.",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7ab7838_9f3b66aa",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "\"... and details of the Stage 1 MMU setup in RMM.",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 9,
+        "endChar": 0
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d04e6b33_daefba52",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "Categories of Stage 1 mappings.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd76bf8d_b2cf642a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "this should go to dynamic mapping (not common for all PEs). We can mention that even though it is in the dynamic mapping region, the stacks are not unmapped during the lifetime of RMM.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d56a083_b62c2aca",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "I am not sure this is in static mappings. This is part of slot buffer mechanism",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 16
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "995f0b51_ee43b542",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "Dynamic mappings should have 2 sections: RMM per PE stack and slot buffer. These can be under the slot buffer header.",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed50929e_bfc67e2b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "Realm data also comes here (your description from the section above).",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1407f20c_a9a0be51",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "loaded and allocated to Realm PAS at boot...",
+      "range": {
+        "startLine": 73,
+        "startChar": 50,
+        "endLine": 73,
+        "endChar": 73
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b2abcff_c374a3bf",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "compile time",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86124483_4e4af52f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "memory dynamically mapped to Stage 1 MMU via the slot-buffer mechanism.",
+      "range": {
+        "startLine": 82,
+        "startChar": 41,
+        "endLine": 82,
+        "endChar": 47
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12cdabf2_ed2c6c79",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "Realm PAS",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 5
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35950530_444c6b86",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "5",
+      "range": {
+        "startLine": 129,
+        "startChar": 61,
+        "endLine": 129,
+        "endChar": 62
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fffdf74_f433caf2",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "not sure whether this detail is needed in this document (or correct ?)",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 44
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b23ea959_09603f34",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "the low VA range",
+      "range": {
+        "startLine": 139,
+        "startChar": 3,
+        "endLine": 139,
+        "endChar": 18
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2042d8c5_d595113f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "The high VA range",
+      "range": {
+        "startLine": 143,
+        "startChar": 3,
+        "endLine": 143,
+        "endChar": 18
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ff0be42_05cb4704",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "this is a bit confusing. There is no hard limitation on the library itself, but rather the way use contexts.\n\nThere is a single context for the low VA region and there is a per-CPU context for the high VA region.",
+      "range": {
+        "startLine": 155,
+        "startChar": 48,
+        "endLine": 156,
+        "endChar": 14
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94b8bbd5_11b7c9e8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "other relocations are fixed up with the right offsets as part of boot. This allows to be run at any physical address as a position independent executable (PIE).",
+      "range": {
+        "startLine": 178,
+        "startChar": 61,
+        "endLine": 178,
+        "endChar": 71
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f4052d3_163e23c1",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "remove, this is a detail of platform implementation detail I think and best not captured in design.",
+      "range": {
+        "startLine": 181,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 43
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcdfe0cc_495a6c15",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "gave suggestion for this name.",
+      "range": {
+        "startLine": 185,
+        "startChar": 22,
+        "endLine": 185,
+        "endChar": 33
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05afadcc_82e96591",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "this needs to be part of dynamic (high VA)",
+      "range": {
+        "startLine": 186,
+        "startChar": 12,
+        "endLine": 189,
+        "endChar": 70
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e316b23e_f35b03a4",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "better to use same name as code. \n\n\"Memory can be mapped and unmapped into RMM High VA region dynamically using the slot-buffer mechanism.\"",
+      "range": {
+        "startLine": 203,
+        "startChar": 27,
+        "endLine": 203,
+        "endChar": 34
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25ef2b79_88878678",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "\"slots\"",
+      "range": {
+        "startLine": 205,
+        "startChar": 34,
+        "endLine": 205,
+        "endChar": 45
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b211fc8c_59d80ff3",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T12:51:20Z",
+      "side": 1,
+      "message": "tag-lock is not longer present in RMM code ;)",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 239,
+        "endChar": 34
+      },
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
