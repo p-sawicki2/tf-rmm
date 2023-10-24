@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1e42376_d625c033",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-24T11:46:36Z",
+      "side": 1,
+      "message": "Thanks for the answer. I\u0027m OK to merge it as it is as well.",
+      "revId": "1b995dc02cdb7cd795bbce7f9f8e8f27df9f5d66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
