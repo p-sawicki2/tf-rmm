@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f88584_07ed9398",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-25T09:53:23Z",
+      "side": 1,
+      "message": "This is already fixed in EAC5, so no need to fix again here.",
+      "revId": "9ee8eaf672f842571e31874ab033d1eba9fdcf36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
