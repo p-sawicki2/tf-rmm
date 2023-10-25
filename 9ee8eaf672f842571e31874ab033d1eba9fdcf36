@@ -16,6 +16,24 @@
       "message": "This is already fixed in EAC5, so no need to fix again here.",
       "revId": "9ee8eaf672f842571e31874ab033d1eba9fdcf36",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07b3ab0d_42346cbc",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-25T11:09:53Z",
+      "side": 1,
+      "message": "This is a bug I wanted to fix.",
+      "parentUuid": "f2f88584_07ed9398",
+      "revId": "9ee8eaf672f842571e31874ab033d1eba9fdcf36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
