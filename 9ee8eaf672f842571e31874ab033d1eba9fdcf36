@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bcb8986_4c441606",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-25T11:14:20Z",
+      "side": 1,
+      "message": "There are alignment check faults in some jobs, e.g.\nhttps://jenkins.openci.aws.arm.com/job/rmm-worker/7478/artifact/artefacts/lava-uart3.log/*view*/\n\nUnexpected exception:\nSPSR_EL2: 0x00000000600003c9\nESR_EL2:  0x0000000096000061\nELR_EL2:  0x00000000fdc2ac64\nFAR_EL2:  0x00000000fde04888\n----\n\nwhich needs investigation",
+      "revId": "9ee8eaf672f842571e31874ab033d1eba9fdcf36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2f88584_07ed9398",
