@@ -1,0 +1,9 @@
+Code-Review+1: Máté Tóth-Pál <Mate.Toth-Pal@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Wed, 25 Oct 2023 11:52:13 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24282
+Comments-Total: 12
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/topics/rmm-1.0-eac5
