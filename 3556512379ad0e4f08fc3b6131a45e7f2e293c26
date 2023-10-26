@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a61ac89_29d6a25e",
+        "filename": "lib/realm/include/realm.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-26T15:41:28Z",
+      "side": 1,
+      "message": "Is this necessary?",
+      "range": {
+        "startLine": 85,
+        "startChar": 69,
+        "endLine": 85,
+        "endChar": 71
+      },
+      "revId": "3556512379ad0e4f08fc3b6131a45e7f2e293c26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
