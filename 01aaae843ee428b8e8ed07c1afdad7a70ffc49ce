@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14e4cdcd_01205493",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-26T13:08:47Z",
+      "side": 1,
+      "message": "I think if we don\u0027t use the `_per_cpu` suffix, we could just rename it to rmm_get_my_err_handler_stack() to make it even clearer (the name would have been too long if the \"_per_cpu\" was there). But this is just a comment, no need to change.",
+      "parentUuid": "7b2903a1_e38fd510",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "01aaae843ee428b8e8ed07c1afdad7a70ffc49ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8712a59b_33ef17af",
