@@ -43,6 +43,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "594ec363_6d0af5be",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-10-26T14:31:57Z",
+      "side": 1,
+      "message": "Just one more thing. I spent some time with it, so I leave it here for the record:\nIt seems to be possible to construct a regular expression that only matches valid titles (not considering the length):\n\n    title_regexp \u003d re.compile(r\"^([^\\(\\):]+)(\\(([^\\)]+)\\))?: (.+)\")\n    \n    m \u003d title_regexp.match(title)\n    if m:\n        title_type \u003d m.group(1)\n        title_scope \u003d m.group(3)\n        title_desc \u003d m.group(4)\n\nIf scope not present, it will be None. Now one could argue that the regular expression is more difficult to maintain than the logic you implemented. I can accept that argument, so I\u0027m OK with the current implementation.\n\n(I can give a breakdown of the regular expression if you wish)",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 15
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3043845c_b63f0c6b",
         "filename": "tools/checkpatch/checkcommitmsg.py",
         "patchSetId": 1
