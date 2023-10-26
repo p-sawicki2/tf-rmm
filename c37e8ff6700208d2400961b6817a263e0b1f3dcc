@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "923036ff_05d7cfd5",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-26T12:21:12Z",
+      "side": 1,
+      "message": "available",
+      "range": {
+        "startLine": 296,
+        "startChar": 25,
+        "endLine": 296,
+        "endChar": 34
+      },
+      "revId": "c37e8ff6700208d2400961b6817a263e0b1f3dcc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
