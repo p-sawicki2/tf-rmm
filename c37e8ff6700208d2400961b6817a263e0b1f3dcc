@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09282eb0_38b9067f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-26T13:06:36Z",
+      "side": 1,
+      "message": "Forgot to add the exception handler stack",
+      "revId": "c37e8ff6700208d2400961b6817a263e0b1f3dcc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "923036ff_05d7cfd5",
