@@ -84,6 +84,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "45a9de1d_255ae4ca",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T16:08:12Z",
+      "side": 1,
+      "message": "keep this as 80 as we discussed in the meeting today.",
+      "range": {
+        "startLine": 75,
+        "startChar": 20,
+        "endLine": 75,
+        "endChar": 22
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3043845c_b63f0c6b",
         "filename": "tools/checkpatch/checkcommitmsg.py",
         "patchSetId": 1
@@ -131,6 +154,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "216814d2_3a490722",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T16:08:12Z",
+      "side": 1,
+      "message": "I think lets not restrict the subject to lower case. Just keep the type as lower case. \n\nThe scope can reflect the \"case\" of the folder name , but scope is a recommendation anyway and hence is not enforced. Perhaps all folders need to have lower case in RMM (separate topic).",
+      "parentUuid": "3da4d33f_18ac3e24",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 19
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7b7f71e0_87dc0c7e",
         "filename": "tools/checkpatch/checkcommitmsg.py",
         "patchSetId": 1
@@ -154,6 +201,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e648c324_a1a5e435",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T16:08:12Z",
+      "side": 1,
+      "message": "Hmm, it is better if this checker can highlight this problem. Having 2 change-Ids is a common mistake I make as well.",
+      "parentUuid": "7b7f71e0_87dc0c7e",
+      "range": {
+        "startLine": 155,
+        "startChar": 8,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f17c6bf2_72c485c1",
         "filename": "tools/checkpatch/checkcommitmsg.py",
         "patchSetId": 1
@@ -165,6 +236,30 @@
       "writtenOn": "2023-10-26T14:23:37Z",
       "side": 1,
       "message": "Should it be mandated that trailer and the body is separated by (at least?) an empty line?",
+      "range": {
+        "startLine": 201,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 49
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a562f272_8d57afd4",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T16:08:12Z",
+      "side": 1,
+      "message": "good suggestion. Possibly subject and message should have a empty line in between them but this is enforced in git anyway I think.",
+      "parentUuid": "f17c6bf2_72c485c1",
       "range": {
         "startLine": 201,
         "startChar": 8,
