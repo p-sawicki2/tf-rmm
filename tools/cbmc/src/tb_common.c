@@ -14,6 +14,8 @@
 #include "tb_granules.h"
 #include "measurement.h"
 
+static bool granule_gpt_ns_array[RMM_MAX_GRANULES];
+
 /* Declare a nondet function for registers information. */
 struct tb_regs nondet_tb_regs(void);
 
@@ -50,7 +52,7 @@ void __tb_lock_invariant(struct tb_lock_status *lock_status)
 
 struct tb_lock_status __tb_lock_status(void)
 {
-	struct tb_lock_status r = {NULL};
+	struct tb_lock_status r = {0UL};
 	return r;
 }
 
@@ -180,6 +182,20 @@ struct granule *inject_granule(const struct granule *granule_metadata,
 {
 	size_t index = next_index();
 
+	granule_gpt_ns_array[index] = nondet_bool();
 	return inject_granule_at(granule_metadata, src_page, src_size, index);
 }
 
+bool get_granule_gpt_ns(uint64_t addr)
+{
+	uint64_t idx = (addr - (uint64_t)granules_buffer)/GRANULE_SIZE;
+
+	return granule_gpt_ns_array[idx];
+}
+
+void set_granule_gpt_ns(uint64_t addr, bool gpt_ns)
+{
+	uint64_t idx = (addr - (uint64_t)granules_buffer)/GRANULE_SIZE;
+
+	granule_gpt_ns_array[idx] = gpt_ns;
+}
