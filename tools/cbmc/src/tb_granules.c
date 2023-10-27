@@ -98,6 +98,12 @@ struct SPEC_granule Granule(uint64_t addr)
 
 	switch (result->state) {
 	case GRANULE_STATE_NS:
+		if (get_granule_gpt_ns(addr)) {
+			spec_granule.gpt = GPT_NS;
+		} else {
+			spec_granule.gpt = GPT_SECURE;
+		}
+		break;
 	case GRANULE_STATE_RTT:
 		spec_granule.gpt = GPT_NS;
 		break;
