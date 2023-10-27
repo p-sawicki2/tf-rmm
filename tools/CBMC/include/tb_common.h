@@ -131,4 +131,7 @@ struct granule *inject_granule(const struct granule *granule_metadata,
 			       const void *src_page,
 			       size_t src_size);
 
+bool get_granule_gpt_ns(uint64_t addr);
+void set_granule_gpt_ns(uint64_t addr, bool gpt_ns);
+
 #endif  /* !TB_COMMON_H */
