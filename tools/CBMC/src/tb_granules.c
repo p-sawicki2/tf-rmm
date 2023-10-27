@@ -98,14 +98,20 @@ struct SPEC_granule Granule(uint64_t addr)
 
 	switch (result->state) {
 	case GRANULE_STATE_NS:
-	case GRANULE_STATE_RTT:
 	case GRANULE_STATE_UNDELEGATED:
+	case GRANULE_STATE_DELEGATED:
+		if (get_granule_gpt_ns(addr)) {
+			spec_granule.pas = NS;
+		} else {
+			spec_granule.pas = REALM;
+		}
+		break;
+	case GRANULE_STATE_RTT:
 		spec_granule.pas = NS;
 		break;
 	case GRANULE_STATE_RD:
 	case GRANULE_STATE_DATA:
 	case GRANULE_STATE_REC:
-	case GRANULE_STATE_DELEGATED:
 		spec_granule.pas = REALM;
 		break;
 	default:
