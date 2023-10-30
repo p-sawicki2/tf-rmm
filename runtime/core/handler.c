@@ -348,20 +348,38 @@ void handle_ns_smc(unsigned int function_id,
 	assert_cpu_slots_empty();
 }
 
-static void report_unexpected(void)
+static void report_unexpected(uintptr_t regs)
 {
-	unsigned long spsr = read_spsr_el2();
-	unsigned long esr = read_esr_el2();
-	unsigned long elr = read_elr_el2();
-	unsigned long far = read_far_el2();
+	u_register_t lr;
+	u_register_t sp = regs + (2U * sizeof(u_register_t));
 
-	INFO("----\n");
-	INFO("Unexpected exception:\n");
-	INFO("SPSR_EL2: 0x%016lx\n", spsr);
-	INFO("ESR_EL2:  0x%016lx\n", esr);
-	INFO("ELR_EL2:  0x%016lx\n", elr);
-	INFO("FAR_EL2:  0x%016lx\n", far);
-	INFO("----\n");
+	ERROR("----\n");
+	ERROR("Unexpected exception:\n");
+
+	for (unsigned int i = 0U; i < 30U; i++) {
+		ERROR("X%u:\t\t0x%016lx\n", i++,
+			*(u_register_t *)regs);
+		ERROR("X%u:\t\t0x%016lx\n", i,
+			*(u_register_t *)(regs + sizeof(u_register_t)));
+		regs -= 2U * sizeof(u_register_t);
+	}
+
+	lr = *(u_register_t *)regs;
+
+#if defined(__aarch64__)
+	/* Demangle return address */
+	asm volatile (
+		"xpaci %0" : : "r" (lr)
+	);
+#endif
+	ERROR("LR:\t\t0x%016lx\n", lr);
+	ERROR("SP:\t\t0x%016lx\n", sp);
+
+	ERROR("SPSR_EL2:\t0x%016lx\n", read_spsr_el2());
+	ERROR("ESR_EL2:\t0x%016lx\n", read_esr_el2());
+	ERROR("ELR_EL2:\t0x%016lx\n", read_elr_el2());
+	ERROR("FAR_EL2:\t0x%016lx\n", read_far_el2());
+	ERROR("----\n");
 }
 
 /*
@@ -393,15 +411,16 @@ extern void *ns_write;
  */
 extern void *ns_access_ret_0;
 
+/* coverity[misra_c_2012_rule_8_9_violation:SUPPRESS] */
 static struct rmm_trap_element rmm_trap_list[] = {
 	RMM_TRAP_HANDLER(ns_read, ns_access_ret_0),
 	RMM_TRAP_HANDLER(ns_write, ns_access_ret_0),
 };
 #define RMM_TRAP_LIST_SIZE (sizeof(rmm_trap_list)/sizeof(struct rmm_trap_element))
 
-__dead2 static void fatal_abort(void)
+__dead2 static void fatal_abort(uintptr_t regs)
 {
-	report_unexpected();
+	report_unexpected(regs);
 
 	while (true) {
 		wfe();
@@ -423,9 +442,14 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
  * If it finds a match, it returns the new value of the PC that the RMM should
  * continue from. Other register values are preserved.
  * If no match is found, it aborts the RMM.
+ *
+ * This function is called from el2_sync_cel() in vectors.S
+ * and should be defined with external linkage, no
+ * compatible declaration is required.
  */
 /* coverity[misra_c_2012_rule_8_4_violation:SUPPRESS] */
-unsigned long handle_rmm_trap(void)
+/* coverity[misra_c_2012_rule_8_7_violation:SUPPRESS] */
+unsigned long handle_rmm_trap(uintptr_t regs)
 {
 	unsigned long esr = read_esr_el2();
 	unsigned long elr = read_elr_el2();
@@ -434,7 +458,7 @@ unsigned long handle_rmm_trap(void)
 	 * Only the GPF data aborts are recoverable.
 	 */
 	if (!is_el2_data_abort_gpf(esr)) {
-		fatal_abort();
+		fatal_abort(regs);
 	}
 
 	for (unsigned int i = 0U; i < RMM_TRAP_LIST_SIZE; i++) {
@@ -443,6 +467,6 @@ unsigned long handle_rmm_trap(void)
 		}
 	}
 
-	fatal_abort();
+	fatal_abort(regs);
 	return 0UL;
 }
