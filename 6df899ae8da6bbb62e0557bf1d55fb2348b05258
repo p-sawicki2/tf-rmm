@@ -100,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac54ece3_6cf4aa8b",
+        "filename": "plat/common/CMakeLists.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:32Z",
+      "side": 1,
+      "message": "ok, See my latest comments",
+      "parentUuid": "78b3b90e_45bf74f3",
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c222f47_e14b05c6",
@@ -219,6 +237,30 @@
       "side": 1,
       "message": "I made NUM_OF_SLOT to be a CMake config option. SLOT_VIRT can actually be calculated knowing NUM_OF_SLOT, so no config option for that is necessary (however I had it defined by the CMake scripts). For now they are defined in the top level CMake. If it was defined for the xlat library, how the values should be passed to the realm lib?",
       "parentUuid": "cbc5e24d_e79cb86a",
+      "range": {
+        "startLine": 265,
+        "startChar": 1,
+        "endLine": 265,
+        "endChar": 16
+      },
+      "revId": "6df899ae8da6bbb62e0557bf1d55fb2348b05258",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bed64d0_c8c543fa",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:32Z",
+      "side": 1,
+      "message": "I have given a different suggestion",
+      "parentUuid": "1d8dba43_bd4d6c18",
       "range": {
         "startLine": 265,
         "startChar": 1,

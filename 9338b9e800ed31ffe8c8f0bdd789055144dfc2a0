@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a33065a_24aae90d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a1c5dcc4_6566bc3e",
+      "revId": "9338b9e800ed31ffe8c8f0bdd789055144dfc2a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7b0a021b_1287ab6c",
@@ -144,6 +162,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "8f9f09c8_6b54f0b7",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "9338b9e800ed31ffe8c8f0bdd789055144dfc2a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dd082de_738e4d57",
+        "filename": "lib/realm/src/buffer.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f92fc1f0_6e74b3e1",
       "range": {
         "startLine": 74,
         "startChar": 1,
@@ -829,6 +871,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "98790bdc_e301ade9",
+      "range": {
+        "startLine": 207,
+        "startChar": 1,
+        "endLine": 207,
+        "endChar": 20
+      },
+      "revId": "9338b9e800ed31ffe8c8f0bdd789055144dfc2a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9621926_d3eb8f2e",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ed18fc01_3a53734e",
       "range": {
         "startLine": 207,
         "startChar": 1,
