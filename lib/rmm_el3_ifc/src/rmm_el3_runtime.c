@@ -14,9 +14,6 @@
 #include <stdint.h>
 #include <xlat_defs.h>
 
-/* Platform parameter */
-extern uintptr_t rmm_shared_buffer_start_va;
-
 /* Spinlock used to protect the EL3<->RMM shared area */
 static spinlock_t shared_area_lock = {0U};
 
