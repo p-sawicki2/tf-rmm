@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbfff20f_0ce53706",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-31T09:46:29Z",
+      "side": 1,
+      "message": "This patch fixes unaligned access in RMM, but when it is built with RMM_FPU_USE_AT_REL2\u003dON, MbedTls hits alignment fault exception.\nSee\nhttps://github.com/Mbed-TLS/mbedtls/issues/8447",
+      "revId": "a9cc72e99dd87eb1e9d634f8c8239dc065c63b3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
