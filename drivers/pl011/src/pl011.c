@@ -5,6 +5,7 @@
 
 #include <mmio.h>
 #include <pl011.h>
+#include <stdio.h>
 #include <utils_def.h>
 
 static inline void uart_wait(void)
