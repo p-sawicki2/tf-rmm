@@ -203,7 +203,7 @@ void measurement_rec_params_measure(unsigned char rim_measurement[],
  */
 void measurement_init_ripas_measure(unsigned char rim_measurement[],
 				    enum hash_algo algorithm,
-				    unsigned long ipa,
-				    unsigned long level);
+				    unsigned long base,
+				    unsigned long top);
 
 #endif /* MEASUREMENT_H */
