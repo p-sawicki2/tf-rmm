@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2c5fa05_bffe1c66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T10:58:09Z",
+      "side": 1,
+      "message": "Thank you Mate, it does seem to be the right fix. Would be good to get Shale\u0027s review comments as well if possible",
+      "revId": "8b907a0d4ee3867c185a04e6cf7486fd03e082d5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
