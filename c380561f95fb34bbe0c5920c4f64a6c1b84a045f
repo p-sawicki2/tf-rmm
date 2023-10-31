@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5890847d_42c5a007",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T16:46:33Z",
+      "side": 1,
+      "message": "The static checks fail in CI due to clang tidy error. Ignoring for now.",
+      "revId": "c380561f95fb34bbe0c5920c4f64a6c1b84a045f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
