@@ -22,6 +22,30 @@
       },
       "revId": "3556512379ad0e4f08fc3b6131a45e7f2e293c26",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bccbbdc3_7541ca3b",
+        "filename": "lib/realm/include/realm.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-31T09:34:17Z",
+      "side": 1,
+      "message": "Yes, see commit message:\n\"Alignment of \u0027unsigned char measurement[][]\u0027\nof \u0027rd\u0027 structure is set to 8 to pass\nalignment check for\nmeasurement_value_part \u003d (unsigned long *)\n\u0026(rd-\u003emeasurement[idx][i * sizeof(unsigned long)]);\nin handle_rsi_measurement_read().\"",
+      "parentUuid": "9a61ac89_29d6a25e",
+      "range": {
+        "startLine": 85,
+        "startChar": 69,
+        "endLine": 85,
+        "endChar": 71
+      },
+      "revId": "3556512379ad0e4f08fc3b6131a45e7f2e293c26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
