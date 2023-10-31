@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7f10b13_1a1167ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T10:26:08Z",
+      "side": 1,
+      "message": "The CI failure is due to clang tidy error being found on EAC5 branch.",
+      "revId": "16365f865d7abd50b05fb3e48a21e9132721c65b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
