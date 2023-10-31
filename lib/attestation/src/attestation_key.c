@@ -69,7 +69,7 @@ int attest_init_realm_attestation_key(void)
 {
 	psa_status_t ret;
 	uintptr_t buf;
-	size_t attest_key_size = 0UL;
+	size_t attest_key_size;
 	psa_key_attributes_t key_attributes = psa_key_attributes_init();
 
 	assert(SIMD_IS_FPU_ALLOWED());
@@ -195,7 +195,7 @@ int attest_get_realm_public_key(struct q_useful_buf_c *public_key)
 int attest_setup_platform_token(void)
 {
 	uintptr_t shared_buf;
-	size_t platform_token_len = 0;
+	size_t platform_token_len;
 	struct q_useful_buf_c rmm_pub_key_hash;
 	int ret;
 
