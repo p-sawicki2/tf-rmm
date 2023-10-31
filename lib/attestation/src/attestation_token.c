@@ -331,5 +331,6 @@ int attest_realm_token_create(enum hash_algo algorithm,
 	QCBOREncode_CloseBstrWrap2(&(ctx->ctx.cbor_enc_ctx), false,
 				   &(ctx->ctx.signed_payload));
 
-	return ATTEST_TOKEN_ERR_SUCCESS;
+	/* NOLINT(google-readability-casting) */
+	return (int)ATTEST_TOKEN_ERR_SUCCESS;
 }

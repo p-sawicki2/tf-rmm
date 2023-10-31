@@ -46,6 +46,7 @@ void pmu_save_state(struct pmu_state *pmu, unsigned int num_cnts)
 	pmu->pmxevtyper_el0 = read_pmxevtyper_el0();
 
 	if (num_cnts != 0UL) {
+		/* coverity[misra_c_2012_rule_2_2_violation:SUPPRESS] */
 		switch (--num_cnts) {
 		READ_PMEV_EL0(30);
 		READ_PMEV_EL0(29);
@@ -106,6 +107,7 @@ void pmu_restore_state(struct pmu_state *pmu, unsigned int num_cnts)
 	write_pmxevtyper_el0(pmu->pmxevtyper_el0);
 
 	if (num_cnts != 0U) {
+		/* coverity[misra_c_2012_rule_2_2_violation:SUPPRESS] */
 		switch (--num_cnts) {
 		WRITE_PMEV_EL0(30);
 		WRITE_PMEV_EL0(29);
