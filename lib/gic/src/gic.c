@@ -275,7 +275,7 @@ static void write_lrs(struct gic_cpu_state *gicstate)
 	WRITE_ICH_LR_EL2(1);
 	FALLTHROUGH;
 	default:
-	WRITE_ICH_LR_EL2(0);
+	WRITE_ICH_APR_EL2(0);
 	}
 }
 
