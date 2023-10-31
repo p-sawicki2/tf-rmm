@@ -7,6 +7,7 @@
 #include <assert.h>
 #include <debug.h>
 #include <rmm_el3_ifc.h>
+#include <rmm_el3_ifc_priv.h>
 #include <smc.h>
 #include <stdint.h>
 #include <string.h>
