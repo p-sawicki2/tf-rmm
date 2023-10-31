@@ -295,5 +295,8 @@ static inline unsigned long rmm_el3_ifc_gtsi_undelegate(unsigned long addr)
  */
 __dead2 void rmm_el3_ifc_report_fail_to_el3(int ec);
 
+/* Platform parameter */
+extern uintptr_t rmm_shared_buffer_start_va;
+
 #endif /* __ASSEMBLER__ */
 #endif /* RMM_EL3_IFC_H */
