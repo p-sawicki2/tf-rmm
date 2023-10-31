@@ -46,6 +46,30 @@
       },
       "revId": "049b934df8dcce4878cb637785a4c34ffd8d858b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "202347e1_e185f84e",
+        "filename": "lib/attestation/src/attestation_priv.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:36:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe302e95_ad311ab0",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "049b934df8dcce4878cb637785a4c34ffd8d858b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
