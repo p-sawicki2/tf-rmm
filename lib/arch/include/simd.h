@@ -260,7 +260,7 @@ static inline void simd_context_restore(struct simd_context *ctx)
 	do {							\
 		unsigned long cptr_el2 = read_cptr_el2();	\
 								\
-		assert(simd_is_state_saved() == true);		\
+		assert(simd_is_state_saved());			\
 		write_cptr_el2(cptr_el2 | INPLACE(CPTR_EL2_VHE_FPEN,\
 				CPTR_EL2_VHE_FPEN_NO_TRAP_11));	\
 		isb();						\
