@@ -233,24 +233,24 @@ bool gic_validate_state(struct rmi_rec_enter *rec_enter)
 static void read_lrs(struct gic_cpu_state *gicstate)
 {
 	switch (gic_virt_feature.nr_lrs) {
-	READ_ICH_LR_EL2(15);
-	READ_ICH_LR_EL2(14);
-	READ_ICH_LR_EL2(13);
-	READ_ICH_LR_EL2(12);
-	READ_ICH_LR_EL2(11);
-	READ_ICH_LR_EL2(10);
-	READ_ICH_LR_EL2(9);
-	READ_ICH_LR_EL2(8);
-	READ_ICH_LR_EL2(7);
-	READ_ICH_LR_EL2(6);
-	READ_ICH_LR_EL2(5);
-	READ_ICH_LR_EL2(4);
-	READ_ICH_LR_EL2(3);
-	READ_ICH_LR_EL2(2);
-	READ_ICH_LR_EL2(1);
-	FALLTHROUGH;
-	default:
-	READ_ICH_LR_EL2(0);
+		READ_ICH_LR_EL2(15);
+		READ_ICH_LR_EL2(14);
+		READ_ICH_LR_EL2(13);
+		READ_ICH_LR_EL2(12);
+		READ_ICH_LR_EL2(11);
+		READ_ICH_LR_EL2(10);
+		READ_ICH_LR_EL2(9);
+		READ_ICH_LR_EL2(8);
+		READ_ICH_LR_EL2(7);
+		READ_ICH_LR_EL2(6);
+		READ_ICH_LR_EL2(5);
+		READ_ICH_LR_EL2(4);
+		READ_ICH_LR_EL2(3);
+		READ_ICH_LR_EL2(2);
+		READ_ICH_LR_EL2(1);
+		FALLTHROUGH;
+		default:
+			gicstate->ich_lr_el2[0] = read_ich_lr0_el2();
 	}
 }
 
@@ -258,24 +258,24 @@ static void read_lrs(struct gic_cpu_state *gicstate)
 static void write_lrs(struct gic_cpu_state *gicstate)
 {
 	switch (gic_virt_feature.nr_lrs) {
-	WRITE_ICH_LR_EL2(15);
-	WRITE_ICH_LR_EL2(14);
-	WRITE_ICH_LR_EL2(13);
-	WRITE_ICH_LR_EL2(12);
-	WRITE_ICH_LR_EL2(11);
-	WRITE_ICH_LR_EL2(10);
-	WRITE_ICH_LR_EL2(9);
-	WRITE_ICH_LR_EL2(8);
-	WRITE_ICH_LR_EL2(7);
-	WRITE_ICH_LR_EL2(6);
-	WRITE_ICH_LR_EL2(5);
-	WRITE_ICH_LR_EL2(4);
-	WRITE_ICH_LR_EL2(3);
-	WRITE_ICH_LR_EL2(2);
-	WRITE_ICH_LR_EL2(1);
-	FALLTHROUGH;
-	default:
-	WRITE_ICH_LR_EL2(0);
+		WRITE_ICH_LR_EL2(15);
+		WRITE_ICH_LR_EL2(14);
+		WRITE_ICH_LR_EL2(13);
+		WRITE_ICH_LR_EL2(12);
+		WRITE_ICH_LR_EL2(11);
+		WRITE_ICH_LR_EL2(10);
+		WRITE_ICH_LR_EL2(9);
+		WRITE_ICH_LR_EL2(8);
+		WRITE_ICH_LR_EL2(7);
+		WRITE_ICH_LR_EL2(6);
+		WRITE_ICH_LR_EL2(5);
+		WRITE_ICH_LR_EL2(4);
+		WRITE_ICH_LR_EL2(3);
+		WRITE_ICH_LR_EL2(2);
+		WRITE_ICH_LR_EL2(1);
+		FALLTHROUGH;
+		default:
+			write_ich_lr0_el2(gicstate->ich_lr_el2[0]);
 	}
 }
 
@@ -283,12 +283,13 @@ static void write_lrs(struct gic_cpu_state *gicstate)
 static void read_aprs(struct gic_cpu_state *gicstate)
 {
 	switch (gic_virt_feature.nr_aprs) {
-	READ_ICH_APR_EL2(3);
-	READ_ICH_APR_EL2(2);
-	READ_ICH_APR_EL2(1);
-	FALLTHROUGH;
-	default:
-	READ_ICH_APR_EL2(0);
+		READ_ICH_APR_EL2(3);
+		READ_ICH_APR_EL2(2);
+		READ_ICH_APR_EL2(1);
+		FALLTHROUGH;
+		default:
+			gicstate->ich_ap0r_el2[0] = read_ich_ap0r0_el2();
+			gicstate->ich_ap1r_el2[0] = read_ich_ap1r0_el2();
 	}
 }
 
@@ -296,12 +297,13 @@ static void read_aprs(struct gic_cpu_state *gicstate)
 static void write_aprs(struct gic_cpu_state *gicstate)
 {
 	switch (gic_virt_feature.nr_aprs) {
-	WRITE_ICH_APR_EL2(3);
-	WRITE_ICH_APR_EL2(2);
-	WRITE_ICH_APR_EL2(1);
-	FALLTHROUGH;
-	default:
-	WRITE_ICH_APR_EL2(0);
+		WRITE_ICH_APR_EL2(3);
+		WRITE_ICH_APR_EL2(2);
+		WRITE_ICH_APR_EL2(1);
+		FALLTHROUGH;
+		default:
+			write_ich_ap0r0_el2(gicstate->ich_ap0r_el2[0]);
+			write_ich_ap1r0_el2(gicstate->ich_ap1r_el2[0]);
 	}
 }
 
