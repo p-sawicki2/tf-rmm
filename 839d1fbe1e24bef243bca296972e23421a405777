@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db80db0_adecc1b7",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:37:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e00641bb_26eae028",
+      "revId": "839d1fbe1e24bef243bca296972e23421a405777",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dbf123ff_aeb89deb",
@@ -103,6 +121,24 @@
       "side": 1,
       "message": "Added assert",
       "parentUuid": "6915ac9d_75d1ad3e",
+      "revId": "839d1fbe1e24bef243bca296972e23421a405777",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdfe83e5_aacfa341",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:37:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "554e6f7c_d873a1c8",
       "revId": "839d1fbe1e24bef243bca296972e23421a405777",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
