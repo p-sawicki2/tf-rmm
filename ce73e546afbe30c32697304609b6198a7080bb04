@@ -22,6 +22,30 @@
       },
       "revId": "ce73e546afbe30c32697304609b6198a7080bb04",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d3da0e2_38ed6577",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-31T17:37:41Z",
+      "side": 0,
+      "message": "Acknowledged",
+      "parentUuid": "b2f31c07_691149a4",
+      "range": {
+        "startLine": 238,
+        "startChar": 4,
+        "endLine": 238,
+        "endChar": 24
+      },
+      "revId": "ce73e546afbe30c32697304609b6198a7080bb04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
