@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "feaf76ea_1c23c9b6",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb3d642b_ce949fca",
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84943e6f_b4540b60",
@@ -49,6 +67,30 @@
       "writtenOn": "2023-10-26T14:23:37Z",
       "side": 1,
       "message": "I would suggest to pass the path to the script as a parameter. ${CMAKE_SOURCE_DIR} should work.",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f5ea66d_c830e543",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Thanks, done",
+      "parentUuid": "84943e6f_b4540b60",
       "range": {
         "startLine": 51,
         "startChar": 4,
@@ -84,6 +126,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7351265d_b796d67f",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "That\u0027s an impressive regex!\n\nI think possibly it\u0027s easier with my method to figure out which bit went wrong in the title. For example, I believe that regex will fail to match at all if the title is missing a description, or if there\u0027s no space after the colon, instead of setting title_desc to None. There\u0027s probably a way of adjusting the regex so that it can deal with these situations though.",
+      "parentUuid": "594ec363_6d0af5be",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 15
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45a9de1d_255ae4ca",
         "filename": "tools/checkpatch/checkcommitmsg.py",
         "patchSetId": 1
@@ -95,6 +161,30 @@
       "writtenOn": "2023-10-26T16:08:12Z",
       "side": 1,
       "message": "keep this as 80 as we discussed in the meeting today.",
+      "range": {
+        "startLine": 75,
+        "startChar": 20,
+        "endLine": 75,
+        "endChar": 22
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6d93c80_cb13af60",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45a9de1d_255ae4ca",
       "range": {
         "startLine": 75,
         "startChar": 20,
@@ -176,6 +266,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d9d8c8a_feddf0b9",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "216814d2_3a490722",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 19
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7b7f71e0_87dc0c7e",
@@ -223,6 +337,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d9544d4_617e79d3",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Good idea, added a check for this",
+      "parentUuid": "e648c324_a1a5e435",
+      "range": {
+        "startLine": 155,
+        "startChar": 8,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f17c6bf2_72c485c1",
@@ -260,6 +398,30 @@
       "side": 1,
       "message": "good suggestion. Possibly subject and message should have a empty line in between them but this is enforced in git anyway I think.",
       "parentUuid": "f17c6bf2_72c485c1",
+      "range": {
+        "startLine": 201,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 49
+      },
+      "revId": "53b6e69da35b0b6a24500d8fb12a15f1aa382c24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1238c7a6_e90e6f99",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-01T15:53:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a562f272_8d57afd4",
       "range": {
         "startLine": 201,
         "startChar": 8,
