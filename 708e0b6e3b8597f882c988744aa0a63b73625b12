@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49119df9_a3613818",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T18:34:51Z",
+      "side": 1,
+      "message": "can add documentation for the HOST_VARIANT option to include host_cbmc as one of the option.",
+      "revId": "708e0b6e3b8597f882c988744aa0a63b73625b12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
