@@ -5,6 +5,7 @@
 
 #include <arch.h>
 #include <arch_helpers.h>
+#include <assert.h>
 #include <debug.h>
 #include <errno.h>
 #include <host_utils.h>
@@ -211,6 +212,16 @@ int host_run_realm(unsigned long *regs)
 
 void host_spinlock_acquire(spinlock_t *l)
 {
+	/*
+	 * If the spinlock is already acquired, we should be able to interrupt
+	 * the normal execution flow somehow and potentially return control to
+	 * the test handler. The easiest way to do that is to cause an
+	 * assertion that can be captured by the unittest framework,
+	 * preventing the caller from moving forward and allowing the former
+	 * to validate the behavior.
+	 */
+	assert(l->val == 0);
+
 	l->val = 1;
 }
 
