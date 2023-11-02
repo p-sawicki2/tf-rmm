@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2c1e9c1_2684a724",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "nit: perhaps call this variable \"title_type_scope\"",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 12
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9829d45_0a39f2bd",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "nit: suggest \"title_type\" as name",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 21
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "122032b9_00361ac8",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "we can allow empty body as some patches are very trivial that subject is enough.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 21
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da8613cd_3f5b5657",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "we need to have a bypass for Merge commits like this none :\n\nhttps://github.com/TF-RMM/tf-rmm/commit/52f36e637a3ec3c403f9ecdadd44dec378c8a157\n\nWe can ignore commit message checks for merge commit.",
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "039ff799_d1462d4a",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "we can allow empty body.",
+      "range": {
+        "startLine": 257,
+        "startChar": 12,
+        "endLine": 257,
+        "endChar": 59
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c7f62da_c7824c90",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T11:58:50Z",
+      "side": 1,
+      "message": "Should we increment total_errors here in case here is no Trailer ?\n\nSimilar comment for above errors.",
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
