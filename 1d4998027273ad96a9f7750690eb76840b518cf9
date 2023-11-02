@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56d71f6f_2ea5aec4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T18:26:34Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f9e12fc_a9672f17",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T18:26:34Z",
+      "side": 1,
+      "message": "nit: start comment in new line for multiline comments",
+      "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2141f5a2_9fd67e60",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-02T18:26:34Z",
+      "side": 1,
+      "message": "this seems to be same as original? I guess you wanted to define this as a block instead of breaking the #ifdef. in that case you can move the enum to line 26 which would allow to define this within the else block together.",
+      "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
