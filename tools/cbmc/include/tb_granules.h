@@ -17,12 +17,13 @@
 /*
  * The granule states and gpt state
  */
-#define UNDELEGATED GRANULE_STATE_NS
+#define DATA GRANULE_STATE_DATA
 #define DELEGATED GRANULE_STATE_DELEGATED
 #define RD GRANULE_STATE_RD
-#define DATA GRANULE_STATE_DATA
 #define REC GRANULE_STATE_REC
+#define REC_AUX GRANULE_STATE_REC_AUX
 #define RTT GRANULE_STATE_RTT
+#define UNDELEGATED GRANULE_STATE_NS
 
 #define RMM_GRANULE_SIZE GRANULE_SIZE
 
@@ -32,6 +33,13 @@ enum granule_gpt {
 	GPT_REALM,
 	GPT_ROOT,
 	GPT_SECURE
+};
+
+enum granule_pas {
+	PAS_NS,
+	PAS_REALM,
+	PAS_ROOT,
+	PAS_SECURE
 };
 
 struct SPEC_granule {

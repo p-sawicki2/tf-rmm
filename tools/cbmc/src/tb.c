@@ -4,6 +4,7 @@
  */
 
 #include "tb.h"
+#include "tb_realm.h"
 #include "tb_common.h"
 #include "tb_granules.h"
 
@@ -22,6 +23,14 @@ void __init_global_state(unsigned long cmd)
 	case SMC_RMM_GRANULE_DELEGATE:
 	case SMC_RMM_GRANULE_UNDELEGATE: {
 			init_granule_and_page();
+			return;
+		}
+	case SMC_RMM_REALM_CREATE: {
+			/* One for the new rd, and two for the potentially continuous root rtt. */
+			init_granule_and_page();
+			init_granule_and_page();
+			init_granule_and_page();
+			init_realm_param_page();
 			return;
 		}
 	case SMC_RMM_FEATURES:
@@ -51,6 +60,9 @@ void tb_handle_smc(struct tb_regs *config)
 		break;
 	case SMC_RMM_GRANULE_UNDELEGATE:
 		result = smc_granule_undelegate(config->X1);
+		break;
+	case SMC_RMM_REALM_CREATE:
+		result = smc_realm_create(config->X1, config->X2);
 		break;
 	case SMC_RMM_VERSION:
 		smc_version(config->X1, &res);

@@ -23,7 +23,8 @@ if("${RMM_CBMC_STATIC_ANALYSIS}")
   list(APPEND rmm_implementation_srcs
     "${CMAKE_CURRENT_SOURCE_DIR}/src/tb.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/tb_common.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/tb_granules.c")
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/tb_granules.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/tb_realm.c")
 
   list(APPEND rmm_implementation_includes
     "-I${CMAKE_CURRENT_SOURCE_DIR}/include"
