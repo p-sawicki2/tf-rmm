@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a386926_16eafd9a",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-03T15:20:42Z",
+      "side": 1,
+      "message": "use of u_regsiter it discouraged. Use uint_64_t",
+      "range": {
+        "startLine": 77,
+        "startChar": 24,
+        "endLine": 77,
+        "endChar": 36
+      },
+      "revId": "6085a038e10780d699b43065ec34b86d93113bef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
