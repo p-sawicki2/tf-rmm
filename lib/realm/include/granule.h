@@ -77,14 +77,18 @@ static inline void __granule_assert_unlocked_invariants(struct granule *g,
 /* Must be called with g->lock held */
 static inline enum granule_state granule_get_state(struct granule *g)
 {
-	return g->state;
+	if (g != NULL) {
+		return g->state;
+	}
 }
 
 /* Must be called with g->lock held */
 static inline void granule_set_state(struct granule *g,
 				     enum granule_state state)
 {
-	g->state = state;
+	if (g != NULL) {
+		g->state = state;
+	}
 }
 
 /*
