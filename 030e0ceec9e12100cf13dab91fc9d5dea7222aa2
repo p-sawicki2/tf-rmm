@@ -38,6 +38,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c2845303_11ea6f9b",
+        "filename": "lib/measurement/include/measurement.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-03T15:16:45Z",
+      "side": 1,
+      "message": "these comments also need to be changed",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 30
+      },
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "94c53fb5_02276ee0",
         "filename": "lib/measurement/include/measurement.h",
         "patchSetId": 31
@@ -73,6 +96,30 @@
       "side": 1,
       "message": "Event misra_c_2012_rule_8_3_violation",
       "parentUuid": "94c53fb5_02276ee0",
+      "range": {
+        "startLine": 206,
+        "startChar": 23,
+        "endLine": 207,
+        "endChar": 26
+      },
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "281c59e0_3e669f6a",
+        "filename": "lib/measurement/include/measurement.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-03T15:16:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a8f6b9dd_7798a091",
       "range": {
         "startLine": 206,
         "startChar": 23,
