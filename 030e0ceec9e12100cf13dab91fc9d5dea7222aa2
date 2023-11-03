@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43879983_f73327da",
+        "filename": "lib/gic/src/gic.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-03T14:45:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb1e193b_92c8b90a",
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94c53fb5_02276ee0",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-11-03T14:12:41Z",
       "side": 1,
       "message": "why is this change needed ?",
+      "range": {
+        "startLine": 206,
+        "startChar": 23,
+        "endLine": 207,
+        "endChar": 26
+      },
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8f6b9dd_7798a091",
+        "filename": "lib/measurement/include/measurement.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-03T14:45:51Z",
+      "side": 1,
+      "message": "Event misra_c_2012_rule_8_3_violation",
+      "parentUuid": "94c53fb5_02276ee0",
       "range": {
         "startLine": 206,
         "startChar": 23,
@@ -66,6 +108,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21eeadf7_4fcbca2d",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-03T14:45:51Z",
+      "side": 1,
+      "message": "It was originally declared\nextern uintptr_t rmm_shared_buffer_start_va;\nin rmm_el3_runtime.c:\nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24560/35/lib/rmm_el3_ifc/src/rmm_el3_runtime.c#b18",
+      "parentUuid": "4e93046d_d3f3f90f",
+      "range": {
+        "startLine": 297,
+        "startChar": 0,
+        "endLine": 299,
+        "endChar": 44
+      },
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25cfeaa6_b4eac48e",
         "filename": "runtime/core/init.c",
         "patchSetId": 31
@@ -77,6 +143,30 @@
       "writtenOn": "2023-11-03T14:12:41Z",
       "side": 1,
       "message": "We could provide some justification for suppression in the comments.",
+      "range": {
+        "startLine": 55,
+        "startChar": 3,
+        "endLine": 55,
+        "endChar": 54
+      },
+      "revId": "030e0ceec9e12100cf13dab91fc9d5dea7222aa2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17103606_110b949c",
+        "filename": "runtime/core/init.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-03T14:45:51Z",
+      "side": 1,
+      "message": "Acknowledged\nDone",
+      "parentUuid": "25cfeaa6_b4eac48e",
       "range": {
         "startLine": 55,
         "startChar": 3,
