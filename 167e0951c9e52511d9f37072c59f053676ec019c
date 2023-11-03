@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb5c27ae_616d151c",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-03T12:36:03Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "ec402049_d5d0b01c",
+      "revId": "167e0951c9e52511d9f37072c59f053676ec019c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "75fe611b_0ead92a1",
         "filename": "tools/CBMC/CheckCBMC.cmake",
         "patchSetId": 17
@@ -71,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2a6c6dae_4ce6c351",
+        "filename": "tools/CBMC/CheckCBMC.cmake",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-03T12:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75fe611b_0ead92a1",
+      "revId": "167e0951c9e52511d9f37072c59f053676ec019c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e07fe25_0d65cdcb",
         "filename": "tools/CMakeLists.txt",
         "patchSetId": 17
@@ -82,6 +118,30 @@
       "writtenOn": "2023-11-02T18:40:31Z",
       "side": 1,
       "message": "small case.",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "167e0951c9e52511d9f37072c59f053676ec019c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d095d5e_c6eb3496",
+        "filename": "tools/CMakeLists.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-03T12:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e07fe25_0d65cdcb",
       "range": {
         "startLine": 11,
         "startChar": 18,
