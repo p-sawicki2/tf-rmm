@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5846232b_ed9ecc8b",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-03T12:33:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f9e12fc_a9672f17",
+      "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2141f5a2_9fd67e60",
         "filename": "lib/attestation/include/attestation_token.h",
         "patchSetId": 13
@@ -48,6 +66,24 @@
       "writtenOn": "2023-11-02T18:26:34Z",
       "side": 1,
       "message": "this seems to be same as original? I guess you wanted to define this as a block instead of breaking the #ifdef. in that case you can move the enum to line 26 which would allow to define this within the else block together.",
+      "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "361c5239_e9d9f440",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-03T12:33:21Z",
+      "side": 1,
+      "message": "That\u0027s right, Done",
+      "parentUuid": "2141f5a2_9fd67e60",
       "revId": "1d4998027273ad96a9f7750690eb76840b518cf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
