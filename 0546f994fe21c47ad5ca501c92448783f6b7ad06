@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1263799_733e659a",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2c1e9c1_2684a724",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 12
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9829d45_0a39f2bd",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-02T11:58:50Z",
       "side": 1,
       "message": "nit: suggest \"title_type\" as name",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 21
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b671e0ba_32f5536c",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9829d45_0a39f2bd",
       "range": {
         "startLine": 101,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba05d5f8_bb1e2b2b",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Have changed this to a warning instead of an error",
+      "parentUuid": "122032b9_00361ac8",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 21
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da8613cd_3f5b5657",
@@ -83,6 +155,24 @@
       "writtenOn": "2023-11-02T11:58:50Z",
       "side": 1,
       "message": "we need to have a bypass for Merge commits like this none :\n\nhttps://github.com/TF-RMM/tf-rmm/commit/52f36e637a3ec3c403f9ecdadd44dec378c8a157\n\nWe can ignore commit message checks for merge commit.",
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6693cf4_be8d7060",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Good point. Have added a bypass in CheckPatch.cmake.",
+      "parentUuid": "da8613cd_3f5b5657",
       "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f28dade9_3b20f47f",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "039ff799_d1462d4a",
+      "range": {
+        "startLine": 257,
+        "startChar": 12,
+        "endLine": 257,
+        "endChar": 59
+      },
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c7f62da_c7824c90",
@@ -123,6 +237,24 @@
       "writtenOn": "2023-11-02T11:58:50Z",
       "side": 1,
       "message": "Should we increment total_errors here in case here is no Trailer ?\n\nSimilar comment for above errors.",
+      "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbe3673b_488155a6",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-06T14:04:44Z",
+      "side": 1,
+      "message": "Good catch, forgot to increment errors for the new checks. Have added them now",
+      "parentUuid": "1c7f62da_c7824c90",
       "revId": "0546f994fe21c47ad5ca501c92448783f6b7ad06",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
