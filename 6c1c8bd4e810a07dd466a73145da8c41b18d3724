@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54fdeec9_0163561c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "Minor comments",
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bf88fcb_e492ede5",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "nit: correct the path here.",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 13
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f745653e_a0542ae9",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "add a step for installing via deb package.\n\nThe recommended way for installing CBMC is via the pre-built package found \u003clocation\u003e.\n\n\u003ccmd line to install\u003e.",
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48326743_9d085451",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "nit: \"The invocation of CBMC tool is..\"",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 8
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e33009b_8febc89e",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "change path.",
+      "range": {
+        "startLine": 37,
+        "startChar": 25,
+        "endLine": 37,
+        "endChar": 29
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "992fe105_e33b0726",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "suggest: \"CBMC Assert\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 6
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0e71eab_03ad1de8",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "This header can be at the same level as \"CBMC in RMM\" header.\n\nsame comments for below.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 6
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00fb1fcc_bdbd1c43",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "Suggest: \"CBMC Analysis\"",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 8
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cddd61c1_fe92379a",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "\"CBMC Coverage\"",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 8
+      },
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1eca8715_a737c679",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-07T16:34:54Z",
+      "side": 1,
+      "message": "Add a note about the baseline results present in the RMM source tree as well.",
+      "revId": "6c1c8bd4e810a07dd466a73145da8c41b18d3724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
