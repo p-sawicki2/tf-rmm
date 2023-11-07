@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "024a4907_b6a7151d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-07T10:33:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa05031a_26263766",
+      "revId": "eef3874da5ac0742a70000abb9c633f6cccafd02",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6a118c5_2a5ffa6b",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-11-06T17:02:35Z",
       "side": 1,
       "message": "\"... must atleast have a title\"",
+      "range": {
+        "startLine": 257,
+        "startChar": 46,
+        "endLine": 257,
+        "endChar": 58
+      },
+      "revId": "eef3874da5ac0742a70000abb9c633f6cccafd02",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7877f029_b18ceb70",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-07T10:33:21Z",
+      "side": 1,
+      "message": "Thanks, forgot to change it after making commit message body optional",
+      "parentUuid": "c6a118c5_2a5ffa6b",
       "range": {
         "startLine": 257,
         "startChar": 46,
