@@ -19,6 +19,9 @@
 static struct sysreg_data sysregs[SYSREG_MAX_CBS];
 static struct sysreg_data sysregs_snapshot[SYSREG_MAX_CBS];
 static unsigned int installed_cb_idx;
+
+static struct simd_vreg_data simd_vregs[NUM_VREGS];
+
 static unsigned int current_cpuid;
 
 /*
@@ -130,6 +133,48 @@ int host_util_set_default_sysreg_cb(char *name, u_register_t init)
 				       &sysreg_wr_cb, init);
 }
 
+/* Read an FPU Q register */
+static simd_vreg read_fpu_vreg(unsigned int idx)
+{
+	return simd_vregs[idx].value[current_cpuid];
+}
+
+simd_vreg host_util_read_simd_vreg(enum simd_variant variant, unsigned int idx)
+{
+	simd_vreg val;
+
+	switch (variant) {
+		case FPU:
+			val = read_fpu_vreg(idx);
+			break;
+	}
+
+	return val;
+}
+
+/* Write to an FPU Q register. */
+static void write_fpu_vreg(simd_vreg val, unsigned int idx)
+{
+	simd_vregs[idx].value[current_cpuid] = val;
+}
+
+void host_util_write_simd_vreg(enum simd_variant variant, int idx,
+			       simd_vreg val)
+{
+	switch (variant) {
+		case FPU:
+			write_fpu_vreg(val, idx);
+			break;
+	}
+}
+
+void host_util_zero_simd_vregs(void)
+{
+	(void)memset((void *)simd_vregs, 0,
+		     sizeof(struct simd_vreg_data) * NUM_VREGS);
+
+}
+
 unsigned long host_util_get_granule_base(void)
 {
 	return (unsigned long)granules_buffer;
@@ -223,6 +268,20 @@ void host_util_setup_sysreg_and_boot_manifest(void)
 						RMM_EL3_MANIFEST_VERS_MAJOR,
 						RMM_EL3_MANIFEST_VERS_MINOR);
 	boot_manifest->plat_data = (uintptr_t)NULL;
+}
+
+void host_util_setup_simd_reg(void)
+{
+	simd_vreg init = { .q = {0} };
+
+	for (unsigned int vreg_idx = 0; vreg_idx < NUM_VREGS; vreg_idx++)
+	{
+		for (unsigned int cpu_idx = 0; cpu_idx < MAX_CPUS; cpu_idx++)
+		{
+			simd_vregs[vreg_idx].value[cpu_idx] = init;
+		}
+
+	}
 }
 
 int host_util_rec_run(unsigned long *regs)
