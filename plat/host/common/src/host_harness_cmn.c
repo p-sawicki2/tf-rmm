@@ -244,6 +244,11 @@ u_register_t host_read_sysreg(char *reg_name)
 	return callbacks->rd_cb(callbacks->reg);
 }
 
+simd_vreg host_read_simd_vreg(enum simd_variant variant, unsigned int idx)
+{
+	return host_util_read_simd_vreg(variant, idx);
+}
+
 void host_write_sysreg(char *reg_name, u_register_t v)
 {
 	struct sysreg_cb *callbacks = host_util_get_sysreg_cb(reg_name);
@@ -257,4 +262,10 @@ void host_write_sysreg(char *reg_name, u_register_t v)
 			callbacks->wr_cb(v, callbacks->reg);
 		}
 	}
+}
+
+void host_write_simd_vreg(enum simd_variant variant, unsigned int idx,
+			  simd_vreg val)
+{
+	return host_util_write_simd_vreg(variant, idx, val);
 }

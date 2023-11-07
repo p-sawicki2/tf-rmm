@@ -6,6 +6,7 @@
 #ifndef HOST_UTILS_H
 #define HOST_UTILS_H
 
+#include <simd_def.h>
 #include <stddef.h>
 #include <types.h>
 
@@ -62,6 +63,13 @@ struct sysreg_data {
 	char name[MAX_SYSREG_NAME_LEN + 1U];
 	struct sysreg_cb callbacks;
 	u_register_t value[MAX_CPUS];
+};
+
+/*
+ * Structure to hold values of an emulated SIMD vreg.
+ */
+struct simd_vreg_data {
+	simd_vreg value[MAX_CPUS];
 };
 
 /*
@@ -133,6 +141,33 @@ void host_util_restore_sysreg_snapshot(void);
 void host_util_zero_sysregs_and_cbs(void);
 
 /*
+ * Read the value of a SIMD vector register.
+ *
+ * Arguments:
+ *	variant - Which type of SIMD is being emulated (FPU or SVE). This
+ *		  determines whether the FPU Q vreg or the SVE Z vreg is read.
+ *	idx - Index identifying the vreg to be read.
+ */
+simd_vreg host_util_read_simd_vreg(enum simd_variant variant, unsigned int idx);
+
+/*
+ * Write a value to a SIMD vector register.
+ *
+ * Arguments:
+ *	variant - Which type of SIMD is being emulated (FPU or SVE). This
+ *		  determines whether the FPU Q vreg or the SVE Z vreg is written
+ *		  to.
+ *	idx - Index identifying the vreg to be read.
+ */
+void host_util_write_simd_vreg(enum simd_variant variant, int idx,
+			       simd_vreg val);
+
+/*
+ * Zero all SIMD vreg values.
+ */
+void host_util_zero_simd_vregs(void);
+
+/*
  * Return the configured address for the granule base.
  */
 unsigned long host_util_get_granule_base(void);
@@ -152,6 +187,11 @@ unsigned char *host_util_get_el3_rmm_shared_buffer(void);
  * setting up callbacks for sysreg access.
  */
 void host_util_setup_sysreg_and_boot_manifest(void);
+
+/*
+ * Initialises the SIMD registers.
+ */
+void host_util_setup_simd_reg(void);
 
 /*
  * Runs the realm entrypoint as programmed in elr_el2 and resets
