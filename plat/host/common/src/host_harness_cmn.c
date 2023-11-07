@@ -238,6 +238,23 @@ u_register_t host_read_sysreg(char *reg_name)
 	return callbacks->rd_cb(callbacks->reg);
 }
 
+simd_vreg host_read_simd_vreg(unsigned int idx)
+{
+	struct simd_vreg_cb *callbacks = host_util_get_simd_vreg_cb(idx);
+
+	simd_vreg default_val = { .q = { 0 } };
+
+	if (callbacks == NULL) {
+		return default_val;
+	}
+
+	if (callbacks->rd_cb == NULL) {
+		return default_val;
+	}
+
+	return callbacks->rd_cb(callbacks->reg);
+}
+
 void host_write_sysreg(char *reg_name, u_register_t v)
 {
 	struct sysreg_cb *callbacks = host_util_get_sysreg_cb(reg_name);
@@ -249,6 +266,22 @@ void host_write_sysreg(char *reg_name, u_register_t v)
 	if (callbacks != NULL) {
 		if (callbacks->wr_cb != NULL) {
 			callbacks->wr_cb(v, callbacks->reg);
+		}
+	}
+}
+
+void host_write_simd_vreg(enum simd_variant variant, unsigned int idx,
+			  simd_vreg v)
+{
+	struct simd_vreg_cb *callbacks = host_util_get_simd_vreg_cb(idx);
+
+	/*
+	 * Ignore the write if the register does not have a write
+	 * callback installed.
+	 */
+	if (callbacks != NULL) {
+		if (callbacks->wr_cb != NULL) {
+			callbacks->wr_cb(variant, v, callbacks->reg);
 		}
 	}
 }

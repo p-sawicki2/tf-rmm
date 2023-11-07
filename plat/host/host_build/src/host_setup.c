@@ -283,6 +283,8 @@ int main(int argc, char *argv[])
 
 	host_util_setup_sysreg_and_boot_manifest();
 
+	host_util_setup_simd_reg();
+
 	plat_setup(0UL,
 		   RMM_EL3_IFC_ABI_VERSION,
 		   RMM_EL3_MAX_CPUS,

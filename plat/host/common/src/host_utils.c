@@ -19,6 +19,10 @@
 static struct sysreg_data sysregs[SYSREG_MAX_CBS];
 static struct sysreg_data sysregs_snapshot[SYSREG_MAX_CBS];
 static unsigned int installed_cb_idx;
+
+static struct simd_vreg_data simd_vregs[NUM_Q_REGS];
+static struct simd_vreg_cb simd_vreg_cbs;
+
 static unsigned int current_cpuid;
 
 /*
@@ -47,11 +51,40 @@ static u_register_t sysreg_rd_cb(u_register_t *reg)
 }
 
 /*
+ * Generic callback to access a SIMD vreg for reading.
+ */
+static simd_vreg simd_vreg_rd_cb(simd_vreg *reg)
+{
+	return *reg;
+}
+
+/*
  * Generic callback to access a sysreg for writing.
  */
 static void sysreg_wr_cb(u_register_t val, u_register_t *reg)
 {
 	*reg = val;
+}
+
+/*
+ * Callback for writing specifically to an FPU Q vreg.
+ */
+static void fpu_vreg_wr_cb(simd_vreg val, simd_vreg *reg)
+{
+	*reg = val;
+}
+
+/*
+ * Generic callback to access a SIMD vreg for writing.
+ */
+static void simd_vreg_wr_cb(enum simd_variant variant, simd_vreg val,
+			    simd_vreg *reg)
+{
+	switch (variant) {
+		case FPU:
+			fpu_vreg_wr_cb(val, reg);
+			break;
+	}
 }
 
 struct sysreg_cb *host_util_get_sysreg_cb(char *name)
@@ -71,6 +104,17 @@ struct sysreg_cb *host_util_get_sysreg_cb(char *name)
 	}
 
 	return (struct sysreg_cb *)NULL;
+}
+
+struct simd_vreg_cb *host_util_get_simd_vreg_cb(unsigned int idx)
+{
+	if (idx >= NUM_Q_REGS) {
+		return (struct simd_vreg_cb *)NULL;
+	}
+
+	simd_vreg_cbs.reg = &(simd_vregs[idx].value[current_cpuid]);
+
+	return &simd_vreg_cbs;
 }
 
 int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
@@ -103,6 +147,18 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
 	return -ENOMEM;
 }
 
+void host_util_set_simd_vreg_cb(simd_vreg_rd_cb_t rd_cb,
+				simd_vreg_wr_cb_t wr_cb)
+{
+	/*
+	 * We use the same read and write callbacks for each SIMD vreg because
+	 * they are general-purpose registers.
+	 */
+	simd_vreg_cbs.rd_cb = rd_cb;
+	simd_vreg_cbs.wr_cb = wr_cb;
+	simd_vreg_cbs.reg = (simd_vreg *)NULL;
+}
+
 void host_util_take_sysreg_snapshot(void)
 {
 	memcpy((void *)&sysregs_snapshot[0], (void *)&sysregs[0],
@@ -124,10 +180,21 @@ void host_util_zero_sysregs_and_cbs(void)
 	installed_cb_idx = 0U;
 }
 
+void host_util_zero_simd_vregs(void)
+{
+	(void)memset((void *)simd_vregs, 0,
+		     sizeof(struct simd_vreg_data) * NUM_Q_REGS);
+
+}
+
 int host_util_set_default_sysreg_cb(char *name, u_register_t init)
 {
 	return host_util_set_sysreg_cb(name, &sysreg_rd_cb,
 				       &sysreg_wr_cb, init);
+}
+
+void host_util_set_default_simd_vreg_cb(void) {
+	return host_util_set_simd_vreg_cb(&simd_vreg_rd_cb, &simd_vreg_wr_cb);
 }
 
 unsigned long host_util_get_granule_base(void)
@@ -223,6 +290,22 @@ void host_util_setup_sysreg_and_boot_manifest(void)
 						RMM_EL3_MANIFEST_VERS_MAJOR,
 						RMM_EL3_MANIFEST_VERS_MINOR);
 	boot_manifest->plat_data = (uintptr_t)NULL;
+}
+
+void host_util_setup_simd_reg(void)
+{
+	simd_vreg init = { .q = {0} };
+
+	host_util_set_default_simd_vreg_cb();
+
+	for (unsigned int vreg_idx = 0; vreg_idx < NUM_Q_REGS; vreg_idx++)
+	{
+		for (unsigned int cpu_idx = 0; cpu_idx < MAX_CPUS; cpu_idx++)
+		{
+			simd_vregs[vreg_idx].value[cpu_idx] = init;
+		}
+
+	}
 }
 
 int host_util_rec_run(unsigned long *regs)
