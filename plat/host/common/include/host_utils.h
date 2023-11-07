@@ -6,6 +6,7 @@
 #ifndef HOST_UTILS_H
 #define HOST_UTILS_H
 
+#include <simd_def.h>
 #include <stddef.h>
 #include <types.h>
 
@@ -31,6 +32,17 @@
 typedef u_register_t (*rd_cb_t)(u_register_t *reg);
 
 /*
+ * Callback prototype invoked when a SIMD vreg is read.
+ *
+ * Arguments:
+ *      reg - Pointer to the emulated register
+ *
+ * Returns:
+ *      Value read from the emulated vreg
+ */
+typedef simd_vreg (*simd_vreg_rd_cb_t)(simd_vreg *reg);
+
+/*
  * Callback prototype invoked when a sysreg is written.
  *
  * Arguments:
@@ -41,6 +53,22 @@ typedef u_register_t (*rd_cb_t)(u_register_t *reg);
  *	Void
  */
 typedef void (*wr_cb_t)(u_register_t val, u_register_t *reg);
+
+/*
+ * Callback prototype invoked when a SIMD vreg is written.
+ *
+ * Arguments:
+ *  variant - Which type of SIMD is being emulated (FPU or SVE). This determines
+ *	      whether the FPU Q vreg or the SVE Z vreg is written to.
+ *	val - Value to be written to the vreg
+ *	reg - Pointer to the emulated vreg
+ *
+ * Returns:
+ *	Void
+ */
+typedef void (*simd_vreg_wr_cb_t)(enum simd_variant variant,
+				  simd_vreg val,
+				  simd_vreg *reg);
 
 /*
  * Structure to hold the callback pointers for register access emulation.
@@ -65,6 +93,26 @@ struct sysreg_data {
 };
 
 /*
+ * Structure to hold the callback pointers for SIMD vreg access emulation.
+ */
+struct simd_vreg_cb {
+	simd_vreg_rd_cb_t rd_cb;
+	simd_vreg_wr_cb_t wr_cb;
+	/*
+	 * Pointer to the instance of the register corresponding to the
+	 * current CPU
+	 */
+	simd_vreg *reg;
+};
+
+/*
+ * Structure to hold values of an emulated SIMD vreg.
+ */
+struct simd_vreg_data {
+	simd_vreg value[MAX_CPUS];
+};
+
+/*
  * Return the callbacks for a given sysreg or NULL
  * if no callbacks are found.
  *
@@ -74,6 +122,15 @@ struct sysreg_data {
  *	       or it will be truncated.
  */
 struct sysreg_cb *host_util_get_sysreg_cb(char *name);
+
+/*
+ * Return the callbacks for a given SIMD vreg or NULL
+ * if no callbacks are found.
+ *
+ * Arguments:
+ *	idx - Index identifying the vreg.
+ */
+struct simd_vreg_cb *host_util_get_simd_vreg_cb(int idx);
 
 /*
  * Setup callbacks for sysreg read and write operations.
@@ -97,6 +154,23 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
 			    u_register_t init);
 
 /*
+ * Setup callbacks for SIMD vreg read and write operations.
+ *
+ * This API allows to setup callbacks for each vreg to be called upon
+ * read or write operations. This allows to control what to return on
+ * a read or how to process a write.
+ *
+ * Arguments:
+ *	rd_cb - Callback to be invoked on a read operation.
+ *	wr_cb - Callback to be invoked on a write operation.
+ *
+ * Returns:
+ *	Void
+ */
+void host_util_set_simd_vreg_cb(simd_vreg_rd_cb_t rd_cb,
+				simd_vreg_wr_cb_t wr_cb);
+
+/*
  * Setup generic callbacks for sysreg read and write operations.
  *
  * This API allows to setup generic callbacks for each sysreg to be called upon
@@ -112,6 +186,17 @@ int host_util_set_sysreg_cb(char *name, rd_cb_t rd_cb, wr_cb_t wr_cb,
  *	0 on success or a negative error code otherwise.
  */
 int host_util_set_default_sysreg_cb(char *name, u_register_t init);
+
+/*
+ * Setup generic callbacks for vreg read and write operations.
+ *
+ * This API allows the setup of generic callbacks for each SIMD vreg to be
+ * called upon read or write operations.
+ *
+ * Returns:
+ *	0 on success or a negative error code otherwise.
+ */
+void host_util_set_default_simd_vreg_cb(void);
 
 /*
  * Save the sysreg state across all PEs in the system along with registered
@@ -152,6 +237,11 @@ unsigned char *host_util_get_el3_rmm_shared_buffer(void);
  * setting up callbacks for sysreg access.
  */
 void host_util_setup_sysreg_and_boot_manifest(void);
+
+/*
+ * Sets up callbacks for access to SIMD registers and initialises the registers.
+ */
+void host_util_setup_simd_reg(void);
 
 /*
  * Runs the realm entrypoint as programmed in elr_el2 and resets

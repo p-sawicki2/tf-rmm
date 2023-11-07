@@ -5,6 +5,7 @@
 #ifndef HOST_HARNESS_H
 #define HOST_HARNESS_H
 
+#include <simd_def.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -13,6 +14,10 @@
 /* Fake host wrapper to read and write sysregs */
 u_register_t host_read_sysreg(char *reg_name);
 void host_write_sysreg(char *reg_name, u_register_t v);
+
+/* Fake host wrapper to read and write SIMD vregs */
+simd_vreg host_read_simd_vreg(int idx);
+void host_write_simd_vreg(enum simd_variant variant, int idx, simd_vreg v);
 
 struct spinlock_s;
 /* Fake host harness to lock and release spin lock */
