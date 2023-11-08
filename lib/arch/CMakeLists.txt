@@ -9,6 +9,11 @@ target_link_libraries(rmm-lib-arch
     PRIVATE rmm-lib-common
             rmm-lib-smc)
 
+if(RMM_ARCH STREQUAL fake_host)
+	target_link_libraries(rmm-lib-arch
+		PRIVATE rmm-platform)
+endif()
+
 target_include_directories(rmm-lib-arch
     PUBLIC  "include"
             "include/${RMM_ARCH}"

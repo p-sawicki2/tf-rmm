@@ -3,16 +3,39 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <host_utils.h>
 #include <simd.h>
+#include <stdlib.h>
+#include <string.h>
 
+/*
+ * Save current FPU Q registers to memory pointed by `regs`.
+ */
 void fpu_save_registers(struct fpu_regs *regs)
 {
-	(void)regs;
+	for (unsigned int i = 0U; i < FPU_VEC_REG_NUM; i++) {
+		simd_vreg val = host_read_simd_vreg(FPU, i);
+
+		(void)memcpy(&regs->q[(size_t)i * FPU_VEC_REG_SIZE],
+			     &val.q,
+			     FPU_VEC_REG_SIZE);
+	}
 }
 
+/*
+ * Restore FPU context from memory pointed by `regs` to FPU Q registers.
+ */
 void fpu_restore_registers(struct fpu_regs *regs)
 {
-	(void)regs;
+	for (unsigned int i = 0U; i < FPU_VEC_REG_NUM; i++) {
+		simd_vreg val;
+
+		(void)memcpy(&val.q,
+			     &regs->q[(size_t)i * FPU_VEC_REG_SIZE],
+			     FPU_VEC_REG_SIZE);
+
+		host_write_simd_vreg(FPU, i, val);
+	}
 }
 
 uint32_t sve_rdvl(void)
