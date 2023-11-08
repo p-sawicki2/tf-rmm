@@ -34,7 +34,7 @@ commits:
 
 .. code::
 
-    <type>[optional scope]: <description>
+    <type>[scope]: <description>
 
     [optional body]
 
@@ -82,6 +82,8 @@ The following example commit message demonstrates the use of the
 
     Change-Id: ...
     Signed-off-by: ...
+
+In addition, the width of the commit message must be no more than 72 characters.
 
 .. _mandated-trailers:
 
