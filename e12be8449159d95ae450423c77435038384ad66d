@@ -16,6 +16,24 @@
       "message": "same comment as previous patch . Pass CBMC to the compiler and can check #ifndef CBMC here.",
       "revId": "e12be8449159d95ae450423c77435038384ad66d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6d838cf_104e5608",
+        "filename": "lib/common/include/utils_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-09T09:34:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a877d96_28111f5d",
+      "revId": "e12be8449159d95ae450423c77435038384ad66d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
