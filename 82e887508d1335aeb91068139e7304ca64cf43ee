@@ -1,0 +1,1014 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "021ee2e3_e82e6c04",
+        "filename": "docs/design/diagrams/low_va_region.png",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "The low VA range is as follows:\n\nstruct xlat_mmap_region regions[COMMON_REGIONS] \u003d {\n\t\tRMM_CODE,\n\t\tRMM_RO,\n\t\tRMM_RW,\n\t\tRMM_SHARED\n\t};\n\nAlso possibly additional platform regions. So instead of a diagram, it can be list.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e52d9799_345d6dee",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Also show the stack size in the picture using relevant macro.\n\nrename the file as high_va_memory_map.png",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2daf9d6_f1c59535",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "granules",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 8
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07c9f231_261a32bb",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Can we have a link to the RMM specification but the same reference used by readme page (so we dont have to change the spec link everywhere ?).\n\nIf the above is not possible, this is fine.",
+      "range": {
+        "startLine": 66,
+        "startChar": 49,
+        "endLine": 66,
+        "endChar": 66
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0edc84ac_06852e20",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": ".. range is used to map RMM ...\n\nAlso add shared memory area.",
+      "range": {
+        "startLine": 85,
+        "startChar": 40,
+        "endLine": 85,
+        "endChar": 47
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e6d23e_7ba41ba8",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 86,
+        "startChar": 19,
+        "endLine": 86,
+        "endChar": 52
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79d61b87_c7fb2bd3",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "...down to an address corresponding to the maximum VA...",
+      "range": {
+        "startLine": 88,
+        "startChar": 3,
+        "endLine": 88,
+        "endChar": 21
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b510577_9fa3925b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "..... invalid addresses between both ranges that is not mapped to any any of them as shown in the figure above.",
+      "range": {
+        "startLine": 92,
+        "startChar": 36,
+        "endLine": 92,
+        "endChar": 41
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0bf72f0_4c277235",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "This sentence can be removed and the xlat lib description can be pasted here.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 76
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a70bfc8_dbe0c7ed",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "make this and below point a Level 3 sub header.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "940212b2_817dc815",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove the diagram.",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 15
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e331f053_ed5b5cb2",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "\"as\"",
+      "range": {
+        "startLine": 131,
+        "startChar": 9,
+        "endLine": 131,
+        "endChar": 11
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73360406_f8110cb3",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove as this is repetition of info.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 23
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d36f9e7c_9ae3420a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Level 4 subheader.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3900928a_f124f48e",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "The assigned VA space for `slot-buffer` is divided into `slots` of GRANULE_SIZE each.",
+      "range": {
+        "startLine": 146,
+        "startChar": 16,
+        "endLine": 147,
+        "endChar": 42
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de3e00ba_f4a3a9cf",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "move this paragraph above line 162 as this is more related there.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2905871_aaefebda",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "\"..granule to be mapped..\"",
+      "range": {
+        "startLine": 151,
+        "startChar": 7,
+        "endLine": 151,
+        "endChar": 11
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e66029a9_cb360b65",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "The `slot-buffer` design...",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 5
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79f49620_270e7875",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "merge with para at line 149",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "993b83ec_5f12a37d",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "this is again mentioned at bottom of section. So remove from here.",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 62
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cec5d63a_86b8165e",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "ensure this matches the name in code/spec. `Rmi_rec_run` is the name in code.",
+      "range": {
+        "startLine": 186,
+        "startChar": 17,
+        "endLine": 186,
+        "endChar": 26
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed9dbf4e_3da04d2c",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "ensure that the formatting is consistent. `slot-buffer` is the formatting used above.",
+      "range": {
+        "startLine": 189,
+        "startChar": 7,
+        "endLine": 189,
+        "endChar": 21
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85b5d408_48e08dc1",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 189,
+        "startChar": 65,
+        "endLine": 190,
+        "endChar": 6
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f5f6ed0_e9da44e9",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "...own private translation tables for such...",
+      "range": {
+        "startLine": 190,
+        "startChar": 15,
+        "endLine": 190,
+        "endChar": 38
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07ab7d42_67894837",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": ".... a particular `slot` has a fixed VA on every CPU. Since the Translation tables are private to a CPU, the mapping to the `slot` is private to the CPU. This allows the interruption and migration of a REC (vCPU) to another CPU with live memory allocations in RMM . An example of this scenario is when the Realm attestation token is being created in RMM, a pending IRQ can cause RMM to yield to NS Host with live memory allocations in heap. The NS Host can schedule the REC on another CPU, and since the slot mapping for the live memory allocations remain at the same VA, the interrupted realm token creation can continue.",
+      "range": {
+        "startLine": 191,
+        "startChar": 13,
+        "endLine": 191,
+        "endChar": 35
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dff3ad06_c294dd4b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "use same formatting.\n\n\"The `slot-buffer` implementation in RMM also has some performance optimizations like caching of TTE\u0027s to avoid walking the Stage 1 translation table entries for every map and unmap operation.\"",
+      "range": {
+        "startLine": 195,
+        "startChar": 19,
+        "endLine": 195,
+        "endChar": 31
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb10df11_20c5d24b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "mappings as required for the RMI command, .the approach..",
+      "range": {
+        "startLine": 199,
+        "startChar": 35,
+        "endLine": 199,
+        "endChar": 47
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a716ac6b_4be3d944",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "level 4 subheader",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a44672a_ca9626f6",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Each CPU maps its stack to the High VA region which means that stack has the same VA  on all the CPUs and is private to the CPU.",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 32
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57f11f40_00761a4f",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "start of stack and maps it to the designated High VA address.",
+      "range": {
+        "startLine": 221,
+        "startChar": 3,
+        "endLine": 221,
+        "endChar": 20
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b4ed930_70fd5065",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "VA mapping also includes a `gap` at the end of stack VA to detect any stack overflows. The `gap` is ` page at the moment.",
+      "range": {
+        "startLine": 224,
+        "startChar": 33,
+        "endLine": 224,
+        "endChar": 34
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "939fe70b_53e3ac36",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove, this will go into regular panic() handling and does not need mentioning here.",
+      "range": {
+        "startLine": 225,
+        "startChar": 26,
+        "endLine": 227,
+        "endChar": 41
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07ff20d_2d6003d6",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Unmapped or VA space is restrited so no mapping can be done ?",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 9
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e014296d_df57b76a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "merge with section above at line 95.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84fb70ab_a63e973a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "\"regime\" is used for a specific purposes.  Stage 1 is not a regime I think. We can say EL20 translation regime.\n\nThe |RMM| stage 1 translation table management is done by `xlat` library in the source tree.",
+      "range": {
+        "startLine": 235,
+        "startChar": 30,
+        "endLine": 235,
+        "endChar": 36
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adc2994c_96d42c38",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "description -\u003e configuration",
+      "range": {
+        "startLine": 242,
+        "startChar": 27,
+        "endLine": 242,
+        "endChar": 39
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e2a85c8_5cc0d00b",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "configuration",
+      "range": {
+        "startLine": 244,
+        "startChar": 3,
+        "endLine": 244,
+        "endChar": 8
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4092430b_88296cbc",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "for",
+      "range": {
+        "startLine": 248,
+        "startChar": 4,
+        "endLine": 248,
+        "endChar": 6
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "423b4847_775d2d23",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "A context can be shared by several CPUs if they share the same VA configuration and mappings (like the low VA region).",
+      "range": {
+        "startLine": 249,
+        "startChar": 31,
+        "endLine": 251,
+        "endChar": 10
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5d0671b_cfa83c46",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "by specifying the ``TRANSIENT`` flag.",
+      "range": {
+        "startLine": 253,
+        "startChar": 32,
+        "endLine": 253,
+        "endChar": 66
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "febd6ae1_362946e4",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "is loaded as a .bin file by the EL3 loader.",
+      "range": {
+        "startLine": 261,
+        "startChar": 51,
+        "endLine": 261,
+        "endChar": 52
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7ea9329_6575f62a",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": ".. in the source tree.",
+      "range": {
+        "startLine": 263,
+        "startChar": 55,
+        "endLine": 263,
+        "endChar": 56
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a75151d5_99d1cbce",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove, already mentioned as a property for low VA region.",
+      "range": {
+        "startLine": 269,
+        "startChar": 24,
+        "endLine": 270,
+        "endChar": 78
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ff62225_027094f3",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "we have a separate Glossary page. Use that instead defining a local one here.",
+      "range": {
+        "startLine": 283,
+        "startChar": 0,
+        "endLine": 283,
+        "endChar": 8
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c20fe527_2d19dfa9",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "remove this header.",
+      "range": {
+        "startLine": 295,
+        "startChar": 0,
+        "endLine": 296,
+        "endChar": 10
+      },
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23063571_923f3591",
+        "filename": "docs/design/memory-management.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:42:02Z",
+      "side": 1,
+      "message": "Need a closure line.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
