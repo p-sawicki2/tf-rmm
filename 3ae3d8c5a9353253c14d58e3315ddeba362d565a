@@ -22,6 +22,30 @@
       },
       "revId": "3ae3d8c5a9353253c14d58e3315ddeba362d565a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5470dfda_9138f9e6",
+        "filename": "docs/process/commit-style.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T11:20:02Z",
+      "side": 1,
+      "message": "...there may be patches which span multiple scopes.*",
+      "parentUuid": "50f39999_3636984b",
+      "range": {
+        "startLine": 37,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 16
+      },
+      "revId": "3ae3d8c5a9353253c14d58e3315ddeba362d565a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
