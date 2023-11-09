@@ -46,6 +46,30 @@
       },
       "revId": "3ae3d8c5a9353253c14d58e3315ddeba362d565a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7ca5fe9_84b9e6f9",
+        "filename": "docs/process/commit-style.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-09T14:33:59Z",
+      "side": 1,
+      "message": "Changed it back to optional here, will also update the commit style checker.",
+      "parentUuid": "5470dfda_9138f9e6",
+      "range": {
+        "startLine": 37,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 16
+      },
+      "revId": "3ae3d8c5a9353253c14d58e3315ddeba362d565a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
