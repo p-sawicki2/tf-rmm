@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50f39999_3636984b",
+        "filename": "docs/process/commit-style.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T11:19:13Z",
+      "side": 1,
+      "message": "Sorry, on further thoughts, it may be better to keep the scope as optional as there may be patches which scopes. In such cases, the scope can be left out and the commit description can explain what the patch scope is (maybe it is just coding style fixes across several modules etc). \n\nCan I ask you to keep scope as optional in the commit style checker as well ?",
+      "range": {
+        "startLine": 37,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 16
+      },
+      "revId": "3ae3d8c5a9353253c14d58e3315ddeba362d565a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
