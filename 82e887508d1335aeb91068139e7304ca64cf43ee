@@ -1027,6 +1027,23 @@
       "message": "Need a closure line.",
       "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f33a8e6a_786711e4",
+        "filename": "docs/readme.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-09T14:52:24Z",
+      "side": 1,
+      "message": "Can be make this a hyperlink to the project in coverity_scan_online ?\n\nIf that is not possible, then we can store this svg file in our repo and then make this a hyperlink.",
+      "revId": "82e887508d1335aeb91068139e7304ca64cf43ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
