@@ -88,10 +88,32 @@ struct granule *pa_to_granule_metadata_ptr(uint64_t addr)
 	uint64_t idx = (addr - (uint64_t)granules_buffer)/GRANULE_SIZE;
 
 	__ASSERT(idx >= 0, "internal: `_pa_to_granule_metadata_ptr`, addr is in lower range");
-	__ASSERT(idx < RMM_MAX_GRANULES,
-		"internal: `_pa_to_granule_metadata_ptr`, addr is in upper range");
+	__ASSERT(idx < RMM_MAX_GRANULES, "internal: `_pa_to_granule_metadata_ptr`, "
+					 "addr is in upper range");
 
 	return &granules[idx];
+}
+
+uint64_t granule_metadata_ptr_to_pa(struct granule *g_ptr)
+{
+	return (uint64_t)granules_buffer + (g_ptr - granules) * GRANULE_SIZE;
+}
+
+void *pa_to_granule_buffer_ptr(uint64_t addr)
+{
+	__ASSERT((unsigned char *)addr - granules_buffer >= 0,
+		"internal: `_pa_to_granule_buffer_ptr`, addr is in lower range");
+	/*
+	 * CBMC has difficulty doing an integer->object mapping, when the
+	 * integer is the address of the expected object, and the integer is not
+	 * derived from a pointer.
+	 * So instead of simply returning addr we need to tell CBMC that the
+	 * object we are looking for is in the `granules_buffer` array, at an
+	 * offset. To calculate the offset we can use `addr`, and the address of
+	 * `granules_buffer`.
+	 * For details see https://github.com/diffblue/cbmc/issues/8103
+	 */
+	return (void *)granules_buffer + ((unsigned char *)addr - granules_buffer);
 }
 
 bool valid_granule_metadata_ptr(struct granule *p)

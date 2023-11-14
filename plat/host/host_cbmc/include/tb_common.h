@@ -7,6 +7,7 @@
 #define TB_COMMON_H
 
 #include "host_defs.h"
+#include "simd.h"
 #include "stdbool.h"
 #include "stdint.h"
 #include "string.h"
@@ -71,6 +72,8 @@ uint64_t nondet_uint64_t(void);
 int32_t nondet_int32_t(void);
 int64_t nondet_int64_t(void);
 size_t nondet_size_t(void);
+
+struct simd_config nondet_simd_config(void);
 
 struct tb_regs {
 	uint64_t X0;

@@ -40,6 +40,7 @@ struct SPEC_granule {
 };
 
 extern unsigned char granules_buffer[HOST_MEM_SIZE];
+extern struct granule granules[RMM_MAX_GRANULES];
 
 /*
  * Declare nondet_* functions.
