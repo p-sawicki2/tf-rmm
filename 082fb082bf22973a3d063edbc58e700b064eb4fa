@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05e4f241_b33aeb6b",
+        "filename": "lib/realm/include/granule.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2023-11-14T15:06:29Z",
+      "side": 1,
+      "message": "Hi Soby, re your comments on the internal gerrit about changing these to assert() instead: unfortunately using assert() doesn\u0027t suppress the warning, it seems that clang-tidy cannot see asserts for some reason.",
+      "revId": "082fb082bf22973a3d063edbc58e700b064eb4fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
