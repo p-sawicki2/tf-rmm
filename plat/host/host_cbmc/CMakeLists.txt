@@ -17,8 +17,13 @@ target_link_libraries(rmm-plat-host_cbmc
 target_sources(rmm-plat-host_cbmc
     PRIVATE
         "src/host_harness.c"
+        "src/tb_arch_features.c"
         "src/tb_common.c"
         "src/tb_granules.c"
+        "src/tb_measurement.c"
+        "src/tb_realm.c"
+        "src/tb_rtt.c"
+        "src/tb_simd.c"
         "src/tb.c"
         )
 

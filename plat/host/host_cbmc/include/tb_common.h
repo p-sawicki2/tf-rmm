@@ -7,6 +7,7 @@
 #define TB_COMMON_H
 
 #include "host_defs.h"
+#include "simd.h"
 #include "stdbool.h"
 #include "stdint.h"
 #include "string.h"
@@ -72,6 +73,8 @@ int32_t nondet_int32_t(void);
 int64_t nondet_int64_t(void);
 size_t nondet_size_t(void);
 
+struct simd_config nondet_simd_config(void);
+
 struct tb_regs {
 	uint64_t X0;
 	uint64_t X1;
@@ -106,6 +109,8 @@ bool valid_pa(uint64_t addr);
 bool valid_granule_metadata_ptr(struct granule *p);
 struct granule *pa_to_granule_metadata_ptr(uint64_t addr);
 uint64_t granule_metadata_ptr_to_pa(struct granule *g_ptr);
+void *pa_to_granule_buffer_ptr(uint64_t addr);
+
 /* TODO change the function name */
 void init_pa_page(const void *content, size_t size);
 
