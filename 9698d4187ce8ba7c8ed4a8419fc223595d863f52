@@ -94,6 +94,57 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a5812fde_978f9e3b",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T12:49:59Z",
+      "side": 1,
+      "message": "stp\tx4, lr, [sp, #-32]!\nand remove line #31",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a4d1b9e_433622a9",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T12:49:59Z",
+      "side": 1,
+      "message": "As this instruction doesn\u0027t modify SP value \u0026 alignment is preserved, it\u0027s better to use\nstr  x4, [sp, #16]\nand remove line #21",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e6a7277_08668d9f",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T12:49:59Z",
+      "side": 1,
+      "message": "isb?",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1725a547_e62ded04",
         "filename": "runtime/core/aarch64/entry.S",
         "patchSetId": 4
@@ -122,6 +173,23 @@
       "writtenOn": "2023-11-15T10:29:33Z",
       "side": 1,
       "message": "Restore",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00ab640f_9a8f6462",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T12:49:59Z",
+      "side": 1,
+      "message": "ldp\tx5, lr, [sp], #32\nand remove line #83",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
