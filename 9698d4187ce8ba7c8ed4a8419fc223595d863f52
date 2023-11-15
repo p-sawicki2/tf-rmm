@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e330e95d_97b99578",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "/* X0-X30, SP_EL0 */",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17651f79_35254e7c",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "add empty line",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3771a4_47392bf1",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "This mapping is used for the exception handler stack when...",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 75
+      },
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c7a71ea_fc221d12",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "align \\",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eba3759_9e12e147",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "\"Context definition\"\nPlease start comments with capital letter for consistency.",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1725a547_e62ded04",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "Restore X4",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37949bf1_f2a84dae",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-15T10:29:33Z",
+      "side": 1,
+      "message": "Restore",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
