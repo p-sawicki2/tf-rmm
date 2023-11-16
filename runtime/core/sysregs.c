@@ -237,6 +237,21 @@ static bool handle_icc_el1_sysreg_trap(struct rec *rec,
 	return false;
 }
 
+static bool handle_dc_sysreg_trap(struct rec *rec,
+				  struct rmi_rec_exit *rec_exit,
+				  unsigned long esr)
+{
+	(void)rec;
+	(void)rec_exit;
+	(void)esr;
+
+	/*
+	 * Ignore Data Cache clean and invalidation operation by set/way from
+	 * Realms.
+	 */
+	return true;
+}
+
 typedef bool (*sysreg_handler_fn)(struct rec *rec, struct rmi_rec_exit *rec_exit,
 				  unsigned long esr);
 
@@ -250,9 +265,18 @@ struct sysreg_handler {
 	{ .esr_mask = (_mask), .esr_value = (_value), .fn = (_handler_fn) }
 
 static const struct sysreg_handler sysreg_handlers[] = {
-	SYSREG_HANDLER(ESR_EL2_SYSREG_ID_MASK, ESR_EL2_SYSREG_ID, handle_id_sysreg_trap),
-	SYSREG_HANDLER(ESR_EL2_SYSREG_ICC_EL1_MASK, ESR_EL2_SYSREG_ICC_EL1, handle_icc_el1_sysreg_trap),
-	SYSREG_HANDLER(ESR_EL2_SYSREG_MASK, ESR_EL2_SYSREG_ICC_PMR_EL1, handle_icc_el1_sysreg_trap)
+	SYSREG_HANDLER(ESR_EL2_SYSREG_ID_MASK, ESR_EL2_SYSREG_ID,
+		       handle_id_sysreg_trap),
+	SYSREG_HANDLER(ESR_EL2_SYSREG_ICC_EL1_MASK, ESR_EL2_SYSREG_ICC_EL1,
+		       handle_icc_el1_sysreg_trap),
+	SYSREG_HANDLER(ESR_EL2_SYSREG_DC_MASK, ESR_EL2_SYSREG_DC_ISW,
+		       handle_dc_sysreg_trap),
+	SYSREG_HANDLER(ESR_EL2_SYSREG_DC_MASK, ESR_EL2_SYSREG_DC_CSW,
+		       handle_dc_sysreg_trap),
+	SYSREG_HANDLER(ESR_EL2_SYSREG_DC_MASK, ESR_EL2_SYSREG_DC_CISW,
+		       handle_dc_sysreg_trap),
+	SYSREG_HANDLER(ESR_EL2_SYSREG_MASK, ESR_EL2_SYSREG_ICC_PMR_EL1,
+		       handle_icc_el1_sysreg_trap)
 };
 
 static unsigned long get_sysreg_write_value(struct rec *rec, unsigned long esr)
@@ -268,7 +292,8 @@ static unsigned long get_sysreg_write_value(struct rec *rec, unsigned long esr)
 	return rec->regs[rt];
 }
 
-static void emulate_sysreg_access_ns(struct rec *rec, struct rmi_rec_exit *rec_exit,
+static void emulate_sysreg_access_ns(struct rec *rec,
+				     struct rmi_rec_exit *rec_exit,
 				     unsigned long esr)
 {
 	if (ESR_EL2_SYSREG_IS_WRITE(esr)) {

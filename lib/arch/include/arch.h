@@ -173,9 +173,10 @@
 #define HCR_SWIO	(UL(1) << 1)
 #define HCR_VM		(UL(1) << 0)
 
-#define HCR_FLAGS (HCR_FWB | HCR_E2H | HCR_RW | HCR_TSC | HCR_AMO | \
-	HCR_BSU_IS | HCR_IMO | HCR_FMO | HCR_PTW | HCR_SWIO | HCR_VM | \
-	HCR_TID3 | HCR_TEA | HCR_API | HCR_APK)
+#define HCR_REALM_FLAGS		(HCR_FWB | HCR_E2H | HCR_RW | HCR_TSC |		\
+				 HCR_AMO | HCR_BSU_IS | HCR_IMO | HCR_FMO |	\
+				 HCR_PTW | HCR_SWIO | HCR_VM | HCR_TID3 |	\
+				 HCR_TEA | HCR_API | HCR_APK | HCR_TSW)
 
 #define HCR_EL2_INIT		(HCR_TGE | HCR_E2H | HCR_TEA)
 
@@ -969,6 +970,13 @@
 #define ESR_EL2_SYSREG_ICC_DIR			SYSREG_ESR(3, 0, 12, 11, 1)
 #define ESR_EL2_SYSREG_ICC_SGI1R_EL1		SYSREG_ESR(3, 0, 12, 11, 5)
 #define ESR_EL2_SYSREG_ICC_SGI0R_EL1		SYSREG_ESR(3, 0, 12, 11, 7)
+
+/* ESR mask for data cache clean/invalidate by set/way. */
+#define ESR_EL2_SYSREG_DC_MASK			SYSREG_ESR(1, 0, 7, 14, 2)
+#define ESR_EL2_SYSREG_DC_ISW			SYSREG_ESR(1, 0, 7, 6, 2)
+#define ESR_EL2_SYSREG_DC_CSW			SYSREG_ESR(1, 0, 7, 10, 2)
+#define ESR_EL2_SYSREG_DC_CISW			SYSREG_ESR(1, 0, 7, 14, 2)
+
 
 #define ESR_EL2_SYSREG_DIRECTION	(UL(1) << 0)
 #define ESR_EL2_SYSREG_IS_WRITE(esr)	(((esr) & ESR_EL2_SYSREG_DIRECTION) == 0UL)
