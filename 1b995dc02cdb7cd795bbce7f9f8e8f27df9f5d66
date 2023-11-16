@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de7b458d_1d7d81e9",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-16T18:07:21Z",
+      "side": 1,
+      "message": "Yes, I think there is nothing wrong with it",
+      "parentUuid": "6b7e628f_b61ade13",
+      "range": {
+        "startLine": 39,
+        "startChar": 5,
+        "endLine": 39,
+        "endChar": 20
+      },
+      "revId": "1b995dc02cdb7cd795bbce7f9f8e8f27df9f5d66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8cc9dafd_ca35d785",
@@ -71,6 +95,30 @@
       "writtenOn": "2023-10-24T15:20:55Z",
       "side": 1,
       "message": "we may not need type cast when going from short to longer width of same intrinsic type.",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 19
+      },
+      "revId": "1b995dc02cdb7cd795bbce7f9f8e8f27df9f5d66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56427abc_40f862b3",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-16T18:07:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8cc9dafd_ca35d785",
       "range": {
         "startLine": 40,
         "startChar": 4,
@@ -104,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8698bc71_d8d3ab8b",
+        "filename": "lib/realm/tests/buffer.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-16T18:07:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "084dd74e_b81d34da",
+      "range": {
+        "startLine": 289,
+        "startChar": 6,
+        "endLine": 289,
+        "endChar": 21
+      },
+      "revId": "1b995dc02cdb7cd795bbce7f9f8e8f27df9f5d66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48040f2a_b80ff319",
@@ -117,6 +189,30 @@
       "writtenOn": "2023-10-24T15:20:55Z",
       "side": 1,
       "message": "this should be unsigned int. same comment for g2_index",
+      "range": {
+        "startLine": 502,
+        "startChar": 2,
+        "endLine": 502,
+        "endChar": 11
+      },
+      "revId": "1b995dc02cdb7cd795bbce7f9f8e8f27df9f5d66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "232117a7_522357e7",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-16T18:07:21Z",
+      "side": 1,
+      "message": "I think they can even be unsigned long",
+      "parentUuid": "48040f2a_b80ff319",
       "range": {
         "startLine": 502,
         "startChar": 2,
