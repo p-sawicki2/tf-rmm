@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f98a7857_f630ba09",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e330e95d_97b99578",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17651f79_35254e7c",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-11-15T10:29:33Z",
       "side": 1,
       "message": "add empty line",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "361486e4_36a1ba63",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "17651f79_35254e7c",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9645faf6_d67ccde2",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Updated",
+      "parentUuid": "ab3771a4_47392bf1",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 75
+      },
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c7a71ea_fc221d12",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-11-15T10:29:33Z",
       "side": 1,
       "message": "align \\",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1da37037_b8835b40",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "7c7a71ea_fc221d12",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -92,6 +170,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3c0482_f35ebb76",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Updated comment initials",
+      "parentUuid": "7eba3759_9e12e147",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5812fde_978f9e3b",
@@ -105,6 +201,24 @@
       "writtenOn": "2023-11-15T12:49:59Z",
       "side": 1,
       "message": "stp\tx4, lr, [sp, #-32]!\nand remove line #31",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57710239_a93163c7",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Good idea, Done.",
+      "parentUuid": "a5812fde_978f9e3b",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -144,6 +258,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7534e1bf_c139eef7",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "58962d0c_d7f4f66d",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a4d1b9e_433622a9",
@@ -157,6 +289,24 @@
       "writtenOn": "2023-11-15T12:49:59Z",
       "side": 1,
       "message": "As this instruction doesn\u0027t modify SP value \u0026 alignment is preserved, it\u0027s better to use\nstr  x4, [sp, #16]\nand remove line #21",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e01f89b8_3d14e83b",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "You are right, writing a single register is enough, there seems to be no benefit in clearing the unused 8 bytes. \n\nAre you sure #21 should be removed? There are still 4 dwords allocated on the stack at this point. So in this instruction we won\u0027t write at the dword at the highest address anymore, but the space is still there due to the stack alignment.",
+      "parentUuid": "3a4d1b9e_433622a9",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -180,6 +330,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7b64068c_b2f007cb",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure. Here we are updating the stack pointer for another exception level, and not the current one. \nAccording to my understanding sp_el0 next will be used as a stack when\n - the CPU next executes in EL0. That would require eret to be executed that serves as a barrier.\n - The handler for synchronous exception is executed, and SPSEL is updated. Updating the SPSEL bit serves as a barrier according to this: https://community.arm.com/support-forums/f/architectures-and-processors-forum/8141/is-any-synchronization-barrier-instruction-necessary-after-writing-spsel-to-switch-to-sp0-on-armv8",
+      "parentUuid": "8e6a7277_08668d9f",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1725a547_e62ded04",
         "filename": "runtime/core/aarch64/entry.S",
         "patchSetId": 4
@@ -191,6 +359,24 @@
       "writtenOn": "2023-11-15T10:29:33Z",
       "side": 1,
       "message": "Restore X4",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4ada048_1416f6a4",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "1725a547_e62ded04",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -212,6 +398,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ae1141d_19064a7d",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "37949bf1_f2a84dae",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00ab640f_9a8f6462",
@@ -225,6 +429,24 @@
       "writtenOn": "2023-11-15T12:49:59Z",
       "side": 1,
       "message": "ldp\tx5, lr, [sp], #32\nand remove line #83",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e1ec8c_362a5d7e",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-19T12:38:17Z",
+      "side": 1,
+      "message": "Good suggestion, done.",
+      "parentUuid": "00ab640f_9a8f6462",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
