@@ -39,6 +39,30 @@
       },
       "revId": "950c656c02eb45ae971270fbea8ab17ec3e217f1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9e368ec_373116da",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-20T16:06:05Z",
+      "side": 1,
+      "message": "It just occurred to me that the unlocking could be eliminated if this was the first check, before calling realm_ipa_to_pa. \n\nI see that you suggested this location: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23721/comment/e9de3da3_9299a85b/\n\nDoes this need to be checked after the lock is held?",
+      "parentUuid": "a9c27a24_e00473c6",
+      "range": {
+        "startLine": 112,
+        "startChar": 2,
+        "endLine": 112,
+        "endChar": 31
+      },
+      "revId": "950c656c02eb45ae971270fbea8ab17ec3e217f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
