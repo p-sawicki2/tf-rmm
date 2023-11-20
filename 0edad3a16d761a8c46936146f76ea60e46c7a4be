@@ -71,6 +71,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "837b4f1f_f5a1d0a2",
+        "filename": "docs/design/diagrams/upper_memory_diagram.png",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-20T15:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1d89a7e_264f39ed",
+      "revId": "0edad3a16d761a8c46936146f76ea60e46c7a4be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7ab7838_9f3b66aa",
