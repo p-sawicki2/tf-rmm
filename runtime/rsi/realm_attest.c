@@ -105,8 +105,11 @@ static void attest_token_continue_write_state(struct rec *rec,
 		return;
 	}
 
+	/* If size of buffer is 0, then return early. */
 	if (size == 0UL) {
 		res->smc_res.x[0] = RSI_SUCCESS;
+		/* Unlock last level page table (walk_res.g_llt) */
+		granule_unlock(walk_res.llt);
 		return;
 	}
 
