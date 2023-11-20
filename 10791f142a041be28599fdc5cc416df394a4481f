@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "170de11b_aa8eac8e",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-20T12:44:07Z",
+      "side": 1,
+      "message": "LGTM. Maybe also add the upcoming S2TT rework and unittests? (although it might take some time to have that merged, TBH)",
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
