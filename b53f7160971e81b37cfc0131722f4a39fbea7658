@@ -16,6 +16,24 @@
       "message": "@Máté: I have local changes for your patch, which adds logging registers\u0027 dump for both stack overflow \u0026 unexpected exception. It can be pushed for review after this patch is merged.",
       "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8827c21f_0c1d899c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-21T15:34:59Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "5e2b809e_54009f66",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
