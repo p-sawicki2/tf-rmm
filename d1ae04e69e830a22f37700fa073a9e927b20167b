@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "506d6a34_dd6ad444",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-21T09:44:53Z",
+      "side": 1,
+      "message": "\u003e #define ESR_EL2_SYSREG_DC_MASK\t\t\tSYSREG_ESR(3, 7, 15, 3, 1)\n\u003e #define ESR_EL2_SYSREG_DC_SW                    SYSREG_ESR(1, 0, 7, 2, 0)\n\u003e ?\n\nyes, thats a good suggestion. This will narrow down the range.",
+      "parentUuid": "dbac54b3_c8b00243",
+      "revId": "d1ae04e69e830a22f37700fa073a9e927b20167b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a736745_14fead25",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-11-20T16:48:43Z",
       "side": 1,
       "message": "So, these instructions are just ignored, should RMI_EXIT_SYNC be reported instead?",
+      "revId": "d1ae04e69e830a22f37700fa073a9e927b20167b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "350c0e0a_7cf53cca",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-21T09:44:53Z",
+      "side": 1,
+      "message": "\u003e So, these instructions are just ignored, should RMI_EXIT_SYNC be reported instead?\n\nThese instructions are ignored and RMM return back the control to Realm.\n\nI have added the RMI_EXIT_SYNC for the return to host case.",
+      "parentUuid": "8a736745_14fead25",
       "revId": "d1ae04e69e830a22f37700fa073a9e927b20167b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
