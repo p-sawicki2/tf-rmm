@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d3e297f9_eb53c62d",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-21T10:10:52Z",
+      "side": 1,
+      "message": "\u003e Just filter out instructions with (Op2 \u003d\u003d 0) || (Crm \u003d\u003d 2).\n\u003e It would be helpful to log ignored instructions.\n\nReturning a false from this function, the unhandled instructions are not logged as line #355 returns control back to the caller. This requires a re-structuring so that if any of the registered handlers returns false there has to be a common exit path. Can we take this as a follow up patch? and also advance_pc() done in handle_exception_sync for ESR_EL2_EC_SYSREG also have to move inside handle_sysreg_access_trap",
+      "parentUuid": "f96b180c_968bbb04",
+      "revId": "d1ae04e69e830a22f37700fa073a9e927b20167b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a736745_14fead25",
         "filename": "runtime/core/sysregs.c",
         "patchSetId": 3
