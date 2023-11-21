@@ -313,6 +313,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "64ae57ff_bafa7806",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-21T13:31:47Z",
+      "side": 1,
+      "message": "Yes, comment on line #21 should be kept.",
+      "parentUuid": "e01f89b8_3d14e83b",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e6a7277_08668d9f",
         "filename": "runtime/core/aarch64/entry.S",
         "patchSetId": 4
@@ -342,6 +360,24 @@
       "side": 1,
       "message": "I\u0027m not sure. Here we are updating the stack pointer for another exception level, and not the current one. \nAccording to my understanding sp_el0 next will be used as a stack when\n - the CPU next executes in EL0. That would require eret to be executed that serves as a barrier.\n - The handler for synchronous exception is executed, and SPSEL is updated. Updating the SPSEL bit serves as a barrier according to this: https://community.arm.com/support-forums/f/architectures-and-processors-forum/8141/is-any-synchronization-barrier-instruction-necessary-after-writing-spsel-to-switch-to-sp0-on-armv8",
       "parentUuid": "8e6a7277_08668d9f",
+      "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8182b240_ea42775e",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-21T13:31:47Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7b64068c_b2f007cb",
       "revId": "9698d4187ce8ba7c8ed4a8419fc223595d863f52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
