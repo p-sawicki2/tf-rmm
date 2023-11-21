@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddc6d5ff_9acbafc2",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-21T13:40:12Z",
+      "side": 1,
+      "message": "missed space",
+      "range": {
+        "startLine": 153,
+        "startChar": 62,
+        "endLine": 153,
+        "endChar": 72
+      },
+      "revId": "cec0755c7d435289dcbac39295ad675aa7f8980b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c222572c_343534d3",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-21T13:40:12Z",
+      "side": 1,
+      "message": "\"encountering and error\" better?",
+      "range": {
+        "startLine": 163,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 28
+      },
+      "revId": "cec0755c7d435289dcbac39295ad675aa7f8980b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef1625bf_34d4d167",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-21T13:40:12Z",
+      "side": 1,
+      "message": "either remove the initial \"The\" or add \"APIs\" before need (it is just an opinion. It just sounds to me like something is missing as it is)",
+      "range": {
+        "startLine": 165,
+        "startChar": 1,
+        "endLine": 165,
+        "endChar": 36
+      },
+      "revId": "cec0755c7d435289dcbac39295ad675aa7f8980b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
