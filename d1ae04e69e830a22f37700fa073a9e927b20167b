@@ -126,6 +126,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "46629124_ee46ec41",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T12:26:34Z",
+      "side": 1,
+      "message": "Hi Arun, \n\nwe had a discussion and it seems in future , this function could end up filtering Branch record buffer instructions if RMM decides to trap it (for future). So a comment on the lines 276 :\n\n\n       ----\n\t/* We could trap Branch record buffer instructions or any other IMPDEF instructions in this encoding space. For now return to Host with SYNC exception syndrome */\n\n\trec_exit-\u003eexit_reason \u003d RMI_EXIT_SYNC;\n\trec_exit-\u003eesr \u003d esr;\n\treturn false;\n\t\n}\n\nthis should be good enough.",
+      "parentUuid": "c2176678_cad48c75",
+      "revId": "d1ae04e69e830a22f37700fa073a9e927b20167b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a736745_14fead25",
         "filename": "runtime/core/sysregs.c",
         "patchSetId": 3
