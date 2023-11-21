@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f51e25d0_8723aa53",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64d34a77_0b724934",
+      "range": {
+        "startLine": 47,
+        "startChar": 45,
+        "endLine": 47,
+        "endChar": 55
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5743dc05_8d5a21e9",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-20T14:10:50Z",
       "side": 1,
       "message": "nit: of the",
+      "range": {
+        "startLine": 75,
+        "startChar": 57,
+        "endLine": 75,
+        "endChar": 66
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c3479b8_b5b14d59",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5743dc05_8d5a21e9",
       "range": {
         "startLine": 75,
         "startChar": 57,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2988fe43_493a6800",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "261c2dfe_9c709c8f",
+      "range": {
+        "startLine": 99,
+        "startChar": 69,
+        "endLine": 99,
+        "endChar": 74
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e7da041f_4371edc9",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-11-20T14:10:50Z",
       "side": 1,
       "message": "Lots?\n\nto comply with MISRA ..",
+      "range": {
+        "startLine": 104,
+        "startChar": 2,
+        "endLine": 104,
+        "endChar": 52
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c13f5076_759b415b",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "On reading this again, I reworded as \"lots\" is not specific.",
+      "parentUuid": "e7da041f_4371edc9",
       "range": {
         "startLine": 104,
         "startChar": 2,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "844eb475_e6388cd3",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb0a40fb_45241b51",
+      "range": {
+        "startLine": 114,
+        "startChar": 41,
+        "endLine": 114,
+        "endChar": 48
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "071af93f_a8a99c12",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "daf61572_e51d29f5",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "reworded",
+      "parentUuid": "071af93f_a8a99c12",
+      "range": {
+        "startLine": 124,
+        "startChar": 60,
+        "endLine": 124,
+        "endChar": 62
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7eb982cf_b1424873",
@@ -152,6 +296,30 @@
       "writtenOn": "2023-11-20T14:10:50Z",
       "side": 1,
       "message": "upstream version",
+      "range": {
+        "startLine": 132,
+        "startChar": 34,
+        "endLine": 132,
+        "endChar": 42
+      },
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae354819_b70d72af",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eb982cf_b1424873",
       "range": {
         "startLine": 132,
         "startChar": 34,
@@ -244,6 +412,24 @@
       "writtenOn": "2023-11-20T12:44:07Z",
       "side": 1,
       "message": "LGTM. Maybe also add the upcoming S2TT rework and unittests? (although it might take some time to have that merged, TBH)",
+      "revId": "10791f142a041be28599fdc5cc416df394a4481f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "426b646d_d89eb2b5",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-21T10:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "170de11b_aa8eac8e",
       "revId": "10791f142a041be28599fdc5cc416df394a4481f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
