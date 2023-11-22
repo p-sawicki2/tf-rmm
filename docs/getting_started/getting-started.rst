@@ -223,8 +223,7 @@ If you own a valid copy of a MISRA rules file:
 
 .. code-block:: bash
 
-    sudo mkdir /usr/local/share/Cppcheck/misra
-    sudo cp -a <path to the misra rules file>/<file name> /usr/local/share/Cppcheck/misra/misra.rules
+    cp -a <path to the misra rules file>/<file name> ${RMM_SOURCE_DIR}/tools/cppcheck/misra.rules
 
 ############
 Install CBMC
