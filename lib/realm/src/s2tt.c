@@ -127,12 +127,32 @@
 
 #define NR_RTT_LEVELS	4
 
+#define IPAS2E1IS_TTL_SHIFT		44
+#define IPAS2E1IS_TTL_4K		4U
+
+#define RIPAS2E1IS_TG_SHIFT		46
+#define RIPAS2E1IS_TG_4K		1U
+
+#define RIPAS2E1IS_SCALE_SHIFT		44
+#define RIPAS2E1IS_NUM_SHIFT		39
+
+/*
+ * Number of pages = (NUM + 1)*2^(5*SCALE + 1)
+ * Block of 512 pages: NUM = 7; SCALE = 1.
+ */
+#define RIPAS2E1IS_BLOCK		INPLACE(RIPAS2E1IS_SCALE, 1) | \
+					INPLACE(RIPAS2E1IS_NUM, 7)
+
+#define RIPAS2E1IS_TTL_SHIFT		37
+#define RIPAS2E1IS_TTL_WIDTH		2U
+
 /*
  * Invalidates S2 TLB entries from [ipa, ipa + size] region tagged with `vmid`.
  */
-static void stage2_tlbi_ipa(const struct realm_s2_context *s2_ctx,
-			    unsigned long ipa,
-			    unsigned long size)
+static void stage2_tlbi_ripa(const struct realm_s2_context *s2_ctx,
+			     unsigned long ipa,
+			     unsigned long size,
+			     int level)
 {
 	/*
 	 * Notes:
@@ -142,15 +162,18 @@ static void stage2_tlbi_ipa(const struct realm_s2_context *s2_ctx,
 	 *
 	 * - @TODO: Provide additional information to this primitive so that
 	 *   we can utilize:
-	 *   - The TTL level hint, see FEAT_TTL,
 	 *   - Final level lookup only invalidation,
-	 *   - Address range invalidation.
 	 */
+
+	unsigned long tlbi_val = ipa >> GRANULE_SHIFT;
 
 	/*
 	 * Save the current content of vttb_el2.
 	 */
 	unsigned long old_vttbr_el2 = read_vttbr_el2();
+
+	assert((size == GRANULE_SIZE) || (size == BLOCK_L2_SIZE));
+	assert((level == RTT_PAGE_LEVEL) || (level == RTT_MIN_BLOCK_LEVEL));
 
 	/*
 	 * Make 'vmid' the `current vmid`. Note that the tlbi instructions
@@ -163,11 +186,16 @@ static void stage2_tlbi_ipa(const struct realm_s2_context *s2_ctx,
 	 * Invalidate entries in S2 TLB caches that
 	 * match both `ipa` & the `current vmid`.
 	 */
-	while (size != 0UL) {
-		tlbiipas2e1is(ipa >> 12);
-		size -= GRANULE_SIZE;
-		ipa += GRANULE_SIZE;
-	}
+	if (size == GRANULE_SIZE) {
+		tlbi_val |= INPLACE(IPAS2E1IS_TTL, (IPAS2E1IS_TTL_4K | level));
+		tlbiipas2e1is(tlbi_val);
+	} else {
+		tlbi_val |= INPLACE(RIPAS2E1IS_TG, RIPAS2E1IS_TG_4K) |
+			    INPLACE(RIPAS2E1IS_TTL, level) |
+			    RIPAS2E1IS_BLOCK;
+		tlbiripas2e1is(tlbi_val);
+	}		
+
 	dsb(ish);
 
 	/*
@@ -193,7 +221,7 @@ static void stage2_tlbi_ipa(const struct realm_s2_context *s2_ctx,
  */
 void invalidate_page(const struct realm_s2_context *s2_ctx, unsigned long addr)
 {
-	stage2_tlbi_ipa(s2_ctx, addr, GRANULE_SIZE);
+	stage2_tlbi_ripa(s2_ctx, addr, GRANULE_SIZE, RTT_PAGE_LEVEL);
 }
 
 /*
@@ -205,7 +233,7 @@ void invalidate_page(const struct realm_s2_context *s2_ctx, unsigned long addr)
  */
 void invalidate_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
 {
-	stage2_tlbi_ipa(s2_ctx, addr, GRANULE_SIZE);
+	stage2_tlbi_ripa(s2_ctx, addr, GRANULE_SIZE, RTT_MIN_BLOCK_LEVEL);
 }
 
 /*
@@ -216,7 +244,7 @@ void invalidate_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
  */
 void invalidate_pages_in_block(const struct realm_s2_context *s2_ctx, unsigned long addr)
 {
-	stage2_tlbi_ipa(s2_ctx, addr, BLOCK_L2_SIZE);
+	stage2_tlbi_ripa(s2_ctx, addr, BLOCK_L2_SIZE, RTT_PAGE_LEVEL);
 }
 
 /*

@@ -51,6 +51,7 @@ DEFINE_SYSOP_TYPE_PARAM_FUNC(tlbi, vaale1is)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(tlbi, vae2is)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(tlbi, vale2is)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(tlbi, ipas2e1is)
+DEFINE_SYSOP_TYPE_PARAM_FUNC(tlbi, ripas2e1is)
 
 /*******************************************************************************
  * Cache maintenance accessor prototypes
