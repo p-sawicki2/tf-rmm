@@ -249,9 +249,20 @@ static bool handle_dc_sw_sysreg_trap(struct rec *rec,
 				     unsigned long esr)
 {
 	unsigned long dc_encoding = esr & ESR_EL2_SYSREG_MASK;
+	unsigned int __unused op0, op1, crn, crm, op2;
+	unsigned long __unused sysreg;
 
 	(void)rec;
 	(void)rec_exit;
+
+	sysreg = esr & ESR_EL2_SYSREG_MASK;
+
+	/* Extract system register encoding */
+	op0 = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_OP0, sysreg);
+	op1 = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_OP1, sysreg);
+	crn = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_CRN, sysreg);
+	crm = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_CRM, sysreg);
+	op2 = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_OP2, sysreg);
 
 	/*
 	 * Ignore data cache clean and invalidation operation by set/way from
@@ -270,6 +281,9 @@ static bool handle_dc_sw_sysreg_trap(struct rec *rec,
 	    (dc_encoding == ESR_EL2_SYSREG_DC_CGDSW) ||
 	    (dc_encoding == ESR_EL2_SYSREG_DC_CIGSW) ||
 	    (dc_encoding == ESR_EL2_SYSREG_DC_CIGDSW)) {
+
+		INFO("Emulating DC Set/Way S%u_%u_C%u_C%u_%u\n",
+			 op0, op1, crn, crm, op2);
 		return true;
 	}
 
@@ -280,6 +294,9 @@ static bool handle_dc_sw_sysreg_trap(struct rec *rec,
 	 */
 	rec_exit->exit_reason = RMI_EXIT_SYNC;
 	rec_exit->esr = esr;
+
+	INFO("Unexpected instruction S%u_%u_C%u_C%u_%u, return to Host\n",
+		  op0, op1, crn, crm, op2);
 
 	return false;
 }
@@ -371,7 +388,7 @@ bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
 
 	sysreg = esr & ESR_EL2_SYSREG_MASK;
 
-	/* Extract sytem register encoding */
+	/* Extract system register encoding */
 	op0 = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_OP0, sysreg);
 	op1 = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_OP1, sysreg);
 	crn = (unsigned int)EXTRACT(ESR_EL2_SYSREG_TRAP_CRN, sysreg);
