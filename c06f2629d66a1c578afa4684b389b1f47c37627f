@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab2a6358_57408edc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T16:05:57Z",
+      "side": 1,
+      "message": "The coverity CI passes  now. https://jenkins.openci.aws.arm.com/job/rmm-coverity-internal/419/",
+      "revId": "c06f2629d66a1c578afa4684b389b1f47c37627f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
