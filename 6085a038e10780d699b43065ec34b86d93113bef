@@ -46,6 +46,30 @@
       },
       "revId": "6085a038e10780d699b43065ec34b86d93113bef",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa6563e3_155dfbc1",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T14:05:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7323692d_01b70935",
+      "range": {
+        "startLine": 77,
+        "startChar": 24,
+        "endLine": 77,
+        "endChar": 36
+      },
+      "revId": "6085a038e10780d699b43065ec34b86d93113bef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
