@@ -16,6 +16,24 @@
       "message": "clang-tidy --use-color -p\u003d/work/github/rmm/rmm/build -quiet /work/github/rmm/rmm/runtime/rsi/logger.c\n/work/github/rmm/rmm/runtime/rsi/logger.c:98:61: error: redundant cast to the same type [google-readability-casting,-warnings-as-errors]\n        (void)memset((void *)((uintptr_t)buf + (unsigned int)cnt), (int)\u0027 \u0027,\n\nclang-tidy --use-color -p\u003d/work/github/rmm/rmm/build -quiet /work/github/rmm/rmm/lib/attestation/src/attestation_token.c\n/work/github/rmm/rmm/lib/attestation/src/attestation_token.c:334:9: error: redundant cast to the same type [google-readability-casting,-warnings-as-errors]\n        return (int)ATTEST_TOKEN_ERR_SUCCESS;",
       "revId": "28b88356fbe4642e0f1e0e03937fb4043dc203fa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72f86840_89cce52a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 51
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T16:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8292be83_252f423d",
+      "revId": "28b88356fbe4642e0f1e0e03937fb4043dc203fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
