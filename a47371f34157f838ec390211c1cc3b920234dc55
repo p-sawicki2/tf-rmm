@@ -106,6 +106,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e12b82d_713bed22",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T16:14:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "719965bf_87d1d3b1",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fc32453_a3b87376",
