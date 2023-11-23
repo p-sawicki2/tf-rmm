@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "719965bf_87d1d3b1",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-23T15:28:34Z",
+      "side": 1,
+      "message": "This warning is still present, see\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-static-checks/2229/console\nredundant cast to the same type [google-readability-casting]\n        return (int)ATTEST_TOKEN_ERR_SUCCESS;",
+      "parentUuid": "992996de_74c5776c",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2fc32453_a3b87376",
         "filename": "runtime/rsi/logger.c",
         "patchSetId": 46
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "2fc32453_a3b87376",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "549a0ba8_85b8c04a",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-23T15:28:34Z",
+      "side": 1,
+      "message": "It is still there:\nwarning: redundant cast to the same type [google-readability-casting]\n        (void)memset((void *)((uintptr_t)buf + (unsigned int)cnt), (int)\u0027 \u0027,\n        \n        \n-- clang-tidy-patch: total warnings: 2, total errors: 0",
+      "parentUuid": "17a5ae58_fc5d2020",
       "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
