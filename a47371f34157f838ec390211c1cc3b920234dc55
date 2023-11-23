@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbe211fd_4c009be3",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T13:52:42Z",
+      "side": 1,
+      "message": "same comment as below.",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3486c630_68a49f20",
+        "filename": "lib/arch/src/pmu.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T13:52:42Z",
+      "side": 1,
+      "message": "this may be fixed in other way\nif()\n   num_cnts--;\n   switch(num_cnts) {\n\n\n\n}",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "992996de_74c5776c",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T13:52:42Z",
+      "side": 1,
+      "message": "this error no longer is present.",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fc32453_a3b87376",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 46
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-23T13:52:42Z",
+      "side": 1,
+      "message": "can\u0027t find this error anymore, remove in that case.",
+      "revId": "a47371f34157f838ec390211c1cc3b920234dc55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
