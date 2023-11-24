@@ -155,7 +155,7 @@ static inline unsigned long realm_ipa_size(struct rd *rd)
 
 static inline unsigned long realm_par_size(struct rd *rd)
 {
-	return (realm_ipa_size(rd) / 2U);
+	return (realm_ipa_size(rd) >> 1UL);
 }
 
 static inline int realm_rtt_starting_level(struct rd *rd)
