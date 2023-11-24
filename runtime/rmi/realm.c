@@ -65,6 +65,11 @@ static bool get_realm_params(struct rmi_realm_params *realm_params,
 	return ns_access_ok;
 }
 
+static bool requested_lpa2_support(struct rmi_realm_params *p)
+{
+	return (EXTRACT(RMI_REALM_FLAGS_LPA2, p->flags) == RMI_FEATURE_TRUE);
+}
+
 /*
  * See the library pseudocode
  * aarch64/translation/vmsa_faults/AArch64.S2InconsistentSL on which this is
@@ -85,13 +90,20 @@ static bool s2_inconsistent_sl(unsigned int ipa_bits, int sl)
 	return ((ipa_bits < sl_min_ipa_bits) || (ipa_bits > sl_max_ipa_bits));
 }
 
-static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl)
+static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl, bool lpa2)
 {
-	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > MAX_IPA_BITS)) {
+	long min_starting_level;
+	unsigned int max_ipa_bits;
+
+	max_ipa_bits = (lpa2 == true) ?	MAX_IPA_BITS_LPA2 : MAX_IPA_BITS;
+	min_starting_level = (lpa2 == true) ?
+				RTT_MIN_STARTING_LEVEL_LPA2 : RTT_MIN_STARTING_LEVEL;
+
+	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > max_ipa_bits)) {
 		return false;
 	}
 
-	if ((sl < MIN_STARTING_LEVEL) || (sl > RTT_PAGE_LEVEL)) {
+	if ((sl < min_starting_level) || (sl > RTT_PAGE_LEVEL)) {
 		return false;
 	}
 
@@ -121,6 +133,14 @@ static unsigned int s2_num_root_rtts(unsigned int ipa_bits, int sl)
 		      + GRANULE_SHIFT	      /* Bits directly mapped to OA */
 		      + S2TTE_STRIDE;	      /* Bits resolved by single SL */
 
+	/*
+	 * If 'level' == -1, then, the 'S2TTE_STRIDE' above should be reduced
+	 * as level -1 only has four index bits. So compensate for that here.
+	 */
+	if (sl_ipa_bits > MAX_IPA_BITS_LPA2) {
+		sl_ipa_bits = MAX_IPA_BITS_LPA2;
+	}
+
 	if (sl_ipa_bits >= ipa_bits) {
 		return U(1);
 	}
@@ -141,6 +161,9 @@ static void init_s2_starting_level(struct rd *rd)
 {
 	unsigned long current_ipa = 0U;
 	struct granule *g_rtt = rd->s2_ctx.g_rtt;
+	unsigned int s2ttes_per_s2tt =
+		(rd->s2_ctx.s2_starting_level == RTT_MIN_STARTING_LEVEL_LPA2) ?
+			S2TTES_PER_S2TT_LM1 : S2TTES_PER_S2TT;
 	unsigned int levels = (unsigned int)(RTT_PAGE_LEVEL -
 						rd->s2_ctx.s2_starting_level);
 	/*
@@ -155,7 +178,7 @@ static void init_s2_starting_level(struct rd *rd)
 
 		assert(s2tt != NULL);
 
-		for (unsigned int rtte = 0U; rtte < S2TTES_PER_S2TT; rtte++) {
+		for (unsigned int rtte = 0U; rtte < s2ttes_per_s2tt; rtte++) {
 			if (addr_in_par(rd, current_ipa)) {
 				s2tt[rtte] = s2tte_create_unassigned_empty();
 			} else {
@@ -240,7 +263,8 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 		}
 	}
 
-	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start)) {
+	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start,
+						requested_lpa2_support(p))) {
 		return false;
 	}
 
