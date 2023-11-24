@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bb17de5_73ab848a",
+        "filename": "tools/cbmc/CheckCBMC.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-24T12:21:32Z",
+      "side": 1,
+      "message": "would be good to have a PASS message here in else()",
+      "revId": "50709d0b8664b318e0f64f52294c61e05930b1f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
