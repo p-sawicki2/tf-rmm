@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9695bb91_eebf98a7",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-24T11:12:14Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a08799b0_fce6f293",
+      "range": {
+        "startLine": 171,
+        "startChar": 32,
+        "endLine": 171,
+        "endChar": 40
+      },
+      "revId": "d8bdb33f297e5ac5fa1bb0eb69275ae63c7aa73c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee5de802_c01720f4",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-23T15:57:41Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 197,
+        "startChar": 2,
+        "endLine": 197,
+        "endChar": 3
+      },
+      "revId": "d8bdb33f297e5ac5fa1bb0eb69275ae63c7aa73c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bb74ed6_e85b9d9e",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-24T11:12:14Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ee5de802_c01720f4",
       "range": {
         "startLine": 197,
         "startChar": 2,
