@@ -67,6 +67,12 @@ void s2tt_test_helpers_setup(bool lpa2)
 
 	test_helpers_init();
 	s2tt_test_helpers_arch_init(lpa2);
+
+	/*
+	 * Reinitialize the s2tt component in order for the changes on
+	 * FEAT_LPA2 status to be applied to the component.
+	 */
+	s2tt_init();
 }
 
 unsigned long s2tt_test_helpers_oa_mask(long level)

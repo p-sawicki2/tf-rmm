@@ -65,6 +65,11 @@ static bool get_realm_params(struct rmi_realm_params *realm_params,
 	return ns_access_ok;
 }
 
+static bool requested_lpa2_support(struct rmi_realm_params *p)
+{
+	return (EXTRACT(RMI_REALM_FLAGS_LPA2, p->flags) == RMI_FEATURE_TRUE);
+}
+
 /*
  * See the library pseudocode
  * aarch64/translation/vmsa_faults/AArch64.S2InconsistentSL on which this is
@@ -85,13 +90,20 @@ static bool s2_inconsistent_sl(unsigned int ipa_bits, int sl)
 	return ((ipa_bits < sl_min_ipa_bits) || (ipa_bits > sl_max_ipa_bits));
 }
 
-static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl)
+static bool validate_ipa_bits_and_sl(unsigned int ipa_bits, long sl, bool lpa2)
 {
-	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > MAX_IPA_BITS)) {
+	long min_starting_level;
+	unsigned int max_ipa_bits;
+
+	max_ipa_bits = (lpa2 == true) ?	MAX_IPA_BITS_LPA2 : MAX_IPA_BITS;
+	min_starting_level = (lpa2 == true) ?
+				RTT_MIN_STARTING_LEVEL_LPA2 : RTT_MIN_STARTING_LEVEL;
+
+	if ((ipa_bits < MIN_IPA_BITS) || (ipa_bits > max_ipa_bits)) {
 		return false;
 	}
 
-	if ((sl < MIN_STARTING_LEVEL) || (sl > RTT_PAGE_LEVEL)) {
+	if ((sl < min_starting_level) || (sl > RTT_PAGE_LEVEL)) {
 		return false;
 	}
 
@@ -250,7 +262,8 @@ static bool validate_realm_params(struct rmi_realm_params *p)
 		write_mdcr_el2(mdcr_el2_val);
 	}
 
-	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start)) {
+	if (!validate_ipa_bits_and_sl(p->s2sz, p->rtt_level_start,
+						requested_lpa2_support(p))) {
 		return false;
 	}
 
