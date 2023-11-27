@@ -351,6 +351,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	struct granule *g_rd, *g_rtt_base;
 	struct rd *rd;
 	struct rmi_realm_params p;
+	unsigned int rtt_num_start;
 
 	if (!get_realm_params(&p, realm_params_addr)) {
 		return RMI_ERROR_INPUT;
@@ -412,17 +413,23 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	rd->pmu_enabled = EXTRACT(RMI_REALM_FLAGS_PMU, p.flags) != 0UL;
 	rd->pmu_num_ctrs = p.pmu_num_ctrs;
 
+	init_s2_starting_level(rd);
+
+	rtt_num_start = p.rtt_num_start;
+
+	/*
+	 * This function clears non-relevant parts of the rmi_realm_params
+	 * structure for calculation of the initial RIM value of the target
+	 * Realm.
+	 */
 	measurement_realm_params_measure(rd->measurement[RIM_MEASUREMENT_SLOT],
 					 rd->algorithm,
 					 &p);
-
-	init_s2_starting_level(rd);
-
 	buffer_unmap(rd);
 
 	granule_unlock_transition(g_rd, GRANULE_STATE_RD);
 
-	for (unsigned int i = 0U; i < p.rtt_num_start; i++) {
+	for (unsigned int i = 0U; i < rtt_num_start; i++) {
 		granule_unlock_transition(
 			(struct granule *)((uintptr_t)g_rtt_base +
 			(i * sizeof(struct granule))), GRANULE_STATE_RTT);

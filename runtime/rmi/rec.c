@@ -316,6 +316,10 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 
 	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
 	if (rec->runnable) {
+		/*
+		 * This function clears non-relevant parts of the
+		 * rmi_rec_params structure for initial measurement.
+		 */
 		measurement_rec_params_measure(rd->measurement[RIM_MEASUREMENT_SLOT],
 					       rd->algorithm,
 					       &rec_params);
