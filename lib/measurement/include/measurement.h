@@ -174,6 +174,10 @@ void measurement_data_granule_measure(unsigned char rim_measurement[],
  *	- rim_measurement:	The buffer where the RIM to be updated is found.
  *	- algorithm:		Algorithm to use for measurement.
  *	- realm_params:		The parameters of the realm.
+ * Note:
+ *	This function clears non-relevant parts of the rmi_realm_params
+ *	structure passed in realm_params for calculation of the initial
+ *	RIM value of the realm.
  */
 void measurement_realm_params_measure(unsigned char rim_measurement[],
 				      enum hash_algo algorithm,
