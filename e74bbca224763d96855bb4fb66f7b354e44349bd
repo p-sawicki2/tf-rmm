@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47833f30_b84052ba",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T10:54:30Z",
+      "side": 1,
+      "message": "why is this removed ?",
+      "revId": "e74bbca224763d96855bb4fb66f7b354e44349bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
