@@ -122,6 +122,24 @@
       "parentUuid": "5a3b26ac_9408492d",
       "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bb912e4_f70fbc9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T21:17:04Z",
+      "side": 1,
+      "message": "\u003e I think we have the flexibility to include as many assertions as desired, as it doesn\u0027t affect the release build and is intended solely for development purposes, and it is a programmer\u0027s choice.\n\nYes, this is the case.\n\n\u003e asserting only on the check of the MMU enabled and not doing it on the other checks feels arbitrary and inconsistent to me.\n\nHmm, yes, we may have flipped flopped on use of runtime checks previously. Linking the assert guidelines : https://tf-rmm.readthedocs.io/en/latest/process/coding-standard.html#use-of-asserts-and-panic\n\n\nIn this case, MMU is certainly a precondition for the API and hence it can be an assert. For the other arguments, if we are not sure whether the arguments have been checked properly at the trust boundary , then we should retain the runtime checks. Else if they are within the trust boundary, we can make them asserts. Perhaps we need to check the existing error vs asserts in xlat lib again to be consistent.",
+      "parentUuid": "7c3fe7e7_58526ba3",
+      "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
