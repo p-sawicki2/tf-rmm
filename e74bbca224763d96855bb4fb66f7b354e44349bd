@@ -16,6 +16,24 @@
       "message": "why is this removed ?",
       "revId": "e74bbca224763d96855bb4fb66f7b354e44349bd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9988c41b_c11f654b",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-28T14:20:02Z",
+      "side": 1,
+      "message": "This function is called by testbenches that inject granules for testing. There is no granule necessary for this testbench, hence it is not called. In this case REACHABLE causes an assert failure.",
+      "parentUuid": "47833f30_b84052ba",
+      "revId": "e74bbca224763d96855bb4fb66f7b354e44349bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
