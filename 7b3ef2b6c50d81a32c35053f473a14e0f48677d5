@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36e6f02b_e76794ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-11-28T13:30:17Z",
+      "side": 1,
+      "message": "Only clang-tidy static check fails:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-static-checks/2246/\nbecause it runs on Release build instead of Debug.",
+      "revId": "7b3ef2b6c50d81a32c35053f473a14e0f48677d5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
