@@ -19,7 +19,7 @@
 #include <utils_def.h>
 #include <xlat_contexts.h>
 #include <xlat_high_va.h>
-#include <xlat_tables.h>
+//#include <xlat_tables.h>
 
 COMPILER_ASSERT(XLAT_HIGH_VA_SLOT_NUM >= NR_CPU_SLOTS);
 
@@ -44,7 +44,7 @@ struct xlat_llt_info *get_cached_llt_info(void)
 	return &llt_info_cache[my_cpuid()];
 }
 
-__unused static uint64_t slot_to_descriptor(enum buffer_slot slot)
+__unused uint64_t slot_to_descriptor(enum buffer_slot slot)
 {
 	uint64_t *entry = xlat_get_tte_ptr(get_cached_llt_info(),
 				       slot_to_va(slot));
@@ -75,18 +75,6 @@ void slot_buf_finish_warmboot_init(void)
 			panic();
 
 		}
-	}
-}
-
-/*
- * Buffer slots are intended to be transient, and should not be live at
- * entry/exit of the RMM.
- */
-void assert_cpu_slots_empty(void)
-{
-	for (unsigned int i = 0U; i < (unsigned int)NR_CPU_SLOTS; i++) {
-		assert(slot_to_descriptor((enum buffer_slot)i) ==
-							TRANSIENT_DESC);
 	}
 }
 

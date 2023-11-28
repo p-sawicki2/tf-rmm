@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <utils_def.h>
+#include <xlat_tables.h>
 
 enum buffer_slot {
 	/*
@@ -39,15 +40,16 @@ enum buffer_slot {
 
 struct granule;
 
-void assert_cpu_slots_empty(void);
 void *granule_map(struct granule *g, enum buffer_slot slot);
 void buffer_unmap(void *buf);
+uint64_t slot_to_descriptor(enum buffer_slot slot);
 
 bool ns_buffer_read(enum buffer_slot slot,
 		    struct granule *ns_gr,
 		    unsigned int offset,
 		    size_t size,
 		    void *dest);
+
 bool ns_buffer_write(enum buffer_slot slot,
 		     struct granule *ns_gr,
 		     unsigned int offset,
@@ -78,5 +80,17 @@ void *buffer_map_internal(enum buffer_slot slot, unsigned long addr);
  * Unmaps the slot buffer corresponding to the VA passed via `buf` argument.
  */
 void buffer_unmap_internal(void *buf);
+
+/*
+ * Buffer slots are intended to be transient, and should not be live at
+ * entry/exit of the RMM.
+ */
+void inline assert_cpu_slots_empty(void)
+{
+	for (unsigned int i = 0U; i < (unsigned int)NR_CPU_SLOTS; i++) {
+		assert(slot_to_descriptor((enum buffer_slot)i) ==
+							TRANSIENT_DESC);
+	}
+}
 
 #endif /* BUFFER_H */
