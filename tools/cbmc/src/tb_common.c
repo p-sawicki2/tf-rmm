@@ -14,7 +14,7 @@
 #include "tb_granules.h"
 #include "measurement.h"
 
-static bool granule_gpt_ns_array[RMM_MAX_GRANULES];
+static enum granule_gpt granule_gpt_ns_array[RMM_MAX_GRANULES];
 
 /* Declare a nondet function for registers information. */
 struct tb_regs nondet_tb_regs(void);
@@ -180,18 +180,24 @@ struct granule *inject_granule(const struct granule *granule_metadata,
 {
 	size_t index = next_index();
 
-	granule_gpt_ns_array[index] = nondet_bool();
+	if (granule_metadata->state == GRANULE_STATE_NS) {
+		/* initialise the granules as either secure or non-secure */
+		granule_gpt_ns_array[index] = nondet_bool();
+	} else {
+		granule_gpt_ns_array[index] = GPT_REALM;
+	}
+
 	return inject_granule_at(granule_metadata, src_page, src_size, index);
 }
 
-bool get_granule_gpt_ns(uint64_t addr)
+enum granule_gpt get_granule_gpt_ns(uint64_t addr)
 {
 	uint64_t idx = (addr - (uint64_t)granules_buffer)/GRANULE_SIZE;
 
 	return granule_gpt_ns_array[idx];
 }
 
-void set_granule_gpt_ns(uint64_t addr, bool gpt_ns)
+void set_granule_gpt_ns(uint64_t addr, enum granule_gpt gpt_ns)
 {
 	uint64_t idx = (addr - (uint64_t)granules_buffer)/GRANULE_SIZE;
 
