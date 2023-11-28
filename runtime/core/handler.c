@@ -105,8 +105,10 @@ struct smc_handler {
 		void		*fn_dummy;
 	};
 	enum rmi_type	type;
+#if (LOG_LEVEL >= LOG_LEVEL_INFO)
 	bool		log_exec;	/* print handler execution */
 	bool		log_error;	/* print in case of error status */
+#endif
 };
 
 /*
@@ -115,13 +117,21 @@ struct smc_handler {
  */
 #define RMI_HANDLER_ID(_id)	SMC64_FID_OFFSET_FROM_RANGE_MIN(RMI, _id)
 
-#define HANDLER(_id, _in, _out, _fn, _exec, _error)[RMI_HANDLER_ID(SMC_RMM_##_id)] = { \
+#if (LOG_LEVEL >= LOG_LEVEL_INFO)
+# define HANDLER(_id, _in, _out, _fn, _exec, _error)[RMI_HANDLER_ID(SMC_RMM_##_id)] = { \
 	.fn_name = (#_id),				\
 	.type = (enum rmi_type)RMI_TYPE(_in, _out),	\
 	.f_##_in##_out = (_fn),				\
 	.log_exec = (_exec),				\
 	.log_error = (_error)				\
 }
+#else
+# define HANDLER(_id, _in, _out, _fn, _exec, _error)[RMI_HANDLER_ID(SMC_RMM_##_id)] = { \
+	.fn_name = (#_id),				\
+	.type = (enum rmi_type)RMI_TYPE(_in, _out),	\
+	.f_##_in##_out = (_fn)				\
+}
+#endif
 
 /*
  * The 3rd value enables the execution log.
@@ -155,13 +165,11 @@ static const struct smc_handler smc_handlers[] = {
 
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
 
-static bool rmi_call_log_enabled = true;
-
 static inline bool rmi_handler_needs_fpu(unsigned int id)
 {
 #ifdef RMM_FPU_USE_AT_REL2
-	if (id == SMC_RMM_REALM_CREATE || id == SMC_RMM_DATA_CREATE ||
-	    id == SMC_RMM_REC_CREATE || id == SMC_RMM_RTT_INIT_RIPAS) {
+	if ((id == SMC_RMM_REALM_CREATE) || (id == SMC_RMM_DATA_CREATE) ||
+	    (id == SMC_RMM_REC_CREATE) || (id == SMC_RMM_RTT_INIT_RIPAS)) {
 		return true;
 	}
 #else
@@ -170,6 +178,7 @@ static inline bool rmi_handler_needs_fpu(unsigned int id)
 	return false;
 }
 
+#if (LOG_LEVEL >= LOG_LEVEL_INFO)
 static void rmi_log_on_exit(unsigned int handler_id,
 			    unsigned long args[],
 			    struct smc_result *res)
@@ -227,6 +236,7 @@ static void rmi_log_on_exit(unsigned int handler_id,
 		INFO("\n");
 	}
 }
+#endif
 
 /* coverity[misra_c_2012_rule_8_4_violation:SUPPRESS] */
 /* coverity[misra_c_2012_rule_8_7_violation:SUPPRESS] */
@@ -245,6 +255,7 @@ void handle_ns_smc(unsigned int function_id,
 	bool restore_ns_simd_state = false;
 	struct simd_context *ns_simd_ctx;
 	bool sve_hint = false;
+	unsigned long args[] __unused = {arg0, arg1, arg2, arg3, arg4};
 
 	/* Save the SVE hint bit and clear it from the function ID */
 	if ((function_id & SMC_SVE_HINT) != 0U) {
@@ -270,7 +281,9 @@ void handle_ns_smc(unsigned int function_id,
 		return;
 	}
 
+#ifndef NDEBUG
 	assert_cpu_slots_empty();
+#endif
 
 	/* Current CPU's SIMD state must not be saved when entering RMM */
 	assert(simd_is_state_saved() == false);
@@ -331,11 +344,9 @@ void handle_ns_smc(unsigned int function_id,
 		assert(false);
 	}
 
-	if (rmi_call_log_enabled) {
-		unsigned long args[] = {arg0, arg1, arg2, arg3, arg4};
-
-		rmi_log_on_exit(handler_id, args, res);
-	}
+#if (LOG_LEVEL >= LOG_LEVEL_INFO)
+	rmi_log_on_exit(handler_id, args, res);
+#endif
 
 	/* If the handler uses FPU, restore the saved NS simd context. */
 	if (restore_ns_simd_state) {
@@ -345,7 +356,9 @@ void handle_ns_smc(unsigned int function_id,
 	/* Current CPU's SIMD state must not be saved when exiting RMM */
 	assert(simd_is_state_saved() == false);
 
+#ifndef NDEBUG
 	assert_cpu_slots_empty();
+#endif
 }
 
 static void report_unexpected(void)
