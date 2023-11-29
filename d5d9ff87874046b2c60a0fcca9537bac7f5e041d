@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0443c9af_d006a0b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:58:41Z",
+      "side": 1,
+      "message": "\"fix for minor issues detected by unittests.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9b9e6ca_8031f887",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:58:41Z",
+      "side": 1,
+      "message": "nit: remove not needed white space.",
+      "range": {
+        "startLine": 271,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 2
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "024fe77d_f8923813",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:58:41Z",
+      "side": 1,
+      "message": "which is controlled by host */",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 21
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dbd9f6d_f2911378",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:58:41Z",
+      "side": 1,
+      "message": "Additional NS attributes set by RMM",
+      "range": {
+        "startLine": 53,
+        "startChar": 3,
+        "endLine": 53,
+        "endChar": 37
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bed3d706_9302bf25",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:58:41Z",
+      "side": 1,
+      "message": "S2TTE_NS_ATTR_RMM_MASK",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
