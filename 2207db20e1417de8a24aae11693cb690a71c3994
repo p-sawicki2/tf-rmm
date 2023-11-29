@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3a934d1_7853c5d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T13:55:00Z",
+      "side": 1,
+      "message": "...executed as a single thread on the host.",
+      "range": {
+        "startLine": 21,
+        "startChar": 62,
+        "endLine": 21,
+        "endChar": 70
+      },
+      "revId": "2207db20e1417de8a24aae11693cb690a71c3994",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75b8e797_48bad753",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T13:55:00Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "2207db20e1417de8a24aae11693cb690a71c3994",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0eb57163_14eaf22f",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 1597,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T13:55:00Z",
+      "side": 1,
+      "message": "Test with an unused granule on  find_lock_unused_granule() ensuring that the state matches.\n\nTest with an used granule ...",
+      "range": {
+        "startLine": 1596,
+        "startChar": 6,
+        "endLine": 1597,
+        "endChar": 33
+      },
+      "revId": "2207db20e1417de8a24aae11693cb690a71c3994",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73eb581e_cabe3bb5",
+        "filename": "lib/realm/tests/granule.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 1628,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T13:55:00Z",
+      "side": 1,
+      "message": "current -\u003e test",
+      "range": {
+        "startLine": 1628,
+        "startChar": 5,
+        "endLine": 1628,
+        "endChar": 13
+      },
+      "revId": "2207db20e1417de8a24aae11693cb690a71c3994",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d1e1eab_f4cd72f5",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T13:55:00Z",
+      "side": 1,
+      "message": "This implementation is common to all host platforms (including unit tests), suggest :\n\n\"The fake_host architecture is single threaded and we do not expect the lock to be already acquired in properly implemented locking sequence.\"\n\nThe rest of details can go into commit message.",
+      "range": {
+        "startLine": 216,
+        "startChar": 4,
+        "endLine": 221,
+        "endChar": 29
+      },
+      "revId": "2207db20e1417de8a24aae11693cb690a71c3994",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
