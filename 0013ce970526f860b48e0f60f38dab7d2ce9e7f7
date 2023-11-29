@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10c40b13_76bc858c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:47:32Z",
+      "side": 1,
+      "message": "We should move all files related s2tt to lib/s2tt folder and make it a lib component.",
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fce6ccb_692cc369",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:47:32Z",
+      "side": 1,
+      "message": "\"The s2tte, if valid, should correspond to RIPAS_RAM.\"",
+      "range": {
+        "startLine": 579,
+        "startChar": 13,
+        "endLine": 579,
+        "endChar": 50
+      },
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bd35729_33434140",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:47:32Z",
+      "side": 1,
+      "message": "assert(((s2tte \u0026 DESC_TYPE_MASK) !\u003d S2TTE_INVALID) \u0026\u0026\n\t\t (desc_ripas !\u003d S2TTE_INVALID_RIPAS_RAM)) \u003d\u003d 0) ?\n\t\t \n I forget , we seem to favor this form over the ! form I think.",
+      "range": {
+        "startLine": 590,
+        "startChar": 8,
+        "endLine": 591,
+        "endChar": 44
+      },
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f3a2034_c377406f",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:47:32Z",
+      "side": 1,
+      "message": "Suggest a short name like s2tt_defs_pvt.h  or s2tt_pvt_defs.h",
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22672d75_0bc60a9d",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T16:47:32Z",
+      "side": 1,
+      "message": "why -EPERM here instead of -EINVAL ?",
+      "range": {
+        "startLine": 1138,
+        "startChar": 12,
+        "endLine": 1138,
+        "endChar": 17
+      },
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
