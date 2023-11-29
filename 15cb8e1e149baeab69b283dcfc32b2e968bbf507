@@ -140,6 +140,24 @@
       "parentUuid": "7c3fe7e7_58526ba3",
       "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0310cde_3a45213f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-29T17:33:14Z",
+      "side": 1,
+      "message": "There are some tasks on the backlog to improve the xlat library (e.g removing recursion during table creation). I think we could use one of those tasks (or create a new one) to review and fix the use of assert vs checks on the xlat library, as this will need to rework the unittests as well.\n\nIf we decide to go ahead with the asserts for the MMU state on this patch, the unittests need to be updated as well as they will fail otherwise.",
+      "parentUuid": "3bb912e4_f70fbc9a",
+      "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
