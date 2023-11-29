@@ -102,6 +102,30 @@
       },
       "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4691f53_94269d0f",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-29T17:39:27Z",
+      "side": 1,
+      "message": "I wanted to distinguish between invalid parameters (-EINVAL if the s2tte has no RIPAS, as on line 1128) and an operation not permitted (-EPERM) if the state is not correct.",
+      "parentUuid": "22672d75_0bc60a9d",
+      "range": {
+        "startLine": 1138,
+        "startChar": 12,
+        "endLine": 1138,
+        "endChar": 17
+      },
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
