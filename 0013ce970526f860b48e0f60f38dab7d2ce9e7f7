@@ -126,6 +126,30 @@
       },
       "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "909d85b2_6631e6f5",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-30T11:57:11Z",
+      "side": 1,
+      "message": "ok, I would just use -1 and -2 if you want o distinguish. Also update the function documentation.",
+      "parentUuid": "f4691f53_94269d0f",
+      "range": {
+        "startLine": 1138,
+        "startChar": 12,
+        "endLine": 1138,
+        "endChar": 17
+      },
+      "revId": "0013ce970526f860b48e0f60f38dab7d2ce9e7f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
