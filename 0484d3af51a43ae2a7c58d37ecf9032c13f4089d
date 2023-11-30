@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1e72815_34ec9bb9",
+        "filename": "tools/cppcheck/misra.rules",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-30T16:10:31Z",
+      "side": 1,
+      "message": "change permission of this file to remove executable permission",
+      "revId": "0484d3af51a43ae2a7c58d37ecf9032c13f4089d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
