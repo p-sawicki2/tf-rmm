@@ -43,6 +43,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "adfdf0e7_90f4182e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-11-30T14:53:43Z",
+      "side": 1,
+      "message": "It feels a bit strange that measurement_rec_params_measure changes one of its input parameters just because it can be quicker this way. I understand that this doesn\u0027t cause an error as the cleared fields are not used after the function call, but still. \n\nI think this behaviour is so unintuitive that it would worth to have at least a comment in the tf-rmm/lib/measurement/include/measurement.h at the function documentation, that this function changes the thing that it measures.\n\nBut the code seems to be right, so I can give +1",
+      "revId": "01ac0173dce7f08ab0c1cbdde313c8992dea0653",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "54cc4e49_525c3357",
         "filename": "lib/measurement/src/rim.c",
         "patchSetId": 3
