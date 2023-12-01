@@ -68,6 +68,24 @@
       "parentUuid": "4db3693e_1e789872",
       "revId": "7b3ef2b6c50d81a32c35053f473a14e0f48677d5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71d1d68d_a8326ca8",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-01T21:09:34Z",
+      "side": 1,
+      "message": "Ok, we dont mind couple of additional fields in a struct for release build. Avoiding conditional compilation flags within code is something we care about more. So suggest to remove.",
+      "parentUuid": "6e19f4aa_7222ac66",
+      "revId": "7b3ef2b6c50d81a32c35053f473a14e0f48677d5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
