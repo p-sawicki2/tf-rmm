@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c5bf3ae_c35ba06a",
+        "filename": "plat/host/host_cbmc/src/host_harness.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "Renamed",
+      "parentUuid": "ddf85787_579f03ba",
+      "range": {
+        "startLine": 24,
+        "startChar": 5,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aad1ab00_06944f57",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1c2f052_e4d093df",
+        "filename": "plat/host/host_cbmc/src/host_harness.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aad1ab00_06944f57",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f02a1d88_99c6415b",
@@ -77,6 +125,24 @@
       "writtenOn": "2023-11-28T10:18:26Z",
       "side": 1,
       "message": "I think the \"host_cbmc\" may be a better location for this file. I think the file in this folder can move to the mentioned folder.",
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15d8f927_ee3a1529",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f02a1d88_99c6415b",
       "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -121,6 +187,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0eeb9af6_94f1b795",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "Added comment",
+      "parentUuid": "fec7dfcd_4c354710",
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d70eda5_aecf7da7",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "You seem to be right, the GPT state of granule has a meaning for host granules. However with this CBMC build, there is no host, we just want to maintain a GPT state for every granule that is being injected into the granules array.\n\nTo have this array of length HOST_NR_GRANULES would require a mapping of the RMM granule index to the host granule index, which would add complexity to the testbench, without any real benefit I think. \n\nSo I would rather leave this as is.",
+      "parentUuid": "4dac9318_4404cf7c",
+      "range": {
+        "startLine": 17,
+        "startChar": 33,
+        "endLine": 17,
+        "endChar": 49
+      },
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca9c0acf_e324320e",
@@ -138,6 +246,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf9cd6f2_3c7096b6",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "This function is actually not used, removed it.",
+      "parentUuid": "ca9c0acf_e324320e",
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2100e25f_420475d6",
@@ -151,6 +277,30 @@
       "writtenOn": "2023-11-28T10:18:26Z",
       "side": 1,
       "message": "this function seems the same as granule_metadata_ptr_to_pa() . Perhaps have only this one ?",
+      "range": {
+        "startLine": 112,
+        "startChar": 6,
+        "endLine": 112,
+        "endChar": 40
+      },
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c726d793_02c31ef7",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "It seems that none of those functions is used, removed them",
+      "parentUuid": "2100e25f_420475d6",
       "range": {
         "startLine": 112,
         "startChar": 6,
@@ -184,6 +334,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15aa2d9f_fe59109e",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "This is actually not used, so removed instead.",
+      "parentUuid": "68ac75a6_9ea261da",
+      "range": {
+        "startLine": 120,
+        "startChar": 7,
+        "endLine": 120,
+        "endChar": 36
+      },
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4fb8ff91_3abea1dd",
@@ -197,6 +371,24 @@
       "writtenOn": "2023-11-28T10:18:26Z",
       "side": 1,
       "message": "some function comments here would be good. also for below func.",
+      "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9c75a96_b8f3d421",
+        "filename": "tools/cbmc/src/tb_common.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-01T09:10:14Z",
+      "side": 1,
+      "message": "Added comments in the header",
+      "parentUuid": "4fb8ff91_3abea1dd",
       "revId": "8da481fbe47204c8ec2a1f1675f03664834cabc0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
