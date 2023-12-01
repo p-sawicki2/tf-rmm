@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1021fc2_9bdc8f04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-12-01T10:04:24Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better if non-relevant attributes are cleared in the calling functions?",
+      "revId": "dc66b5a607cbc9faecfa2a52a124c2b237cc0308",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
