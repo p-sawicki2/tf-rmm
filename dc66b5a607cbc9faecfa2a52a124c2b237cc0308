@@ -34,6 +34,24 @@
       "parentUuid": "a1021fc2_9bdc8f04",
       "revId": "dc66b5a607cbc9faecfa2a52a124c2b237cc0308",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fa5b8f0_24fb3f7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-03T09:59:05Z",
+      "side": 1,
+      "message": "Not sure what would be a better solution. Maybe moving the data modification outside the measurement function would make things less confusing, however Soby is right that details of how to measure gets out from the function.\n\nIt just occurred to me that another solution, that eliminates the extra buffer, and keeps the measurement knowledge inside the measurement function could be to use the psa_hash_update API. I did a proof of concept implementation here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/25300",
+      "parentUuid": "1ce9f067_63404609",
+      "revId": "dc66b5a607cbc9faecfa2a52a124c2b237cc0308",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
