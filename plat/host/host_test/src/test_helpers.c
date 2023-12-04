@@ -96,6 +96,8 @@ void test_helpers_rmm_start(bool secondaries)
 		/* Enable RMM and setup basic structures for each test. */
 		host_util_setup_sysreg_and_boot_manifest();
 
+		host_util_setup_simd_reg();
+
 		/* bringup primary CPU */
 		start_primary_pe();
 
