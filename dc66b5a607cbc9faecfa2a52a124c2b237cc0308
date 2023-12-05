@@ -52,6 +52,24 @@
       "parentUuid": "1ce9f067_63404609",
       "revId": "dc66b5a607cbc9faecfa2a52a124c2b237cc0308",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49761716_c70b24f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T11:53:27Z",
+      "side": 1,
+      "message": "Thanks Mate for the alternate implementation. I didnot realize at the beginning , but the optimization done in this patch will allow NS to stuff random bits to padding and affect the measurement of the Realm.\n\nSo the right solution is either\n1. Allocate a zeroed buffer and copy the required fields for measurement\n2. Or do a multi-part hash update as demonstrated in Mate\u0027s prototype.\n\n\nGiven the relative complexity of the code for the 2nd approach,  I tend to favor the first solution albeit the memory overhead and memset() of the buffer.",
+      "parentUuid": "7fa5b8f0_24fb3f7d",
+      "revId": "dc66b5a607cbc9faecfa2a52a124c2b237cc0308",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
