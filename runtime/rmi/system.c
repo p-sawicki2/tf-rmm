@@ -6,8 +6,8 @@
 #include <smc-handler.h>
 #include <smc-rmi.h>
 
-COMPILER_ASSERT(RMI_ABI_VERSION_MAJOR <= 0x7FFF);
-COMPILER_ASSERT(RMI_ABI_VERSION_MINOR <= 0xFFFF);
+COMPILER_ASSERT(RMI_ABI_VERSION_MAJOR <= 0x7FFFU);
+COMPILER_ASSERT(RMI_ABI_VERSION_MINOR <= 0xFFFFU);
 
 void smc_version(unsigned long rmi_version, struct smc_result *res)
 {
