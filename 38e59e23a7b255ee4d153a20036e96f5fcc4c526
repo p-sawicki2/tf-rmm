@@ -22,6 +22,30 @@
       },
       "revId": "38e59e23a7b255ee4d153a20036e96f5fcc4c526",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb2d6910_a163220f",
+        "filename": "lib/realm/include/buffer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-05T15:04:27Z",
+      "side": 1,
+      "message": "enum are signed by default",
+      "parentUuid": "be57f5e7_647decf5",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 13
+      },
+      "revId": "38e59e23a7b255ee4d153a20036e96f5fcc4c526",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
