@@ -1,0 +1,10 @@
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+1: Soby Mathew <soby.mathew@arm.com>
+Code-Review+1: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 05 Dec 2023 12:48:21 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/25175
+Comments-Total: 1
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
