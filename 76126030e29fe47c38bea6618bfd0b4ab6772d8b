@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efd8b3d3_7e53329d",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T14:31:38Z",
+      "side": 1,
+      "message": "assert(check_buffer_slots_empty() \u003d\u003d true);",
+      "revId": "76126030e29fe47c38bea6618bfd0b4ab6772d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
