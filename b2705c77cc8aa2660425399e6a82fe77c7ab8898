@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aaf3c68a_8760073f",
+        "filename": "runtime/core/aarch64/vectors.S",
+        "patchSetId": 16
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:51:46Z",
+      "side": 1,
+      "message": "would be good to have a proper structure defined for this rather than relying on the order when reading this out.",
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
