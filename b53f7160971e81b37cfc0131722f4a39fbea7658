@@ -152,6 +152,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d780d5ab_ad8458aa",
+        "filename": "runtime/core/aarch64/vectors.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:47:24Z",
+      "side": 1,
+      "message": "There seems to be less utility in having this as parameter if we use the ISS fields to detect an instruction using sp as the faulting one. So we could avoid doing this and hence passing this as an arg.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3a25ea48_e8a945f3",
         "filename": "runtime/core/handler.c",
         "patchSetId": 6
