@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be57f5e7_647decf5",
+        "filename": "lib/realm/include/buffer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T11:15:09Z",
+      "side": 1,
+      "message": "I wonder how addition of 2 unsigned numbers is problematic for MISRA ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 13
+      },
+      "revId": "38e59e23a7b255ee4d153a20036e96f5fcc4c526",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
