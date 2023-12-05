@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "defc875b_e93d9703",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T11:48:15Z",
+      "side": 1,
+      "message": "The CI failure is due to rebase issue. Overriding manually.",
+      "revId": "01f0314777253133edd178dbb4b8c8d97900cdff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
