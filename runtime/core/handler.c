@@ -153,6 +153,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
 };
 
+/* cppcheck-suppress misra-c2012-10.4 */
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
 
 static bool rmi_call_log_enabled = true;
