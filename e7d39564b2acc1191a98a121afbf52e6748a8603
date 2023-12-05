@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af5ab3dd_a4ec6a14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T14:17:29Z",
+      "side": 1,
+      "message": "One thing to note is that we dont support watchpoints and breakpoints in Realm yet. So Host specifying these will not materially change anything for the realms. \n\nBut I agree this is the right fix for now till RMM can support watch point and breakpoints properly.",
+      "revId": "e7d39564b2acc1191a98a121afbf52e6748a8603",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
