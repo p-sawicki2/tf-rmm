@@ -608,8 +608,8 @@
 
 /* SME Control Register */
 #define SMCR_EL2			S3_4_C1_C2_6
-#define SMCR_EL2_LEN_SHIFT		UL(0)
-#define SMCR_EL2_LEN_WIDTH		UL(4)
+#define SMCR_EL2_LEN_SHIFT		U(0)
+#define SMCR_EL2_LEN_WIDTH		U(4)
 /*
  * SMCR_EL2_RAZ_LEN is defined to find the architecturally permitted SVL. This
  * is a combination of RAZ and LEN bit fields.

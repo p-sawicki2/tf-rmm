@@ -153,7 +153,8 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
 };
 
-COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
+COMPILER_ASSERT((unsigned long)ARRAY_LEN(smc_handlers) ==
+		(unsigned long)SMC64_NUM_FIDS_IN_RANGE(RMI));
 
 static bool rmi_call_log_enabled = true;
 

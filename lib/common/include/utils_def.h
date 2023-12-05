@@ -68,7 +68,7 @@
 	(sizeof(a) / sizeof((a)[0]))
 
 #define ARRAY_LEN(_a)	\
-	((sizeof(_a) / sizeof((_a)[0])) + CHECK_TYPE_IS_ARRAY(_a))
+	((sizeof(_a) / sizeof((_a)[0])) + (unsigned long)(CHECK_TYPE_IS_ARRAY(_a)))
 
 /*
  * Macro checks types of array and variable/value to write
