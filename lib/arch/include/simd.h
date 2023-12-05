@@ -11,7 +11,7 @@
 /* Size of one FPU vector register in bytes */
 #define FPU_VEC_REG_SIZE	16U
 #define FPU_VEC_REG_NUM		32U
-#define FPU_REGS_SIZE		(FPU_VEC_REG_SIZE * FPU_VEC_REG_NUM)
+#define FPU_REGS_SIZE		(unsigned long)(FPU_VEC_REG_SIZE * FPU_VEC_REG_NUM)
 
 /* These defines are required by compiler assert to check offsets */
 #define FPU_REGS_OFFSET_Q	0x0U
@@ -22,8 +22,8 @@
  * Z register.
  */
 #define SVE_Z_REG_MIN_SIZE	U(16)
-#define SVE_P_REG_MIN_SIZE	(SVE_Z_REG_MIN_SIZE / 8)
-#define SVE_FFR_REG_MIN_SIZE	(SVE_Z_REG_MIN_SIZE / 8)
+#define SVE_P_REG_MIN_SIZE	U(SVE_Z_REG_MIN_SIZE / 8U)
+#define SVE_FFR_REG_MIN_SIZE	U(SVE_Z_REG_MIN_SIZE / 8U)
 
 /* Number of Z, P, FFR registers */
 #define SVE_Z_REG_NUM		U(32)
@@ -36,7 +36,7 @@
 					     SVE_FFR_REG_NUM))
 
 /* SVE vq architecture limit */
-#define SVE_VQ_ARCH_MAX		((1U << ZCR_EL2_LEN_WIDTH) - 1U)
+#define SVE_VQ_ARCH_MAX		U((1UL << ZCR_EL2_LEN_WIDTH) - 1U)
 
 /* These defines are required by compiler assert to check offsets */
 #define SVE_REGS_OFFSET_Z	0x0U
@@ -82,8 +82,11 @@ struct fpu_regs {
  * type flags has SIMD_TFLAG_SVE set.
  */
 struct sve_regs {
-	uint8_t z[SVE_Z_REGS_SIZE(SVE_VQ_ARCH_MAX)];
+	/* cppcheck-suppress misra-c2012-10.4 */
+	uint8_t z[(unsigned int)SVE_Z_REGS_SIZE(SVE_VQ_ARCH_MAX)];
+	/* cppcheck-suppress misra-c2012-10.4 */
 	uint8_t p[SVE_P_REGS_SIZE(SVE_VQ_ARCH_MAX)];
+	/* cppcheck-suppress misra-c2012-10.4 */
 	uint8_t ffr[SVE_FFR_REGS_SIZE(SVE_VQ_ARCH_MAX)];
 } __aligned(sizeof(__uint128_t));
 
@@ -178,10 +181,10 @@ struct simd_context {
  * TODO: Auto generate header file simd-asm-offsets.h during build and use it
  * in assembly routines.
  */
-COMPILER_ASSERT(offsetof(struct fpu_regs, q) == (size_t)FPU_REGS_OFFSET_Q);
-COMPILER_ASSERT(offsetof(struct sve_regs, z) == (size_t)SVE_REGS_OFFSET_Z);
-COMPILER_ASSERT(offsetof(struct sve_regs, p) == (size_t)SVE_REGS_OFFSET_P);
-COMPILER_ASSERT(offsetof(struct sve_regs, ffr) == (size_t)SVE_REGS_OFFSET_FFR);
+COMPILER_ASSERT((U(offsetof(struct fpu_regs, q))) == FPU_REGS_OFFSET_Q);
+COMPILER_ASSERT((U(offsetof(struct sve_regs, z))) == SVE_REGS_OFFSET_Z);
+COMPILER_ASSERT((U(offsetof(struct sve_regs, p))) == U(SVE_REGS_OFFSET_P));
+COMPILER_ASSERT((U(offsetof(struct sve_regs, ffr))) == U(SVE_REGS_OFFSET_FFR));
 
 /* Initialize SIMD layer based on CPU support for FPU or SVE */
 void simd_init(void);
