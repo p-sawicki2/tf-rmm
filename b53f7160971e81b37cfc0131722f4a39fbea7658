@@ -34,6 +34,166 @@
       "parentUuid": "5e2b809e_54009f66",
       "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae412108_75f7ce20",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "prefer this to be a separate field, \n\n`sp_el0` in this struct.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a64b570_b32d4bd9",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "nit: add a comment\n\n/* Exception stack defines */\n\ncould move the define at line 19 to this section so all exception stack related defines are in one block.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b699ab7a_11706c65",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "\"misra error\"",
+      "range": {
+        "startLine": 48,
+        "startChar": 55,
+        "endLine": 48,
+        "endChar": 60
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8454ad0_1899d902",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 53,
+        "startChar": 55,
+        "endLine": 53,
+        "endChar": 60
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce885a8d_3e2711e4",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "I checked EL3 code and it is saving Sp_el0 for every world. So, if sp_el0 is initialized as part of rmm initialization sequence, the EL3 should take care of restoring this value every time we enter RMM (the NS sp_el0 will be saved by EL3 as a side-effect).\n\nThis is also mentioned in https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-el3-world-switch-register-save-restore-convention\n\nThe code comments introduced as part of this change (line 15 - 30) is good, so those can be retained.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1e5c880_b7e6226c",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "as mentioned, introduce another fields for sp_el0. Probably the offset needs to be hardended with compiler assert as well.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a25ea48_e8a945f3",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "is it possible for the start of stack frame to be inside stack buffer but the stack pointer based indexing is outside the stack buffer ?\n\nWe could print this message for any access using sp as the register. This will also cater stack underflow cases.\n\nThis can be figured out from ISS part in esr_el2\nSRT, bits [20:16], When ISV \u003d\u003d 1",
+      "range": {
+        "startLine": 439,
+        "startChar": 2,
+        "endLine": 442,
+        "endChar": 34
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ec806f_cb9f020a",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-05T16:41:37Z",
+      "side": 1,
+      "message": "since the end result is the same (panic/fatal_abort), we could write this as :\n\nif (is_el2_stack_overflow(esr, sp_el2, far_el2)) {\n\tFATAL(\"Stack overflow on CPU #%u.\\n\", my_cpuid());\n}\n\nfatal_abort();",
+      "range": {
+        "startLine": 472,
+        "startChar": 3,
+        "endLine": 475,
+        "endChar": 2
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
