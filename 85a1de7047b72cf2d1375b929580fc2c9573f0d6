@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99622236_f38c8d8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-06T05:21:25Z",
+      "side": 1,
+      "message": "The CI failure is due to CPPCheck failure which is not an issue with this patch. The CI is currently being reworked to fix the CPPCheck related issues.",
+      "revId": "85a1de7047b72cf2d1375b929580fc2c9573f0d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
