@@ -16,6 +16,86 @@
       "message": "would be good to have a proper structure defined for this rather than relying on the order when reading this out.",
       "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbb43620_26a1146c",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:31:01Z",
+      "side": 1,
+      "message": "Mate\u0027s patch will no longer pack sp_el2 in the stack. So we need to switch stack pointer and read sp_el2 and then return the value here (using inline assembly defined in arch_helpers). could also print value of sp_el0, stack virtual address and stack size as debug info",
+      "range": {
+        "startLine": 355,
+        "startChar": 10,
+        "endLine": 355,
+        "endChar": 12
+      },
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81608731_5dcec8e4",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:31:01Z",
+      "side": 1,
+      "message": "introduce a helper in arch_helpers and introduce a dummy variant in fake_host for the same.",
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faf21386_ebabfc47",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:31:01Z",
+      "side": 1,
+      "message": "this should be in ERROR(). same comments for below as well.",
+      "range": {
+        "startLine": 375,
+        "startChar": 1,
+        "endLine": 375,
+        "endChar": 8
+      },
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e52a953_03d7ce0b",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:31:01Z",
+      "side": 1,
+      "message": "should we also print hpfar and also some control registers like hcr_el2, cptr_el2, sctlr_el2",
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
