@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "557f6799_ceb83054",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:19:24Z",
+      "side": 1,
+      "message": "looks ok except for some suppressions which we need to understand better.",
+      "revId": "b79285508512539b4f446970df093af650f0c126",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de735b8f_ef8bf3cc",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:19:24Z",
+      "side": 1,
+      "message": "need to understand the reason for suppression here.",
+      "revId": "b79285508512539b4f446970df093af650f0c126",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "246fb1b6_5ad043ac",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:19:24Z",
+      "side": 1,
+      "message": "Need to understand suppression here.",
+      "revId": "b79285508512539b4f446970df093af650f0c126",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
