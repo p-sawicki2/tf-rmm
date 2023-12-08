@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d81f218f_6568e315",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:15:58Z",
+      "side": 1,
+      "message": "could you try initializing sp_el0 in the boot path (both cold boot and warm boot) ? Since El3 saves and restores the value, sp_el0 should have the right value when RMM executes this function if initialized during boot.",
+      "revId": "96c4eeb03647a308537d4308ddb02d184422181c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ff326a2_252b96fd",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-08T10:15:58Z",
+      "side": 1,
+      "message": "as discussed , remove the detection of stack overflow for now. Once we have the exception dump patch, then stack overflow can be figured out from exception dump. We can print the stack bases and stack sizes in the dump to make figuring this out easier.",
+      "revId": "96c4eeb03647a308537d4308ddb02d184422181c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
