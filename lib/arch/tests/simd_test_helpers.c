@@ -14,3 +14,30 @@ simd_vreg simd_test_helpers_get_rand_vector(void) {
 
 	return rand_reg;
 }
+
+void simd_test_helpers_set_state_saved(bool state)
+{
+	if (simd_is_state_saved() == state) {
+		return;
+	}
+
+	struct simd_context simd_ctx =
+	{
+		.sflags = 0,
+	};
+
+	simd_ctx.sflags |= SIMD_SFLAG_INIT_DONE;
+	simd_ctx.tflags &= ~SIMD_TFLAG_SVE;
+	simd_ctx.tflags &= ~SIMD_TFLAG_SME;
+	simd_ctx.owner = SIMD_OWNER_REL1;
+
+	if (state) {
+		simd_ctx.sflags &= ~SIMD_SFLAG_SAVED;
+		simd_context_switch(&simd_ctx, NULL);
+	} else {
+		simd_ctx.sflags |= SIMD_SFLAG_SAVED;
+		simd_context_switch(NULL, &simd_ctx);
+	}
+
+	assert(simd_is_state_saved() == state);
+}
