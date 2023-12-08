@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06dfc593_7167cdc6",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d81f218f_6568e315",
+      "revId": "96c4eeb03647a308537d4308ddb02d184422181c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ff326a2_252b96fd",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-12-08T10:15:58Z",
       "side": 1,
       "message": "as discussed , remove the detection of stack overflow for now. Once we have the exception dump patch, then stack overflow can be figured out from exception dump. We can print the stack bases and stack sizes in the dump to make figuring this out easier.",
+      "revId": "96c4eeb03647a308537d4308ddb02d184422181c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bf47637_0f933354",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ff326a2_252b96fd",
       "revId": "96c4eeb03647a308537d4308ddb02d184422181c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

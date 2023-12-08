@@ -53,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f31e5ebd_5f253c4d",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "ae412108_75f7ce20",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a64b570_b32d4bd9",
@@ -70,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "031e74c2_8e0637d0",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Added comment",
+      "parentUuid": "5a64b570_b32d4bd9",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b699ab7a_11706c65",
@@ -83,6 +119,30 @@
       "writtenOn": "2023-12-05T16:41:37Z",
       "side": 1,
       "message": "\"misra error\"",
+      "range": {
+        "startLine": 48,
+        "startChar": 55,
+        "endLine": 48,
+        "endChar": 60
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa3fb900_9ee63f1e",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b699ab7a_11706c65",
       "range": {
         "startLine": 48,
         "startChar": 55,
@@ -116,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff3a3177_e117dc5d",
+        "filename": "lib/xlat/include/xlat_high_va.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8454ad0_1899d902",
+      "range": {
+        "startLine": 53,
+        "startChar": 55,
+        "endLine": 53,
+        "endChar": 60
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce885a8d_3e2711e4",
@@ -129,6 +213,24 @@
       "writtenOn": "2023-12-05T16:41:37Z",
       "side": 1,
       "message": "I checked EL3 code and it is saving Sp_el0 for every world. So, if sp_el0 is initialized as part of rmm initialization sequence, the EL3 should take care of restoring this value every time we enter RMM (the NS sp_el0 will be saved by EL3 as a side-effect).\n\nThis is also mentioned in https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-el3-world-switch-register-save-restore-convention\n\nThe code comments introduced as part of this change (line 15 - 30) is good, so those can be retained.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b03ad66_d4fe0a3e",
+        "filename": "runtime/core/aarch64/entry.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Removed the code that saves/restores SP_EL0. Also updated the stack map in the comment",
+      "parentUuid": "ce885a8d_3e2711e4",
       "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -150,6 +252,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff9fe2f5_62dc42c3",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Added compiler assert",
+      "parentUuid": "b1e5c880_b7e6226c",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d780d5ab_ad8458aa",
@@ -163,6 +283,24 @@
       "writtenOn": "2023-12-05T16:47:24Z",
       "side": 1,
       "message": "There seems to be less utility in having this as parameter if we use the ISS fields to detect an instruction using sp as the faulting one. So we could avoid doing this and hence passing this as an arg.",
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca4f1e97_4e06e6bb",
+        "filename": "runtime/core/aarch64/vectors.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d780d5ab_ad8458aa",
       "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -190,6 +328,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60fc44a1_8d5ac790",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "removed stack overflow detection",
+      "parentUuid": "3a25ea48_e8a945f3",
+      "range": {
+        "startLine": 439,
+        "startChar": 2,
+        "endLine": 442,
+        "endChar": 34
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "50ec806f_cb9f020a",
@@ -203,6 +365,30 @@
       "writtenOn": "2023-12-05T16:41:37Z",
       "side": 1,
       "message": "since the end result is the same (panic/fatal_abort), we could write this as :\n\nif (is_el2_stack_overflow(esr, sp_el2, far_el2)) {\n\tFATAL(\"Stack overflow on CPU #%u.\\n\", my_cpuid());\n}\n\nfatal_abort();",
+      "range": {
+        "startLine": 472,
+        "startChar": 3,
+        "endLine": 475,
+        "endChar": 2
+      },
+      "revId": "b53f7160971e81b37cfc0131722f4a39fbea7658",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ad90eeb_cf7488bb",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-08T20:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50ec806f_cb9f020a",
       "range": {
         "startLine": 472,
         "startChar": 3,
