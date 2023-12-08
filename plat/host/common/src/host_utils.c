@@ -272,6 +272,8 @@ void host_util_setup_sysreg_and_boot_manifest(void)
 
 void host_util_setup_simd_reg(void)
 {
+	int ret;
+
 	simd_vreg init = { .q = {0} };
 
 	for (unsigned int vreg_idx = 0; vreg_idx < NUM_VREGS; vreg_idx++)
@@ -281,6 +283,13 @@ void host_util_setup_simd_reg(void)
 			simd_vregs[vreg_idx].value[cpu_idx] = init;
 		}
 
+	}
+
+	ret = host_util_set_default_sysreg_cb("fpcr", 0UL);
+	ret = host_util_set_default_sysreg_cb("fpsr", 0UL);
+
+	if (ret != 0) {
+		panic();
 	}
 }
 
