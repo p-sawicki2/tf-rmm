@@ -1,0 +1,10 @@
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+1: Shruti Gupta <shruti.gupta@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Mon, 11 Dec 2023 18:19:49 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/25343
+Comments-Total: 7
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
