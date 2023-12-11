@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d683b69_13ec5a5b",
+        "filename": "tools/cbmc/CheckCBMC.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-11T12:11:09Z",
+      "side": 1,
+      "message": "The report name should be testbench specific!",
+      "range": {
+        "startLine": 186,
+        "startChar": 6,
+        "endLine": 186,
+        "endChar": 28
+      },
+      "revId": "2404693aae372445f63467ddc8475d88fdbab101",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
