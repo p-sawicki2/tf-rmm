@@ -16,6 +16,29 @@
       "message": "Thanks for the review!",
       "revId": "b12a8a7c9a941003280a99cbbbc0a767e6f555ef",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63c596b1_8efff8eb",
+        "filename": "lib/xlat/src/xlat_high_va.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-11T13:55:47Z",
+      "side": 1,
+      "message": "clang tidy complains about this multplication\n\n(size_t)XLAT_TABLE_ENTRIES * cpuid\n\nmay solve the issue.",
+      "range": {
+        "startLine": 136,
+        "startChar": 17,
+        "endLine": 136,
+        "endChar": 43
+      },
+      "revId": "b12a8a7c9a941003280a99cbbbc0a767e6f555ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
