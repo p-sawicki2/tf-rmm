@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2882280c_cad89e11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-15T19:29:32Z",
+      "side": 1,
+      "message": "Left some comments on the internal patch as I wasn\u0027t aware of this one. Please review",
+      "revId": "b712e081b89bd3a2e574ce6c508fa59f61ea1598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
