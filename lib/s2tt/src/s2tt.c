@@ -5,15 +5,12 @@
 
 #include <arch_helpers.h>
 #include <bitmap.h>
-#include <buffer.h>
 #include <gic.h>
 #include <granule.h>
-#include <memory_alloc.h>
 #include <realm.h>
 #include <ripas.h>
 #include <s2tt_pvt_defs.h>
 #include <smc.h>
-#include <status.h>
 #include <stddef.h>
 #include <string.h>
 #include <table.h>
