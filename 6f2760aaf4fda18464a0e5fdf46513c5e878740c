@@ -24,6 +24,46 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fa419bf_a16bff95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-18T12:32:55Z",
+      "side": 1,
+      "message": "The change looks good. Just a suggestion for an additional change.",
+      "revId": "6f2760aaf4fda18464a0e5fdf46513c5e878740c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfd6399b_2ccfa2c6",
+        "filename": "lib/measurement/src/rim.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-18T12:32:55Z",
+      "side": 1,
+      "message": "Could the additional `buffer` variable been eliminated, and simply do \n\n    struct rmi_realm_params rim_params \u003d {0};\n    \nas for the other functions? (as the function body is touched anyway).",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 73
+      },
+      "revId": "6f2760aaf4fda18464a0e5fdf46513c5e878740c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c17455d4_8c705593",
