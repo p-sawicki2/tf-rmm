@@ -47,6 +47,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d182ab5_34474bb4",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-18T13:13:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9b9e6ca_8031f887",
+      "range": {
+        "startLine": 271,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 2
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "024fe77d_f8923813",
@@ -60,6 +84,30 @@
       "writtenOn": "2023-11-29T16:58:41Z",
       "side": 1,
       "message": "which is controlled by host */",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 21
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ac08a87_05aaf6d1",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-18T13:13:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "024fe77d_f8923813",
       "range": {
         "startLine": 47,
         "startChar": 17,
@@ -93,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5de8e4e_0678ecc0",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-18T13:13:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dbd9f6d_f2911378",
+      "range": {
+        "startLine": 53,
+        "startChar": 3,
+        "endLine": 53,
+        "endChar": 37
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bed3d706_9302bf25",
@@ -106,6 +178,30 @@
       "writtenOn": "2023-11-29T16:58:41Z",
       "side": 1,
       "message": "S2TTE_NS_ATTR_RMM_MASK",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "d5d9ff87874046b2c60a0fcca9537bac7f5e041d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5856fc49_8df6dcdb",
+        "filename": "lib/realm/src/s2tt_private_defs.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-18T13:13:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bed3d706_9302bf25",
       "range": {
         "startLine": 56,
         "startChar": 8,
