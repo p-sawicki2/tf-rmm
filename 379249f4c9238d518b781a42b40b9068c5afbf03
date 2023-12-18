@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3933db54_4bdc273d",
+        "filename": "docs/resources/application-notes/cbmc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-18T11:37:58Z",
+      "side": 1,
+      "message": "could add a sentence here that cbmc-viewer can be installed via :\npython3 -m pip install cbmc-viewer\n\nFor further details , please see ...",
+      "revId": "379249f4c9238d518b781a42b40b9068c5afbf03",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d529a6de_851d3d76",
+        "filename": "tools/cbmc/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-18T11:37:58Z",
+      "side": 1,
+      "message": "add this build option to user-guide.",
+      "range": {
+        "startLine": 8,
+        "startChar": 7,
+        "endLine": 8,
+        "endChar": 29
+      },
+      "revId": "379249f4c9238d518b781a42b40b9068c5afbf03",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
