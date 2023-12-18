@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd1b6496_ee3debb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2023-12-18T14:08:32Z",
+      "side": 1,
+      "message": "Thanks for the reviews!\n\nChecking Allow-CI+2 as it triggers CBMC analysis as well",
+      "revId": "0361dcb821f2af0236449e29ce53b58c8a3ef8f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
