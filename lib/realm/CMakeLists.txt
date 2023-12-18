@@ -36,12 +36,10 @@ target_link_libraries(rmm-lib-realm
 target_include_directories(rmm-lib-realm
     PUBLIC "include"
     PRIVATE "src/include/${RMM_ARCH}"
-    PRIVATE "src/include"
-    PRIVATE "src")
+    PRIVATE "src/include")
 
 target_sources(rmm-lib-realm
     PRIVATE "src/buffer.c"
-            "src/granule.c"
-            "src/s2tt.c")
+            "src/granule.c")
 
 include (tests/CMakeLists.txt)
