@@ -9,6 +9,7 @@ target_include_directories(rmm-lib-realm
 # Add test functionality
 rmm_build_unittest(NAME granule
                    TARGET rmm-lib-realm
+		   LIBRARIES rmm-platform
                    SOURCES "tests/granule.cpp"
                            "tests/realm_test_utils.c"
                            "tests/test_harness.c"
@@ -16,6 +17,7 @@ rmm_build_unittest(NAME granule
 
 rmm_build_unittest(NAME slot_buffer
                    TARGET rmm-lib-realm
+		   LIBRARIES rmm-platform
                    SOURCES "tests/buffer.cpp"
                            "tests/realm_test_utils.c"
                            "tests/test_harness.c"
