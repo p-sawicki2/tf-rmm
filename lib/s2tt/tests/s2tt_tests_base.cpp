@@ -16,7 +16,6 @@ extern "C" {
 #include <string.h>
 #include <s2tt_pvt_defs.h>
 #include <s2tt_test_helpers.h>
-#include <realm_test_utils.h>
 #include <ripas.h>
 #include <s2tt.h>	/* Interface to exercise */
 #include <test_helpers.h>
@@ -3985,7 +3984,7 @@ void s2tt_walk_lock_unlock_tc1(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* Invoke s2tt_walk_lock_unlock() with the generated translation tables */
 	s2tt_walk_lock_unlock(g_tables[sl + 1U], sl, s2tt_max_ipa_size(), pa,
@@ -4130,7 +4129,7 @@ void s2tt_walk_lock_unlock_tc1(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U],
 		       end_level - 1L, &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	s2tt_walk_lock_unlock(g_tables[sl + 1U], sl, s2tt_max_ipa_size(),
 			     pa, end_level, &wi);
@@ -4232,7 +4231,7 @@ void s2tt_walk_lock_unlock_tc2(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/*
 	 * Change the granule state for an arbitrary level. In this case, we
@@ -4283,7 +4282,7 @@ void s2tt_walk_lock_unlock_tc3(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/*
 	 * Lock the granule of an arbitrary level. In this case, we
@@ -4353,7 +4352,7 @@ void s2tt_walk_lock_unlock_tc5(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4393,7 +4392,7 @@ void s2tt_walk_lock_unlock_tc6(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4433,7 +4432,7 @@ void s2tt_walk_lock_unlock_tc7(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4473,7 +4472,7 @@ void s2tt_walk_lock_unlock_tc8(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4513,7 +4512,7 @@ void s2tt_walk_lock_unlock_tc9(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4554,7 +4553,7 @@ void s2tt_walk_lock_unlock_tc10(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* Generate an address larger than the maximum allowable size */
 	pa = (1UL << s2tt_max_ipa_size());
@@ -4597,7 +4596,7 @@ void s2tt_walk_lock_unlock_tc11(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
@@ -4655,7 +4654,7 @@ void s2tt_walk_lock_unlock_tc12(void)
 	populate_s2tts(pa, &idx_per_lvl[0U], &tables_per_lvl[0U], end_level,
 		       &g_tables[0U], &val_granule,
 		       host_util_get_granule_base(),
-		       realm_test_util_granule_struct_base());
+		       test_helpers_granule_struct_base());
 
 	/* The call should cause an assertion failure */
 	test_helpers_expect_assert_fail(true);
