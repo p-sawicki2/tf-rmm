@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bbfcc7a_4ee08fb6",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T17:27:26Z",
+      "side": 1,
+      "message": "We dont need to test internal asm helpers of a component in unit tests (as we cant test them in fake_host).\n\nThe intention of unit tests is to only exercise the public API of simd (as deinfed in simd.h) .",
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f3a1a2d_f97020bc",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T17:27:26Z",
+      "side": 1,
+      "message": "same comments as above.",
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
