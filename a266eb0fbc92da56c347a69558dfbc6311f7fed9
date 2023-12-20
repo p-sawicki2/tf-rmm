@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f8ef9d2_43414709",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "I think we can optimize the lib further, perhaps some discussion would be needed first.",
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00c22d9c_2a685efd",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "this macro is not used anywhere it seems.",
+      "range": {
+        "startLine": 14,
+        "startChar": 8,
+        "endLine": 14,
+        "endChar": 22
+      },
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24cf8a2d_77a6c478",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "this can be done in .C file.",
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76cf87cb_3908c236",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "this is already catered for I think. \n\nCan we use MIN_STARTING_LEVEL instead of this macro ? Not sure whether this macro provides any difference.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 68
+      },
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5b065d8_d70407f5",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "There is an inconsistency in some functions being inline and others being regular.\n\nPrefer to be consistent for all functions. If the header will grow too big, then suggest to introduce another header (s2tte_helpers.h) with all the static inline definitions.\n\nAlso suggest the following to simplify the code\n\n\nuint64_t s2tte_create_unassigned(ripas)\n\ns2tte_create_unassigned_ram   s2tte_create_unassigned(S2TTE_INVALID_RIPAS_RAM)\nsimilar for empty and destroyed.\n\nOn the above line, we can create 2 other variants\n\ns2tte_create_assigned_valid(pa, level, attr)\ns2tte_create_assigned_invalid(pa, level, ripas)\n\n\nassigned_empty and assigned_destroyed will call s2tte_create_assigned_invalid()\n\nassigned_ram and assigned_ns will call s2tte_create_assigned_valid()",
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76594bd0_1c9464e0",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "we need to allow only SH \u003d ISH for this API...this will pave way to ignoring it when the new spec allows to remove this from NS attr",
+      "range": {
+        "startLine": 143,
+        "startChar": 5,
+        "endLine": 143,
+        "endChar": 27
+      },
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "361d1285_84b13404",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-20T16:36:06Z",
+      "side": 1,
+      "message": "it seems only this API is checking for NS bit being set and I can see the reason for this.\n\nI think it should be caller responsibility to differentiate NS tte from protected ones. These APIs can then assert that NS is 0 unconditionally when RIPAS is specified.\n\nThese APIs can implemented as  :\n\n#define s2tte_is_unassigned_ripas(s2tte,ripas) \n\nthis can check that NS is 0 and the S2TTE is invalid as well.\n\n#define s2tte_is_assigned_ram() s2tte_is_valid(s2tte, ns)\n#define s2tte_is_assigned_ns() s2tte_is_valid(s2tte, 1)\n\nthe functions can use the same internal helpers... we need to work though the details.",
+      "range": {
+        "startLine": 147,
+        "startChar": 5,
+        "endLine": 147,
+        "endChar": 30
+      },
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
