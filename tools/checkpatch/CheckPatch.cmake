@@ -71,7 +71,10 @@ endfunction()
 #
 # checkcommitmsg_get_stats: Parse and returns number of errors and warnings
 #
-function(checkcommitmsg_get_stats stats_arg errors_ret)
+function(checkcommitmsg_get_stats stats_arg errors_ret warnings_ret)
+  set(errors 0)
+  set(warnings 0)
+
   string(FIND "${stats_arg}" "total:" idx REVERSE)
   if(NOT ${idx} EQUAL -1)
     string(LENGTH "${stats_arg}" len)
@@ -79,11 +82,11 @@ function(checkcommitmsg_get_stats stats_arg errors_ret)
 
     string(REPLACE " " ";" last_line_list ${last_line})
     list(GET last_line_list 1 errors)
-  else()
-    set(errors 1)
+    list(GET last_line_list 3 warnings)
   endif()
 
   set(${errors_ret} ${errors} PARENT_SCOPE)
+  set(${warnings_ret} ${warnings} PARENT_SCOPE)
 endfunction()
 
 #
@@ -237,12 +240,12 @@ if(CHECKPATCH_RUN)
       message(${checkcommitmsg_output})
     endif()
 
-    if(${checkcommitmsg_rc})
-      checkcommitmsg_get_stats("${checkcommitmsg_output}"
-        commitmsg_errors)
-      MATH(EXPR commitmsg_total_errors
-        "${commitmsg_total_errors} + ${commitmsg_errors}")
-    endif()
+    checkcommitmsg_get_stats("${checkcommitmsg_output}"
+      commitmsg_errors commitmsg_warnings)
+    MATH(EXPR commitmsg_total_errors
+      "${commitmsg_total_errors} + ${commitmsg_errors}")
+    MATH(EXPR commitmsg_total_warnings
+      "${commitmsg_total_warnings} + ${commitmsg_warnings}")
   endforeach()
 
   print_stats_and_exit("checkpatch" ${total_errors}, ${total_warnings})
