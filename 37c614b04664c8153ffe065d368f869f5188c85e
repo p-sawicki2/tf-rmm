@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fdc2d563_8885154b",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-21T09:53:05Z",
+      "side": 1,
+      "message": "Yes, I copied this from lib/realm and I forgot to clean it. Will do it on the next iteration/rebase",
+      "parentUuid": "a3d8a0e9_88ea5034",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38b0c2a0_5f9e8165",
         "filename": "lib/s2tt/CMakeLists.txt",
         "patchSetId": 2
