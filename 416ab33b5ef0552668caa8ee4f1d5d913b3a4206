@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f51d1ab6_9a08fdb1",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-12-25T19:47:15Z",
+      "side": 1,
+      "message": "this is just a confirmation question. These are the ignored bits in the standard non CCA VMSA page table format right?",
+      "revId": "416ab33b5ef0552668caa8ee4f1d5d913b3a4206",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
