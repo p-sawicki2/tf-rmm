@@ -16,6 +16,24 @@
       "message": "this is just a confirmation question. These are the ignored bits in the standard non CCA VMSA page table format right?",
       "revId": "416ab33b5ef0552668caa8ee4f1d5d913b3a4206",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82e14405_77508d60",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-12-27T10:55:52Z",
+      "side": 1,
+      "message": "Yes. These only have meaning on invalid descriptors. On valid descriptors, the bits are used as per the Arm VMSA",
+      "parentUuid": "f51d1ab6_9a08fdb1",
+      "revId": "416ab33b5ef0552668caa8ee4f1d5d913b3a4206",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
