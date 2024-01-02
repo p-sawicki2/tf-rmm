@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "638ebc9d_c3899a02",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "This can be collapsed into a single function, such as \"simd_test_helpers_init()\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "188abd1a_d063e198",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "For consistency with my previous comment, this can be included into a \"simd_test_helpers_teardown()\" function.",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 27
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bbfcc7a_4ee08fb6",
         "filename": "lib/arch/tests/simd_fpu_tests.cpp",
         "patchSetId": 3
@@ -31,6 +77,121 @@
       "writtenOn": "2023-12-20T17:27:26Z",
       "side": 1,
       "message": "same comments as above.",
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d75e3fca_39edd829",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "nit: Align the length of the comment lines with the opening and closing lines",
+      "range": {
+        "startLine": 115,
+        "startChar": 55,
+        "endLine": 115,
+        "endChar": 73
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7d416d4_df2a3964",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "Have you checked the coverage of the tests (e.g. by running the \u0027run-coverage\u0027 target).\n\nBy doing a quick review of simd_context_init() I think there might be branches and checks not covered by the tests, such as the check on \u0027!g_simd_init_done\u0027 at the beginning of simd_context_init() or some check combinations on validate_simd_config()",
+      "range": {
+        "startLine": 170,
+        "startChar": 10,
+        "endLine": 170,
+        "endChar": 31
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eca4a1de_4fca06d2",
+        "filename": "lib/arch/tests/simd_general_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "nit: You can just pass NULL here, no need to define a variable for this",
+      "range": {
+        "startLine": 74,
+        "startChar": 27,
+        "endLine": 74,
+        "endChar": 35
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f7053d8_b18d3817",
+        "filename": "lib/arch/tests/simd_test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "unsigned int i \u003d 0U",
+      "range": {
+        "startLine": 12,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 12
+      },
+      "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "514bb942_34f443fd",
+        "filename": "lib/arch/tests/simd_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T15:50:22Z",
+      "side": 1,
+      "message": "Where is simd_vreg defined? I can\u0027t find it",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 9
+      },
       "revId": "bb7c3c7778c325333349391e45457a5364a0e942",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
