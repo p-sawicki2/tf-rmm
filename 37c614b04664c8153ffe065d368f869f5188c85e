@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5811fe93_3ba669be",
+        "filename": "lib/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T11:08:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "159e59ba_6e757761",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 1
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3d8a0e9_88ea5034",
@@ -73,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b72122d0_566bdbda",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T11:08:36Z",
+      "side": 1,
+      "message": "rmm-lib-attestation is needed as s2tt.c includes rec.h, which in turns includes attestation_token.h.\n\nDid some tests and it is not possible to just remove the latter inclusion from the former. I think that would require more work. Not sure if it would be worth?",
+      "parentUuid": "fdc2d563_8885154b",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38b0c2a0_5f9e8165",
         "filename": "lib/s2tt/CMakeLists.txt",
         "patchSetId": 2
@@ -84,6 +132,30 @@
       "writtenOn": "2023-12-19T17:27:19Z",
       "side": 1,
       "message": "this should not depend on rmm-lib-realm but rmm-lib-realm should depend on this.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d96bbabe_fd788d38",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T11:08:36Z",
+      "side": 1,
+      "message": "Unfortunately this dependency cannot be broken (or at least, it won\u0027t be easy to do). s2tt.c includes some headers from lib/realm (granule.h and realm.h). I don\u0027t think these headers should be part of the s2tt library. I\u0027m not sure they can be moved anywhere else.\n\ns2tt.c also included ripas.h, which I moved to lib/s2tt as I think it would make more sense there.",
+      "parentUuid": "38b0c2a0_5f9e8165",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -107,6 +179,30 @@
       "writtenOn": "2023-12-19T17:27:19Z",
       "side": 1,
       "message": "not sure about this.",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c5f0046_699e0c31",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-02T11:08:36Z",
+      "side": 1,
+      "message": "rmm-lib-smc wasn\u0027t needed either. All removed.",
+      "parentUuid": "37f186ca_ede1daef",
       "range": {
         "startLine": 20,
         "startChar": 10,
