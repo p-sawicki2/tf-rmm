@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97be416e_4f7baa05",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-04T15:57:37Z",
+      "side": 1,
+      "message": "After re-looking at this logic, I think both counts from checkpatch and check commit message has to be merged and reported as one set. As check commit message is an extension of checkpatch.\n\nIf there is an error in checkpatch the first call to print_stats_and_exit() will print checkpatch errors/warning count and will exit the cmake script and won\u0027t have a chance to print the errors/warnings from check commit message.",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 59
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3956a687_d0cf05a9",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-04T15:57:37Z",
+      "side": 1,
+      "message": "Can we use \"total_errors, total_warnings \u003d \" instead of separate title_, body_ variables?",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
