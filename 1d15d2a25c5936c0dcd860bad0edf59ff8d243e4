@@ -3,6 +3,120 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "98e6b011_0a98399f",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "I have added few comments in the overall logic on how to extend cmake checkpatch target to check commit message as well. With the changes the output looks like this:\n\n    -- Checking commit: 692393503b61c40a7d8f21e7c633ac83cd51b230\n    runtime/core/handler.c:275: ERROR: braces {} are necessary for all arms of this statement\n    +\tif (handler-\u003etype)\n    [...]\n    runtime/core/run.c:80: ERROR: braces {} are necessary for all arms of this statement\n    +\tif (rec-\u003erealm_info.pmu_enabled)\n    [...]\n    Commit message: ERROR: Commit message must have at least a title\n    Commit message: ERROR: Title cannot be empty\n    Commit message: WARNING: Consider adding a commit message body\n    \n    -- Checking commit: fca6b1e5eeb82790b4b2c11c741c42c72daf5dfe\n    runtime/core/exit.c:57: ERROR: braces {} are necessary for all arms of this statement\n    +\tif (rt \u003d\u003d 31U)\n    [...]\n    Commit message: WARNING: Scope should match the directory where the patch applies\n    Commit message: WARNING: Consider adding a commit message body\n\n    -- checkpatch: total errors: 5, warnings: 3\n\n\nLet me know your thoughts",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6378da12_512203b3",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "This prints the checkpatch output without total\n\n      string(FIND \"${checkpatch_output}\" \"\\n\\ntotal:\" idx REVERSE)\n      string(SUBSTRING \"${checkpatch_output}\" 0 ${idx} output_without_total)\n      if(output_without_total)\n        message(${output_without_total})\n      endif()",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3758f610_722109d6",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "This message can be removed.",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8256b171_33a50eac",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "This prints the check commit message output without total\n\n      string(FIND \"${checkcommitmsg_output}\" \"\\ntotal:\" idx REVERSE)\n      string(SUBSTRING \"${checkcommitmsg_output}\" 0 ${idx} output_without_total)\n      if(output_without_total)\n        message(${output_without_total})\n      endif()",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "543b740c_d2d3f12b",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "This can be replaced with \n\n    MATH(EXPR total_errors \"${total_errors}+${commitmsg_errors}\")                 \n    MATH(EXPR total_warnings \"${total_warnings}+${commitmsg_warnings}\")",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 60
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e858d865_a3ab3c70",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "This line can be removed.",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "97be416e_4f7baa05",
         "filename": "tools/checkpatch/CheckPatch.cmake",
         "patchSetId": 1
@@ -20,6 +134,40 @@
         "endLine": 253,
         "endChar": 59
       },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9044577f_33e74e6b",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "Add below prefix to all error messages\n\n\nprint(\"Commit message: ERROR: ..\")",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f91e043_25ce6671",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-05T13:55:37Z",
+      "side": 1,
+      "message": "Add below prefix to all warning messages\n\nprint(\"Commit message: WARNING: ..\")",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
