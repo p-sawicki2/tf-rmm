@@ -16,6 +16,63 @@
       "message": "Manual CI+2 job: https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/473/",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8019a95b_df836224",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-08T03:37:13Z",
+      "side": 1,
+      "message": "group into a struct and create static variable??",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a45a00d_6ef79edf",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-08T03:37:13Z",
+      "side": 1,
+      "message": "nit: don\u0027t think saying non necessarily helps. can just be host_ns_s2tte, and host_ns_s2tte_lpa2. The other is understood to be default with no features.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84a89476_dee126ee",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-08T03:37:13Z",
+      "side": 1,
+      "message": "nit:probably don\u0027t need the \u0026. same for other functions.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
