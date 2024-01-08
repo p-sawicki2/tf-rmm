@@ -385,6 +385,24 @@
       "parentUuid": "3956a687_d0cf05a9",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b81b536_fbc0e097",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-08T16:27:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f00cc80b_64acf914",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
