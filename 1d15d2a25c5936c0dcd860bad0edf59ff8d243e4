@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd52dd80_2c60e7a6",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "I think this looks much tidier than before and doesn\u0027t have the issue that the commit message error/warning counts wouldn\u0027t be printed if checkpatch has an error. Have updated the patch to implement this.",
+      "parentUuid": "98e6b011_0a98399f",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6378da12_512203b3",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-01-05T13:55:37Z",
       "side": 1,
       "message": "This prints the checkpatch output without total\n\n      string(FIND \"${checkpatch_output}\" \"\\n\\ntotal:\" idx REVERSE)\n      string(SUBSTRING \"${checkpatch_output}\" 0 ${idx} output_without_total)\n      if(output_without_total)\n        message(${output_without_total})\n      endif()",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7c36ccc_c0a1e08f",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Good idea, thanks",
+      "parentUuid": "6378da12_512203b3",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32cdf4b_9aa01263",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3758f610_722109d6",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8256b171_33a50eac",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-01-05T13:55:37Z",
       "side": 1,
       "message": "This prints the check commit message output without total\n\n      string(FIND \"${checkcommitmsg_output}\" \"\\ntotal:\" idx REVERSE)\n      string(SUBSTRING \"${checkcommitmsg_output}\" 0 ${idx} output_without_total)\n      if(output_without_total)\n        message(${output_without_total})\n      endif()",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edd6ea0f_eec66de3",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8256b171_33a50eac",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b41df48_f8368ee4",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "543b740c_d2d3f12b",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 60
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e858d865_a3ab3c70",
@@ -111,6 +213,24 @@
       "writtenOn": "2024-01-05T13:55:37Z",
       "side": 1,
       "message": "This line can be removed.",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3af73ba3_27301915",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e858d865_a3ab3c70",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -138,6 +258,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe37ced1_400693be",
+        "filename": "tools/checkpatch/CheckPatch.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97be416e_4f7baa05",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 59
+      },
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9044577f_33e74e6b",
@@ -151,6 +295,24 @@
       "writtenOn": "2024-01-05T13:55:37Z",
       "side": 1,
       "message": "Add below prefix to all error messages\n\n\nprint(\"Commit message: ERROR: ..\")",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "892f1bdc_0f95ce51",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9044577f_33e74e6b",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -172,6 +334,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61fdbae6_a9e66f21",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f91e043_25ce6671",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3956a687_d0cf05a9",
@@ -185,6 +365,24 @@
       "writtenOn": "2024-01-04T15:57:37Z",
       "side": 1,
       "message": "Can we use \"total_errors, total_warnings \u003d \" instead of separate title_, body_ variables?",
+      "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f00cc80b_64acf914",
+        "filename": "tools/checkpatch/checkcommitmsg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-01-08T16:06:13Z",
+      "side": 1,
+      "message": "I\u0027m not sure that would work, as check_{title,body} return two values and Python doesn\u0027t allow +\u003d to be used on multiple variables. But maybe I\u0027m missing another way of doing it?",
+      "parentUuid": "3956a687_d0cf05a9",
       "revId": "1d15d2a25c5936c0dcd860bad0edf59ff8d243e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
