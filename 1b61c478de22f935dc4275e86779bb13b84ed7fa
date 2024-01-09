@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89cbb5fa_405c3acf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-09T14:21:13Z",
+      "side": 1,
+      "message": "The CI Errors seem to be unrelated (some submodule cloning failed)",
+      "revId": "1b61c478de22f935dc4275e86779bb13b84ed7fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
