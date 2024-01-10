@@ -18,12 +18,18 @@ target_sources(rmm-plat-host_cbmc
     PRIVATE
         "src/host_harness.c"
         "src/tb_arch_features.c"
+        "src/tb_attest.c"
         "src/tb_common.c"
         "src/tb_granules.c"
         "src/tb_measurement.c"
+        "src/tb_ns_access.c"
+        "src/tb_other.c"
         "src/tb_realm.c"
+        "src/tb_rim.c"
+        "src/tb_rsi.c"
         "src/tb_rtt.c"
         "src/tb_simd.c"
+        "src/tb_xlat.c"
         "src/tb.c"
         )
 
