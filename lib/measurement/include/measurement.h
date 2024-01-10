@@ -10,6 +10,9 @@
 #include <smc-rmi.h>
 #include <stdbool.h>
 #include <stddef.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
 
 /* RmmHashAlgorithm type as per RMM spec */
 enum hash_algo {
@@ -98,11 +101,22 @@ static inline size_t measurement_get_size(const enum hash_algo algorithm)
  *	- ipa:			IPA of the data granule.
  *	- flags:		Flags according to the specification.
  */
+#ifndef CBMC
 void measurement_data_granule_measure(unsigned char rim_measurement[],
 				      enum hash_algo algorithm,
 				      void *data,
 				      unsigned long ipa,
 				      unsigned long flags);
+#else /* CBMC */
+static inline void measurement_data_granule_measure(unsigned char rim_measurement[],
+						    enum hash_algo algorithm,
+						    void *data,
+						    unsigned long ipa,
+						    unsigned long flags)
+{
+	ASSERT(false, "measurement_data_granule_measure");
+}
+#endif /* CBMC */
 
 /*
  * Measure realm params
@@ -112,9 +126,18 @@ void measurement_data_granule_measure(unsigned char rim_measurement[],
  *	- algorithm:		Algorithm to use for measurement.
  *	- realm_params:		The parameters of the realm.
  */
+#ifndef CBMC
 void measurement_realm_params_measure(unsigned char rim_measurement[],
 				      enum hash_algo algorithm,
 				      struct rmi_realm_params *realm_params);
+#else /* CBMC */
+static inline void measurement_realm_params_measure(unsigned char rim_measurement[],
+						    enum hash_algo algorithm,
+						    struct rmi_realm_params *realm_params)
+{
+	ASSERT(false, "measurement_realm_params_measure");
+}
+#endif /* CBMC */
 
 /*
  * Measure REC params
@@ -124,9 +147,18 @@ void measurement_realm_params_measure(unsigned char rim_measurement[],
  *	- algorithm:		Algorithm to use for measurement.
  *	- rec_params:		The rec params to measure.
  */
+#ifndef CBMC
 void measurement_rec_params_measure(unsigned char rim_measurement[],
 				    enum hash_algo algorithm,
 				    struct rmi_rec_params *rec_params);
+#else /* CBMC */
+static inline void measurement_rec_params_measure(unsigned char rim_measurement[],
+						  enum hash_algo algorithm,
+						  struct rmi_rec_params *rec_params)
+{
+	ASSERT(false, "measurement_rec_params_measure");
+}
+#endif /* CBMC */
 
 
 /*
@@ -138,9 +170,19 @@ void measurement_rec_params_measure(unsigned char rim_measurement[],
  *	- base:			Base of target IPA region.
  *	- top:			Top of target IPA region.
  */
+#ifndef CBMC
 void measurement_init_ripas_measure(unsigned char rim_measurement[],
 				    enum hash_algo algorithm,
 				    unsigned long base,
 				    unsigned long top);
+#else /* CBMC */
+static inline void measurement_init_ripas_measure(unsigned char rim_measurement[],
+						  enum hash_algo algorithm,
+						  unsigned long ipa,
+						  unsigned long level)
+{
+	ASSERT(false, "measurement_init_ripas_measure");
+}
+#endif /* CBMC */
 
 #endif /* MEASUREMENT_H */

@@ -18,6 +18,9 @@
 #include <simd.h>
 #include <sizes.h>
 #include <smc-rmi.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
 #include <utils_def.h>
 
 #define RMM_REC_SAVED_GEN_REG_COUNT	31
@@ -258,8 +261,19 @@ static inline unsigned long mpidr_to_rec_idx(unsigned long mpidr)
 		MPIDR_EL2_AFF(3, mpidr));
 }
 
+#ifndef CBMC
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);
 void inject_serror(struct rec *rec, unsigned long vsesr);
+#else /* CBMC */
+static inline void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
+{
+	ASSERT(false, "rec_run_loop");
+}
+static inline void inject_serror(struct rec *rec, unsigned long vsesr)
+{
+	ASSERT(false, "inject_serror");
+}
+#endif /* CBMC */
 void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
 			       unsigned long rtt_level);
 

@@ -118,4 +118,17 @@ if("${RMM_CBMC_STATIC_ANALYSIS}")
     -P ${CMAKE_SOURCE_DIR}/tools/cbmc/CheckCBMC.cmake
   )
 
+  add_custom_target(cbmc-gcc
+  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+  COMMAND ${CMAKE_COMMAND}
+    -DRMM_CBMC_CONFIGURATION=GCC
+    -DSOURCE_DIR=${CMAKE_SOURCE_DIR}
+    -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}
+    -DTESTBENCH_DIR="${TESTBENCH_DIR}"
+    -DTESTBENCH_FILES="${TESTBENCH_FILES}"
+    -DRMM_IMP_SRCS="${rmm_implementation_srcs}"
+    -DRMM_IMP_INCS="${rmm_implementation_includes}"
+    -P ${CMAKE_SOURCE_DIR}/tools/cbmc/CheckCBMC.cmake
+  )
+
 endif() # RMM_CBMC_STATIC_ANALYSIS

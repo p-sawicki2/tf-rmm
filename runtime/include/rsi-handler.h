@@ -8,6 +8,9 @@
 
 #include <rsi-walk.h>
 #include <smc.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif
 
 struct rec;
 struct rmi_rec_exit;
@@ -78,6 +81,7 @@ struct rsi_result {
 	struct smc_result smc_res;
 };
 
+#ifndef CBMC
 void handle_rsi_version(struct rec *rec, struct rsi_result *res);
 void handle_rsi_features(struct rec *rec, struct rsi_result *res);
 void handle_rsi_realm_config(struct rec *rec, struct rsi_result *res);
@@ -94,5 +98,60 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rsi_result *res);
 void handle_psci(struct rec *rec, struct rmi_rec_exit *rec_exit,
 		 struct rsi_result *res);
+#else /* CBMC */
+static inline void handle_rsi_version(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_version");
+}
+static inline void handle_rsi_features(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_features");
+}
+
+static inline void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_attest_token_init");
+}
+
+static inline void handle_rsi_attest_token_continue(struct rec *rec,
+						    struct rmi_rec_exit *rec_exit,
+						    struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_attest_token_continue");
+}
+static inline void handle_rsi_measurement_read(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_measurement_read");
+}
+static inline void handle_rsi_measurement_extend(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_measurement_extend");
+}
+static inline void handle_rsi_realm_config(struct rec *rec, struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_realm_config");
+}
+static inline void handle_rsi_ipa_state_set(struct rec *rec,
+					    struct rmi_rec_exit *rec_exit,
+					    struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_ipa_state_set");
+}
+static inline void handle_rsi_ipa_state_get(struct rec *rec,
+					    struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_ipa_state_get");
+}
+static inline void handle_rsi_host_call(struct rec *rec, struct rmi_rec_exit *rec_exit,
+					struct rsi_result *res)
+{
+	ASSERT(false, "handle_rsi_host_call");
+}
+static inline void handle_psci(struct rec *rec, struct rmi_rec_exit *rec_exit,
+			       struct rsi_result *res)
+{
+	ASSERT(false, "handle_psci");
+}
+#endif /* CBMC */
 
 #endif /* RSI_HANDLER_H */

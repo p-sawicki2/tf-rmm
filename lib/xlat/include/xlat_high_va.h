@@ -34,7 +34,15 @@
 #if !(defined(__ASSEMBLER__) || defined(__LINKER__))
 
 /* Return a pointer to the High VA xlat context for the current CPU */
+#ifndef CBMC
 struct xlat_ctx *xlat_get_high_va_xlat_ctx(void);
+#else /* CBMC */
+static inline struct xlat_ctx *xlat_get_high_va_xlat_ctx(void)
+{
+	ASSERT(false, "xlat_get_high_va_xlat_ctx");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Initializes and enables the VMSA for the high va region.

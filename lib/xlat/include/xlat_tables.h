@@ -16,6 +16,9 @@
 #include <memory.h>
 #include <stddef.h>
 #include <stdint.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
 
 #endif
 
@@ -236,9 +239,19 @@ static inline uint64_t xlat_read_tte(uint64_t *entry)
  *
  * This function returns 0 on success or a POSIX error code otherwise.
  */
+#ifndef CBMC
 int xlat_get_llt_from_va(struct xlat_llt_info * const llt,
 			 const struct xlat_ctx * const ctx,
 			 const uintptr_t va);
+#else /* CBMC */
+static inline int xlat_get_llt_from_va(struct xlat_llt_info * const llt,
+				       const struct xlat_ctx * const ctx,
+				       const uintptr_t va)
+{
+	ASSERT(false, "xlat_get_llt_from_va");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Function to unmap a memory page for a given VA. The region to which the VA
@@ -251,8 +264,17 @@ int xlat_get_llt_from_va(struct xlat_llt_info * const llt,
  *
  * This function returns 0 on success or an error code otherwise.
  */
+#ifndef CBMC
 int xlat_unmap_memory_page(struct xlat_llt_info * const table,
 			   const uintptr_t va);
+#else /* CBMC */
+static inline int xlat_unmap_memory_page(struct xlat_llt_info * const table,
+					 const uintptr_t va)
+{
+	ASSERT(false, "xlat_unmap_memory_page");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Function to map a physical memory page from the descriptor table entry
@@ -269,10 +291,21 @@ int xlat_unmap_memory_page(struct xlat_llt_info * const table,
  *	- will mask out the LSBs of the PA so the page/block corresponding to
  *	  the PA will actually be mapped.
  */
+#ifndef CBMC
 int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
 				    const uintptr_t va,
 				    const uintptr_t pa,
 				    const uint64_t attrs);
+#else /* CBMC */
+static inline int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
+						  const uintptr_t va,
+						  const uintptr_t pa,
+						  const uint64_t attrs)
+{
+	ASSERT(false, "xlat_map_memory_page_with_attrs");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * This function finds the TTE on a table given the corresponding
@@ -285,8 +318,17 @@ int xlat_map_memory_page_with_attrs(const struct xlat_llt_info * const table,
  * about its type or validity. It is the caller responsibility to do any
  * necessary checks on the returned tte before using it.
  */
+#ifndef CBMC
 uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const llt,
 			   const uintptr_t va);
+#else /* CBMC */
+static inline uint64_t *xlat_get_tte_ptr(const struct xlat_llt_info * const llt,
+					 const uintptr_t va)
+{
+	ASSERT(false, "xlat_get_tte_ptr");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Set up the MMU configuration registers for the specified platform parameters.

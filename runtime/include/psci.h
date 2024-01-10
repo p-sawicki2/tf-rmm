@@ -9,6 +9,9 @@
 #include <smc.h>
 #include <status.h>
 #include <stdbool.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
 
 #define SMC32_PSCI_FID(_offset)		SMC32_STD_FID(PSCI, _offset)
 #define SMC64_PSCI_FID(_offset)		SMC64_STD_FID(PSCI, _offset)
@@ -97,7 +100,16 @@
 
 struct rec;
 
+#ifndef CBMC
 unsigned long psci_complete_request(struct rec *calling_rec,
 				    struct rec *target_rec, unsigned long status);
+#else /* CBMC */
+static inline unsigned long psci_complete_request(struct rec *calling_rec,
+						  struct rec *target_rec, unsigned long status)
+{
+	ASSERT(false, "psci_complete_request");
+	return 0UL;
+}
+#endif /* CBMC */
 
 #endif /* PSCI_H */

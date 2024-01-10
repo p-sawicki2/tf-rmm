@@ -48,6 +48,9 @@
 #include <arch_features.h>
 #include <assert.h>
 #include <stddef.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
 
 /* Flags for SIMD type */
 #define SIMD_TFLAG_SVE		(U(1) << 0)
@@ -184,7 +187,14 @@ COMPILER_ASSERT((U(offsetof(struct sve_regs, p))) == SVE_REGS_OFFSET_P);
 COMPILER_ASSERT((U(offsetof(struct sve_regs, ffr))) == SVE_REGS_OFFSET_FFR);
 
 /* Initialize SIMD layer based on CPU support for FPU or SVE */
+#ifndef CBMC
 void simd_init(void);
+#else /* CBMC */
+static inline void simd_init(void)
+{
+	ASSERT(false, "simd_init");
+}
+#endif /* CBMC */
 
 /* Returns the CPU SIMD config discovered during the init time */
 #ifndef CBMC
@@ -198,8 +208,17 @@ static inline int simd_get_cpu_config(struct simd_config *simd_cfg)
 #endif /* CBMC */
 
 /* Initialize the SIMD context in RMM corresponding to NS world or Realm */
+#ifndef CBMC
 int simd_context_init(simd_owner_t owner, struct simd_context *simd_ctx,
 		      const struct simd_config *simd_cfg);
+#else /* CBMC */
+static inline int simd_context_init(simd_owner_t owner, struct simd_context *simd_ctx,
+				    const struct simd_config *simd_cfg)
+{
+	ASSERT(false, "simd_context_init");
+	return 0;
+}
+#endif /* CBMC */
 
 /* Switch SIMD context by saving the 'ctx_in' and restoring the 'ctx_out' */
 struct simd_context *simd_context_switch(struct simd_context *ctx_save,
@@ -209,10 +228,25 @@ struct simd_context *simd_context_switch(struct simd_context *ctx_save,
  * Returns 'true' if the current CPU's SIMD (FPU/SVE) live state is saved in
  * memory else 'false'.
  */
+#ifndef CBMC
 bool simd_is_state_saved(void);
+#else /* CBMC */
+static inline bool simd_is_state_saved(void)
+{
+	ASSERT(false, "simd_is_state_saved");
+	return false;
+}
+#endif /* CBMC */
 
 /* Set or clear SVE hint bit passed by SMCCCv1.3 to SIMD context status */
+#ifndef CBMC
 void simd_update_smc_sve_hint(struct simd_context *ctx, bool sve_hint);
+#else /* CBMC */
+static inline void simd_update_smc_sve_hint(struct simd_context *ctx, bool sve_hint)
+{
+	ASSERT(false, "simd_update_smc_sve_hint");
+}
+#endif /* CBMC */
 
 static inline void simd_context_save(struct simd_context *ctx)
 {

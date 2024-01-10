@@ -7,13 +7,24 @@
 #define ATTESTATION_H
 
 #include <stddef.h>
+#ifdef CBMC
+#include <tb_common.h>
+#endif
 
 struct buffer_alloc_ctx;
 
 /*
  * Performs any early initialization needed for the crypto library.
  */
+#ifndef CBMC
 int attestation_init(void);
+#else /* CBMC */
+static inline int attestation_init(void)
+{
+	ASSERT(false, "attestation_init");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Return the platform token that was previously retrieved from the monitor.
@@ -41,7 +52,15 @@ int attest_get_platform_token(const void **buf, size_t *len);
  *
  * Returns 0 on success, negative error code on error.
  */
+#ifndef CBMC
 int attestation_heap_ctx_init(unsigned char *buf, size_t buf_size);
+#else /* CBMC */
+static inline int attestation_heap_ctx_init(unsigned char *buf, size_t buf_size)
+{
+	ASSERT(false, "attestation_heap_ctx_init");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Assign a given buf_alloc_ctx to this CPU. This needs to be called
@@ -52,7 +71,15 @@ int attestation_heap_ctx_init(unsigned char *buf, size_t buf_size);
  *
  * Returns 0 on success, negative error code on error.
  */
+#ifndef CBMC
 int attestation_heap_ctx_assign_pe(struct buffer_alloc_ctx *ctx);
+#else /* CBMC */
+static inline int attestation_heap_ctx_assign_pe(struct buffer_alloc_ctx *ctx)
+{
+	ASSERT(false, "attestation_heap_ctx_assign_pe");
+	return 0;
+}
+#endif /* CBMC */
 
 
 /*
@@ -64,7 +91,15 @@ int attestation_heap_ctx_assign_pe(struct buffer_alloc_ctx *ctx);
  *
  * Returns 0 on success, negative error code on error.
  */
+#ifndef CBMC
 int attestation_heap_ctx_unassign_pe(void);
+#else /* CBMC */
+static inline int attestation_heap_ctx_unassign_pe(void)
+{
+	ASSERT(false, "attestation_heap_ctx_unassign_pe");
+	return 0;
+}
+#endif /* CBMC */
 
 /*
  * Reinit the heap on this CPU used for attestation operations.

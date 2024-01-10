@@ -13,6 +13,10 @@
 #include <stddef.h>
 #endif
 
+#ifdef CBMC
+#include <tb_common.h>
+#endif /* CBMC */
+
 /*************************************
  * SMC codes for the EL3-RMM interface
  *************************************/
@@ -111,7 +115,15 @@
 /*
  * Accessors to the parameters obtained through the boot interface arguments.
  */
+#ifndef CBMC
 unsigned int rmm_el3_ifc_get_version(void);
+#else /* CBMC */
+static inline unsigned int rmm_el3_ifc_get_version(void)
+{
+	ASSERT(false, "rmm_el3_ifc_get_version");
+	return 0;
+}
+#endif /* CBMC */
 uintptr_t rmm_el3_ifc_get_shared_buf_pa(void);
 
 static inline size_t rmm_el3_ifc_get_shared_buf_size(void)
@@ -196,7 +208,15 @@ COMPILER_ASSERT(U(offsetof(struct rmm_core_manifest, plat_dram)) == 16U);
 /*
  * Accessors to the Boot Manifest data
  */
+#ifndef CBMC
 unsigned int rmm_el3_ifc_get_manifest_version(void);
+#else /* CBMC */
+static inline unsigned int rmm_el3_ifc_get_manifest_version(void)
+{
+	ASSERT(false, "rmm_el3_ifc_get_manifest_version");
+	return 0U;
+}
+#endif /* CBMC */
 
 /*
  * These functions must be called only after the core manifest has
