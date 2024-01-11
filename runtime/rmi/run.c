@@ -27,7 +27,7 @@ static void reset_last_run_info(struct rec *rec)
 static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
 	unsigned long esr = rec->last_run_info.esr;
-	unsigned int rt = esr_srt(esr);
+	IF_NCBMC(unsigned int rt = esr_srt(esr);)
 
 	if ((rec_enter->flags & REC_ENTRY_FLAG_EMUL_MMIO) == 0UL) {
 		return true;
@@ -42,6 +42,7 @@ static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_enter *rec_e
 		return false;
 	}
 
+#ifndef CBMC
 	/*
 	 * Emulate mmio read (unless the load is to xzr)
 	 */
@@ -64,9 +65,11 @@ static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_enter *rec_e
 	}
 
 	rec->pc = rec->pc + 4UL;
+#endif
 	return true;
 }
 
+#ifndef CBMC
 static void complete_set_ripas(struct rec *rec)
 {
 	enum ripas ripas_val = rec->set_ripas.ripas_val;
@@ -89,6 +92,7 @@ static void complete_set_ripas(struct rec *rec)
 	rec->set_ripas.base = 0UL;
 	rec->set_ripas.top = 0UL;
 }
+#endif
 
 static bool complete_sea_insertion(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
@@ -109,11 +113,12 @@ static bool complete_sea_insertion(struct rec *rec, struct rmi_rec_enter *rec_en
 		return false;
 	}
 
-	inject_sync_idabort_rec(rec, ESR_EL2_ABORT_FSC_SEA);
+	IF_NCBMC(inject_sync_idabort_rec(rec, ESR_EL2_ABORT_FSC_SEA);)
 	return true;
 }
 
 
+#ifndef CBMC
 static void complete_sysreg_emulation(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
 	unsigned long esr = rec->last_run_info.esr;
@@ -134,6 +139,7 @@ static void complete_sysreg_emulation(struct rec *rec, struct rmi_rec_enter *rec
 		rec->regs[rt] = rec_enter->gprs[0];
 	}
 }
+#endif
 
 static bool complete_host_call(struct rec *rec, struct rmi_rec_run *rec_run)
 {
@@ -146,7 +152,7 @@ static bool complete_host_call(struct rec *rec, struct rmi_rec_run *rec_run)
 	walk_result = complete_rsi_host_call(rec, &rec_run->enter);
 
 	if (walk_result.abort) {
-		emulate_stage2_data_abort(rec, &rec_run->exit, walk_result.rtt_level);
+		IF_NCBMC(emulate_stage2_data_abort(rec, &rec_run->exit, walk_result.rtt_level);)
 		return false;
 	}
 
@@ -255,7 +261,7 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		ret = RMI_ERROR_REC;
 		goto out_unmap_buffers;
 	}
-	gic_copy_state_from_rec_entry(&rec->sysregs.gicstate, &rec_run.enter);
+	IF_NCBMC(gic_copy_state_from_rec_entry(&rec->sysregs.gicstate, &rec_run.enter);)
 
 	if (!complete_mmio_emulation(rec, &rec_run.enter)) {
 		ret = RMI_ERROR_REC;
@@ -271,8 +277,8 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		((rec_run.enter.flags & REC_ENTRY_FLAG_RIPAS_RESPONSE) == 0UL) ?
 			ACCEPT : REJECT;
 
-	complete_set_ripas(rec);
-	complete_sysreg_emulation(rec, &rec_run.enter);
+	IF_NCBMC(complete_set_ripas(rec);)
+	IF_NCBMC(complete_sysreg_emulation(rec, &rec_run.enter);)
 
 	if (!complete_host_call(rec, &rec_run)) {
 		ret = RMI_SUCCESS;
@@ -281,6 +287,7 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 
 	reset_last_run_info(rec);
 
+#ifndef CBMC
 	rec->sysregs.hcr_el2 = rec->common_sysregs.hcr_el2;
 	if ((rec_run.enter.flags & REC_ENTRY_FLAG_TRAP_WFI) != 0UL) {
 		rec->sysregs.hcr_el2 |= HCR_TWI;
@@ -288,12 +295,13 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	if ((rec_run.enter.flags & REC_ENTRY_FLAG_TRAP_WFE) != 0UL) {
 		rec->sysregs.hcr_el2 |= HCR_TWE;
 	}
+#endif
 
 	ret = RMI_SUCCESS;
 
 	rec_run_loop(rec, &rec_run.exit);
 
-	gic_copy_state_to_rec_exit(&rec->sysregs.gicstate, &rec_run.exit);
+	IF_NCBMC(gic_copy_state_to_rec_exit(&rec->sysregs.gicstate, &rec_run.exit);)
 
 out_unmap_buffers:
 	buffer_unmap(rec);

@@ -132,6 +132,7 @@ void inject_sync_idabort(unsigned long fsc)
 	write_spsr_el2(pstate);
 }
 
+#ifndef CBMC
 /*
  * Inject the Synchronous Instruction or Data Abort into @rec.
  * The I/DFSC field in the ESR_EL1 is set to @fsc
@@ -146,6 +147,7 @@ void inject_sync_idabort_rec(struct rec *rec, unsigned long fsc)
 	rec->pc = calc_vector_entry(rec->sysregs.vbar_el1, rec->pstate);
 	rec->pstate = calc_pstate();
 }
+#endif /* CBMC */
 
 /*
  * Inject the Undefined Synchronous Exception into the current REC.
