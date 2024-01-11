@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2817675_2d77d9f7",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-11T18:36:22Z",
+      "side": 1,
+      "message": "thx. I don\u0027t think the indirection is particularly more costly. it adds an instruction to load the address in the register and for adding offsets (which can typically be one instruction), but the number of memory accesses should be the same, since this would be a static variable, and the address should be obtainable statically as opposed to loading it every time.\nwould be curious if you find otherwise. Not particular though. will resolve, but look forward to response if you do get to analyzing it .",
+      "parentUuid": "f5e34179_45c97a6e",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a45a00d_6ef79edf",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
