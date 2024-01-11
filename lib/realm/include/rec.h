@@ -23,7 +23,11 @@
 #endif /* CBMC */
 #include <utils_def.h>
 
+#ifndef CBMC
 #define RMM_REC_SAVED_GEN_REG_COUNT	31
+#else /* CBMC */
+#define RMM_REC_SAVED_GEN_REG_COUNT	5
+#endif /* CBMC */
 
 struct granule;
 
