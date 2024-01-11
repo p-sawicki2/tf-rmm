@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f5e34179_45c97a6e",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-11T09:50:56Z",
+      "side": 1,
+      "message": "I thought about that but I was concerned that struct member indirections could be more costly than accessing individual variables and since this variables might be accessed a very large number of times, specially during realm creation, that could impact performance. I was meaning to do some thorough analysis of that later, actually.",
+      "parentUuid": "8019a95b_df836224",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a45a00d_6ef79edf",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -60,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e6de2fb3_65ea23f9",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-11T09:50:56Z",
+      "side": 1,
+      "message": "Yes you are right. This should be changed on all the functions actually. Will do on next patch push",
+      "parentUuid": "6a45a00d_6ef79edf",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "84a89476_dee126ee",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -71,6 +113,24 @@
       "writtenOn": "2024-01-08T03:37:13Z",
       "side": 1,
       "message": "nit:probably don\u0027t need the \u0026. same for other functions.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb372267_9db3f9b3",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-11T09:50:56Z",
+      "side": 1,
+      "message": "Yes, it is redundant. Force of habit I guess. I will fix it",
+      "parentUuid": "84a89476_dee126ee",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
