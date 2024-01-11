@@ -22,6 +22,7 @@
 #include <stddef.h>
 #include <string.h>
 
+#ifndef CBMC
 static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 {
 	/* Set non-zero values only */
@@ -34,6 +35,7 @@ static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 	rec->sysregs.cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
 	rec->sysregs.cptr_el2 = CPTR_EL2_VHE_INIT;
 }
+#endif /* CBMC */
 
 /*
  * Starting level of the stage 2 translation
@@ -66,6 +68,7 @@ static unsigned long realm_vtcr(struct rd *rd)
 	return vtcr;
 }
 
+#ifndef CBMC
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
@@ -122,6 +125,7 @@ static void init_rec_regs(struct rec *rec,
 	init_rec_sysregs(rec, rec_params->mpidr);
 	init_common_sysregs(rec, rd);
 }
+#endif /* CBMC */
 
 /*
  * This function will only be invoked when the REC create fails
@@ -144,6 +148,7 @@ static void free_rec_aux_granules(struct granule *rec_aux[],
 	}
 }
 
+#ifndef CBMC
 /* Initialise the heap and state for attestation */
 static void rec_attestation_heap_init(struct rec *r)
 {
@@ -172,6 +177,7 @@ static void rec_simd_state_init(struct rec *r)
 				   &r->realm_info.simd_cfg);
 	assert(retval == 0);
 }
+#endif /* CBMC */
 
 /*
  * Initializes granule pages that are used for attestation heap, PMU and SIMD.
@@ -180,7 +186,7 @@ static void rec_simd_state_init(struct rec *r)
 static void rec_aux_granules_init(struct rec *r)
 {
 	void *rec_aux;
-	struct rec_aux_data *aux_data;
+	IF_NCBMC(struct rec_aux_data *aux_data;)
 
 	/* Map auxiliary granules */
 	rec_aux = aux_granules_map(r->g_aux, r->num_rec_aux);
@@ -196,6 +202,7 @@ static void rec_aux_granules_init(struct rec *r)
 	 */
 	assert(r->num_rec_aux >= REC_NUM_PAGES);
 
+#ifndef CBMC
 	/*
 	 * Assign base address for attestation heap, PMU, SIMD, attestation
 	 * data and buffer.
@@ -213,6 +220,7 @@ static void rec_aux_granules_init(struct rec *r)
 
 	rec_attestation_heap_init(r);
 	rec_simd_state_init(r);
+#endif
 
 	/* Unmap auxiliary granules */
 	aux_granules_unmap(rec_aux, r->num_rec_aux);
@@ -303,8 +311,8 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
-	init_rec_regs(rec, &rec_params, rd);
-	gic_cpu_state_init(&rec->sysregs.gicstate);
+	IF_NCBMC(init_rec_regs(rec, &rec_params, rd);)
+	IF_NCBMC(gic_cpu_state_init(&rec->sysregs.gicstate);)
 
 	/* Copy addresses of auxiliary granules */
 	(void)memcpy(rec->g_aux, rec_aux_granules,

@@ -106,6 +106,7 @@
 	MASK(ID_AA64PFR1_EL1_MTE)	| \
 	MASK(ID_AA64PFR1_EL1_SME)
 
+#ifndef CBMC
 /*
  * Handle ID_AA64XXX<n>_EL1 instructions
  */
@@ -284,6 +285,7 @@ static bool handle_dc_sw_sysreg_trap(struct rec *rec,
 
 	return false;
 }
+#endif /* CBMC */
 
 typedef bool (*sysreg_handler_fn)(struct rec *rec, struct rmi_rec_exit *rec_exit,
 				  unsigned long esr);
@@ -297,6 +299,7 @@ struct sysreg_handler {
 #define SYSREG_HANDLER(_mask, _value, _handler_fn) \
 	{ .esr_mask = (_mask), .esr_value = (_value), .fn = (_handler_fn) }
 
+#ifndef CBMC
 static const struct sysreg_handler sysreg_handlers[] = {
 	SYSREG_HANDLER(ESR_EL2_SYSREG_ID_MASK, ESR_EL2_SYSREG_ID,
 		       handle_id_sysreg_trap),
@@ -385,3 +388,13 @@ bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
 
 	return true;
 }
+#else
+bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
+			       unsigned long esr)
+{
+	(void)rec;
+	(void)rec_exit;
+	(void)esr;
+	return true;
+}
+#endif
