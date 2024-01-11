@@ -52,7 +52,7 @@ set(SUMMARY_FILE "SUMMARY.${CBMC_RESULT_FILE_SUFFIX}")
 set(RMM_CBMC_SUMMARY_FIELD_WIDTH 38)
 
 # Configurations for the initial state.
-set(GRANULE_SHIFT "7")
+set(GRANULE_SHIFT "8")
 set(MAX_NUM_OF_GRANULE "8")
 set(HOST_MEM_SIZE "1024UL")
 

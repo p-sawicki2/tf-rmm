@@ -143,6 +143,7 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
+#ifndef CBMC
 	unsigned long regs[RMM_REC_SAVED_GEN_REG_COUNT];
 	unsigned long sp_el0;
 
@@ -157,6 +158,7 @@ struct rec {
 
 	struct sysreg_state sysregs;
 	struct common_sysreg_state common_sysregs;
+#endif /* CBMC */
 
 	/* Populated when the REC issues a RIPAS change request */
 	struct {
@@ -213,17 +215,19 @@ struct rec {
 
 	/* Addresses of auxiliary granules */
 	struct granule *g_aux[MAX_REC_AUX_GRANULES];
+#ifndef CBMC
 	struct rec_aux_data aux_data;
 	struct {
 		unsigned long vsesr_el2;
 		bool inject;
 	} serror_info;
+#endif /* CBMC */
 
 	/* True if host call is pending */
 	bool host_call;
 
 	/* The active SIMD context that is live in CPU registers */
-	struct simd_context *active_simd_ctx;
+	IF_NCBMC(struct simd_context *active_simd_ctx;)
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
 /*

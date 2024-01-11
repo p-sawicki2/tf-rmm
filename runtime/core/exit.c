@@ -49,6 +49,7 @@ static bool fixup_aarch32_data_abort(struct rec *rec, unsigned long *esr)
 	return false;
 }
 
+#ifndef CBMC
 static unsigned long get_dabt_write_value(struct rec *rec, unsigned long esr)
 {
 	unsigned int rt = esr_srt(esr);
@@ -59,6 +60,7 @@ static unsigned long get_dabt_write_value(struct rec *rec, unsigned long esr)
 	}
 	return rec->regs[rt] & access_mask(esr);
 }
+#endif /* CBMC */
 
 /*
  * Returns 'true' if access from @rec to @addr is within the Protected IPA space.
@@ -168,6 +170,7 @@ static bool handle_sync_external_abort(struct rec *rec,
 	return true;
 }
 
+#ifndef CBMC
 void emulate_stage2_data_abort(struct rec *rec,
 			       struct rmi_rec_exit *rec_exit,
 			       unsigned long rtt_level)
@@ -186,7 +189,9 @@ void emulate_stage2_data_abort(struct rec *rec,
 	rec_exit->hpfar = fipa >> HPFAR_EL2_FIPA_OFFSET;
 	rec_exit->exit_reason = RMI_EXIT_SYNC;
 }
+#endif /* CBMC */
 
+#ifndef CBMC
 /*
  * Returns 'true' if the abort is handled and the RMM should return to the Realm,
  * and returns 'false' if the exception should be reported to the HS host.
@@ -238,6 +243,16 @@ end:
 
 	return false;
 }
+#else
+static bool handle_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
+			      unsigned long esr)
+{
+	(void)rec;
+	(void)rec_exit;
+	(void)esr;
+	return false;
+}
+#endif
 
 /*
  * Returns 'true' if the abort is handled and the RMM should return to the Realm,
@@ -290,6 +305,7 @@ static bool handle_instruction_abort(struct rec *rec, struct rmi_rec_exit *rec_e
 	return false;
 }
 
+#ifndef CBMC
 /*
  * Handle FPU or SVE exceptions.
  * Returns: true if the exception is handled.
@@ -350,6 +366,14 @@ static bool handle_simd_exception(struct rec *rec, unsigned long esr)
 	 */
 	return true;
 }
+#else
+static bool handle_simd_exception(struct rec *rec, unsigned long esr)
+{
+	(void)rec;
+	(void)esr;
+	return true;
+}
+#endif /* CBMC */
 
 static void advance_pc(void)
 {
@@ -371,6 +395,7 @@ static inline bool rsi_handler_needs_fpu(unsigned int id)
 	return false;
 }
 
+#ifndef CBMC
 /*
  * Return 'true' if execution should continue in the REC, otherwise return
  * 'false' to go back to the NS caller of REC.Enter.
@@ -456,7 +481,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	if (((unsigned int)res.action & FLAG_STAGE_2_ABORT) != 0U) {
-		emulate_stage2_data_abort(rec, rec_exit, res.rtt_level);
+		IF_NCBMC(emulate_stage2_data_abort(rec, rec_exit, res.rtt_level);)
 	} else {
 		advance_pc();
 	}
@@ -466,7 +491,14 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 
 	return (((unsigned int)res.action & FLAG_EXIT_TO_HOST) == 0U);
 }
-
+#else
+static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
+{
+	(void)rec_exit;
+	(void)rec;
+	return false;
+}
+#endif
 /*
  * Return 'true' if the RMM handled the exception,
  * 'false' to return to the Non-secure host.
