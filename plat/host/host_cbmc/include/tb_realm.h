@@ -69,5 +69,7 @@ struct rmm_realm nondet_struct_rmm_realm(void);
 
 struct granule *init_realm_descriptor_page(void);
 
+uint64_t RecAuxCount(uint64_t rd_addr);
+
 #endif /* TB_REALM_H */
 
