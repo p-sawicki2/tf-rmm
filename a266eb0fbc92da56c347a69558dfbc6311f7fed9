@@ -339,6 +339,24 @@
       "message": "assert()",
       "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5434b238_dcb94ed1",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-12T19:47:26Z",
+      "side": 1,
+      "message": "See my comment at https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24792/comment/7f252bc9_5d02c6e7/.\n\nYour suggested change was introduced here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24792/12/runtime/rmi/rtt.c#1135 however I needed to reverted as some of the callers for this function use the return value on this case to stop iterating through tables.",
+      "parentUuid": "f1a5db9a_e1334121",
+      "revId": "a266eb0fbc92da56c347a69558dfbc6311f7fed9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

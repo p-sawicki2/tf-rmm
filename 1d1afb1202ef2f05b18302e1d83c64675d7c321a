@@ -72,6 +72,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "659f6527_d34ee85b",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-12T19:47:26Z",
+      "side": 1,
+      "message": "Yes, you are right, I missed some definitions when refactoring.",
+      "parentUuid": "b4c8c8c1_a1996422",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "22301422_61907c69",
         "filename": "lib/realm/include/table.h",
         "patchSetId": 15
@@ -214,6 +238,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "This function should be used only in assertions by callers. I dont think this check is expected to fail by callers. (would be good to confirm).\n.\n\nmodify the callers accordingly and update function comments accordingly.",
+      "range": {
+        "startLine": 114,
+        "startChar": 5,
+        "endLine": 114,
+        "endChar": 20
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba85f86e_49668679",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-12T19:47:26Z",
+      "side": 1,
+      "message": "Some callers expect this function to fail, for instance to know when to stop iterating over a table on which not all the entries have a valid RIPAS. See my comment below on rtt.c about this.",
+      "parentUuid": "1f659350_47d0fc49",
       "range": {
         "startLine": 114,
         "startChar": 5,
