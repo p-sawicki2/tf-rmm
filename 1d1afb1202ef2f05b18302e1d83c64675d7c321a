@@ -1,0 +1,531 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c8c8c1_a1996422",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "nit: Should we use S2TT as the prefix as it is more fitting for this component?",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22301422_61907c69",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "It seems for the sake of 2 functions being made static inline a lot of internal defines are now made public. It is better to favor code abstraction and maintainability over micro optimization IMO. Suggest to keep the functions as such and move these macros to .C file or pvt_def.h",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2875df4c_81d71ddc",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "use the following defines:\n\nRMI_EMPTY, RMI_RAM, RMI_DESTROYED \n\ninstead of magic 0,1,2",
+      "range": {
+        "startLine": 74,
+        "startChar": 64,
+        "endLine": 74,
+        "endChar": 65
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2679a57b_03b08f6f",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "this macro is not used anywhere other than a check which can done by ensuring ripas \u003c\u003d S2TTE_INVALID_RIPAS_DESTROYED, so can be removed ?",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eb1736c_14aa6032",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "see related comment below. for consistency add s2tte_create_unassigned_ns() API.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1dad4959_e81d4321",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "Add a Block comment here :\n\n```\n/*********************************************************\n * Helpers for Stage 2 Translation Table Entries (S2TTE) *\n *********************************************************/\n```",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a88ec240_6a8aae5c",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "Seeing the rework, since we have the RIPAS/NS variants for other helpers, it is better to have a function for every combination. Internally it can make use a single helper (for the unassigned ones it is quite trivial so no point in having a helper, might as well hardcode the mask). See related assigned_** comment.\n\nSuggest to create the following helpers:\n\n/* Creates S2TTE with HIPAS \u003d unassigned and RIPAS \u003d EMPTY */\nstatic inline s2tte_create_unassigned_empty()\n{\n   return (S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_EMPTY)\n}\n\nsimilarly iterate for other combinations for HIPAS \u003d unassigned.\n\n....",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cf79202_16abbcee",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "keep this together with other check functions.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f659350_47d0fc49",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "This function should be used only in assertions by callers. I dont think this check is expected to fail by callers. (would be good to confirm).\n.\n\nmodify the callers accordingly and update function comments accordingly.",
+      "range": {
+        "startLine": 114,
+        "startChar": 5,
+        "endLine": 114,
+        "endChar": 20
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fc570f3_920cf119",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "Suggest to create a function in the .c file\n\n```\nstatic unsigned long s2tte_create_assigned(unsigned long pa, long level,\n\t\t\t\t    unsigned long ripas)\n{\n \n\tassert(level \u003e\u003d RTT_MIN_BLOCK_LEVEL);\n\tassert(level \u003c\u003d RTT_PAGE_LEVEL);\n\tassert(addr_is_level_aligned(pa, level));\n        \n    tte \u003d create_empty_tte(pa);\n\n\tif (ripas !\u003d RAM)\n           return (tte | S2TTE_INVALID_HIPAS_ASSIGNED | ripas);\n\n        /* RIPAS is RAM and HIPAS is assigned. Create a valid descriptor */\n     if (level \u003d\u003d RTT_PAGE_LEVEL) {\n\t\treturn (tte | s2tte_page);\n\t}\n      \n     return (tte | s2tte_block);\n}\n```\n\ns2tte_create_assigned_ram()\ns2tte_create_assigned_empty()\ns2tte_create_assigned_destroyed() then calls this helper, these are the public API to the library.\n\n\nNow this also means that s2tte_create_assigned_unchanged() can be removed. The caller can do the following\n\n\ns2tte_create_assigned(pa, level, EXTRACT(S2TTE_INVALID_RIPAS, current_ripas))",
+      "range": {
+        "startLine": 116,
+        "startChar": 14,
+        "endLine": 116,
+        "endChar": 35
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b144504e_4c0ab94c",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "This API can be removed as mentioned above.",
+      "range": {
+        "startLine": 120,
+        "startChar": 14,
+        "endLine": 120,
+        "endChar": 45
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c5a3727_5d400482",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "Add a block comment here:\n\n```\n/*************************************************\n * Helpers for Stage 2 Translation Tables (S2TT) *\n *************************************************/\n```",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8855ec0f_ca941be4",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "nit, can go along with s2tte helpers. This should be a simple mask and can be a macro ? Perhaps the LPA2 is the only case when the mask should be altered.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca394b8b_8d9f69dd",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "suggest: s2tte_is_addr_aligned()\n\nCan be macro. The min level need not be checked for this macro (to avoid the intersection with LPA2).",
+      "range": {
+        "startLine": 153,
+        "startChar": 5,
+        "endLine": 153,
+        "endChar": 26
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "834523c9_f6f31b6e",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "same comment as above, can be made macro.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77b54d8f_9134a663",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "unify naming convention, start with s2tt_ prefix\n\nso this function would be \n\ns2tt_is_unassigned_empty_block()\n\nSimilar comments for below functions.",
+      "range": {
+        "startLine": 162,
+        "startChar": 5,
+        "endLine": 162,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "999b6ea1_d1077114",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "suggest s2tt_maps_assigned_*() as name",
+      "range": {
+        "startLine": 167,
+        "startChar": 5,
+        "endLine": 167,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0e7b2c3_1c02fd8d",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "s2tt_walk_lock_unlock()",
+      "range": {
+        "startLine": 178,
+        "startChar": 5,
+        "endLine": 178,
+        "endChar": 25
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "975da2ef_d763cf1c",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "These can go to top of file along with other S2TTE helpers. Not sure if the S1",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 1
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de76bf4a_06df693e",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "s2tt_skip_*",
+      "range": {
+        "startLine": 217,
+        "startChar": 14,
+        "endLine": 217,
+        "endChar": 35
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b351bd33_ee3d7856",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "`*table` to keep in line with other argument names above.",
+      "range": {
+        "startLine": 218,
+        "startChar": 23,
+        "endLine": 218,
+        "endChar": 27
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "591e841d_58823811",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "`s2tt_walk` as name ?",
+      "range": {
+        "startLine": 219,
+        "startChar": 21,
+        "endLine": 219,
+        "endChar": 30
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b3f2b2a_4fc28973",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "better to use table_entry_to_phys as it a TABLE_ADDR , may be it can be a macro to call the addr_level_mask()",
+      "range": {
+        "startLine": 204,
+        "startChar": 24,
+        "endLine": 204,
+        "endChar": 39
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85421699_4baead1a",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "this is not set anywhere.\n\nCan just be \u003c\u003d DESTROYED.\n\nAs mentioned in my previous comment, this should be a debug only API with invocation from assert()",
+      "range": {
+        "startLine": 471,
+        "startChar": 6,
+        "endLine": 471,
+        "endChar": 33
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97d74e3b_c52492c2",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:28:03Z",
+      "side": 1,
+      "message": "could define a macro for HIPAS_ASSINGED and use that here.\n\nAlso could use this macro in  S2TTE_INVALID_HIPAS_ASSIGNED definition.",
+      "range": {
+        "startLine": 637,
+        "startChar": 7,
+        "endLine": 637,
+        "endChar": 66
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
