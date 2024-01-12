@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b9d2c74_837d7e2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T14:31:13Z",
+      "side": 1,
+      "message": "The test patch can be on top. This will allow the other patches to be merged prior to tests.",
+      "revId": "836ae568c7855438501ad54a8fe235f737c1ecd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
