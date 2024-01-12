@@ -20,6 +20,86 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d60e67ca_b5d494cc",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "nit: since `start` is less that end (line 141) , unless we are concerned about overflow, it is only necessary to validate end.",
+      "range": {
+        "startLine": 147,
+        "startChar": 6,
+        "endLine": 147,
+        "endChar": 27
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df1a6549_466d9c95",
+        "filename": "lib/s2tt/include/table.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "The comment in line 25 says these macros do not work for Starting level, Need to analyse further on the usage of these macros.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4e39c42_d980c10a",
+        "filename": "lib/s2tt/include/table.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "suggest to remove this and directly call the arch_feat_get_pa_width()",
+      "range": {
+        "startLine": 216,
+        "startChar": 27,
+        "endLine": 216,
+        "endChar": 39
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a71781e_c365033f",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "After analyzing the problem space, I think we will have to pass the per-realm LPA2 configuration to the S2TT library.\n\nSuggest to enhance the realm_s2_context data structure to have this flag and pass this as an argument to the affected APIs.\n\nThis also allows us to add more such parameters to the library in the future.\n\nOne of the major realization I have come to as part of analyzing the optional feature set is that, RMM cannot use a feature present on the CPU if the effects of using the feature is visible to NS Host (even if it does not contradict the spec).\n\nIn the case of LPA2, using the feature for S2 means that Host can use 52 bit PA for mappings in TTE (via DATA_CREATE and MAP_UNPROTECTED API). We could possibly mitigate the effects by adding more checks in the affected RMI calls, but I think this is going to be a pattern for other VMSA features (like FEAT_POE). RMM would need to create the S2 tables using the subset of features mandated by Host for the Realm.\n\nHence we can prepare the S2 library now for such usecases in future by passing the realm_s2_context data structure.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8019a95b_df836224",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -91,6 +171,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f4231c1d_4fe28b5a",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "yes, I think encapsulation is useful (even at the risk of theoretical performance impact). In this particular case, I too dont think there will be any performance impact.\n\nSee file comment as well.",
+      "parentUuid": "a2817675_2d77d9f7",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a45a00d_6ef79edf",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -126,6 +230,81 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5bcae6d5_8d91bcac",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "Suggest to create a mask based on lpa2 as condition.",
+      "parentUuid": "e6de2fb3_65ea23f9",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb4c88c4_942ab911",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "we can assume pa is clean. No need to have additional masking here.",
+      "range": {
+        "startLine": 99,
+        "startChar": 24,
+        "endLine": 99,
+        "endChar": 65
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72b06cd7_39626c19",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "suggest to make this function conditional for lpa2 case.\n\nsame comment for all lpa2 variants.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ed0b1d4_072a9509",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "This can be done conditionally.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "84a89476_dee126ee",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -155,6 +334,103 @@
       "side": 1,
       "message": "Yes, it is redundant. Force of habit I guess. I will fix it",
       "parentUuid": "84a89476_dee126ee",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19ef0da6_3fbf9c5f",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "this will not be called for starting level so we dont need to cater for LM1",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db451fd8_c53762a9",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "realm_s2_context will these arguments and this can be passed as argument.",
+      "range": {
+        "startLine": 457,
+        "startChar": 26,
+        "endLine": 458,
+        "endChar": 21
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92be908c_3300565b",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "nice trick !",
+      "range": {
+        "startLine": 494,
+        "startChar": 20,
+        "endLine": 494,
+        "endChar": 23
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d62a83b_24e7ee80",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "I think we can handle LPA2 and non LPA2 case as a conditional here.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2976a2f2_a103b918",
+        "filename": "lib/s2tt/tests/CMakeLists.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-12T17:19:17Z",
+      "side": 1,
+      "message": "The tests for LPA2 can be separate patch.",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
