@@ -10,12 +10,25 @@ extern "C"
 {
 	#include <arch_helpers.h>
 	#include <simd.h>	  /* API to test */
+	#include <simd_callbacks.h>
 	#include <simd_private.h>
 	#include <simd_test_helpers.h>
 	#include <stdlib.h>
 	#include <string.h>
 	#include <test_helpers.h>
 	#include <utils_def.h>
+}
+
+static unsigned int helpers_times_called[SIMD_CB_IDS];
+
+static void increment_times_called(enum simd_cb_ids id)
+{
+	helpers_times_called[id]++;
+}
+
+void fpu_save_regs_cb(struct fpu_regs *regs)
+{
+	increment_times_called(FPU_SAVE_REGS);
 }
 
 TEST_GROUP(simd) {
@@ -97,13 +110,17 @@ TEST(simd, simd_context_switch_TC1)
 	struct simd_config test_simd_cfg = { 0 };
 	u_register_t cptr_el2;
 	int ret;
+	union simd_cbs cb;
+	int times_called_prev;
 
 	/******************************************************************
 	 * TEST CASE 1:
 	 *
 	 * Initialise a test SIMD FPU context that belongs to NS world.
 	 * Call simd_context_switch() with this test context as the
-	 * ctx_save. Expect the save to complete successfully.
+	 * ctx_save. Expect the save to complete successfully. In addition,
+	 * the SIMD helper function fpu_save_registers() should be called
+	 * exactly once.
 	 ******************************************************************/
 
 	/*
@@ -114,13 +131,18 @@ TEST(simd, simd_context_switch_TC1)
 	simd_test_helpers_set_state_saved(false);
 
 	cptr_el2 = read_cptr_el2();
+	times_called_prev = helpers_times_called[FPU_SAVE_REGS];
 
 	ret = simd_context_init(SIMD_OWNER_NWD, &test_simd_ctx, &test_simd_cfg);
 
 	CHECK_TRUE(ret == 0);
 
+	cb.fpu_save_restore_regs = fpu_save_regs_cb;
+	simd_test_register_callback(FPU_SAVE_REGS, cb);
+
 	(void)simd_context_switch(&test_simd_ctx, NULL);
 
+	CHECK_TRUE(helpers_times_called[FPU_SAVE_REGS] - times_called_prev == 1);
 	CHECK_TRUE(simd_is_state_saved());
 
 	/* Check that CPTR_EL2 was restored correctly. */

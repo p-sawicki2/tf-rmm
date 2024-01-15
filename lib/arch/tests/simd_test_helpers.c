@@ -4,6 +4,7 @@
  */
 
 #include <host_utils.h>
+#include <simd_callbacks.h>
 #include <simd_test_helpers.h>
 #include <test_helpers.h>
 
@@ -28,6 +29,10 @@ void simd_test_helpers_init(void)
 void simd_test_helpers_teardown(void)
 {
 	host_util_zero_sysregs_and_cbs();
+
+	for (unsigned int id = 0U; id < SIMD_CB_IDS; id++) {
+		simd_test_unregister_callback(id);
+	}
 }
 
 void simd_test_helpers_set_state_saved(bool state)
