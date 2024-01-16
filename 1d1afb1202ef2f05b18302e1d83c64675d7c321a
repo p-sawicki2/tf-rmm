@@ -94,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd223f18_3bcaf41c",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "659f6527_d34ee85b",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22301422_61907c69",
@@ -107,6 +131,24 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "It seems for the sake of 2 functions being made static inline a lot of internal defines are now made public. It is better to favor code abstraction and maintainability over micro optimization IMO. Suggest to keep the functions as such and move these macros to .C file or pvt_def.h",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3a48296_47459dfb",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "Several of this macros are now used on other parts of the code (realm.c, rtt.c, for instance) as the s2tt_create_* functions now take the RIPAS/HIPAS as parameters. If we revert those functions to the previous patcheset as discussed on other comments, then I can move this to a private header",
+      "parentUuid": "22301422_61907c69",
       "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -134,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4ef04d_492db5f6",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2875df4c_81d71ddc",
+      "range": {
+        "startLine": 74,
+        "startChar": 64,
+        "endLine": 74,
+        "endChar": 65
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2679a57b_03b08f6f",
@@ -147,6 +213,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "this macro is not used anywhere other than a check which can done by ensuring ripas \u003c\u003d S2TTE_INVALID_RIPAS_DESTROYED, so can be removed ?",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e55e11b_19aaa270",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "Trying the comparison you mention here was my first idea but as RIPAS\u0027 shift is \u003e 0, there were some corner cases that would fail (I don\u0027t remember if in RMM or on the unittests). My first idea was to use the EXTRACT macro for the check, but I though that would add more overhead, that\u0027s why I came up with this macro",
+      "parentUuid": "2679a57b_03b08f6f",
       "range": {
         "startLine": 77,
         "startChar": 8,
@@ -204,6 +294,24 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "Seeing the rework, since we have the RIPAS/NS variants for other helpers, it is better to have a function for every combination. Internally it can make use a single helper (for the unassigned ones it is quite trivial so no point in having a helper, might as well hardcode the mask). See related assigned_** comment.\n\nSuggest to create the following helpers:\n\n/* Creates S2TTE with HIPAS \u003d unassigned and RIPAS \u003d EMPTY */\nstatic inline s2tte_create_unassigned_empty()\n{\n   return (S2TTE_INVALID_HIPAS_UNASSIGNED | S2TTE_INVALID_RIPAS_EMPTY)\n}\n\nsimilarly iterate for other combinations for HIPAS \u003d unassigned.\n\n....",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e63721f_e7d0b9ac",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "So you mean reverting back to the previous version of the patch where there was a different s2tte_create per ripas?",
+      "parentUuid": "a88ec240_6a8aae5c",
       "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -285,6 +393,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "Suggest to create a function in the .c file\n\n```\nstatic unsigned long s2tte_create_assigned(unsigned long pa, long level,\n\t\t\t\t    unsigned long ripas)\n{\n \n\tassert(level \u003e\u003d RTT_MIN_BLOCK_LEVEL);\n\tassert(level \u003c\u003d RTT_PAGE_LEVEL);\n\tassert(addr_is_level_aligned(pa, level));\n        \n    tte \u003d create_empty_tte(pa);\n\n\tif (ripas !\u003d RAM)\n           return (tte | S2TTE_INVALID_HIPAS_ASSIGNED | ripas);\n\n        /* RIPAS is RAM and HIPAS is assigned. Create a valid descriptor */\n     if (level \u003d\u003d RTT_PAGE_LEVEL) {\n\t\treturn (tte | s2tte_page);\n\t}\n      \n     return (tte | s2tte_block);\n}\n```\n\ns2tte_create_assigned_ram()\ns2tte_create_assigned_empty()\ns2tte_create_assigned_destroyed() then calls this helper, these are the public API to the library.\n\n\nNow this also means that s2tte_create_assigned_unchanged() can be removed. The caller can do the following\n\n\ns2tte_create_assigned(pa, level, EXTRACT(S2TTE_INVALID_RIPAS, current_ripas))",
+      "range": {
+        "startLine": 116,
+        "startChar": 14,
+        "endLine": 116,
+        "endChar": 35
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "310bed89_f5c7de8f",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "I don\u0027t know if I see the point of having four wrappers for the same helper as the call/return can introduce overhead that can add up over time, as this functions could be called a large number of times during realm creation? Wouldn\u0027t it be better to revert back to the implementation on the previous patchset where there is a different variant per s2tte_create_assigned_*?",
+      "parentUuid": "7fc570f3_920cf119",
       "range": {
         "startLine": 116,
         "startChar": 14,
@@ -589,6 +721,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "this is not set anywhere.\n\nCan just be \u003c\u003d DESTROYED.\n\nAs mentioned in my previous comment, this should be a debug only API with invocation from assert()",
+      "range": {
+        "startLine": 471,
+        "startChar": 6,
+        "endLine": 471,
+        "endChar": 33
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7d52fda_310b620c",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-16T10:01:12Z",
+      "side": 1,
+      "message": "See my comment above with regards this comparison and my thoughts about using the EXTRACT macro instead",
+      "parentUuid": "85421699_4baead1a",
       "range": {
         "startLine": 471,
         "startChar": 6,
