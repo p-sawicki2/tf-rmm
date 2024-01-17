@@ -107,5 +107,9 @@ func realm_exit
 	ldp	x29, x30, [sp, #(16 * 5)]
 	add	sp, sp, #(16 * 6)
 
+	/* Enable DIT */
+	mov_imm	x1, DIT_BIT
+	msr	DIT, x1
+
 	ret
 endfunc realm_exit
