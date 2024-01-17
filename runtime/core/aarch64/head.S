@@ -128,6 +128,10 @@ func rmm_entry
 	bl	xlat_enable_mmu_el2
 	bl	pauth_init_enable_el2
 
+	/* Enable DIT */
+	mov	x0, #DIT_BIT
+	msr	DIT, x0
+
 	bl	rmm_main
 	b	smc_ret
 
