@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4817962b_219746a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-18T12:11:37Z",
+      "side": 1,
+      "message": "FEAT_DIT",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f205efdd_9119cca2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-18T12:11:37Z",
+      "side": 1,
+      "message": "(rmm) is too generic. Suggest to make this specific to the component undergoing change or remove the (rmm) from commit message.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edb4c390_52e71dce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-18T12:11:37Z",
+      "side": 1,
+      "message": "There is an argument to enable DIT based on secrets processed in RMM (like the use of private key during the attestation flow). We need to float this idea more widely around and get feedback.",
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d409f26a_0f89e179",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-18T12:11:37Z",
+      "side": 1,
+      "message": "This is the entry from EL3 to RMM. \n\nWe also need to cover the other side entry to RMM from Realm side.",
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
