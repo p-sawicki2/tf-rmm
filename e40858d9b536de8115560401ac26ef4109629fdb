@@ -47,6 +47,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "313718ca_ead41e49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-18T14:31:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4817962b_219746a5",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55220fde_4c316bfc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-18T14:31:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f205efdd_9119cca2",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "edb4c390_52e71dce",
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa494f89_dd89ab3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-18T14:31:19Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "edb4c390_52e71dce",
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d409f26a_0f89e179",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-01-18T12:11:37Z",
       "side": 1,
       "message": "This is the entry from EL3 to RMM. \n\nWe also need to cover the other side entry to RMM from Realm side.",
+      "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acbaa7c0_a45d7262",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-18T14:31:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d409f26a_0f89e179",
       "revId": "e40858d9b536de8115560401ac26ef4109629fdb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
