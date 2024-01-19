@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "718af840_80f2d937",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95ac0bd2_44c1ad13",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cedb0003_b70500ba",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-01-12T14:33:04Z",
       "side": 1,
       "message": "the unit tests come after this, so may not be useful referencing the unittests here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27d0a1d0_c73a1d4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cedb0003_b70500ba",
       "range": {
         "startLine": 11,
         "startChar": 4,
@@ -153,6 +201,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0b21081_1ab44374",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Moved to s2tt_pvt_defs.h",
+      "parentUuid": "d3a48296_47459dfb",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2875df4c_81d71ddc",
@@ -247,6 +313,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4000aead_94e52bcb",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Fixed this by turning the checks into asserts as we discussed",
+      "parentUuid": "6e55e11b_19aaa270",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5eb1736c_14aa6032",
@@ -264,6 +354,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f207c6_b0016c8a",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done, reverted.",
+      "parentUuid": "5eb1736c_14aa6032",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1dad4959_e81d4321",
@@ -277,6 +385,24 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "Add a Block comment here :\n\n```\n/*********************************************************\n * Helpers for Stage 2 Translation Table Entries (S2TTE) *\n *********************************************************/\n```",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a679c63b_f5b4a595",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1dad4959_e81d4321",
       "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -316,6 +442,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "613ceef9_6de982b0",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e63721f_e7d0b9ac",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5cf79202_16abbcee",
@@ -329,6 +473,24 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "keep this together with other check functions.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ca9697d_b1e437be",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cf79202_16abbcee",
       "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -427,6 +589,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5435c6e0_f080d949",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Fixed as per our discussion.",
+      "parentUuid": "310bed89_f5c7de8f",
+      "range": {
+        "startLine": 116,
+        "startChar": 14,
+        "endLine": 116,
+        "endChar": 35
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b144504e_4c0ab94c",
@@ -450,6 +636,53 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "508ee94d_3b99a5d1",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Kept this API. It internally calls s2tte_create_assigned(). This the latter doesn\u0027t need to be public, which also helps simplifying the tests.",
+      "parentUuid": "b144504e_4c0ab94c",
+      "range": {
+        "startLine": 120,
+        "startChar": 14,
+        "endLine": 120,
+        "endChar": 45
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4be19c0_119d190d",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Although the library will be called \"s2tt\", there are APIs that affect a single entry, so the prefix for those is \"s2tte\" as opposed to \"s2tt\". I think I could move these to a different group on the header",
+      "range": {
+        "startLine": 134,
+        "startChar": 5,
+        "endLine": 134,
+        "endChar": 28
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c5a3727_5d400482",
@@ -467,6 +700,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8da57a5_faaa153c",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c5a3727_5d400482",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8855ec0f_ca941be4",
@@ -480,6 +731,24 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "nit, can go along with s2tte helpers. This should be a simple mask and can be a macro ? Perhaps the LPA2 is the only case when the mask should be altered.",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de3c8af6_f832cf57",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "This function will be modified for LPA2 support, so I think it is best to leave it here as is.",
+      "parentUuid": "8855ec0f_ca941be4",
       "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -507,6 +776,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e76c74e9_6c6da7ba",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "renamed as s2tt_is_addr_lvl_aligned() as per our discussion",
+      "parentUuid": "ca394b8b_8d9f69dd",
+      "range": {
+        "startLine": 153,
+        "startChar": 5,
+        "endLine": 153,
+        "endChar": 26
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "834523c9_f6f31b6e",
@@ -524,6 +817,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6acff29_667cd90b",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "I think this might be slightly complicated for a macro.",
+      "parentUuid": "834523c9_f6f31b6e",
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "77b54d8f_9134a663",
@@ -537,6 +848,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "unify naming convention, start with s2tt_ prefix\n\nso this function would be \n\ns2tt_is_unassigned_empty_block()\n\nSimilar comments for below functions.",
+      "range": {
+        "startLine": 162,
+        "startChar": 5,
+        "endLine": 162,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "930d52e2_be80ebe4",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77b54d8f_9134a663",
       "range": {
         "startLine": 162,
         "startChar": 5,
@@ -570,6 +905,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "336daf44_b1e89bd2",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "999b6ea1_d1077114",
+      "range": {
+        "startLine": 167,
+        "startChar": 5,
+        "endLine": 167,
+        "endChar": 36
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0e7b2c3_1c02fd8d",
@@ -583,6 +942,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "s2tt_walk_lock_unlock()",
+      "range": {
+        "startLine": 178,
+        "startChar": 5,
+        "endLine": 178,
+        "endChar": 25
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a078abff_c390687f",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0e7b2c3_1c02fd8d",
       "range": {
         "startLine": 178,
         "startChar": 5,
@@ -616,6 +999,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65921382_c90d1965",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "975da2ef_d763cf1c",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 1
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de76bf4a_06df693e",
@@ -629,6 +1036,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "s2tt_skip_*",
+      "range": {
+        "startLine": 217,
+        "startChar": 14,
+        "endLine": 217,
+        "endChar": 35
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "463d893b_8849a456",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de76bf4a_06df693e",
       "range": {
         "startLine": 217,
         "startChar": 14,
@@ -662,6 +1093,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f953df47_5d527853",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b351bd33_ee3d7856",
+      "range": {
+        "startLine": 218,
+        "startChar": 23,
+        "endLine": 218,
+        "endChar": 27
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "591e841d_58823811",
@@ -675,6 +1130,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "`s2tt_walk` as name ?",
+      "range": {
+        "startLine": 219,
+        "startChar": 21,
+        "endLine": 219,
+        "endChar": 30
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6243e7c0_64cda9f4",
+        "filename": "lib/realm/include/table.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "591e841d_58823811",
       "range": {
         "startLine": 219,
         "startChar": 21,
@@ -757,6 +1236,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7daa5c0d_e62fe73b",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "Need to review this more in detail, as turning the checks into asserts causes some tests to crash. Need to validate that there is no a hidden bug somewhere which is masked by this checks.",
+      "parentUuid": "c7d52fda_310b620c",
+      "range": {
+        "startLine": 471,
+        "startChar": 6,
+        "endLine": 471,
+        "endChar": 33
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "97d74e3b_c52492c2",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 15
@@ -768,6 +1271,30 @@
       "writtenOn": "2024-01-12T14:28:03Z",
       "side": 1,
       "message": "could define a macro for HIPAS_ASSINGED and use that here.\n\nAlso could use this macro in  S2TTE_INVALID_HIPAS_ASSIGNED definition.",
+      "range": {
+        "startLine": 637,
+        "startChar": 7,
+        "endLine": 637,
+        "endChar": 66
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b28fdbb0_ab979045",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-19T19:42:44Z",
+      "side": 1,
+      "message": "I think having another definition might complicate things, whereas the use of this macro here clarifies the intention IMO.",
+      "parentUuid": "97d74e3b_c52492c2",
       "range": {
         "startLine": 637,
         "startChar": 7,
