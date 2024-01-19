@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ab07b51_01b89e51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T17:13:32Z",
+      "side": 1,
+      "message": "Please ensure to rebase and push for review. Also ensure CI passes.",
+      "revId": "595abfa46b494be9ea164568acc23412c1acc079",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
