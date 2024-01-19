@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7296b65e_b1a64a65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T10:36:48Z",
+      "side": 1,
+      "message": "How do I build with GCC? Would be good to mention in the CBMC Application note.",
+      "revId": "8e4d3adda8450520e9a4b24065080747e80349f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "878ad0c6_5ce58736",
+        "filename": "plat/host/host_cbmc/src/tb_attest.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T10:36:48Z",
+      "side": 1,
+      "message": "Should we provide a stub implementation in the components themselves ?",
+      "revId": "8e4d3adda8450520e9a4b24065080747e80349f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
