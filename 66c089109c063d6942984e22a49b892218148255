@@ -1,0 +1,233 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f16f1e6_42fee4a8",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "MAX_ROOT_RTT_CBMC is enough as a name I think.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a6d3f28_65a10c2b",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "Is there a case that the addr will not correspond to RD ? Would the case for valid_pa not being true trigger ?",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af044e6c_deb2d613",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "The comment can be updated for released l.0 spec.",
+      "range": {
+        "startLine": 156,
+        "startChar": 9,
+        "endLine": 156,
+        "endChar": 15
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90f582cc_9bebfee7",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "Is there a case that the addr will not correspond to RD ? Would the case for valid_pa not being true trigger ?",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d52a9878_966ab41d",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "Is there a case that the addr will not correspond to RD ?",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 58
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcf86c7b_6b002f41",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "/* Check the refcount for all root rtts */",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e95397e_dfa30b9c",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "(rd-\u003es2_ctx.g_rtt[i])-\u003erefcount is easier to read",
+      "range": {
+        "startLine": 187,
+        "startChar": 7,
+        "endLine": 187,
+        "endChar": 30
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac6e6c9f_43dfdd0e",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "the parameter can be named `rtt_base`",
+      "range": {
+        "startLine": 194,
+        "startChar": 29,
+        "endLine": 194,
+        "endChar": 33
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8efec93e_3651908f",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "Some function documentation is useful",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6253eef9_a20a490f",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "g_rtt",
+      "range": {
+        "startLine": 200,
+        "startChar": 17,
+        "endLine": 200,
+        "endChar": 24
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c408f2e9_64e508a6",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T11:34:06Z",
+      "side": 1,
+      "message": "should this be MAX_ROOT_RTT_IN_CBMC_VERIFICATION ?",
+      "range": {
+        "startLine": 205,
+        "startChar": 41,
+        "endLine": 205,
+        "endChar": 43
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
