@@ -16,6 +16,24 @@
       "message": "nit: These can be removed in the base patch as it was introduced there.",
       "revId": "df5e9e7630a721cf328f78c6e1da8316c693cd43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d04a5bed_bc2d786f",
+        "filename": "plat/host/host_cbmc/src/tb_rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-22T21:49:56Z",
+      "side": 0,
+      "message": "The base patch had been merged in the meanwhile, so fixing it here",
+      "parentUuid": "0ecd069a_7ccb2754",
+      "revId": "df5e9e7630a721cf328f78c6e1da8316c693cd43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

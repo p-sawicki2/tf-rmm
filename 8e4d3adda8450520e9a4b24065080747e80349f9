@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2940cf24_c2aaddb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-22T21:49:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7296b65e_b1a64a65",
+      "revId": "8e4d3adda8450520e9a4b24065080747e80349f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "878ad0c6_5ce58736",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-19T10:36:48Z",
       "side": 1,
       "message": "Should we provide a stub implementation in the components themselves ?",
+      "revId": "8e4d3adda8450520e9a4b24065080747e80349f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb056269_d82aef58",
+        "filename": "plat/host/host_cbmc/src/tb_attest.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-22T21:49:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "878ad0c6_5ce58736",
       "revId": "8e4d3adda8450520e9a4b24065080747e80349f9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
