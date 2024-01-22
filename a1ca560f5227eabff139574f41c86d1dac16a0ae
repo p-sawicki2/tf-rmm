@@ -333,6 +333,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d85bc17_282745d9",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "31d93a0e_ae52b2bf",
+      "revId": "a1ca560f5227eabff139574f41c86d1dac16a0ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4ea7ab2_c94082de",
@@ -386,6 +404,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aecf0078_b7d997ce",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "ok, for now this seems fine.",
+      "parentUuid": "a3a93180_59ada09f",
+      "revId": "a1ca560f5227eabff139574f41c86d1dac16a0ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6575c999_55e20275",
@@ -417,6 +453,24 @@
       "side": 1,
       "message": "RMI_REALM_CREATE has a success condition on the rpv field, so the memcpy will be necessary then. Although I can hardcode the value in init_rd.",
       "parentUuid": "6575c999_55e20275",
+      "revId": "a1ca560f5227eabff139574f41c86d1dac16a0ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c16ee5f7_51f0ff28",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "ok, this is fine then.",
+      "parentUuid": "72d079ad_b0a2335b",
       "revId": "a1ca560f5227eabff139574f41c86d1dac16a0ae",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

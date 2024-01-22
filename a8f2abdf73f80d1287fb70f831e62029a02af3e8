@@ -16,6 +16,63 @@
       "message": "Thanks for the review",
       "revId": "a8f2abdf73f80d1287fb70f831e62029a02af3e8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f796a55a_dbfd883b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "minor nits.",
+      "revId": "a8f2abdf73f80d1287fb70f831e62029a02af3e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "455f7658_de729fe5",
+        "filename": "lib/arch/include/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "add \"static inline\"",
+      "revId": "a8f2abdf73f80d1287fb70f831e62029a02af3e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46f56700_caff3a4b",
+        "filename": "lib/arch/include/simd.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-22T13:52:58Z",
+      "side": 1,
+      "message": "add \"static inline\"",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 193,
+        "endChar": 4
+      },
+      "revId": "a8f2abdf73f80d1287fb70f831e62029a02af3e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
