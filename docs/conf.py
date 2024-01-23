@@ -59,7 +59,7 @@ with open('global_substitutions.txt', 'r') as subs:
   rst_prolog = subs.read()
 
 # Minimum version of sphinx required
-needs_sphinx = '2.4'
+needs_sphinx = '5.3.0'
 
 # -- Options for HTML output -------------------------------------------------
 
