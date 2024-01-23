@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "966b976b_458439f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-23T15:51:30Z",
+      "side": 1,
+      "message": "Also update the threat model where FEAT_DIT is referenced to say that this is mitigated (rather than a TODO).",
+      "revId": "a42c52b9f7d7956f11c98fce9f881ca7e513c7fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f0a8b6b_da137f51",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-23T15:51:30Z",
+      "side": 1,
+      "message": "perhaps can be added to rmm_el2_init_env variable.",
+      "revId": "a42c52b9f7d7956f11c98fce9f881ca7e513c7fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0eccebac_c4388e08",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-23T15:51:30Z",
+      "side": 1,
+      "message": "can avoid the memory operation and can set the bit unilaterally at beginning of this function.",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 12
+      },
+      "revId": "a42c52b9f7d7956f11c98fce9f881ca7e513c7fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
