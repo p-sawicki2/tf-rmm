@@ -22,6 +22,30 @@
       },
       "revId": "6e417cc30fd90d290df037162fc69501e4f0442b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7126df3f_c3ea392b",
+        "filename": "docs/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-01-23T15:08:29Z",
+      "side": 1,
+      "message": "I opted for \u003d\u003d as conf.py have \n\n          needs_sphinx \u003d \u00275.3.0\u0027\nI can try with \u003e\u003d option",
+      "parentUuid": "536aacd5_3e99ac19",
+      "range": {
+        "startLine": 6,
+        "startChar": 6,
+        "endLine": 6,
+        "endChar": 8
+      },
+      "revId": "6e417cc30fd90d290df037162fc69501e4f0442b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
