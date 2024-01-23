@@ -9,36 +9,46 @@
 unsigned long plat_granule_addr_to_idx(unsigned long addr)
 {
 	struct plat_dram_layout *dram = plat_get_dram_layout();
+	unsigned long idx = UINT64_MAX, prev_idx = 0;
 
-	if (!GRANULE_ALIGNED(addr)) {
-		return UINT64_MAX;
+	if ((dram == NULL) || (dram->num_granules == 0) ||
+		(!GRANULE_ALIGNED(addr))) {
+		return idx;
 	}
 
-	if ((addr >= dram->bank[0].start_addr) &&
-		(addr <= dram->bank[0].end_addr)) {
-		return (addr - dram->bank[0].start_addr) / GRANULE_SIZE;
+	for (unsigned int i = 0; i < dram->num_banks; i++) {
+		/* Check if addr falls in [start - end] of this bank */
+		if ((addr >= dram->bank[i].start_addr) &&
+			(addr <= dram->bank[i].end_addr)) {
+			idx = prev_idx + ((addr - dram->bank[i].start_addr) /
+				GRANULE_SIZE);
+			break;
+		}
+		prev_idx += ((dram->bank[i].end_addr -
+			dram->bank[i].start_addr + 1) / GRANULE_SIZE);
 	}
 
-	if ((dram->bank[1].start_addr != 0UL) &&
-		(addr >= dram->bank[1].start_addr) &&
-		(addr <= dram->bank[1].end_addr)) {
-		return ((addr - dram->bank[1].start_addr) /
-			GRANULE_SIZE) + dram->idx_bank_1;
-	}
-
-	return UINT64_MAX;
+	return idx;
 }
 
 unsigned long plat_granule_idx_to_addr(unsigned long idx)
 {
 	struct plat_dram_layout *dram = plat_get_dram_layout();
+	unsigned long addr = 0, idx_start = 0, idx_end;
 
-	assert(idx < dram->num_granules);
+	assert((dram != NULL) && (idx < dram->num_granules));
 
-	if (idx < dram->idx_bank_1) {
-		return dram->bank[0].start_addr + (idx + GRANULE_SIZE);
+	for (unsigned int i = 0; i < dram->num_banks; i++) {
+		idx_end = idx_start + ((dram->bank[i].end_addr -
+                                      dram->bank[i].start_addr + 1) / GRANULE_SIZE);
+
+		/* Check if index falls in [start - end] of this bank */
+		if ((idx >= idx_start) && (idx < idx_end)) {
+			addr = dram->bank[i].start_addr +
+				((idx - idx_start) * GRANULE_SIZE);
+		}
+		idx_start = idx_end;
 	}
 
-	return dram->bank[1].start_addr +
-		((idx - dram->idx_bank_1) + GRANULE_SIZE);
+	return addr;
 }
