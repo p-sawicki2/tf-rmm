@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b846de9_613259f0",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f16f1e6_42fee4a8",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a6d3f28_65a10c2b",
@@ -43,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9858c316_d18b14c9",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "CBMC considers all the possible addresses when analysing code, so yes, this can happen. This function is the \u0027implementation\u0027 of the \u0027function\u0027 Realm defined in the spec\n\n| B3.28 Realm function\n| Returns the Realm whose RD is located at physical address addr.\n|\n|     func Realm(\n|     addr : Address) \u003d\u003e RmmRealm\n|\n| See also:\n| • A2.1 Realm\n\nIt doesn\u0027t really provide any hint what should happen when the address is not valid. Returning a nondet structure is maybe the best option to represent undefined behaviour.",
+      "parentUuid": "4a6d3f28_65a10c2b",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "af044e6c_deb2d613",
         "filename": "plat/host/host_cbmc/src/tb_realm.c",
         "patchSetId": 1
@@ -54,6 +96,30 @@
       "writtenOn": "2024-01-19T11:34:06Z",
       "side": 1,
       "message": "The comment can be updated for released l.0 spec.",
+      "range": {
+        "startLine": 156,
+        "startChar": 9,
+        "endLine": 156,
+        "endChar": 15
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a9d770a_56889734",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af044e6c_deb2d613",
       "range": {
         "startLine": 156,
         "startChar": 9,
@@ -83,6 +149,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cac14767_eec9ebc7",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "The same can be told here as for Realm()",
+      "parentUuid": "90f582cc_9bebfee7",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d52a9878_966ab41d",
         "filename": "plat/host/host_cbmc/src/tb_realm.c",
         "patchSetId": 1
@@ -94,6 +178,30 @@
       "writtenOn": "2024-01-19T11:34:06Z",
       "side": 1,
       "message": "Is there a case that the addr will not correspond to RD ?",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 58
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "620bd8a0_5f6c7e97",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "We don\u0027t really expect that to happen. As the internal prefix suggests, this is just a defensive measure here: to catch early if there is an error in the lookup, or the RD generation logic, and prevent the lengthy investigations for a failed coverage, or a failing unrelated assert.",
+      "parentUuid": "d52a9878_966ab41d",
       "range": {
         "startLine": 179,
         "startChar": 0,
@@ -121,6 +229,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d896d11d_0013e07b",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcf86c7b_6b002f41",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e95397e_dfa30b9c",
@@ -134,6 +260,30 @@
       "writtenOn": "2024-01-19T11:34:06Z",
       "side": 1,
       "message": "(rd-\u003es2_ctx.g_rtt[i])-\u003erefcount is easier to read",
+      "range": {
+        "startLine": 187,
+        "startChar": 7,
+        "endLine": 187,
+        "endChar": 30
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d2abadd_441f04f0",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e95397e_dfa30b9c",
       "range": {
         "startLine": 187,
         "startChar": 7,
@@ -184,6 +334,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67809d28_a2047f65",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac6e6c9f_43dfdd0e",
+      "range": {
+        "startLine": 194,
+        "startChar": 29,
+        "endLine": 194,
+        "endChar": 33
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28bc398a_164366cf",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "This implements the RttsStateEqual function from the spec. It follows the pseudocode outlined there.",
+      "parentUuid": "8efec93e_3651908f",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6253eef9_a20a490f",
@@ -207,6 +399,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "150a8fcd_24093493",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6253eef9_a20a490f",
+      "range": {
+        "startLine": 200,
+        "startChar": 17,
+        "endLine": 200,
+        "endChar": 24
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c408f2e9_64e508a6",
@@ -220,6 +436,30 @@
       "writtenOn": "2024-01-19T11:34:06Z",
       "side": 1,
       "message": "should this be MAX_ROOT_RTT_IN_CBMC_VERIFICATION ?",
+      "range": {
+        "startLine": 205,
+        "startChar": 41,
+        "endLine": 205,
+        "endChar": 43
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a51db498_015abd51",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T13:45:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c408f2e9_64e508a6",
       "range": {
         "startLine": 205,
         "startChar": 41,
