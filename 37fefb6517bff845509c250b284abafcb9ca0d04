@@ -16,6 +16,24 @@
       "message": "The change is making lot of invasive changes to code. \n\nNeed to understand the reasons better and need to see if there is a way to isolate the CBMC related changes in someway.",
       "revId": "37fefb6517bff845509c250b284abafcb9ca0d04",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "513cbc68_82ae989e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-01-23T21:39:45Z",
+      "side": 1,
+      "message": "I changed the length of rec.regs array to 5. This is enough to shrink the size of the structure below 1kb. This eliminates the invasive changes, but to make CBMC not killed by the OOM killer, I needed to decrease the number of max possible granules. This still results in 4 times the HOST_MEMORY_SIZE than it was earlier. More complex ABIs might not be able to complete with these settings (The currently added RMI_REALM_DESTROY might be one of them.)",
+      "parentUuid": "0e127af5_da2c6631",
+      "revId": "37fefb6517bff845509c250b284abafcb9ca0d04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
