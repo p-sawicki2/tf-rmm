@@ -14,7 +14,7 @@ target_link_libraries(rmm-fvp
             rmm-plat-common)
 
 target_sources(rmm-fvp
-    PRIVATE "src/fvp_setup.c")
+    PRIVATE "${RMM_SOURCE_DIR}/plat/common/src/plat_setup.c")
 
 target_include_directories(rmm-fvp
     PRIVATE "src/include")

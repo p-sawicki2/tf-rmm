@@ -4,15 +4,15 @@
  */
 
 #include <debug.h>
-#include <fvp_private.h>
 #include <pl011.h>
 #include <plat_common.h>
+#include <plat_private.h>
 #include <platform_api.h>
 #include <rmm_el3_ifc.h>
 #include <sizes.h>
 #include <xlat_tables.h>
 
-#define FVP_RMM_UART		MAP_REGION_FLAT(			\
+#define PLAT_RMM_UART		MAP_REGION_FLAT(			\
 					RMM_UART_ADDR,			\
 					SZ_4K,				\
 					(MT_DEVICE | MT_RW | MT_REALM))
@@ -54,11 +54,11 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 
 	/* TBD Initialize UART for early log */
 	struct xlat_mmap_region plat_regions[] = {
-		FVP_RMM_UART,
+		PLAT_RMM_UART,
 		{0}
 	};
 
-	ret = uart_init(RMM_UART_ADDR, FVP_UART_CLK_IN_HZ, FVP_UART_BAUDRATE);
+	ret = uart_init(RMM_UART_ADDR, PLAT_UART_CLK_IN_HZ, PLAT_UART_BAUDRATE);
 	if (ret != 0) {
 		ERROR("%s (%u): Failed to init UART (%i)\n",
 			__func__, __LINE__, ret);
