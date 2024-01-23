@@ -46,6 +46,30 @@
       },
       "revId": "6e417cc30fd90d290df037162fc69501e4f0442b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7d75e30_028ad224",
+        "filename": "docs/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-23T16:03:34Z",
+      "side": 1,
+      "message": "Done. Fixed versions of all packages.",
+      "parentUuid": "7126df3f_c3ea392b",
+      "range": {
+        "startLine": 6,
+        "startChar": 6,
+        "endLine": 6,
+        "endChar": 8
+      },
+      "revId": "6e417cc30fd90d290df037162fc69501e4f0442b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
