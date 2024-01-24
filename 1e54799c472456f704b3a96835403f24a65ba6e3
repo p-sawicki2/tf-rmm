@@ -1,0 +1,256 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e379cbe_3964be50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "minor comments..looks like this is reaching a conclusion",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e15222b8_aa1c7cf9",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "Keep this with other \"assigned\" helpers.",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48124ca0_fa39bc5f",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "Move to line 41.",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2ebcf88_f47451af",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "one anomaly for this API is that , in other cases, PA is encoded in s2tte and not a separate argument.\n\nWe could make this argument `ripas` but the call for this would be;\n\ns2tte_create_assigned_unchanged(s2tte_get_ripas(s2tte), pa, level)",
+      "range": {
+        "startLine": 52,
+        "startChar": 60,
+        "endLine": 52,
+        "endChar": 65
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb9d4356_26b59abf",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "s2tte_is_addr_lvl_aligned",
+      "range": {
+        "startLine": 73,
+        "startChar": 5,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73e25c6e_2c84e482",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "this can be a macro.",
+      "range": {
+        "startLine": 74,
+        "startChar": 14,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30f90797_7ad9cae6",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "can be implemented as bit shift and mask.",
+      "range": {
+        "startLine": 76,
+        "startChar": 11,
+        "endLine": 76,
+        "endChar": 26
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93eb289d_3d3b2482",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "can go to top of file.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 45
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "437f5c91_cd57f062",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "#define table_entry_to_phys(tte)   addr_level_mask(entry, S2TT_PAGE_LEVEL)\n\nand then addr_to_granule(table_entry_to_phys(entry))",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c04a679b_c8ddda3f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "nit: add whitespace.",
+      "range": {
+        "startLine": 310,
+        "startChar": 2,
+        "endLine": 310,
+        "endChar": 3
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0a66f78_9a382fa7",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "remove this for now until we figure out why making this as an assert will cause an issue.",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 12
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9765ab76_9fed1dfd",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:08:15Z",
+      "side": 1,
+      "message": "doesn\u0027t seem to be needed. can be removed.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 63
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
