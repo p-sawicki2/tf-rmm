@@ -209,6 +209,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0839fa04_d6ee2b32",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-24T13:11:06Z",
+      "side": 1,
+      "message": "call this `s2tte_ripas` as this is not same as `ripas` as defined by RMM specification. \n\ncan change comment as well.",
+      "range": {
+        "startLine": 341,
+        "startChar": 22,
+        "endLine": 341,
+        "endChar": 27
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b0a66f78_9a382fa7",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 18
