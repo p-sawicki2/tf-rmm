@@ -22,6 +22,30 @@
 
 #define RMM_REC_SAVED_GEN_REG_COUNT	31
 
+/*
+ * Stage 2 configuration of the Realm
+ */
+struct realm_s2_context {
+	/* Number of IPA bits */
+	unsigned int ipa_bits;
+
+	/* Starting level of the stage 2 translation */
+	int s2_starting_level;
+
+	/* Number of concatenated starting level rtts */
+	unsigned int num_root_rtts;
+
+	/* First level RTT, pointed to by Realm TTBR */
+	struct granule *g_rtt;
+
+	/* Virtual Machine Identifier */
+	unsigned int vmid;
+
+	/*
+	 * TODO: we will need other translation regime state, e.g. TCR, MAIR(?).
+	 */
+};
+
 struct granule;
 
 /*
@@ -172,14 +196,12 @@ struct rec {
 	 * Common values across all RECs in a Realm.
 	 */
 	struct {
-		unsigned long ipa_bits;
-		int s2_starting_level;
-		struct granule *g_rtt;
 		struct granule *g_rd;
 		bool pmu_enabled;
 		unsigned int pmu_num_ctrs;
 		enum hash_algo algorithm;
 		struct simd_config simd_cfg;
+		struct realm_s2_context s2_ctx;
 	} realm_info;
 
 	struct {

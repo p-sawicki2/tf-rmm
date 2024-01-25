@@ -16,30 +16,6 @@
 #define REALM_ACTIVE		1U
 #define REALM_SYSTEM_OFF	2U
 
-/*
- * Stage 2 configuration of the Realm
- */
-struct realm_s2_context {
-	/* Number of IPA bits */
-	unsigned int ipa_bits;
-
-	/* Starting level of the stage 2 translation */
-	int s2_starting_level;
-
-	/* Number of concatenated starting level rtts */
-	unsigned int num_root_rtts;
-
-	/* First level RTT, pointed to by Realm TTBR */
-	struct granule *g_rtt;
-
-	/* Virtual Machine Identifier */
-	unsigned int vmid;
-
-	/*
-	 * TODO: we will need other translation regime state, e.g. TCR, MAIR(?).
-	 */
-};
-
 /* struct rd is protected by the rd granule lock */
 struct rd {
 	/*
@@ -208,7 +184,7 @@ static inline bool region_is_contained(unsigned long container_base,
 
 static inline unsigned long rec_ipa_size(struct rec *rec)
 {
-	return (1UL << rec->realm_info.ipa_bits);
+	return (1UL << rec->realm_info.s2_ctx.ipa_bits);
 }
 
 static inline unsigned long rec_par_size(struct rec *rec)
