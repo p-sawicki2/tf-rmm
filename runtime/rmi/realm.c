@@ -157,9 +157,11 @@ static void init_s2_starting_level(struct rd *rd)
 
 		for (unsigned int rtte = 0U; rtte < S2TTES_PER_S2TT; rtte++) {
 			if (addr_in_par(rd, current_ipa)) {
-				s2tt[rtte] = s2tte_create_unassigned_empty();
+				s2tt[rtte] = s2tte_create_unassigned_empty(
+								&(rd->s2_ctx));
 			} else {
-				s2tt[rtte] = s2tte_create_unassigned_ns();
+				s2tt[rtte] = s2tte_create_unassigned_ns(
+								&(rd->s2_ctx));
 			}
 
 			current_ipa += sl_entry_map_size;
