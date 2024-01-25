@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a083826_0ee27367",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-25T14:37:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "dbb43620_26a1146c",
+      "range": {
+        "startLine": 355,
+        "startChar": 10,
+        "endLine": 355,
+        "endChar": 12
+      },
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81608731_5dcec8e4",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-12-08T10:31:01Z",
       "side": 1,
       "message": "introduce a helper in arch_helpers and introduce a dummy variant in fake_host for the same.",
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4362f0bd_02a792d2",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-25T14:37:52Z",
+      "side": 1,
+      "message": "changed to:\n       /* Demangle return address */\n\txpaci(lr);\n\n\t/* Switch SPSEL to read SP_EL2 register */\n\twrite_spsel(MODE_SP_ELX);\n\tasm volatile (\n\t\t\"mov\t%0, sp\" : \"\u003dr\" (sp_el2) :\n\t);\n\twrite_spsel(MODE_SP_EL0);",
+      "parentUuid": "81608731_5dcec8e4",
       "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -81,6 +123,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72bd1e09_79077be8",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-25T14:37:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "faf21386_ebabfc47",
+      "range": {
+        "startLine": 375,
+        "startChar": 1,
+        "endLine": 375,
+        "endChar": 8
+      },
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e52a953_03d7ce0b",
@@ -94,6 +160,24 @@
       "writtenOn": "2023-12-08T10:31:01Z",
       "side": 1,
       "message": "should we also print hpfar and also some control registers like hcr_el2, cptr_el2, sctlr_el2",
+      "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5beae57e_b119653c",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-25T14:37:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3e52a953_03d7ce0b",
       "revId": "b2705c77cc8aa2660425399e6a82fe77c7ab8898",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
