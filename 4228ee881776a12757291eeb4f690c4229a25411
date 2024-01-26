@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97015002_fdbb5053",
+        "filename": "runtime/core/aarch64/vectors.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-26T19:01:35Z",
+      "side": 1,
+      "message": "is the design that sp_el0 is the exception stack and not sp_elx?",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82e0b3d4_b9371a44",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-26T19:01:35Z",
+      "side": 1,
+      "message": "isn\u0027t this dangerous to do? ERRORs are usually turned on in production build and this would print out. We were just discussing with OlivierD the dangers of dumping registers. Can this be turned off by build option? I don\u0027t see it.",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
