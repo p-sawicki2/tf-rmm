@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db754301_77bab1c7",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e15222b8_aa1c7cf9",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48124ca0_fa39bc5f",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-01-24T13:08:15Z",
       "side": 1,
       "message": "Move to line 41.",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb7dca90_517b07d0",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48124ca0_fa39bc5f",
       "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -77,6 +113,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "12b416da_5a4d523d",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "I also thought about that but I think that would be more convoluted from the caller point of view. I also think that passing the s2tte would allow more versatility in case we need to take care of some attributes other than just the RIPAS on future versions of the API (e.g. when introducing permission overlays).",
+      "parentUuid": "f2ebcf88_f47451af",
+      "range": {
+        "startLine": 52,
+        "startChar": 60,
+        "endLine": 52,
+        "endChar": 65
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb9d4356_26b59abf",
         "filename": "lib/realm/include/s2tt.h",
         "patchSetId": 18
@@ -88,6 +148,30 @@
       "writtenOn": "2024-01-24T13:08:15Z",
       "side": 1,
       "message": "s2tte_is_addr_lvl_aligned",
+      "range": {
+        "startLine": 73,
+        "startChar": 5,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a68cc1f_f50230fc",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb9d4356_26b59abf",
       "range": {
         "startLine": 73,
         "startChar": 5,
@@ -123,6 +207,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a24cfea_dd1b8496",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "The macro would be something like:\n\n(1ULL \u003c\u003c (((S2TT_PAGE_LEVEL - _level) * S2TTE_STRIDE) + GRANULE_SHIFT)\n\nWhich I think it might be less readable than the original API?\n\nPlus this would need to be an API on the FEAT_LPA2 patch anyway, as if I recall correctly, S2TTE_STRIDE would be different for level -1.",
+      "parentUuid": "73e25c6e_2c84e482",
+      "range": {
+        "startLine": 74,
+        "startChar": 14,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "30f90797_7ad9cae6",
         "filename": "lib/realm/include/s2tt.h",
         "patchSetId": 18
@@ -134,6 +242,30 @@
       "writtenOn": "2024-01-24T13:08:15Z",
       "side": 1,
       "message": "can be implemented as bit shift and mask.",
+      "range": {
+        "startLine": 76,
+        "startChar": 11,
+        "endLine": 76,
+        "endChar": 26
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf43b80_36779a4b",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "s2tte_get_ripas() includes some assertions to enforce the HIPAS state as well as the descriptor type which I think it is important to document the API as well as detect bugs during development (RIPAS field is not always applicable). By converting this into a macro would either have to remove the assertions or embed them into the macro as well.\n\nI can optimize the s2tte_get_ripas() implementation removing the switch/case statement with a shift and mask instead, although the former helps detecting an invalid RIPAS value.",
+      "parentUuid": "30f90797_7ad9cae6",
       "range": {
         "startLine": 76,
         "startChar": 11,
@@ -167,6 +299,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab91b790_e5fccdcb",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93eb289d_3d3b2482",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 45
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "437f5c91_cd57f062",
@@ -180,6 +336,24 @@
       "writtenOn": "2024-01-24T13:08:15Z",
       "side": 1,
       "message": "#define table_entry_to_phys(tte)   addr_level_mask(entry, S2TT_PAGE_LEVEL)\n\nand then addr_to_granule(table_entry_to_phys(entry))",
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5dc2fa8_606738be",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "437f5c91_cd57f062",
       "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -207,6 +381,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "add06ce0_6615dded",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c04a679b_c8ddda3f",
+      "range": {
+        "startLine": 310,
+        "startChar": 2,
+        "endLine": 310,
+        "endChar": 3
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0839fa04_d6ee2b32",
@@ -220,6 +418,30 @@
       "writtenOn": "2024-01-24T13:11:06Z",
       "side": 1,
       "message": "call this `s2tte_ripas` as this is not same as `ripas` as defined by RMM specification. \n\ncan change comment as well.",
+      "range": {
+        "startLine": 341,
+        "startChar": 22,
+        "endLine": 341,
+        "endChar": 27
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca22aa4b_d1c46f79",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0839fa04_d6ee2b32",
       "range": {
         "startLine": 341,
         "startChar": 22,
@@ -255,6 +477,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ecd50dde_a6389fa3",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "Currently investigating this so I\u0027ll leave this here whilst I figure out what\u0027s going on. Let\u0027s just ignore it for the time being",
+      "parentUuid": "b0a66f78_9a382fa7",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 12
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9765ab76_9fed1dfd",
         "filename": "lib/realm/src/s2tt_pvt_defs.h",
         "patchSetId": 18
@@ -266,6 +512,30 @@
       "writtenOn": "2024-01-24T13:08:15Z",
       "side": 1,
       "message": "doesn\u0027t seem to be needed. can be removed.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 63
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a730014_fa78b158",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T16:03:22Z",
+      "side": 1,
+      "message": "This is used on the assert here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24792/18/lib/realm/src/s2tt.c#416",
+      "parentUuid": "9765ab76_9fed1dfd",
       "range": {
         "startLine": 115,
         "startChar": 0,
