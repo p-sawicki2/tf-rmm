@@ -501,6 +501,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4d24b0a_abf0353f",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-29T17:52:19Z",
+      "side": 1,
+      "message": "After some review and consideration, I think this API should be reverted to its original implementation. The rationale for that is that:\n\n* According to the name, this API only verifies if a given S2TTE has RIPAS value, but not whether the RIPAS is valid or not.\n* As per the table at https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24792/19/lib/realm/src/s2tt_pvt_defs.h an S2TTE always has RIPAS unless it is NS or it is a table, which is actually what it is checked by the original API. It didn\u0027t take into account possible invalid values.\n\nThoughts?",
+      "parentUuid": "ecd50dde_a6389fa3",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 12
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9765ab76_9fed1dfd",
         "filename": "lib/realm/src/s2tt_pvt_defs.h",
         "patchSetId": 18
