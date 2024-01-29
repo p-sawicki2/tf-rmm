@@ -87,6 +87,30 @@
       },
       "revId": "2e482e0d6743a905e8afa3839842cf25d33b957e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f760b354_4bb3dec3",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-29T11:50:58Z",
+      "side": 1,
+      "message": "We can use X2 \u0026 move MSR after line #89",
+      "parentUuid": "7bf8f220_1a86fae9",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 11
+      },
+      "revId": "2e482e0d6743a905e8afa3839842cf25d33b957e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
