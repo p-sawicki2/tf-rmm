@@ -87,6 +87,24 @@
       "parentUuid": "5172c776_007b7ac1",
       "revId": "4228ee881776a12757291eeb4f690c4229a25411",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40ce37b7_18a9b02f",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-29T11:01:32Z",
+      "side": 1,
+      "message": "yes, but it is better to have a safe default for Release build. So prefer to keep this to INFO() and just one ERROR() message to indicate that there has been a crash in RMM.",
+      "parentUuid": "ef9191be_807bbd1a",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
