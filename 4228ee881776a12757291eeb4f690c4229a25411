@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "005f9f18_52adf4eb",
+        "filename": "runtime/core/aarch64/vectors.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-29T15:46:33Z",
+      "side": 1,
+      "message": "Acknowledged. right, generally, using a fresh stack for exceptions is at least theoretically cleaner and helps if the fault is on SP_EL0 itself, ex we failed to increase stack size when we enabled some feature, and we\u0027ve seen this in TF-A many times (which is probably an extreme-ish corner case).\nResolving, thanks.",
+      "parentUuid": "07dee52b_4a105945",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82e0b3d4_b9371a44",
@@ -103,6 +121,24 @@
       "side": 1,
       "message": "yes, but it is better to have a safe default for Release build. So prefer to keep this to INFO() and just one ERROR() message to indicate that there has been a crash in RMM.",
       "parentUuid": "ef9191be_807bbd1a",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cfadc3a_d470ea50",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-01-29T15:46:33Z",
+      "side": 1,
+      "message": "thx. feel free to resolve, agree with suggestions above of using INFO.",
+      "parentUuid": "40ce37b7_18a9b02f",
       "revId": "4228ee881776a12757291eeb4f690c4229a25411",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
