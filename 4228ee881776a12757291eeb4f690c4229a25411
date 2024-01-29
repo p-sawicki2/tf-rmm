@@ -69,6 +69,24 @@
       "parentUuid": "82e0b3d4_b9371a44",
       "revId": "4228ee881776a12757291eeb4f690c4229a25411",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef9191be_807bbd1a",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-29T10:55:24Z",
+      "side": 1,
+      "message": "RMM can be built with -DLOG_LEVEL\u003d0, so there won\u0027t be any output printed.",
+      "parentUuid": "5172c776_007b7ac1",
+      "revId": "4228ee881776a12757291eeb4f690c4229a25411",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
