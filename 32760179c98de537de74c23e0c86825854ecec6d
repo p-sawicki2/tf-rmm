@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b38f5446_41500c86",
+        "filename": "runtime/core/aarch64/run-asm.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-01-30T10:07:38Z",
+      "side": 1,
+      "message": "#define DIT_BIT\t\t\t(UL(1) \u003c\u003c 24)\n, so () aren\u0027t needed:\nmov\tx2, #DIT_BIT",
+      "revId": "32760179c98de537de74c23e0c86825854ecec6d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
