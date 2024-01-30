@@ -523,6 +523,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10e4b813_9143c74a",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T09:42:06Z",
+      "side": 1,
+      "message": "yes, I agree. there still a doubt in my head why the invalid values end up being in S2tte in the first place. But that can be checked later on and once this is reverted to original, then we can progress the patch",
+      "parentUuid": "c4d24b0a_abf0353f",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 12
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9765ab76_9fed1dfd",
