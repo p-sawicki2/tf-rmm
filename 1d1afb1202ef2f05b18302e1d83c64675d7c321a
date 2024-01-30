@@ -1282,6 +1282,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80e0549f_12f9f491",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-30T10:00:35Z",
+      "side": 1,
+      "message": "Reverting this to the former implementation as discussed.",
+      "parentUuid": "7daa5c0d_e62fe73b",
+      "range": {
+        "startLine": 471,
+        "startChar": 6,
+        "endLine": 471,
+        "endChar": 33
+      },
+      "revId": "1d1afb1202ef2f05b18302e1d83c64675d7c321a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97d74e3b_c52492c2",
