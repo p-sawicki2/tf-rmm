@@ -547,6 +547,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b4e4a56_27146cea",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-30T09:49:38Z",
+      "side": 1,
+      "message": "I need to double check but my guess is that the invalid values are not relevant at the point this API is called. I guess the S2TTE is getting modified and at this point all we need to check is whether it has RIPAS or not, regardless of its value (even if it is wrong). At some point later, that RIPAS might be reset to the expected state whilst generating an entry.\n\nAnyway, that\u0027s just a theory, I still need to thoroughly review the code and the sequence in which this API is called.",
+      "parentUuid": "10e4b813_9143c74a",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 12
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9765ab76_9fed1dfd",
