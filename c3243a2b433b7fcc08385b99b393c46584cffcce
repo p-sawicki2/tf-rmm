@@ -16,6 +16,24 @@
       "message": "The CBMC build is failing in CI. Please add the following change to get it to pass:\n\ndiff --git a/tools/cbmc/CheckCBMC.cmake b/tools/cbmc/CheckCBMC.cmake\nindex e31e82fa..39c35d34 100644\n--- a/tools/cbmc/CheckCBMC.cmake\n+++ b/tools/cbmc/CheckCBMC.cmake\n@@ -89,6 +89,7 @@ set(cbmc_defines_list\n   \"-DNAME\u003d\\\"RMM\\\"\"\n   \"-DVERSION\u003d\\\"CBMC\\\"\"\n   \"-DCOMMIT_INFO\u003d\\\"CBMC\\\"\"\n+  \"-DRMM_NUM_PAGES_PER_STACK\u003d1\"\n )",
       "revId": "c3243a2b433b7fcc08385b99b393c46584cffcce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a649a9ec_2c588dfb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T06:36:34Z",
+      "side": 1,
+      "message": "```\ngit diff\ndiff --git a/tools/cbmc/CheckCBMC.cmake b/tools/cbmc/CheckCBMC.cmake\nindex e31e82fa..39c35d34 100644\n--- a/tools/cbmc/CheckCBMC.cmake\n+++ b/tools/cbmc/CheckCBMC.cmake\n@@ -89,6 +89,7 @@ set(cbmc_defines_list\n   \"-DNAME\u003d\\\"RMM\\\"\"\n   \"-DVERSION\u003d\\\"CBMC\\\"\"\n   \"-DCOMMIT_INFO\u003d\\\"CBMC\\\"\"\n+  \"-DRMM_NUM_PAGES_PER_STACK\u003d1\"\n )\n\n```",
+      "parentUuid": "c5148894_fd12b51c",
+      "revId": "c3243a2b433b7fcc08385b99b393c46584cffcce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
