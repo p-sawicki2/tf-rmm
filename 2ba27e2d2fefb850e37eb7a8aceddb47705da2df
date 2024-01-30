@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "034ef09e_f84f0d43",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "nit: swap this line with previos.",
+      "revId": "2ba27e2d2fefb850e37eb7a8aceddb47705da2df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0849162f_d63b67e7",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "nit: this comment needs modify.",
+      "range": {
+        "startLine": 338,
+        "startChar": 10,
+        "endLine": 338,
+        "endChar": 15
+      },
+      "revId": "2ba27e2d2fefb850e37eb7a8aceddb47705da2df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e23a2fb_8337fb86",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "can be in src/include folder (along with other private headers).",
+      "revId": "2ba27e2d2fefb850e37eb7a8aceddb47705da2df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1d87374_7adde3e8",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "Can be removed,",
+      "revId": "2ba27e2d2fefb850e37eb7a8aceddb47705da2df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

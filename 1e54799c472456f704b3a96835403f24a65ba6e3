@@ -135,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4273e683_d67749ac",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "12b416da_5a4d523d",
+      "range": {
+        "startLine": 52,
+        "startChar": 60,
+        "endLine": 52,
+        "endChar": 65
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb9d4356_26b59abf",
@@ -231,6 +255,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "68fde72a_1008b1b8",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "The map size should just depend on Level and not anything else. I think this can be a macro to avoid the overhead.",
+      "parentUuid": "9a24cfea_dd1b8496",
+      "range": {
+        "startLine": 74,
+        "startChar": 14,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "30f90797_7ad9cae6",
         "filename": "lib/realm/include/s2tt.h",
         "patchSetId": 18
@@ -266,6 +314,30 @@
       "side": 1,
       "message": "s2tte_get_ripas() includes some assertions to enforce the HIPAS state as well as the descriptor type which I think it is important to document the API as well as detect bugs during development (RIPAS field is not always applicable). By converting this into a macro would either have to remove the assertions or embed them into the macro as well.\n\nI can optimize the s2tte_get_ripas() implementation removing the switch/case statement with a shift and mask instead, although the former helps detecting an invalid RIPAS value.",
       "parentUuid": "30f90797_7ad9cae6",
+      "range": {
+        "startLine": 76,
+        "startChar": 11,
+        "endLine": 76,
+        "endChar": 26
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a193d36_24bd62b0",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "OK, keep this a function, but optimize the implementation.",
+      "parentUuid": "9bf43b80_36779a4b",
       "range": {
         "startLine": 76,
         "startChar": 11,
@@ -454,6 +526,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "520cc732_7fd6dbff",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "This check is not needed since the line 410 masks out all other fields.",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 49
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b0a66f78_9a382fa7",
         "filename": "lib/realm/src/s2tt.c",
         "patchSetId": 18
@@ -608,6 +703,30 @@
       "side": 1,
       "message": "This is used on the assert here: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/24792/18/lib/realm/src/s2tt.c#416",
       "parentUuid": "9765ab76_9fed1dfd",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 63
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "524357e6_53e2d3b3",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:03:50Z",
+      "side": 1,
+      "message": "I have given a comment why this is not needed.",
+      "parentUuid": "2a730014_fa78b158",
       "range": {
         "startLine": 115,
         "startChar": 0,
