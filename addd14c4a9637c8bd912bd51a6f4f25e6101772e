@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c05e0a1_7c167ee6",
+        "filename": "lib/realm/tests/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:23:48Z",
+      "side": 1,
+      "message": "nit: extra new line.",
+      "revId": "addd14c4a9637c8bd912bd51a6f4f25e6101772e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

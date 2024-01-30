@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ebca02da_da31be5b",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T17:23:48Z",
+      "side": 1,
+      "message": "hmm, we need to cleanup. \n\nThe realm_s2_context should be defined in s2tt component. This should allow removal of realm.h and rec.h\n\nCertainly we cannot include rmm-platform",
+      "parentUuid": "b72122d0_566bdbda",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "37c614b04664c8153ffe065d368f869f5188c85e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38b0c2a0_5f9e8165",
         "filename": "lib/s2tt/CMakeLists.txt",
         "patchSetId": 2
