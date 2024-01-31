@@ -277,6 +277,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b2d05e2_67fa5f81",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-31T10:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68fde72a_1008b1b8",
+      "range": {
+        "startLine": 74,
+        "startChar": 14,
+        "endLine": 74,
+        "endChar": 28
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30f90797_7ad9cae6",
@@ -338,6 +362,30 @@
       "side": 1,
       "message": "OK, keep this a function, but optimize the implementation.",
       "parentUuid": "9bf43b80_36779a4b",
+      "range": {
+        "startLine": 76,
+        "startChar": 11,
+        "endLine": 76,
+        "endChar": 26
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38aa93a3_7b5afd3a",
+        "filename": "lib/realm/include/s2tt.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-31T10:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a193d36_24bd62b0",
       "range": {
         "startLine": 76,
         "startChar": 11,
@@ -547,6 +595,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5d8ad64_70d57532",
+        "filename": "lib/realm/src/s2tt.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-31T10:43:50Z",
+      "side": 1,
+      "message": "Line 410 only masks out the descriptor type. This API requires that all the fields on the NS S2TTE that are not set by the host are \u00270\u0027, hence the assert.",
+      "parentUuid": "520cc732_7fd6dbff",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 49
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0a66f78_9a382fa7",
@@ -727,6 +799,30 @@
       "side": 1,
       "message": "I have given a comment why this is not needed.",
       "parentUuid": "2a730014_fa78b158",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 63
+      },
+      "revId": "1e54799c472456f704b3a96835403f24a65ba6e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "489795a6_280ad273",
+        "filename": "lib/realm/src/s2tt_pvt_defs.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-01-31T10:43:50Z",
+      "side": 1,
+      "message": "See my previous comment about this.",
+      "parentUuid": "524357e6_53e2d3b3",
       "range": {
         "startLine": 115,
         "startChar": 0,
