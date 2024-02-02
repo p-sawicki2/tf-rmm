@@ -15,10 +15,12 @@
 #include <psci.h>
 #include <realm.h>
 #include <rec.h>
+#include <s2tt.h>
 #include <smc-handler.h>
 #include <smc-rmi.h>
 #include <smc.h>
 #include <spinlock.h>
+#include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
 
@@ -40,6 +42,7 @@ static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
  * lookup to VTCR_EL2.SL0[7:6].
  */
 static const unsigned long sl0_val[] = {
+	VTCR_SL0_4K_LM1,
 	VTCR_SL0_4K_L0,
 	VTCR_SL0_4K_L1,
 	VTCR_SL0_4K_L2,
@@ -52,10 +55,13 @@ static unsigned long realm_vtcr(struct rd *rd)
 	unsigned long vtcr = is_feat_vmid16_present() ?
 				(VTCR_FLAGS | VTCR_VS) : VTCR_FLAGS;
 	int s2_starting_level = realm_rtt_starting_level(rd);
+	bool lpa2 = rd->s2_ctx.use_lpa2;
 
-	/* TODO: Support LPA2 with -1 */
-	assert((s2_starting_level >= 0) && (s2_starting_level <= 3));
-	sl0 = sl0_val[s2_starting_level];
+	assert(((s2_starting_level >= S2TT_MIN_STARTING_LEVEL) && (lpa2 == false)) ||
+	       ((s2_starting_level >= S2TT_MIN_STARTING_LEVEL_LPA2) && (lpa2 == true)));
+	assert(s2_starting_level <= S2TT_PAGE_LEVEL);
+
+	sl0 = sl0_val[s2_starting_level + 1];
 
 	t0sz = 64UL - realm_ipa_bits(rd);
 	t0sz &= MASK(VTCR_T0SZ);
@@ -63,19 +69,34 @@ static unsigned long realm_vtcr(struct rd *rd)
 	vtcr |= t0sz;
 	vtcr |= sl0;
 
+	if (lpa2 == true) {
+		if (s2_starting_level == -1) {
+			vtcr |= VCTR_SL2_4K_LM1;
+		}
+		vtcr |= VTCR_DS_52BIT;
+	}
+
 	return vtcr;
 }
 
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
+	bool lpa2 = rd->s2_ctx.use_lpa2;
 
 	/* Set non-zero values only */
 	rec->common_sysregs.hcr_el2 = HCR_REALM_FLAGS;
 	rec->common_sysregs.vtcr_el2 =  realm_vtcr(rd);
 	rec->common_sysregs.vttbr_el2 = (granule_addr(rd->s2_ctx.g_rtt) &
-					MASK(TTBRx_EL2_BADDR)) |
-					INPLACE(VTTBR_EL2_VMID, rd->s2_ctx.vmid);
+					MASK(TTBRx_EL2_BADDR));
+	if (lpa2 == true) {
+		rec->common_sysregs.vttbr_el2 &= ~MASK(TTBRx_EL2_BADDR_MSB);
+		rec->common_sysregs.vttbr_el2 |=
+			INPLACE(TTBRx_EL2_BADDR_MSB, EXTRACT(EL2_BADDR_MSB,
+							granule_addr(rd->s2_ctx.g_rtt)));
+	}
+
+	rec->common_sysregs.vttbr_el2 |= INPLACE(VTTBR_EL2_VMID, rd->s2_ctx.vmid);
 
 	/* Control trapping of accesses to PMU registers */
 	if (rd->pmu_enabled) {
