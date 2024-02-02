@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7e1deb6c_03797e22",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-02T17:14:49Z",
+      "side": 1,
+      "message": "Yes, I was actually being extra-paranoid here. Can remove it if you think is not needed",
+      "parentUuid": "d60e67ca_b5d494cc",
+      "range": {
+        "startLine": 147,
+        "startChar": 6,
+        "endLine": 147,
+        "endChar": 27
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df1a6549_466d9c95",
         "filename": "lib/s2tt/include/table.h",
         "patchSetId": 16
