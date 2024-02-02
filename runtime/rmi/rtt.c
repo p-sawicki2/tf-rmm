@@ -1177,6 +1177,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 	unsigned long s2tte, *s2tt;
 	long level;
 	unsigned long index;
+	unsigned int s2ttes_per_s2tt;
 
 	if (top <= base) {
 		res->x[0] = RMI_ERROR_INPUT;
@@ -1228,7 +1229,10 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 		goto out_unmap_llt;
 	}
 
-	for (index = wi.index; index < S2TTES_PER_S2TT; index++) {
+	s2ttes_per_s2tt =
+		(level == S2TT_MIN_STARTING_LEVEL_LPA2) ?
+			S2TTES_PER_S2TT_LM1 : S2TTES_PER_S2TT;
+	for (index = wi.index; index < s2ttes_per_s2tt; index++) {
 		unsigned long next = addr + map_size;
 
 		/*
