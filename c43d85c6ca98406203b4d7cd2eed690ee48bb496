@@ -259,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50c52282_dd43372a",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Removing all this as we now are able to pass the realm_s2_context to all the APIs on this library, which provides access to the FEAT_LPA2 status",
+      "parentUuid": "d98988c2_58a37a02",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a45a00d_6ef79edf",
@@ -312,6 +336,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9be9806c_08f0fc6a",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bcae6d5_8d91bcac",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb4c88c4_942ab911",
@@ -325,6 +367,30 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "we can assume pa is clean. No need to have additional masking here.",
+      "range": {
+        "startLine": 99,
+        "startChar": 24,
+        "endLine": 99,
+        "endChar": 65
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dc7b7ae_b0716735",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb4c88c4_942ab911",
       "range": {
         "startLine": 99,
         "startChar": 24,
@@ -352,6 +418,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72bfca41_fddc105e",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72b06cd7_39626c19",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ed0b1d4_072a9509",
@@ -365,6 +449,24 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "This can be done conditionally.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8de23bb9_02414b8f",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ed0b1d4_072a9509",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -404,6 +506,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c05eb1af_3087344d",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Removed this.",
+      "parentUuid": "fb372267_9db3f9b3",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19ef0da6_3fbf9c5f",
@@ -423,6 +543,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76f35bcc_7d2717a5",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "This is called from s2tt_walk_lock_unlock(), which I guess can be called with the initial level as well?",
+      "parentUuid": "19ef0da6_3fbf9c5f",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "db451fd8_c53762a9",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 16
@@ -434,6 +572,30 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "realm_s2_context will these arguments and this can be passed as argument.",
+      "range": {
+        "startLine": 457,
+        "startChar": 26,
+        "endLine": 458,
+        "endChar": 21
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9491206_cebad03c",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db451fd8_c53762a9",
       "range": {
         "startLine": 457,
         "startChar": 26,
@@ -467,6 +629,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf2a85ae_da0ecf91",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": ":)",
+      "parentUuid": "92be908c_3300565b",
+      "range": {
+        "startLine": 494,
+        "startChar": 20,
+        "endLine": 494,
+        "endChar": 23
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d62a83b_24e7ee80",
@@ -480,6 +666,24 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "I think we can handle LPA2 and non LPA2 case as a conditional here.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c9573e1_85b5420e",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-05T19:24:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d62a83b_24e7ee80",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
