@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0764ade5_e088832e",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-06T13:15:04Z",
+      "side": 1,
+      "message": "We\u0027ve had many problems in the past, I don\u0027t remember if it was with CBMC or with MISRA checks (I\u0027m very confident it was with the latter) when using pointers to const. That\u0027s why I didn\u0027t go with them here even though I agree with you.\n\nShould I do it nevertheless?",
+      "parentUuid": "74e96f8a_fc470d0d",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0bf26e51_15a30237",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 9
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-06T11:50:35Z",
       "side": 1,
       "message": "Perhaps avoid s2_ctx for this API as there is a cost to mapping the rd to get to s2 context ?\n\nOr this can be done within the map_unmap_ns() after rd is mapped \nbasically check if MAP_NS then do this check.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7f5e0c0_d4e3c45e",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-06T13:15:04Z",
+      "side": 1,
+      "message": "I agree with you but I was just trying to be consistent with all the APIs. I can pass a NULL pointer to it since it is not used, though (I actually did that on an earlier version of the patch)",
+      "parentUuid": "0bf26e51_15a30237",
       "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9fa788c8_7d2b03d0",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-06T13:15:04Z",
+      "side": 1,
+      "message": "Yes, I think I can, the rec is not unmapped for the whole lifetime of s2_ctx. Missed that before",
+      "parentUuid": "9e97aaaa_43d6e8a2",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e61e5d33_71eec2fb",
         "filename": "runtime/rsi/realm_ipa_helper.c",
         "patchSetId": 9
@@ -65,6 +119,24 @@
       "writtenOn": "2024-02-06T11:50:35Z",
       "side": 1,
       "message": "same comment as above.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb11f3a1_a11a326b",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-06T13:15:04Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e61e5d33_71eec2fb",
       "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
