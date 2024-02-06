@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74e96f8a_fc470d0d",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T11:50:35Z",
+      "side": 1,
+      "message": "The s2_context should be a pointer to a const. \n\nThe callers can then pass the pointer directly without creating a copy.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bf26e51_15a30237",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T11:50:35Z",
+      "side": 1,
+      "message": "Perhaps avoid s2_ctx for this API as there is a cost to mapping the rd to get to s2 context ?\n\nOr this can be done within the map_unmap_ns() after rd is mapped \nbasically check if MAP_NS then do this check.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e97aaaa_43d6e8a2",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T11:50:35Z",
+      "side": 1,
+      "message": "can pass by reference rather than creating a local copy here ?",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e61e5d33_71eec2fb",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T11:50:35Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
