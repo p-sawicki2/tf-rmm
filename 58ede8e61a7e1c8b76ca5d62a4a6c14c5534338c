@@ -38,6 +38,41 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70b9a918_a3cb5568",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T15:21:57Z",
+      "side": 1,
+      "message": "I think it is worth a try to harden the library API. See if the CI passes.",
+      "parentUuid": "0764ade5_e088832e",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f648d34f_fb7b28f0",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T15:21:57Z",
+      "side": 1,
+      "message": "Perhaps if (!host_ns_s2tte_is_valid(\u0026s2_ctx, s2tte, level)) if op \u003d MAP_NS can be done here.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0bf26e51_15a30237",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 9
@@ -67,6 +102,24 @@
       "side": 1,
       "message": "I agree with you but I was just trying to be consistent with all the APIs. I can pass a NULL pointer to it since it is not used, though (I actually did that on an earlier version of the patch)",
       "parentUuid": "0bf26e51_15a30237",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbf5923f_ad600c52",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-06T15:21:57Z",
+      "side": 1,
+      "message": "or you can move the check to line 619",
+      "parentUuid": "a7f5e0c0_d4e3c45e",
       "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
