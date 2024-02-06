@@ -176,6 +176,24 @@
       "parentUuid": "a0310cde_3a45213f",
       "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4317940_173b1e1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-06T13:26:33Z",
+      "side": 1,
+      "message": "Hi is there an ETA for it? Alternative, is if this change shall be abandoned up until unit tests are refactored? Thanks.",
+      "parentUuid": "dc3085c5_f7e9547c",
+      "revId": "15cb8e1e149baeab69b283dcfc32b2e968bbf507",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
