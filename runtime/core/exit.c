@@ -206,6 +206,12 @@ static bool handle_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
 		return false;
 	}
 
+	/* Insert the SEA and return to the Realm if IPA is outside realm IPA space */
+	if (fipa >= rec_ipa_size(rec)) {
+		inject_sync_idabort(ESR_EL2_ABORT_FSC_SEA);
+		return true;
+	}
+
 	/*
 	 * The memory access that crosses a page boundary may cause two aborts
 	 * with `hpfar_el2` values referring to two consecutive pages.
@@ -256,6 +262,12 @@ static bool handle_instruction_abort(struct rec *rec, struct rmi_rec_exit *rec_e
 		 * All external aborts are immediately reported to the host.
 		 */
 		return false;
+	}
+
+	/* Insert the SEA and return to the Realm if IPA is outside realm IPA space */
+	if (fipa >= rec_ipa_size(rec)) {
+		inject_sync_idabort(ESR_EL2_ABORT_FSC_SEA);
+		return true;
 	}
 
 	/*
