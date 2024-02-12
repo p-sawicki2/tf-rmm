@@ -259,3 +259,56 @@ void buffer_unmap_internal(void *buf)
 	ret = xlat_unmap_memory_page(get_cached_llt_info(), (uintptr_t)buf);
 	assert(ret == 0);
 }
+
+/*
+ * The parent REC granules lock is expected to be acquired before functions
+ * buffer_aux_granules_map() and buffer_aux_granules_unmap() are called.
+ */
+void *buffer_aux_granules_map(struct granule *rec_aux_pages[],
+							unsigned int num_aux)
+{
+	void *rec_aux = NULL;
+
+	assert(rec_aux_pages != NULL);
+	assert(num_aux <= MAX_REC_AUX_GRANULES);
+
+	for (unsigned int i = 0U; i < num_aux; i++) {
+		void *aux = granule_map(rec_aux_pages[i],
+					(enum buffer_slot)((unsigned int)
+							   SLOT_REC_AUX0 + i));
+
+		assert(aux != NULL);
+
+		if (i == 0UL) {
+			rec_aux = aux;
+		}
+	}
+	return rec_aux;
+}
+
+void buffer_aux_granules_unmap(void *rec_aux, unsigned int num_aux)
+{
+	unsigned char *rec_aux_vaddr = (unsigned char *)rec_aux;
+
+	assert(rec_aux != NULL);
+	assert(num_aux <= MAX_REC_AUX_GRANULES);
+
+	for (unsigned int i = 0U; i < num_aux; i++) {
+		buffer_unmap((void *)((uintptr_t)rec_aux_vaddr +
+							(i * GRANULE_SIZE)));
+	}
+}
+
+void buffer_granule_memzero(struct granule *g, enum buffer_slot slot)
+{
+	unsigned long *buf;
+
+	assert(g != NULL);
+
+	buf = granule_map(g, slot);
+	assert(buf != NULL);
+
+	(void)memset(buf, 0, GRANULE_SIZE);
+	buffer_unmap(buf);
+}
+
