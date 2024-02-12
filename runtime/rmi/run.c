@@ -4,6 +4,7 @@
  */
 
 #include <arch.h>
+#include <buffer.h>
 #include <debug.h>
 #include <esr.h>
 #include <gic.h>

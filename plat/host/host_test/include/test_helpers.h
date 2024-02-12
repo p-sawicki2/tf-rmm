@@ -7,6 +7,7 @@
 #define TEST_HELPERS_H
 
 #include <assert.h>
+#include <buffer.h>
 #include <stdbool.h>
 
 /*
@@ -194,5 +195,21 @@ void test_helpers_init(void);
  * Return a pointer to the first available granule structure
  */
 struct granule *test_helpers_granule_struct_base(void);
+
+/*
+ * Return the PA mapped to a given slot.
+ *
+ * NOTE:	This API assumes a 4KB granularity and that the architecture
+ *		has a VA space of 48 bits.
+ */
+uintptr_t test_helpers_slot_to_pa(enum buffer_slot slot);
+
+/*
+ * Helper function to find the slot VA to which a PA is mapped to.
+ * This function is used to validate that the slot buffer library
+ * mapped the given PA to the VA that would be expected by the
+ * aarch64 VMSA.
+ */
+uintptr_t test_helpers_slot_va_from_pa(uintptr_t pa);
 
 #endif
