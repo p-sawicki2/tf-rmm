@@ -6,9 +6,8 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#include <assert.h>
+#include <granule.h>
 #include <smc-rmi.h>
-#include <stdbool.h>
 #include <stddef.h>
 #include <utils_def.h>
 
@@ -36,8 +35,6 @@ enum buffer_slot {
 	SLOT_RSI_CALL,
 	NR_CPU_SLOTS
 };
-
-struct granule;
 
 bool check_cpu_slots_empty(void);
 void *granule_map(struct granule *g, enum buffer_slot slot);
@@ -79,5 +76,21 @@ void *buffer_map_internal(enum buffer_slot slot, unsigned long addr);
  * Unmaps the slot buffer corresponding to the VA passed via `buf` argument.
  */
 void buffer_unmap_internal(void *buf);
+
+/*
+ * Maps all the SLOT_REC_AUX granules.
+ */
+void *buffer_aux_map(struct granule *rec_aux_pages[], unsigned int num_aux);
+
+/*
+ * Unmaps `num_aux` the SLOT_REC_AUX granules starting with the one
+ * passed at the beginning of `rec_aux_pages.
+ */
+void buffer_aux_unmap(void *rec_aux, unsigned int num_aux);
+
+/*
+ * Map the granule 'g' to 'slot', zeroes its content and unmaps it.
+ */
+void buffer_granule_memzero(struct granule *g, enum buffer_slot slot);
 
 #endif /* BUFFER_H */
