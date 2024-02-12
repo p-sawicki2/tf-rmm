@@ -6,6 +6,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <bitmap.h>
+#include <buffer.h>
 #include <granule.h>
 #include <ripas.h>
 #include <s2tt.h>
