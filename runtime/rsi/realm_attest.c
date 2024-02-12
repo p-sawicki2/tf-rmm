@@ -4,6 +4,7 @@
  */
 
 #include <attestation.h>
+#include <buffer.h>
 #include <debug.h>
 #include <granule.h>
 #include <measurement.h>
