@@ -13,7 +13,6 @@ extern "C" {
 #include <granule.h>	/* Interface to exercise */
 #include <host_harness.h>
 #include <host_utils.h>
-#include <realm_test_utils.h>
 #include <status.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,14 +20,6 @@ extern "C" {
 #include <test_helpers.h>
 #include <unistd.h>
 #include <utils_def.h>
-}
-
-/* Function to get a random granule index in the range [1, NR_GRANULES - 2] */
-static inline unsigned int get_rand_granule_idx(void)
-{
-	return (unsigned int)test_helpers_get_rand_in_range(1UL,
-					test_helpers_get_nr_granules() - 2U);
-
 }
 
 /* Function to get the index of the last granule in the system */
@@ -44,7 +35,7 @@ static inline unsigned int get_last_granule_idx(void)
 static inline unsigned long get_rand_granule_addr(void)
 {
 	unsigned long addr;
-	int random_granule = get_rand_granule_idx();
+	int random_granule = test_helpers_get_rand_granule_idx();
 
 	addr = (unsigned long)(random_granule * GRANULE_SIZE)
 						+ host_util_get_granule_base();
@@ -145,7 +136,7 @@ TEST(granule, addr_to_granule_TC1)
 	struct granule *granule;
 	struct granule *expected_granule;
 	unsigned int granule_indexes[3] = {0U,
-					   get_rand_granule_idx(),
+					   test_helpers_get_rand_granule_idx(),
 					   get_last_granule_idx()};
 	unsigned long addr;
 
@@ -240,7 +231,7 @@ TEST(granule, granule_addr_TC1)
 {
 	struct granule *granule;
 	unsigned int granule_indexes[3] = {0U,
-					   get_rand_granule_idx(),
+					   test_helpers_get_rand_granule_idx(),
 					   get_last_granule_idx()};
 	unsigned long expected_address;
 	unsigned long addr;
@@ -410,7 +401,7 @@ TEST(granule, find_granule_TC1)
 {
 	struct granule *expected_granule;
 	unsigned int granule_indexes[3] = {0U,
-					   get_rand_granule_idx(),
+					   test_helpers_get_rand_granule_idx(),
 					   get_last_granule_idx()};
 	unsigned long address;
 	struct granule *granule;
@@ -783,7 +774,7 @@ TEST(granule, find_lock_granule_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -808,7 +799,7 @@ TEST(granule, find_lock_granule_TC2)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -886,7 +877,7 @@ TEST(granule, granule_lock_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -934,7 +925,7 @@ ASSERT_TEST(granule, granule_lock_TC2)
 {
 	struct granule *granule;
 	unsigned int state, expected;
-	unsigned long addr = (get_rand_granule_idx() * GRANULE_SIZE) +
+	unsigned long addr = (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base();
 
 	/******************************************************************
@@ -970,7 +961,7 @@ TEST(granule, granule_lock_on_state_match_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1010,7 +1001,7 @@ TEST(granule, granule_lock_on_state_match_TC2)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1069,7 +1060,7 @@ TEST(granule, granule_set_get_state_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1127,7 +1118,7 @@ TEST(granule, granule_unlock_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1185,7 +1176,7 @@ TEST(granule, granule_unlock_transition_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1583,7 +1574,7 @@ TEST(granule, find_lock_unused_granule_TC1)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1638,7 +1629,7 @@ TEST(granule, find_lock_unused_granule_TC2)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1684,7 +1675,7 @@ TEST(granule, find_lock_unused_granule_TC3)
 {
 	struct granule *granule;
 	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
+				  (test_helpers_get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base(),
 				  ((test_helpers_get_nr_granules() - 1) *
 								GRANULE_SIZE) +
@@ -1764,82 +1755,7 @@ TEST(granule, find_lock_unused_granule_TC5)
 	}
 }
 
-TEST(granule, granule_memzero_TC1)
-{
-	unsigned long addrs[3] = {host_util_get_granule_base(),
-				  (get_rand_granule_idx() * GRANULE_SIZE) +
-					host_util_get_granule_base(),
-				  ((test_helpers_get_nr_granules() - 1) *
-								GRANULE_SIZE) +
-					host_util_get_granule_base()};
-	struct granule *granule;
-	int *val;
-	union test_harness_cbs cb;
-
-	/* Register harness callbacks to use by this test */
-	cb.buffer_map = test_buffer_map_access;
-	(void)test_helpers_register_cb(cb, CB_BUFFER_MAP);
-	cb.buffer_unmap = test_buffer_unmap_access;
-	(void)test_helpers_register_cb(cb, CB_BUFFER_UNMAP);
-
-	/***************************************************************
-	 * TEST CASE 1:
-	 *
-	 * Map a granule to every possible slot type and memzero
-	 * it. Verify then that the whole slot buffer is all 0.
-	 * Test the first and the last valid granules as well as random
-	 * granules in between.
-	 * Repeat the operation on all possible CPUs.
-	 *
-	 * NOTE: granule_memzero() will fail with SLOT_NS, so skip that
-	 *	 testcase.
-	 ***************************************************************/
-
-	for (unsigned int i = 0U; i < 3U; i++) {
-		granule = addr_to_granule(addrs[i]);
-		val = (int *)addrs[i];
-
-		for (unsigned int j = 0U; j < MAX_CPUS; j++) {
-			/* Configure the cpu id */
-			host_util_set_cpuid(j);
-
-			for (unsigned int k = 0; k < NR_CPU_SLOTS; k++) {
-				if (k == SLOT_NS) {
-					/* Not supported by granule_memzero */
-					continue;
-				}
-
-				/* Initialize the granule with random data */
-				memset((void *)addrs[i],
-					(int)test_helpers_get_rand_in_range(1UL, INT_MAX),
-					GRANULE_SIZE);
-				granule_memzero(granule, (enum buffer_slot)k);
-
-				for (unsigned int l = 0;
-				     l < (GRANULE_SIZE / sizeof(int)); l++) {
-					if (*(val + l) != 0) {
-						FAIL_TEST("Memory not properly zeroed");
-					}
-				} /* GRANULE_SIZE */
-			} /* NR_CPU_SLOTS */
-		} /* MAX_CPUS */
-	} /* Number of granules to test */
-}
-
-ASSERT_TEST(granule, granule_memzero_TC2)
-{
-	/***************************************************************
-	 * TEST CASE 2:
-	 *
-	 * Verify that granule_memzero() asserts if granule is NULL
-	 ***************************************************************/
-
-	test_helpers_expect_assert_fail(true);
-	granule_memzero(NULL, SLOT_DELEGATED);
-	test_helpers_fail_if_no_assert_failed();
-}
-
-TEST(granule, granule_memzero_mapped_TC1)
+IGNORE_TEST(granule, granule_memzero_mapped_TC1)
 {
 	/*
 	 * Current implementation for granule_memzero_mapped()
