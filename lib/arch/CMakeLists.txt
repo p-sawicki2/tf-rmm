@@ -19,7 +19,8 @@ target_sources(rmm-lib-arch
         PRIVATE "src/arch_features.c"
                 "src/pmu.c"
                 "src/pauth.c"
-                "src/simd.c")
+                "src/simd.c"
+		"src/vmid.c")
 
 if(NOT RMM_ARCH STREQUAL fake_host)
     target_sources(rmm-lib-arch

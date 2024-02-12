@@ -15,6 +15,7 @@
 #include <smc-handler.h>
 #include <smc-rmi.h>
 #include <smc.h>
+#include <status.h>
 #include <stddef.h>
 #include <string.h>
 
@@ -1071,7 +1072,7 @@ void smc_data_destroy(unsigned long rd_addr,
 	 */
 	g_data = find_lock_granule(data_addr, GRANULE_STATE_DATA);
 	assert(g_data != NULL);
-	granule_memzero(g_data, SLOT_DELEGATED);
+	buffer_granule_memzero(g_data, SLOT_DELEGATED);
 	granule_unlock_transition(g_data, GRANULE_STATE_DELEGATED);
 
 	res->x[0] = RMI_SUCCESS;
