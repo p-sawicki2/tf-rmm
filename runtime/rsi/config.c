@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
  */
 
+#include <buffer.h>
 #include <granule.h>
 #include <realm.h>
 #include <rsi-handler.h>
