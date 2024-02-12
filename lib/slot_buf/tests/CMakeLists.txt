@@ -1,0 +1,17 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+if(RMM_UNITTESTS)
+    target_include_directories(rmm-lib-slot_buf
+        PRIVATE "tests")
+endif()
+
+# Add test functionality
+rmm_build_unittest(NAME slot_buffer
+                   TARGET rmm-lib-slot_buf
+		   LIBRARIES rmm-platform
+                   SOURCES "tests/buffer.cpp"
+                           "tests/test_cb.c"
+                   ITERATIONS 10)

@@ -31,7 +31,6 @@ if(NOT RMM_ARCH STREQUAL fake_host)
         PRIVATE "core/aarch64/entry.S"
                 "core/aarch64/head.S"
                 "core/aarch64/helpers.S"
-                "core/aarch64/ns_access.S"
                 "core/aarch64/run-asm.S"
                 "core/aarch64/vectors.S")
 else()
@@ -46,7 +45,7 @@ target_sources(rmm-runtime
             "core/inject_exp.c"
             "core/run.c"
             "core/sysregs.c"
-            "core/vmid.c")
+            "core/timers.c")
 
 target_sources(rmm-runtime
     PRIVATE "rmi/feature.c"
