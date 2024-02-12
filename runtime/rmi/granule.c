@@ -4,6 +4,7 @@
  */
 
 #include <debug.h>
+#include <buffer.h>
 #include <granule.h>
 #include <rmm_el3_ifc.h>
 #include <smc-handler.h>
@@ -34,7 +35,7 @@ unsigned long smc_granule_delegate(unsigned long addr)
 	}
 
 	granule_set_state(g, GRANULE_STATE_DELEGATED);
-	granule_memzero(g, SLOT_DELEGATED);
+	buffer_granule_memzero(g, SLOT_DELEGATED);
 
 	granule_unlock(g);
 	return RMI_SUCCESS;
