@@ -326,7 +326,7 @@ static void free_sl_rtts(struct granule *g_rtt, unsigned int num_rtts)
 						(i * sizeof(struct granule)));
 
 		granule_lock(g, GRANULE_STATE_RTT);
-		granule_memzero(g, SLOT_RTT);
+		buffer_granule_memzero(g, SLOT_RTT);
 		granule_unlock_transition(g, GRANULE_STATE_DELEGATED);
 	}
 }
@@ -538,7 +538,7 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	free_sl_rtts(g_rtt, num_rtts);
 
 	/* This implicitly destroys the measurement */
-	granule_memzero(g_rd, SLOT_RD);
+	buffer_granule_memzero(g_rd, SLOT_RD);
 	granule_unlock_transition(g_rd, GRANULE_STATE_DELEGATED);
 
 	return RMI_SUCCESS;
