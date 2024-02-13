@@ -15,7 +15,7 @@
 #include "tb_granules.h"
 
 /* Chooses an arbitrary granule state. */
-bool valid_granule_state(enum granule_state value)
+bool valid_granule_state(unsigned char value)
 {
 	return value == GRANULE_STATE_NS
 			|| value == GRANULE_STATE_DELEGATED

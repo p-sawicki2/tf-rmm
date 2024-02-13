@@ -887,7 +887,7 @@ static unsigned long data_create(unsigned long rd_addr,
 	struct rd *rd;
 	struct s2tt_walk wi;
 	unsigned long s2tte, *s2tt;
-	enum granule_state new_data_state = GRANULE_STATE_DELEGATED;
+	unsigned char new_data_state = GRANULE_STATE_DELEGATED;
 	unsigned long ipa_bits;
 	unsigned long ret;
 	int sl;
@@ -1385,7 +1385,7 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 		return;
 	}
 
-	if (granule_refcount_read_acquire(g_rec) != 0UL) {
+	if (granule_refcount_read_acquire(g_rec) != 0U) {
 		res->x[0] = RMI_ERROR_REC;
 		goto out_unlock_rec_rd;
 	}

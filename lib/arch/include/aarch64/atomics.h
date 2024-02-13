@@ -41,6 +41,37 @@ static inline unsigned long atomic_load_add_release_64(uint64_t *loc, long val)
 }
 
 /*
+ * Atomically adds @val to the 16-bit value stored at memory location @loc.
+ */
+static inline void atomic_add_16(uint16_t *loc, short val)
+{
+	asm volatile(
+	"	staddh %w[val], %[loc]\n"
+	: [loc] "+Q" (*loc)
+	: [val] "r" (val)
+	: "memory");
+}
+
+/*
+ * Atomically adds @val to the 16-bit value stored at memory location @loc.
+ * Stores to memory with release semantics.
+ * Returns the old value.
+ */
+static inline unsigned short atomic_load_add_release_16(uint16_t *loc, short val)
+{
+	unsigned short old_val;
+
+	asm volatile(
+	"	ldaddlh %w[val], %w[old_val], %[loc]\n"
+	: [loc] "+Q" (*loc),
+	  [old_val] "=r" (old_val)
+	: [val] "r" (val)
+	: "memory");
+
+	return old_val;
+}
+
+/*
  * Atomically set bit @bit in value pointed to by @loc with release semantics.
  */
 static inline void atomic_bit_set_release_64(uint64_t *loc, unsigned int bit)
