@@ -344,9 +344,9 @@ TEST(granule, granule_refcount_read_relaxed_TC1)
 {
 	struct granule *granule;
 	unsigned long addr = get_rand_granule_addr();
-	unsigned long val =
-		(unsigned long)test_helpers_get_rand_in_range(10UL, INT_MAX);
-	unsigned long read_val;
+	unsigned short val =
+		(unsigned short)test_helpers_get_rand_in_range(1U, USHRT_MAX);
+	unsigned short read_val;
 
 	/******************************************************************
 	 * TEST CASE 1:
@@ -698,10 +698,10 @@ TEST(granule, find_lock_two_granules_TC5)
 	g1 = NULL;
 	g2 = NULL;
 
-	for (unsigned int state1 = GRANULE_STATE_NS;
+	for (unsigned char state1 = GRANULE_STATE_NS;
 	     state1 <= GRANULE_STATE_LAST; state1++) {
 
-		for (unsigned int state2 = GRANULE_STATE_NS;
+		for (unsigned char state2 = GRANULE_STATE_NS;
 		     state2 <= GRANULE_STATE_LAST; state2++) {
 			if (state1 == GRANULE_STATE_NS &&
 			    state2 == GRANULE_STATE_NS) {
@@ -711,9 +711,9 @@ TEST(granule, find_lock_two_granules_TC5)
 				 */
 				continue;
 			}
-			retval = find_lock_two_granules(addr1,
-					(enum granule_state)state1, &g1,
-					addr2, (enum granule_state)state2, &g2);
+			retval = find_lock_two_granules(
+					addr1, state1, &g1,
+					addr2, state2, &g2);
 
 			CHECK_FALSE(retval);
 
@@ -823,10 +823,9 @@ TEST(granule, find_lock_granule_TC2)
 	 * granules in between.
 	 ***************************************************************/
 	for (unsigned int i = 0U; i < 3U; i++) {
-		for (unsigned int state = GRANULE_STATE_NS + 1U;
+		for (unsigned char state = GRANULE_STATE_NS + 1U;
 		     state <= GRANULE_STATE_LAST; state++) {
-			granule = find_lock_granule(addrs[i],
-						    (enum granule_state)state);
+			granule = find_lock_granule(addrs[i], state);
 			POINTERS_EQUAL(NULL, granule);
 		}
 	}
@@ -845,10 +844,9 @@ TEST(granule, find_lock_granule_TC3)
 	 ***************************************************************/
 	addr = get_rand_granule_addr();
 	addr += test_helpers_get_rand_in_range(1UL, GRANULE_SIZE - 1);
-	for (unsigned int state = GRANULE_STATE_NS;
+	for (unsigned char state = GRANULE_STATE_NS;
 	     state <= GRANULE_STATE_LAST; state++) {
-		granule = find_lock_granule(addr,
-					    (enum granule_state)state);
+		granule = find_lock_granule(addr, state);
 		POINTERS_EQUAL(NULL, granule);
 	}
 }
@@ -866,17 +864,14 @@ TEST(granule, find_lock_granule_TC4)
 	 ***************************************************************/
 	(void)get_out_of_range_granule(&addr, true);
 
-	for (unsigned int state = GRANULE_STATE_NS;
+	for (unsigned char state = GRANULE_STATE_NS;
 	     state <= GRANULE_STATE_LAST; state++) {
-		granule = find_lock_granule(addr,
-					    (enum granule_state)state);
+		granule = find_lock_granule(addr, state);
 		POINTERS_EQUAL(NULL, granule);
 
 		/* Try the lower boundary as well */
 		if (get_out_of_range_granule(&addr, false) == true) {
-
-			granule = find_lock_granule(addr,
-						    (enum granule_state)state);
+			granule = find_lock_granule(addr, state);
 			POINTERS_EQUAL(NULL, granule);
 		}
 	}
@@ -903,17 +898,17 @@ TEST(granule, granule_lock_TC1)
 	for (unsigned int i = 0U; i < 3U; i++) {
 		granule = addr_to_granule(addrs[i]);
 
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST; state++) {
 
 			/* Ensure the granule is unlocked */
 			granule_unlock(granule);
 
 			/* Set the granule state */
-			granule_set_state(granule, (enum granule_state)state);
+			granule_set_state(granule, state);
 
 			/* Lock the granule */
-			granule_lock(granule, (enum granule_state)state);
+			granule_lock(granule, state);
 			CHECK_FALSE(granule->lock.val == 0);
 		}
 	}
@@ -925,7 +920,7 @@ TEST(granule, granule_lock_TC1)
 	 * with invalid granules.
 	 *
 	 * In addition to that, granule_lock() also expects that the expected
-	 * state belongs to enum granule_state so it doesn't perform any checks
+	 * state belongs to the defined values so it doesn't perform any checks
 	 * on that either.
 	 */
 }
@@ -933,7 +928,7 @@ TEST(granule, granule_lock_TC1)
 ASSERT_TEST(granule, granule_lock_TC2)
 {
 	struct granule *granule;
-	unsigned int state, expected;
+	unsigned char state, expected;
 	unsigned long addr = (get_rand_granule_idx() * GRANULE_SIZE) +
 					host_util_get_granule_base();
 
@@ -946,10 +941,10 @@ ASSERT_TEST(granule, granule_lock_TC2)
 
 	granule = addr_to_granule(addr);
 	do {
-		state = (unsigned int)test_helpers_get_rand_in_range(
+		state = (unsigned char)test_helpers_get_rand_in_range(
 					(unsigned long)GRANULE_STATE_NS,
 					(unsigned long)GRANULE_STATE_LAST);
-		expected = (unsigned int)test_helpers_get_rand_in_range(
+		expected = (unsigned char)test_helpers_get_rand_in_range(
 					(unsigned long)GRANULE_STATE_NS,
 					(unsigned long)GRANULE_STATE_LAST);
 	} while (state == expected);
@@ -958,11 +953,11 @@ ASSERT_TEST(granule, granule_lock_TC2)
 	granule_unlock(granule);
 
 	/* Set the granule state */
-	granule_set_state(granule, (enum granule_state)state);
+	granule_set_state(granule, state);
 
 	test_helpers_expect_assert_fail(true);
 	/* Lock the granule */
-	granule_lock(granule, (enum granule_state)expected);
+	granule_lock(granule, expected);
 	test_helpers_fail_if_no_assert_failed();
 }
 
@@ -987,7 +982,7 @@ TEST(granule, granule_lock_on_state_match_TC1)
 	for (unsigned int i = 0U; i < 3U; i++) {
 		granule = addr_to_granule(addrs[i]);
 
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST; state++) {
 			bool retval;
 
@@ -995,11 +990,10 @@ TEST(granule, granule_lock_on_state_match_TC1)
 			granule_unlock(granule);
 
 			/* Set the granule state */
-			granule_set_state(granule, (enum granule_state)state);
+			granule_set_state(granule, state);
 
 			/* Lock the granule */
-			retval = granule_lock_on_state_match(granule,
-						(enum granule_state)state);
+			retval = granule_lock_on_state_match(granule, state);
 			CHECK(retval);
 			CHECK_FALSE(granule->lock.val == 0);
 		}
@@ -1028,12 +1022,12 @@ TEST(granule, granule_lock_on_state_match_TC2)
 	for (unsigned int i = 0U; i < 3U; i++) {
 		granule = addr_to_granule(addrs[i]);
 
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST; state++) {
 			/* Set the granule state */
-			granule_set_state(granule, (enum granule_state)state);
+			granule_set_state(granule, state);
 
-			for (unsigned int lock_state = GRANULE_STATE_NS;
+			for (unsigned char lock_state = GRANULE_STATE_NS;
 			     lock_state <= GRANULE_STATE_LAST; lock_state++) {
 				bool retval;
 
@@ -1047,7 +1041,7 @@ TEST(granule, granule_lock_on_state_match_TC2)
 
 				/* Lock the granule */
 				retval = granule_lock_on_state_match(granule,
-					(enum granule_state)lock_state);
+								lock_state);
 				CHECK_FALSE(retval);
 				CHECK_EQUAL(0, granule->lock.val);
 			}
@@ -1061,7 +1055,7 @@ TEST(granule, granule_lock_on_state_match_TC2)
 	 * with invalid granules.
 	 *
 	 * Likewise, it also expects that the next state belongs to
-	 * enum granule_state, so it doesn't perform any checks on that either.
+	 * the defined values, so it doesn't perform any checks on that either.
 	 */
 }
 
@@ -1084,19 +1078,17 @@ TEST(granule, granule_set_get_state_TC1)
 	 * granules in between.
 	 ***************************************************************/
 	for (unsigned int i = 0U; i < 3U; i++) {
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST;
 		     state++) {
-			unsigned int next_state = (state + 1) %
+			unsigned char next_state = (state + 1) %
 						((int)GRANULE_STATE_LAST + 1);
 
 			/* Find and lock a granule */
-			granule = find_lock_granule(addrs[i],
-						    (enum granule_state)state);
+			granule = find_lock_granule(addrs[i], state);
 
 			/* Change the granule state */
-			granule_set_state(granule,
-					  (enum granule_state)next_state);
+			granule_set_state(granule, next_state);
 
 			/* Check that the state is correct */
 			CHECK_EQUAL(next_state, granule_get_state(granule));
@@ -1119,7 +1111,7 @@ TEST(granule, granule_set_get_state_TC1)
 	 * with invalid granules.
 	 *
 	 * Likewise, it also expects that the next state belongs to
-	 * enum granule_state, so it doesn't perform any checks on that either.
+	 * the defined values, so it doesn't perform any checks on that either.
 	 */
 }
 
@@ -1143,7 +1135,7 @@ TEST(granule, granule_unlock_TC1)
 	 * granules in between.
 	 ***************************************************************/
 	for (unsigned int i = 0U; i < 3U; i++) {
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST;
 		     state++) {
 
@@ -1151,7 +1143,7 @@ TEST(granule, granule_unlock_TC1)
 			granule = find_lock_granule(addrs[i], GRANULE_STATE_NS);
 
 			/* Change the state of the granule */
-			granule_set_state(granule, (enum granule_state)state);
+			granule_set_state(granule, state);
 
 			/* Unlock the granule */
 			granule_unlock(granule);
@@ -1200,19 +1192,17 @@ TEST(granule, granule_unlock_transition_TC1)
 	 * granules in between.
 	 ***************************************************************/
 	for (unsigned int i = 0U; i < 3U; i++) {
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 		     state <= GRANULE_STATE_LAST;
 		     state++) {
-			unsigned int next_state = (state + 1) %
+			unsigned char next_state = (state + 1) %
 						((int)GRANULE_STATE_LAST + 1);
 
 			/* Find and lock a granule */
-			granule = find_lock_granule(addrs[i],
-						    (enum granule_state)state);
+			granule = find_lock_granule(addrs[i], state);
 
 			/* Unlock the granule changing its state */
-			granule_unlock_transition(granule,
-					(enum granule_state)next_state);
+			granule_unlock_transition(granule, next_state);
 
 			/* Check that the state is correct */
 			CHECK_EQUAL(next_state, granule_get_state(granule));
@@ -1227,7 +1217,7 @@ TEST(granule, granule_unlock_transition_TC1)
 	 * with invalid granules.
 	 *
 	 * Likewise, it also expects that the next state belongs to
-	 * enum granule_state, so it doesn't perform any checks on that either.
+	 * the defined values, so it doesn't perform any checks on that either.
 	 */
 }
 
@@ -1319,7 +1309,7 @@ TEST(granule, granule_refcount_inc_TC1)
 {
 	unsigned long address = get_rand_granule_addr();
 	struct granule *granule = find_granule(address);
-	unsigned long val = test_helpers_get_rand_in_range(1UL, INT_MAX);
+	unsigned short val = test_helpers_get_rand_in_range(1U, USHRT_MAX);
 
 	unsigned int lock = set_rand_non_zero_lock_value(granule);
 
@@ -1663,7 +1653,7 @@ TEST(granule, find_lock_unused_granule_TC2)
 		 */
 		granule_set_state(granule, GRANULE_STATE_RD);
 
-		for (unsigned int state = GRANULE_STATE_NS;
+		for (unsigned char state = GRANULE_STATE_NS;
 			state <= GRANULE_STATE_LAST; state++) {
 			if (state == GRANULE_STATE_RD) {
 				/* Skip as the state is the correct one */
@@ -1671,7 +1661,7 @@ TEST(granule, find_lock_unused_granule_TC2)
 			}
 
 			ret = find_lock_unused_granule(addrs[i],
-						(enum granule_state)state,
+						state,
 						&granule);
 
 			CHECK_TRUE(ret == -EINVAL);

@@ -11,7 +11,7 @@
  */
 
 typedef struct {
-	unsigned int val;
+	unsigned char val;
 } spinlock_t;
 
 static inline void spinlock_acquire(spinlock_t *l)
@@ -23,9 +23,9 @@ static inline void spinlock_acquire(spinlock_t *l)
 	"	prfm	pstl1keep, %[lock]\n"
 	"1:\n"
 	"	wfe\n"
-	"	ldaxr	%w[tmp], %[lock]\n"
+	"	ldaxrb	%w[tmp], %[lock]\n"
 	"	cbnz	%w[tmp], 1b\n"
-	"	stxr	%w[tmp], %w[one], %[lock]\n"
+	"	stxrb	%w[tmp], %w[one], %[lock]\n"
 	"	cbnz	%w[tmp], 1b\n"
 	: [lock] "+Q" (l->val),
 	  [tmp] "=&r" (tmp)
@@ -37,7 +37,7 @@ static inline void spinlock_acquire(spinlock_t *l)
 static inline void spinlock_release(spinlock_t *l)
 {
 	asm volatile(
-	"	stlr	wzr, %[lock]\n"
+	"	stlrb	wzr, %[lock]\n"
 	: [lock] "+Q" (l->val)
 	:
 	: "memory"

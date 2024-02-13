@@ -10,9 +10,9 @@
 #include <stdint.h>
 
 /*
- * Atomically adds @val to the 64-bit value stored at memory location @loc.
+ * Atomically adds @val to the 16-bit value stored at memory location @loc.
  */
-static inline void atomic_add_64(uint64_t *loc, long val)
+static inline void atomic_add_16(uint16_t *loc, short val)
 {
 	*loc = *loc + val;
 }
@@ -22,9 +22,9 @@ static inline void atomic_add_64(uint64_t *loc, long val)
  * Stores to memory with release semantics.
  * Returns the old value.
  */
-static inline unsigned long atomic_load_add_release_64(uint64_t *loc, long val)
+static inline unsigned long atomic_load_add_release_16(uint16_t *loc, short val)
 {
-	unsigned long old_val = *loc;
+	unsigned short old_val = *loc;
 
 	*loc = *loc + val;
 	return old_val;
