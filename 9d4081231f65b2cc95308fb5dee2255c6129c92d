@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ebdbe62_c117e40f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-14T10:22:58Z",
+      "side": 1,
+      "message": "Perhaps retain the 64 bit variants and use the 16/8 bit variants only granule struct.\n\nEspecially the spin_lock as I suspect that 8 bit spin lock may have some performance penalty over 32 bit locks. So keep the regular spin_lock and use 8 bit spin lock only for this granule struct.",
+      "revId": "9d4081231f65b2cc95308fb5dee2255c6129c92d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c3e96a3_94c0a81a",
+        "filename": "lib/arch/include/fake_host/atomics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-14T10:22:58Z",
+      "side": 1,
+      "message": "perhaps keep the 64 bit variants and just add new functions for 16 bits",
+      "revId": "9d4081231f65b2cc95308fb5dee2255c6129c92d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "469d893c_2ee2d446",
+        "filename": "lib/arch/include/fake_host/atomics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-14T10:22:58Z",
+      "side": 1,
+      "message": "16",
+      "range": {
+        "startLine": 21,
+        "startChar": 31,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "9d4081231f65b2cc95308fb5dee2255c6129c92d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "776e8706_c1f297cc",
+        "filename": "lib/arch/include/fake_host/atomics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-14T10:22:58Z",
+      "side": 1,
+      "message": "use uint16_t ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "9d4081231f65b2cc95308fb5dee2255c6129c92d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
