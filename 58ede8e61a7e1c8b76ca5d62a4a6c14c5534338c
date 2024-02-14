@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "03d89128_2b977493",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-14T10:40:08Z",
+      "side": 1,
+      "message": "As discussed, I\u0027ll try with a couple of APIs and depending on CI, I will then rework the rest of them",
+      "parentUuid": "70b9a918_a3cb5568",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f648d34f_fb7b28f0",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 9
@@ -67,6 +85,24 @@
       "writtenOn": "2024-02-06T15:21:57Z",
       "side": 1,
       "message": "Perhaps if (!host_ns_s2tte_is_valid(\u0026s2_ctx, s2tte, level)) if op \u003d MAP_NS can be done here.",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf6ead4e_737a42bf",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-14T10:40:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f648d34f_fb7b28f0",
       "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -124,6 +160,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25a37a72_57895540",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-14T10:40:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbf5923f_ad600c52",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e97aaaa_43d6e8a2",
@@ -155,6 +209,24 @@
       "side": 1,
       "message": "Yes, I think I can, the rec is not unmapped for the whole lifetime of s2_ctx. Missed that before",
       "parentUuid": "9e97aaaa_43d6e8a2",
+      "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c797ebad_436f069c",
+        "filename": "runtime/rsi/realm_ipa_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-14T10:40:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fa788c8_7d2b03d0",
       "revId": "58ede8e61a7e1c8b76ca5d62a4a6c14c5534338c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
