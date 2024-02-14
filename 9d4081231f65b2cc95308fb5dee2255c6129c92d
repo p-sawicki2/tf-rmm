@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "41405810_dfa0d8fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-14T16:57:24Z",
+      "side": 1,
+      "message": "I have byte_spinlock_t in a new patchset.",
+      "parentUuid": "57fb24b5_6d318029",
+      "revId": "9d4081231f65b2cc95308fb5dee2255c6129c92d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9c3e96a3_94c0a81a",
         "filename": "lib/arch/include/fake_host/atomics.h",
         "patchSetId": 1
