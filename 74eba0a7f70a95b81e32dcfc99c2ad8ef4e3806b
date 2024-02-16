@@ -63,6 +63,30 @@
       },
       "revId": "74eba0a7f70a95b81e32dcfc99c2ad8ef4e3806b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9a3084f_689df97c",
+        "filename": "lib/arch/include/aarch64/spinlock.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-16T12:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03947b34_499f802d",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "74eba0a7f70a95b81e32dcfc99c2ad8ef4e3806b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
