@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21b924d3_0c05c5b0",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "120cce8f_e53a9b8d",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "710d7295_07e11448",
@@ -52,6 +70,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb989bc1_ff9d6ed1",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "710d7295_07e11448",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b4abf9d_a9f33b0e",
@@ -65,6 +101,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "EL2_XLAT_BADDR_MSB_LPA2_SHIFT\nEL2_XLAT_BADDR_MSB_LPA2_WIDTH",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 29
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "592a9540_d21533e8",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b4abf9d_a9f33b0e",
       "range": {
         "startLine": 259,
         "startChar": 8,
@@ -146,6 +206,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9914e9e_4220f6b9",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "That was a redundant check that I detected and removed when I implemented the unittests for this library. However the unittests are far behind and it will take a while to have them reworked. I can add the check again, but then I will probably have to remove it again when I add the unittests.\n\nAlso, the level higher boundary is always checked by the callers.\n\nPlus we are removing this call anyway",
+      "parentUuid": "80863248_8e8b72f5",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1939a7dd_b1277247",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 23
@@ -157,6 +241,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "cannot be empty anymore as it has PA.\n\nSuggest the following, implement a macro (or helper) pa_to_s2tte() which will format PA in S2TTE.\n\nThe caller can then create empty S2tte\n\nunsigned long s2tte \u003d pa_to_s2tte(pa, lpa2);",
+      "range": {
+        "startLine": 109,
+        "startChar": 14,
+        "endLine": 109,
+        "endChar": 20
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39775de5_85f4131c",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "The macro would have to check whether LPA2 is enabled or not, so I think in that case a function would be more appropriate. I can rename it if that would be more appropriate",
+      "parentUuid": "1939a7dd_b1277247",
       "range": {
         "startLine": 109,
         "startChar": 14,
@@ -186,6 +294,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5b10cde2_3f944277",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I understand this comment",
+      "parentUuid": "c515ba20_c445d143",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bc3965d9_b6b724f3",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 23
@@ -197,6 +323,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "Writing this as \n(level \u003c S2TT_MIN_STARTING_LEVEL) ? S2TTE_STRIDE : S2TTE_STRIDE_LM1;\n\nresult in more efficient code generation ( 1 less instruction in Debug build).",
+      "range": {
+        "startLine": 169,
+        "startChar": 30,
+        "endLine": 170,
+        "endChar": 37
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29f42e49_7d8b84fe",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "In this case the assignation is inverted, should be \n\n(level \u003c S2TT_MIN_STARTING_LEVEL) \u003e S2TTE_STRIDE_LM1 : S2TTE_STRIDE",
+      "parentUuid": "bc3965d9_b6b724f3",
       "range": {
         "startLine": 169,
         "startChar": 30,
@@ -230,6 +380,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6f1a867_8f174ed8",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "701fb368_2941710d",
+      "range": {
+        "startLine": 404,
+        "startChar": 21,
+        "endLine": 404,
+        "endChar": 37
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d19a1d42_3defeec1",
@@ -243,6 +417,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "As discussed , we can have 2 helpers:\n\n1. s2tte_lvl_mask -\u003e takes {lvl, lpa2} as argument and returns the mask to be used to S2TTE\n2. s2tte_to_pa() -\u003e Takes {s2tte, lvl. lpa2} as arguments, invokes s2tte_lvl_mask, extracts MSB and puts it INPLACE.  (returns the formatted address [51:0] to caller).\n\nThe addr_level_mask() needs to be removed and replaced with these 2 variants.",
+      "range": {
+        "startLine": 519,
+        "startChar": 1,
+        "endLine": 520,
+        "endChar": 30
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e577d3c_0704b537",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d19a1d42_3defeec1",
       "range": {
         "startLine": 519,
         "startChar": 1,
@@ -270,6 +468,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "389dfd11_2659e145",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc8e0415_6b4398d7",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "facfa2a1_4dfc7e31",
@@ -283,6 +499,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "s2tte_to_pa() can be used here.",
+      "range": {
+        "startLine": 1022,
+        "startChar": 7,
+        "endLine": 1022,
+        "endChar": 22
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e6c4a59_a1009bf3",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "facfa2a1_4dfc7e31",
       "range": {
         "startLine": 1022,
         "startChar": 7,
@@ -310,6 +550,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b907bce7_db04ad9d",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "See my comment below",
+      "parentUuid": "bcdba3c4_cff60732",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abe3dd2d_45e781fb",
@@ -323,6 +581,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "we need to check for both lsb and msb.\n\nassert(level \u003c\u003d S2TT_PAGE_LEVEL \u0026\u0026 level \u003e\u003d S2TT_LM1);\n\nint levels \u003d (int)(S2TT_PAGE_LEVEL - level);\nunsigned int lsb \u003d (levels * S2TTE_STRIDE) + GRANULE_SHIFT;\nunsigned int s2tte_oa_bits \u003d (lpa2 \u003d\u003d true) ? S2TTE_OA_BITS_LPA2 :\n\t\t\t\t\t\t      S2TTE_OA_BITS;\n\nreturn (addr \u003d\u003d (addr \u0026 BIT_MASK_ULL((s2tte_oa_bits - 1U), lsb)));",
+      "range": {
+        "startLine": 1041,
+        "startChar": 14,
+        "endLine": 1041,
+        "endChar": 18
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25c0c4fa_47049c25",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "We cannot compare directly with S2TT_LM1 as that would be invalid if LPA2 is disabled, hence I need to calculate the valid min_starting_level after validating s2_ctx and then after that I can call assert (line 1045, which I wanted to be along to 1044).\n\nAlso, wouldn\u0027t the current implementation be more efficient?\n\n* Line 1042 is a bit manipulation and arithmetic operation as opposed to a check and branch ((lpa2 \u003d\u003d true) ? S2TTE_OA_BITS_LPA2 :\nS2TTE_OA_BITS)\n* return ((addr \u0026 mask) \u003d\u003d 0UL) would be more efficient than return addr \u0026 BIT_MASK_ULL((s2tte_oa_bits - 1U), lsb); as the latter calls BIT_MASK_ULL which have a number of bit manipulations and then the comparison",
+      "parentUuid": "abe3dd2d_45e781fb",
       "range": {
         "startLine": 1041,
         "startChar": 14,
@@ -356,6 +638,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbf0fc15_3ad1b19c",
+        "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17a1cc60_0249fb8d",
+      "range": {
+        "startLine": 102,
+        "startChar": 77,
+        "endLine": 102,
+        "endChar": 79
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12fc0ec5_c8dca1fd",
@@ -369,6 +675,30 @@
       "writtenOn": "2024-02-20T15:45:47Z",
       "side": 1,
       "message": "is_lpa2_requested()",
+      "range": {
+        "startLine": 69,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c7b4d80_1cc7d345",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12fc0ec5_c8dca1fd",
       "range": {
         "startLine": 69,
         "startChar": 12,
@@ -396,6 +726,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3ccd866_c65aebb8",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "the check is actually done in line 96. If level \u003d\u003d -1 then sl_max_ipa_bits \u003d\u003d S2TT_MAX_IPA_BITS_LPA2, which is the same as the assignment you suggested (sl_min_ipa_bits will be 48 with level \u003d\u003d -1).\n\nS2TTE_STRIDE_LPA2 wouldn\u0027t be an appropriate macro as the stride is always the same, regardless of whether LPA2 is enabled or not. Only the stride for level -1 is different, but the max ipa bits in that case can just be hardcoded to S2TT_MAX_IPA_BITS_LPA2.\n\nWRT the concatenated tables when sl \u003e 0, this only applies when FEAT_LPA2 is disabled. With LPA2 enabled sl 0 can have concatenated tables. Will fix this here. I think this will need to be a TFTF testcase.",
+      "parentUuid": "42532250_c1047bf0",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b3ec36c_4b5cceb9",
@@ -409,6 +757,24 @@
       "writtenOn": "2024-02-20T15:45:47Z",
       "side": 1,
       "message": "see above.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3382d98_b66eebee",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "See my comment above.",
+      "parentUuid": "9b3ec36c_4b5cceb9",
       "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -448,6 +814,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea8b30b4_52247a67",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Yes, this was taken from the AArch64.InvalidSL pseudocode. I actually double checked this as well as I wasn\u0027t very sure.",
+      "parentUuid": "f7a01c06_5c93445d",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c710231_fc5e2037",
@@ -461,6 +845,30 @@
       "writtenOn": "2024-02-20T15:45:47Z",
       "side": 1,
       "message": "The calculation is quite simple for LM1. Just return 1 😊",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 149,
+        "endChar": 70
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89848b47_ba1b52f7",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "True 😄",
+      "parentUuid": "4c710231_fc5e2037",
       "range": {
         "startLine": 148,
         "startChar": 4,
@@ -494,6 +902,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99ed3ced_27827a11",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "942547d8_e1280b88",
+      "range": {
+        "startLine": 60,
+        "startChar": 60,
+        "endLine": 60,
+        "endChar": 65
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "297a8759_3814d71d",
@@ -511,6 +943,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0277329e_a7e2aa9d",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "297a8759_3814d71d",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f80fc559_1854b3d5",
@@ -524,6 +974,30 @@
       "writtenOn": "2024-02-20T15:45:47Z",
       "side": 1,
       "message": "can make the masking part of pack_return_code ?",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 24
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffd8178f_c76c6150",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-20T19:28:34Z",
+      "side": 1,
+      "message": "Yes. I didn\u0027t feel very comfortable changing pack_return_code() as I needed to remove an assert(), but done. We can revert later if we decide so.",
+      "parentUuid": "f80fc559_1854b3d5",
       "range": {
         "startLine": 124,
         "startChar": 8,
