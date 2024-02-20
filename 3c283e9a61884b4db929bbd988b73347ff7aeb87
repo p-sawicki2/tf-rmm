@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "152d50c2_9733d053",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "The ARM Arm says the TLBI range operations are affected by LPA2. I did not confirm whether the regular TLBIs are affected or not.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "120cce8f_e53a9b8d",
         "filename": "lib/arch/include/arch.h",
         "patchSetId": 23
@@ -334,6 +351,166 @@
         "startChar": 77,
         "endLine": 102,
         "endChar": 79
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12fc0ec5_c8dca1fd",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "is_lpa2_requested()",
+      "range": {
+        "startLine": 69,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42532250_c1047bf0",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "The sl_max_ipa_bits is for sl \u003e\u003d 0\n\nwe need to have a separate check for sl_max_ipa_bits  when sl \u003d\u003d -1\n\n/* Add comment */\n\nif (sl \u003d\u003d -1) {\n    sl_max_ipa_bits \u003d (sl_min_ipa_bits + (S2TTE_STRIDE_LPA2 - 1U);\n}",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3ec36c_4b5cceb9",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "see above.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a7b6e2e_ae05af1b",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "I am wondering if there is  similar check with will be needed for LM1.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c710231_fc5e2037",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "The calculation is quite simple for LM1. Just return 1 😊",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 149,
+        "endChar": 70
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "942547d8_e1280b88",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "nit: check for lpa2 first.",
+      "range": {
+        "startLine": 60,
+        "startChar": 60,
+        "endLine": 60,
+        "endChar": 65
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "297a8759_3814d71d",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "could give a comment similar to the other place you such a trick.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f80fc559_1854b3d5",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T15:45:47Z",
+      "side": 1,
+      "message": "can make the masking part of pack_return_code ?",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 24
       },
       "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
