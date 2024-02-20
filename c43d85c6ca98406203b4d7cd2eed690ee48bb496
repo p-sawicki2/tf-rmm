@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ad5b9e39_8771eeac",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "I think better to remove the redundant check.",
+      "parentUuid": "7e1deb6c_03797e22",
+      "range": {
+        "startLine": 147,
+        "startChar": 6,
+        "endLine": 147,
+        "endChar": 27
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df1a6549_466d9c95",
         "filename": "lib/s2tt/include/table.h",
         "patchSetId": 16
@@ -573,6 +597,24 @@
       "side": 1,
       "message": "This is called from s2tt_walk_lock_unlock(), which I guess can be called with the initial level as well?",
       "parentUuid": "19ef0da6_3fbf9c5f",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "442cdbd9_541da9f2",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "Ah, there is a restriction in the RMM spec which prevents the last level being specified less the MIN_BLOCK_LEVEL (which is 2 atm). \n\nBut you are right, for non - catenated tables, this helper should work for Level -1 as well.",
+      "parentUuid": "76f35bcc_7d2717a5",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

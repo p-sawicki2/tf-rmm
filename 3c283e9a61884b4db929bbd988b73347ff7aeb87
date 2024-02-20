@@ -1,0 +1,342 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "120cce8f_e53a9b8d",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "Need to name this with LPA2 in mind.\n\nTTBRx_EL2_BADDR_MSB_LPA2_SHIFT\n\nAlso need a comment\nBits[51:48] of the translation table base address bits are in register bits[5:2].",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "710d7295_07e11448",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "include \"_LPA2_\" in the name of the macro names below.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b4abf9d_a9f33b0e",
+        "filename": "lib/arch/include/arch.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "EL2_XLAT_BADDR_MSB_LPA2_SHIFT\nEL2_XLAT_BADDR_MSB_LPA2_WIDTH",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 29
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4302d81_44a8721c",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "\"enable_lpa2\" ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 6,
+        "endLine": 34,
+        "endChar": 14
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3792c15_6821f822",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "nit: align",
+      "range": {
+        "startLine": 57,
+        "startChar": 23,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80863248_8e8b72f5",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "\u0026\u0026 \u003e\u003d S2TT_LEVEL_LM1 ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1939a7dd_b1277247",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "cannot be empty anymore as it has PA.\n\nSuggest the following, implement a macro (or helper) pa_to_s2tte() which will format PA in S2TTE.\n\nThe caller can then create empty S2tte\n\nunsigned long s2tte \u003d pa_to_s2tte(pa, lpa2);",
+      "range": {
+        "startLine": 109,
+        "startChar": 14,
+        "endLine": 109,
+        "endChar": 20
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c515ba20_c445d143",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "I think this needs to be more precise when copying to tte with LPA2 disabled.\n\n[47:0] to tte.\n\nWith LPA2, bits [49:0] can be copied with INPLACE and EXTRACT for bits [51:50]",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc3965d9_b6b724f3",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "Writing this as \n(level \u003c S2TT_MIN_STARTING_LEVEL) ? S2TTE_STRIDE : S2TTE_STRIDE_LM1;\n\nresult in more efficient code generation ( 1 less instruction in Debug build).",
+      "range": {
+        "startLine": 169,
+        "startChar": 30,
+        "endLine": 170,
+        "endChar": 37
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "701fb368_2941710d",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "pa_to_s2tte()",
+      "range": {
+        "startLine": 404,
+        "startChar": 21,
+        "endLine": 404,
+        "endChar": 37
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d19a1d42_3defeec1",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "As discussed , we can have 2 helpers:\n\n1. s2tte_lvl_mask -\u003e takes {lvl, lpa2} as argument and returns the mask to be used to S2TTE\n2. s2tte_to_pa() -\u003e Takes {s2tte, lvl. lpa2} as arguments, invokes s2tte_lvl_mask, extracts MSB and puts it INPLACE.  (returns the formatted address [51:0] to caller).\n\nThe addr_level_mask() needs to be removed and replaced with these 2 variants.",
+      "range": {
+        "startLine": 519,
+        "startChar": 1,
+        "endLine": 520,
+        "endChar": 30
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc8e0415_6b4398d7",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "If it is s2tte, this might have a subtle bug for bits [51:50]. See suggestion to remove this helper.",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "facfa2a1_4dfc7e31",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "s2tte_to_pa() can be used here.",
+      "range": {
+        "startLine": 1022,
+        "startChar": 7,
+        "endLine": 1022,
+        "endChar": 22
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcdba3c4_cff60732",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "assert(level \u003c\u003d S2TT_PAGE_LEVEL \u0026\u0026 level \u003e\u003d S2TT_LM1);\n\n\tint levels \u003d (int)(S2TT_PAGE_LEVEL - level);\n\tunsigned int lsb \u003d (levels * S2TTE_STRIDE) + GRANULE_SHIFT;\n\tunsigned int s2tte_oa_bits \u003d (lpa2 \u003d\u003d true) ? S2TTE_OA_BITS_LPA2 :\n\t\t\t\t\t\t      S2TTE_OA_BITS;\n\n\treturn addr \u0026 BIT_MASK_ULL((s2tte_oa_bits - 1U), lsb);",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abe3dd2d_45e781fb",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "we need to check for both lsb and msb.\n\nassert(level \u003c\u003d S2TT_PAGE_LEVEL \u0026\u0026 level \u003e\u003d S2TT_LM1);\n\nint levels \u003d (int)(S2TT_PAGE_LEVEL - level);\nunsigned int lsb \u003d (levels * S2TTE_STRIDE) + GRANULE_SHIFT;\nunsigned int s2tte_oa_bits \u003d (lpa2 \u003d\u003d true) ? S2TTE_OA_BITS_LPA2 :\n\t\t\t\t\t\t      S2TTE_OA_BITS;\n\nreturn (addr \u003d\u003d (addr \u0026 BIT_MASK_ULL((s2tte_oa_bits - 1U), lsb)));",
+      "range": {
+        "startLine": 1041,
+        "startChar": 14,
+        "endLine": 1041,
+        "endChar": 18
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17a1cc60_0249fb8d",
+        "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T13:37:19Z",
+      "side": 1,
+      "message": "...and not part of TTE.\"",
+      "range": {
+        "startLine": 102,
+        "startChar": 77,
+        "endLine": 102,
+        "endChar": 79
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
