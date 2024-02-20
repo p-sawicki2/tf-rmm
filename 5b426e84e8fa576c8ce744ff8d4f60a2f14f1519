@@ -1,0 +1,233 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a515f5c7_89f55552",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "minor: this can be const as well ?",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffc33e1e_772865c0",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "\"Enforcing .. \"?",
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd172d67_bbb4f954",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "not needed as we can return error back via res-\u003ex[0]",
+      "range": {
+        "startLine": 598,
+        "startChar": 7,
+        "endLine": 598,
+        "endChar": 20
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50d8908d_d50aee24",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "need to unmap the rd and unlock the granule. Result can be return as res-\u003ex[0] \u003d RMI_ERROR_INPUT;",
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb3f6743_4891d2f4",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "have a regular call here like the original code.",
+      "range": {
+        "startLine": 724,
+        "startChar": 0,
+        "endLine": 726,
+        "endChar": 2
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b303827_f25a3392",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "not needed after reworking comments.",
+      "range": {
+        "startLine": 743,
+        "startChar": 1,
+        "endLine": 743,
+        "endChar": 7
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fae722d_6887ce10",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "since rd is mapped for the duration of this function, we could pass by reference.",
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de01e98c_4db59056",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "const.",
+      "range": {
+        "startLine": 1097,
+        "startChar": 24,
+        "endLine": 1097,
+        "endChar": 31
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eecab9ae_a65220fe",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "needs to take const as argument.",
+      "range": {
+        "startLine": 1107,
+        "startChar": 22,
+        "endLine": 1107,
+        "endChar": 28
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6144fc5d_2851f462",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "same comment as previous.",
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db3cddad_0c4620f7",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1398,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T05:17:27Z",
+      "side": 1,
+      "message": "same comment as previous.",
+      "range": {
+        "startLine": 1398,
+        "startChar": 1,
+        "endLine": 1398,
+        "endChar": 7
+      },
+      "revId": "5b426e84e8fa576c8ce744ff8d4f60a2f14f1519",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
