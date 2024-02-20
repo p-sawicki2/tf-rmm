@@ -430,6 +430,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7a01c06_5c93445d",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-20T16:11:07Z",
+      "side": 1,
+      "message": "I confirmed with the architecture that there is no such limitation for Level -1.",
+      "parentUuid": "4a7b6e2e_ae05af1b",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c710231_fc5e2037",
