@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5891bc6_cc202c9e",
+        "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
+        "patchSetId": 25
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T15:01:18Z",
+      "side": 1,
+      "message": "remove this.\n\n```\n/*\n * The maximum number of bits supported by the RMM for a stage 2 translation\n * output address without LPA2.\n */\n#define S2TTE_OA_BITS\t\t\t48UL\n\n/*\n * When FEAT_LPA2 is enabled, the 2 MSB bits of the OA is not contiguous\n * to the rest of the address in the TTE.\n */\n#define LPA2_OA_51_50_SHIFT\t50U\n#define LPA2_51_50_WIDTH\t2U\n\n/* Where the 2 MSB bits of the OA are stored in the TTE */\n#define LPA2_S2TTE_51_50_SHIFT\t8U\n#define LPA2_S2TTE_51_50_MASK\tMASK(S2TTE_MSB)\n\n```",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
