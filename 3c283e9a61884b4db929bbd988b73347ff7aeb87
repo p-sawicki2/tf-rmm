@@ -158,6 +158,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45f179c6_00825bc4",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-21T20:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4302d81_44a8721c",
+      "range": {
+        "startLine": 34,
+        "startChar": 6,
+        "endLine": 34,
+        "endChar": 14
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3792c15_6821f822",
@@ -171,6 +195,30 @@
       "writtenOn": "2024-02-20T13:37:19Z",
       "side": 1,
       "message": "nit: align",
+      "range": {
+        "startLine": 57,
+        "startChar": 23,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6377d0d0_5565e0f0",
+        "filename": "lib/s2tt/include/s2tt.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-21T20:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3792c15_6821f822",
       "range": {
         "startLine": 57,
         "startChar": 23,
@@ -242,6 +290,30 @@
       "side": 1,
       "message": "as discussed, we can check the lower bound as well.",
       "parentUuid": "d9914e9e_4220f6b9",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b26165a3_f5eef180",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-21T20:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "380af68c_51f8372a",
       "range": {
         "startLine": 19,
         "startChar": 33,
@@ -348,6 +420,24 @@
       "side": 1,
       "message": "We need to do:\n\npa \u0026\u003d ~MASK(S2TTE_MSB)",
       "parentUuid": "5b10cde2_3f944277",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5feaec39_4aa47e63",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-21T20:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd36b7ba_077b59e4",
       "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -647,6 +737,30 @@
       "side": 1,
       "message": "We cannot compare directly with S2TT_LM1 as that would be invalid if LPA2 is disabled, hence I need to calculate the valid min_starting_level after validating s2_ctx and then after that I can call assert (line 1045, which I wanted to be along to 1044).\n\nAlso, wouldn\u0027t the current implementation be more efficient?\n\n* Line 1042 is a bit manipulation and arithmetic operation as opposed to a check and branch ((lpa2 \u003d\u003d true) ? S2TTE_OA_BITS_LPA2 :\nS2TTE_OA_BITS)\n* return ((addr \u0026 mask) \u003d\u003d 0UL) would be more efficient than return addr \u0026 BIT_MASK_ULL((s2tte_oa_bits - 1U), lsb); as the latter calls BIT_MASK_ULL which have a number of bit manipulations and then the comparison",
       "parentUuid": "abe3dd2d_45e781fb",
+      "range": {
+        "startLine": 1041,
+        "startChar": 14,
+        "endLine": 1041,
+        "endChar": 18
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5c3236a_68f640c7",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-21T20:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25c0c4fa_47049c25",
       "range": {
         "startLine": 1041,
         "startChar": 14,
