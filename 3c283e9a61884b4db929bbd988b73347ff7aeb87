@@ -230,6 +230,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "380af68c_51f8372a",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "as discussed, we can check the lower bound as well.",
+      "parentUuid": "d9914e9e_4220f6b9",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1939a7dd_b1277247",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 23
@@ -306,6 +330,24 @@
       "side": 1,
       "message": "I\u0027m not sure if I understand this comment",
       "parentUuid": "c515ba20_c445d143",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd36b7ba_077b59e4",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "We need to do:\n\npa \u0026\u003d ~MASK(S2TTE_MSB)",
+      "parentUuid": "5b10cde2_3f944277",
       "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

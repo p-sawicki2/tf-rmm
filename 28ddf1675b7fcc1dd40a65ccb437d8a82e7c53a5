@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c655e5b5_42279ccb",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "can be made `long`.",
+      "range": {
+        "startLine": 20,
+        "startChar": 37,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7cb8ec0_d5412c1c",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "mask \u003d BIT_MASK_ULL((S2TTE_OA_BITS - 1U), lsb);\n\nif (lpa2 \u003d\u003d true) {\n    mask |\u003d MASK(S2TTE_MSB) | BITS_49_50;\n}",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 49
+      },
+      "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e5891bc6_cc202c9e",
         "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
         "patchSetId": 25
@@ -20,6 +66,46 @@
         "endLine": 79,
         "endChar": 32
       },
+      "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1896d49e_84020a3f",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "if (sl \u003d\u003d -1 \u0026\u0026 lpa2 \u003d\u003d true)  {\n    sl_max_ipa_bits \u003d (sl_min_ipa_bits + (S2TTE_STRIDE_LM1 - 1U);\n} else {\n    sl_max_ipa_bits \u003d sl_min_ipa_bits + (S2TTE_STRIDE - 1U);\n}",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 90,
+        "endChar": 17
+      },
+      "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17d11ea0_201fa05d",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T16:24:35Z",
+      "side": 1,
+      "message": "Add a comment here that ipa_bits needs to be already validated and sl is verified against this ipa_bits.\n\nAnd then the check for sl \u003d\u003d -1 can be removed. (and add a comment why we are not super precise).",
       "revId": "28ddf1675b7fcc1dd40a65ccb437d8a82e7c53a5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
