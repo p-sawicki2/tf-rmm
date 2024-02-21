@@ -34,6 +34,24 @@
       "parentUuid": "0ecd069a_7ccb2754",
       "revId": "df5e9e7630a721cf328f78c6e1da8316c693cd43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ded4388b_699c42d1",
+        "filename": "plat/host/host_cbmc/src/tb_rtt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-21T14:36:44Z",
+      "side": 0,
+      "message": "Acknowledged",
+      "parentUuid": "d04a5bed_bc2d786f",
+      "revId": "df5e9e7630a721cf328f78c6e1da8316c693cd43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
