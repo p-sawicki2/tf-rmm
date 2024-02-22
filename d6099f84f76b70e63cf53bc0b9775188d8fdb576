@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db5971fb_0690bcd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T09:57:06Z",
+      "side": 1,
+      "message": "LGTM, just a minor suggestion. Can trigger the main CI job as well and the Newmore STP.",
+      "revId": "d6099f84f76b70e63cf53bc0b9775188d8fdb576",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8622b6ab_2c879b9c",
+        "filename": "lib/realm/include/granule_types.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T09:57:06Z",
+      "side": 1,
+      "message": "As an extra pre-cautiion, could add CASSERT for the size of the struct granule.",
+      "revId": "d6099f84f76b70e63cf53bc0b9775188d8fdb576",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
