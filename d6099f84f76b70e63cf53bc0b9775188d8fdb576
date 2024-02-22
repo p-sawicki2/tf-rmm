@@ -33,6 +33,24 @@
       "message": "As an extra pre-cautiion, could add CASSERT for the size of the struct granule.",
       "revId": "d6099f84f76b70e63cf53bc0b9775188d8fdb576",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da4dc292_a1a1419c",
+        "filename": "lib/realm/include/granule_types.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-22T14:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8622b6ab_2c879b9c",
+      "revId": "d6099f84f76b70e63cf53bc0b9775188d8fdb576",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
