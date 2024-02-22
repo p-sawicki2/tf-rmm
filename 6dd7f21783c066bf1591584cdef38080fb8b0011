@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d153cbc_defea531",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T15:44:51Z",
+      "side": 1,
+      "message": "The internal TF-X testing is failing due to change of the granule structure. Setting verified -1 to rectify this.",
+      "revId": "6dd7f21783c066bf1591584cdef38080fb8b0011",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
