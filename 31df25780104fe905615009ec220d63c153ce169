@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09715642_b197a12f",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T12:36:04Z",
+      "side": 1,
+      "message": "I think this can be part of simd general test group.",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4365e3a9_3153e8c7",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T12:36:04Z",
+      "side": 1,
+      "message": "since the number is 2 and bounded, would prefer to iterate over the 2 values.",
+      "range": {
+        "startLine": 51,
+        "startChar": 33,
+        "endLine": 51,
+        "endChar": 45
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb82de02_bd17b403",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T12:36:04Z",
+      "side": 1,
+      "message": "Hmm, I think these are internal of the SIMD library implementation, which may not need to be tested by the unit tests. What is important is regardless of the implementation , does the SIMD as a component does what is meant to do ..\n\nmany of the fields manipulated as part of context_init will have a side effect on other APIs and affect its functionality, which is what the tests should do. \n\nFor eg: If the SFLAG_SAVED is not setup correctly as part of context init, then context_switch will not behave correctly. This can be tested for.\n\nThe details of implementation might change, but if the overall functionality remain s the same , then the tests need not be affected.\n\nwe can discuss further.",
+      "range": {
+        "startLine": 58,
+        "startChar": 2,
+        "endLine": 58,
+        "endChar": 54
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ead627ef_43e71ff7",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T12:36:04Z",
+      "side": 1,
+      "message": "this can be tested by calling simd_context_init() twice and the 2nd call should fail. \n\nThe tests try to not peek into internal SIMD flags which are not meant to be manipulated by the callers of this API.",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 92,
+        "endChar": 46
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
