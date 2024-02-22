@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f58a7eaf_90343b25",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-22T12:37:39Z",
+      "side": 1,
+      "message": "need to call context_init() first and then use that to do the intialization and then do the next API call.",
+      "range": {
+        "startLine": 148,
+        "startChar": 1,
+        "endLine": 152,
+        "endChar": 29
+      },
+      "revId": "2c773128f4c49200974008452155603e21f8b93c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
