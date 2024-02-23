@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53d3e181_e362f6fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 32
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T03:39:57Z",
+      "side": 1,
+      "message": "minor comment detail. If you agree, I can modify and merge",
+      "revId": "d8db5915ae17f7d52c147e0e0f17979beca97e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8631f4bc_5294b7e6",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T03:39:57Z",
+      "side": 1,
+      "message": "there is no mask being used within this function. So this comment is not needed ?",
+      "range": {
+        "startLine": 507,
+        "startChar": 1,
+        "endLine": 512,
+        "endChar": 4
+      },
+      "revId": "d8db5915ae17f7d52c147e0e0f17979beca97e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
