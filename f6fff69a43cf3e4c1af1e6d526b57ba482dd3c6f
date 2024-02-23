@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbbd8470_553e4a3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 33
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-23T11:51:37Z",
+      "side": 1,
+      "message": "This patchset only changes a comment. No changes on code or functionality so giving V+1 as per previous patchset passed CI+2",
+      "revId": "f6fff69a43cf3e4c1af1e6d526b57ba482dd3c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
