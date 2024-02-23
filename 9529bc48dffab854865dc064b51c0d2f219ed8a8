@@ -33,6 +33,24 @@
       "message": "can this move into a src file in plat/host/host_cbmc folder ? \n\nThe implementation of plat_common_init.c can be blocked off for CBMC build.",
       "revId": "9529bc48dffab854865dc064b51c0d2f219ed8a8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4bbb031_e7785892",
+        "filename": "plat/common/include/plat_common.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-02-23T15:35:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7135b5ab_9c4ad667",
+      "revId": "9529bc48dffab854865dc064b51c0d2f219ed8a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
