@@ -39,6 +39,30 @@
       },
       "revId": "d8db5915ae17f7d52c147e0e0f17979beca97e7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9df286af_d13a11ba",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-23T09:36:35Z",
+      "side": 1,
+      "message": "This comment was to justify why I use the same mask with and w/o LPA2 enabled. Bits [8,7] are used in both cases, although with different meanings, hence the mask is the same",
+      "parentUuid": "8631f4bc_5294b7e6",
+      "range": {
+        "startLine": 507,
+        "startChar": 1,
+        "endLine": 512,
+        "endChar": 4
+      },
+      "revId": "d8db5915ae17f7d52c147e0e0f17979beca97e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
