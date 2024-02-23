@@ -148,6 +148,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92d25459_0fed6258",
+        "filename": "lib/s2tt/include/table.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T12:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab880344_9364acb7",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4e39c42_d980c10a",
@@ -161,6 +179,30 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "suggest to remove this and directly call the arch_feat_get_pa_width()",
+      "range": {
+        "startLine": 216,
+        "startChar": 27,
+        "endLine": 216,
+        "endChar": 39
+      },
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83c2dc2e_13c6fef0",
+        "filename": "lib/s2tt/include/table.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T12:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4e39c42_d980c10a",
       "range": {
         "startLine": 216,
         "startChar": 27,
@@ -785,6 +827,24 @@
       "writtenOn": "2024-01-12T17:19:17Z",
       "side": 1,
       "message": "The tests for LPA2 can be separate patch.",
+      "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "081f7a61_fa8cb393",
+        "filename": "lib/s2tt/tests/CMakeLists.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T12:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2976a2f2_a103b918",
       "revId": "c43d85c6ca98406203b4d7cd2eed690ee48bb496",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

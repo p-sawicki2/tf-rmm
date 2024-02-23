@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36a977ef_40b79e74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T12:03:28Z",
+      "side": 1,
+      "message": "The regular TLBIs are not affected.",
+      "parentUuid": "152d50c2_9733d053",
+      "revId": "3c283e9a61884b4db929bbd988b73347ff7aeb87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "120cce8f_e53a9b8d",
