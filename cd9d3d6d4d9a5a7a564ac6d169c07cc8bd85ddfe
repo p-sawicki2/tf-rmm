@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b79a7487_897049f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-02-23T19:29:17Z",
+      "side": 1,
+      "message": "Coverity defect reported by CI+1 is a false positive",
+      "revId": "cd9d3d6d4d9a5a7a564ac6d169c07cc8bd85ddfe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
