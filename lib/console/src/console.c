@@ -13,7 +13,7 @@
  * TF-RMM does not support multi-console yet. If this is a requirement, then
  * this driver needs to be enhanced.
  */
-struct console *console_head;
+static struct console *console_head;
 
 /*
  * This function is not meant to be called directly by platform, but rather
