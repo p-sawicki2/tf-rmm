@@ -5,8 +5,7 @@
 
 #include <arch_features.h>
 #include <debug.h>
-#include <fvp_dram.h>
-#include <fvp_private.h>
+#include <arm_dram.h>
 #include <pl011.h>
 #include <plat_common.h>
 #include <platform_api.h>
@@ -15,10 +14,7 @@
 #include <string.h>
 #include <xlat_tables.h>
 
-/* FVP UART Base address. */
-#define FVP_UART_ADDR	UL(0x1c0c0000)
-
-#define FVP_RMM_UART	MAP_REGION_FLAT(			\
+#define ARM_RMM_UART	MAP_REGION_FLAT(			\
 				0,			\
 				SZ_4K,				\
 				(MT_DEVICE | MT_RW | MT_REALM))
@@ -62,7 +58,7 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 
 	/* TBD Initialize UART for early log */
 	struct xlat_mmap_region plat_regions[] = {
-		FVP_RMM_UART,
+		ARM_RMM_UART,
 		{0}
 	};
 
@@ -90,7 +86,7 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 
 	uintptr_t uart_base = conosle_ptr->base;
 
-	/* RMM currently only supports only console */
+	/* RMM currently only supports one console */
 	ret = pl011_init(uart_base, conosle_ptr->clk_in_hz, conosle_ptr->baud_rate);
 	if (ret != 0) {
 		rmm_el3_ifc_report_fail_to_el3(E_RMM_BOOT_UNKNOWN_ERROR);
@@ -119,8 +115,8 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 		rmm_el3_ifc_report_fail_to_el3(ret);
 	}
 
-	/* Set up FVP DRAM layout */
-	fvp_set_dram_layout(plat_dram);
+	/* Set up ARM DRAM layout */
+	arm_set_dram_layout(plat_dram);
 
 	plat_warmboot_setup(x0, x1, x2, x3);
 }
