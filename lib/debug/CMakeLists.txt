@@ -16,6 +16,8 @@ arm_config_option(
     TYPE STRING
     DEFAULT UNSET)
 
+target_sources(rmm-lib-debug
+    PUBLIC "src/backtrace.c")
 
 if(NOT LOG_LEVEL STREQUAL UNSET)
     target_compile_definitions(rmm-lib-debug
