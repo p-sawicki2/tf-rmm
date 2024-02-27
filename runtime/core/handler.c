@@ -18,6 +18,8 @@
 #include <utils_def.h>
 #include <xlat_high_va.h>
 
+void backtrace(uintptr_t frame_pointer);
+
 /* Maximum number of supported arguments */
 #define MAX_NUM_ARGS		5U
 
@@ -424,6 +426,10 @@ __dead2 static void fatal_abort(dump_regs_t *regs)
 	INFO("MDCR_EL2:\t0x%016lx\n", read_mdcr_el2());
 	INFO("SCTLR_EL2:\t0x%016lx\n", read_sctlr_el2());
 
+#if !defined(NDEBUG) && (LOG_LEVEL >= LOG_LEVEL_INFO)
+	/* The AArch64 AAPCS mandates the usage of r29 as Frame Pointer */
+	backtrace((uintptr_t)regs->x[29]);
+#endif
 	panic();
 }
 
