@@ -50,7 +50,7 @@ void plat_setup(uint64_t x0, uint64_t x1,
 	(void)host_csl_init();
 
 	/* Carry on with the rest of the system setup */
-	if (plat_cmn_setup(x0, x1, x2, x3, NULL, 0) != 0) {
+	if (plat_cmn_setup(NULL, 0) != 0) {
 		panic();
 	}
 
