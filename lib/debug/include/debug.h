@@ -95,5 +95,7 @@ static inline void rmm_log(const char *fmt, ...)
 	va_end(args);
 }
 
+void backtrace(uintptr_t frame_pointer);
+
 #endif /* __ASSEMBLER__ */
 #endif /* DEBUG_H */

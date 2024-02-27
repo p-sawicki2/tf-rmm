@@ -15,8 +15,14 @@ foreach(language IN ITEMS ASM C)
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mbranch-protection=standard ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mgeneral-regs-only ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mstrict-align ")
-	string(APPEND CMAKE_${language}_FLAGS_INIT "-fomit-frame-pointer ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-fpie ")
+	# Omit the frame pointer for Release build, this also disables
+	# backtrace in the exception handler.
+	if(CMAKE_BUILD_TYPE STREQUAL "Release")
+		string(APPEND CMAKE_${language}_FLAGS_INIT "-fomit-frame-pointer ")
+	else()
+		string(APPEND CMAKE_${language}_FLAGS_INIT "-fno-omit-frame-pointer ")
+	endif()
 endforeach()
 
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-nostdlib ")
