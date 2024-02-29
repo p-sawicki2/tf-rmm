@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5cdb130_8c734b59",
+        "filename": "lib/debug/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-29T15:42:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47c34d9f_61294aad",
+      "range": {
+        "startLine": 6,
+        "startChar": 26,
+        "endLine": 6,
+        "endChar": 35
+      },
+      "revId": "80108556eca293d7f5778f41efdc6e142898de47",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56de8d48_aa0f55f0",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70f6fe47_96e260fd",
+        "filename": "lib/debug/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-29T15:42:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56de8d48_aa0f55f0",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 16
+      },
+      "revId": "80108556eca293d7f5778f41efdc6e142898de47",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a92e53e_cdf7a464",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-02-29T15:23:42Z",
       "side": 1,
       "message": "PUBLIC",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "80108556eca293d7f5778f41efdc6e142898de47",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ed0daf6_9f55e4ab",
+        "filename": "lib/debug/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-29T15:42:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a92e53e_cdf7a464",
       "range": {
         "startLine": 28,
         "startChar": 4,
