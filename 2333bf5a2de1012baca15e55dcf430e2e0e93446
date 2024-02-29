@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bde1bcb_aae3e99b",
+        "filename": "lib/debug/include/debug.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T15:23:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cc49099a_ca9eb5be",
+      "revId": "2333bf5a2de1012baca15e55dcf430e2e0e93446",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc0d9677_abce44a6",
@@ -123,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "778f01cc_6f0e22ad",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T15:23:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a07f3f5_ff1e5308",
+      "range": {
+        "startLine": 427,
+        "startChar": 0,
+        "endLine": 427,
+        "endChar": 53
+      },
+      "revId": "2333bf5a2de1012baca15e55dcf430e2e0e93446",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2679aed8_64987d60",
@@ -160,6 +202,30 @@
       "side": 1,
       "message": "See my previous comment.",
       "parentUuid": "2679aed8_64987d60",
+      "range": {
+        "startLine": 428,
+        "startChar": 44,
+        "endLine": 428,
+        "endChar": 48
+      },
+      "revId": "2333bf5a2de1012baca15e55dcf430e2e0e93446",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b648291_8103094b",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T15:23:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1331f87c_312e2340",
       "range": {
         "startLine": 428,
         "startChar": 44,
