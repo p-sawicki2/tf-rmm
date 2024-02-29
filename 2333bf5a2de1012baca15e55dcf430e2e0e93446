@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc49099a_ca9eb5be",
+        "filename": "lib/debug/include/debug.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-29T15:11:06Z",
+      "side": 1,
+      "message": "That doesn\u0027t work as won\u0027t match function definition in backtrace.c\nChanged to:\nvoid backtrace(uintptr_t frame_pointer)\n{\n#if !defined(NDEBUG) \u0026\u0026 (LOG_LEVEL \u003e\u003d LOG_LEVEL_INFO)\n\tunwind_stack((struct frame_record *)frame_pointer);\n#endif\n}\n\nwhich generates:\nvoid backtrace(uintptr_t frame_pointer)\n{\n    7b40:\td503245f \tbti\tc\n    7b44:\td65f03c0 \tret\n}\nfor Release build.",
+      "parentUuid": "65193f90_2ec802dd",
+      "revId": "2333bf5a2de1012baca15e55dcf430e2e0e93446",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc0d9677_abce44a6",
         "filename": "runtime/core/backtrace.c",
         "patchSetId": 2
@@ -165,6 +183,30 @@
       "writtenOn": "2024-02-29T14:27:58Z",
       "side": 1,
       "message": "string(APPEND CMAKE_${language}_FLAGS_DEBUG_INIT \"-fno-omit-frame-pointer \")\nstring(APPEND CMAKE_${language}_FLAGS_RELEASE_INIT \"-fomit-frame-pointer \")",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 8
+      },
+      "revId": "2333bf5a2de1012baca15e55dcf430e2e0e93446",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8907f7a7_8e989191",
+        "filename": "toolchains/aarch64/common_aarch64.cmake",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-02-29T15:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3dfe206_44b7426c",
       "range": {
         "startLine": 21,
         "startChar": 1,
