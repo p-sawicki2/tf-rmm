@@ -74,4 +74,7 @@ static inline void (_op ## _type)(uint64_t v)		\
 #define dsb(scope) asm volatile("dsb " #scope : : : "memory")
 #define dmb(scope) asm volatile("dmb " #scope : : : "memory")
 
+/* DC ZVA, Data Cache Zero by VA instruction */
+DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, zva)
+
 #endif /* INSTR_HELPERS_H */

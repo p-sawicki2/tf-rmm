@@ -4,6 +4,7 @@
  */
 
 #include <arch_helpers.h>
+#include <string.h>
 
 /*******************************************************************************
  * Cache management
@@ -22,4 +23,11 @@ void inv_dcache_range(uintptr_t addr, size_t size)
 {
 	(void)addr;
 	(void)size;
+}
+
+/* Emulate DC ZVA instruction */
+void dczva(uintptr_t addr)
+{
+	(void)memset((void *)addr, 0,
+		1U << (EXTRACT(DCZID_EL0_BS, read_dczid_el0()) + 2U));
 }

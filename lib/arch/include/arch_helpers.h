@@ -62,7 +62,6 @@ DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, cvac)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, ivac)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, civac)
 DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, cvau)
-DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, zva)
 
 /*******************************************************************************
  * Address translation accessor prototypes
@@ -418,6 +417,8 @@ DEFINE_SYSREG_RW_FUNCS(pmscr_el2)
 
 DEFINE_RENAME_SYSREG_RW_FUNCS(fpcr, FPCR)
 DEFINE_RENAME_SYSREG_RW_FUNCS(fpsr, FPSR)
+
+DEFINE_SYSREG_READ_FUNC(dczid_el0)
 
 /*******************************************************************************
  * Timer register accessor prototypes

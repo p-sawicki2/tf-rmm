@@ -82,4 +82,6 @@ static inline void (_op ## _type)(uint64_t v)		\
 #define dsb(scope)
 #define dmb(scope)
 
+void dczva(uintptr_t buf);
+
 #endif /* INSTR_HELPERS_H */
