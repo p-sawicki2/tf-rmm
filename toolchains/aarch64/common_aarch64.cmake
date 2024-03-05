@@ -11,7 +11,6 @@ set(CMAKE_SYSTEM_PROCESSOR aarch64)
 
 foreach(language IN ITEMS ASM C)
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-ffreestanding ")
-	string(APPEND CMAKE_${language}_FLAGS_INIT "-march=armv8.5-a ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mbranch-protection=standard ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mgeneral-regs-only ")
 	string(APPEND CMAKE_${language}_FLAGS_INIT "-mstrict-align ")
