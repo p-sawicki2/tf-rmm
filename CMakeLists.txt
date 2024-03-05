@@ -62,6 +62,8 @@ if(RMM_STATIC_ANALYSIS_CPPCHECK)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 
+detect_and_set_march()
+
 #
 # Include the platform makefile
 #
