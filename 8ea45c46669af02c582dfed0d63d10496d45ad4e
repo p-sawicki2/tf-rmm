@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8219c63_c4c77ff1",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-06T14:38:39Z",
+      "side": 1,
+      "message": "Tried that as well, but getting errors \"check_compiler_flag: C: needs to be enabled before use\". By the way, we have CXX in\nproject(RMM VERSION 0.4.0 LANGUAGES C CXX ASM)\n?",
+      "parentUuid": "6496b094_c59209b9",
+      "revId": "8ea45c46669af02c582dfed0d63d10496d45ad4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9bf056c0_7ce9f1ae",
         "filename": "CMakeLists.txt",
         "patchSetId": 1
