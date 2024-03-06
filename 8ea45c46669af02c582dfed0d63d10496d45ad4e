@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf056c0_7ce9f1ae",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-03-06T12:10:12Z",
+      "side": 1,
+      "message": "It seems that `COMPILER_SUPPORTS_${n}` is not used later in the CMake script.\nSo why not simply use \n\n    check_c_compiler_flag(\"-march\u003darmv${v}-a\" COMPILER_FLAG_SUPPORTED)\n\nAnd then the `march_num` list could be eliminated?",
+      "range": {
+        "startLine": 72,
+        "startChar": 46,
+        "endLine": 72,
+        "endChar": 64
+      },
+      "revId": "8ea45c46669af02c582dfed0d63d10496d45ad4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
