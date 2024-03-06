@@ -22,6 +22,30 @@
       },
       "revId": "8ea45c46669af02c582dfed0d63d10496d45ad4e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce06f32a_6de05084",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-06T12:47:27Z",
+      "side": 1,
+      "message": "I tried that. COMPILER_FLAG_SUPPORTED is set on 1st iteration \u0026 if fails, no other checks are performed, so I had to implement different variables for different arch options.",
+      "parentUuid": "9bf056c0_7ce9f1ae",
+      "range": {
+        "startLine": 72,
+        "startChar": 46,
+        "endLine": 72,
+        "endChar": 64
+      },
+      "revId": "8ea45c46669af02c582dfed0d63d10496d45ad4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
