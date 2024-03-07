@@ -3,6 +3,15 @@
 # SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
 #
 
+#
+# Additional config for maximum number of DRAM banks allowed to be managed
+#
+arm_config_option(
+    NAME ARM_CMN_MAX_NUM_DRAM_BANKS
+    HELP "Maximum number of DRAM banks allowed to be managed"
+    TYPE STRING
+    DEFAULT 0x2)
+
 add_library(rmm-plat-arm)
 
 #
@@ -12,6 +21,9 @@ arm_config_option_override(NAME PLAT_CMN_EXTRA_MMAP_REGIONS DEFAULT 1)
 
 add_subdirectory("${RMM_SOURCE_DIR}/drivers/pl011" ${RMM_BINARY_DIR}/drivers/pl011)
 add_subdirectory("${RMM_SOURCE_DIR}/plat/common" ${RMM_BINARY_DIR}/plat/common)
+
+target_compile_definitions(rmm-plat-arm
+    PRIVATE "ARM_CMN_MAX_NUM_DRAM_BANKS=U(${ARM_CMN_MAX_NUM_DRAM_BANKS})")
 
 target_link_libraries(rmm-plat-arm
     PRIVATE rmm-driver-pl011
