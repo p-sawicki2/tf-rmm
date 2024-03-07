@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3126afee_bb2d1606",
+        "filename": "lib/arch/include/aarch64/instr_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-07T14:06:40Z",
+      "side": 1,
+      "message": "Ok, in that case, we need to make it clear that this is deviation from the norm.\n\n/* These additional defines allow Arch-specific implementation different from the common template */\n#define DEFINE_SYSOP_DCZVA  DEFINE_SYSOP_TYPE_PARAM_FUNC(dc, zva)\n\nIn the fake_host header\n\n#define DEFINE_DCZVA_SYSOP void dczva(uint64_t addr)\n\nand use this macro in arch_helpers.h.\n\nThe fake_implementation can live in a new file instr_helpers.c",
+      "parentUuid": "e45a024a_f1706a08",
+      "revId": "6b85bf366e64ee6cf4033cadbd3bbeffccd6bbbe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3c40820c_7f46a2fd",
         "filename": "lib/arch/include/fake_host/instr_helpers.h",
         "patchSetId": 2
@@ -130,6 +148,30 @@
       "side": 1,
       "message": "\"DC ZVA\" is a CPU isntruction, which can be called from any RMM module and shouldn\u0027t be granule specific.",
       "parentUuid": "3650b6ea_d9201ae8",
+      "range": {
+        "startLine": 277,
+        "startChar": 2,
+        "endLine": 277,
+        "endChar": 7
+      },
+      "revId": "6b85bf366e64ee6cf4033cadbd3bbeffccd6bbbe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b345a7a1_12ac19a1",
+        "filename": "lib/realm/src/granule.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-07T14:06:40Z",
+      "side": 1,
+      "message": "hmm, yes, this is a good point. see my suggestion",
+      "parentUuid": "2b306d4c_27d85a45",
       "range": {
         "startLine": 277,
         "startChar": 2,
