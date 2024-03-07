@@ -30,6 +30,15 @@ arm_config_option(
     TYPE STRING
     DEFAULT 0x0)
 
+#
+# RMM_MAX_NUM_DRAM_BANKS: Maximuim number of DRAM banks allowed to be managed
+#
+arm_config_option(
+    NAME RMM_MAX_NUM_DRAM_BANKS
+    HELP "Maximum number of DRAM banks allowed to be managed"
+    TYPE STRING
+    DEFAULT 0x2)
+
 arm_config_option(
     NAME RMM_NUM_PAGES_PER_STACK
     HELP "Number of pages to use per CPU stack"
@@ -86,6 +95,9 @@ target_compile_definitions(rmm-common
 if (RMM_MAX_GRANULES EQUAL 0x0)
     message (FATAL_ERROR "RMM_MAX_GRANULES not configured")
 endif()
+
+target_compile_definitions(rmm-common
+    INTERFACE "RMM_MAX_NUM_DRAM_BANKS=U(${RMM_MAX_NUM_DRAM_BANKS})")
 
 target_compile_definitions(rmm-common
     INTERFACE "RMM_MAX_GRANULES=U(${RMM_MAX_GRANULES})")
