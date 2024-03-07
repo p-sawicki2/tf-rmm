@@ -8,40 +8,39 @@
 #include <assert.h>
 #include <rmm_el3_ifc.h>
 
-COMPILER_ASSERT(MAX_DRAM_NUM_BANKS == 2UL);
-
 void arm_set_dram_layout(struct ns_dram_info *plat_dram)
 {
-	uint64_t num_banks, num_granules = 0UL;
 	struct ns_dram_bank *bank_ptr;
 	struct arm_dram_layout *dram_ptr = arm_get_dram_layout();
+	uint64_t num_banks, num_granules, cumulative_size;
 
 	/* Number of banks */
 	num_banks = plat_dram->num_banks;
-	assert(num_banks <= MAX_DRAM_NUM_BANKS);
+	assert(num_banks <= RMM_MAX_NUM_DRAM_BANKS);
 
 	/* Pointer to dram_bank[] array */
 	bank_ptr = plat_dram->banks;
 
-	for (unsigned long i = 0UL; i < num_banks; i++) {
-		uintptr_t start = bank_ptr->base;
-		uint64_t size = bank_ptr->size;
-		uintptr_t end = start + size - 1UL;
+	num_granules = 0UL;
+	cumulative_size = 0UL;
 
-		if (i == 1UL) {
-			/* Start granule index in bank 1 */
-			dram_ptr->idx_bank_1 = num_granules;
-		}
+	for (unsigned long i = 0UL; i < num_banks; i++) {
+		uint64_t base = bank_ptr->base;
+		uint64_t size = bank_ptr->size;
+
+		cumulative_size += size;
 
 		/* Total number of granules */
 		num_granules += (size / GRANULE_SIZE);
 
-		dram_ptr->arm_bank[i].start_addr = start;
-		dram_ptr->arm_bank[i].end_addr = end;
+		dram_ptr->bank[i].base = base;
+		dram_ptr->bank[i].size = size;
+		dram_ptr->bank[i].cumulative_size = cumulative_size;
 
 		bank_ptr++;
 	}
 
+	dram_ptr->num_banks = num_banks;
 	dram_ptr->num_granules = num_granules;
 
 	inv_dcache_range((uintptr_t)dram_ptr, sizeof(struct arm_dram_layout));
