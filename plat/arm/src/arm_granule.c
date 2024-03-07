@@ -17,33 +17,69 @@ struct arm_dram_layout *arm_get_dram_layout(void)
 
 unsigned long plat_granule_addr_to_idx(unsigned long addr)
 {
+	struct arm_dram_layout *dram = &arm_dram;
+	struct arm_dram_bank *bank;
+	unsigned long i, r, l = 0UL, idx = UINT64_MAX;
+
 	if (!GRANULE_ALIGNED(addr)) {
-		return UINT64_MAX;
+		return idx;
 	}
 
-	if ((addr >= arm_dram.arm_bank[0].start_addr) &&
-	    (addr <= arm_dram.arm_bank[0].end_addr)) {
-		return (addr - arm_dram.arm_bank[0].start_addr) / GRANULE_SIZE;
-	}
+	r = dram->num_banks - 1UL;
 
-	if ((arm_dram.arm_bank[1].start_addr != 0UL) &&
-	    (addr >= arm_dram.arm_bank[1].start_addr) &&
-	    (addr <= arm_dram.arm_bank[1].end_addr)) {
-		return ((addr - arm_dram.arm_bank[1].start_addr) /
-			GRANULE_SIZE) + arm_dram.idx_bank_1;
-	}
+	/*
+	 * Use a binary search, rather than a linear one, to locate the bank which
+	 * the address falls within, then use the cumulative_size to calculate the
+	 * granule index. On system with a large number of non-contiguous DRAM 
+	 * banks this is a more efficient way of calculating the index.
+	 */
+	while (l <= r) {
+		i = l + (r / 2UL);
+		bank = &dram->bank[i];
 
-	return UINT64_MAX;
+		if (addr < bank->base) {
+			r = i - 1UL;
+		} else if (addr > (bank->base + bank->size)) {
+			l = i + 1UL;
+		} else {
+			idx = (bank->cumulative_size / GRANULE_SIZE) + ((addr - bank->base) / GRANULE_SIZE);
+			break;
+		}
+	}
+	return idx;
 }
 
 unsigned long plat_granule_idx_to_addr(unsigned long idx)
 {
-	assert(idx < arm_dram.num_granules);
+	struct arm_dram_layout *dram = &arm_dram;
+	struct arm_dram_bank *bank;
+	unsigned long i, r, l = 0UL, addr = 0UL, idx_start = 0UL, idx_end;
 
-	if (idx < arm_dram.idx_bank_1) {
-		return arm_dram.arm_bank[0].start_addr + (idx * GRANULE_SIZE);
+	assert(idx < dram->num_granules);
+	r = dram->num_banks - 1UL;
+
+	/*
+	 * Calculate the start and end granule index of each bank, and then
+	 * check whether the given index falls within it. Again, the bank size
+	 * cache, paired with a binary instead of linear search, allowing this
+	 * process to be more efficient. Particularly on platforms with a large
+	 * number of DRAM banks.
+	 */
+	while (l <= r) {
+		i = l + (r / 2UL);
+		bank = &dram->bank[i];
+
+		idx_start = (bank->cumulative_size / GRANULE_SIZE);
+		idx_end = idx_start + ((bank->size + 1UL) / GRANULE_SIZE);
+
+		if (idx < idx_start) {
+			r = i - 1UL;
+		} else if (idx > idx_end) {
+			l = i + 1UL;
+		} else {
+			addr = bank->base + ((idx - idx_start) * GRANULE_SIZE);
+			break;
+		}
 	}
-
-	return arm_dram.arm_bank[1].start_addr +
-			((idx - arm_dram.idx_bank_1) * GRANULE_SIZE);
+	return addr;
 }
