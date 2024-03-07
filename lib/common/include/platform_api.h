@@ -26,4 +26,6 @@ unsigned long plat_granule_addr_to_idx(unsigned long addr);
  */
 unsigned long plat_granule_idx_to_addr(unsigned long idx);
 
+void plat_granule_cache_size (void);
+
 #endif /* PLATFORM_API_H */

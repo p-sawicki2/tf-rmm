@@ -109,7 +109,7 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 	 * to the platform DRAM info structure
 	 */
 	ret = rmm_el3_ifc_get_dram_data_validated_pa(
-					MAX_DRAM_NUM_BANKS,
+					RMM_MAX_NUM_DRAM_BANKS,
 					&plat_dram);
 	if (ret != E_RMM_BOOT_SUCCESS) {
 		ERROR("DRAM data error\n");
@@ -118,6 +118,7 @@ void plat_setup(uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3)
 
 	/* Set up Arm DRAM layout */
 	arm_set_dram_layout(plat_dram);
+	plat_granule_cache_size();
 
 	plat_warmboot_setup(x0, x1, x2, x3);
 }
