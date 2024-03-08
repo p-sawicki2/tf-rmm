@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cfd510c_898ca7af",
+        "filename": "toolchains/aarch64/common_aarch64.cmake",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-08T10:14:43Z",
+      "side": 1,
+      "message": "Added error if suitable march is not supported",
+      "revId": "4dd4a8af75e13b2d1883636a1bbe54eb8263e8da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
