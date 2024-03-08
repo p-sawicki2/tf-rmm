@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51b2ce44_1f2a4bc9",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-03-08T16:13:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09715642_b197a12f",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4365e3a9_3153e8c7",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-02-22T12:36:04Z",
       "side": 1,
       "message": "since the number is 2 and bounded, would prefer to iterate over the 2 values.",
+      "range": {
+        "startLine": 51,
+        "startChar": 33,
+        "endLine": 51,
+        "endChar": 45
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2332b0a_4e8693c0",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-03-08T16:13:01Z",
+      "side": 1,
+      "message": "Thanks, good point. After reworking the tests, iterating through the owners is no longer required for this test, but will keep it in mind for future tests.",
+      "parentUuid": "4365e3a9_3153e8c7",
       "range": {
         "startLine": 51,
         "startChar": 33,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45dfc4dc_59e055b1",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-03-08T16:13:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb82de02_bd17b403",
+      "range": {
+        "startLine": 58,
+        "startChar": 2,
+        "endLine": 58,
+        "endChar": 54
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ead627ef_43e71ff7",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-02-22T12:36:04Z",
       "side": 1,
       "message": "this can be tested by calling simd_context_init() twice and the 2nd call should fail. \n\nThe tests try to not peek into internal SIMD flags which are not meant to be manipulated by the callers of this API.",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 92,
+        "endChar": 46
+      },
+      "revId": "31df25780104fe905615009ec220d63c153ce169",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d30d69a3_37483e83",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-03-08T16:13:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ead627ef_43e71ff7",
       "range": {
         "startLine": 92,
         "startChar": 1,
