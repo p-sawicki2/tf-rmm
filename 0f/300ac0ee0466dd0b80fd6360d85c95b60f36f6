@@ -1,0 +1,10 @@
+Allow-CI+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Fri, 08 Mar 2024 12:53:31 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/26999
+Comments-Total: 10
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
