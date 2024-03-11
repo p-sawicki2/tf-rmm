@@ -1,4 +1,28 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7610be13_74933361",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-03-11T22:33:18Z",
+      "side": 1,
+      "message": "are we sure \u003e\u003d is the only condition for an IPA to be outside realm IPA space? a VM could have an address map with many holes in it and the fipa could still be invalid.\nor is there some assumption in the RMM about IPA space being contiguous?",
+      "range": {
+        "startLine": 216,
+        "startChar": 11,
+        "endLine": 216,
+        "endChar": 13
+      },
+      "revId": "228d028038b28b5a9fc01348e673b71dae8b69a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ],
   "submitRequirementResults": []
 }
