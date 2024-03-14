@@ -12,7 +12,8 @@ if(NOT RMM_ARCH STREQUAL fake_host)
            rmm-lib-debug)
 
     target_include_directories(rmm-lib-libc SYSTEM
-        PUBLIC "include")
+        PUBLIC "include"
+	${CMAKE_INCLUDE_PATH})
 
     target_sources(rmm-lib-libc
         PRIVATE "src/abort.c"
