@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e88df0b_a1706588",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-15T10:40:30Z",
+      "side": 1,
+      "message": "Thanks for the patch, I have a couple of doubts.\n\nWould CMAKE_INCLUDE_PATH need to be defined by the user when building in Yocto ? What is it typically set to ? We might need some guidance in the documentation if this is to be set up by user.\n\nAlso, another alternative could be to add this variable to lib/common/CMakeLists.txt as an `INTERFACE` which will then be inherited by all the lib components. Could you let me know whether that will work ?",
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
