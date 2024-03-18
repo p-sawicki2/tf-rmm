@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7858091c_1cd31ce8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001226
+      },
+      "writtenOn": "2024-03-18T17:14:56Z",
+      "side": 1,
+      "message": "I tried using CMAKE_PREFIX_PATH but is simply doesn\u0027t seem to work as advertized, i.e the sysroot directory that holds the system file doesn\u0027t get added with either a \"-I\" or \"-isystem\" option when gcc is called.",
+      "parentUuid": "ae84b168_fd22e474",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "547cc266_27084225",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -67,6 +91,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f1ceb965_3e114ee4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001226
+      },
+      "writtenOn": "2024-03-18T17:14:56Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll address that.",
+      "parentUuid": "547cc266_27084225",
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5e88df0b_a1706588",
         "filename": "lib/arch/CMakeLists.txt",
         "patchSetId": 1
@@ -78,6 +120,24 @@
       "writtenOn": "2024-03-15T10:40:30Z",
       "side": 1,
       "message": "Thanks for the patch, I have a couple of doubts.\n\nWould CMAKE_INCLUDE_PATH need to be defined by the user when building in Yocto ? What is it typically set to ? We might need some guidance in the documentation if this is to be set up by user.\n\nAlso, another alternative could be to add this variable to lib/common/CMakeLists.txt as an `INTERFACE` which will then be inherited by all the lib components. Could you let me know whether that will work ?",
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2590b0f4_7405a590",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001226
+      },
+      "writtenOn": "2024-03-18T17:14:56Z",
+      "side": 1,
+      "message": "Hi Soby,\n\nCMAKE_INCLUDE_PATH is set in the rmm.inc of the recipe for the RMM component.  I am currently working on upstreaming that RMM recipe.  This patch is part of the work needed to get the RMM compiled in the Yocto environment.  I have submitted the RMM recipe to the meta-arm yocto mailing list.\n\nI will look at your INTERFACE proposal and will get back to you.",
+      "parentUuid": "5e88df0b_a1706588",
       "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
