@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93b58852_e3826119",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T13:41:16Z",
+      "side": 1,
+      "message": "There is no such info in this patch.",
+      "revId": "c4b4264343e23dbec88bcdb67d9527a6afff67ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b504690_88b8856e",
+        "filename": "configs/rdfremont_defcfg.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T13:41:16Z",
+      "side": 1,
+      "message": "This covers 8122GB, but not 4GB - 64MB.",
+      "revId": "c4b4264343e23dbec88bcdb67d9527a6afff67ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
