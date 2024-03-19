@@ -72,6 +72,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "827de225_d0715d52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-19T16:17:35Z",
+      "side": 1,
+      "message": "OK, I see.",
+      "parentUuid": "7858091c_1cd31ce8",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "547cc266_27084225",
@@ -156,6 +180,70 @@
       "side": 1,
       "message": "I looked into adding CMAKE_INCLUDE_PATH to the list of INTERFACE found in lib/common/CMakeLists.txt.  It rightly adds a new search patch to the existing paths but does so using the \"-I\" option, rather than \"-isystem\" when done in lib/arch/CMakelists.txt and lib/libc/CMakeLists.txt.  \n\nWhen using the \"-isystem\" option, gcc knows it\u0027s a system directory and will implicitly include all the dependent headers it finds.  For example, including stdio.h in lib/libc/src/printf.c will automatically include stdarg.h.  \n\nBut if the system headers are included with the \"-I\" option, gcc doesn\u0027t do the extra work and complains that symbols declared in included headers aren\u0027t defined, leading to compilation errors.\n\nIn lib/common/CMakeLists.txt, we would likely need to declare ${CMAKE_INCLUDE_PATH} as PUBLIC rather than INTERFACE to get Cmake to apply the same kind of smarts.  That can\u0027t be done because add_library() carries an INTERFACE tag.  Fixing that would likely explode into multiple changes, which is not the goal here.",
       "parentUuid": "2590b0f4_7405a590",
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61e5f744_9a746068",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-19T16:17:35Z",
+      "side": 1,
+      "message": "Ok.",
+      "parentUuid": "df011230_2e5f0aed",
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0b5016d_256eb604",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-19T16:17:35Z",
+      "side": 1,
+      "message": "nit: replace TAB with space.\n\nAlso add a comment here to say something on the lines of :\n\"The CMAKE_INCLUDE_PATH is included here for Yocto build. The Yocto recipe will define this variable as part of build \"",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 1
+      },
+      "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c79470b2_5c0f627f",
+        "filename": "lib/libc/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-19T16:17:35Z",
+      "side": 1,
+      "message": "same comment as previous.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
       "revId": "15cd16101ce4cbdaafa556669169932d1886e5bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
