@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4faa168_e60fb2c0",
+        "filename": "lib/console/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "align to lines #14, 17?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e92af522_51797ea0",
+        "filename": "lib/console/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "align to line 18?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99308770_43558e7f",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "Is this needed?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71955f3b_9393fd67",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "align\nIf these flags are for console.flags, then they should be UL().",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd738a3_904b65ea",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "U(1)",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42a6b462_297e08f4",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "Why \u0027int character\u0027 but not \u0027char\u0027?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f160d85f_e3b0bfbd",
+        "filename": "lib/console/src/console.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "Why is it \u0027inc c\u0027, but not \u0027char c\u0027?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b395033_27d0d0f3",
+        "filename": "lib/console/src/console.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-19T16:04:54Z",
+      "side": 1,
+      "message": "add empty line",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
