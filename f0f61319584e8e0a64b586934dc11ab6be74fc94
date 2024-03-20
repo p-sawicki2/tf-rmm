@@ -34,6 +34,24 @@
       "parentUuid": "9ac7081a_9eaf113a",
       "revId": "f0f61319584e8e0a64b586934dc11ab6be74fc94",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed2894aa_104e5c1d",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T12:10:36Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/27372/1",
+      "parentUuid": "faecd410_af7f6c9d",
+      "revId": "f0f61319584e8e0a64b586934dc11ab6be74fc94",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
