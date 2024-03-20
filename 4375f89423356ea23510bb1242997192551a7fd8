@@ -211,6 +211,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8065027_d7d1afa3",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-20T10:30:22Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3f46c364_e55118c2",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f160d85f_e3b0bfbd",
@@ -242,6 +260,24 @@
       "side": 1,
       "message": "Same response as above",
       "parentUuid": "f160d85f_e3b0bfbd",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f369d12_8e94d43b",
+        "filename": "lib/console/src/console.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-20T10:30:22Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "92c56080_035f29a5",
       "revId": "4375f89423356ea23510bb1242997192551a7fd8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
