@@ -16,6 +16,24 @@
       "message": "https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-coverity-internal/691/",
       "revId": "c74c0e59493d43c55907e05e7c29492c6d6754e3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f973ab5b_4c8c7c35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T12:21:24Z",
+      "side": 1,
+      "message": "Not entirely sure why the following violations are raised. console_putc and console_flush are both used outside of console.c, so why is misra_c_2012_rule_8_7_violation being raised? MISRA is new to me, so I may be missing something.\n\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-coverity-internal/691/artifact/artefacts/html-misra/1/84_console.c.html#error\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-coverity-internal/691/artifact/artefacts/html-misra/1/85_console.c.html#error",
+      "parentUuid": "d0f26abc_cd9041f4",
+      "revId": "c74c0e59493d43c55907e05e7c29492c6d6754e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
