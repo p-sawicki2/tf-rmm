@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bf94405_e2dcec73",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-20T10:35:14Z",
+      "side": 1,
+      "message": "Will MISRA C complain about comparison int with char?",
+      "revId": "d7753897db4c4dbe98bdc73a1c7dde777fc19a07",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71147341_24ddaf9f",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-20T10:35:14Z",
+      "side": 1,
+      "message": "\u0027\\r\u0027 is char, not int",
+      "revId": "d7753897db4c4dbe98bdc73a1c7dde777fc19a07",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
