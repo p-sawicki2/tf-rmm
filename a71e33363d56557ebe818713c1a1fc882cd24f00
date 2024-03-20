@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e0c4b92_9241634c",
+        "filename": "plat/host/common/src/host_platform_api_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-03-20T10:31:56Z",
+      "side": 1,
+      "message": "(void)host_csl_init();",
+      "revId": "a71e33363d56557ebe818713c1a1fc882cd24f00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
