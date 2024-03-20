@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f73656f3_35266b11",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T11:15:55Z",
+      "side": 1,
+      "message": "write8 expects an uint8_t. Again, I believe ch is defined as an int to keep compatibility with TF-A.",
+      "parentUuid": "ccaee1d7_4e0d9b51",
+      "revId": "635cc5417e609bff6e8b844f1ec9ad6d9b485922",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6666ec03_c50b0708",
         "filename": "drivers/pl011/src/pl011.c",
         "patchSetId": 4
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-20T10:35:14Z",
       "side": 1,
       "message": "Remove () around base.",
+      "revId": "635cc5417e609bff6e8b844f1ec9ad6d9b485922",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b12f1f0d_0011a025",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T11:15:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6666ec03_c50b0708",
       "revId": "635cc5417e609bff6e8b844f1ec9ad6d9b485922",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
