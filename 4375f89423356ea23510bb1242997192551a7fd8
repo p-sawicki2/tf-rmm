@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca4f346c_6ce908ac",
+        "filename": "lib/console/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4faa168_e60fb2c0",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e92af522_51797ea0",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-19T16:04:54Z",
       "side": 1,
       "message": "align to line 18?",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3baf8f6d_3658a33e",
+        "filename": "lib/console/CMakeLists.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e92af522_51797ea0",
       "revId": "4375f89423356ea23510bb1242997192551a7fd8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f8e8e89_3699f3bc",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Yup, it\u0027s required for the uint64_t and uintptr_t types.",
+      "parentUuid": "99308770_43558e7f",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71955f3b_9393fd67",
@@ -69,6 +123,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cdf90e0_88ae2a88",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71955f3b_9393fd67",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5dd738a3_904b65ea",
@@ -82,6 +154,24 @@
       "writtenOn": "2024-03-19T16:04:54Z",
       "side": 1,
       "message": "U(1)",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cf899af_828c9cbf",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5dd738a3_904b65ea",
       "revId": "4375f89423356ea23510bb1242997192551a7fd8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -105,6 +195,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3f46c364_e55118c2",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Soby mentioned this is to maintain compatibility with TF-A\u0027s multi-console driver.",
+      "parentUuid": "42a6b462_297e08f4",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f160d85f_e3b0bfbd",
         "filename": "lib/console/src/console.c",
         "patchSetId": 4
@@ -122,6 +230,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "92c56080_035f29a5",
+        "filename": "lib/console/src/console.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Same response as above",
+      "parentUuid": "f160d85f_e3b0bfbd",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3b395033_27d0d0f3",
         "filename": "lib/console/src/console.c",
         "patchSetId": 4
@@ -133,6 +259,24 @@
       "writtenOn": "2024-03-19T16:04:54Z",
       "side": 1,
       "message": "add empty line",
+      "revId": "4375f89423356ea23510bb1242997192551a7fd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24fcce8b_b2786329",
+        "filename": "lib/console/src/console.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-20T09:59:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b395033_27d0d0f3",
       "revId": "4375f89423356ea23510bb1242997192551a7fd8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
