@@ -162,7 +162,8 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	struct rec *rec;
 	struct rd *rd;
 	struct rmi_rec_run rec_run;
-	unsigned long realm_state, ret;
+	unsigned long realm_state;
+	unsigned long ret;
 	bool success;
 	int res;
 
