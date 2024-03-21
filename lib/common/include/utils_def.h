@@ -197,16 +197,16 @@
  *   value can be evaluated directly.
  */
 #define INPLACE(regfield, val) \
-	(((val) + UL(0)) << (regfield##_SHIFT))
+	(((val) + UL(0)) << U(regfield##_SHIFT))
 
 #define MASK(regfield) \
-	((~0UL >> (64UL - (regfield##_WIDTH))) << (regfield##_SHIFT))
+	((~0UL >> U(64UL - (regfield##_WIDTH))) << U(regfield##_SHIFT))
 
 #define EXTRACT(regfield, reg) \
-	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
+	(((reg) & MASK(regfield)) >> U(regfield##_SHIFT))
 
 #define EXTRACT_BIT(regfield, reg) \
-	(((reg) >> (regfield##_SHIFT)) & UL(1))
+	(((reg) >> U(regfield##_SHIFT)) & UL(1))
 
 /*
  * Generates an unsigned long long (64-bit) value where the bits @_msb
