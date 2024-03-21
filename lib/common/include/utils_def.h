@@ -199,8 +199,11 @@
 #define INPLACE(regfield, val) \
 	(((val) + UL(0)) << (regfield##_SHIFT))
 
+#define	MASK_WIDTH(regfield) \
+	(U(64UL - (regfield##_WIDTH)))
+
 #define MASK(regfield) \
-	((~0UL >> (64UL - (regfield##_WIDTH))) << (regfield##_SHIFT))
+	((~0UL >> MASK_WIDTH(regfield)) << (regfield##_SHIFT))
 
 #define EXTRACT(regfield, reg) \
 	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
@@ -215,7 +218,7 @@
  * bit is set at that location.
  */
 #define BIT_MASK_ULL(_msb, _lsb) \
-	((~ULL(0) >> (63UL - (_msb))) & (~ULL(0) << (_lsb)))
+	((~ULL(0) >> (unsigned int)(63UL - (_msb))) & (~ULL(0) << (_lsb)))
 
 /*
  * Stringify the result of expansion of a macro argument
