@@ -79,7 +79,8 @@ static bool is_lpa2_requested(struct rmi_realm_params *p)
 static bool s2_inconsistent_sl(unsigned int ipa_bits, int sl, bool lpa2)
 {
 	unsigned int levels = (unsigned int)(S2TT_PAGE_LEVEL - sl);
-	unsigned int sl_min_ipa_bits, sl_max_ipa_bits;
+	unsigned int sl_min_ipa_bits;
+	unsigned int sl_max_ipa_bits;
 
 	sl_min_ipa_bits = (levels * S2TTE_STRIDE) + GRANULE_SHIFT + 1U;
 
@@ -335,7 +336,8 @@ static bool find_lock_rd_granules(unsigned long rd_addr,
 				  unsigned int num_rtts,
 				  struct granule **p_g_rtt_base)
 {
-	struct granule *g_rd = NULL, *g_rtt_base = NULL;
+	struct granule *g_rd = NULL;
+	struct granule *g_rtt_base = NULL;
 	unsigned int i = 0U;
 
 	if (rd_addr < rtt_base_addr) {
@@ -387,7 +389,8 @@ out_err:
 unsigned long smc_realm_create(unsigned long rd_addr,
 			       unsigned long realm_params_addr)
 {
-	struct granule *g_rd, *g_rtt_base;
+	struct granule *g_rd;
+	struct granule *g_rtt_base;
 	struct rd *rd;
 	struct rmi_realm_params p;
 

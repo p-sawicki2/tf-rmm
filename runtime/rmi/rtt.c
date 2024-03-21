@@ -83,7 +83,9 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 	struct granule *g_tbl;
 	struct rd *rd;
 	struct s2tt_walk wi;
-	unsigned long *s2tt, *parent_s2tt, parent_s2tte;
+	unsigned long *s2tt;
+	unsigned long *parent_s2tt;
+	unsigned long parent_s2tte;
 	long level = (long)ulevel;
 	unsigned long ret;
 	struct s2tt_context s2_ctx;
@@ -281,7 +283,9 @@ void smc_rtt_fold(unsigned long rd_addr,
 	struct granule *g_tbl;
 	struct rd *rd;
 	struct s2tt_walk wi;
-	unsigned long *table, *parent_s2tt, parent_s2tte;
+	unsigned long *table;
+	unsigned long *parent_s2tt;
+	unsigned long parent_s2tte;
 	long level = (long)ulevel;
 	unsigned long rtt_addr;
 	unsigned long ret;
@@ -383,7 +387,8 @@ void smc_rtt_fold(unsigned long rd_addr,
 		__granule_put(wi.g_llt);
 	} else if (g_tbl->refcount == (unsigned short)S2TTES_PER_S2TT) {
 
-		unsigned long s2tte, block_pa;
+		unsigned long s2tte;
+		unsigned long block_pa;
 
 		/* The RMM specification does not allow creating block
 		 * entries less than S2TT_MIN_BLOCK_LEVEL even though
@@ -475,12 +480,15 @@ void smc_rtt_destroy(unsigned long rd_addr,
 	struct granule *g_tbl;
 	struct rd *rd;
 	struct s2tt_walk wi;
-	unsigned long *table, *parent_s2tt, parent_s2tte;
+	unsigned long *table;
+	unsigned long *parent_s2tt;
+	unsigned long parent_s2tte;
 	long level = (long)ulevel;
 	unsigned long  rtt_addr;
 	unsigned long ret;
 	struct s2tt_context s2_ctx;
-	bool in_par, skip_non_live = false;
+	bool in_par;
+	bool skip_non_live = false;
 
 	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
 	if (g_rd == NULL) {
@@ -614,7 +622,8 @@ static void map_unmap_ns(unsigned long rd_addr,
 {
 	struct granule *g_rd;
 	struct rd *rd;
-	unsigned long *s2tt, s2tte;
+	unsigned long *s2tt;
+	unsigned long s2tte;
 	struct s2tt_walk wi;
 	struct s2tt_context s2_ctx;
 
@@ -760,7 +769,8 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 	struct granule *g_rd;
 	struct rd *rd;
 	struct s2tt_walk wi;
-	unsigned long *s2tt, s2tte;
+	unsigned long *s2tt;
+	unsigned long s2tte;
 	long level = (long)ulevel;
 	struct s2tt_context s2_ctx;
 
@@ -880,7 +890,8 @@ static unsigned long data_create(unsigned long rd_addr,
 	struct rd *rd;
 	struct s2tt_walk wi;
 	struct s2tt_context *s2_ctx;
-	unsigned long s2tte, *s2tt;
+	unsigned long s2tte;
+	unsigned long *s2tt;
 	unsigned char new_data_state = GRANULE_STATE_DELEGATED;
 	unsigned long ret;
 
@@ -1012,7 +1023,9 @@ void smc_data_destroy(unsigned long rd_addr,
 	struct granule *g_data;
 	struct granule *g_rd;
 	struct s2tt_walk wi;
-	unsigned long data_addr, s2tte, *s2tt;
+	unsigned long data_addr;
+	unsigned long s2tte;
+	unsigned long *s2tt;
 	struct rd *rd;
 	struct s2tt_context s2_ctx;
 
@@ -1110,7 +1123,8 @@ static int update_ripas(const struct s2tt_context *s2_ctx,
 			enum ripas ripas_val,
 			enum ripas_change_destroyed change_destroyed)
 {
-	unsigned long pa, s2tte = s2tte_read(s2ttep);
+	unsigned long pa;
+	unsigned long s2tte = s2tte_read(s2ttep);
 	int ret = 0;
 
 	assert(s2_ctx != NULL);
@@ -1183,10 +1197,12 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 {
 	struct granule *g_rd;
 	struct rd *rd;
-	unsigned long addr, map_size;
+	unsigned long addr;
+	unsigned long map_size;
 	struct s2tt_walk wi;
 	struct s2tt_context *s2_ctx;
-	unsigned long s2tte, *s2tt;
+	unsigned long s2tte;
+	unsigned long *s2tt;
 	long level;
 	unsigned long index;
 	unsigned int s2ttes_per_s2tt;
@@ -1351,7 +1367,8 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 		       unsigned long top,
 		       struct smc_result *res)
 {
-	struct granule *g_rd, *g_rec;
+	struct granule *g_rd;
+	struct granule *g_rec;
 	struct rec *rec;
 	struct rd *rd;
 	struct s2tt_walk wi;

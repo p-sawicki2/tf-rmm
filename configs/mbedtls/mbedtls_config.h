@@ -62,7 +62,7 @@
 #define MBEDTLS_NO_UDBL_DIVISION
 
 /* Memory buffer allocator option */
-#define MBEDTLS_MEMORY_ALIGN_MULTIPLE	8
+#define MBEDTLS_MEMORY_ALIGN_MULTIPLE	8U
 
 /* This is needed for size_t used below */
 #include <stddef.h>
