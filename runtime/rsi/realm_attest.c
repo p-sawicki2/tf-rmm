@@ -77,7 +77,8 @@ static void attest_token_continue_write_state(struct rec *rec,
 	unsigned long size = rec->regs[3];
 	enum s2_walk_status walk_status;
 	struct s2_walk_result walk_res = { 0UL };
-	size_t attest_token_len, length;
+	size_t attest_token_len;
+	size_t length;
 	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
 	uintptr_t cca_token_buf = rec->aux_data.cca_token_buf;
 
@@ -254,7 +255,9 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rsi_result *res)
 {
 	struct rec_attest_data *attest_data;
-	unsigned long realm_buf_ipa, offset, size;
+	unsigned long realm_buf_ipa;
+	unsigned long offset;
+	unsigned long size;
 
 	assert(rec != NULL);
 	assert(rec_exit != NULL);
@@ -371,7 +374,8 @@ void handle_rsi_measurement_read(struct rec *rec, struct rsi_result *res)
 {
 	struct rd *rd;
 	unsigned long idx;
-	unsigned int i, cnt;
+	unsigned int i;
+	unsigned int cnt;
 	unsigned long *measurement_value_part;
 
 	assert(rec != NULL);
