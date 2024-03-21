@@ -18,7 +18,7 @@ list(APPEND cppcheck-flags "--enable=all")
 list(APPEND cppcheck-flags "--xml")
 list(APPEND cppcheck-flags "--xml-version=2")
 list(APPEND cppcheck-flags "--template=gcc")
-
+list(APPEND cppcheck-flags "--check-level=exhaustive")
 
 if(CPPCHECK_MISRA)
     list(APPEND cppcheck-flags "--addon=${SOURCE_DIR}/tools/cppcheck/misra.json")
@@ -30,6 +30,7 @@ else()
 endif()
 
 list(APPEND cppcheck-flags "--output-file=${CPPCHECK_OUTPUT}")
+list(APPEND cppcheck-flags "--checkers-report=${BUILD_DIR}/tools/cppcheck/checkers.log")
 list(APPEND cppcheck-flags "--cppcheck-build-dir=${CPPCHECK_BUILD_DIR}")
 
 #
