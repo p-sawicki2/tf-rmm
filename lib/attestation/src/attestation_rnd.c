@@ -98,8 +98,10 @@ int attest_rnd_prng_init(void)
 
 	md_info = mbedtls_md_info_from_type(MBEDTLS_MD_SHA256);
 	mbedtls_hmac_drbg_init(&drbg_ctx);
+
 	rc = mbedtls_hmac_drbg_seed_buf(&drbg_ctx,
 				    md_info,
+				    /* cppcheck-suppress unintvar ; false-positive */
 				    seed, sizeof(seed));
 	if (rc != 0) {
 		retval = -EINVAL;
