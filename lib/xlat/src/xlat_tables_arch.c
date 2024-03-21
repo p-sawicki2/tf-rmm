@@ -93,7 +93,9 @@ int xlat_arch_setup_mmu_cfg(struct xlat_ctx * const ctx)
 	uintptr_t va_space_size;
 	struct xlat_ctx_cfg *ctx_cfg;
 	struct xlat_ctx_tbls *ctx_tbls;
-	uint64_t t0sz, t1sz, txsz;
+	uint64_t t0sz;
+	uint64_t t1sz;
+	uint64_t txsz;
 	uint64_t pa_size_bits;
 
 	assert(ctx != NULL);

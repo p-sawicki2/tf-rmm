@@ -12,7 +12,8 @@ COMPILER_ASSERT(MAX_DRAM_NUM_BANKS == 2UL);
 
 void fvp_set_dram_layout(struct ns_dram_info *plat_dram)
 {
-	uint64_t num_banks, num_granules = 0UL;
+	uint64_t num_banks;
+	uint64_t num_granules = 0UL;
 	struct ns_dram_bank *bank_ptr;
 	struct fvp_dram_layout *dram_ptr = fvp_get_dram_layout();
 
