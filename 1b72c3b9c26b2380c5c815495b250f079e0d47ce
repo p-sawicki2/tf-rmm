@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4498891a_e063382d",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-21T10:59:16Z",
+      "side": 1,
+      "message": "need to check for NULL prior to the next dereference.",
+      "revId": "1b72c3b9c26b2380c5c815495b250f079e0d47ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7b4e15d_9da6c012",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-21T10:59:16Z",
+      "side": 1,
+      "message": "need to add code to do the checksum validation.",
+      "revId": "1b72c3b9c26b2380c5c815495b250f079e0d47ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
