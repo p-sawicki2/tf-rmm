@@ -407,7 +407,8 @@ int simd_get_cpu_config(struct simd_config *simd_cfg)
 static void sve_init_once(void)
 {
 	uint32_t sve_max_vq;
-	unsigned long cptr_new, cptr_saved;
+	unsigned long cptr_new;
+	unsigned long cptr_saved;
 
 	cptr_saved = read_cptr_el2();
 
@@ -445,7 +446,8 @@ static void sve_init_once(void)
 static void sme_init_once(void)
 {
 	uint32_t __unused sme_svq_arch_max;
-	unsigned long cptr_new, cptr_saved;
+	unsigned long cptr_new;
+	unsigned long cptr_saved;
 	uint64_t smcr_val;
 
 	cptr_saved = read_cptr_el2();
