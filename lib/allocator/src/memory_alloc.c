@@ -93,11 +93,11 @@ static int verify_header(struct memory_header_s *hdr)
 		return 1;
 	}
 
-	if (hdr->prev != NULL && hdr->prev == hdr->next) {
+	if ((hdr->prev != NULL) && (hdr->prev == hdr->next)) {
 		return 1;
 	}
 
-	if (hdr->prev_free != NULL && hdr->prev_free == hdr->next_free)	{
+	if ((hdr->prev_free != NULL) && (hdr->prev_free == hdr->next_free))	{
 		return 1;
 	}
 
@@ -109,7 +109,7 @@ static int verify_chain(struct buffer_alloc_ctx *heap)
 	struct memory_header_s *prv = heap->first;
 	struct memory_header_s *cur;
 
-	if (prv == NULL || verify_header(prv) != 0) {
+	if ((prv == NULL) || (verify_header(prv) != 0)) {
 		return 1;
 	}
 
@@ -143,17 +143,18 @@ static void *buffer_alloc_calloc_with_heap(struct buffer_alloc_ctx *heap,
 	struct memory_header_s *cur = heap->first_free;
 	unsigned char *p;
 	void *ret;
-	size_t original_len, len;
+	size_t original_len;
+	size_t len;
 
-	if (heap->buf == NULL || heap->first == NULL) {
+	if ((heap->buf == NULL) || (heap->first == NULL)) {
 		return NULL;
 	}
 
 	original_len = len = n * size;
 
-	if (n == 0UL || size == 0UL || len / n != size) {
+	if ((n == 0UL) || (size == 0UL) || ((len / n) != size)) {
 		return NULL;
-	} else if (len > (size_t)-MBEDTLS_MEMORY_ALIGN_MULTIPLE) {
+	} else if (len > ((size_t)-MBEDTLS_MEMORY_ALIGN_MULTIPLE)) {
 		return NULL;
 	}
 
@@ -265,11 +266,11 @@ static void buffer_alloc_free_with_heap(struct buffer_alloc_ctx *heap,
 	struct memory_header_s *old = NULL;
 	unsigned char *p = (unsigned char *) ptr;
 
-	if (ptr == NULL || heap->buf == NULL || heap->first == NULL) {
+	if ((ptr == NULL) || (heap->buf == NULL) || (heap->first == NULL)) {
 		return;
 	}
 
-	if (p < heap->buf || p >= heap->buf + heap->len) {
+	if ((p < heap->buf) || (p >= (heap->buf + heap->len))) {
 		assert(0);
 	}
 
@@ -285,7 +286,7 @@ static void buffer_alloc_free_with_heap(struct buffer_alloc_ctx *heap,
 	hdr->alloc = 0;
 
 	/* Regroup with block before */
-	if (hdr->prev != NULL && hdr->prev->alloc == 0UL) {
+	if ((hdr->prev != NULL) && (hdr->prev->alloc == 0UL)) {
 		hdr->prev->size += sizeof(struct memory_header_s) + hdr->size;
 		hdr->prev->next = hdr->next;
 		old = hdr;
@@ -299,12 +300,12 @@ static void buffer_alloc_free_with_heap(struct buffer_alloc_ctx *heap,
 	}
 
 	/* Regroup with block after */
-	if (hdr->next != NULL && hdr->next->alloc == 0UL) {
+	if ((hdr->next != NULL) && (hdr->next->alloc == 0UL)) {
 		hdr->size += sizeof(struct memory_header_s) + hdr->next->size;
 		old = hdr->next;
 		hdr->next = hdr->next->next;
 
-		if (hdr->prev_free != NULL || hdr->next_free != NULL) {
+		if ((hdr->prev_free != NULL) || (hdr->next_free != NULL)) {
 			if (hdr->prev_free != NULL) {
 				hdr->prev_free->next_free = hdr->next_free;
 			} else {

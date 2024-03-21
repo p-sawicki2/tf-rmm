@@ -30,6 +30,7 @@ else()
 endif()
 
 list(APPEND cppcheck-flags "--output-file=${CPPCHECK_OUTPUT}")
+list(APPEND cppcheck-flags "--checkers-report=${BUILD_DIR}/tools/cppcheck/checkers.log")
 list(APPEND cppcheck-flags "--cppcheck-build-dir=${CPPCHECK_BUILD_DIR}")
 list(APPEND cppcheck-flags "--checkers-report=${BUILD_DIR}/tools/cppcheck/checkers.log")
 

@@ -177,8 +177,8 @@
 #define RMI_DESTROYED	UL(2)
 
 /* RmiPmuOverflowStatus enumeration representing PMU overflow status */
-#define RMI_PMU_OVERFLOW_NOT_ACTIVE	U(0)
-#define RMI_PMU_OVERFLOW_ACTIVE		U(1)
+#define RMI_PMU_OVERFLOW_NOT_ACTIVE	UL(0)
+#define RMI_PMU_OVERFLOW_ACTIVE		UL(1)
 
 /*
  * RmiResponse enumeration represents whether the Host accepted

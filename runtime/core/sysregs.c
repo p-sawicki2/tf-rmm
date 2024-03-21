@@ -114,7 +114,8 @@ static bool handle_id_sysreg_trap(struct rec *rec,
 				  unsigned long esr)
 {
 	unsigned int rt;
-	unsigned long idreg, value;
+	unsigned long idreg;
+	unsigned long value;
 
 	(void)rec_exit;
 
@@ -343,7 +344,11 @@ bool handle_sysreg_access_trap(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	 * Rt bits [9:5] of ISS field cannot exceed 0b11111.
 	 */
 	unsigned int rt = (unsigned int)ESR_EL2_SYSREG_ISS_RT(esr);
-	unsigned int __unused op0, op1, crn, crm, op2;
+	unsigned int __unused op0;
+	unsigned int __unused op1;
+	unsigned int __unused crn;
+	unsigned int __unused crm;
+	unsigned int __unused op2;
 	unsigned long __unused sysreg;
 
 	/* Check for 32-bit instruction trapped */
