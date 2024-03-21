@@ -614,8 +614,8 @@
 
 /* SVE Control Register */
 #define ZCR_EL2				S3_4_C1_C2_0
-#define ZCR_EL2_LEN_SHIFT		UL(0)
-#define ZCR_EL2_LEN_WIDTH		UL(4)
+#define ZCR_EL2_LEN_SHIFT		U(0)
+#define ZCR_EL2_LEN_WIDTH		U(4)
 
 #define ZCR_EL12			S3_5_C1_C2_0
 

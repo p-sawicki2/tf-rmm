@@ -41,7 +41,9 @@ enum s2_walk_status realm_ipa_to_pa(struct rec *rec,
 				    struct s2_walk_result *s2_walk)
 {
 	struct s2tt_walk wi;
-	unsigned long s2tte, *ll_table, offset;
+	unsigned long s2tte;
+	unsigned long *ll_table;
+	unsigned long offset;
 	enum s2_walk_status walk_status;
 	struct s2tt_context *s2_ctx;
 
@@ -106,7 +108,8 @@ enum s2_walk_status realm_ipa_to_pa(struct rec *rec,
 enum s2_walk_status realm_ipa_get_ripas(struct rec *rec, unsigned long ipa,
 					enum ripas *ripas_ptr)
 {
-	unsigned long s2tte, *ll_table;
+	unsigned long s2tte;
+	unsigned long *ll_table;
 	struct s2tt_walk wi;
 	enum s2_walk_status ws;
 	struct s2tt_context *s2_ctx;

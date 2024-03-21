@@ -87,7 +87,7 @@
  * address or not.
  */
 #define TRANSIENT_FLAG_SHIFT	UL(55)
-#define TRANSIENT_FLAG_WIDTH	U(1)
+#define TRANSIENT_FLAG_WIDTH	UL(1)
 
 /*
  * TRANSIENT_DESC can be used either as a bit mask or as an absolute value.
