@@ -18,7 +18,7 @@
  * Only 4K granularities are allowed on this library.
  */
 #define PAGE_SIZE		(UL(1) << XLAT_GRANULARITY_SIZE_SHIFT)
-#define PAGE_SIZE_MASK		(PAGE_SIZE - UL(1))
+#define PAGE_SIZE_MASK		((unsigned long)(PAGE_SIZE - UL(1)))
 #define IS_PAGE_ALIGNED(addr)	(((addr) & PAGE_SIZE_MASK) == U(0))
 
 #define XLAT_ENTRY_SIZE_SHIFT	UL(3)	/* Each MMU table entry is 8 bytes */
@@ -32,7 +32,7 @@
 #define XLAT_TABLE_LEVEL_MAX	3
 
 /* Values for number of entries in each MMU translation table */
-#define XLAT_TABLE_ENTRIES_SHIFT (XLAT_TABLE_SIZE_SHIFT - XLAT_ENTRY_SIZE_SHIFT)
+#define XLAT_TABLE_ENTRIES_SHIFT ((unsigned int)(XLAT_TABLE_SIZE_SHIFT - XLAT_ENTRY_SIZE_SHIFT))
 #define XLAT_TABLE_ENTRIES	(U(1) << XLAT_TABLE_ENTRIES_SHIFT)
 #define XLAT_TABLE_ENTRIES_MASK	(XLAT_TABLE_ENTRIES - U(1))
 
@@ -61,17 +61,17 @@
 
 /* Values to convert a memory address to an index into a translation table */
 #define L3_XLAT_ADDRESS_SHIFT	XLAT_GRANULARITY_SIZE_SHIFT
-#define L2_XLAT_ADDRESS_SHIFT	(L3_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
-#define L1_XLAT_ADDRESS_SHIFT	(L2_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
-#define L0_XLAT_ADDRESS_SHIFT	(L1_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
-#define LM1_XLAT_ADDRESS_SHIFT	(L0_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT)
+#define L2_XLAT_ADDRESS_SHIFT	((unsigned int)(L3_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT))
+#define L1_XLAT_ADDRESS_SHIFT	((unsigned int)(L2_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT))
+#define L0_XLAT_ADDRESS_SHIFT	((unsigned int)(L1_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT))
+#define LM1_XLAT_ADDRESS_SHIFT	((unsigned int)(L0_XLAT_ADDRESS_SHIFT + XLAT_TABLE_ENTRIES_SHIFT))
 #define XLAT_ADDR_SHIFT(level)	((unsigned int)(XLAT_GRANULARITY_SIZE_SHIFT +	  \
-				((unsigned int)(XLAT_TABLE_LEVEL_MAX - (level)) * \
-						XLAT_TABLE_ENTRIES_SHIFT)))
+				((unsigned int)((unsigned int)(XLAT_TABLE_LEVEL_MAX - (level)) * \
+						XLAT_TABLE_ENTRIES_SHIFT))))
 
-#define XLAT_BLOCK_SIZE(level)	(UL(1) << XLAT_ADDR_SHIFT(level))
+#define XLAT_BLOCK_SIZE(level)	((unsigned long)(UL(1) << XLAT_ADDR_SHIFT(level)))
 /* Mask to get the bits used to index inside a block of a certain level */
-#define XLAT_BLOCK_MASK(level)	(XLAT_BLOCK_SIZE(level) - UL(1))
+#define XLAT_BLOCK_MASK(level)	((unsigned long)(XLAT_BLOCK_SIZE(level) - UL(1)))
 /* Mask to get the address bits common to a block of a certain table level*/
 #define XLAT_ADDR_MASK(level)	(~XLAT_BLOCK_MASK(level))
 /*
@@ -113,10 +113,12 @@
  * Maximum value of TCR_ELx.T(0,1)SZ is 48 for a min VA size of 16 bits.
  * RMM is only supported with FEAT_TTST implemented.
  */
-#define MIN_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MAX))
+#define MIN_VIRT_ADDR_SPACE_SIZE	((unsigned long)(UL(1) << \
+			(unsigned long)(UL(64) - TCR_TxSZ_MAX)))
 
 /* Minimum value of TCR_ELx.T(0,1)SZ is 16, for a VA of 48 bits */
-#define MAX_VIRT_ADDR_SPACE_SIZE	(UL(1) << (UL(64) - TCR_TxSZ_MIN))
+#define MAX_VIRT_ADDR_SPACE_SIZE	((unsigned long)(UL(1) << \
+			(unsigned long)(UL(64) - TCR_TxSZ_MIN)))
 
 /*
  * With LPA2 supported, the minimum value of TCR_ELx.T(0,1)SZ is 12

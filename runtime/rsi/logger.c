@@ -30,25 +30,19 @@ struct rsi_handler {
 	unsigned int num_vals;	/* number of output values */
 };
 
-#define RSI_HANDLER_ID(_id)	SMC64_FID_OFFSET_FROM_RANGE_MIN(RSI, SMC_RSI##_id)
-
-#define RSI_FUNCTION(_id, _in, _out)[RSI_HANDLER_ID(_id)] = { \
-	.fn_name = (#_id),	\
-	.num_args = (_in),	\
-	.num_vals = (_out)	\
-}
+#define RSI_FUNCTION(_id)	(#_id)
 
 static const struct rsi_handler rsi_logger[] = {
-	RSI_FUNCTION(_VERSION, 1U, 2U),			/* 0xC4000190 */
-	RSI_FUNCTION(_FEATURES, 1U, 1U),		/* 0xC4000191 */
-	RSI_FUNCTION(_MEASUREMENT_READ, 1U, 8U),	/* 0xC4000192 */
-	RSI_FUNCTION(_MEASUREMENT_EXTEND, 10U, 0U),	/* 0xC4000193 */
-	RSI_FUNCTION(_ATTEST_TOKEN_INIT, 8U, 1U),	/* 0xC4000194 */
-	RSI_FUNCTION(_ATTEST_TOKEN_CONTINUE, 3U, 1U),	/* 0xC4000195 */
-	RSI_FUNCTION(_REALM_CONFIG, 1U, 0U),		/* 0xC4000196 */
-	RSI_FUNCTION(_IPA_STATE_SET, 4U, 2U),		/* 0xC4000197 */
-	RSI_FUNCTION(_IPA_STATE_GET, 1U, 1U),		/* 0xC4000198 */
-	RSI_FUNCTION(_HOST_CALL, 1U, 0U)		/* 0xC4000199 */
+	{.fn_name = RSI_FUNCTION(_VERSION), .num_args = 1U, .num_vals = 2U},			/* 0xC4000190 */
+	{.fn_name = RSI_FUNCTION(_FEATURES), .num_args = 1U, .num_vals = 1U},			/* 0xC4000191 */
+	{.fn_name = RSI_FUNCTION(_MEASUREMENT_READ), .num_args = 1U, .num_vals = 8U},		/* 0xC4000192 */
+	{.fn_name = RSI_FUNCTION(_MEASUREMENT_EXTEND), .num_args = 10U, .num_vals = 0U},		/* 0xC4000193 */
+	{.fn_name = RSI_FUNCTION(_ATTEST_TOKEN_INIT), .num_args = 8U, .num_vals = 1U},		/* 0xC4000194 */
+	{.fn_name = RSI_FUNCTION(_ATTEST_TOKEN_CONTINUE), .num_args = 3U, .num_vals = 1U},		/* 0xC4000195 */
+	{.fn_name = RSI_FUNCTION(_REALM_CONFIG), .num_args = 1U, .num_vals = 0U},			/* 0xC4000196 */
+	{.fn_name = RSI_FUNCTION(_IPA_STATE_SET), .num_args = 4U, .num_vals = 2U},		/* 0xC4000197 */
+	{.fn_name = RSI_FUNCTION(_IPA_STATE_GET), .num_args = 1U, .num_vals = 1U},		/* 0xC4000198 */
+	{.fn_name = RSI_FUNCTION(_HOST_CALL), .num_args = 1U, .num_vals = 0U},		/* 0xC4000199 */
 };
 
 #define RSI_STATUS_STRING(_id)[RSI_##_id] = #_id

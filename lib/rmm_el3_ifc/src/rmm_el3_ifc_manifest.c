@@ -79,7 +79,9 @@ uintptr_t rmm_el3_ifc_get_plat_manifest_pa(void)
 int rmm_el3_ifc_get_dram_data_validated_pa(unsigned long max_num_banks,
 					   struct ns_dram_info **plat_dram_info)
 {
-	uint64_t num_banks, checksum, num_granules = 0UL;
+	uint64_t num_banks;
+	uint64_t checksum;
+	uint64_t num_granules = 0UL;
 	uintptr_t end = 0UL;
 	struct ns_dram_info *plat_dram;
 	struct ns_dram_bank *bank_ptr;
