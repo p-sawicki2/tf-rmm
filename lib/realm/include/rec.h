@@ -231,7 +231,7 @@ COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
  * registers.
  */
 COMPILER_ASSERT(offsetof(struct rec, sp_el0) ==
-	(offsetof(struct rec, regs) + (sizeof(unsigned long) * RMM_REC_SAVED_GEN_REG_COUNT)));
+	(U(offsetof(struct rec, regs)) + (sizeof(unsigned long) * RMM_REC_SAVED_GEN_REG_COUNT)));
 
 /*
  * Check that mpidr has a valid value with all fields except
