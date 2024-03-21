@@ -106,7 +106,8 @@ int plat_cmn_setup(unsigned long x0, unsigned long x1,
 		   unsigned int nregions)
 {
 	int ret;
-	unsigned int plat_offset, cmn_offset;
+	unsigned int plat_offset;
+	unsigned int cmn_offset;
 
 	/* Common regions sorted by ascending VA */
 	struct xlat_mmap_region regions[COMMON_REGIONS] = {
