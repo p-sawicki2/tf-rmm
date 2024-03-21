@@ -51,7 +51,8 @@ static const unsigned long sl0_val[] = {
 
 static unsigned long realm_vtcr(struct rd *rd)
 {
-	unsigned long t0sz, sl0;
+	unsigned long t0sz;
+	unsigned long sl0;
 	unsigned long vtcr = is_feat_vmid16_present() ?
 				(VTCR_FLAGS | VTCR_VS) : VTCR_FLAGS;
 	int s2_starting_level = realm_rtt_starting_level(rd);
@@ -457,8 +458,10 @@ unsigned long smc_psci_complete(unsigned long calling_rec_addr,
 				unsigned long target_rec_addr,
 				unsigned long status)
 {
-	struct granule *g_calling_rec, *g_target_rec;
-	struct rec  *calling_rec, *target_rec;
+	struct granule *g_calling_rec;
+	struct granule *g_target_rec;
+	struct rec *calling_rec;
+	struct rec *target_rec;
 	unsigned long ret;
 
 	if (!GRANULE_ALIGNED(calling_rec_addr)) {
