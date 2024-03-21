@@ -36,8 +36,10 @@ static int validate_mmap_regions(struct xlat_mmap_region *mm,
 	uintptr_t base_va;
 	size_t size;
 	size_t granularity;
-	uintptr_t end_pa, mm_end_pa;
-	uintptr_t end_va, previous_end_va;
+	uintptr_t end_pa;
+	uintptr_t mm_end_pa;
+	uintptr_t end_va;
+	uintptr_t previous_end_va;
 
 	if (mm == NULL) {
 		return -EINVAL;
@@ -254,7 +256,7 @@ int xlat_ctx_cfg_init(struct xlat_ctx_cfg *cfg,
 	}
 
 	cfg->max_va_size = va_size;
-	cfg->base_level = (GET_XLAT_TABLE_LEVEL_BASE(va_size));
+	cfg->base_level = (int)(GET_XLAT_TABLE_LEVEL_BASE(va_size));
 	cfg->region = region;
 	cfg->initialized = true;
 
