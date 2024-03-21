@@ -200,7 +200,7 @@
 	(((val) + UL(0)) << (regfield##_SHIFT))
 
 #define MASK(regfield) \
-	((~0UL >> (64UL - (regfield##_WIDTH))) << (regfield##_SHIFT))
+	((~0UL >> (unsigned int)(64UL - (regfield##_WIDTH))) << (regfield##_SHIFT))
 
 #define EXTRACT(regfield, reg) \
 	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))

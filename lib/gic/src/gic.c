@@ -99,7 +99,8 @@ void gic_get_virt_features(void)
 	 */
 	gic_virt_feature.max_vintid =
 				(EXTRACT(ICH_VTR_EL2_ID_BITS, vtr) == 0UL) ?
-				((1UL << 16U) - 1UL) : ((1UL << 24U) - 1UL);
+				((unsigned long)(1UL << 16U) - 1UL) :
+				((unsigned long)(1UL << 24U) - 1UL);
 
 	/* Number of virtual priority bits implemented */
 	nr_pri_bits = EXTRACT(ICH_VTR_EL2_PRI_BITS, vtr) + 1UL;
@@ -180,7 +181,8 @@ static bool is_valid_vintid(unsigned long intid)
 
 bool gic_validate_state(struct rmi_rec_enter *rec_enter)
 {
-	unsigned int i, j;
+	unsigned int i;
+	unsigned int j;
 	unsigned long hcr = rec_enter->gicv3_hcr;
 
 	/* Validate rec_entry.gicv3_hcr MBZ bits */

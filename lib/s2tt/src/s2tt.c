@@ -13,6 +13,7 @@
 #include <smc.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <string.h>
 
 /*
  * Return a mask for the IPA field on a S2TTE
@@ -190,7 +191,8 @@ void s2tt_invalidate_pages_in_block(const struct s2tt_context *s2_ctx,
  */
 static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 {
-	unsigned int levels, lsb;
+	unsigned int levels;
+	unsigned int lsb;
 	unsigned int s2tte_stride = (level < S2TT_MIN_STARTING_LEVEL) ?
 					S2TTE_STRIDE_LM1 : S2TTE_STRIDE;
 
@@ -215,7 +217,8 @@ static unsigned long s2_addr_to_idx(unsigned long addr, long level)
 static unsigned long s2_sl_addr_to_idx(unsigned long addr, int start_level,
 				       unsigned long ipa_bits)
 {
-	unsigned int levels, lsb;
+	unsigned int levels;
+	unsigned int lsb;
 
 	levels = (unsigned int)(S2TT_PAGE_LEVEL - start_level);
 	lsb = (levels * S2TTE_STRIDE) + GRANULE_SHIFT;
@@ -234,7 +237,8 @@ static unsigned long table_get_entry(const struct s2tt_context *s2_ctx,
 				     struct granule *g_tbl,
 				     unsigned long idx)
 {
-	unsigned long *table, entry;
+	unsigned long *table;
+	unsigned long entry;
 
 	(void)s2_ctx;
 
@@ -309,13 +313,17 @@ void s2tt_walk_lock_unlock(const struct s2tt_context *s2_ctx,
 			   long level,
 			   struct s2tt_walk *wi)
 {
-	struct granule *g_tbls[NR_RTT_LEVELS_LPA2] = { (struct granule *)NULL };
+	struct granule *g_tbls[NR_RTT_LEVELS_LPA2];
 	struct granule *g_root;
-	unsigned long sl_idx, ipa_bits;
-	int i, start_level, last_level;
+	unsigned long sl_idx;
+	unsigned long ipa_bits;
+	int i;
+	int start_level;
+	int last_level;
 
 	assert(s2_ctx != NULL);
 
+	(void)memset(g_tbls, 0, sizeof(struct granule *) * NR_RTT_LEVELS_LPA2);
 	start_level = s2_ctx->s2_starting_level;
 	ipa_bits = s2_ctx->ipa_bits;
 
@@ -427,7 +435,8 @@ static unsigned long s2tte_create_assigned(const struct s2tt_context *s2_ctx,
 	assert(s2_ctx != NULL);
 
 	unsigned long tte = pa_to_s2tte(pa, s2_ctx->enable_lpa2);
-	unsigned long s2tte_page, s2tte_block;
+	unsigned long s2tte_page;
+	unsigned long s2tte_block;
 
 	if (s2_ctx->enable_lpa2 == true) {
 		s2tte_page = S2TTE_PAGE_LPA2;
@@ -603,7 +612,7 @@ unsigned long s2tte_create_table(const struct s2tt_context *s2_ctx,
 
 	assert(s2_ctx != NULL);
 	min_starting_level = (s2_ctx->enable_lpa2 == true) ?
-			S2TT_MIN_STARTING_LEVEL_LPA2 : S2TT_MIN_STARTING_LEVEL;
+			(int)S2TT_MIN_STARTING_LEVEL_LPA2 : S2TT_MIN_STARTING_LEVEL;
 
 	assert(level < S2TT_PAGE_LEVEL);
 	assert(level >= min_starting_level);
@@ -1142,7 +1151,8 @@ static bool table_maps_block(const struct s2tt_context *s2_ctx,
 	assert(table != NULL);
 	assert(s2_ctx != NULL);
 
-	unsigned long base_pa, ns_attr_host_mask;
+	unsigned long base_pa;
+	unsigned long ns_attr_host_mask;
 	unsigned long map_size = s2tte_map_size(level);
 	unsigned long s2tte = s2tte_read(&table[0]);
 	unsigned int i;
@@ -1180,7 +1190,7 @@ static bool table_maps_block(const struct s2tt_context *s2_ctx,
 			 * We match all the attributes in the S2TTE
 			 * except for the AF bit.
 			 */
-			if ((s2tte & ns_attr_host_mask) != ns_attrs) {
+			if (ns_attr_host_mask != ns_attrs) {
 				return false;
 			}
 		}
@@ -1267,7 +1277,8 @@ unsigned long s2tt_skip_non_live_entries(const struct s2tt_context *s2_ctx,
 	assert(wi->last_level <= S2TT_PAGE_LEVEL);
 	assert(s2_ctx != NULL);
 
-	unsigned long i, index = wi->index;
+	unsigned long i;
+	unsigned long index = wi->index;
 	long level = wi->last_level;
 	unsigned long map_size;
 	__unused long min_starting_level = (s2_ctx->enable_lpa2 == true) ?
