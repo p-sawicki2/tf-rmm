@@ -20,4 +20,4 @@ preprocessorErrorDirective
 unusedLabel
 
 // Ignore errors in ext folder
-*:ext/
+*:*/ext/*

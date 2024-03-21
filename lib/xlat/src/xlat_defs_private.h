@@ -42,8 +42,8 @@
 /* Guarded Page bit */
 #define GP			(ULL(1) << 0)
 
-#define UPPER_ATTRS_SHIFT	(50U)
-#define UPPER_ATTRS_WIDTH	(5U)
+#define UPPER_ATTRS_SHIFT	(50UL)
+#define UPPER_ATTRS_WIDTH	(5UL)
 #define UPPER_ATTRS_MASK	MASK(UPPER_ATTRS)
 #define UPPER_ATTRS(x)		(INPLACE(UPPER_ATTRS, x) & (UPPER_ATTRS_MASK))
 
@@ -54,8 +54,8 @@
 #define AP1_SHIFT		UL(0x6)
 
 /* Macro to access translation table lower attributes */
-#define LOWER_ATTRS_SHIFT	(2U)
-#define LOWER_ATTRS_WIDTH	(10U)
+#define LOWER_ATTRS_SHIFT	(2UL)
+#define LOWER_ATTRS_WIDTH	(10UL)
 #define LOWER_ATTRS_MASK	MASK(LOWER_ATTRS)
 #define LOWER_ATTRS(x)		(INPLACE(LOWER_ATTRS, x) & (LOWER_ATTRS_MASK))
 
@@ -63,19 +63,19 @@
  * The following definitions must all be passed to the LOWER_ATTRS() macro to
  * get the right bitmask.
  */
-#define NS				(UL(0x1) << UL(3))	/* Bit[5] absolutely */
-#define ACCESS_FLAG			(UL(1) << UL(8))	/* Bit[10] absolutely */
-#define AP_RO				(AP2_RO << UL(5))
-#define AP_RW				(AP2_RW << UL(5))
-#define AP_ACCESS_UNPRIVILEGED		(AP1_ACCESS_UNPRIVILEGED    << UL(4))
-#define AP_NO_ACCESS_UNPRIVILEGED	(AP1_NO_ACCESS_UNPRIVILEGED << UL(4))
+#define NS				((unsigned long)(UL(0x1) << UL(3)))	/* Bit[5] absolutely */
+#define ACCESS_FLAG			((unsigned long)(UL(1) << UL(8)))	/* Bit[10] absolutely */
+#define AP_RO				((unsigned long)(AP2_RO << UL(5)))
+#define AP_RW				((unsigned long)(AP2_RW << UL(5)))
+#define AP_ACCESS_UNPRIVILEGED		((unsigned long)(AP1_ACCESS_UNPRIVILEGED    << UL(4)))
+#define AP_NO_ACCESS_UNPRIVILEGED	((unsigned long)(AP1_NO_ACCESS_UNPRIVILEGED << UL(4)))
 #define ATTR_DEVICE_INDEX		UL(0x1)
 #define ATTR_IWBWA_OWBWA_NTR_INDEX	UL(0x0)
 #define NG_HINT				(ULL(1) << 9)
 
 /* Shareability within the lower attributes field of the TTE. */
-#define LOWER_ATTR_SH_SHIFT	((6U) + LOWER_ATTRS_SHIFT)
-#define LOWER_ATTR_SH_WIDTH	(2U)
+#define LOWER_ATTR_SH_SHIFT	((6UL) + LOWER_ATTRS_SHIFT)
+#define LOWER_ATTR_SH_WIDTH	(2UL)
 
 /* Macro to set SH on TCR_EL2 when FEAT_LPA2 is enabled */
 #define SET_TCR_SH(_region, _sh)	\

@@ -70,7 +70,7 @@
 #define S2TTE_L3_PAGE			3UL
 
 /* Only 4K pages supported */
-#define BLOCK_L2_SIZE		(GRANULE_SIZE * S2TTES_PER_S2TT)
+#define BLOCK_L2_SIZE		((unsigned long)(GRANULE_SIZE * S2TTES_PER_S2TT))
 
 /*
  * The maximum number of bits supported by the RMM for a stage 2 translation
@@ -146,9 +146,9 @@
 /* Maximum number of concatenated tables for the start level */
 #define S2TTE_MAX_CONCAT_TABLES		(16U)
 
-#define NR_RTT_LEVELS		(S2TT_PAGE_LEVEL -		\
-					S2TT_MIN_STARTING_LEVEL + 1U)
-#define NR_RTT_LEVELS_LPA2	(S2TT_PAGE_LEVEL -		\
-					S2TT_MIN_STARTING_LEVEL_LPA2 + 1U)
+#define NR_RTT_LEVELS		((S2TT_PAGE_LEVEL -		\
+					S2TT_MIN_STARTING_LEVEL) + 1U)
+#define NR_RTT_LEVELS_LPA2	((S2TT_PAGE_LEVEL -		\
+					S2TT_MIN_STARTING_LEVEL_LPA2) + 1U)
 
 #endif /* S2TT_PVT_DEFS */

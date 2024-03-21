@@ -355,7 +355,7 @@ static uintptr_t xlat_tables_map_region(struct xlat_ctx *ctx,
  */
 uint64_t xlat_desc(uint64_t attr, uintptr_t addr_pa, int level)
 {
-	uint64_t desc;
+	unsigned long desc;
 	uint64_t mem_type;
 	bool lpa2_enabled = is_feat_lpa2_4k_present();
 
