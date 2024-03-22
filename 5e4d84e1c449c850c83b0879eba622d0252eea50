@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c903ece9_723b5178",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fde1c90b_76294730",
+      "range": {
+        "startLine": 183,
+        "startChar": 46,
+        "endLine": 183,
+        "endChar": 58
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "357c7c00_926ade9a",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-22T12:32:36Z",
       "side": 1,
       "message": "nit: console_info",
+      "range": {
+        "startLine": 184,
+        "startChar": 36,
+        "endLine": 184,
+        "endChar": 48
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85340277_0b4b5fd8",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "357c7c00_926ade9a",
       "range": {
         "startLine": 184,
         "startChar": 36,
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee692140_7a6cf3fa",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5546eeb1_2e75c85d",
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6458c94a_b9cc71a2",
@@ -77,6 +143,30 @@
       "writtenOn": "2024-03-22T12:32:36Z",
       "side": 1,
       "message": "0.3",
+      "range": {
+        "startLine": 203,
+        "startChar": 42,
+        "endLine": 203,
+        "endChar": 43
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f915f65c_c181db41",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6458c94a_b9cc71a2",
       "range": {
         "startLine": 203,
         "startChar": 42,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12d2dbca_78c61b45",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1989e2f_516480da",
+      "range": {
+        "startLine": 176,
+        "startChar": 43,
+        "endLine": 176,
+        "endChar": 55
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c027664_6538f92e",
@@ -123,6 +237,30 @@
       "writtenOn": "2024-03-22T12:32:36Z",
       "side": 1,
       "message": "Perhaps we can allow the num_console to be 0 (this allows EL3 to prevent any UART log in a dynamic manner).\n\n \n\n       /* If console_info is present, we need it to be pl011 */\n\tif (csl_list-\u003enum_consoles !\u003d 0UL) {\n\t    console_ptr \u003d \u0026csl_list-\u003econsoles[0];\n\n\t    if(strncmp(console_ptr-\u003ename, \"pl011\", sizeof(\"pl011\")) !\u003d 0) {\n\t\trmm_el3_ifc_report_fail_to_el3(E_RMM_BOOT_UNKNOWN_ERROR);\n\t    }\n\n\t    uintptr_t uart_base \u003d console_ptr-\u003ebase;\n\n\t    /* RMM currently only supports only console */\n\t    ret \u003d pl011_init(uart_base, console_ptr-\u003eclk_in_hz, console_ptr- \n                 \u003ebaud_rate);\n\t    if (ret !\u003d 0) {\n\t\trmm_el3_ifc_report_fail_to_el3(E_RMM_BOOT_UNKNOWN_ERROR);\n\t    }\n\n\t    plat_regions[0].base_pa \u003d uart_base;\n\t    plat_regions[0].base_va \u003d uart_base;\n            num_region++;\n      }\n      ret \u003d plat_cmn_setup(plat_regions, num_regions);",
+      "range": {
+        "startLine": 81,
+        "startChar": 1,
+        "endLine": 100,
+        "endChar": 37
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b325f0ca_2beee292",
+        "filename": "plat/fvp/src/fvp_setup.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c027664_6538f92e",
       "range": {
         "startLine": 81,
         "startChar": 1,
