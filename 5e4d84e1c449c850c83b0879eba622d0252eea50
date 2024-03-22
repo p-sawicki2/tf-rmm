@@ -22,6 +22,30 @@
       },
       "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b780562c_f78208f4",
+        "filename": "plat/arm/src/arm_setup.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-03-22T14:10:35Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "f7b1ac3c_2591e852",
+      "range": {
+        "startLine": 94,
+        "startChar": 31,
+        "endLine": 94,
+        "endChar": 33
+      },
+      "revId": "5e4d84e1c449c850c83b0879eba622d0252eea50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
