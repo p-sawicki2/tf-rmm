@@ -21,6 +21,7 @@ extern "C"
 }
 
 static uint32_t sve_vq;
+static unsigned long smcr_el2_raz_len;
 
 static uint32_t sve_rdvl_cb(void)
 {
@@ -105,16 +106,17 @@ TEST(simd, simd_init_TC2)
 /*
  * Custom read callback for SMCR_EL2. Since we are interested in unit testing
  * simd.c rather than exactly emulating the hardware behaviour, we simply return
- * the max architecturally supported SVQ, regardless of the value that was
- * written.
+ * the register value with value of global variable `raz_len` written to the RAZ
+ * and LEN fields.
  *
- * This custom callback is required to pass the assert() in sme_init_once().
+ * This allows us to return any value for the RAZ and LEN fields, for the
+ * purpose of testing.
  */
 static u_register_t smcr_el2_rd_cb(u_register_t *reg)
 {
 	u_register_t smcr_el2_ret = *reg & ~MASK(SMCR_EL2_RAZ_LEN);
 
-	smcr_el2_ret |= INPLACE(SMCR_EL2_RAZ_LEN, SVE_VQ_ARCH_MAX);
+	smcr_el2_ret |= INPLACE(SMCR_EL2_RAZ_LEN, smcr_el2_raz_len);
 
 	return smcr_el2_ret;
 }
@@ -146,6 +148,13 @@ TEST(simd, simd_init_TC3)
 	simd_test_helpers_setup_sysregs_sme();
 
 	/*
+	 * Set the custom callback for SMCR_EL2 to return SVE_VQ_ARCH_MAX for
+	 * the RAZ and LEN fields on read. This allows the sme_init_once()
+	 * function to progress without failing an assertion.
+	 */
+	smcr_el2_raz_len = SVE_VQ_ARCH_MAX;
+
+	/*
 	 * Install custom read callback for smcr_el2 to pass the assert() in
 	 * sme_init_once().
 	 */
@@ -162,4 +171,43 @@ TEST(simd, simd_init_TC3)
 
 	CHECK_TRUE(simd_cfg.sme_en);
 	BYTES_EQUAL(saved_cptr, read_cptr_el2());
+}
+
+TEST(simd, simd_get_cpu_config_TC1)
+{
+	int ret;
+
+	/******************************************************************
+	 * TEST CASE 1:
+	 *
+	 * Call simd_get_cpu_config() when simd_init() has not yet been
+	 * called. Expect the function to exit early with exit code -1.
+	 ******************************************************************/
+
+	ret = simd_get_cpu_config(NULL);
+
+	CHECK_TRUE(ret == -1);
+}
+
+ASSERT_TEST(simd, simd_get_cpu_config_TC2)
+{
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Call simd_get_cpu_config() with NULL. Expect assertion to fail.
+	 ******************************************************************/
+
+	simd_test_helpers_setup_sysregs_fpu();
+
+	/*
+	 * Must call simd_init() first to allow simd_get_cpu_config() to run
+	 * without exiting early.
+	 */
+	simd_init();
+
+	test_helpers_expect_assert_fail(true);
+
+	(void)simd_get_cpu_config(NULL);
+
+	test_helpers_fail_if_no_assert_failed();
 }
