@@ -22,6 +22,17 @@ extern "C"
 
 static uint32_t sve_vq;
 static unsigned long smcr_el2_raz_len;
+static unsigned int helpers_times_called[SIMD_CB_IDS];
+
+static void increment_times_called(enum simd_cb_ids id)
+{
+	helpers_times_called[id]++;
+}
+
+void fpu_save_regs_cb(struct fpu_regs *regs)
+{
+	increment_times_called(FPU_SAVE_REGS);
+}
 
 static uint32_t sve_rdvl_cb(void)
 {
@@ -400,4 +411,118 @@ TEST(simd, simd_context_init_TC6)
 				&test_simd_cfg);
 
 	CHECK_TRUE(ret == -1);
+}
+
+TEST(simd, simd_context_switch_TC1)
+{
+	struct simd_context test_simd_ctx;
+	struct simd_config test_simd_cfg = { 0 };
+	u_register_t cptr_el2;
+	int ret;
+	union simd_cbs cb;
+	int times_called_prev;
+
+	/******************************************************************
+	 * TEST CASE 1:
+	 *
+	 * Initialise a test SIMD FPU context that belongs to NS world.
+	 * Call simd_context_switch() with this test context as the
+	 * ctx_save. Expect the save to complete successfully. In addition,
+	 * the SIMD helper function fpu_save_registers() should be called
+	 * exactly once.
+	 ******************************************************************/
+	cptr_el2 = read_cptr_el2();
+	times_called_prev = helpers_times_called[FPU_SAVE_REGS];
+	cb.fpu_save_restore_regs = fpu_save_regs_cb;
+
+	(void)memset(&test_simd_ctx, 0, sizeof(struct simd_context));
+	simd_test_register_callback(FPU_SAVE_REGS, cb);
+	simd_test_helpers_setup_sysregs_fpu();
+
+	simd_init();
+
+	ret = simd_context_init(SIMD_OWNER_NWD, &test_simd_ctx, &test_simd_cfg);
+
+	CHECK_TRUE(ret == 0);
+
+	(void)simd_context_switch(&test_simd_ctx, NULL);
+
+	CHECK_TRUE(helpers_times_called[FPU_SAVE_REGS] - times_called_prev == 1);
+	CHECK_TRUE(simd_is_state_saved());
+
+	/* Check that CPTR_EL2 was restored correctly. */
+	BYTES_EQUAL(cptr_el2, read_cptr_el2());
+}
+
+ASSERT_TEST(simd, simd_context_switch_TC2)
+{
+	struct simd_context test_simd_ctx;
+
+	/******************************************************************
+	 * TEST CASE 2:
+	 *
+	 * Call simd_context_switch with an uninitialised ctx_save. Expect
+	 * an assertion to fail.
+	 ******************************************************************/
+
+	(void)memset(&test_simd_ctx, 0, sizeof(struct simd_context));
+
+	test_helpers_expect_assert_fail(true);
+	(void)simd_context_switch(&test_simd_ctx, NULL);
+	test_helpers_fail_if_no_assert_failed();
+}
+
+ASSERT_TEST(simd, simd_context_switch_TC3)
+{
+	struct simd_context test_simd_ctx = { .sflags = 0 };
+	struct simd_config test_simd_cfg = { 0 };
+	int ret;
+
+	/******************************************************************
+	 * TEST CASE 3:
+	 *
+	 * Initialise a test SIMD FPU context that belongs to Realm. Call
+	 * simd_context_switch() with this test context as the ctx_save.
+	 * Expect an assertion to fail.
+	 ******************************************************************/
+
+	simd_test_helpers_setup_sysregs_fpu();
+	simd_init();
+
+	ret = simd_context_init(SIMD_OWNER_REL1, &test_simd_ctx, &test_simd_cfg);
+
+	CHECK_TRUE(ret == 0);
+
+	test_helpers_expect_assert_fail(true);
+	(void)simd_context_switch(&test_simd_ctx, NULL);
+	test_helpers_fail_if_no_assert_failed();
+}
+
+ASSERT_TEST(simd, simd_context_switch_TC4)
+{
+	struct simd_context test_simd_ctx = { .sflags = 0 };
+	struct simd_config test_simd_cfg = { 0 };
+	int ret;
+
+	/******************************************************************
+	 * TEST CASE 4:
+	 *
+	 * Call simd_context_switch() twice on the same ctx_save. Expect an
+	 * assertion to fail on the second call.
+	 ******************************************************************/
+
+	simd_test_helpers_setup_sysregs_fpu();
+	simd_init();
+
+	ret = simd_context_init(SIMD_OWNER_NWD, &test_simd_ctx, &test_simd_cfg);
+
+	CHECK_TRUE(ret == 0);
+
+	(void)simd_context_switch(&test_simd_ctx, NULL);
+
+	CHECK_TRUE(simd_is_state_saved());
+
+	test_helpers_expect_assert_fail(true);
+	(void)simd_context_switch(&test_simd_ctx, NULL);
+	test_helpers_fail_if_no_assert_failed();
 }
