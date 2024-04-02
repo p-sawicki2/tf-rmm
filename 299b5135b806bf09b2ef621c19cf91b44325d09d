@@ -33,6 +33,24 @@
       "message": "we can assume that the asm routines to read and write the FPU registers will do their \"thing\". Hence it is not essential for the unit tests to mock the FPU regs themselves and emulate the save and restore as well (as we are not testing the RMM code , but rather the mock layer). \n\n\nIn my view, the default implementation of vreg mock is that read returns 0 and write is ignored. This way, the unit tests can exercise the various control flow of the SIMD layer without actually emulating the FPU registers (which can get quite heave weight for SVE and SME). \n\nIf the tests do need to verify that vregs are actually being written (which I dont find a case for as they are in asm), then we can add a registration layer for the test to register a chuck of memory for vreg mock and this can be used as the store for FPU. \n\nAs I mentioned, this may not be needed for unit testing the public APIs of SIMD.",
       "revId": "299b5135b806bf09b2ef621c19cf91b44325d09d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dac9ba8_49185725",
+        "filename": "lib/arch/tests/simd_fpu_tests.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-02T13:34:32Z",
+      "side": 1,
+      "message": "Thanks, have reworked the tests following discussions.",
+      "parentUuid": "cc6b652f_be2a627a",
+      "revId": "299b5135b806bf09b2ef621c19cf91b44325d09d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
