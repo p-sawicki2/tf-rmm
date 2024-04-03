@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "30a8ca37_75333a0a",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-03T16:11:26Z",
+      "side": 1,
+      "message": "should we not keep it named as RMM_MAX_NUM_DRAMK_BANKS, and instead override the value in plat/arm/CMakeLists.txt? Other platforms will need to set a maximum dram banks value, no?",
+      "parentUuid": "2cb5571b_af6c0f95",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 31
+      },
+      "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "408b5665_352c8d32",
         "filename": "cmake/CommonConfigs.cmake",
         "patchSetId": 12
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da82f992_16393496",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-03T16:11:26Z",
+      "side": 1,
+      "message": "moving these causes a build error, \"rmm-common isn\u0027t built in plat/arm/cmakelists.txt\"",
+      "parentUuid": "408b5665_352c8d32",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45aed303_95399f72",
         "filename": "configs/host_defcfg.cmake",
         "patchSetId": 12
@@ -60,6 +108,24 @@
       "writtenOn": "2024-03-26T15:25:39Z",
       "side": 1,
       "message": "nit: add newline.\n\nI have given a comment to change the default as 2. If that is done, we dont need to redefine these for the common case.",
+      "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bfe4d34_222d0edf",
+        "filename": "configs/host_defcfg.cmake",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-03T16:11:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45aed303_95399f72",
       "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
