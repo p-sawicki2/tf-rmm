@@ -317,6 +317,8 @@ void s2tt_walk_lock_unlock(const struct s2tt_context *s2_ctx,
 	assert(s2_ctx != NULL);
 
 	start_level = s2_ctx->s2_starting_level;
+	assert(start_level > -1);
+
 	ipa_bits = s2_ctx->ipa_bits;
 
 	assert(level >= start_level);
