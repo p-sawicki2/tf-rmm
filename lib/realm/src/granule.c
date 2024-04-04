@@ -209,6 +209,7 @@ static bool find_lock_granules(struct granule_set *gs, unsigned long n)
 	return true;
 
 out_err:
+	/* coverity[overflow_const:SUPPRESS] */
 	while (i-- != 0UL) {
 		granule_unlock(gs[i].g);
 	}
