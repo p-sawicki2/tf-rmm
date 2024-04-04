@@ -209,7 +209,7 @@ static bool find_lock_granules(struct granule_set *gs, unsigned long n)
 	return true;
 
 out_err:
-	while (i-- != 0UL) {
+	while (i-- > 0UL) {
 		granule_unlock(gs[i].g);
 	}
 
