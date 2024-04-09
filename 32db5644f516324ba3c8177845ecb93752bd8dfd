@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e976044_3f0923e7",
+        "filename": "lib/common/include/platform_api.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "remove space before ()",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b513291_d3c87ae6",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "remove *",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d874ba1_d81725b2",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "remove *",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5aac280b_75724717",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "why 1UL?",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf10ee9f_9ea53531",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "why +1UL?",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa4e16e5_09cfd924",
+        "filename": "plat/arm/src/include/arm_dram.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-09T14:37:01Z",
+      "side": 1,
+      "message": "align to line 17",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
