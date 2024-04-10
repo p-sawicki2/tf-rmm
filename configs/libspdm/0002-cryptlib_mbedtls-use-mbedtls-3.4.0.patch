@@ -1,0 +1,301 @@
+From 80960250a3cd643f7d57efb6078bdcd80be7a2e9 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Wed, 3 Apr 2024 14:42:16 +0100
+Subject: [PATCH 2/2] cryptlib_mbedtls: use mbedtls-3.4.0
+
+This change makes libspdm to compile against mbedtls-3.4.0. This
+version of mbedtls is used by RMM.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ os_stub/cryptlib_mbedtls/hash/sha.c     | 25 +++++++++++++------------
+ os_stub/cryptlib_mbedtls/pem/pem.c      |  6 ++++--
+ os_stub/cryptlib_mbedtls/pk/dh.c        |  1 -
+ os_stub/cryptlib_mbedtls/pk/rsa_basic.c |  9 ++++-----
+ os_stub/cryptlib_mbedtls/pk/rsa_ext.c   |  5 +++--
+ os_stub/cryptlib_mbedtls/pk/x509.c      | 18 ++++++++++--------
+ 6 files changed, 34 insertions(+), 30 deletions(-)
+
+diff --git a/os_stub/cryptlib_mbedtls/hash/sha.c b/os_stub/cryptlib_mbedtls/hash/sha.c
+index c8454c654f..1fb19c7203 100644
+--- a/os_stub/cryptlib_mbedtls/hash/sha.c
++++ b/os_stub/cryptlib_mbedtls/hash/sha.c
+@@ -65,7 +65,7 @@ bool libspdm_sha256_init(void *sha256_context)
+ 
+     mbedtls_sha256_init(sha256_context);
+ 
+-    ret = mbedtls_sha256_starts_ret(sha256_context, false);
++    ret = mbedtls_sha256_starts(sha256_context, false);
+     if (ret != 0) {
+         return false;
+     }
+@@ -131,7 +131,7 @@ bool libspdm_sha256_update(void *sha256_context, const void *data,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha256_update_ret(sha256_context, data, data_size);
++    ret = mbedtls_sha256_update(sha256_context, data, data_size);
+     if (ret != 0) {
+         return false;
+     }
+@@ -166,7 +166,7 @@ bool libspdm_sha256_final(void *sha256_context, uint8_t *hash_value)
+         return false;
+     }
+ 
+-    ret = mbedtls_sha256_finish_ret(sha256_context, hash_value);
++    ret = mbedtls_sha256_finish(sha256_context, hash_value);
+     mbedtls_sha256_free(sha256_context);
+     if (ret != 0) {
+         return false;
+@@ -207,7 +207,7 @@ bool libspdm_sha256_hash_all(const void *data, size_t data_size,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha256_ret(data, data_size, hash_value, false);
++    ret = mbedtls_sha256(data, data_size, hash_value, false);
+     if (ret != 0) {
+         return false;
+     }
+@@ -267,7 +267,7 @@ bool libspdm_sha384_init(void *sha384_context)
+ 
+     mbedtls_sha512_init(sha384_context);
+ 
+-    ret = mbedtls_sha512_starts_ret(sha384_context, true);
++    ret = mbedtls_sha512_starts(sha384_context, true);
+     if (ret != 0) {
+         return false;
+     }
+@@ -335,7 +335,7 @@ bool libspdm_sha384_update(void *sha384_context, const void *data,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_update_ret(sha384_context, data, data_size);
++    ret = mbedtls_sha512_update(sha384_context, data, data_size);
+     if (ret != 0) {
+         return false;
+     }
+@@ -370,7 +370,8 @@ bool libspdm_sha384_final(void *sha384_context, uint8_t *hash_value)
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_finish_ret(sha384_context, hash_value);
++    ret = mbedtls_sha512_finish(sha384_context, hash_value);
++
+     mbedtls_sha512_free(sha384_context);
+     if (ret != 0) {
+         return false;
+@@ -411,7 +412,7 @@ bool libspdm_sha384_hash_all(const void *data, size_t data_size,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_ret(data, data_size, hash_value, true);
++    ret = mbedtls_sha512(data, data_size, hash_value, true);
+     if (ret != 0) {
+         return false;
+     }
+@@ -471,7 +472,7 @@ bool libspdm_sha512_init(void *sha512_context)
+ 
+     mbedtls_sha512_init(sha512_context);
+ 
+-    ret = mbedtls_sha512_starts_ret(sha512_context, false);
++    ret = mbedtls_sha512_starts(sha512_context, false);
+     if (ret != 0) {
+         return false;
+     }
+@@ -539,7 +540,7 @@ bool libspdm_sha512_update(void *sha512_context, const void *data,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_update_ret(sha512_context, data, data_size);
++    ret = mbedtls_sha512_update(sha512_context, data, data_size);
+     if (ret != 0) {
+         return false;
+     }
+@@ -574,7 +575,7 @@ bool libspdm_sha512_final(void *sha512_context, uint8_t *hash_value)
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_finish_ret(sha512_context, hash_value);
++    ret = mbedtls_sha512_finish(sha512_context, hash_value);
+     mbedtls_sha512_free(sha512_context);
+     if (ret != 0) {
+         return false;
+@@ -615,7 +616,7 @@ bool libspdm_sha512_hash_all(const void *data, size_t data_size,
+         return false;
+     }
+ 
+-    ret = mbedtls_sha512_ret(data, data_size, hash_value, false);
++    ret = mbedtls_sha512(data, data_size, hash_value, false);
+     if (ret != 0) {
+         return false;
+     }
+diff --git a/os_stub/cryptlib_mbedtls/pem/pem.c b/os_stub/cryptlib_mbedtls/pem/pem.c
+index 779ec7ba80..2e3e4d5a06 100644
+--- a/os_stub/cryptlib_mbedtls/pem/pem.c
++++ b/os_stub/cryptlib_mbedtls/pem/pem.c
+@@ -85,7 +85,8 @@ bool libspdm_rsa_get_private_key_from_pem(const uint8_t *pem_data,
+     }
+ 
+     ret = mbedtls_pk_parse_key(&pk, pem_data, pem_size,
+-                               (const uint8_t *)password, password_len);
++                               (const uint8_t *)password, password_len,
++			       NULL, NULL);
+ 
+     if (new_pem_data != NULL) {
+         free_pool(new_pem_data);
+@@ -171,7 +172,8 @@ bool libspdm_ec_get_private_key_from_pem(const uint8_t *pem_data, size_t pem_siz
+     }
+ 
+     ret = mbedtls_pk_parse_key(&pk, pem_data, pem_size,
+-                               (const uint8_t *)password, password_len);
++                               (const uint8_t *)password, password_len,
++			       NULL, NULL);
+ 
+     if (new_pem_data != NULL) {
+         free_pool(new_pem_data);
+diff --git a/os_stub/cryptlib_mbedtls/pk/dh.c b/os_stub/cryptlib_mbedtls/pk/dh.c
+index 624446cc54..9e12f4fc91 100644
+--- a/os_stub/cryptlib_mbedtls/pk/dh.c
++++ b/os_stub/cryptlib_mbedtls/pk/dh.c
+@@ -92,7 +92,6 @@ void *libspdm_dh_new_by_nid(size_t nid)
+     default:
+         goto error;
+     }
+-    ctx->len = mbedtls_mpi_size(&ctx->P);
+     return ctx;
+ error:
+     free_pool(ctx);
+diff --git a/os_stub/cryptlib_mbedtls/pk/rsa_basic.c b/os_stub/cryptlib_mbedtls/pk/rsa_basic.c
+index 996a6aca0a..c768a31e16 100644
+--- a/os_stub/cryptlib_mbedtls/pk/rsa_basic.c
++++ b/os_stub/cryptlib_mbedtls/pk/rsa_basic.c
+@@ -37,7 +37,8 @@ void *libspdm_rsa_new(void)
+         return rsa_context;
+     }
+ 
+-    mbedtls_rsa_init(rsa_context, MBEDTLS_RSA_PKCS_V15, MBEDTLS_MD_NONE);
++    mbedtls_rsa_init(rsa_context);
++
+     return rsa_context;
+ }
+ 
+@@ -211,8 +212,7 @@ bool libspdm_rsa_pkcs1_verify_with_nid(void *rsa_context, size_t hash_nid,
+ 
+     mbedtls_rsa_set_padding(rsa_context, MBEDTLS_RSA_PKCS_V15, md_alg);
+ 
+-    ret = mbedtls_rsa_pkcs1_verify(rsa_context, NULL, NULL,
+-                                   MBEDTLS_RSA_PUBLIC, md_alg,
++    ret = mbedtls_rsa_pkcs1_verify(rsa_context, md_alg,
+                                    (uint32_t)hash_size, message_hash,
+                                    signature);
+     if (ret != 0) {
+@@ -298,8 +298,7 @@ bool libspdm_rsa_pss_verify(void *rsa_context, size_t hash_nid,
+ 
+     mbedtls_rsa_set_padding(rsa_context, MBEDTLS_RSA_PKCS_V21, md_alg);
+ 
+-    ret = mbedtls_rsa_rsassa_pss_verify(rsa_context, NULL, NULL,
+-                                        MBEDTLS_RSA_PUBLIC, md_alg,
++    ret = mbedtls_rsa_rsassa_pss_verify(rsa_context, md_alg,
+                                         (uint32_t)hash_size, message_hash,
+                                         signature);
+     if (ret != 0) {
+diff --git a/os_stub/cryptlib_mbedtls/pk/rsa_ext.c b/os_stub/cryptlib_mbedtls/pk/rsa_ext.c
+index 007481a14f..13e2727c09 100644
+--- a/os_stub/cryptlib_mbedtls/pk/rsa_ext.c
++++ b/os_stub/cryptlib_mbedtls/pk/rsa_ext.c
+@@ -324,7 +324,7 @@ bool libspdm_rsa_pkcs1_sign_with_nid(void *rsa_context, size_t hash_nid,
+     mbedtls_rsa_set_padding(rsa_context, MBEDTLS_RSA_PKCS_V15, md_alg);
+ 
+     ret = mbedtls_rsa_pkcs1_sign(rsa_context, libspdm_myrand, NULL,
+-                                 MBEDTLS_RSA_PRIVATE, md_alg,
++                                 md_alg,
+                                  (uint32_t)hash_size, message_hash,
+                                  signature);
+     if (ret != 0) {
+@@ -419,9 +419,10 @@ bool libspdm_rsa_pss_sign(void *rsa_context, size_t hash_nid,
+     mbedtls_rsa_set_padding(rsa_context, MBEDTLS_RSA_PKCS_V21, md_alg);
+ 
+     ret = mbedtls_rsa_rsassa_pss_sign(rsa_context, libspdm_myrand, NULL,
+-                                      MBEDTLS_RSA_PRIVATE, md_alg,
++                                      md_alg,
+                                       (uint32_t)hash_size, message_hash,
+                                       signature);
++
+     if (ret != 0) {
+         return false;
+     }
+diff --git a/os_stub/cryptlib_mbedtls/pk/x509.c b/os_stub/cryptlib_mbedtls/pk/x509.c
+index 1b0d557793..b5a963eb70 100644
+--- a/os_stub/cryptlib_mbedtls/pk/x509.c
++++ b/os_stub/cryptlib_mbedtls/pk/x509.c
+@@ -308,9 +308,9 @@ libspdm_internal_x509_get_nid_name(mbedtls_x509_name *name, const uint8_t *oid,
+                                    size_t oid_size, char *common_name,
+                                    size_t *common_name_size)
+ {
+-    mbedtls_asn1_named_data *data;
++    const mbedtls_asn1_named_data *data;
+ 
+-    data = mbedtls_asn1_find_named_data(name, oid, oid_size);
++    data = mbedtls_asn1_find_named_data(name, (const char *)oid, oid_size);
+     if (data != NULL) {
+         if (*common_name_size <= data->val.len) {
+             *common_name_size = data->val.len + 1;
+@@ -709,7 +709,7 @@ bool libspdm_x509_verify_cert_chain(const uint8_t *root_cert, size_t root_cert_l
+     do {
+         tmp_ptr = current_cert;
+         ret = mbedtls_asn1_get_tag(
+-            &tmp_ptr, cert_chain + cert_chain_length, &asn1_len,
++	    (unsigned char **)&tmp_ptr, cert_chain + cert_chain_length, &asn1_len,
+             MBEDTLS_ASN1_CONSTRUCTED | MBEDTLS_ASN1_SEQUENCE);
+         if (ret != 0) {
+             break;
+@@ -792,7 +792,7 @@ bool libspdm_x509_get_cert_from_cert_chain(const uint8_t *cert_chain,
+ 
+         tmp_ptr = current_cert;
+         ret = mbedtls_asn1_get_tag(
+-            &tmp_ptr, cert_chain + cert_chain_length, &asn1_len,
++            (unsigned char **)&tmp_ptr, cert_chain + cert_chain_length, &asn1_len,
+             MBEDTLS_ASN1_CONSTRUCTED | MBEDTLS_ASN1_SEQUENCE);
+         if (ret != 0) {
+             break;
+@@ -1817,7 +1817,7 @@ bool libspdm_set_attribute_for_req(mbedtls_x509write_csr *req,
+     }
+ 
+     /*set subject name*/
+-    ret = mbedtls_x509write_csr_set_subject_name(req, buffer);
++    ret = mbedtls_x509write_csr_set_subject_name(req, (const char *)buffer);
+     if (ret != 0) {
+         return false;
+     }
+@@ -1884,7 +1884,8 @@ bool libspdm_set_attribute_for_req(mbedtls_x509write_csr *req,
+             val_len = obj_len;
+ 
+             /*set attributes*/
+-            ret = mbedtls_x509write_csr_set_extension(req, oid, oid_len, val, val_len);
++	    ret = mbedtls_x509write_csr_set_extension(req, (const char *)oid, oid_len, 0, val, val_len);
++
+             if (ret) {
+                 return false;
+             }
+@@ -2073,6 +2074,7 @@ bool libspdm_gen_x509_csr(size_t hash_nid, size_t asym_nid,
+     /*set basicConstraints*/
+     if (mbedtls_x509write_csr_set_extension(&req, MBEDTLS_OID_BASIC_CONSTRAINTS,
+                                             MBEDTLS_OID_SIZE(MBEDTLS_OID_BASIC_CONSTRAINTS),
++					    0,
+                                             is_ca ? basic_constraints_true : basic_constraints_false,
+                                             is_ca ?
+                                             sizeof(basic_constraints_true) :
+@@ -2118,8 +2120,8 @@ bool libspdm_gen_x509_csr(size_t hash_nid, size_t asym_nid,
+             continue;
+         }
+ 
+-        if (mbedtls_x509write_csr_set_extension(&req, next_oid->buf.p,
+-                                                oid_tag_len,
++        if (mbedtls_x509write_csr_set_extension(&req, (const char *)next_oid->buf.p,
++                                                oid_tag_len, 0,
+                                                 next_oid->buf.p + oid_tag_len,
+                                                 next_oid->buf.len - oid_tag_len
+                                                 ) != 0) {
+-- 
+2.39.2
+
