@@ -179,6 +179,7 @@ void s2tt_invalidate_block(const struct s2tt_context *s2_ctx, unsigned long addr
 void s2tt_invalidate_pages_in_block(const struct s2tt_context *s2_ctx,
 				    unsigned long addr);
 
+/* FIXME: Missing tests for s2tt_is_unassigned_*_block() */
 bool s2tt_is_unassigned_empty_block(const struct s2tt_context *s2_ctx,
 				    unsigned long *table);
 bool s2tt_is_unassigned_ram_block(const struct s2tt_context *s2_ctx,
@@ -188,6 +189,7 @@ bool s2tt_is_unassigned_ns_block(const struct s2tt_context *s2_ctx,
 bool s2tt_is_unassigned_destroyed_block(const struct s2tt_context *s2_ctx,
 					unsigned long *table);
 
+/* FIXME: Missing tests for s2tt_maps_assigned_empty_block() */
 bool s2tt_maps_assigned_empty_block(const struct s2tt_context *s2_ctx,
 				    unsigned long *table, long level);
 bool s2tt_maps_assigned_ram_block(const struct s2tt_context *s2_ctx,
