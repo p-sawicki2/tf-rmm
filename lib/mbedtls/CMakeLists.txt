@@ -58,6 +58,8 @@ list(APPEND MBEDTLS_PATCH_FILES
     "${MBEDTLS_PATCH_DIR}/0001-Remove-compiler-options-for-clang.patch")
 list(APPEND MBEDTLS_PATCH_FILES
     "${MBEDTLS_PATCH_DIR}/0002-Disable-explicit_bzero.patch")
+list(APPEND MBEDTLS_PATCH_FILES
+    "${MBEDTLS_PATCH_DIR}/0003-fix-unused-function-md_type_to_string.patch")
 Git_Apply_Patches(${MBEDTLS_SRC_DIR} "${MBEDTLS_PATCH_FILES}")
 
 #

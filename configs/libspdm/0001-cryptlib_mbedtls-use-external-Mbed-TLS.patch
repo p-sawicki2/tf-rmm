@@ -1,0 +1,46 @@
+From 943f70397e80591c1ff7c36d2561839be77ed6e9 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Wed, 3 Apr 2024 14:13:44 +0100
+Subject: [PATCH] cryptlib_mbedtls: use external Mbed TLS
+
+Do not include mbedtls headers files from libspdm fork of Mbed TLS.
+This change is RMM specific, for building cryptlib_mbedtls library
+from RMM.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ os_stub/cryptlib_mbedtls/CMakeLists.txt       | 4 ----
+ os_stub/cryptlib_mbedtls/internal_crypt_lib.h | 2 +-
+ 2 files changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/os_stub/cryptlib_mbedtls/CMakeLists.txt b/os_stub/cryptlib_mbedtls/CMakeLists.txt
+index ba00b51142..984b6711ed 100644
+--- a/os_stub/cryptlib_mbedtls/CMakeLists.txt
++++ b/os_stub/cryptlib_mbedtls/CMakeLists.txt
+@@ -9,10 +9,6 @@ INCLUDE_DIRECTORIES(${LIBSPDM_DIR}/include
+                     ${LIBSPDM_DIR}/os_stub/include
+                     ${LIBSPDM_DIR}/os_stub
+                     ${LIBSPDM_DIR}/os_stub/cryptlib_mbedtls
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/include
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/include/mbedtls
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/mbedtls/include
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/mbedtls/include/mbedtls
+ )
+ 
+ SET(src_cryptlib_mbedtls
+diff --git a/os_stub/cryptlib_mbedtls/internal_crypt_lib.h b/os_stub/cryptlib_mbedtls/internal_crypt_lib.h
+index 5fd6035f44..7900220a2d 100644
+--- a/os_stub/cryptlib_mbedtls/internal_crypt_lib.h
++++ b/os_stub/cryptlib_mbedtls/internal_crypt_lib.h
+@@ -21,7 +21,7 @@
+ /* We should alwasy add mbedtls/config.h here
+  * to ensure the config override takes effect.*/
+ 
+-#include <mbedtls/config.h>
++#include <mbedtls_config.h>
+ 
+ int libspdm_myrand(void *rng_state, unsigned char *output, size_t len);
+ 
+-- 
+2.39.2
+
