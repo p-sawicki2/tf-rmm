@@ -156,3 +156,39 @@ function(Git_Apply_Patches Git_Repo Patch_Files_List)
     endif()
   endforeach()
 endfunction()
+
+#
+# Git clone a repo
+#
+# Args In:
+# @Git_Url:		Git repository
+# @SHA:			Git SHA
+# @Path:		Path to clone
+# @Repo_Name:		Name of the repo
+#
+function(Git_Clone Git_Url SHA Path Repo_Name)
+  if(IS_DIRECTORY "${Path}/${Repo_Name}")
+    message("${Path}/${Repo_Name} exists")
+    return()
+  endif()
+
+  execute_process(
+    WORKING_DIRECTORY ${Path}
+    COMMAND ${GIT_EXECUTABLE} clone ${Git_Url}
+    RESULT_VARIABLE CLONE_STATUS
+    COMMAND_ECHO STDOUT
+    )
+  if(NOT CLONE_STATUS EQUAL 0)
+    message(FATAL_ERROR "Failed to clone ${Git_Url} to ${Path}/${Repo_Name}")
+  endif()
+
+  execute_process(
+    WORKING_DIRECTORY ${Path}/${Repo_Name}
+    COMMAND ${GIT_EXECUTABLE} reset --hard ${SHA}
+    RESULT_VARIABLE RESET_STATUS
+    COMMAND_ECHO STDOUT
+    )
+  if(NOT RESET_STATUS EQUAL 0)
+    message(FATAL_ERROR "Failed to reset to SHA ${SHA} at ${Path}/${Repo_Name}")
+  endif()
+endfunction()
