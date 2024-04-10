@@ -20,7 +20,8 @@ target_link_libraries(rmm-lib
               rmm-lib-s2tt
               rmm-lib-timers
               rmm-lib-xlat
-              t_cose)
+              t_cose
+              rmm-lib-spdm_requester)
 
 add_subdirectory("allocator")
 add_subdirectory("arch")
@@ -39,3 +40,4 @@ add_subdirectory("s2tt")
 add_subdirectory("t_cose")
 add_subdirectory("timers")
 add_subdirectory("xlat")
+add_subdirectory("spdm_requester")
