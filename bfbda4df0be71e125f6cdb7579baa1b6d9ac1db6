@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "505d9f93_06fb8bb8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-10T13:34:42Z",
+      "side": 1,
+      "message": "Addressed CI failures",
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
