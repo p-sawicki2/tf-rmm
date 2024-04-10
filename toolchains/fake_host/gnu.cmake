@@ -22,4 +22,8 @@ find_program(CMAKE_CXX_COMPILER
 
 set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
 
+foreach(language IN ITEMS ASM C CXX)
+    string(APPEND CMAKE_${language}_FLAGS_INIT "-Wno-stringop-overflow ")
+endforeach()
+
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--build-id=none ")
