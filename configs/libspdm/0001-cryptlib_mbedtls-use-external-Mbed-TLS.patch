@@ -1,0 +1,41 @@
+From 80a9cc1382c482dfc4efccc8569b305a0c640358 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Wed, 3 Apr 2024 14:13:44 +0100
+Subject: [PATCH] cryptlib_mbedtls: use external Mbed TLS
+
+Do not include mbedtls headers files from libspdm fork of Mbed TLS.
+This change is RMM specific, for building cryptlib_mbedtls library
+from RMM.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ os_stub/cryptlib_mbedtls/CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/os_stub/cryptlib_mbedtls/CMakeLists.txt b/os_stub/cryptlib_mbedtls/CMakeLists.txt
+index fc87e2cf54..0e8e2248d2 100644
+--- a/os_stub/cryptlib_mbedtls/CMakeLists.txt
++++ b/os_stub/cryptlib_mbedtls/CMakeLists.txt
+@@ -9,10 +9,6 @@ INCLUDE_DIRECTORIES(${LIBSPDM_DIR}/include
+                     ${LIBSPDM_DIR}/os_stub/include
+                     ${LIBSPDM_DIR}/os_stub
+                     ${LIBSPDM_DIR}/os_stub/cryptlib_mbedtls
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/include
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/include/mbedtls
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/mbedtls/include
+-                    ${LIBSPDM_DIR}/os_stub/mbedtlslib/mbedtls/include/mbedtls
+ )
+ 
+ SET(src_cryptlib_mbedtls
+@@ -48,8 +44,3 @@ if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+         TARGET_COMPILE_OPTIONS(cryptlib_mbedtls PRIVATE /wd4090 /wd4200)
+     endif()
+ endif()
+-
+-if(MBEDTLS_CONFIG_FILE)
+-else()
+-    TARGET_COMPILE_DEFINITIONS(cryptlib_mbedtls PRIVATE -DMBEDTLS_CONFIG_FILE=<libspdm_mbedtls_config.h>)
+-endif()
+-- 
+2.39.2
+

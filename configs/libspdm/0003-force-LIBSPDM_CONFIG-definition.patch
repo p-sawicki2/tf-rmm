@@ -1,0 +1,34 @@
+From cea0b5f0150838727ef0d86d890e81464ad98a17 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Fri, 31 May 2024 15:46:50 +0100
+Subject: [PATCH] force LIBSPDM_CONFIG definition
+
+libspdm in RMM must be compiled with a custom config file.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ include/internal/libspdm_lib_config.h | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/include/internal/libspdm_lib_config.h b/include/internal/libspdm_lib_config.h
+index bab6e7ac8a..c5c4bc5620 100644
+--- a/include/internal/libspdm_lib_config.h
++++ b/include/internal/libspdm_lib_config.h
+@@ -8,7 +8,13 @@
+ #define LIBSPDM_LIB_CONFIG_H
+ 
+ #ifndef LIBSPDM_CONFIG
+-#include "library/spdm_lib_config.h"
++/*
++ * libspdm in RMM must be compiled with custom config file. This causes the
++ * build to fail if LIBSPDM_CONFIG is not defined. Any source in RMM or
++ * 3rd party projects that includes libspdm header file must define
++ * LIBSPDM_CONFIG. This prevents from including default libspdm config file.
++ */
++#error "LIBSPDM_CONFIG not defined"
+ #else
+ #include LIBSPDM_CONFIG
+ #endif
+-- 
+2.39.2
+
