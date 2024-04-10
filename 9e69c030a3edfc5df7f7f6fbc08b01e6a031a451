@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "884f17ee_d5acd6ec",
+        "filename": "lib/arch/src/fake_host/simd_callbacks.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-10T11:44:18Z",
+      "side": 1,
+      "message": "/* SIMD_CALLBACKS_H */",
+      "revId": "9e69c030a3edfc5df7f7f6fbc08b01e6a031a451",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
