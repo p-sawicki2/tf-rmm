@@ -409,8 +409,7 @@ unsigned long s2tte_create_unassigned_ns(const struct s2tt_context *s2_ctx)
 {
 	(void)s2_ctx;
 
-	return (S2TTE_NS | S2TTE_INVALID_HIPAS_UNASSIGNED |
-		S2TTE_INVALID_UNPROTECTED);
+	return (S2TTE_NS | S2TTE_INVALID_HIPAS_UNASSIGNED);
 }
 
 /*
@@ -832,8 +831,6 @@ enum ripas s2tte_get_ripas(const struct s2tt_context *s2_ctx, unsigned long s2tt
 void s2tt_init_unassigned_empty(const struct s2tt_context *s2_ctx,
 				unsigned long *s2tt)
 {
-	assert(s2tt != NULL);
-
 	unsigned long s2tte =
 		s2tte_create_unassigned_empty(s2_ctx);
 
@@ -873,8 +870,6 @@ void s2tt_init_unassigned_ram(const struct s2tt_context *s2_ctx,
 void s2tt_init_unassigned_ns(const struct s2tt_context *s2_ctx,
 			     unsigned long *s2tt)
 {
-	assert(s2tt != NULL);
-
 	unsigned long s2tte = s2tte_create_unassigned_ns(s2_ctx);
 
 	for (unsigned int i = 0U; i < S2TTES_PER_S2TT; i++) {
@@ -893,8 +888,6 @@ void s2tt_init_unassigned_ns(const struct s2tt_context *s2_ctx,
 void s2tt_init_unassigned_destroyed(const struct s2tt_context *s2_ctx,
 				    unsigned long *s2tt)
 {
-	assert(s2tt != NULL);
-
 	unsigned long s2tte =
 		s2tte_create_unassigned_destroyed(s2_ctx);
 
