@@ -37,6 +37,7 @@ list(APPEND cppcheck-flags "--cppcheck-build-dir=${CPPCHECK_BUILD_DIR}")
 #
 list(APPEND cppcheck-flags "-i${SOURCE_DIR}/ext/")
 list(APPEND cppcheck-flags "-i${SOURCE_DIR}/lib/libc")
+list(APPEND cppcheck-flags "-i${BUILD_DIR}")
 
 #
 # If you want to suppress specific files without using an inline suppression,
