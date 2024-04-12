@@ -5,7 +5,6 @@
 
 include_guard()
 
-set(CMAKE_SYSTEM_NAME "Generic")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
@@ -23,6 +22,11 @@ endforeach()
 
 string(APPEND CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--gc-sections -g ")
 
-# 'march=" option is not applicable for fake_host
-function(detect_and_set_march)
-endfunction()
+#
+# Using <LINK_FLAGS> filers flags related to linking stage and avoids compile
+# time flags passed to linker. By grouping libraries between
+# --start-group/--end-group the specified archives are searched repeatedly
+# until no new undefined references are created.
+#
+set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <LINK_FLAGS> <OBJECTS> -o \
+<TARGET> -Wl,--start-group <LINK_LIBRARIES> -Wl,--end-group")
