@@ -37,6 +37,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "75c0339f_e9df44c8",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-04-12T11:27:43Z",
+      "side": 1,
+      "message": "nit: 0U, coverity might report issue",
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8391638d_2c6e70c2",
+        "filename": "lib/arch/tests/simd_test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-04-12T11:27:43Z",
+      "side": 1,
+      "message": "Can you please combine all these three routines to one helper function like\n\n    void simd_test_helpers_setup_id_regs(bool is_sve_en, bool is_sme_en)\n    {\n      id_aa64pfr0_el1 \u003d read_id_aa64pfr0_el1();\n      if (sve) {\n        id_aa64pfr0_el1 |\u003d INPLACE(ID_AA64PFR0_EL1_SVE, 1UL);\n      } else {\n        id_aa64pfr0_el1 |\u003d INPLACE(ID_AA64PFR0_EL1_SVE, 0UL);\n      }\n    \n      host_write_sysreg(\"id_aa64pfr0_el1\", id_aa64pfr0_el1);\n      // same for sme\n    \n    }\n\n\nI hope this change shouldn\u0027t break much of the caller side logic",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 1
+      },
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4d287a20_a63b72b8",
         "filename": "lib/arch/tests/simd_test_helpers.h",
         "patchSetId": 3
