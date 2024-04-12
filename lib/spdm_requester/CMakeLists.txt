@@ -33,17 +33,27 @@ FetchContent_Declare(libspdm
     GIT_PROGRESS	1)
 FetchContent_Populate(libspdm)
 
-#
-# This compiles libraries in ext/libspdm project to add SPDM requester protocol
-# support in RMM.
-#
-add_library(rmm-lib-spdm_requester INTERFACE)
-
 # Set LIBSPDM_DIR. Note: This variable is used by libspdm CMake.
 # libspdm_SOURCE_DIR will be set by FetchContent_Populate() call.
 set(LIBSPDM_DIR ${libspdm_SOURCE_DIR})
 set(LIBSPDM_BIN_DIR "${CMAKE_BINARY_DIR}/ext/libspdm")
 set(MBEDTLS_SRC_DIR "${RMM_SOURCE_DIR}/ext/mbedtls")
+
+# Apply all patches before cmake rules
+set(LIBSPDM_PATCH_DIR "${RMM_SOURCE_DIR}/configs/libspdm")
+set(LIBSPDM_PATCH_FILES
+    "${LIBSPDM_PATCH_DIR}/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch"
+    "${LIBSPDM_PATCH_DIR}/0002-cryptlib_mbedtls-use-mbedtls-3.4.0.patch"
+    "${LIBSPDM_PATCH_DIR}/0003-debuglib-fix-build-error-variable-status-set-but-not.patch"
+    "${LIBSPDM_PATCH_DIR}/0004-unit_test-compile-test_crypt-as-a-library.patch")
+
+Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
+
+#
+# This compiles libraries in ext/libspdm project to add SPDM requester protocol
+# support in RMM.
+#
+add_library(rmm-lib-spdm_requester INTERFACE)
 
 # todo: This can be moved to a config file and use
 # -DLIBSPDM_CONFIG=spdm_lib_config.h
@@ -104,6 +114,15 @@ set(LIBSPDM_STUB_LIBS
     cryptlib_mbedtls
     memlib)
 
+# For host build include extra os_stub libraries
+if(RMM_UNITTESTS)
+    set(LIBSPDM_STUB_LIBS
+        ${LIBSPDM_STUB_LIBS}
+        debuglib
+	rnglib
+	malloclib)
+endif()
+
 foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     add_subdirectory("${LIBSPDM_DIR}/os_stub/${LIBSPDM_STUB_LIB}"
         "${LIBSPDM_BIN_DIR}/os_stub/${LIBSPDM_STUB_LIB}")
@@ -120,10 +139,4 @@ foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     target_link_libraries(rmm-lib-spdm_requester INTERFACE "${LIBSPDM_STUB_LIB}")
 endforeach()
 
-# Patch support
-set(LIBSPDM_PATCH_DIR "${RMM_SOURCE_DIR}/configs/libspdm")
-set(LIBSPDM_PATCH_FILES
-    "${LIBSPDM_PATCH_DIR}/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch"
-    "${LIBSPDM_PATCH_DIR}/0002-cryptlib_mbedtls-use-mbedtls-3.4.0.patch")
-
-Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
+include(tests/CMakeLists.txt)

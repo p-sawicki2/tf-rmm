@@ -1,0 +1,33 @@
+From 5f0e590c76b3a3ea9dae1097de184d2faf8d62ee Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Thu, 18 Apr 2024 15:03:46 +0100
+Subject: [PATCH 1/2] =?UTF-8?q?debuglib:=20fix=20build=20error=20variable?=
+ =?UTF-8?q?=20=E2=80=98status=E2=80=99=20set=20but=20not=20used?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+When RMM build with HOST_VARIANT=host_test and build type Release
+results in build error.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ os_stub/debuglib/debuglib.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/os_stub/debuglib/debuglib.c b/os_stub/debuglib/debuglib.c
+index 2e64365acc..3e4115ce08 100644
+--- a/os_stub/debuglib/debuglib.c
++++ b/os_stub/debuglib/debuglib.c
+@@ -62,7 +62,7 @@ void libspdm_debug_print(size_t error_level, const char *format, ...)
+ {
+     char buffer[LIBSPDM_MAX_DEBUG_MESSAGE_LENGTH];
+     va_list marker;
+-    int status;
++    int status __attribute__((unused));
+ 
+     if ((error_level & LIBSPDM_DEBUG_LEVEL_CONFIG) == 0) {
+         return;
+-- 
+2.39.2
+
