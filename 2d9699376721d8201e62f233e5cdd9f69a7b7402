@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1e0e3f5c_1ca317d1",
+        "filename": "lib/arch/src/fake_host/simd_test_private.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-04-12T11:08:25Z",
+      "side": 1,
+      "message": "nit: add /\\* SIMD_TEST_PRIVATE_H \\*/",
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4d287a20_a63b72b8",
         "filename": "lib/arch/tests/simd_test_helpers.h",
         "patchSetId": 3
