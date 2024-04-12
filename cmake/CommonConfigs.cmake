@@ -126,4 +126,9 @@ endif()
 target_compile_definitions(rmm-common
     INTERFACE "COMMIT_INFO=\"${COMMIT_INFO}\"")
 
+if(RMM_PLATFORM STREQUAL host)
+    target_compile_definitions(rmm-common
+        INTERFACE "RMM_PLATFORM_HOST=1")
+endif()
+
 link_libraries(rmm-common)
