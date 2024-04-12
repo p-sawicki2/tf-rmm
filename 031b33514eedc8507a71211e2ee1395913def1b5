@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c73118e_2ccd1d18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "rmeove all the changes breaking the definitions into separate lines.",
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20061d4d_1f4a6fdd",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "is this needed ?",
+      "range": {
+        "startLine": 30,
+        "startChar": 21,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ebef52c_1c593ae1",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "This should already be a signed type ?",
+      "range": {
+        "startLine": 1286,
+        "startChar": 10,
+        "endLine": 1286,
+        "endChar": 38
+      },
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b7181ea_817988c0",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "assigning a lower width unsigned to higher width signed should not be a problem. Can you check if this is needed?",
+      "range": {
+        "startLine": 1286,
+        "startChar": 44,
+        "endLine": 1286,
+        "endChar": 48
+      },
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82c575db_6fed00aa",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "Is U() not enough ?",
+      "range": {
+        "startLine": 180,
+        "startChar": 37,
+        "endLine": 180,
+        "endChar": 38
+      },
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef1c04f2_fee169e4",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "Can both these  be U ?",
+      "range": {
+        "startLine": 46,
+        "startChar": 29,
+        "endLine": 46,
+        "endChar": 30
+      },
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3578f1a_d6a70b4b",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T12:56:12Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "031b33514eedc8507a71211e2ee1395913def1b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
