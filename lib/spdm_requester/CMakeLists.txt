@@ -100,11 +100,15 @@ foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     target_link_libraries(rmm-lib-spdm_requester INTERFACE "${LIBSPDM_STUB_LIB}")
 endforeach()
 
+include(tests/CMakeLists.txt)
+
 # Patch support
 set(LIBSPDM_PATCH_DIR "${RMM_SOURCE_DIR}/configs/libspdm")
 list(APPEND LIBSPDM_PATCH_FILES
     "${LIBSPDM_PATCH_DIR}/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch")
 list(APPEND LIBSPDM_PATCH_FILES
     "${LIBSPDM_PATCH_DIR}/0002-cryptlib_mbedtls-use-mbedtls-3.4.0.patch")
+list(APPEND LIBSPDM_PATCH_FILES
+    "${LIBSPDM_PATCH_DIR}/0003-unit_test-add-mbedtls-heap-init-in-test_crypt.patch")
 
 Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
