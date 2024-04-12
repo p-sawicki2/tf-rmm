@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06a297ee_796e10d2",
+        "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "can this be U()",
+      "range": {
+        "startLine": 73,
+        "startChar": 34,
+        "endLine": 73,
+        "endChar": 38
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "990e78fb_7b7886cf",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "Interested to know the error triggered without this change",
+      "range": {
+        "startLine": 90,
+        "startChar": 30,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "789fbb82_d8635531",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "will UL() work ?",
+      "range": {
+        "startLine": 66,
+        "startChar": 15,
+        "endLine": 66,
+        "endChar": 30
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a469d16f_dea86424",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "uint64_t should be same as unsigned long. So interested to know the error.",
+      "range": {
+        "startLine": 358,
+        "startChar": 1,
+        "endLine": 358,
+        "endChar": 14
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a615fe60_d2245096",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "this seems to be a coding style related issue. Can this specific style be suppressed ?",
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4144e250_90cc5ecc",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T11:18:29Z",
+      "side": 1,
+      "message": "this change can be a separate patch.",
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
