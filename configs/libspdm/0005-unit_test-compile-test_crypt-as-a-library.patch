@@ -1,0 +1,94 @@
+From 008a5dfc0cf5e94f4d5d16e19e937db27af266e7 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Thu, 18 Apr 2024 17:49:51 +0100
+Subject: [PATCH 2/2] unit_test: compile test_crypt as a library
+
+- Compile test_crypt as library. This allows RMM to include this library
+  in RMM unittest framework.
+- Prefix sample_key directory name in search path.
+
+This change is specific to RMM.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ unit_test/test_crypt/CMakeLists.txt |  3 +--
+ unit_test/test_crypt/test_crypt.c   | 14 +++++++++-----
+ unit_test/test_crypt/test_crypt.h   |  7 +++++++
+ 3 files changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/unit_test/test_crypt/CMakeLists.txt b/unit_test/test_crypt/CMakeLists.txt
+index 79caf0f459..d6eef3f94a 100644
+--- a/unit_test/test_crypt/CMakeLists.txt
++++ b/unit_test/test_crypt/CMakeLists.txt
+@@ -52,7 +52,6 @@ if((TOOLCHAIN STREQUAL "KLEE") OR (TOOLCHAIN STREQUAL "CBMC"))
+                    $<TARGET_OBJECTS:malloclib>
+     )
+ else()
+-    ADD_EXECUTABLE(test_crypt ${src_test_crypt})
+-    TARGET_LINK_LIBRARIES(test_crypt ${test_crypt_LIBRARY})
++    ADD_LIBRARY(test_crypt ${src_test_crypt})
+ endif()
+ 
+diff --git a/unit_test/test_crypt/test_crypt.c b/unit_test/test_crypt/test_crypt.c
+index 138ffe8a74..6c537a112d 100644
+--- a/unit_test/test_crypt/test_crypt.c
++++ b/unit_test/test_crypt/test_crypt.c
+@@ -88,22 +88,26 @@ bool libspdm_cryptest_main(void)
+     }
+     #endif /* LIBSPDM_RSA_SSA_SUPPORT */
+ 
+-    status = libspdm_validate_crypt_x509("ecp256", sizeof("ecp256"));
++    status = libspdm_validate_crypt_x509("sample_key/ecp256",
++					 sizeof("sample_key/ecp256"));
+     if (!status) {
+         return status;
+     }
+ 
+-    status = libspdm_validate_crypt_x509("ecp384", sizeof("ecp384"));
++    status = libspdm_validate_crypt_x509("sample_key/ecp384",
++					 sizeof("sample_key/ecp384"));
+     if (!status) {
+         return status;
+     }
+ 
+-    status = libspdm_validate_crypt_x509("rsa2048", sizeof("rsa2048"));
++    status = libspdm_validate_crypt_x509("sample_key/rsa2048",
++					 sizeof("sample_key/rsa2048"));
+     if (!status) {
+         return status;
+     }
+ 
+-    status = libspdm_validate_crypt_x509("rsa3072", sizeof("rsa3072"));
++    status = libspdm_validate_crypt_x509("sample_key/rsa3072",
++					 sizeof("sample_key/rsa3072"));
+     if (!status) {
+         return status;
+     }
+@@ -161,7 +165,7 @@ bool libspdm_cryptest_main(void)
+     return status;
+ }
+ 
+-int main(void)
++int test_crypt_main(void)
+ {
+     int return_value = 0;
+ 
+diff --git a/unit_test/test_crypt/test_crypt.h b/unit_test/test_crypt/test_crypt.h
+index 8412584182..4baf55e984 100644
+--- a/unit_test/test_crypt/test_crypt.h
++++ b/unit_test/test_crypt/test_crypt.h
+@@ -166,4 +166,11 @@ bool libspdm_validate_crypt_sm2_2(void);
+  **/
+ bool libspdm_validate_crypt_prng(void);
+ 
++/**
++ * Called from RMM unittest framework
++ *
++ * @retval  0 Validation succeeded, else failed
++ *
++ **/
++int test_crypt_main(void);
+ #endif
+-- 
+2.39.2
+
