@@ -50,6 +50,8 @@ set(LIBSPDM_PATCH_FILES
     "${LIBSPDM_PATCH_DIR}/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch"
     "${LIBSPDM_PATCH_DIR}/0002-fix-build-Wincompatible_pointer_types-errors.patch"
     "${LIBSPDM_PATCH_DIR}/0003-force-LIBSPDM_CONFIG-definition.patch"
+    "${LIBSPDM_PATCH_DIR}/0004-fix-few-build-errors.patch"
+    "${LIBSPDM_PATCH_DIR}/0005-unit_test-compile-test_crypt-as-a-library.patch"
     )
 Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
 
@@ -86,6 +88,15 @@ set(LIBSPDM_STUB_LIBS
     cryptlib_mbedtls
     memlib)
 
+# For host build include extra os_stub libraries
+if(RMM_UNITTESTS)
+    set(LIBSPDM_STUB_LIBS
+        ${LIBSPDM_STUB_LIBS}
+        debuglib
+	rnglib
+	malloclib)
+endif()
+
 foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     add_subdirectory("${LIBSPDM_DIR}/os_stub/${LIBSPDM_STUB_LIB}"
         "${LIBSPDM_BIN_DIR}/os_stub/${LIBSPDM_STUB_LIB}")
@@ -103,3 +114,5 @@ foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     endif()
     target_link_libraries(rmm-lib-spdm_requester INTERFACE "${LIBSPDM_STUB_LIB}")
 endforeach()
+
+include(tests/CMakeLists.txt)

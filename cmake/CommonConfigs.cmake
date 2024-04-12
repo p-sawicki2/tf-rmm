@@ -138,4 +138,9 @@ if(RMM_CCA_DA)
         INTERFACE "RMM_CCA_DA=1")
 endif()
 
+if(RMM_PLATFORM STREQUAL host)
+    target_compile_definitions(rmm-common
+        INTERFACE "RMM_PLATFORM_HOST=1")
+endif()
+
 link_libraries(rmm-common)
