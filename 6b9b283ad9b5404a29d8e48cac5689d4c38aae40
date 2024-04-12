@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef1c9776_3341a20e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T08:38:59Z",
+      "side": 1,
+      "message": "minor nits",
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d96075f_6a665b38",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T08:38:59Z",
+      "side": 1,
+      "message": "Suggest: \n(SVE enabled in simd_cfg but not enabled in CPU SIMD config) -\u003e \n(Try enabling SVE in simd_cfg but SVE is not present in CPU)",
+      "range": {
+        "startLine": 275,
+        "startChar": 54,
+        "endLine": 276,
+        "endChar": 51
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ba29983_732bbaaf",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T08:38:59Z",
+      "side": 1,
+      "message": "\"Try enabling SVE VQ in simd_cfg higher that SVE VQ of CPU.\"",
+      "range": {
+        "startLine": 306,
+        "startChar": 56,
+        "endLine": 307,
+        "endChar": 41
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1af2e72_2374f54a",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-12T08:38:59Z",
+      "side": 1,
+      "message": "\"Try enabling SME in simd_cfg but SME is not present in CPU\".",
+      "range": {
+        "startLine": 349,
+        "startChar": 55,
+        "endLine": 350,
+        "endChar": 50
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
