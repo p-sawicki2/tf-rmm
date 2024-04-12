@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bcd479e_2907b434",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-12T14:43:36Z",
+      "side": 1,
+      "message": "I changed the source with suggested changes, but it didn\u0027t fix the defects:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-coverity-internal/756/artifact/artefacts/html/index.html",
+      "revId": "a4b73fe601e0984194c4cba0f2d77542af1d1f1e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
