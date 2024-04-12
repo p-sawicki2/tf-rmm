@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceee1f69_6bd05c6f",
+        "filename": "lib/arch/src/fake_host/simd_callbacks.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-04-12T10:33:10Z",
+      "side": 1,
+      "message": "suggest: SVE_CLEAR_P_FFR_REGS",
+      "revId": "386a68a037e76b2d84928184849568ce7d66226a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cec52cc7_c235c28a",
+        "filename": "lib/arch/src/fake_host/simd_callbacks.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-04-12T10:33:10Z",
+      "side": 1,
+      "message": "SIMD_CB_IDS_MAX",
+      "revId": "386a68a037e76b2d84928184849568ce7d66226a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
