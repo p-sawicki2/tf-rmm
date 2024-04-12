@@ -1,0 +1,50 @@
+From b4f9edf8d892c32fb315cb4dc72f617b284f4be1 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Thu, 18 Apr 2024 15:03:46 +0100
+Subject: [PATCH] fix few build errors
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+debuglib.c: variable ‘status’ set but not used
+  When RMM build with HOST_VARIANT=host_test and build type Release
+  results in build error.
+
+crt_wrapper_host.c: duplicate symbols
+  Rename mbedtls_platform_zeroize as it conflicts with RMM MbedTLS
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ os_stub/cryptlib_mbedtls/sys_call/crt_wrapper_host.c | 2 +-
+ os_stub/debuglib/debuglib.c                          | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/os_stub/cryptlib_mbedtls/sys_call/crt_wrapper_host.c b/os_stub/cryptlib_mbedtls/sys_call/crt_wrapper_host.c
+index 9ce520c7c5..72decdba7d 100644
+--- a/os_stub/cryptlib_mbedtls/sys_call/crt_wrapper_host.c
++++ b/os_stub/cryptlib_mbedtls/sys_call/crt_wrapper_host.c
+@@ -25,7 +25,7 @@ int my_snprintf(char *str, size_t size, const char *format, ...)
+     return 0;
+ }
+ 
+-void mbedtls_platform_zeroize(void *buf, size_t len)
++void my_mbedtls_platform_zeroize(void *buf, size_t len)
+ {
+     libspdm_zero_mem(buf, len);
+ }
+diff --git a/os_stub/debuglib/debuglib.c b/os_stub/debuglib/debuglib.c
+index 2e64365acc..3e4115ce08 100644
+--- a/os_stub/debuglib/debuglib.c
++++ b/os_stub/debuglib/debuglib.c
+@@ -62,7 +62,7 @@ void libspdm_debug_print(size_t error_level, const char *format, ...)
+ {
+     char buffer[LIBSPDM_MAX_DEBUG_MESSAGE_LENGTH];
+     va_list marker;
+-    int status;
++    int status __attribute__((unused));
+ 
+     if ((error_level & LIBSPDM_DEBUG_LEVEL_CONFIG) == 0) {
+         return;
+-- 
+2.39.2
+
