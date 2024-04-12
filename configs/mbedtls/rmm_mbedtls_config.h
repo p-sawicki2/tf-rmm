@@ -127,6 +127,19 @@
 #define MBEDTLS_ECP_DP_SECP256R1_ENABLED
 #define MBEDTLS_ECP_DP_SECP384R1_ENABLED
 #define MBEDTLS_ECP_DP_SECP521R1_ENABLED
+
+#define MBEDTLS_RSA_GEN_KEY_MIN_BITS	512
+
+/*
+ * MBEDTLS_PEM_PARSE_C - test_crypt unit test needs this config.
+ *
+ * Enable MBEDTLS_PEM_PARSE_C only for host platform builds as it depends
+ * on libc function strstr. This can be later enabled for arm platform build
+ * if DA implementation needs this config.
+ */
+#ifdef RMM_PLATFORM_HOST
+#define MBEDTLS_PEM_PARSE_C
+#endif
 #endif /* RMM_CCA_DA */
 
 /*

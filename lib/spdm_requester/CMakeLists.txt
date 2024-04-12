@@ -48,6 +48,7 @@ set(MBEDTLS_SRC_DIR "${RMM_SOURCE_DIR}/ext/mbedtls")
 set(LIBSPDM_PATCH_DIR "${RMM_SOURCE_DIR}/configs/libspdm")
 set(LIBSPDM_PATCH_FILES
     "${LIBSPDM_PATCH_DIR}/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch"
+    "${LIBSPDM_PATCH_DIR}/0002-unit_test-compile-test_crypt-as-a-library.patch"
     )
 Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
 
@@ -76,6 +77,16 @@ set(SOURCE_DIRS
     ${LIBSPDM_DIR}/os_stub/cryptlib_mbedtls
     ${LIBSPDM_DIR}/os_stub/memlib)
 
+# For host build include extra os_stub libraries
+if(RMM_PLATFORM STREQUAL host)
+    set(SOURCE_DIRS
+        ${SOURCE_DIRS}
+        ${LIBSPDM_DIR}/os_stub/debuglib
+        ${LIBSPDM_DIR}/os_stub/rnglib
+        ${LIBSPDM_DIR}/os_stub/malloclib
+        ${LIBSPDM_DIR}/os_stub/platform_lib)
+endif()
+
 # Add all source directories
 foreach(SOURCE_DIR IN LISTS SOURCE_DIRS)
     # Get the library basename
@@ -96,3 +107,5 @@ foreach(SOURCE_DIR IN LISTS SOURCE_DIRS)
 
     target_link_libraries(rmm-lib-spdm_requester INTERFACE ${SPDM_LIB})
 endforeach()
+
+include(tests/CMakeLists.txt)
