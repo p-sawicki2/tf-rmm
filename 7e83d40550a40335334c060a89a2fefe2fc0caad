@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "259ed2f4_0534b471",
+        "filename": "lib/s2tt/src/s2tt_pvt_defs.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06a297ee_796e10d2",
+      "range": {
+        "startLine": 73,
+        "startChar": 34,
+        "endLine": 73,
+        "endChar": 38
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "990e78fb_7b7886cf",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-04-12T11:18:29Z",
       "side": 1,
       "message": "Interested to know the error triggered without this change",
+      "range": {
+        "startLine": 90,
+        "startChar": 30,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76461654_dee6f16c",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "not needed with new version",
+      "parentUuid": "990e78fb_7b7886cf",
       "range": {
         "startLine": 90,
         "startChar": 30,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf19e6fb_a787af73",
+        "filename": "lib/xlat/src/xlat_defs_private.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "this is not needed with new version",
+      "parentUuid": "789fbb82_d8635531",
+      "range": {
+        "startLine": 66,
+        "startChar": 15,
+        "endLine": 66,
+        "endChar": 30
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a469d16f_dea86424",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-04-12T11:18:29Z",
       "side": 1,
       "message": "uint64_t should be same as unsigned long. So interested to know the error.",
+      "range": {
+        "startLine": 358,
+        "startChar": 1,
+        "endLine": 358,
+        "endChar": 14
+      },
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bb6f4be_66b954b4",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "experimental, removed",
+      "parentUuid": "a469d16f_dea86424",
       "range": {
         "startLine": 358,
         "startChar": 1,
@@ -110,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67762346_46486e74",
+        "filename": "plat/fvp/src/fvp_memory.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a615fe60_d2245096",
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4144e250_90cc5ecc",
@@ -123,6 +237,24 @@
       "writtenOn": "2024-04-12T11:18:29Z",
       "side": 1,
       "message": "this change can be a separate patch.",
+      "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "161391f4_abef13cb",
+        "filename": "runtime/rsi/logger.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-12T12:00:53Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4144e250_90cc5ecc",
       "revId": "7e83d40550a40335334c060a89a2fefe2fc0caad",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
