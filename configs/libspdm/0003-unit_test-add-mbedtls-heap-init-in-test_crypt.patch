@@ -1,0 +1,63 @@
+From f3d82e33e3192770853b14d93d79171e156d9eb0 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Fri, 12 Apr 2024 10:38:26 +0100
+Subject: [PATCH] unit_test: add mbedtls heap init in test_crypt
+
+test_crypt will now use mbedtls heap managed by rmm-lib-allocator.
+
+This is change is only for RMM.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ unit_test/test_crypt/test_crypt.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/unit_test/test_crypt/test_crypt.c b/unit_test/test_crypt/test_crypt.c
+index 7dbd893a3e..138ffe8a74 100644
+--- a/unit_test/test_crypt/test_crypt.c
++++ b/unit_test/test_crypt/test_crypt.c
+@@ -6,6 +6,21 @@
+ 
+ #include "test_crypt.h"
+ 
++#include <mbedtls/memory_buffer_alloc.h>
++
++/* from RMM lib/allocator/include/memory_alloc.h */
++#include <memory_alloc.h>
++/* from RMM lib/common/include/sizes.h */
++#include <sizes.h>
++
++struct buffer_alloc_ctx test_crypt_ctx;
++
++/*
++ * Set MbedTLS heap size to twice the value used by RMM. As some of the RSA
++ * crypto calls uses more heap.
++ */
++unsigned char test_crypt_mem[REC_HEAP_SIZE * 2] __aligned(sizeof(unsigned long));
++
+ size_t libspdm_ascii_str_len(const char *string)
+ {
+     size_t length;
+@@ -150,9 +165,19 @@ int main(void)
+ {
+     int return_value = 0;
+ 
++    return_value = buffer_alloc_ctx_assign(&test_crypt_ctx);
++    if (return_value != 0) {
++	    libspdm_my_print("buffer_alloc_ctx_assign failed\n");
++	    return 1;
++    }
++
++    mbedtls_memory_buffer_alloc_init(test_crypt_mem, sizeof(test_crypt_mem));
++
+     if (!libspdm_cryptest_main()) {
+         return_value = 1;
+     }
+ 
++    buffer_alloc_ctx_unassign();
++
+     return return_value;
+ }
+-- 
+2.39.2
+
