@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0009974_1dda60a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-13T07:08:25Z",
+      "side": 1,
+      "message": "follow comment guidelines.\n\n\"fix(lib/s2tt)\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "cee9a93b3b71d788977f5d24516838850f9dd04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c7e4b52_3c022b78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-13T07:08:25Z",
+      "side": 1,
+      "message": "\"Note that UNASSIGNED and UNASSIGNED_NS Rtts can be folded till min block level allowed by Architecture\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 11,
+        "endChar": 55
+      },
+      "revId": "cee9a93b3b71d788977f5d24516838850f9dd04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf93e9a0_36a870e8",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-13T07:08:25Z",
+      "side": 1,
+      "message": "nit: Suggest :\n\n\"The RMM specification does not allow creating block entries less than S2TT_MIN_BLOCK_LEVEL for ASSIGNED_NS state.\"",
+      "range": {
+        "startLine": 356,
+        "startChar": 6,
+        "endLine": 357,
+        "endChar": 63
+      },
+      "revId": "cee9a93b3b71d788977f5d24516838850f9dd04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
