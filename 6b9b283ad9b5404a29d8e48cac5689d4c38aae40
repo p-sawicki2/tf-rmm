@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0976fc4e_b5adba8d",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d96075f_6a665b38",
+      "range": {
+        "startLine": 275,
+        "startChar": 54,
+        "endLine": 276,
+        "endChar": 51
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ba29983_732bbaaf",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "caa36208_f8a45294",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ba29983_732bbaaf",
+      "range": {
+        "startLine": 306,
+        "startChar": 56,
+        "endLine": 307,
+        "endChar": 41
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1af2e72_2374f54a",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-04-12T08:38:59Z",
       "side": 1,
       "message": "\"Try enabling SME in simd_cfg but SME is not present in CPU\".",
+      "range": {
+        "startLine": 349,
+        "startChar": 55,
+        "endLine": 350,
+        "endChar": 50
+      },
+      "revId": "6b9b283ad9b5404a29d8e48cac5689d4c38aae40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a8051c2_db178d9c",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1af2e72_2374f54a",
       "range": {
         "startLine": 349,
         "startChar": 55,
