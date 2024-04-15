@@ -16,6 +16,24 @@
       "message": "for github issues, add a line in the commit message like :\n\nhttps://github.blog/2013-03-18-closing-issues-across-repositories/",
       "revId": "5678d35142cb51f104ec96bcf88283f20c1c08f5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "201923b3_3d5cbe13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-15T14:38:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34feb52b_e5ab8d40",
+      "revId": "5678d35142cb51f104ec96bcf88283f20c1c08f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
