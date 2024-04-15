@@ -51,6 +51,24 @@
       "parentUuid": "9b504690_88b8856e",
       "revId": "c4b4264343e23dbec88bcdb67d9527a6afff67ef",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "824d2ca0_46321a6a",
+        "filename": "configs/rdfremont_defcfg.cmake",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-15T09:25:34Z",
+      "side": 1,
+      "message": "yes, would be good to add a comment on the memory being intended to be supported by the value of RMM_MAX_GRANULES.",
+      "parentUuid": "9e69b098_c7142814",
+      "revId": "c4b4264343e23dbec88bcdb67d9527a6afff67ef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
