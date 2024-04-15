@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2ec19f4_2891efb7",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-15T11:13:25Z",
+      "side": 0,
+      "message": "Update this description with the information provided on the patch description.",
+      "range": {
+        "startLine": 496,
+        "startChar": 1,
+        "endLine": 504,
+        "endChar": 3
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed0c556b_2a2cefde",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-15T11:13:25Z",
+      "side": 0,
+      "message": "As the only field that is allowed to be set is S2TT_NS, I think the assert should be replaced rather than removed:\n\nassert((s2tte \u0026(S2TTE_NS_ATTR_RMM \u0026(~S2TTE_NS))) \u003d\u003d 0UL);",
+      "range": {
+        "startLine": 520,
+        "startChar": 0,
+        "endLine": 520,
+        "endChar": 44
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
