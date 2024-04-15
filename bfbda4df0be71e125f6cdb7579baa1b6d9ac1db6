@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f1fb57c_30049713",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-15T14:12:19Z",
+      "side": 1,
+      "message": "I thought i had addressed this one, it must\u0027ve been undone when rebasing.",
+      "parentUuid": "b6811e46_83720a23",
+      "range": {
+        "startLine": 182,
+        "startChar": 38,
+        "endLine": 182,
+        "endChar": 45
+      },
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35748e4a_2c04f2f0",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-04-15T10:34:25Z",
       "side": 1,
       "message": "are \"bool\" needed?",
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54e75ec2_d0baeb43",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-15T14:12:19Z",
+      "side": 1,
+      "message": "I believe so. \u0027true\u0027 and \u0027false\u0027 are macros, so i\u0027d imagine coverity would complain about comparing bool (manifest_processed) and true (int). I may be wrong though.",
+      "parentUuid": "35748e4a_2c04f2f0",
       "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f04b43d0_a0ba7573",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-15T14:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13227cef_24fe7748",
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2922005f_0ae77428",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-04-15T10:34:25Z",
       "side": 1,
       "message": "add extra tab",
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b556b2a2_776f25b1",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-15T14:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2922005f_0ae77428",
       "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
