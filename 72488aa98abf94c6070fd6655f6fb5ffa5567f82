@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21d13627_49bdc208",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-15T15:54:27Z",
+      "side": 0,
+      "message": "It can be added \n\n\"\nNote: It is possible that fields expected to be set by RMM are already set in `s2tte` . This happens during the fold use-case.\"",
+      "parentUuid": "b2ec19f4_2891efb7",
+      "range": {
+        "startLine": 496,
+        "startChar": 1,
+        "endLine": 504,
+        "endChar": 3
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed0c556b_2a2cefde",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2024-04-15T11:13:25Z",
       "side": 0,
       "message": "As the only field that is allowed to be set is S2TT_NS, I think the assert should be replaced rather than removed:\n\nassert((s2tte \u0026(S2TTE_NS_ATTR_RMM \u0026(~S2TTE_NS))) \u003d\u003d 0UL);",
+      "range": {
+        "startLine": 520,
+        "startChar": 0,
+        "endLine": 520,
+        "endChar": 44
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30453040_ceeb7182",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-15T15:54:27Z",
+      "side": 0,
+      "message": "I am not sure that this is the only expected bit which is expected to be set. During fold, an existing NS S2TTE is being passed which already has these fields set ? \n\nI think this assert is too restrictive and given that these bits are being set again in the function, we can remove this.",
+      "parentUuid": "ed0c556b_2a2cefde",
       "range": {
         "startLine": 520,
         "startChar": 0,
