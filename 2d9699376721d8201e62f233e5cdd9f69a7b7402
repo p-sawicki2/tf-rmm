@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92168bff_015a146b",
+        "filename": "lib/arch/src/fake_host/simd_test_private.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:36Z",
+      "side": 1,
+      "message": "File content has been moved to simd_private.h as part of rework.",
+      "parentUuid": "1e0e3f5c_1ca317d1",
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75c0339f_e9df44c8",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-04-12T11:27:43Z",
       "side": 1,
       "message": "nit: 0U, coverity might report issue",
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d71bba3_d4a67fc5",
+        "filename": "lib/arch/src/simd.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75c0339f_e9df44c8",
       "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +111,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef4b9410_4a1b884a",
+        "filename": "lib/arch/tests/simd_test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8391638d_2c6e70c2",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 1
+      },
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d287a20_a63b72b8",
@@ -92,6 +152,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32706e0f_116a6d09",
+        "filename": "lib/arch/tests/simd_test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d287a20_a63b72b8",
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e93329c_d39167d8",
@@ -105,6 +183,30 @@
       "writtenOn": "2024-04-12T08:23:22Z",
       "side": 1,
       "message": "... not altered by init */",
+      "range": {
+        "startLine": 101,
+        "startChar": 30,
+        "endLine": 101,
+        "endChar": 47
+      },
+      "revId": "2d9699376721d8201e62f233e5cdd9f69a7b7402",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33a011bf_cd710399",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T11:03:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e93329c_d39167d8",
       "range": {
         "startLine": 101,
         "startChar": 30,
