@@ -16,6 +16,24 @@
       "message": "If there is no context switch happening, for just to save or restore a context, can you use the helper function\nsimd_context_save()\nsimd_context_restore()\n\nThis comment applies to simd_context_switch_TC1 to TC4",
       "revId": "d6c02b900429b487fbcb581dbe948e310bf04964",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1c7fd05_914c6463",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-15T14:56:19Z",
+      "side": 1,
+      "message": "Thanks, didn\u0027t notice those helper functions",
+      "parentUuid": "d2309625_e5e5a015",
+      "revId": "d6c02b900429b487fbcb581dbe948e310bf04964",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
