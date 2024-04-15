@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "476c23b5_0aaefa7e",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-15T16:07:15Z",
+      "side": 0,
+      "message": "Or maybe we can even remove the whole comment?. Just explain that the S2 TTE fields are provided by the @s2tte argument.",
+      "parentUuid": "21d13627_49bdc208",
+      "range": {
+        "startLine": 496,
+        "startChar": 1,
+        "endLine": 504,
+        "endChar": 3
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed0c556b_2a2cefde",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 5
@@ -85,6 +109,30 @@
       "side": 0,
       "message": "I am not sure that this is the only expected bit which is expected to be set. During fold, an existing NS S2TTE is being passed which already has these fields set ? \n\nI think this assert is too restrictive and given that these bits are being set again in the function, we can remove this.",
       "parentUuid": "ed0c556b_2a2cefde",
+      "range": {
+        "startLine": 520,
+        "startChar": 0,
+        "endLine": 520,
+        "endChar": 44
+      },
+      "revId": "72488aa98abf94c6070fd6655f6fb5ffa5567f82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffe86b3f_b1ef94d7",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-15T16:07:15Z",
+      "side": 0,
+      "message": "Yes, I misunderstood the commit message.",
+      "parentUuid": "30453040_ceeb7182",
       "range": {
         "startLine": 520,
         "startChar": 0,

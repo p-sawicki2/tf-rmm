@@ -46,6 +46,30 @@
       },
       "revId": "c96abbc3e4d6b55ea97ff6e16c0c801729af549c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "448dddf6_37c629e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-15T16:07:15Z",
+      "side": 1,
+      "message": "Ok, then maybe we can rephrase the second bullet as\n\n\"RMI_RTT_FOLD uses will use an S2TTE coming from a page or block entry, so the RMM controlled attributes can be different from \u00270\u0027\"\n\nOtherwise, I find the comment misleading.",
+      "parentUuid": "339ec195_1902abe1",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "c96abbc3e4d6b55ea97ff6e16c0c801729af549c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
