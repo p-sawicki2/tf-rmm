@@ -16,6 +16,24 @@
       "message": "remove spaces after casts",
       "revId": "f4482cce7661b099b3c6bf28ca01468469464e1d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76e46a3e_3904ca63",
+        "filename": "plat/arm/src/arm_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-15T14:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab87a843_8c60bccd",
+      "revId": "f4482cce7661b099b3c6bf28ca01468469464e1d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
