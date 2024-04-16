@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f371acbf_ffd2c079",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-16T08:54:04Z",
+      "side": 1,
+      "message": "The CI failure is due to a MISRA error introduced in Main. Otherwise this patch is OK.",
+      "revId": "57fd1b169704b06f0ef9bce3a4fdc1666b680883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
