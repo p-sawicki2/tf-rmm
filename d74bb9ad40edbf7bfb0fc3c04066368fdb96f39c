@@ -22,6 +22,30 @@
       },
       "revId": "d74bb9ad40edbf7bfb0fc3c04066368fdb96f39c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d689c7a4_4ec8db04",
+        "filename": "plat/host/host_cbmc/src/plat_init.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-17T10:58:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b965454_2e89da04",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "d74bb9ad40edbf7bfb0fc3c04066368fdb96f39c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
