@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0420a139_e83c17d5",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T15:52:49Z",
+      "side": 1,
+      "message": "This option in only relevant in plat/arm folder as this will be used by the search algorithm. \n\nYes other platforms (which use the plat/arm) will need to set it and they can set it via config file.",
+      "parentUuid": "30a8ca37_75333a0a",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 31
+      },
+      "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "408b5665_352c8d32",
         "filename": "cmake/CommonConfigs.cmake",
         "patchSetId": 12
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "moving these causes a build error, \"rmm-common isn\u0027t built in plat/arm/cmakelists.txt\"",
       "parentUuid": "408b5665_352c8d32",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "393c2c1c8e029d2ab5bdff32e87dcdec65d91937",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d0bab28_b12a81c1",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T15:52:49Z",
+      "side": 1,
+      "message": "target_compile_definitions(rmm-plat-arm\n    INTERFACE \"ARM_CMN_MAX_NUM_DRAM_BANKS\u003dU(${ARM_CMN_MAX_NUM_DRAM_BANKS})\")\n    \nshould work.",
+      "parentUuid": "da82f992_16393496",
       "range": {
         "startLine": 98,
         "startChar": 0,
