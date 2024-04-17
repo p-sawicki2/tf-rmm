@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b965454_2e89da04",
+        "filename": "plat/host/host_cbmc/src/plat_init.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T10:55:53Z",
+      "side": 1,
+      "message": "this needs to match the changed declaration.",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "d74bb9ad40edbf7bfb0fc3c04066368fdb96f39c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
