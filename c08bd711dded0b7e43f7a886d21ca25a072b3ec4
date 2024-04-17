@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b73f289_4955aad2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T16:22:06Z",
+      "side": 1,
+      "message": "minor comment",
+      "revId": "c08bd711dded0b7e43f7a886d21ca25a072b3ec4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a0db582_1af9a6d9",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T16:22:06Z",
+      "side": 1,
+      "message": "as a general comment, it is not necesary to cover the asserts via unit tests. But since you have done them, we might as well have them.",
+      "revId": "c08bd711dded0b7e43f7a886d21ca25a072b3ec4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "045a9e52_2ab05a29",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-17T16:22:06Z",
+      "side": 1,
+      "message": "\"...when the CPU still has unsaved live SIMD state. Expect assertion to fail.\"",
+      "range": {
+        "startLine": 580,
+        "startChar": 32,
+        "endLine": 581,
+        "endChar": 30
+      },
+      "revId": "c08bd711dded0b7e43f7a886d21ca25a072b3ec4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
