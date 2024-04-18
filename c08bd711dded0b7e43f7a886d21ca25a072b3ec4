@@ -121,6 +121,30 @@
       },
       "revId": "c08bd711dded0b7e43f7a886d21ca25a072b3ec4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f87a9e1d_15e5a7f5",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-18T13:23:50Z",
+      "side": 1,
+      "message": "Yes, have updated the test to be more clear.",
+      "parentUuid": "6a4a0acc_1db92f26",
+      "range": {
+        "startLine": 627,
+        "startChar": 0,
+        "endLine": 631,
+        "endChar": 38
+      },
+      "revId": "c08bd711dded0b7e43f7a886d21ca25a072b3ec4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
