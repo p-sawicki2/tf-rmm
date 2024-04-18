@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09deee2a_5cfc7f39",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-18T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b375042_8fdcc0ed",
+      "range": {
+        "startLine": 32,
+        "startChar": 55,
+        "endLine": 32,
+        "endChar": 64
+      },
+      "revId": "c2965c655d31145cdab9745e05687459a312137d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b790da0_e2de0748",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-04-17T15:52:49Z",
       "side": 1,
       "message": "it is better to use temp variable num_banks and then assign the value to the dram_ptr structure at the end.",
+      "revId": "c2965c655d31145cdab9745e05687459a312137d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81d1e8b5_24799eff",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-18T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b790da0_e2de0748",
       "revId": "c2965c655d31145cdab9745e05687459a312137d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "845493bc_47a4af57",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-18T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce0fd6fd_a0fb36db",
+      "revId": "c2965c655d31145cdab9745e05687459a312137d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "089d6324_ade11b97",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-04-17T15:52:49Z",
       "side": 1,
       "message": "instead looping over previous banks, we can keep a running cumulative_size which is incremented for each iteration of outer loop.",
+      "revId": "c2965c655d31145cdab9745e05687459a312137d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32e75fec_bdfd22c0",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-18T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "089d6324_ade11b97",
       "revId": "c2965c655d31145cdab9745e05687459a312137d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

@@ -158,6 +158,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "748347ee_2d523fbf",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001136
+      },
+      "writtenOn": "2024-04-18T13:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1d4ada9_bdee8273",
+      "revId": "32db5644f516324ba3c8177845ecb93752bd8dfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf10ee9f_9ea53531",
