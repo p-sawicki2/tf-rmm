@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7a0d747_0f5559a1",
+        "filename": "lib/arch/include/aarch64/entropy.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-18T12:39:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79226490_780637f5",
+      "revId": "3f4612e90739abef417921e5d1ee75ee4c05291b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15a7b0fa_2e1ff17b",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-18T09:51:50Z",
       "side": 1,
       "message": "Looks like we need __unused as well.",
+      "revId": "3f4612e90739abef417921e5d1ee75ee4c05291b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c1e53ed_b2c77714",
+        "filename": "lib/debug/src/backtrace.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-04-18T12:39:14Z",
+      "side": 1,
+      "message": "not needed for function params",
+      "parentUuid": "15a7b0fa_2e1ff17b",
       "revId": "3f4612e90739abef417921e5d1ee75ee4c05291b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
