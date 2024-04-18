@@ -1,0 +1,35 @@
+From 7d21996d5c54b2e2e9d31dccb0a60f35567f8e9c Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Wed, 3 Apr 2024 17:22:40 +0100
+Subject: [PATCH] fix: remove link_to_source calls
+
+Function link_to_source is provided by top level CMake file, remove
+link_to_source calls as its not required to link source files like
+error.c, ssl_debug_helpers_generated.c, version_features.c
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ library/CMakeLists.txt | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/library/CMakeLists.txt b/library/CMakeLists.txt
+index 535988303..635e52710 100644
+--- a/library/CMakeLists.txt
++++ b/library/CMakeLists.txt
+@@ -180,13 +180,6 @@ if(GEN_FILES)
+             ${CMAKE_CURRENT_SOURCE_DIR}/../scripts/generate_driver_wrappers.py
+             ${CMAKE_CURRENT_SOURCE_DIR}/../scripts/data_files/driver_templates/psa_crypto_driver_wrappers.c.jinja
+     )
+-
+-
+-else()
+-    link_to_source(error.c)
+-    link_to_source(version_features.c)
+-    link_to_source(ssl_debug_helpers_generated.c)
+-    link_to_source(psa_crypto_driver_wrappers.c)
+ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCC)
+-- 
+2.39.2
+
