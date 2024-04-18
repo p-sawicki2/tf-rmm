@@ -12,8 +12,12 @@ target_link_libraries(rmm-lib-measurement
             rmm-lib-common
             rmm-lib-debug)
 
+set(MBEDTLS_SRC_DIR "${RMM_SOURCE_DIR}/ext/mbedtls")
+
 target_include_directories(rmm-lib-measurement
     PUBLIC "include"
+           "${RMM_SOURCE_DIR}/configs/mbedtls"
+           "${MBEDTLS_SRC_DIR}/include"
     PRIVATE "src")
 
 if(HOST_VARIANT STREQUAL "host_cbmc")
