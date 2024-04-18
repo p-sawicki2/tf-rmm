@@ -12,6 +12,7 @@ endif()
 add_library(t_cose)
 
 set(T_COSE_SOURCE_DIR "${RMM_SOURCE_DIR}/ext/t_cose")
+set(MBEDTLS_SRC_DIR "${RMM_SOURCE_DIR}/ext/mbedtls")
 
 #TODO: Eliminate warning suppression once the t_cose submodule is updated to
 #      a released version.
@@ -43,6 +44,8 @@ target_include_directories(t_cose
     PUBLIC
         "${T_COSE_SOURCE_DIR}/inc"
         "${T_COSE_SOURCE_DIR}/crypto_adapters"
+        "${RMM_SOURCE_DIR}/configs/mbedtls"
+        "${MBEDTLS_SRC_DIR}/include"
     PRIVATE
         "${T_COSE_SOURCE_DIR}/src"
 )
