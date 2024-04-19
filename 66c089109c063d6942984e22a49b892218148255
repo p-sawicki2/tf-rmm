@@ -83,6 +83,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2acf98d1_4a078561",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:02:13Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9858c316_d18b14c9",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af044e6c_deb2d613",
@@ -165,6 +183,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c7a0391_4e09ab31",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:02:13Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cac14767_eec9ebc7",
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d52a9878_966ab41d",
@@ -202,6 +238,30 @@
       "side": 1,
       "message": "We don\u0027t really expect that to happen. As the internal prefix suggests, this is just a defensive measure here: to catch early if there is an error in the lookup, or the RD generation logic, and prevent the lengthy investigations for a failed coverage, or a failing unrelated assert.",
       "parentUuid": "d52a9878_966ab41d",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 58
+      },
+      "revId": "66c089109c063d6942984e22a49b892218148255",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa8377da_04cef71c",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:02:13Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "620bd8a0_5f6c7e97",
       "range": {
         "startLine": 179,
         "startChar": 0,
