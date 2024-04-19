@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c9756e4_27a43c23",
+        "filename": "drivers/pl011/include/pl011.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "base address",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ad66caf_71e9c096",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "Combine checks in one if() statement.",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c7b93f8_ef56bd5b",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "Define",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3532b15e_b99f2003",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "Add empty line before if()\nif (character !\u003d \u0027\\0\u0027)",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76b033ab_0d3efef3",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "See comment above",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd3d49c9_e926cafe",
+        "filename": "plat/fvp/src/fvp_setup.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:47:24Z",
+      "side": 1,
+      "message": "remove .",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
