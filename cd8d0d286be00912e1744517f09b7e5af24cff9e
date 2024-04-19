@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60d98753_d64242a0",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-04-19T15:56:53Z",
+      "side": 1,
+      "message": "Should we actually read the `num_rec_aux` from the `rd_addr` here? \n\nIn the pre-condition you strengthen the `num_rec_aux` must be `MAX_REC_AUX_GRANULES` in `valid_rd` function, which mean CBMC will only explore situation where `value.num_rec_aux \u003d\u003d MAX_REC_AUX_GRANULES`. The question here is: \ndoes all valid realm must has `num_rec_aux` be `MAX_REC_AUX_GRANULES` in the implementation.",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 29
+      },
+      "revId": "cd8d0d286be00912e1744517f09b7e5af24cff9e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
