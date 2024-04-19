@@ -22,6 +22,30 @@
       },
       "revId": "cd8d0d286be00912e1744517f09b7e5af24cff9e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdc882ff_aea4db89",
+        "filename": "plat/host/host_cbmc/src/tb_realm.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:06:14Z",
+      "side": 1,
+      "message": "The TF-RMM currently returns a hardcoded value in rd-\u003enum_rec_aux which is MAX_REC_AUX_GRANULES.",
+      "parentUuid": "60d98753_d64242a0",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 29
+      },
+      "revId": "cd8d0d286be00912e1744517f09b7e5af24cff9e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
