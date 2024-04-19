@@ -102,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ce80cf0_8f0941d5",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T11:06:22Z",
+      "side": 1,
+      "message": "manifest_processed \u0026 is_mmu_enabled() are boolen.\nDoes Coverity complain about assert(manifest_processed \u0026\u0026 !is_mmu_enabled())\n?",
+      "parentUuid": "54e75ec2_d0baeb43",
+      "revId": "bfbda4df0be71e125f6cdb7579baa1b6d9ac1db6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "13227cef_24fe7748",
         "filename": "lib/rmm_el3_ifc/src/rmm_el3_ifc_manifest.c",
         "patchSetId": 17
