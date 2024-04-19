@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aec606f9_aea909b5",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:35:10Z",
+      "side": 1,
+      "message": "- UL(1)",
+      "revId": "06434d2060dcaa5297f76ba550d37f5f264444db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66c047d5_dd8f03eb",
+        "filename": "lib/console/include/console.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-19T10:35:10Z",
+      "side": 1,
+      "message": "add empty line before comment",
+      "revId": "06434d2060dcaa5297f76ba550d37f5f264444db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
