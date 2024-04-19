@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d0b0827_2d603bd5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:15:18Z",
+      "side": 1,
+      "message": "minor comment",
+      "revId": "5c71b6911b546221ca30c7053b80046ce34736e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a47c200d_f419cd30",
+        "filename": "lib/realm/include/rec.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-19T16:15:18Z",
+      "side": 1,
+      "message": "maybe we should call this\n\n\"STRUCT_TYPE\" , so that to the regular codebase reader it is clear that this is a \"struct\" and then CBMC can override this to be union. \n\nPerhaps can be defined in utils_def.h so we can possibly use it for other headers as well if needed.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "5c71b6911b546221ca30c7053b80046ce34736e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
