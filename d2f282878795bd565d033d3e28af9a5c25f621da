@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fd8d7b7_de201fd5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-22T10:30:49Z",
+      "side": 1,
+      "message": "The CBMC CI is currently failing with latest patch, but otherwise this is fine.",
+      "revId": "d2f282878795bd565d033d3e28af9a5c25f621da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
