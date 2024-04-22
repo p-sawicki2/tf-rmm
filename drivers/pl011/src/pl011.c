@@ -68,6 +68,7 @@ static void uart_putc(char ch)
 }
 
 /* Serial output - called from printf */
+/* cppcheck-suppress misra-c2012-8.4 */
 /* coverity[misra_c_2012_rule_8_7_violation:SUPPRESS] */
 void putchar(char character)
 {
