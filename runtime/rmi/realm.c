@@ -193,7 +193,7 @@ static void init_s2_starting_level(struct rd *rd)
 	 * the starting level.
 	 */
 	unsigned long sl_entry_map_size =
-			1UL << ((levels * S2TTE_STRIDE) + GRANULE_SHIFT);
+			(UL(1)) << U(U(levels * S2TTE_STRIDE) + U(GRANULE_SHIFT));
 
 	num_root_rtts = rd->s2_ctx.num_root_rtts;
 	for (unsigned int rtt = 0U; rtt < num_root_rtts; rtt++) {

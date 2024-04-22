@@ -598,7 +598,7 @@ unsigned long host_ns_s2tte(const struct s2tt_context *s2_ctx,
 unsigned long s2tte_create_table(const struct s2tt_context *s2_ctx,
 				 unsigned long pa, long level)
 {
-	__unused int min_starting_level;
+	__unused long min_starting_level;
 
 	(void)level;
 

@@ -231,6 +231,7 @@ static void rmi_log_on_exit(unsigned int handler_id,
 
 /* coverity[misra_c_2012_rule_8_4_violation:SUPPRESS] */
 /* coverity[misra_c_2012_rule_8_7_violation:SUPPRESS] */
+/* cppcheck-suppress misra-c2012-8.4 */
 void handle_ns_smc(unsigned int function_id,
 		   unsigned long arg0,
 		   unsigned long arg1,
@@ -256,6 +257,7 @@ void handle_ns_smc(unsigned int function_id,
 
 	if (IS_SMC64_RMI_FID(function_id)) {
 		handler_id = RMI_HANDLER_ID(function_id);
+		/* cppcheck-suppress misra-c2012-17.3 ; false positive */
 		if (handler_id < ARRAY_LEN(smc_handlers)) {
 			handler = &smc_handlers[handler_id];
 		}
@@ -447,6 +449,7 @@ static bool is_el2_data_abort_gpf(unsigned long esr)
  * If no match is found, it aborts the RMM.
  */
 /* coverity[misra_c_2012_rule_8_4_violation:SUPPRESS] */
+/* cppcheck-suppress misra-c2012-8.4 */
 unsigned long handle_rmm_trap(dump_regs_t *regs)
 {
 	unsigned long esr = read_esr_el2();
