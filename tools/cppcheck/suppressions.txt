@@ -26,6 +26,10 @@ misra-config
 constVariablePointer
 constParameterPointer
 constParameter
+constParameterCallback
+
+// Ignore cppcheck checkersReport error
+checkersReport
 
 // Ignore errors in ext folder
 *:*/ext/*
