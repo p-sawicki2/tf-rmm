@@ -20,7 +20,7 @@
 struct console {
 	struct console *next;
 	uint64_t flags;
-	int (*const putc)(int character, struct console *console);
+	int (*const putc)(int character, const struct console *console);
 	void (*const flush)(struct console *console);
 	uintptr_t base;
 
