@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9de352dc_a7850375",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001039
+      },
+      "writtenOn": "2024-04-22T13:57:32Z",
+      "side": 1,
+      "message": "I think cumulative_size should be updated after it is written into the current bank, so that the first bank starts with index 0",
+      "revId": "3cb7406350be5c84ce2df7d5eaada805cecc7903",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
