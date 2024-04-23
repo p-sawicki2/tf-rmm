@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a58bd159_afeeed2d",
+        "filename": "lib/allocator/src/memory_alloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "This is close to MISRA C Rule wording, is it allowed?",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20ac5cc0_ed8a5296",
+        "filename": "lib/allocator/src/memory_alloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "remove space after cast and extra spaces",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f57c2cd_9e706668",
+        "filename": "lib/allocator/src/memory_alloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "See comment for #202",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0ed1fab_f7ef3bf5",
+        "filename": "lib/allocator/src/memory_alloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "See above",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35a6d496_a13058d9",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Are \"false positive\" needed? When suppressing, it is assumed to be false positives.",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15c8bf32_8b09eb0b",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Is \"false positive\" needed?",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "134299d3_94c24ece",
+        "filename": "lib/xlat/src/xlat_tables_core.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Lines #312 \u0026 325 should be removed.",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad18536f_e9768e8d",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Remove \"false positive\"?",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdfba1d1_ac2dfd6a",
+        "filename": "runtime/core/sysregs.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Remove \"false positive\"?",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "541013d9_d81b048a",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "\"false positive\"",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "463a3057_96be80be",
+        "filename": "runtime/rmi/run.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-23T10:14:37Z",
+      "side": 1,
+      "message": "Both bit_count \u0026 1U are unsigned, U around them is obsolete.",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
