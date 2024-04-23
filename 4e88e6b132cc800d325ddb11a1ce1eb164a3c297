@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "57c90676_ac030ee3",
+        "filename": "lib/allocator/src/memory_alloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T11:18:20Z",
+      "side": 1,
+      "message": "Yes, better to remove.",
+      "parentUuid": "a58bd159_afeeed2d",
+      "revId": "4e88e6b132cc800d325ddb11a1ce1eb164a3c297",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "20ac5cc0_ed8a5296",
         "filename": "lib/allocator/src/memory_alloc.c",
         "patchSetId": 7
