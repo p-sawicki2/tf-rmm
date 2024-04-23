@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a049e1c_ea68b110",
+        "filename": "drivers/pl011/include/pl011.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c9756e4_27a43c23",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ad66caf_71e9c096",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-19T10:47:24Z",
       "side": 1,
       "message": "Combine checks in one if() statement.",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f9ddaff_9b58d350",
+        "filename": "drivers/pl011/src/pl011.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ad66caf_71e9c096",
       "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cbdd027_24ac13ae",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c7b93f8_ef56bd5b",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3532b15e_b99f2003",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-04-19T10:47:24Z",
       "side": 1,
       "message": "Add empty line before if()\nif (character !\u003d \u0027\\0\u0027)",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f858b5a_074b66ec",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3532b15e_b99f2003",
       "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -86,6 +158,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00c52463_f54b35ec",
+        "filename": "lib/libc/src/printf.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76b033ab_0d3efef3",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd3d49c9_e926cafe",
@@ -99,6 +189,24 @@
       "writtenOn": "2024-04-19T10:47:24Z",
       "side": 1,
       "message": "remove .",
+      "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb56e28_909ecc70",
+        "filename": "plat/fvp/src/fvp_setup.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-23T14:52:41Z",
+      "side": 1,
+      "message": "This is intermediate patch and this line is removed in next patch.",
+      "parentUuid": "cd3d49c9_e926cafe",
       "revId": "844ade221870c6d7dfad93ee0ebeb57be4aa11e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
