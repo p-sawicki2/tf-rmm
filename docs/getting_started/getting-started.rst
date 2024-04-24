@@ -51,7 +51,7 @@ The following tools are required to obtain and build |RMM|:
    "docutils",">v2.38.0","Documentation"
    "gcovr",">=v4.2","Tools(Coverage analysis)"
    "CBMC",">=5.84.0","Tools(CBMC analysis)"
-   "CPPcheck",">=1.90","Tools(CPPcheck)"
+   "CPPcheck",">=2.13.4","Tools(CPPcheck)"
 
 .. _getting_started_toolchain:
 
@@ -216,9 +216,9 @@ Install Cppcheck and dependencies
     The installation of Cppcheck is an optional step. This is required only
     if using the Cppcheck static analysis.
 
-Follow the public documentation to install Cppcheck either from the official
-website https://cppcheck.sourceforge.io/ or from the official github
-https://github.com/danmar/cppcheck/
+Recommended version is 2.13.4
+
+See :ref:`cppcheck` for further instructions.
 
 If you own a valid copy of a MISRA rules file:
 
