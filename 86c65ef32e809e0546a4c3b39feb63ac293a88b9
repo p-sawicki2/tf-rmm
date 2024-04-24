@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "578d2cfd_60479518",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-24T10:58:12Z",
+      "side": 1,
+      "message": "should we retrieve the cpu_cfg for NWD via simd_get_cpu_config() and use that for the NWD owner ?\n\nSimilar comment to tests below.",
+      "range": {
+        "startLine": 805,
+        "startChar": 15,
+        "endLine": 805,
+        "endChar": 21
+      },
+      "revId": "86c65ef32e809e0546a4c3b39feb63ac293a88b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
