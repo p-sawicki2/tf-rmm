@@ -219,6 +219,7 @@ Install Cppcheck and dependencies
 Follow the public documentation to install Cppcheck either from the official
 website https://cppcheck.sourceforge.io/ or from the official github
 https://github.com/danmar/cppcheck/
+Recommended version is 2.13.4
 
 If you own a valid copy of a MISRA rules file:
 
