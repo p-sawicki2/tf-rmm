@@ -56,7 +56,7 @@ static bool get_realm_params(struct rmi_realm_params *realm_params,
 	struct granule *g_realm_params;
 
 	g_realm_params = find_granule(realm_params_addr);
-	if ((g_realm_params == NULL) || (g_realm_params->state != GRANULE_STATE_NS)) {
+	if ((g_realm_params == NULL) || (STATE(g_realm_params) != GRANULE_STATE_NS)) {
 		return false;
 	}
 
@@ -486,7 +486,7 @@ static unsigned long total_root_rtt_refcount(struct granule *g_rtt,
 		* deadlock free locking guarentee.
 		*/
 		granule_lock(g, GRANULE_STATE_RTT);
-		refcount += g->refcount;
+		refcount += REFCOUNT(g);
 		granule_unlock(g);
 	}
 
