@@ -20,6 +20,7 @@ target_link_libraries(rmm-lib
               rmm-lib-s2tt
               rmm-lib-slot_buf
               rmm-lib-xlat
+              rmm-lib-queue
               t_cose)
 
 add_subdirectory("allocator")
@@ -33,6 +34,7 @@ add_subdirectory("granule")
 add_subdirectory("mbedtls")
 add_subdirectory("measurement")
 add_subdirectory("qcbor")
+add_subdirectory("queue")
 add_subdirectory("rmm_el3_ifc")
 add_subdirectory("smc")
 add_subdirectory("s2tt")
