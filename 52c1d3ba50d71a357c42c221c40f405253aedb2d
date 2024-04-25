@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad618b4b_5d566a5c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-25T11:14:02Z",
+      "side": 1,
+      "message": "We have 2 granule.c files - in lib/realm/src \u0026 runtime/rmi. Can we rename one of them?",
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
