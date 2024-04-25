@@ -18,7 +18,7 @@ static inline void __sca_write64(uint64_t *ptr, uint64_t val)
 
 	asm volatile(
 	"	str %[val], %[ptr]\n"
-	: [ptr] "=m" (*ptr)
+	: [ptr] "=Q" (*ptr)
 	: [val] "r" (val)
 	);
 }
@@ -46,7 +46,7 @@ static inline uint64_t __sca_read64(uint64_t *ptr)
 	asm volatile(
 	"	ldr	%[val], %[ptr]\n"
 	: [val] "=r" (val)
-	: [ptr] "m" (*ptr)
+	: [ptr] "Q" (*ptr)
 	);
 
 	return val;
@@ -82,7 +82,7 @@ static inline uint16_t __sca_read16(uint16_t *ptr)
 	asm volatile(
 	"	ldrh	%w[val], %[ptr]\n"
 	: [val] "=r" (val)
-	: [ptr] "m" (*ptr)
+	: [ptr] "Q" (*ptr)
 	);
 
 	return val;

@@ -40,6 +40,7 @@ target_link_libraries(rmm-lib-realm
 
 target_include_directories(rmm-lib-realm
     PUBLIC "include"
+    PUBLIC "include/${RMM_ARCH}"
     PRIVATE "src/include/${RMM_ARCH}"
     PRIVATE "src/include")
 
