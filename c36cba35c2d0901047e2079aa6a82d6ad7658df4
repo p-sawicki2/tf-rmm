@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a643adc2_088154be",
+        "filename": "lib/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "nit: use space instead of tab.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 1
+      },
+      "revId": "c36cba35c2d0901047e2079aa6a82d6ad7658df4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ed135bd_dadd9deb",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "See comment above.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 1
+      },
+      "revId": "c36cba35c2d0901047e2079aa6a82d6ad7658df4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ec7693b_2cdf3c69",
+        "filename": "lib/granule/tests/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "space instead of tab",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "c36cba35c2d0901047e2079aa6a82d6ad7658df4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

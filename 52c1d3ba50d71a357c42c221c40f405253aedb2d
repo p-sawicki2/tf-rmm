@@ -16,6 +16,207 @@
       "message": "We have 2 granule.c files - in lib/realm/src \u0026 runtime/rmi. Can we rename one of them?",
       "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc1bb890_b3258d4f",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "```\n# Include files needed for aarch64, fake_host and cbmc builds\ntarget_sources(rmm-lib-arch\n            PRIVATE \"src/vmid.c\")\n```\n\nThis is needed to pass CBMC build.",
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d9406a0_155d7bd9",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "this is a simple helper which can be implemented here , and it can be reimplemented in slot_buf as well I think.",
+      "range": {
+        "startLine": 1180,
+        "startChar": 7,
+        "endLine": 1180,
+        "endChar": 40
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8860ee4_0b331573",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "nit: replace tab with space.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2792fbf2_5e52bef5",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "this can go into PRIVATE I think.",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0657b0f3_84ffb48c",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "keep this as buffer_aux_unmap since it is not taking a granule pointer as input.",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 24
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82457660_59d11919",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be needed. Need to see why this is not part of rmm-lib.",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be5deb65_fa53ae76",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "seems this helper is only needed in slot buffer. Can be within that component ?",
+      "range": {
+        "startLine": 252,
+        "startChar": 10,
+        "endLine": 252,
+        "endChar": 33
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61fa206f_04645b99",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "same comment as above ?",
+      "range": {
+        "startLine": 268,
+        "startChar": 10,
+        "endLine": 268,
+        "endChar": 38
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "243756ef_45444f6a",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-25T13:40:27Z",
+      "side": 1,
+      "message": "this is a small helper which can be re-implemented in slot buf and grnaule ?",
+      "range": {
+        "startLine": 286,
+        "startChar": 13,
+        "endLine": 286,
+        "endChar": 46
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
