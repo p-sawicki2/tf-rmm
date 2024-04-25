@@ -9,20 +9,34 @@
 #include <assert.h>
 #include <atomics.h>
 #include <errno.h>
-#include <granule_types.h>
+#include <granule_lock.h>
 #include <memory.h>
-#include <spinlock.h>
 #include <stdbool.h>
 #include <utils_def.h>
 
+/* Maximum number of entries in an RTT */
+#define REFCOUNT_MAX	(unsigned short)(GRANULE_SIZE / sizeof(uint64_t))
+
+/* Granule descriptor fields access macros */
+#define LOCKED(g)	\
+		(((g)->descriptor & GRN_LOCK_BIT) != 0U)
+
+#define REFCOUNT(g)	\
+		(((g)->descriptor) & (unsigned short)MASK(GRN_REFCOUNT))
+
+#define STATE(g)	\
+		((unsigned short)EXTRACT(GRN_STATE, (g)->descriptor))
+
 static inline unsigned short granule_refcount_read_relaxed(struct granule *g)
 {
-	return __sca_read16(&g->refcount);
+	return __sca_read16(&g->descriptor) &
+			(unsigned short)MASK(GRN_REFCOUNT);
 }
 
 static inline unsigned short granule_refcount_read_acquire(struct granule *g)
 {
-	return __sca_read16_acquire(&g->refcount);
+	return __sca_read16_acquire(&g->descriptor) &
+			(unsigned short)MASK(GRN_REFCOUNT);
 }
 
 /*
@@ -37,16 +51,14 @@ static inline unsigned short granule_refcount_read_acquire(struct granule *g)
  * intended as a mechanism to ensure correctness.
  */
 static inline void __granule_assert_unlocked_invariants(struct granule *g,
-							unsigned char state)
+							unsigned int state)
 {
-	(void)g;
-
 	switch (state) {
 	case GRANULE_STATE_NS:
 		assert(granule_refcount_read_relaxed(g) == 0U);
 		break;
 	case GRANULE_STATE_DELEGATED:
-		assert(g->refcount == 0U);
+		assert(REFCOUNT(g) == 0U);
 		break;
 	case GRANULE_STATE_RD:
 		/*
@@ -59,14 +71,14 @@ static inline void __granule_assert_unlocked_invariants(struct granule *g,
 		assert(granule_refcount_read_relaxed(g) <= 1U);
 		break;
 	case GRANULE_STATE_DATA:
-		assert(g->refcount == 0U);
+		assert(REFCOUNT(g) == 0U);
 		break;
 	case GRANULE_STATE_RTT:
 		/* Refcount cannot be greater that number of entries in an RTT */
-		assert(g->refcount <= (unsigned short)(GRANULE_SIZE / sizeof(uint64_t)));
+		assert(REFCOUNT(g) <= REFCOUNT_MAX);
 		break;
 	case GRANULE_STATE_REC_AUX:
-		assert(g->refcount == 0U);
+		assert(REFCOUNT(g) == 0U);
 		break;
 	default:
 		/* Unknown granule type */
@@ -75,35 +87,47 @@ static inline void __granule_assert_unlocked_invariants(struct granule *g,
 }
 
 /* Must be called with g->lock held */
-static inline unsigned char granule_get_state(struct granule *g)
+static inline unsigned int granule_get_state(struct granule *g)
 {
-	assert(g != NULL);
+	assert((g != NULL) && LOCKED(g));
 
 	/* NOLINTNEXTLINE(clang-analyzer-core.NullDereference) */
-	return g->state;
+	return STATE(g);
 }
 
 /* Must be called with g->lock held */
-static inline void granule_set_state(struct granule *g, unsigned char state)
+static inline void granule_set_state(struct granule *g, unsigned int state)
 {
-	assert(g != NULL);
+	unsigned short val, old_val;
+
+	assert((g != NULL) && LOCKED(g));
 
 	/* NOLINTNEXTLINE(clang-analyzer-core.NullDereference) */
-	g->state = state;
+	/* cppcheck-suppress misra-c2012-10.4 */
+	val = (g->descriptor & (unsigned short)MASK(GRN_STATE));
+	val ^= ((unsigned short)state << GRN_STATE_SHIFT);
+
+	asm volatile(
+	"	ldeorh	%w[val], %w[old_val], %[desc]\n"
+	: [desc] "+Q" (g->descriptor),
+	  [old_val] "=r" (old_val)
+	: [val] "r" (val)
+	: "memory"
+	);
 }
 
 /*
- * Acquire the spinlock and then check expected state
+ * Acquire the bitlock and then check expected state
  * Fails if unexpected locking sequence detected.
  * Also asserts if invariant conditions are met.
  */
 static inline bool granule_lock_on_state_match(struct granule *g,
-						unsigned char expected_state)
+						unsigned int expected_state)
 {
-	byte_spinlock_acquire(&g->lock);
+	granule_bitlock_acquire(g);
 
 	if (granule_get_state(g) != expected_state) {
-		byte_spinlock_release(&g->lock);
+		granule_bitlock_release(g);
 		return false;
 	}
 
@@ -116,7 +140,7 @@ static inline bool granule_lock_on_state_match(struct granule *g,
  * reference to it). In these cases we should never fail to acquire the lock.
  */
 static inline void granule_lock(struct granule *g,
-				unsigned char expected_state)
+				unsigned int expected_state)
 {
 	__unused bool locked = granule_lock_on_state_match(g, expected_state);
 
@@ -126,12 +150,12 @@ static inline void granule_lock(struct granule *g,
 static inline void granule_unlock(struct granule *g)
 {
 	__granule_assert_unlocked_invariants(g, granule_get_state(g));
-	byte_spinlock_release(&g->lock);
+	granule_bitlock_release(g);
 }
 
 /* Transtion state to @new_state and unlock the granule */
 static inline void granule_unlock_transition(struct granule *g,
-						unsigned char new_state)
+						unsigned int new_state)
 {
 	granule_set_state(g, new_state);
 	granule_unlock(g);
@@ -141,13 +165,13 @@ unsigned long granule_addr(const struct granule *g);
 struct granule *addr_to_granule(unsigned long addr);
 struct granule *find_granule(unsigned long addr);
 struct granule *find_lock_granule(unsigned long addr,
-				  unsigned char expected_state);
+				  unsigned int expected_state);
 
 bool find_lock_two_granules(unsigned long addr1,
-			    unsigned char expected_state1,
+			    unsigned int expected_state1,
 			    struct granule **g1,
 			    unsigned long addr2,
-			    unsigned char expected_state2,
+			    unsigned int expected_state2,
 			    struct granule **g2);
 
 void granule_memzero_mapped(void *buf);
@@ -155,31 +179,29 @@ void granule_memzero_mapped(void *buf);
 /* Must be called with g->lock held */
 static inline void __granule_get(struct granule *g)
 {
-	assert(g->lock.val != 0U);
-	g->refcount++;
+	assert((g != NULL) && LOCKED(g));
+	g->descriptor++;
 }
 
 /* Must be called with g->lock held */
 static inline void __granule_put(struct granule *g)
 {
-	assert(g->lock.val != 0U);
-	assert(g->refcount != 0U);
-	g->refcount--;
+	assert(LOCKED(g) && (REFCOUNT(g) != 0U));
+	g->descriptor--;
 }
 
 /* Must be called with g->lock held */
 static inline void __granule_refcount_inc(struct granule *g, unsigned short val)
 {
-	assert(g->lock.val != 0U);
-	g->refcount += val;
+	assert(LOCKED(g));
+	g->descriptor += val;
 }
 
 /* Must be called with g->lock held */
 static inline void __granule_refcount_dec(struct granule *g, unsigned short val)
 {
-	assert(g->lock.val != 0U);
-	assert(g->refcount >= val);
-	g->refcount -= val;
+	assert(LOCKED(g) && (REFCOUNT(g) >= val));
+	g->descriptor -= val;
 }
 
 /*
@@ -187,7 +209,7 @@ static inline void __granule_refcount_dec(struct granule *g, unsigned short val)
  */
 static inline void atomic_granule_get(struct granule *g)
 {
-	atomic_add_16(&g->refcount, 1);
+	atomic_add_16(&g->descriptor, 1U);
 }
 
 /*
@@ -195,7 +217,7 @@ static inline void atomic_granule_get(struct granule *g)
  */
 static inline void atomic_granule_put(struct granule *g)
 {
-	atomic_add_16(&g->refcount, (uint16_t)(-1));
+	atomic_add_16(&g->descriptor, (uint16_t)(-1));
 }
 
 /*
@@ -206,7 +228,7 @@ static inline void atomic_granule_put_release(struct granule *g)
 {
 	unsigned short old_refcount __unused;
 
-	old_refcount = atomic_load_add_release_16(&g->refcount, (uint16_t)(-1));
+	old_refcount = atomic_load_add_release_16(&g->descriptor, (uint16_t)(-1));
 	assert(old_refcount != 0U);
 }
 
@@ -226,7 +248,7 @@ static inline void atomic_granule_put_release(struct granule *g)
  *	if the granule at @addr has a non-zero reference count.
  */
 static inline int find_lock_unused_granule(unsigned long addr,
-					   unsigned char expected_state,
+					   unsigned int expected_state,
 					   struct granule **g)
 {
 	*g = find_lock_granule(addr, expected_state);
