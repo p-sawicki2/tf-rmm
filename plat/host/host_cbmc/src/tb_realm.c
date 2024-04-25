@@ -85,7 +85,7 @@ bool valid_s2tt_context(struct s2tt_context value)
 		/* && value.num_root_rtts <= 16 */
 		&& value.num_root_rtts <= MAX_ROOT_RTT_CBMC
 		&& valid_granule_metadata_ptr(value.g_rtt)
-		&& value.g_rtt->state == GRANULE_STATE_RTT
+		&& STATE(value.g_rtt) == GRANULE_STATE_RTT
 		/* TODO: what is the ranges here */
 		&& value.ipa_bits == (3 - value.s2_starting_level + 1) *
 			S2TTE_STRIDE + value.num_root_rtts
@@ -137,7 +137,7 @@ struct granule *init_realm_descriptor_page(void)
 {
 	struct granule g = init_granule();
 
-	__CPROVER_assume(g.state == GRANULE_STATE_RD);
+	__CPROVER_assume(STATE(&g) == GRANULE_STATE_RD);
 	struct rd rd = init_rd();
 
 	/*
@@ -176,7 +176,7 @@ bool RealmIsLive(uint64_t rd_addr)
 
 	__ASSERT(g_rd, "internal: `_RealmIsLive`, rd is not null");
 
-	if (g_rd->refcount != 0) {
+	if (REFCOUNT(g_rd) != 0) {
 		return true;
 	}
 
@@ -188,7 +188,7 @@ bool RealmIsLive(uint64_t rd_addr)
 	for (size_t i = 0;
 	    i < rd->s2_ctx.num_root_rtts && i < MAX_ROOT_RTT_CBMC;
 	    ++i) {
-		if (rd->s2_ctx.g_rtt[i].refcount != 0) {
+		if (REFCOUNT(&rd->s2_ctx.g_rtt[i]) != 0) {
 			return true;
 		}
 	}
@@ -211,7 +211,7 @@ bool RttsStateEqual(uint64_t rtt_base, uint64_t rtt_num_start, uint64_t state)
 	__ASSERT(g_rtt, "internal: `_RttsStateEqual`, rtt_base is not null");
 
 	for (int i = 0; i < rtt_num_start && i < MAX_ROOT_RTT_CBMC; i++) {
-		if ((g_rtt + i)->state != state) {
+		if (STATE(g_rtt + i) != state) {
 			return false;
 		}
 	}
