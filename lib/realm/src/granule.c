@@ -113,7 +113,7 @@ struct granule *find_granule(unsigned long addr)
  *	@expected_state.
  */
 struct granule *find_lock_granule(unsigned long addr,
-				  unsigned char expected_state)
+				  unsigned int expected_state)
 {
 	struct granule *g;
 
@@ -223,10 +223,10 @@ out_err:
  */
 bool find_lock_two_granules(
 			unsigned long addr1,
-			unsigned char expected_state1,
+			unsigned int expected_state1,
 			struct granule **g1,
 			unsigned long addr2,
-			unsigned char expected_state2,
+			unsigned int expected_state2,
 			struct granule **g2)
 {
 	struct granule_set gs[] = {
