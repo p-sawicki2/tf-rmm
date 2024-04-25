@@ -262,7 +262,7 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	unsigned int num_rec_aux;
 
 	g_rec_params = find_granule(rec_params_addr);
-	if ((g_rec_params == NULL) || (g_rec_params->state != GRANULE_STATE_NS)) {
+	if ((g_rec_params == NULL) || (STATE(g_rec_params) != GRANULE_STATE_NS)) {
 		return RMI_ERROR_INPUT;
 	}
 
