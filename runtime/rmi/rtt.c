@@ -342,7 +342,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 	 * We first check the table's ref. counter to speed up the case when
 	 * the host makes a guess whether a memory region can be folded.
 	 */
-	if (g_tbl->refcount == 0UL) {
+	if (REFCOUNT(g_tbl) == 0U) {
 		if (s2tt_is_unassigned_destroyed_block(&s2_ctx, table)) {
 			parent_s2tte = s2tte_create_unassigned_destroyed(&s2_ctx);
 		} else if (s2tt_is_unassigned_empty_block(&s2_ctx, table)) {
@@ -382,7 +382,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 			goto out_unmap_table;
 		}
 		__granule_put(wi.g_llt);
-	} else if (g_tbl->refcount == (unsigned short)S2TTES_PER_S2TT) {
+	} else if (REFCOUNT(g_tbl) == (unsigned short)S2TTES_PER_S2TT) {
 
 		unsigned long s2tte, block_pa;
 
@@ -539,7 +539,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 	 * Read the refcount value. RTT granule is always accessed locked, thus
 	 * the refcount can be accessed without atomic operations.
 	 */
-	if (g_tbl->refcount != 0UL) {
+	if (REFCOUNT(g_tbl) != 0U) {
 		ret = pack_return_code(RMI_ERROR_RTT, (unsigned char)level);
 		goto out_unlock_table;
 	}
@@ -993,7 +993,7 @@ unsigned long smc_data_create(unsigned long rd_addr,
 	}
 
 	g_src = find_granule(src_addr);
-	if ((g_src == NULL) || (g_src->state != GRANULE_STATE_NS)) {
+	if ((g_src == NULL) || (STATE(g_src) != GRANULE_STATE_NS)) {
 		return RMI_ERROR_INPUT;
 	}
 
