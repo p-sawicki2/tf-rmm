@@ -96,4 +96,17 @@ static inline bool atomic_bit_set_acquire_release_64(uint64_t *loc, unsigned int
 	return (old_val != 0UL);
 }
 
+/*
+ * Atomically performs exclusive-OR with @val on the 16-bit value stored at memory
+ * location @loc and stores the result back to memory.
+ * Returns the old value.
+ */
+static inline uint16_t atomic_eor_16(uint16_t *loc, uint16_t val)
+{
+	uint16_t old_val = *loc;
+
+	*loc ^= val;
+	return old_val;
+}
+
 #endif /* ATOMICS_H */
