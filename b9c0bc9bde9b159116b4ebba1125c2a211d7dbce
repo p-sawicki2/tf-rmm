@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0f06a37_1999a867",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2024-04-26T17:39:39Z",
+      "side": 1,
+      "message": "Future features in RMM may need some space (e.g. 2 bits) in granule object.\n\nAssuming that this space is not needed for RTT granules, they can be borrowed from REFCOUNTER (only RTT granule needs 9 bit ref. counter, the other types need less or none).\n\nDo you see any problem if in future we make the size of refcounter dependent on granule type?",
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b66b739_cc2e7b38",
+        "filename": "lib/arch/include/aarch64/memory.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2024-04-26T17:39:39Z",
+      "side": 1,
+      "message": "It is not obvious how the changes in this file are relevant to this patch so it is worth explaining that in the commit message.",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 12
+      },
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
