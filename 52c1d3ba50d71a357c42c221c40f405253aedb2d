@@ -312,6 +312,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c95f3790_3911e1fe",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7da5dc33_e9ff9ab9",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be5deb65_fa53ae76",
@@ -383,6 +407,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53e9405c_8bcf02bc",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c3b8a58_8baaba0b",
+      "range": {
+        "startLine": 252,
+        "startChar": 10,
+        "endLine": 252,
+        "endChar": 33
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61fa206f_04645b99",
@@ -420,6 +468,30 @@
       "side": 1,
       "message": "See my previous comment",
       "parentUuid": "61fa206f_04645b99",
+      "range": {
+        "startLine": 268,
+        "startChar": 10,
+        "endLine": 268,
+        "endChar": 38
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32c3d549_097fe128",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c678c84_9dd2cb2f",
       "range": {
         "startLine": 268,
         "startChar": 10,

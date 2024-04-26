@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab2c4413_d858718f",
+        "filename": "lib/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "560b7f33_a8eb87be",
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fe0f90d_fe7cd2dd",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fa962c8_30f3690b",
+        "filename": "lib/arch/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fe0f90d_fe7cd2dd",
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "caec439c_f17f989d",
@@ -48,6 +84,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "Add PRIVATE here.\n\nas lib-debug need to not be exported from this module.",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 9
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "697d7ef7_a30cd147",
+        "filename": "lib/granule/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "caec439c_f17f989d",
       "range": {
         "startLine": 11,
         "startChar": 3,
@@ -105,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "100fe6a8_34e3a7ac",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 1761,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bab355c_d9dfbab0",
+      "range": {
+        "startLine": 1761,
+        "startChar": 5,
+        "endLine": 1761,
+        "endChar": 26
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bebd21a1_8abfc945",
@@ -128,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "718a4189_24a1a52c",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bebd21a1_8abfc945",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab763c97_fed58b0f",
@@ -141,6 +249,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "can be done in tests/CMakelists ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 29
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87bd2b3c_c24e3596",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "That is not possible, as this is also needed when building for host_build, not only host_test",
+      "parentUuid": "ab763c97_fed58b0f",
       "range": {
         "startLine": 43,
         "startChar": 0,
@@ -198,6 +330,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2808dad7_53b53f6e",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "47a32f1e_141acaad",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 17
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4385312a_48c9cb95",
@@ -215,6 +371,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc46e408_f24d420e",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4385312a_48c9cb95",
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23706442_3626901d",
@@ -228,6 +402,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "This should be \"buffer_aux_granules_map\" since it takes a granule as arg.",
+      "range": {
+        "startLine": 80,
+        "startChar": 6,
+        "endLine": 80,
+        "endChar": 20
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3c2b67e_9e51496e",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Wouldn\u0027t that be inconsistent with buffer_aux_unmap? I changed this as well to keep the naming of these two consistent",
+      "parentUuid": "23706442_3626901d",
       "range": {
         "startLine": 80,
         "startChar": 6,
@@ -261,6 +459,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b6ad5a3_1c4945b0",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb5d9e86_76406f37",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 7
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8906c970_3b17c627",
@@ -274,6 +496,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 96
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7106b42f_3ad07596",
+        "filename": "lib/slot_buf/src/buffer.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8906c970_3b17c627",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -301,6 +547,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e977ff07_ac74377c",
+        "filename": "lib/slot_buf/src/buffer.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b62e3d76_05ce718c",
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d0c5fe4_46d7e36e",
@@ -314,6 +578,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "buffer_test_helpers.c",
+      "range": {
+        "startLine": 15,
+        "startChar": 34,
+        "endLine": 15,
+        "endChar": 41
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6495d1b7_73d4e1ac",
+        "filename": "lib/slot_buf/tests/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d0c5fe4_46d7e36e",
       "range": {
         "startLine": 15,
         "startChar": 34,
@@ -341,6 +629,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c0f505a_a47942bd",
+        "filename": "lib/slot_buf/tests/test_cb.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e977d141_da06264c",
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31b2847d_d8f5fb32",
@@ -354,6 +660,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "should be slot_buffer specific helper",
+      "range": {
+        "startLine": 28,
+        "startChar": 16,
+        "endLine": 28,
+        "endChar": 39
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f1d6d1e_958c3277",
+        "filename": "lib/slot_buf/tests/test_cb.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31b2847d_d8f5fb32",
       "range": {
         "startLine": 28,
         "startChar": 16,
@@ -387,6 +717,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71724ce6_37b99eb3",
+        "filename": "lib/slot_buf/tests/test_cb.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "497eff0c_edac6719",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ac174b4_a6635874",
@@ -410,6 +764,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ce420dd_82e3f562",
+        "filename": "lib/slot_buf/tests/test_cb.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ac174b4_a6635874",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b637360a_2d3e70dd",
@@ -423,6 +801,30 @@
       "writtenOn": "2024-04-26T11:11:59Z",
       "side": 1,
       "message": "Use prefix buffer_test_cb_* for these functions.",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "831a5b23_2889f868",
+        "filename": "lib/slot_buf/tests/test_cb.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-26T19:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b637360a_2d3e70dd",
       "range": {
         "startLine": 14,
         "startChar": 6,
