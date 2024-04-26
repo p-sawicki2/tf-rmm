@@ -290,6 +290,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7da5dc33_e9ff9ab9",
+        "filename": "plat/host/host_test/CMakeLists.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-26T11:11:59Z",
+      "side": 1,
+      "message": "see later comments. It is generally OK, but there is something wrong here hence this dependancy. Hopefully this will not be needed when you move the helpers back to slot buf component.",
+      "parentUuid": "4eef8f44_fde9cb07",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "be5deb65_fa53ae76",
         "filename": "plat/host/host_test/src/test_helpers.c",
         "patchSetId": 19
@@ -325,6 +349,30 @@
       "side": 1,
       "message": "This is called in two files, buffer.cpp and test_cb.c, both part of the unittests for the buffer library.\n\nIf I moved this function to test_cb (so it can also be accessed by buffer.cpp), I would need to rename it something like test_cb_slot_to_pa(), which I think is misleading as it is not a callback.\n\nAnother option would be to create a test_helpers.{h,c} on the unittests for the slot buffer library just for this API and the next one. I\u0027m not sure it that is worth as opposed to have the APIs here globally available in case a later test needs them?",
       "parentUuid": "be5deb65_fa53ae76",
+      "range": {
+        "startLine": 252,
+        "startChar": 10,
+        "endLine": 252,
+        "endChar": 33
+      },
+      "revId": "52c1d3ba50d71a357c42c221c40f405253aedb2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c3b8a58_8baaba0b",
+        "filename": "plat/host/host_test/src/test_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-26T11:11:59Z",
+      "side": 1,
+      "message": "I gave a comment to rename the test_cb file\n\nThese helpers can be within that file. \n\nThese helpers need to have buffer_test_* prefix.",
+      "parentUuid": "560bf45d_0581a87e",
       "range": {
         "startLine": 252,
         "startChar": 10,
