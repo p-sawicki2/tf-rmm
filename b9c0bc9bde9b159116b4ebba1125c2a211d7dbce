@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be633ee2_41056442",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-26T18:01:43Z",
+      "side": 1,
+      "message": "Making the size of refcounter dependent on granule type will implement more complexity, because access to this field will require to check for the granule type. We can either implement new granule type \u0026 its access functions, or just borrow bits from \u0027status\u0027 field. It occupies 5 bits, which gives 0-31 range, but maximum GRANULE_STATE_RTT \u003d 6, so using 3 bits will give values 0-7.",
+      "parentUuid": "c0f06a37_1999a867",
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b66b739_cc2e7b38",
@@ -43,6 +61,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b72b6b2f_66d76b38",
+        "filename": "lib/arch/include/aarch64/memory.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-26T18:01:43Z",
+      "side": 1,
+      "message": "It just makes it consistent with our functions as offset is always 0.",
+      "parentUuid": "1b66b739_cc2e7b38",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 12
+      },
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3876028_849ed6bc",
         "filename": "lib/realm/include/granule_types.h",
         "patchSetId": 9
@@ -54,6 +96,30 @@
       "writtenOn": "2024-04-26T17:45:13Z",
       "side": 1,
       "message": "I do not think that we assert this anywhere so it is worth explaining in the comment why we need at least 10 bits for reference counter (because the RTT\u0027s ref. counter goes up to 512).",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 2
+      },
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36fb2e34_c834ebe3",
+        "filename": "lib/realm/include/granule_types.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-26T18:01:43Z",
+      "side": 1,
+      "message": "There\u0027s assertion in __granule_assert_unlocked_invariants():\n\tcase GRANULE_STATE_RTT:\n\t\t/* Refcount cannot be greater that number of entries in an RTT */\n\t\tassert(REFCOUNT(g) \u003c\u003d\n\t\t\t(unsigned short)(GRANULE_SIZE / sizeof(uint64_t)));",
+      "parentUuid": "c3876028_849ed6bc",
       "range": {
         "startLine": 208,
         "startChar": 0,
