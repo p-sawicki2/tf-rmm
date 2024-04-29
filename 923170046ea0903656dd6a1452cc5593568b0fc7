@@ -283,6 +283,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3a4585e_1821c9b4",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "87bd2b3c_c24e3596",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 29
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "163f142b_901a4a35",
@@ -426,6 +450,30 @@
       "side": 1,
       "message": "Wouldn\u0027t that be inconsistent with buffer_aux_unmap? I changed this as well to keep the naming of these two consistent",
       "parentUuid": "23706442_3626901d",
+      "range": {
+        "startLine": 80,
+        "startChar": 6,
+        "endLine": 80,
+        "endChar": 20
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18802dce_59fd4b78",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "hmm, yes, I was also thinking about other APIs in this file\n\nso there is granule_map() and buffer_unmap(). If this were changed to \n\nbuffer_granule_map() and buffer_unmap() , then\nbuffer_aux_granules_map and buffer_aux_unmap() would be inline with that.",
+      "parentUuid": "b3c2b67e_9e51496e",
       "range": {
         "startLine": 80,
         "startChar": 6,

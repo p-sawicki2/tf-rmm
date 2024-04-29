@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2e9d220_70e534c2",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "can be combined with previous include_dirs ?",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "411e8ebb_efcbd25e",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "nit: remove extra whitespace",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 1
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7024571c_dca57811",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "nit: there seems some alignment issue here.",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7f8fbc5_b421f089",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "Maps `num_aux` SLOT_REC_AUX granules specified in `g_rec_aux`",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 81,
+        "endChar": 11
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e15ed86a_9ce34ef5",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "nit: call this argument *g_rec_aux[]",
+      "range": {
+        "startLine": 83,
+        "startChar": 45,
+        "endLine": 83,
+        "endChar": 50
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a87a93f_07557197",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "buffers",
+      "range": {
+        "startLine": 86,
+        "startChar": 37,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65c729a0_ece250f3",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "this is confusing as we have callback for aarch64 VMSA. Need to convey the difference in a better way somehow.\n\nWhat:\n\nThis is a callback function used by the tests to ....\n\nWhy: \n\n...\n\nHow:\n\n....",
+      "range": {
+        "startLine": 48,
+        "startChar": 3,
+        "endLine": 48,
+        "endChar": 20
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b6b21a4_9535d092",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "Suggest: \"Receives a `buf` address.. \"",
+      "range": {
+        "startLine": 67,
+        "startChar": 12,
+        "endLine": 67,
+        "endChar": 26
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d29dc3f_8e96f072",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "is this correct ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "589dae81_1d339e85",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T09:40:19Z",
+      "side": 1,
+      "message": "not needed.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
