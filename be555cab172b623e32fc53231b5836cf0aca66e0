@@ -46,6 +46,30 @@
       },
       "revId": "be555cab172b623e32fc53231b5836cf0aca66e0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7dd2ede_7ebe6c01",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 23
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T17:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77ea3fb4_984a00c9",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "be555cab172b623e32fc53231b5836cf0aca66e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
