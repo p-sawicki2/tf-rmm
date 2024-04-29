@@ -700,6 +700,13 @@ TEST(simd, simd_context_switch_TC1)
 	simd_test_register_callback(FPU_RESTORE_REGS, cb_restore);
 
 	/*
+	 * Set the value of CPTR_EL2 to the value of NS world's. This allows us
+	 * to exercise the code path where the value of CPTR_EL2 is the same as
+	 * the incoming or outgoing context.
+	 */
+	write_cptr_el2(simd_ctx_nwd.cptr_el2);
+
+	/*
 	 * Call simd_context_switch() to do the NS FPU -> RL FPU switch.
 	 */
 	(void)simd_context_switch(&simd_ctx_nwd, &simd_ctx_rl);
