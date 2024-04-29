@@ -146,6 +146,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6d2d177e_1cc3de59",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:39:30Z",
+      "side": 1,
+      "message": "`rec_aux`",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 44
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "65c729a0_ece250f3",
         "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
         "patchSetId": 22
