@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e643a25_71bd7211",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-04-29T09:57:32Z",
+      "side": 1,
+      "message": "Or define granule structure as union of different types with the length of refcount field dependent on state.",
+      "parentUuid": "77a1e882_8c13d7da",
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b66b739_cc2e7b38",
