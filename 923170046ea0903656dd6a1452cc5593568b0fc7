@@ -484,6 +484,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09f0814d_a9d5346f",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "so\n\ngranule_map() -\u003e buffer_granule_map()\nbuffer_unmap() -\u003e buffer_unmap() (unchanged)\nbuffer_aux_map() -\u003e buffer_aux_granules_map()\nbuffer_aux_unmap() -\u003e buffer_aux_unmap() (unchanged)\n\nDone",
+      "parentUuid": "18802dce_59fd4b78",
+      "range": {
+        "startLine": 80,
+        "startChar": 6,
+        "endLine": 80,
+        "endChar": 20
+      },
+      "revId": "923170046ea0903656dd6a1452cc5593568b0fc7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb5d9e86_76406f37",

@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75be09d7_163b3315",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Yep, missed it.",
+      "parentUuid": "f2e9d220_70e534c2",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "411e8ebb_efcbd25e",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-04-29T09:40:19Z",
       "side": 1,
       "message": "nit: remove extra whitespace",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 1
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20fb2cf1_139c15e5",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "411e8ebb_efcbd25e",
       "range": {
         "startLine": 39,
         "startChar": 0,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "319fbe0e_f944a8d9",
+        "filename": "lib/slot_buf/CMakeLists.txt",
+        "patchSetId": 22
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Vim really doesn\u0027t like CMake files....\n\nDone",
+      "parentUuid": "7024571c_dca57811",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "701edcf5_959dd4ec",
@@ -75,6 +135,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7cc1dc0_6ed5ecfc",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "701edcf5_959dd4ec",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7f8fbc5_b421f089",
@@ -88,6 +166,30 @@
       "writtenOn": "2024-04-29T09:40:19Z",
       "side": 1,
       "message": "Maps `num_aux` SLOT_REC_AUX granules specified in `g_rec_aux`",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 81,
+        "endChar": 11
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5745a5f6_30189722",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7f8fbc5_b421f089",
       "range": {
         "startLine": 81,
         "startChar": 8,
@@ -121,6 +223,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d37f98b_3bd332bf",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e15ed86a_9ce34ef5",
+      "range": {
+        "startLine": 83,
+        "startChar": 45,
+        "endLine": 83,
+        "endChar": 50
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a87a93f_07557197",
@@ -144,6 +270,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "423d9996_a431917b",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a87a93f_07557197",
+      "range": {
+        "startLine": 86,
+        "startChar": 37,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d2d177e_1cc3de59",
@@ -157,6 +307,30 @@
       "writtenOn": "2024-04-29T10:39:30Z",
       "side": 1,
       "message": "`rec_aux`",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 44
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "002f5a7e_933f354e",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d2d177e_1cc3de59",
       "range": {
         "startLine": 87,
         "startChar": 31,
@@ -214,6 +388,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c026418_acd8f89f",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ace0199_335c1ef5",
+      "range": {
+        "startLine": 48,
+        "startChar": 3,
+        "endLine": 48,
+        "endChar": 20
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b6b21a4_9535d092",
@@ -261,6 +459,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50e2637d_609fce11",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7392bf0e_ed7c3e73",
+      "range": {
+        "startLine": 67,
+        "startChar": 12,
+        "endLine": 67,
+        "endChar": 26
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "01003c6e_b041c9fc",
@@ -274,6 +496,30 @@
       "writtenOn": "2024-04-29T10:15:36Z",
       "side": 1,
       "message": "\"Callback to map an `addr` to a `slot` as per aarch64 VMSA. Note that the address to the buffer returned by this function cannot be read/written to from the tests.\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 3,
+        "endLine": 82,
+        "endChar": 56
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bf7672f_72883067",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01003c6e_b041c9fc",
       "range": {
         "startLine": 81,
         "startChar": 3,
@@ -301,6 +547,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3345cfa2_46178e1a",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40054c85_a3fce401",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d29dc3f_8e96f072",
@@ -314,6 +578,30 @@
       "writtenOn": "2024-04-29T09:40:19Z",
       "side": 1,
       "message": "is this correct ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1fd81dc_d080725c",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Yes, that was the assumption I was making for the Host architecture (I guess I should make it clearer on the comment).\n\nI never liked this API much, as it highly depends on the host architecture and I\u0027ve always been worried that in the future it might break. At the time, however, looked like the most straight forward way to emulate the target architecture.",
+      "parentUuid": "8d29dc3f_8e96f072",
       "range": {
         "startLine": 14,
         "startChar": 4,
@@ -361,6 +649,30 @@
       "side": 1,
       "message": "this can be in the function definition.",
       "parentUuid": "589dae81_1d339e85",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b4fc2ca_e0f6a6bd",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-04-29T12:35:30Z",
+      "side": 1,
+      "message": "Yes, it was already there",
+      "parentUuid": "eba79893_d54d4203",
       "range": {
         "startLine": 20,
         "startChar": 0,
