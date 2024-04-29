@@ -60,6 +60,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "701edcf5_959dd4ec",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "The APIs below this line need to move to above line 61 as these are public APIs.",
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c7f8fbc5_b421f089",
         "filename": "lib/slot_buf/include/buffer.h",
         "patchSetId": 22
@@ -152,6 +169,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9ace0199_335c1ef5",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "After reading the function definition , I think this is \n\n\"Callback to mock aarch64 based slot buffer mapping to the buffer tests.\nThis function maps `addr` to the requested `slot` in slot buffer and returns a pointer which can be read or written to by the tests on fake_host architecture. Note that the function maps the `addr` in the Stage 1 xlat tables as per aarch64 VMSA and it walks the table to retrieve the PA and returns this back to the caller.\"",
+      "parentUuid": "65c729a0_ece250f3",
+      "range": {
+        "startLine": 48,
+        "startChar": 3,
+        "endLine": 48,
+        "endChar": 20
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8b6b21a4_9535d092",
         "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
         "patchSetId": 22
@@ -169,6 +210,70 @@
         "endLine": 67,
         "endChar": 26
       },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7392bf0e_ed7c3e73",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "After reading the function perhaps the comment can be :\n\n\"Callback to mock aarch64 based slot buffer ummapping to the buffer tests. The function receives a `buf` pointer mapped using buffer_test_cb_map_access(). It needs to find the `va` as per aarch64 vmsa based slot buffer and then uses this `va` to unmap from Stage 1 xlat tables.\"",
+      "parentUuid": "8b6b21a4_9535d092",
+      "range": {
+        "startLine": 67,
+        "startChar": 12,
+        "endLine": 67,
+        "endChar": 26
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01003c6e_b041c9fc",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "\"Callback to map an `addr` to a `slot` as per aarch64 VMSA. Note that the address to the buffer returned by this function cannot be read/written to from the tests.\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 3,
+        "endLine": 82,
+        "endChar": 56
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40054c85_a3fce401",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "\"Callback to unmap a `buf` mapped to a slot as per aarch64 vmsa via buffer_test_cb_map_aarch64_vmsa() callback.\"",
       "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -209,6 +314,30 @@
       "writtenOn": "2024-04-29T09:40:19Z",
       "side": 1,
       "message": "not needed.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "b0462f67ceab4ea3cf6dcda94c12fb0947180802",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eba79893_d54d4203",
+        "filename": "lib/slot_buf/tests/buffer_test_helpers.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-04-29T10:15:36Z",
+      "side": 1,
+      "message": "this can be in the function definition.",
+      "parentUuid": "589dae81_1d339e85",
       "range": {
         "startLine": 20,
         "startChar": 0,
