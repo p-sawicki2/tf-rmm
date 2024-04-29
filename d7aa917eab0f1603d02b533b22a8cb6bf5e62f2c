@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21283d78_7b5ecbcb",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-29T11:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9117eb52_086781bb",
+      "range": {
+        "startLine": 789,
+        "startChar": 59,
+        "endLine": 789,
+        "endChar": 62
+      },
+      "revId": "d7aa917eab0f1603d02b533b22a8cb6bf5e62f2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b07518b_22bd08f6",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-04-29T10:55:40Z",
       "side": 1,
       "message": "SVE ?",
+      "range": {
+        "startLine": 1122,
+        "startChar": 34,
+        "endLine": 1122,
+        "endChar": 37
+      },
+      "revId": "d7aa917eab0f1603d02b533b22a8cb6bf5e62f2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7a5d855_cfb3ef39",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-29T11:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b07518b_22bd08f6",
       "range": {
         "startLine": 1122,
         "startChar": 34,
