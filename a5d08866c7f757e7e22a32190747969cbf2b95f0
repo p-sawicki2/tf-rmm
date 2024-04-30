@@ -16,6 +16,24 @@
       "message": "you could also add\nCHECK_TRUE(helpers_times_called[FPU_RESTORE_REGS] \u003d\u003d 0);",
       "revId": "a5d08866c7f757e7e22a32190747969cbf2b95f0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75ea8d0e_eed03be9",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 1001107
+      },
+      "writtenOn": "2024-04-30T10:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22db8a12_03a83404",
+      "revId": "a5d08866c7f757e7e22a32190747969cbf2b95f0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
