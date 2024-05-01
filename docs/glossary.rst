@@ -51,4 +51,10 @@ You can find additional definitions in the `Arm Glossary`_.
    VHE
       Virtualization Host Extensions
 
+   TFTF
+      Virtualization Host Extensions
+
+   FVP
+      Fixed Virtual Platforms
+
 .. _`Arm Glossary`: https://developer.arm.com/support/arm-glossary
