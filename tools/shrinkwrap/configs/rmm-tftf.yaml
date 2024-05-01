@@ -1,0 +1,39 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+%YAML 1.2
+---
+description: >-
+  Brings together a software stack to demonstrate Arm CCA running on FVP in a
+  configuration where TFTF is running at EL1. This configuration includes
+  TF-A in Root world, RMM in Realm wold and TFTF in Normal world.
+
+  This configuration pulls TF-A and TFTF repositories on the working directory
+  whilst uses the current (or other) local repository to build RMM, hence this
+  can be used during the development.
+
+layers:
+  - ../common/layers/rmm.yaml
+  - ../common/layers/tftf.yaml
+
+concrete: true
+
+build:
+  tftf:
+    params:
+      TESTS: realm-payload
+      ENABLE_REALM_PAYLOAD_TESTS: 1
+
+  tfa:
+    params:
+      ENABLE_RME: 1
+      RMM: ${artifact:RMM}
+
+run:
+ terminals:
+    bp.terminal_0:
+      friendly: TF-A
+    bp.terminal_3:
+      friendly: RMM
