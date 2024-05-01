@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7eb0a77c_e030659e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-01T09:37:49Z",
+      "side": 1,
+      "message": "Start sentence with caps. Have proper punctuation for commit message",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0b682558_ca97adf9",
         "filename": "docs/getting_started/getting-started.rst",
         "patchSetId": 3
