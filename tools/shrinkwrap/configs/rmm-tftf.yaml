@@ -1,0 +1,133 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+%YAML 1.2
+---
+description: >-
+  This Config Brings together a software stack to test CCA using Arm RME extension
+  utilizing TF-A-Tests. The main Test payload in TF-A-Tests is the TFTF
+  binary. in this config, TF-A is in Root World, TF-RMM is in Realm EL2 and
+  TFTF is in Normal World.
+
+  The Config pulls TF-A and TFTF repositories on the Shrinkwrap working
+  directory (defined through the environment variable ${SHRINKWRAP_BUILD})
+  whilst using the local RMM repository to build specified through the
+  btvar ${RMM_SRC}.
+
+  In order to build TF-RMM with TF-A and TFTF you can invoke the following
+  command:
+
+  .. code-block:: sheel
+
+    shrinkwrap --runtime=null build --btvar=RMM_SRC=$PWD} rmm-tftf.yaml --no-sync=rmm
+
+  The command above assumes that shrinkwrap is called from the root directory
+  of your local TF-RMM installation and that ${SHRINKWRAP_PACKAGE} has been setup
+  to point to the configs directory on TF-RMM:
+
+  .. code-block:: shell
+
+    export SHRINKWRAP_CONFIG=${PWD}/tools/shrinkwrap/configs
+
+  Note that when building, shrinkwrap will, by default, reset all your repositories,
+  including your local copy of TF-RMM, to their master/main branches, which
+  will cause you to lose any uncommited changes. It is therefore recommended,
+  specially for incremental builds, to always use the ``--no-sync`` or
+  ``no-sync-all`` options when building to avoid reseting the repositories.
+
+  Once built, you can run your configuration as follows:
+
+  .. code-block:: shell
+
+    shrinkwrap --runtime=null run rmm-tftf.yaml
+
+layers:
+  - tftf-base.yaml
+  - tfa-base.yaml
+  - FVP_Base_RevC-2xAEMvA-base.yaml
+  - ../common/layers/rmm.yaml
+
+concrete: true
+
+buildex:
+  btvars:
+    # Determines the branch or SHA to pull for TF-A
+    TFA_REVISION:
+      type: string
+      value: master
+
+    # Determines the branch or SHA to pull for TFTF
+    TFTF_REVISION:
+      type: string
+      value: master
+
+build:
+  tftf:
+    repo:
+      revision: ${btvar:TFTF_REVISION}
+    artifacts:
+      TFTF_BIN: ${param:builddir}/fvp/release/tftf.bin
+    params:
+      TESTS: realm-payload
+      ENABLE_REALM_PAYLOAD_TESTS: 1
+
+  tfa:
+    repo:
+      revision: ${btvar:TFA_REVISION}
+    params:
+      ENABLE_RME: 1
+      RMM: ${artifact:RMM}
+      BL33: ${artifact:TFTF_BIN}
+
+run:
+  rtvars:
+    BL1:
+      type: path
+      value: ${artifact:BL1}
+
+    FIP:
+      type: path
+      value: ${artifact:FIP}
+
+    CACHE_MODEL_ENABLED:
+      type: string
+      value: 0
+
+  params:
+    # Suppress "WARNING: MPAM_NS is deprecated when RME is in use. Should use MPAM_SP"
+    -C cluster0.output_attributes: ExtendedID[62:55]=MPAM_PMG,ExtendedID[54:39]=MPAM_PARTID,ExtendedID[38:37]=MPAM_SP
+    -C cluster1.output_attributes: ExtendedID[62:55]=MPAM_PMG,ExtendedID[54:39]=MPAM_PARTID,ExtendedID[38:37]=MPAM_SP
+
+    # CCA-specific SMMU settings.
+    -C pci.pci_smmuv3.mmu.SMMU_ROOT_IDR0: 3
+    -C pci.pci_smmuv3.mmu.SMMU_ROOT_IIDR: 0x43B
+    -C pci.pci_smmuv3.mmu.root_register_page_offset: 0x20000
+
+    # Enable FEAT_CSV2_2, which is optional. But TFA 2.10 force-enables it when
+    # ENABLE_RME=1 so if it's not there we see an exception.
+    -C cluster0.restriction_on_speculative_execution: 2
+    -C cluster1.restriction_on_speculative_execution: 2
+    -C cluster0.restriction_on_speculative_execution_aarch32: 2
+    -C cluster1.restriction_on_speculative_execution_aarch32: 2
+    -C cluster0.cpu0.RVBAR: 0
+    -C cluster0.cpu1.RVBAR: 0
+    -C cluster0.cpu2.RVBAR: 0
+    -C cluster0.cpu3.RVBAR: 0
+    -C cluster1.cpu0.RVBAR: 0
+    -C cluster1.cpu1.RVBAR: 0
+    -C cluster1.cpu2.RVBAR: 0
+    -C cluster1.cpu3.RVBAR: 0
+
+    # Cache modelling settings
+    -C cache_state_modelled: ${rtvar:CACHE_MODEL_ENABLED}
+
+    -C bp.secureflashloader.fname: ${rtvar:BL1}
+    -C bp.flashloader0.fname: ${rtvar:FIP}
+
+  terminals:
+    bp.terminal_0:
+      friendly: TF-A
+    bp.terminal_3:
+      friendly: RMM
