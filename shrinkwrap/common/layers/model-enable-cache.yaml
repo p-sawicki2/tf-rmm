@@ -1,0 +1,13 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+%YAML 1.2
+---
+description: >-
+  Overlay to enable Cache Modelling on FVP model at run time.
+
+run:
+  params:
+    -C cache_state_modelled: 1
