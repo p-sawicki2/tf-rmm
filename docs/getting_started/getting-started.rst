@@ -286,10 +286,13 @@ typically the `TF-A`_. The Non-Secure Host can be an RME aware hypervisor
 or an appropriate Test utility running in Non-Secure world which can interact
 with |RMM| via Realm Management Interface (RMI).
 
-The `TF-A`_ project includes build and run instructions for an RME enabled
-system on the FVP platform as part of `TF-A RME documentation`_.
-The ``rmm.img`` binary is provided to the TF-A bootloader to be packaged
-in FIP using ``RMM`` build option in `TF-A`_.
+The |RMM| includes a `Shrinkwrap`_ overlay that can be used, along with the
+`3 world configuration`_ in order to build and run a 3-World demonstrator which
+includes |TF-A|, |RMM| and a Linux kernel and Buildroot image. This process is
+documented in :ref:`3_world_testing`. In addition to that, you can find and
+overall of the process followed by the 3 world configuration on Shrinkwrap as
+part of the `TF-A RME documentation`_. There, the ``rmm.img`` binary is provided
+to the TF-A bootloader to be packaged in FIP using ``RMM`` build option in `TF-A`_.
 
 If |RMM| is built for the `fake_host` architecture
 (see :ref:`RMM Fake Host Build`), then the generated `rmm.elf` binary can
@@ -305,3 +308,5 @@ as described in :ref:`RMM Fake host architecture` design.
 .. _TF-A RME documentation: https://trustedfirmware-a.readthedocs.io/en/latest/components/realm-management-extension.html
 .. _TF-RMM Gerrit page: https://review.trustedfirmware.org/admin/repos/TF-RMM/tf-rmm
 .. _Git hooks documentation:  https://git-scm.com/docs/githooks
+.. _Shrinkwrap: https://shrinkwrap.docs.arm.com
+.. _3 world configuration: https://shrinkwrap.docs.arm.com/en/latest/userguide/configstore/cca-3world.html
