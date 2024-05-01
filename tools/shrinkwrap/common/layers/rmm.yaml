@@ -1,0 +1,42 @@
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
+#
+
+%YAML 1.2
+---
+description: >-
+  Overlay to build TF-RMM with standard build settings.
+  By default, this overlay assumes that TF-RMM source code is stored in
+  ${SHRINKWRAP_BUILD} directory. This can be changed by redefining
+  RMM_SRC btvar.
+
+  The overlay allows to overwrite the default log level for TF-RMM, by
+  using RMM_LOG_LEVEL btvar.
+
+layers:
+  - rmm-base.yaml
+  - arch/v9.2.yaml
+
+buildex:
+  btvars:
+    # Determines where the TF-RMM source root directory is
+    RMM_SRC:
+      type: path
+      value: ${param:sourcedir}/../../../../rmm
+
+    # Determines the RMM Log level
+    RMM_LOG_LEVEL:
+      type: string
+      value: '40'
+
+build:
+  rmm:
+    sourcedir: ${btvar:RMM_SRC}
+    params:
+       -DLOG_LEVEL: ${btvar:RMM_LOG_LEVEL}
+
+run:
+  params:
+    -C cluster0.rme_support_level: 2
+    -C cluster1.rme_support_level: 2
