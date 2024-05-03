@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7adf1b0_164040b7",
+        "filename": "shrinkwrap/common/layers/tftf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-03T15:34:23Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 65
+      },
+      "revId": "d58ae5b00957dba3199c7cfbcbb11faff763946a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
