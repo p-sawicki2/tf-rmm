@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23890a17_fecf85cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-03T13:33:26Z",
+      "side": 1,
+      "message": "Looks OK, maybe list creation could be simplified",
+      "revId": "b34d7a9acd79d0b8bbfc8bee1eb3baf41c297b37",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ddbaa2a_fe90f9a4",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-03T13:33:26Z",
+      "side": 1,
+      "message": "nit:\n\nWhy not simply\n\n    set(MBEDTLS_PATCH_FILES\n        \"${MBEDTLS_PATCH_DIR}/0001-Remove-compiler-options-for-clang.patch\"\n        \"${MBEDTLS_PATCH_DIR}/0002-Disable-explicit_bzero.patch\")\n\nIf I understand correctly this results in a list.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 61
+      },
+      "revId": "b34d7a9acd79d0b8bbfc8bee1eb3baf41c297b37",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
