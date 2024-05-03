@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe2d856c_0963963e",
+        "filename": "configs/libspdm/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "this change does not seem to be needed",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 8
+      },
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45220d76_ca9435fb",
+        "filename": "configs/libspdm/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "could avoid the change in comments.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 49
+      },
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "969b6bd5_31b049ad",
+        "filename": "configs/mbedtls/0003-fix-unused-function-md_type_to_string.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "should we contribute this patch back to mbedTLS?",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c9561ea_59722e2e",
+        "filename": "configs/mbedtls/mbedtls_config.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "wrap this under #if RMM_CCA_DA_SUPPORT",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a7d3d9_09ae8186",
+        "filename": "docs/readme.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "could add that if RMM_CCA_DA support is enabled then ...",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "471e036c_eb6bc9fc",
+        "filename": "lib/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "Needs to be under conditional compilation",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0f3b263_9f053894",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "if this flag is specific to libspdm compilation ,we can modify the CFLAGS in  \nlib/spdm_requester/CMakeLists.txt",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f5a65a2_b0574c55",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T10:10:01Z",
+      "side": 1,
+      "message": "we can exclude the entire build_dir I think.",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
