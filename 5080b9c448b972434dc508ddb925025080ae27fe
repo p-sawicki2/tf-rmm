@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95bd4721_c1688327",
+        "filename": "runtime/include/rec.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T12:55:35Z",
+      "side": 1,
+      "message": "nit: could introduce a new macro for this\n\n#define REC_GEN_REG_TYPE \n\nwhich can define as unsigned long for regular build and char for CBMC..",
+      "range": {
+        "startLine": 166,
+        "startChar": 1,
+        "endLine": 166,
+        "endChar": 15
+      },
+      "revId": "5080b9c448b972434dc508ddb925025080ae27fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e7bec8bd_39ae3c41",
         "filename": "runtime/include/rec.h",
         "patchSetId": 1
