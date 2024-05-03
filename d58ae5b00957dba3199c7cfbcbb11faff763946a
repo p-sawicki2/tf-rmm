@@ -22,6 +22,30 @@
       },
       "revId": "d58ae5b00957dba3199c7cfbcbb11faff763946a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bde2e0a2_58095af0",
+        "filename": "shrinkwrap/common/layers/tftf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-03T17:13:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7adf1b0_164040b7",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 65
+      },
+      "revId": "d58ae5b00957dba3199c7cfbcbb11faff763946a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
