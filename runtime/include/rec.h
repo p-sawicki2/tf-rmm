@@ -24,14 +24,26 @@
 #ifndef CBMC
 #define RMM_REC_SAVED_GEN_REG_COUNT	U(31)
 #define STRUCT_TYPE	                struct
+#define REC_GEN_REG_TYPE		unsigned long
 #else /* CBMC */
+/*
+ * struct rec must fit in a single granule. CBMC has a smaller GRANULE_SIZE
+ * defined than on a real target, and the full structure doesn't fit there. The
+ * following definitions help making the structure smaller.
+ */
+/*
+ * For CBMC it is not necessary to have a regs array that fits all the 31
+ * general registers
+ */
 #define RMM_REC_SAVED_GEN_REG_COUNT	SMC_RESULT_REGS
 /*
  * Some of the structures inside 'struct rec' don't influence the outcome of
- * the CBMC tests, so for CBMC build make these a union to get smaller 'rec'
- * structure.
+ * the CBMC tests, so for CBMC build make these a union making their size being
+ * of the largest field, instead of the sum of the fields' sizes.
  */
 #define STRUCT_TYPE	                union
+/* Reserve a single byte per saved register instead of 8. */
+#define REC_GEN_REG_TYPE		unsigned char
 #endif /* CBMC */
 
 struct granule;
@@ -155,8 +167,8 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
-	unsigned long regs[RMM_REC_SAVED_GEN_REG_COUNT];
-	unsigned long sp_el0;
+	REC_GEN_REG_TYPE regs[RMM_REC_SAVED_GEN_REG_COUNT];
+	REC_GEN_REG_TYPE sp_el0;
 
 #ifndef CBMC
 	/*
