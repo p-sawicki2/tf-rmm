@@ -1,0 +1,295 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ac49aa3_e2ef9c58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 43
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "initial comments",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbf5aed9_d1296daa",
+        "filename": "lib/s2tt/CMakeLists.txt",
+        "patchSetId": 43
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "nit: remove extra whitespace",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30add380_28e1771e",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "all s2tt.c changes can be separate patch.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cecc1ae_e0bd0754",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "Don\u0027t remove the asserts. We dont need to cover all the asserts as part of unit testing. Asserts are important for 2 purposes:\n\n1. They serve as documentation of function prevonditions\n2. They help in avoiding developer mistakes when changes are made to the caller\n3. They help in validating internal state consistency during fuzz testing.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9eece33_e0ce43ae",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "assertions need not differentiate between LPA2 and non LPA2. \n\nI think we can just test for OA_LPA2 and avoid the conditional here.",
+      "range": {
+        "startLine": 317,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 14
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93b5ec8b_69dc6cfc",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "could add an assert that start_level is \u003e -1",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea2731c1_05ed83d4",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "same comment as above. The unit tests need not worry about covering assertions.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f0b2dd3_1cf1ff1b",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "use pa here\n\nunsigned long s2tte;\npa \u003d pa \u0026 s2tt_test_helpers_oa_mask(level);",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 21
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d70f6676_b94d9707",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "As per above, we would use `pa ` here.",
+      "range": {
+        "startLine": 115,
+        "startChar": 60,
+        "endLine": 115,
+        "endChar": 65
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10b579c1_21aecd90",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "not sure if this needs special handling",
+      "range": {
+        "startLine": 123,
+        "startChar": 1,
+        "endLine": 125,
+        "endChar": 36
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e97c692_a28533ce",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "not sure we need such complex logic. This should be a strightforward function.",
+      "range": {
+        "startLine": 157,
+        "startChar": 1,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34904a29_5e36a02c",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "we just need to apply `level` mask to unaligned pa. remove differing implementation.",
+      "range": {
+        "startLine": 181,
+        "startChar": 29,
+        "endLine": 181,
+        "endChar": 35
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4d38435_ecc78dfb",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "These checks could be similar to previous tests wherein we construct the expected tte directly ?",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdf75150_10b55a20",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "This need not be tested but since you have written test case, we can keep it.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e75ae70_7aaa913b",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-03T13:30:17Z",
+      "side": 1,
+      "message": "note to self: reviewed.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
