@@ -69,6 +69,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f0378ed_78697e45",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-03T15:01:33Z",
+      "side": 1,
+      "message": "I agree with all the above, however these are static functions for which the callers are already checking the same asserts, that\u0027s why I removed them.\n\nFor public APIs, I didn\u0027t remove asserts even if they aren\u0027t tested or they are dead code for the same reasons you expressed above.",
+      "parentUuid": "5cecc1ae_e0bd0754",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9eece33_e0ce43ae",
@@ -195,6 +213,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e918f792_76931935",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-03T15:01:33Z",
+      "side": 1,
+      "message": "Yes, this is needed. I was having very random failures on some of the tests (~0.2% of the times) and took me a couple of days to find out that it was due to this specific corner case 😂",
+      "parentUuid": "10b579c1_21aecd90",
+      "range": {
+        "startLine": 123,
+        "startChar": 1,
+        "endLine": 125,
+        "endChar": 36
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e97c692_a28533ce",
@@ -208,6 +250,30 @@
       "writtenOn": "2024-05-03T13:30:17Z",
       "side": 1,
       "message": "not sure we need such complex logic. This should be a strightforward function.",
+      "range": {
+        "startLine": 157,
+        "startChar": 1,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8310a49_a069ea68",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-03T15:01:33Z",
+      "side": 1,
+      "message": "This is also related to the random failures I was talking on the previous comment.",
+      "parentUuid": "6e97c692_a28533ce",
       "range": {
         "startLine": 157,
         "startChar": 1,
