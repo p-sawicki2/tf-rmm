@@ -155,8 +155,17 @@ struct rec {
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
 
+#ifndef CBMC
 	unsigned long regs[RMM_REC_SAVED_GEN_REG_COUNT];
 	unsigned long sp_el0;
+#else
+	/*
+	 * In CBMC build reserve a single byte per saved register. This helps
+	 * keeping the size of the structure below the decreased GRANULE_SIZE.
+	 */
+	unsigned char regs[RMM_REC_SAVED_GEN_REG_COUNT];
+	unsigned char sp_el0;
+#endif /*CBMC*/
 
 #ifndef CBMC
 	/*
