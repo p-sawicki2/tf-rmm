@@ -15,7 +15,7 @@
  *
  * We define two classes of granule states: `external` and `internal`.
  *
- * A granule state belongs to the `external` class iff _any_ parameter to _any_
+ * A granule state belongs to the `external` class if _any_ parameter to _any_
  * RMI command is an address of a granule which is expected to be in that state
  * i.e the lock is only acquired if the granule state of the address in RMI
  * command matches to that of the expected state.
@@ -26,6 +26,8 @@
  * - GRANULE_STATE_DELEGATED
  * - GRANULE_STATE_RD
  * - GRANULE_STATE_REC
+ * - GRANULE_STATE_PDEV
+ * - GRANULE_STATE_VDEV
  *
  * Otherwise a granule state is considered `internal`.
  *
@@ -34,6 +36,7 @@
  * - GRANULE_STATE_RTT
  * - GRANULE_STATE_DATA
  * - GRANULE_STATE_REC_AUX
+ * - GRANULE_STATE_PDEV_AUX
  *
  * The following locking rules must be followed in all cases:
  *
@@ -51,11 +54,12 @@
  *    1. `RTT`
  *    2. `DATA`
  *    3. `REC_AUX`
+ *    4. `PDEV_AUX`
  *
  * 5. Granules in the same `internal` state must be locked in the order defined
  *    below for that specific state.
  *
- * A granule's state can be changed iff the granule is locked.
+ * A granule's state can be changed if the granule is locked.
  *
  * Invariants
  * ----------
@@ -183,7 +187,39 @@
  *   - Assigned s2tte.
  */
 #define GRANULE_STATE_RTT		6U
+
+#ifdef RMM_CCA_DA
+/*
+ * PDEV - Physical device (external)
+ *
+ * Granule content is protected by granule::lock.
+ *
+ * A reference is held on this granule:
+ * - For each associated VDEV granule.
+ *
+ * The PDEV may only be destroyed when the following objects have a reference
+ * count of zero.
+ */
+#define GRANULE_STATE_PDEV		7U
+
+/*
+ * PDEV_AUX - Physical device auxiliary granule (internal)
+ *
+ * todo: comment
+ */
+#define GRANULE_STATE_PDEV_AUX		8U
+
+/*
+ * VDEV - Virtual device (external?)
+ *
+ * todo: comment
+ */
+#define GRANULE_STATE_VDEV		9U
+
+#define GRANULE_STATE_LAST		GRANULE_STATE_VDEV
+#else
 #define GRANULE_STATE_LAST		GRANULE_STATE_RTT
+#endif /* RMM_CCA_DA */
 
 /*
  * Granule descriptor bit fields:
