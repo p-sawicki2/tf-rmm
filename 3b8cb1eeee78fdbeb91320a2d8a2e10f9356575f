@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8581c70_840c63c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-07T13:40:39Z",
+      "side": 1,
+      "message": "Reverted to patchset 4, which passed CI+2",
+      "revId": "3b8cb1eeee78fdbeb91320a2d8a2e10f9356575f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
