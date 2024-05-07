@@ -32,6 +32,11 @@ enum buffer_slot {
 				 */
 	SLOT_RTT = U(SLOT_REC_AUX0) + MAX_REC_AUX_GRANULES,
 	SLOT_RTT2,		/* Some commands access two RTT granules at a time*/
+#ifdef RMM_CCA_DA
+	SLOT_PDEV,
+	SLOT_PDEV_AUX0,
+	SLOT_VDEV = U(SLOT_PDEV_AUX0) + PDEV_PARAM_AUX_GRANULES_MAX,
+#endif
 	SLOT_RSI_CALL,
 	NR_CPU_SLOTS
 };

@@ -11,7 +11,12 @@
 
 /* The per CPU High VA space is used for Slot buffer and per-CPU stack mapping */
 
+#ifdef RMM_CCA_DA
+#define XLAT_HIGH_VA_SLOT_NUM	(U(43))
+#else
 #define XLAT_HIGH_VA_SLOT_NUM	(U(25))
+#endif
+
 /* Calculate the slot buffer's virtual address */
 #define SLOT_VIRT		(((UL(0xFFFFFFFFFFFFFFFF)) - \
 				(XLAT_HIGH_VA_SLOT_NUM * GRANULE_SIZE)) + 1U)
