@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7f17473_ae230603",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-07T09:24:28Z",
+      "side": 1,
+      "message": "Sorry, I know you names the struct as per my suggestion. On second thoughts, just REG_TYPE should be sufficient unless we get a need to have another definitions with differing size.",
+      "revId": "ffa4a96ea2ff02c5883160f2f354739d7220d8ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
