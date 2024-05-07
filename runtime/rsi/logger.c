@@ -45,10 +45,10 @@ static const struct rsi_handler rsi_logger[] = {
 	RSI_FUNCTION(_MEASUREMENT_EXTEND, 10U, 0U),	/* 0xC4000193 */
 	RSI_FUNCTION(_ATTEST_TOKEN_INIT, 8U, 1U),	/* 0xC4000194 */
 	RSI_FUNCTION(_ATTEST_TOKEN_CONTINUE, 3U, 1U),	/* 0xC4000195 */
-	RSI_FUNCTION(_REALM_CONFIG, 1U, 0U),		/* 0xC4000196 */
 	RSI_FUNCTION(_IPA_STATE_SET, 4U, 2U),		/* 0xC4000197 */
 	RSI_FUNCTION(_IPA_STATE_GET, 1U, 1U),		/* 0xC4000198 */
-	RSI_FUNCTION(_HOST_CALL, 1U, 0U)		/* 0xC4000199 */
+	RSI_FUNCTION(_HOST_CALL, 1U, 0U),		/* 0xC4000199 */
+	RSI_FUNCTION(_REALM_CONFIG, 1U, 0U)		/* 0xC40001AD */
 };
 
 #define RSI_STATUS_STRING(_id)[RSI_##_id] = #_id
@@ -57,10 +57,11 @@ static const char * const rsi_status_string[] = {
 	RSI_STATUS_STRING(SUCCESS),
 	RSI_STATUS_STRING(ERROR_INPUT),
 	RSI_STATUS_STRING(ERROR_STATE),
-	RSI_STATUS_STRING(INCOMPLETE)
+	RSI_STATUS_STRING(INCOMPLETE),
+	RSI_STATUS_STRING(ERROR_DEVICE)
 };
 
-COMPILER_ASSERT(ARRAY_LEN(rsi_status_string) == RSI_ERROR_COUNT);
+COMPILER_ASSERT(ARRAY_LEN(rsi_status_string) == RSI_ERROR_COUNT_MAX);
 
 static const struct rsi_handler *fid_to_rsi_logger(unsigned int id)
 {
@@ -74,12 +75,17 @@ static size_t print_entry(unsigned int id, unsigned long args[],
 	int cnt;
 
 	switch (id) {
-	case SMC_RSI_VERSION ... SMC_RSI_HOST_CALL: {
+	case SMC_RSI_VERSION ... SMC_RSI_REALM_CONFIG: {
 		const struct rsi_handler *logger = fid_to_rsi_logger(id);
 
 		num = logger->num_args;
-		cnt = snprintf(buf, MAX_NAME_LEN + 1UL,
-				"%s%s", "SMC_RSI", logger->fn_name);
+		if (logger->fn_name != NULL) {
+			cnt = snprintf(buf, MAX_NAME_LEN + 1UL,
+				       "%s%s", "SMC_RSI", logger->fn_name);
+		} else {
+			cnt = snprintf(buf, MAX_NAME_LEN + 1UL,
+				       "%s", "SMC_RSI_<unsupported>");
+		}
 		break;
 	}
 	/* SMC32 PSCI calls */
@@ -118,7 +124,7 @@ static int print_status(char *buf, size_t len, unsigned long res)
 {
 	return_code_t rc = unpack_return_code(res);
 
-	if ((unsigned long)rc.status >= RSI_ERROR_COUNT) {
+	if ((unsigned long)rc.status >= RSI_ERROR_COUNT_MAX) {
 		return snprintf(buf, len, " > %lx", res);
 	}
 
