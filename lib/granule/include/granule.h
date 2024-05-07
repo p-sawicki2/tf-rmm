@@ -99,6 +99,14 @@ static inline void __granule_assert_unlocked_invariants(struct granule *g,
 	case GRANULE_STATE_REC_AUX:
 		assert(REFCOUNT(g) == 0U);
 		break;
+#ifdef RMM_CCA_DA
+	case GRANULE_STATE_PDEV:
+		assert(REFCOUNT(g) <= 1U);
+		break;
+	case GRANULE_STATE_PDEV_AUX:
+		assert(REFCOUNT(g) == 0U);
+		break;
+#endif
 	default:
 		/* Unknown granule type */
 		assert(false);
