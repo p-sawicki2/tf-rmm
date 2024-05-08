@@ -57,7 +57,8 @@ static unsigned long get_dabt_write_value(struct rec *rec, unsigned long esr)
 	if (rt == 31U) {
 		return 0UL;
 	}
-	return rec->regs[rt] & access_mask(esr);
+
+	return rec_active_plane(rec)->regs[rt] & access_mask(esr);
 }
 
 /*
@@ -172,7 +173,7 @@ void emulate_stage2_data_abort(struct rec *rec,
 			       struct rmi_rec_exit *rec_exit,
 			       unsigned long rtt_level)
 {
-	unsigned long fipa = rec->regs[1];
+	unsigned long fipa = rec_active_plane(rec)->regs[1];
 
 	assert(rtt_level <= (unsigned long)S2TT_PAGE_LEVEL);
 
@@ -345,7 +346,7 @@ static bool handle_simd_exception(struct rec *rec, unsigned long esr)
 	 * As the REC SIMD context is now restored, enable SIMD flags in REC's
 	 * cptr based on REC's SIMD configuration.
 	 */
-	SIMD_ENABLE_CPTR_FLAGS(&rec->realm_info.simd_cfg, rec->sysregs.cptr_el2);
+	SIMD_ENABLE_CPTR_FLAGS(&rec->realm_info.simd_cfg, rec_active_plane(rec)->sysregs.cptr_el2);
 
 	/*
 	 * Return 'true' indicating that this exception has been handled and
@@ -381,18 +382,19 @@ static inline bool rsi_handler_needs_fpu(unsigned int id)
 static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 {
 	struct rsi_result res = { 0 };
-	unsigned int function_id = (unsigned int)rec->regs[0];
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned int function_id = (unsigned int)plane->regs[0];
 	bool restore_simd_ctx = false;
 	unsigned int i;
 
-	RSI_LOG_SET(rec->regs);
+	RSI_LOG_SET(plane->regs);
 
 	/*
 	 * According to SMCCCv1.1+ if SMC call doesn't return result
 	 * in register starting from X4, it must preserve its value.
 	 */
 	for (i = 4U; i < SMC_RESULT_REGS; ++i) {
-		res.smc_res.x[i] = rec->regs[i];
+		res.smc_res.x[i] = plane->regs[i];
 	}
 
 	/* Ignore SVE hint bit, until RMM supports SVE hint bit */
@@ -454,7 +456,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 
 	if (((unsigned int)res.action & FLAG_UPDATE_REC) != 0U) {
 		for (i = 0U; i < SMC_RESULT_REGS; ++i) {
-			rec->regs[i] = res.smc_res.x[i];
+			plane->regs[i] = res.smc_res.x[i];
 		}
 	}
 
@@ -465,7 +467,7 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	/* Log RSI call */
-	RSI_LOG_EXIT(function_id, rec->regs);
+	RSI_LOG_EXIT(function_id, plane->regs);
 
 	return (((unsigned int)res.action & FLAG_EXIT_TO_HOST) == 0U);
 }
@@ -595,6 +597,8 @@ static bool handle_exception_irq_lel(struct rec *rec, struct rmi_rec_exit *rec_e
 /* Returns 'true' when returning to Realm (S) and false when to NS */
 bool handle_realm_exit(struct rec *rec, struct rmi_rec_exit *rec_exit, int exception)
 {
+	struct rec_plane *plane = rec_active_plane(rec);
+
 	switch (exception) {
 	case ARM_EXCEPTION_SYNC_LEL: {
 		bool ret;
@@ -606,9 +610,9 @@ bool handle_realm_exit(struct rec *rec, struct rmi_rec_exit *rec_exit, int excep
 		rec_exit->exit_reason = RMI_EXIT_SYNC;
 		ret = handle_exception_sync(rec, rec_exit);
 		if (!ret) {
-			rec->last_run_info.esr = read_esr_el2();
-			rec->last_run_info.far = read_far_el2();
-			rec->last_run_info.hpfar = read_hpfar_el2();
+			plane->last_run_info.esr = read_esr_el2();
+			plane->last_run_info.far = read_far_el2();
+			plane->last_run_info.hpfar = read_hpfar_el2();
 		}
 		return ret;
 
@@ -632,9 +636,9 @@ bool handle_realm_exit(struct rec *rec, struct rmi_rec_exit *rec_exit, int excep
 		rec_exit->exit_reason = RMI_EXIT_SERROR;
 		ret = handle_exception_serror_lel(rec, rec_exit);
 		if (!ret) {
-			rec->last_run_info.esr = esr;
-			rec->last_run_info.far = read_far_el2();
-			rec->last_run_info.hpfar = read_hpfar_el2();
+			plane->last_run_info.esr = esr;
+			plane->last_run_info.far = read_far_el2();
+			plane->last_run_info.hpfar = read_hpfar_el2();
 		}
 		return ret;
 	}

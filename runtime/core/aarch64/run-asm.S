@@ -26,10 +26,10 @@ func run_realm
 	stp	x27, x28, [sp, #(16 * 4)]
 	stp	x29, x30, [sp, #(16 * 5)]
 
-	/* Push rec pointer to the stack for realm_exit */
+	/* Push plane regs[] pointer to the stack for realm_exit */
 	stp	x0, xzr, [sp, #-16]!
 
-	/* load realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* load plane GPRs (x0 == &rec_plane->regs[0] */
 	ldp	x2,  x3,  [x0, #(16 * 1)]
 	ldp	x4,  x5,  [x0, #(16 * 2)]
 	ldp	x6,  x7,  [x0, #(16 * 3)]
@@ -58,13 +58,13 @@ func realm_exit
 	 * We come here with realm's x0 and x1 on the stack and exit_reason in
 	 * x0. See el2_vectors in runtime/core/aarch64/vectors.S.
 	 *
-	 * First, restore realm_gprs ptr to x1
+	 * First, restore plane GPRS ptr to x1
 	 */
 
-	/* Recover the rec pointer */
+	/* Recover the GPRs pointer */
 	ldr	x1, [sp, #16]
 
-	/* Store realm GPRs (offsetof(rec, rec->regs[0]) == 0) */
+	/* Store realm GPRs */
 	stp	x2,  x3,  [x1, #(16 * 1)]
 	stp	x4,  x5,  [x1, #(16 * 2)]
 	stp	x6,  x7,  [x1, #(16 * 3)]
