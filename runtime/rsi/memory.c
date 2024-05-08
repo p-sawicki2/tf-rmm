@@ -14,11 +14,12 @@ void handle_rsi_ipa_state_set(struct rec *rec,
 			      struct rmi_rec_exit *rec_exit,
 			      struct rsi_result *res)
 {
-	unsigned long base = rec->regs[1];
-	unsigned long top = rec->regs[2];
-	enum ripas ripas_val = (enum ripas)rec->regs[3];
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned long base = plane->regs[1];
+	unsigned long top = plane->regs[2];
+	enum ripas ripas_val = (enum ripas)plane->regs[3];
 	enum ripas_change_destroyed change_destroyed =
-			(enum ripas_change_destroyed)rec->regs[4];
+			(enum ripas_change_destroyed)plane->regs[4];
 
 	if ((ripas_val > RIPAS_RAM) ||
 	    !GRANULE_ALIGNED(base)  || !GRANULE_ALIGNED(top) ||
@@ -48,7 +49,7 @@ void handle_rsi_ipa_state_set(struct rec *rec,
 void handle_rsi_ipa_state_get(struct rec *rec,
 			      struct rsi_result *res)
 {
-	unsigned long ipa = rec->regs[1];
+	unsigned long ipa = rec_active_plane(rec)->regs[1];
 	enum s2_walk_status ws;
 	enum ripas ripas_val = RIPAS_EMPTY;
 

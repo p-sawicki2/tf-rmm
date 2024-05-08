@@ -138,13 +138,15 @@ void inject_sync_idabort(unsigned long fsc)
  */
 void inject_sync_idabort_rec(struct rec *rec, unsigned long fsc)
 {
-	rec->sysregs.far_el1 = rec->last_run_info.far;
-	rec->sysregs.elr_el1 = rec->pc;
-	rec->sysregs.spsr_el1 = rec->pstate;
-	rec->sysregs.esr_el1 = calc_esr_idabort(rec->last_run_info.esr,
-						rec->pstate, fsc);
-	rec->pc = calc_vector_entry(rec->sysregs.vbar_el1, rec->pstate);
-	rec->pstate = calc_pstate();
+	struct rec_plane *plane = rec_active_plane(rec);
+
+	plane->sysregs.far_el1 = plane->last_run_info.far;
+	plane->sysregs.elr_el1 = plane->pc;
+	plane->sysregs.spsr_el1 = plane->pstate;
+	plane->sysregs.esr_el1 = calc_esr_idabort(plane->last_run_info.esr,
+						  plane->pstate, fsc);
+	plane->pc = calc_vector_entry(plane->sysregs.vbar_el1, plane->pstate);
+	plane->pstate = calc_pstate();
 }
 
 /*

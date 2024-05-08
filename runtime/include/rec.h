@@ -13,6 +13,7 @@
 #include <gic.h>
 #include <memory_alloc.h>
 #include <pauth.h>
+#include <planes.h>
 #include <pmu.h>
 #include <ripas.h>
 #include <s2tt.h>
@@ -162,13 +163,43 @@ struct rec_aux_data {
 	uintptr_t cca_token_buf;
 };
 
+/*
+ * Per-plane specific REC data.
+ */
+struct rec_plane {
+	REG_TYPE regs[RMM_REC_SAVED_GEN_REG_COUNT];
+	REG_TYPE sp_el0;
+
+	STRUCT_TYPE sysreg_state sysregs;
+	unsigned long pc;
+	unsigned long pstate;
+
+	STRUCT_TYPE {
+		/*
+		 * The contents of the *_EL2 system registers at the last time
+		 * the REC exited to the host due to a synchronous exception.
+		 * These are the unsanitized register values which may differ
+		 * from the value returned to the host in rec_exit structure.
+		 */
+		unsigned long esr;
+		unsigned long hpfar;
+		unsigned long far;
+	} last_run_info;
+};
+
+/*
+ * The `sp_el0` field must immediately follow `regs` field in `struct rec_plane`.
+ * This assumption is used by the assembly code saving and restoring realm
+ * registers.
+ */
+COMPILER_ASSERT(U(offsetof(struct rec_plane, sp_el0)) ==
+	(U(offsetof(struct rec_plane, regs)) +
+	 U(sizeof(unsigned long) * RMM_REC_SAVED_GEN_REG_COUNT)));
+
 struct rec {
 	struct granule *g_rec;	/* the granule in which this REC lives */
 	unsigned long rec_idx;	/* which REC is this */
 	bool runnable;
-
-	REG_TYPE regs[RMM_REC_SAVED_GEN_REG_COUNT];
-	REG_TYPE sp_el0;
 
 #ifndef CBMC
 	/*
@@ -178,10 +209,8 @@ struct rec {
 	struct pauth_state pauth;
 #endif /* CBMC*/
 
-	unsigned long pc;
-	unsigned long pstate;
+	struct rec_plane plane[RMM_MAX_TOTAL_PLANES];
 
-	STRUCT_TYPE sysreg_state sysregs;
 	STRUCT_TYPE common_sysreg_state common_sysregs;
 
 	/* Populated when the REC issues a RIPAS change request */
@@ -206,18 +235,6 @@ struct rec {
 		struct s2tt_context s2_ctx;
 	} realm_info;
 
-	STRUCT_TYPE {
-		/*
-		 * The contents of the *_EL2 system registers at the last time
-		 * the REC exited to the host due to a synchronous exception.
-		 * These are the unsanitized register values which may differ
-		 * from the value returned to the host in rec_exit structure.
-		 */
-		unsigned long esr;
-		unsigned long hpfar;
-		unsigned long far;
-	} last_run_info;
-
 	/* Pointer to per-cpu non-secure state */
 	struct ns_state *ns;
 
@@ -225,7 +242,8 @@ struct rec {
 		/*
 		 * Set to 'true' when there is a pending PSCI
 		 * command that must be resolved by the host.
-		 * The command is encoded in rec->regs[0].
+		 * The command is encoded in regs[0] of the
+		 * specific plane.
 		 *
 		 * A REC with pending PSCI is not schedulable.
 		 */
@@ -250,13 +268,24 @@ struct rec {
 	struct simd_context *active_simd_ctx;
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
+
 /*
- * The `sp_el0` field must immediately follow `regs` field in `struct rec`.
- * This assumption is used by the assembly code saving and restoring realm
- * registers.
+ * Get the part of the REC which corresponds to the currently active plane.
+ *
+ * Currently, only the primary plane is supported.
  */
-COMPILER_ASSERT(U(offsetof(struct rec, sp_el0)) ==
-	(U(offsetof(struct rec, regs)) + U(sizeof(unsigned long) * RMM_REC_SAVED_GEN_REG_COUNT)));
+static inline struct rec_plane *rec_active_plane(struct rec *rec)
+{
+	return &rec->plane[PRIMARY_PLANE_ID];
+}
+
+/*
+ * Get the part of the REC which corresponds to the primary plane.
+ */
+static inline struct rec_plane *rec_primary_plane(struct rec *rec)
+{
+	return &rec->plane[PRIMARY_PLANE_ID];
+}
 
 /*
  * Check that mpidr has a valid value with all fields except
