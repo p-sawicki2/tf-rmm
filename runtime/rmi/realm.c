@@ -429,6 +429,10 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 
 	set_rd_state(rd, REALM_NEW);
 	set_rd_rec_count(rd, 0UL);
+
+	/* Only primary plane is supported */
+	rd->num_aux_planes = 0U;
+
 	rd->s2_ctx.g_rtt = find_granule(p.rtt_base);
 	rd->s2_ctx.ipa_bits = p.s2sz;
 	rd->s2_ctx.s2_starting_level = (int)p.rtt_level_start;

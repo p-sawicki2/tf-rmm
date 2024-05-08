@@ -11,7 +11,8 @@
 
 void handle_rsi_realm_config(struct rec *rec, struct rsi_result *res)
 {
-	unsigned long ipa = rec->regs[1];
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned long ipa = plane->regs[1];
 	enum s2_walk_status walk_status;
 	struct s2_walk_result walk_res;
 	struct granule *gr;
