@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74113346_d678ff01",
+        "filename": "configs/libspdm/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "\u003e this change does not seem to be needed\n\nremoved it. It was auto added by git config core.autocrlf",
+      "parentUuid": "fe2d856c_0963963e",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 8
+      },
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "45220d76_ca9435fb",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-03T10:10:01Z",
       "side": 1,
       "message": "could avoid the change in comments.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 49
+      },
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a684e66_6ca86201",
+        "filename": "configs/libspdm/0001-cryptlib_mbedtls-use-external-Mbed-TLS.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45220d76_ca9435fb",
       "range": {
         "startLine": 45,
         "startChar": 0,
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fdd19a8_0e6a9b8f",
+        "filename": "configs/mbedtls/0003-fix-unused-function-md_type_to_string.patch",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "\u003e should we contribute this patch back to mbedTLS?\n\nquickly checked and this is fixed in latest mbedtls",
+      "parentUuid": "969b6bd5_31b049ad",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c9561ea_59722e2e",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-05-03T10:10:01Z",
       "side": 1,
       "message": "wrap this under #if RMM_CCA_DA_SUPPORT",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32b62727_715fdb11",
+        "filename": "configs/mbedtls/mbedtls_config.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c9561ea_59722e2e",
       "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +182,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e84fe6b7_d94f39b8",
+        "filename": "docs/readme.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10a7d3d9_09ae8186",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "471e036c_eb6bc9fc",
@@ -111,6 +213,24 @@
       "writtenOn": "2024-05-03T10:10:01Z",
       "side": 1,
       "message": "Needs to be under conditional compilation",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "232fccbe_3b0ca5ca",
+        "filename": "lib/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "Done. Its now under RMM_CCA_DA build option",
+      "parentUuid": "471e036c_eb6bc9fc",
       "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -134,6 +254,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "db677849_6df9fc7d",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "\u003e if this flag is specific to libspdm compilation ,we can modify the CFLAGS in  \n\u003e lib/spdm_requester/CMakeLists.txt\n\nThis flag is added as new mebtls config enabled more functions in mbedtls that uses string manipulation. And these are specific to host build.",
+      "parentUuid": "d0f3b263_9f053894",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f5a65a2_b0574c55",
         "filename": "tools/cppcheck/CPPCheck.cmake",
         "patchSetId": 7
@@ -145,6 +283,24 @@
       "writtenOn": "2024-05-03T10:10:01Z",
       "side": 1,
       "message": "we can exclude the entire build_dir I think.",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c005856f_1f4b421e",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-05-08T16:11:24Z",
+      "side": 1,
+      "message": "\u003e we can exclude the entire build_dir I think.\n\nI think excluding whole build dir should work. I will verify it with a CI run.",
+      "parentUuid": "2f5a65a2_b0574c55",
       "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
