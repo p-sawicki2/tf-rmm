@@ -490,6 +490,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "daa79061_4d14c4ba",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T13:20:56Z",
+      "side": 1,
+      "message": "Ignore, the issue is with s2tte_get_ripas()",
+      "parentUuid": "f461597c_0ddf98f1",
+      "range": {
+        "startLine": 1353,
+        "startChar": 9,
+        "endLine": 1353,
+        "endChar": 29
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28358374_d990ed23",
