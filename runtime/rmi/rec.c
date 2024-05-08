@@ -26,15 +26,17 @@
 
 static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 {
+	STRUCT_TYPE sysreg_state *sysregs = &rec->plane_0.sysregs;
+
 	/* Set non-zero values only */
-	rec->sysregs.pmcr_el0 = rec->realm_info.pmu_enabled ?
+	sysregs->pmcr_el0 = rec->realm_info.pmu_enabled ?
 				PMCR_EL0_INIT_RESET : PMCR_EL0_INIT;
 
-	rec->sysregs.sctlr_el1 = SCTLR_EL1_FLAGS;
-	rec->sysregs.mdscr_el1 = MDSCR_EL1_TDCC_BIT;
-	rec->sysregs.vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
-	rec->sysregs.cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
-	rec->sysregs.cptr_el2 = CPTR_EL2_VHE_INIT;
+	sysregs->sctlr_el1 = SCTLR_EL1_FLAGS;
+	sysregs->mdscr_el1 = MDSCR_EL1_TDCC_BIT;
+	sysregs->vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
+	sysregs->cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
+	sysregs->cptr_el2 = CPTR_EL2_VHE_INIT;
 }
 
 /*
@@ -134,16 +136,16 @@ static void init_rec_regs(struct rec *rec,
 	 */
 
 	for (i = 0U; i < REC_CREATE_NR_GPRS; i++) {
-		rec->regs[i] = rec_params->gprs[i];
+		rec->plane_0.regs[i] = rec_params->gprs[i];
 	}
 
-	rec->pc = rec_params->pc;
-	rec->pstate = SPSR_EL2_MODE_EL1h |
-		      SPSR_EL2_nRW_AARCH64 |
-		      SPSR_EL2_F_BIT |
-		      SPSR_EL2_I_BIT |
-		      SPSR_EL2_A_BIT |
-		      SPSR_EL2_D_BIT;
+	rec->plane_0.pc = rec_params->pc;
+	rec->plane_0.pstate = SPSR_EL2_MODE_EL1h |
+			      SPSR_EL2_nRW_AARCH64 |
+			      SPSR_EL2_F_BIT |
+			      SPSR_EL2_I_BIT |
+			      SPSR_EL2_A_BIT |
+			      SPSR_EL2_D_BIT;
 
 	init_rec_sysregs(rec, rec_params->mpidr);
 	init_common_sysregs(rec, rd);
@@ -330,7 +332,7 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->rec_idx = rec_idx;
 
 	init_rec_regs(rec, &rec_params, rd);
-	gic_cpu_state_init(&rec->sysregs.gicstate);
+	gic_cpu_state_init(&rec->plane_0.sysregs.gicstate);
 
 	/* Copy addresses of auxiliary granules */
 	(void)memcpy(rec->g_aux, rec_aux_granules,
