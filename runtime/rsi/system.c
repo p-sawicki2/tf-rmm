@@ -14,7 +14,7 @@ void handle_rsi_version(struct rec *rec, struct rsi_result *res)
 {
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
-	if (rec->regs[1] != RSI_ABI_VERSION) {
+	if (rec_active_plane(rec)->regs[1] != RSI_ABI_VERSION) {
 		res->smc_res.x[0] = RSI_ERROR_INPUT;
 	} else {
 		res->smc_res.x[0] = RSI_SUCCESS;

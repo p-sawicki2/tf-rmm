@@ -20,14 +20,15 @@
 #include <smc-rsi.h>
 #include <smc.h>
 
-static void reset_last_run_info(struct rec *rec)
+static void reset_last_run_info(struct rec_plane *plane)
 {
-	rec->last_run_info.esr = 0UL;
+	plane->last_run_info.esr = 0UL;
 }
 
 static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
-	unsigned long esr = rec->last_run_info.esr;
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned long esr = plane->last_run_info.esr;
 	unsigned int rt = esr_srt(esr);
 
 	if ((rec_enter->flags & REC_ENTRY_FLAG_EMUL_MMIO) == 0UL) {
@@ -61,30 +62,40 @@ static bool complete_mmio_emulation(struct rec *rec, struct rmi_rec_enter *rec_e
 			}
 		}
 
-		rec->regs[rt] = val;
+		plane->regs[rt] = val;
 	}
 
-	rec->pc = rec->pc + 4UL;
+	plane->pc = plane->pc + 4UL;
 	return true;
 }
 
 static void complete_set_ripas(struct rec *rec)
 {
+	struct rec_plane *plane = rec_active_plane(rec);
 	enum ripas ripas_val = rec->set_ripas.ripas_val;
+
+	/*
+	 * RIPAS change request can only come from Plane 0.
+	 *
+	 * Note that this assert is technically not needed at the moment
+	 * as rec_active_plane() always returns &rec->plane_0, but leave it
+	 * here as for documenting the API and for later enforcement.
+	 */
+	assert(plane == &rec->plane_0);
 
 	if (rec->set_ripas.base == rec->set_ripas.top) {
 		return;
 	}
 
 	/* Pending request from Realm */
-	rec->regs[0] = RSI_SUCCESS;
-	rec->regs[1] = rec->set_ripas.addr;
+	plane->regs[0] = RSI_SUCCESS;
+	plane->regs[1] = rec->set_ripas.addr;
 
 	if ((ripas_val == RIPAS_RAM) && (rec->set_ripas.addr != rec->set_ripas.top)
 		 && (rec->set_ripas.response == REJECT)) {
-		rec->regs[2] = RSI_REJECT;
+		plane->regs[2] = RSI_REJECT;
 	} else {
-		rec->regs[2] = RSI_ACCEPT;
+		plane->regs[2] = RSI_ACCEPT;
 	}
 
 	rec->set_ripas.base = 0UL;
@@ -93,9 +104,10 @@ static void complete_set_ripas(struct rec *rec)
 
 static bool complete_sea_insertion(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
-	unsigned long esr = rec->last_run_info.esr;
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned long esr = plane->last_run_info.esr;
 	unsigned long fipa;
-	unsigned long hpfar = rec->last_run_info.hpfar;
+	unsigned long hpfar = plane->last_run_info.hpfar;
 
 	if ((rec_enter->flags & REC_ENTRY_FLAG_INJECT_SEA) == 0UL) {
 		return true;
@@ -117,7 +129,8 @@ static bool complete_sea_insertion(struct rec *rec, struct rmi_rec_enter *rec_en
 
 static void complete_sysreg_emulation(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
-	unsigned long esr = rec->last_run_info.esr;
+	struct rec_plane *plane = rec_active_plane(rec);
+	unsigned long esr = plane->last_run_info.esr;
 
 	/* Rt bits [9:5] of ISS field cannot exceed 0b11111 */
 	unsigned int rt = (unsigned int)ESR_EL2_SYSREG_ISS_RT(esr);
@@ -132,7 +145,7 @@ static void complete_sysreg_emulation(struct rec *rec, struct rmi_rec_enter *rec
 
 	/* Handle xzr */
 	if (rt != 31U) {
-		rec->regs[rt] = rec_enter->gprs[0];
+		plane->regs[rt] = rec_enter->gprs[0];
 	}
 }
 
@@ -161,6 +174,7 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	struct granule *g_rec;
 	struct granule *g_run;
 	struct rec *rec;
+	struct rec_plane *plane;
 	struct rd *rd;
 	struct rmi_rec_run rec_run;
 	unsigned long realm_state, ret;
@@ -248,6 +262,8 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		goto out_unmap_buffers;
 	}
 
+	plane = rec_active_plane(rec);
+
 	/*
 	 * Check GIC state after checking other conditions but before doing
 	 * anything which may have side effects.
@@ -256,7 +272,7 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		ret = RMI_ERROR_REC;
 		goto out_unmap_buffers;
 	}
-	gic_copy_state_from_rec_entry(&rec->sysregs.gicstate, &rec_run.enter);
+	gic_copy_state_from_rec_entry(&plane->sysregs.gicstate, &rec_run.enter);
 
 	if (!complete_mmio_emulation(rec, &rec_run.enter)) {
 		ret = RMI_ERROR_REC;
@@ -280,21 +296,21 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 		goto out_unmap_buffers;
 	}
 
-	reset_last_run_info(rec);
+	reset_last_run_info(plane);
 
-	rec->sysregs.hcr_el2 = rec->common_sysregs.hcr_el2;
+	plane->sysregs.hcr_el2 = rec->common_sysregs.hcr_el2;
 	if ((rec_run.enter.flags & REC_ENTRY_FLAG_TRAP_WFI) != 0UL) {
-		rec->sysregs.hcr_el2 |= HCR_TWI;
+		plane->sysregs.hcr_el2 |= HCR_TWI;
 	}
 	if ((rec_run.enter.flags & REC_ENTRY_FLAG_TRAP_WFE) != 0UL) {
-		rec->sysregs.hcr_el2 |= HCR_TWE;
+		plane->sysregs.hcr_el2 |= HCR_TWE;
 	}
 
 	ret = RMI_SUCCESS;
 
 	rec_run_loop(rec, &rec_run.exit);
 
-	gic_copy_state_to_rec_exit(&rec->sysregs.gicstate, &rec_run.exit);
+	gic_copy_state_to_rec_exit(&plane->sysregs.gicstate, &rec_run.exit);
 
 out_unmap_buffers:
 	buffer_unmap(rec);
