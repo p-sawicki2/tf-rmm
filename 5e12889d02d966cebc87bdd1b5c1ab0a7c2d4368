@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21e6fd00_afa03383",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eb0a77c_e030659e",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0b682558_ca97adf9",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "Avoid duplication of information and can be more verbose. Also ensure proper punctuation.\n\n\" The recommended version of CPPCheck is as indicated tool overview section above.\"\n\n\nAlso link it to the above section",
+      "range": {
+        "startLine": 219,
+        "startChar": 1,
+        "endLine": 219,
+        "endChar": 29
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07fc9219_b69e88b9",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b682558_ca97adf9",
       "range": {
         "startLine": 219,
         "startChar": 1,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc012d10_c93c45f9",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5fe9d97_118b82e3",
+      "range": {
+        "startLine": 223,
+        "startChar": 45,
+        "endLine": 223,
+        "endChar": 46
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "473121f6_51fc8c83",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "Ensure to have proper punctuation in documentation.",
+      "range": {
+        "startLine": 8,
+        "startChar": 56,
+        "endLine": 8,
+        "endChar": 57
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c66d8c13_1cc8e43d",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "473121f6_51fc8c83",
       "range": {
         "startLine": 8,
         "startChar": 56,
@@ -110,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60c0c5de_6517d1e8",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56441916_5401e565",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "253d7270_f4564ff2",
@@ -123,6 +237,24 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "could add some guidance on error supression and how this is done within RMM",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90b1e0b1_925ce146",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "253d7270_f4564ff2",
       "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -150,6 +282,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6030fd7d_5c90a0f7",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d0dfd700_737986b3",
+      "range": {
+        "startLine": 15,
+        "startChar": 39,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82c0e3cc_de82267b",
@@ -163,6 +319,24 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "Point to official CPPCheck build guidelines.",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "558896c1_3809491b",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82c0e3cc_de82267b",
       "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -184,6 +358,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae81b7bf_6bdad1e5",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f007126_4067322b",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e5e27e9_a313bed3",
@@ -197,6 +389,30 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "Add some explanation like \n\nNeed add both cppcheck and htmlreport to the PATH variable, also could give a brief on the htmlreport.",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 76
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bef94fb_f0564ae0",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e5e27e9_a313bed3",
       "range": {
         "startLine": 24,
         "startChar": 6,
@@ -230,6 +446,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b58dc008_425e1c90",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89a92328_4a04a32d",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c8b9ead_795d8c03",
@@ -243,6 +483,30 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "there are 2 rules here I think , cppcheck and cppcheck-misra\n\nneed to explain both rules.",
+      "range": {
+        "startLine": 33,
+        "startChar": 31,
+        "endLine": 33,
+        "endChar": 45
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2998d5bf_5878c79d",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c8b9ead_795d8c03",
       "range": {
         "startLine": 33,
         "startChar": 31,
@@ -270,6 +534,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3691ddd3_893dfbac",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bc09362_c0cbcd98",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a70f4710_422a8f10",
@@ -283,6 +565,24 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "can add a bit more verbose commentary on html report and how this can be generated.",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51b00533_382827bd",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a70f4710_422a8f10",
       "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -310,6 +610,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d095b9b_8e99fab5",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48b9bd9e_13029ad3",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 19
+      },
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "acb1266c_e7da4318",
@@ -323,6 +647,24 @@
       "writtenOn": "2024-05-01T09:35:59Z",
       "side": 1,
       "message": "Need to mention misra rules as well again here.",
+      "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22fe843b_aeb2fc46",
+        "filename": "docs/resources/application-notes/cppcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-08T12:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acb1266c_e7da4318",
       "revId": "5e12889d02d966cebc87bdd1b5c1ab0a7c2d4368",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
