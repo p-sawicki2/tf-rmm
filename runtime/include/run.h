@@ -7,6 +7,7 @@
 #define RUN_H
 
 struct rec;
+struct rec_plane;
 struct simd_context;
 
 /*
@@ -22,5 +23,11 @@ void init_all_cpus_ns_simd_context(void);
 
 /* Returns current CPU's NS world SIMD context */
 struct simd_context *get_cpu_ns_simd_context(void);
+
+/* Restore the state @plane on the current realm */
+void restore_realm_state(struct rec *rec, struct rec_plane *plane);
+
+/* Save the realm state @plane */
+void save_realm_state(struct rec_plane *plane);
 
 #endif /* RUN_H */
