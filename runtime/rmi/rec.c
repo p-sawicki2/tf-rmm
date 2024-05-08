@@ -24,17 +24,20 @@
 #include <stddef.h>
 #include <string.h>
 
-static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
+static void init_rec_sysregs(struct rec *rec,
+			     struct rec_plane *plane, unsigned long mpidr)
 {
+	STRUCT_TYPE sysreg_state *sysregs = &(plane->sysregs);
+
 	/* Set non-zero values only */
-	rec->sysregs.pmcr_el0 = rec->realm_info.pmu_enabled ?
+	sysregs->pmcr_el0 = rec->realm_info.pmu_enabled ?
 				PMCR_EL0_INIT_RESET : PMCR_EL0_INIT;
 
-	rec->sysregs.sctlr_el1 = SCTLR_EL1_FLAGS;
-	rec->sysregs.mdscr_el1 = MDSCR_EL1_TDCC_BIT;
-	rec->sysregs.vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
-	rec->sysregs.cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
-	rec->sysregs.cptr_el2 = CPTR_EL2_VHE_INIT;
+	sysregs->sctlr_el1 = SCTLR_EL1_FLAGS;
+	sysregs->mdscr_el1 = MDSCR_EL1_TDCC_BIT;
+	sysregs->vmpidr_el2 = mpidr | VMPIDR_EL2_RES1;
+	sysregs->cnthctl_el2 = CNTHCTL_EL2_NO_TRAPS;
+	sysregs->cptr_el2 = CPTR_EL2_VHE_INIT;
 }
 
 /*
@@ -124,28 +127,34 @@ static void init_rec_regs(struct rec *rec,
 			  struct rmi_rec_params *rec_params,
 			  struct rd *rd)
 {
-	unsigned int i;
+	for (unsigned int i = 0U; i < rec_num_planes(rec); i++) {
+		struct rec_plane *plane = rec_plane_by_idx(rec, i);
 
-	/*
-	 * We only need to set non-zero values here because we're intializing
-	 * data structures in the rec granule which was just converted from
-	 * the DELEGATED state to REC state, and we can rely on the RMM
-	 * invariant that DELEGATED granules are always zero-filled.
-	 */
+		if (i == PRIMARY_PLANE_ID) {
+			/*
+			 * We only need to set non-zero values here because
+			 * we're intializing data structures in the rec granule
+			 * which was just converted from the DELEGATED state to
+			 * REC state, and we can rely on the RMM invariant that
+			 * DELEGATED granules are always zero-filled.
+			 */
+			for (unsigned int j = 0U; j < REC_CREATE_NR_GPRS; j++) {
+				plane->regs[j] = rec_params->gprs[j];
+			}
 
-	for (i = 0U; i < REC_CREATE_NR_GPRS; i++) {
-		rec->regs[i] = rec_params->gprs[i];
+			plane->pc = rec_params->pc;
+		}
+
+		plane->pstate = SPSR_EL2_MODE_EL1h |
+				SPSR_EL2_nRW_AARCH64 |
+				SPSR_EL2_F_BIT |
+				SPSR_EL2_I_BIT |
+				SPSR_EL2_A_BIT |
+				SPSR_EL2_D_BIT;
+
+		init_rec_sysregs(rec, plane, rec_params->mpidr);
 	}
 
-	rec->pc = rec_params->pc;
-	rec->pstate = SPSR_EL2_MODE_EL1h |
-		      SPSR_EL2_nRW_AARCH64 |
-		      SPSR_EL2_F_BIT |
-		      SPSR_EL2_I_BIT |
-		      SPSR_EL2_A_BIT |
-		      SPSR_EL2_D_BIT;
-
-	init_rec_sysregs(rec, rec_params->mpidr);
 	init_common_sysregs(rec, rd);
 }
 
@@ -329,9 +338,6 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
-	init_rec_regs(rec, &rec_params, rd);
-	gic_cpu_state_init(&rec->sysregs.gicstate);
-
 	/* Copy addresses of auxiliary granules */
 	(void)memcpy(rec->g_aux, rec_aux_granules,
 			num_rec_aux * sizeof(struct granule *));
@@ -344,6 +350,11 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->realm_info.pmu_num_ctrs = rd->pmu_num_ctrs;
 	rec->realm_info.algorithm = rd->algorithm;
 	rec->realm_info.simd_cfg = rd->simd_cfg;
+
+	init_rec_regs(rec, &rec_params, rd);
+	for (unsigned int i = 0U; i < rec_num_planes(rec); i++) {
+		gic_cpu_state_init(&(rec_plane_by_idx(rec, i)->sysregs.gicstate));
+	}
 
 	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
 	if (rec->runnable) {

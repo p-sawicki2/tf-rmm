@@ -12,9 +12,14 @@ COMPILER_ASSERT(RSI_ABI_VERSION_MINOR <= UL(0xFFFF));
 
 void handle_rsi_version(struct rec *rec, struct rsi_result *res)
 {
+	struct rec_plane *plane = rec_active_plane(rec);
+
+	/* RSI calls can only be issued by the primary plane */
+	assert(plane == rec_primary_plane(rec));
+
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
-	if (rec->regs[1] != RSI_ABI_VERSION) {
+	if (plane->regs[1] != RSI_ABI_VERSION) {
 		res->smc_res.x[0] = RSI_ERROR_INPUT;
 	} else {
 		res->smc_res.x[0] = RSI_SUCCESS;
