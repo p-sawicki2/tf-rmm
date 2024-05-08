@@ -356,6 +356,247 @@
       "message": "note to self: reviewed.",
       "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e812bc_010127b7",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "need to understand this test better.",
+      "range": {
+        "startLine": 1046,
+        "startChar": 5,
+        "endLine": 1047,
+        "endChar": 4
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66880694_2eed81a1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "till here.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f461597c_0ddf98f1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "did you manage to recreate the issue as mentioned here : https://github.com/TF-RMM/tf-rmm/issues/21",
+      "range": {
+        "startLine": 1353,
+        "startChar": 9,
+        "endLine": 1353,
+        "endChar": 29
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28358374_d990ed23",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "..expected error\"",
+      "range": {
+        "startLine": 1379,
+        "startChar": 19,
+        "endLine": 1379,
+        "endChar": 24
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5107f119_78039142",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "did not find test for this.",
+      "range": {
+        "startLine": 1381,
+        "startChar": 49,
+        "endLine": 1382,
+        "endChar": 30
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "567d2c43_7bfad262",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1421,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "not sure if this is testing something different from line 1405 or if the comment is incorrect.",
+      "range": {
+        "startLine": 1419,
+        "startChar": 9,
+        "endLine": 1421,
+        "endChar": 23
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "388f3675_af23c062",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1459,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "the comment is confusig the TTE is not valid. \n\nThis should probably be \"unassigned tte\"",
+      "range": {
+        "startLine": 1459,
+        "startChar": 39,
+        "endLine": 1459,
+        "endChar": 49
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6d468ad_b9e1adf3",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1471,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "note: reviewed till here.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e582afa1_6c31366d",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1490,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "the term valid TTE is confusing. \n\n\"with a crafted unassigned tte\".",
+      "range": {
+        "startLine": 1490,
+        "startChar": 45,
+        "endLine": 1490,
+        "endChar": 50
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bc6e9ec_548174a9",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1493,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": ".. valid DESC.\"",
+      "range": {
+        "startLine": 1493,
+        "startChar": 38,
+        "endLine": 1493,
+        "endChar": 61
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87f54180_5503ba3d",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1502,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T09:29:15Z",
+      "side": 1,
+      "message": "unassigned TTE but having a RIPAS.",
+      "range": {
+        "startLine": 1502,
+        "startChar": 31,
+        "endLine": 1502,
+        "endChar": 64
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
