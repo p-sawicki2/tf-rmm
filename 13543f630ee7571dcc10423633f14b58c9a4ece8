@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7501053_b40a0cab",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T08:45:05Z",
+      "side": 1,
+      "message": "Hmm, it didn\u0027t occur to me to move shrinkwrap to the tools directory, but I guess it makes sense. I\u0027ll move it",
+      "parentUuid": "c8192a86_5e8d38e6",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "13543f630ee7571dcc10423633f14b58c9a4ece8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c54d4a0d_3aec8a12",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-08T09:22:30Z",
       "side": 1,
       "message": "btvar?",
+      "range": {
+        "startLine": 137,
+        "startChar": 49,
+        "endLine": 137,
+        "endChar": 54
+      },
+      "revId": "13543f630ee7571dcc10423633f14b58c9a4ece8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5d1629e_965ac2be",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T08:45:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c54d4a0d_3aec8a12",
       "range": {
         "startLine": 137,
         "startChar": 49,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6c8c54a_ef7d1738",
+        "filename": "shrinkwrap/common/layers/model-wait-debugger.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T08:45:05Z",
+      "side": 1,
+      "message": "I somehow though \u0027-S\u0027 was for Iris. It is what I\u0027ve always used, but I haven\u0027t debugged with the debugger for a while, though. So I might be wrong. I\u0027ll change it per your suggestion",
+      "parentUuid": "77adb196_3e917970",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "13543f630ee7571dcc10423633f14b58c9a4ece8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0440c71_9013d326",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-05-08T09:22:30Z",
       "side": 1,
       "message": "unnecessary?",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "13543f630ee7571dcc10423633f14b58c9a4ece8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b5f54eb_fc84f8d6",
+        "filename": "shrinkwrap/common/layers/tftf.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T08:45:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0440c71_9013d326",
       "range": {
         "startLine": 9,
         "startChar": 27,
