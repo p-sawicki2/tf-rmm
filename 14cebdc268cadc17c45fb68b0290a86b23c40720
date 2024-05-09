@@ -16,6 +16,52 @@
       "message": "Thanks for the updates. Just one more thing I noticed.",
       "revId": "14cebdc268cadc17c45fb68b0290a86b23c40720",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df066701_bfdce77e",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-09T12:04:43Z",
+      "side": 1,
+      "message": "please update this as well",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 44
+      },
+      "revId": "14cebdc268cadc17c45fb68b0290a86b23c40720",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c59e514_f671ae8f",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-09T12:04:43Z",
+      "side": 1,
+      "message": "Sorry for posting the comments one-by-one, but I\u0027m reporting these as I understand more and more about the tool putting together my own setup.\n\nThis should be `SHRINKWRAP_CONFIG` instead I think. I believe after the variable name is fixed, it won\u0027t be necessary anymore to `cd` into the config dir before executing shrinkwrap commands.",
+      "range": {
+        "startLine": 88,
+        "startChar": 13,
+        "endLine": 88,
+        "endChar": 31
+      },
+      "revId": "14cebdc268cadc17c45fb68b0290a86b23c40720",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
