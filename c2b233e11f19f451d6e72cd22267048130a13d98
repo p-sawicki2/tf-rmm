@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c313e880_9842021c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T11:52:32Z",
+      "side": 1,
+      "message": "Verified as per https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/618/\n\nCurrent patchset doesn\u0027t modify functionality WRT the previous one.",
+      "revId": "c2b233e11f19f451d6e72cd22267048130a13d98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
