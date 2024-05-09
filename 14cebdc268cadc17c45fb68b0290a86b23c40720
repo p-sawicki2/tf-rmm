@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e280cd62_f4b2e407",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T12:22:32Z",
+      "side": 1,
+      "message": "Fixed on the current patchset, I realized as I pressed \"intro\" when pushing 😄",
+      "parentUuid": "df066701_bfdce77e",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 44
+      },
+      "revId": "14cebdc268cadc17c45fb68b0290a86b23c40720",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c59e514_f671ae8f",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-05-09T12:04:43Z",
       "side": 1,
       "message": "Sorry for posting the comments one-by-one, but I\u0027m reporting these as I understand more and more about the tool putting together my own setup.\n\nThis should be `SHRINKWRAP_CONFIG` instead I think. I believe after the variable name is fixed, it won\u0027t be necessary anymore to `cd` into the config dir before executing shrinkwrap commands.",
+      "range": {
+        "startLine": 88,
+        "startChar": 13,
+        "endLine": 88,
+        "endChar": 31
+      },
+      "revId": "14cebdc268cadc17c45fb68b0290a86b23c40720",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6cb0df6_ca83b615",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-09T12:22:32Z",
+      "side": 1,
+      "message": "Yes, I am aware of the ``SHRINKWRAP_CONFIG`` variable, however when I was running tests I encountered some issues when using it to give the absolute path of the config, sometimes it would complain that the file was already there (?) and sometimes it would have issues to find the overlays as well.\n\nAlso, I was considering the scenario in which we were adding more Configs to increase the number of tests and/or PoC available. I thought it would be very tedious to have to overwrite ``SHRINKWRAP_CONFIG`` every time we wanted to run a different one and I felt it would be easier to call the configs from their directory",
+      "parentUuid": "8c59e514_f671ae8f",
       "range": {
         "startLine": 88,
         "startChar": 13,
