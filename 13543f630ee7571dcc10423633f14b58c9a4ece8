@@ -144,6 +144,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b189388a_2f1718be",
+        "filename": "shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-09T09:47:42Z",
+      "side": 1,
+      "message": "If I understand correctly this is a default value, and points to the `rmm` directory that is checked out in the same directory as the `${WORKSPACE}` is. I would suggest to change this to `tf-rmm`, as that is the directory name that git creates when RMM is checked out.",
+      "range": {
+        "startLine": 26,
+        "startChar": 41,
+        "endLine": 26,
+        "endChar": 44
+      },
+      "revId": "13543f630ee7571dcc10423633f14b58c9a4ece8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f0440c71_9013d326",
         "filename": "shrinkwrap/common/layers/tftf.yaml",
         "patchSetId": 7
