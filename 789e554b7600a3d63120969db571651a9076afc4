@@ -46,6 +46,76 @@
       },
       "revId": "789e554b7600a3d63120969db571651a9076afc4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a2cc771_83fdaaa3",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-10T17:40:47Z",
+      "side": 1,
+      "message": "Since this function is only used on the tests, it should be a test helper, not part of the library itself. You can add this as a static function in granule.cpp",
+      "parentUuid": "e88f384a_f20e220e",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d05e964c_8a910aaf",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-10T17:40:47Z",
+      "side": 1,
+      "message": "Would it make sense to add something like \n\n assert((g-\u003edescriptor \u0026 MASK(GRN_REFCOUNT)) !\u003d MASK(GRN_REFCOUNT))\n\nto avoid overflows?",
+      "range": {
+        "startLine": 209,
+        "startChar": 1,
+        "endLine": 209,
+        "endChar": 34
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a52cae_6299fb2e",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-10T17:40:47Z",
+      "side": 1,
+      "message": "In line with my previous comment\n\n assert((g-\u003edescriptor \u0026 MASK(GRN_REFCOUNT)) !\u003d 0)",
+      "range": {
+        "startLine": 217,
+        "startChar": 19,
+        "endLine": 217,
+        "endChar": 29
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
