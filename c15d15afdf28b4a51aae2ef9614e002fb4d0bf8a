@@ -16,6 +16,402 @@
       "message": "Verified as per https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/619/",
       "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "321bf0ef_bd8d78b7",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "Also refer to 3 world CCA config :\n\nParticularly for RMM development, please refer to the 3 world configuration as mentioned here : https://shrinkwrap.docs.arm.com/en/latest/userguide/configstore/cca-3world.html",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5329d327_23171c7c",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": ".. software stack to test CCA using Arm RME extension utilizing TF-A-Tests (link to https://trustedfirmware-a-tests.readthedocs.io/en/latest/index.html). The main Test payload in TF-A-Tests is the TFTF binary. In this config, TF-A is in Root World, RMM is in Realm EL2 and TFTF is in Normal world.\"",
+      "range": {
+        "startLine": 34,
+        "startChar": 60,
+        "endLine": 34,
+        "endChar": 67
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b513cdd0_53e70791",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "\".. to the Shrinkwrap working directory whilst using the local RMM repository...\"",
+      "range": {
+        "startLine": 38,
+        "startChar": 55,
+        "endLine": 38,
+        "endChar": 63
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e51797e_b9db3cfa",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": ".. and this can be used for RMM development.",
+      "range": {
+        "startLine": 39,
+        "startChar": 57,
+        "endLine": 40,
+        "endChar": 35
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d8e2dac_13fd4986",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "not sure whether this section is needed.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 4
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ac3fcf9_4e4fa624",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "variable",
+      "range": {
+        "startLine": 57,
+        "startChar": 13,
+        "endLine": 57,
+        "endChar": 18
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74d8d54d_22258b9e",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "It is not clear what this is .",
+      "range": {
+        "startLine": 60,
+        "startChar": 13,
+        "endLine": 60,
+        "endChar": 47
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ce81049_5cebd4fa",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "..shrinkwrap overlay. simlar comment to all notes.",
+      "range": {
+        "startLine": 60,
+        "startChar": 129,
+        "endLine": 60,
+        "endChar": 134
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93d889e8_8dcbe084",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "how about \u003cRMM_ROOT_DIR\u003e ?",
+      "range": {
+        "startLine": 83,
+        "startChar": 30,
+        "endLine": 83,
+        "endChar": 49
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c39e48cd_9ff5dca7",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "can we use default SHRINKWRAP values ? Why this needs to be defined ?",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 40
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a7c122e_39093f2a",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "similar comment as aboe ?",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 31
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88b5c8b1_8574bca8",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "should depend on \u003cRMM_ROOT\u003e",
+      "range": {
+        "startLine": 90,
+        "startChar": 32,
+        "endLine": 90,
+        "endChar": 50
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0303a889_efe8cb3a",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "\"build and run without using Shrinkwrap containers.. \"",
+      "range": {
+        "startLine": 98,
+        "startChar": 16,
+        "endLine": 98,
+        "endChar": 26
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2124efa9_4aaa51e2",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "is this incremental build ? We dont want to recompile entire stack if only RMM is changed.",
+      "range": {
+        "startLine": 153,
+        "startChar": 1,
+        "endLine": 153,
+        "endChar": 15
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b177aebc_063cbaf0",
+        "filename": "docs/readme.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "can be separate patch",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de636334_a5c196d8",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "we should be using the default 3 world yaml.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 36
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a91c299e_b9549d2f",
+        "filename": "tools/shrinkwrap/common/layers/tftf.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "should not be redefining how to build TF-A. Should use 3 world yaml.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 32
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc459708_87e9fd96",
+        "filename": "tools/shrinkwrap/common/layers/tftf.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T09:35:37Z",
+      "side": 1,
+      "message": "should be an overlay. We should not redefine FVP run.",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
