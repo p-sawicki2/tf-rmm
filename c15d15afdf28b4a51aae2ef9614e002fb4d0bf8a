@@ -35,6 +35,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c9921ae_5c181a73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Addressed doc comments so far.",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "321bf0ef_bd8d78b7",
@@ -52,6 +69,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e882005e_9661c6be",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "321bf0ef_bd8d78b7",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5329d327_23171c7c",
@@ -65,6 +100,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": ".. software stack to test CCA using Arm RME extension utilizing TF-A-Tests (link to https://trustedfirmware-a-tests.readthedocs.io/en/latest/index.html). The main Test payload in TF-A-Tests is the TFTF binary. In this config, TF-A is in Root World, RMM is in Realm EL2 and TFTF is in Normal world.\"",
+      "range": {
+        "startLine": 34,
+        "startChar": 60,
+        "endLine": 34,
+        "endChar": 67
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dbd6f3b_36f9c9ad",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5329d327_23171c7c",
       "range": {
         "startLine": 34,
         "startChar": 60,
@@ -98,6 +157,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f4b8f75_2a410efa",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b513cdd0_53e70791",
+      "range": {
+        "startLine": 38,
+        "startChar": 55,
+        "endLine": 38,
+        "endChar": 63
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e51797e_b9db3cfa",
@@ -111,6 +194,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": ".. and this can be used for RMM development.",
+      "range": {
+        "startLine": 39,
+        "startChar": 57,
+        "endLine": 40,
+        "endChar": 35
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f83ace27_0928f7a0",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e51797e_b9db3cfa",
       "range": {
         "startLine": 39,
         "startChar": 57,
@@ -144,6 +251,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5156964_4f8362a2",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Removed as per our discussion",
+      "parentUuid": "2d8e2dac_13fd4986",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 4
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ac3fcf9_4e4fa624",
@@ -157,6 +288,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": "variable",
+      "range": {
+        "startLine": 57,
+        "startChar": 13,
+        "endLine": 57,
+        "endChar": 18
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4668e549_a7f87af8",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Added a reference to Shrinkwrap doc as per our discussion.",
+      "parentUuid": "1ac3fcf9_4e4fa624",
       "range": {
         "startLine": 57,
         "startChar": 13,
@@ -213,6 +368,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccc7cfef_8acc31d5",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ce81049_5cebd4fa",
+      "range": {
+        "startLine": 60,
+        "startChar": 129,
+        "endLine": 60,
+        "endChar": 134
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94289536_5fab57cb",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Remove RMM_SRC as per our discussion",
+      "parentUuid": "74d8d54d_22258b9e",
+      "range": {
+        "startLine": 60,
+        "startChar": 13,
+        "endLine": 60,
+        "endChar": 47
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93d889e8_8dcbe084",
@@ -226,6 +429,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": "how about \u003cRMM_ROOT_DIR\u003e ?",
+      "range": {
+        "startLine": 83,
+        "startChar": 30,
+        "endLine": 83,
+        "endChar": 49
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "933271a7_19e0a3af",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "This is a shrinkwrap environment variable and cannot be renamed.\n\nFor our use case, this variable has to be defined always:\n\n * We don\u0027t want Shrinkwrap to pull RMM, instead, we want to use our local copy of   the repository. Moreover, this copy has to be common to any configuration we run (now we only have one but we expect to have several more).\n * Shrinkwrap does not (currently) accept other environment variables and we cannot use any other variable on the configs either, so we cannot just define an environment variable to define where RMM root directory is.\n * Because of the two points above, the only way to define where RMM root is is by using a path relative to ${SHRINKWRAP_BUILD} (see ${RMM_SRC} btvar definition in line 60 of this patchset), therefore this variable needs to be defined or else Shrinkwrap would use the default ${HOME}/.shrinkwrap directory.\n\nFor your reference, macro ${param:sourcedir} used to construct ${RMM_SRC} btvar as shown on line 60, always points to ${SHRINKWRAP_BUILD}/source/\u003cCONFIG_NAME\u003e/ so the only way to have some control to where the sources (including the ones for RMM) are located is through ${SHRINKWRAP_BUILD}\n\n${RMM_SRC} is defined to be outside of ${SHRINKWRAP_BUILD}/source/\u003cCONFIG_NAME\u003e/ directory (but not too far away from it), as otherwise we would need a different copy of RMM for every different config we wanted to run, and instead, we want a common RMM tree for all configs.",
+      "parentUuid": "93d889e8_8dcbe084",
       "range": {
         "startLine": 83,
         "startChar": 30,
@@ -259,6 +486,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e9fba77_d70706f5",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "I\u0027m using ${WORKSPACE} just for convenience, to not have to write the path all the time.",
+      "parentUuid": "c39e48cd_9ff5dca7",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 40
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a7c122e_39093f2a",
@@ -272,6 +523,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": "similar comment as aboe ?",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 31
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "992648eb_7aa3f568",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Shrinkwrap environment variable. Cannot be renamed.",
+      "parentUuid": "3a7c122e_39093f2a",
       "range": {
         "startLine": 89,
         "startChar": 13,
@@ -305,6 +580,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3222b7e4_c50a33ad",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "${SHRINKWRAP_CONFIG} (and the rest of the environment variables) need to have absolute paths.",
+      "parentUuid": "88b5c8b1_8574bca8",
+      "range": {
+        "startLine": 90,
+        "startChar": 32,
+        "endLine": 90,
+        "endChar": 50
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0303a889_efe8cb3a",
@@ -318,6 +617,30 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": "\"build and run without using Shrinkwrap containers.. \"",
+      "range": {
+        "startLine": 98,
+        "startChar": 16,
+        "endLine": 98,
+        "endChar": 26
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f540e0d_5ffce944",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0303a889_efe8cb3a",
       "range": {
         "startLine": 98,
         "startChar": 16,
@@ -351,6 +674,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39998910_b30d6834",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "We don\u0027t, that is right, but if we need to change the configuration (e.g, we want to test with different value for ${RMM_LOG_LEVEL} we need to clean and rebuild. That might be necessary for shrinkwrap even if we want to run the model with different parameters.\n\nI will add a note to clarify this point.",
+      "parentUuid": "2124efa9_4aaa51e2",
+      "range": {
+        "startLine": 153,
+        "startChar": 1,
+        "endLine": 153,
+        "endChar": 15
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b177aebc_063cbaf0",
@@ -364,6 +711,24 @@
       "writtenOn": "2024-05-13T09:35:37Z",
       "side": 1,
       "message": "can be separate patch",
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73c8c8a1_a8112f10",
+        "filename": "docs/readme.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-13T16:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b177aebc_063cbaf0",
       "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
