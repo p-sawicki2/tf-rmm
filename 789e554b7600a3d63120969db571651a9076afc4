@@ -72,6 +72,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0631a0a5_6c6cd802",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-13T11:06:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3a2cc771_83fdaaa3",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d05e964c_8a910aaf",
@@ -85,6 +109,30 @@
       "writtenOn": "2024-05-10T17:40:47Z",
       "side": 1,
       "message": "Would it make sense to add something like \n\n assert((g-\u003edescriptor \u0026 MASK(GRN_REFCOUNT)) !\u003d MASK(GRN_REFCOUNT))\n\nto avoid overflows?",
+      "range": {
+        "startLine": 209,
+        "startChar": 1,
+        "endLine": 209,
+        "endChar": 34
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dc0d324_1618066b",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-13T11:06:59Z",
+      "side": 1,
+      "message": "I added assertions as you suggested, but then realised, that this doesn\u0027t make much sense as they aren\u0027t atomic. Even if they were, these atomic_granule_get/put() functions are called without taking granule lock, so refcount might change after checking assertion. I removed added assertions, please share opinion.",
+      "parentUuid": "d05e964c_8a910aaf",
       "range": {
         "startLine": 209,
         "startChar": 1,
