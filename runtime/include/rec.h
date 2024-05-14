@@ -111,7 +111,7 @@ STRUCT_TYPE sysreg_state {
  * common across all RECs in a Realm.
  */
 STRUCT_TYPE common_sysreg_state {
-	unsigned long vttbr_el2;
+	unsigned long vttbr_el2[MAX_S2_CTXS];
 	unsigned long vtcr_el2;
 	unsigned long hcr_el2;
 	unsigned long mdcr_el2;
@@ -234,6 +234,7 @@ struct rec {
 		struct simd_config simd_cfg;
 		struct s2tt_context s2_ctx;
 		unsigned int num_aux_planes;
+		bool rtt_tree_pp;
 	} realm_info;
 
 	/* Pointer to per-cpu non-secure state */
@@ -267,6 +268,9 @@ struct rec {
 
 	/* The active SIMD context that is live in CPU registers */
 	struct simd_context *active_simd_ctx;
+
+	/* Index of the currently active plane */
+	unsigned int active_plane_id;
 };
 COMPILER_ASSERT(sizeof(struct rec) <= GRANULE_SIZE);
 
@@ -290,13 +294,31 @@ static inline struct rec_plane *rec_plane_by_idx(struct rec *rec,
 }
 
 /*
- * Get the part of the REC which corresponds to the currently active plane.
- *
- * Currently, only the primary plane is supported.
+ * Return the s2 context ID of a plane given the plane ID and the REC
  */
+static inline unsigned int plane_to_s2_context_idx(struct rec *rec,
+						   unsigned int plane_id)
+{
+	unsigned int index;
+
+	assert(plane_id < rec_num_planes(rec));
+
+	index = (plane_id == rec_num_planes(rec) - 1U) ? 0U : plane_id + 1U;
+	return index;
+}
+
+/*
+ * Return the S2 context ID of the currently active plane given a REC
+ */
+static inline unsigned int active_s2_context_idx(struct rec *rec)
+{
+	return plane_to_s2_context_idx(rec, rec->active_plane_id);
+}
+
+/* Get the part of the REC which corresponds to the currently active plane. */
 static inline struct rec_plane *rec_active_plane(struct rec *rec)
 {
-	return &rec->plane[PRIMARY_PLANE_ID];
+	return &rec->plane[rec->active_plane_id];
 }
 
 /*
