@@ -22,4 +22,7 @@
 /* Primary plane on a realm has always index '0' */
 #define PRIMARY_PLANE_ID		(0U)
 
+/* Index of the primary S2_CTX */
+#define PRIMARY_S2_CTX_ID		(0U)
+
 #endif /* PLANES_H */

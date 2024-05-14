@@ -12,6 +12,7 @@
 #include <granule.h>
 #include <measurement.h>
 #include <memory_alloc.h>
+#include <planes.h>
 #include <psci.h>
 #include <realm.h>
 #include <rec.h>
@@ -57,7 +58,7 @@ static unsigned long realm_vtcr(struct rd *rd)
 	unsigned long vtcr = is_feat_vmid16_present() ?
 				(VTCR_FLAGS | VTCR_VS) : VTCR_FLAGS;
 	int s2_starting_level = realm_rtt_starting_level(rd);
-	bool lpa2 = rd->s2_ctx.enable_lpa2;
+	bool lpa2 = primary_s2_context(rd)->enable_lpa2;
 
 	assert(((!lpa2) && (s2_starting_level >= S2TT_MIN_STARTING_LEVEL)) ||
 	       ((lpa2) && (s2_starting_level >= S2TT_MIN_STARTING_LEVEL_LPA2)));
@@ -88,22 +89,27 @@ static unsigned long realm_vtcr(struct rd *rd)
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
-	bool lpa2 = rd->s2_ctx.enable_lpa2;
 
 	/* Set non-zero values only */
 	rec->common_sysregs.hcr_el2 = HCR_REALM_FLAGS;
 	rec->common_sysregs.vtcr_el2 =  realm_vtcr(rd);
-	rec->common_sysregs.vttbr_el2 = (granule_addr(rd->s2_ctx.g_rtt) &
-					MASK(TTBRx_EL2_BADDR));
-	if (lpa2 == true) {
-		rec->common_sysregs.vttbr_el2 &= ~MASK(TTBRx_EL2_BADDR_MSB_LPA2);
-		rec->common_sysregs.vttbr_el2 |=
-			INPLACE(TTBRx_EL2_BADDR_MSB_LPA2,
-						EXTRACT(EL2_BADDR_MSB_LPA2,
-							granule_addr(rd->s2_ctx.g_rtt)));
-	}
 
-	rec->common_sysregs.vttbr_el2 |= INPLACE(VTTBR_EL2_VMID, rd->s2_ctx.vmid);
+	for (unsigned int i = 0U; i < realm_num_planes(rd); i++) {
+		struct s2tt_context *s2_ctx = s2_context(rd, i);
+		bool lpa2 = s2_ctx->enable_lpa2;
+
+		rec->plane[i].sysregs.vttbr_el2 =
+			(granule_addr(s2_ctx->g_rtt) & MASK(TTBRx_EL2_BADDR));
+		if (lpa2 == true) {
+			rec->plane[i].sysregs.vttbr_el2 &= ~MASK(TTBRx_EL2_BADDR_MSB_LPA2);
+			rec->plane[i].sysregs.vttbr_el2 |=
+				INPLACE(TTBRx_EL2_BADDR_MSB_LPA2,
+							EXTRACT(EL2_BADDR_MSB_LPA2,
+								granule_addr(s2_ctx->g_rtt)));
+		}
+
+		rec->plane[i].sysregs.vttbr_el2 |= INPLACE(VTTBR_EL2_VMID, s2_ctx->vmid);
+	}
 
 	/* Control trapping of accesses to PMU registers */
 	if (rd->pmu_enabled) {
@@ -341,7 +347,7 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 
 	rec->num_rec_aux = num_rec_aux;
 
-	rec->realm_info.s2_ctx = rd->s2_ctx;
+	rec->realm_info.s2_ctx = *primary_s2_context(rd);
 	rec->realm_info.g_rd = g_rd;
 	rec->realm_info.pmu_enabled = rd->pmu_enabled;
 	rec->realm_info.pmu_num_ctrs = rd->pmu_num_ctrs;

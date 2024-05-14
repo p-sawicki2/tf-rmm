@@ -83,6 +83,7 @@ STRUCT_TYPE sysreg_state {
 	unsigned long mdccint_el1;
 	unsigned long disr_el1;
 	unsigned long mpam0_el1;
+	unsigned long vttbr_el2;
 
 	/* Timer Registers */
 	unsigned long cnthctl_el2;
@@ -111,7 +112,6 @@ STRUCT_TYPE sysreg_state {
  * common across all RECs in a Realm.
  */
 STRUCT_TYPE common_sysreg_state {
-	unsigned long vttbr_el2;
 	unsigned long vtcr_el2;
 	unsigned long hcr_el2;
 	unsigned long mdcr_el2;
