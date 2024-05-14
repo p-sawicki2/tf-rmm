@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c368a09c_ac026561",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": ". For CCA development utilizing the KVM and EDK2 software stacks, please refer to the `3 word configuration`_.",
+      "range": {
+        "startLine": 21,
+        "startChar": 75,
+        "endLine": 21,
+        "endChar": 80
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d310f18_646f5b08",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "nit: word -\u003e world",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 41
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "260b6d38_7c259763",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "to aid development and verification utilizing different software stacks. The below configs assume |RMM| source code is located inside the ``\u003cRMM_ROOT_DIR\u003e``.\n \nThe configs can be found in ...\n\nThe concrete configs available are described in the following subsection :\n\n\nrmm-tftf.yaml --\u003e to test with tftf\n\nrmm-3-world-dev.yaml --\u003e to test with linux/kvm unit tests",
+      "range": {
+        "startLine": 27,
+        "startChar": 45,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0db4c5e_bbe5a10a",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "brings",
+      "range": {
+        "startLine": 35,
+        "startChar": 12,
+        "endLine": 35,
+        "endChar": 18
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40052910_10b97d5c",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "nit: Config -\u003e config",
+      "range": {
+        "startLine": 35,
+        "startChar": 5,
+        "endLine": 35,
+        "endChar": 6
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc435be7_0ff96ed3",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "in -\u003e In",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 10
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee10fc2d_a68ec565",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "Config -\u003e config\n\nsame comments everywhere else",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e53e2be0_74676c06",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "these are not meant to be specified by user and hence not needed to be mentioned here.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 110
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ca86e81_2a874ccc",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "no need for these sections. \n\nCould give an example of the usage.",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 4
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e27df0cd_455507de",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 4
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "791f1440_0b6c27e9",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T16:21:48Z",
+      "side": 1,
+      "message": "perhaps DEBUG should be a btvar in rmm.yaml and no need for the overlay?",
+      "range": {
+        "startLine": 241,
+        "startChar": 6,
+        "endLine": 241,
+        "endChar": 11
+      },
+      "revId": "88e31604db9512e08ac5b7ba3c138256630ffbe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
