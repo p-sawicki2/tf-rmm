@@ -130,8 +130,10 @@ static void restore_sysreg_state(struct sysreg_state *sysregs)
 
 static void configure_realm_stage2(struct rec *rec)
 {
+	unsigned int s2_ctx_id = active_s2_context_idx(rec);
+
 	write_vtcr_el2(rec->common_sysregs.vtcr_el2);
-	write_vttbr_el2(rec->common_sysregs.vttbr_el2);
+	write_vttbr_el2(rec->common_sysregs.vttbr_el2[s2_ctx_id]);
 }
 
 void restore_realm_state(struct rec *rec, struct rec_plane *plane)
