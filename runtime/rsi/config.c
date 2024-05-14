@@ -48,7 +48,7 @@ void handle_rsi_realm_config(struct rec *rec, struct rsi_result *res)
 	assert(config != NULL);
 
 	/* Populate config structure */
-	config->ipa_width = rec->realm_info.s2_ctx.ipa_bits;
+	config->ipa_width = rec->realm_info.primary_s2_ctx.ipa_bits;
 	if (rec->realm_info.algorithm == HASH_SHA_256) {
 		config->algorithm = RSI_HASH_SHA_256;
 	} else {

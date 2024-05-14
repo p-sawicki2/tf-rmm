@@ -49,7 +49,7 @@ enum s2_walk_status realm_ipa_to_pa(struct rec *rec,
 		return WALK_INVALID_PARAMS;
 	}
 
-	s2_ctx = &(rec->realm_info.s2_ctx);
+	s2_ctx = &(rec->realm_info.primary_s2_ctx);
 	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
 
 	s2tt_walk_lock_unlock(s2_ctx, ipa, S2TT_PAGE_LEVEL, &wi);
@@ -117,7 +117,7 @@ enum s2_walk_status realm_ipa_get_ripas(struct rec *rec, unsigned long ipa,
 	assert(GRANULE_ALIGNED(ipa));
 	assert(addr_in_rec_par(rec, ipa));
 
-	s2_ctx = &(rec->realm_info.s2_ctx);
+	s2_ctx = &(rec->realm_info.primary_s2_ctx);
 	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
 
 	s2tt_walk_lock_unlock(s2_ctx, ipa, S2TT_PAGE_LEVEL, &wi);
