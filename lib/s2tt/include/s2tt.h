@@ -12,7 +12,9 @@
 #include <stdbool.h>
 
 /*
- * Stage 2 configuration of the Realm
+ * Stage 2 configuration of the Realm.
+ *
+ * Unless otherwise stated, all the fields are identical across planes.
  */
 struct s2tt_context {
 	/* Number of IPA bits */
@@ -24,7 +26,10 @@ struct s2tt_context {
 	/* Number of concatenated starting level rtts */
 	unsigned int num_root_rtts;
 
-	/* First level RTT, pointed to by Realm TTBR */
+	/*
+	 * First level RTT, pointed to by Realm TTBR. This field is
+	 * specific for each plane.
+	 */
 	struct granule *g_rtt;
 
 	/* Virtual Machine Identifier */
@@ -32,10 +37,6 @@ struct s2tt_context {
 
 	/* If FEAT_LPA2 is enabled */
 	bool enable_lpa2;
-
-	/*
-	 * TODO: we will need other translation regime state, e.g. TCR, MAIR(?).
-	 */
 };
 
 #define S2TT_MIN_IPA_BITS		U(32)

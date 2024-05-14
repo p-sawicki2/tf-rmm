@@ -16,6 +16,12 @@
 #define REALM_ACTIVE		1U
 #define REALM_SYSTEM_OFF	2U
 
+/* Maximum number of Stage 2 Translation contexts needed per realm */
+#define MAX_S2_CTXS		(RMM_MAX_NUM_AUX_PLANES + 1U)
+
+/* Primary plane on a realm has always index '0' */
+#define PRIMARY_PLANE_ID	(0U)
+
 /* struct rd is protected by the rd granule lock */
 struct rd {
 	/*
@@ -43,7 +49,7 @@ struct rd {
 	unsigned char measurement[MEASUREMENT_SLOT_NR][MAX_MEASUREMENT_SIZE];
 
 	/* Stage 2 configuration of the Realm */
-	struct s2tt_context s2_ctx;
+	struct s2tt_context s2_ctx[MAX_S2_CTXS];
 
 	/* Number of auxiliary REC granules for the Realm */
 	unsigned int num_rec_aux;
@@ -62,6 +68,18 @@ struct rd {
 
 	/* Realm Personalization Value */
 	unsigned char rpv[RPV_SIZE];
+
+	/* Number of auxiliary planes (not counting the primary one) */
+	unsigned int num_aux_planes;
+
+	/*
+	 * Flag to indicate if the realm uses a single S2 translation table
+	 * tree or if the translation table tree is shared across planes.
+	 *
+	 * rtt_tree_pp == false: All planes share the same RTT tree.
+	 * rtt_tree_pp == true: Each plane has its own RTT tree.
+	 */
+	bool rtt_tree_pp;
 };
 COMPILER_ASSERT((U(offsetof(struct rd, measurement)) & 7U) == 0U);
 COMPILER_ASSERT(sizeof(struct rd) <= GRANULE_SIZE);
@@ -116,9 +134,37 @@ static inline unsigned long get_rd_rec_count_unlocked(struct rd *rd)
 	return SCA_READ64_ACQUIRE(&rd->rec_count);
 }
 
+/*
+ * Return the number of planes supported by the realm referenced @rt.
+ * This takes into account the primary plane.
+ */
+static inline unsigned int realm_num_planes(struct rd *rd)
+{
+	return rd->num_aux_planes + 1U;
+}
+
+/*
+ * Retrieve a stage 2 context given the Realm Descriptor and the plane ID.
+ */
+static inline struct s2tt_context *s2_context(struct rd *rd,
+					      unsigned int plane_id)
+{
+	assert(plane_id < realm_num_planes(rd));
+
+	return &rd->s2_ctx[plane_id];
+}
+
+/*
+ * Retrieve the stage 2 context for the primary plane of a given realm.
+ */
+static inline struct s2tt_context *primary_s2_context(struct rd *rd)
+{
+	return s2_context(rd, PRIMARY_PLANE_ID);
+}
+
 static inline unsigned long realm_ipa_bits(struct rd *rd)
 {
-	return rd->s2_ctx.ipa_bits;
+	return primary_s2_context(rd)->ipa_bits;
 }
 
 /*
@@ -136,7 +182,7 @@ static inline unsigned long realm_par_size(struct rd *rd)
 
 static inline int realm_rtt_starting_level(struct rd *rd)
 {
-	return rd->s2_ctx.s2_starting_level;
+	return primary_s2_context(rd)->s2_starting_level;
 }
 
 /*

@@ -46,6 +46,11 @@
 #define REG_TYPE			unsigned char
 #endif /* CBMC */
 
+/*
+ * Maximum number of auxiliar planes supported. Note that this does not
+ * take the primary plane into account.
+ */
+#define RMM_MAX_NUM_AUX_PLANES		(3U)
 struct granule;
 
 /*

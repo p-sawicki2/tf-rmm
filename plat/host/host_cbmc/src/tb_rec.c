@@ -40,9 +40,10 @@ struct granule *init_rec_page(struct granule *g_rd)
 	__CPROVER_assert(g_rd->state == GRANULE_STATE_RD,
 		"internal, `_init_rec_page` valid `g_rd`.");
 	struct rd *realm = granule_metadata_ptr_to_buffer_ptr(g_rd);
+	struct s2tt_context *s2_ctx = primary_s2_context(realm);
 
-	rec.realm_info.s2_ctx.g_rtt = realm->s2_ctx.g_rtt;
-	rec.realm_info.s2_ctx.s2_starting_level = realm->s2_ctx.s2_starting_level;
+	rec.realm_info.s2_ctx.g_rtt = s2_ctx->g_rtt;
+	rec.realm_info.s2_ctx.s2_starting_level = s2_ctx->s2_starting_level;
 
 	rec.num_rec_aux = 1;
 	rec.g_aux[0] = init_aux_page();
