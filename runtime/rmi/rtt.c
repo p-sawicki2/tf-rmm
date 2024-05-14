@@ -27,7 +27,7 @@ static bool validate_map_addr(unsigned long map_addr,
 			      struct rd *rd)
 {
 	return ((map_addr < realm_ipa_size(rd)) &&
-		s2tte_is_addr_lvl_aligned(&(rd->s2_ctx), map_addr, level));
+		s2tte_is_addr_lvl_aligned(primary_s2_context(rd), map_addr, level));
 }
 
 /*
@@ -108,7 +108,7 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 		return RMI_ERROR_INPUT;
 	}
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx =  *primary_s2_context(rd);
 	buffer_unmap(rd);
 
 	/*
@@ -304,7 +304,7 @@ void smc_rtt_fold(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx = *primary_s2_context(rd);
 	buffer_unmap(rd);
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
 	granule_unlock(g_rd);
@@ -501,7 +501,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx = *primary_s2_context(rd);
 	in_par = addr_in_par(rd, map_addr);
 	buffer_unmap(rd);
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
@@ -628,7 +628,7 @@ static void map_unmap_ns(unsigned long rd_addr,
 	rd = buffer_granule_map(g_rd, SLOT_RD);
 	assert(rd != NULL);
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx = *primary_s2_context(rd);
 
 	if (op == MAP_NS) {
 		if (!host_ns_s2tte_is_valid(&s2_ctx, host_s2tte, level)) {
@@ -782,7 +782,7 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx = *primary_s2_context(rd);
 	buffer_unmap(rd);
 
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
@@ -906,7 +906,7 @@ static unsigned long data_create(unsigned long rd_addr,
 		goto out_unmap_rd;
 	}
 
-	s2_ctx = &(rd->s2_ctx);
+	s2_ctx = primary_s2_context(rd);
 	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
 
 	s2tt_walk_lock_unlock(s2_ctx, map_addr, S2TT_PAGE_LEVEL, &wi);
@@ -1037,7 +1037,7 @@ void smc_data_destroy(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = rd->s2_ctx;
+	s2_ctx = *primary_s2_context(rd);
 	buffer_unmap(rd);
 
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
@@ -1223,7 +1223,7 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = &(rd->s2_ctx);
+	s2_ctx = primary_s2_context(rd);
 	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
 
 	s2tt_walk_lock_unlock(s2_ctx, base, S2TT_PAGE_LEVEL, &wi);
@@ -1412,7 +1412,7 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	 */
 	assert(validate_map_addr(base, S2TT_PAGE_LEVEL, rd));
 
-	s2_ctx = &(rd->s2_ctx);
+	s2_ctx = primary_s2_context(rd);
 	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
 
 	/* Walk to the deepest level possible */
