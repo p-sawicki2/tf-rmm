@@ -15,12 +15,15 @@ target_compile_definitions(rmm-lib-spdm_requester_test PRIVATE ${LIBSPDM_CONFIG}
 target_include_directories(rmm-lib-spdm_requester_test
     PUBLIC "${RMM_SOURCE_DIR}/ext/mbedtls/include"
            "${RMM_SOURCE_DIR}/lib/common/include"
-           "${RMM_SOURCE_DIR}/lib/allocator/include")
+           "${RMM_SOURCE_DIR}/lib/allocator/include"
+           "${RMM_SOURCE_DIR}/configs/libspdm")
 
 # Add unit_test/test_crypt library
 add_subdirectory("${LIBSPDM_DIR}/unit_test/test_crypt"
     "${LIBSPDM_BIN_DIR}/unit_test/test_crypt")
 target_compile_definitions(test_crypt PRIVATE ${LIBSPDM_CONFIG})
+target_include_directories(test_crypt PUBLIC
+    PUBLIC "${RMM_SOURCE_DIR}/configs/libspdm")
 
 # Add test group 'spdm_requester' to RMM unit test framwork.
 rmm_build_unittest(NAME spdm_requester

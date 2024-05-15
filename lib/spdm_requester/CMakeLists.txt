@@ -55,42 +55,8 @@ Git_Apply_Patches(${LIBSPDM_DIR} "${LIBSPDM_PATCH_FILES}")
 #
 add_library(rmm-lib-spdm_requester INTERFACE)
 
-# todo: This can be moved to a config file and use
-# -DLIBSPDM_CONFIG=spdm_lib_config.h
-set(LIBSPDM_CONFIG
-    # Only one session per device is supported by RMM Specification
-    "LIBSPDM_MAX_SESSION_COUNT=1"
-
-    # libspdm enables all capabilities by default. This disables the SPMD
-    # requester capabilities that are not required for RMM DA.
-    "LIBSPDM_ENABLE_CAPABILITY_PSK_CAP=0"
-    "LIBSPDM_ENABLE_CAPABILITY_HBEAT_CAP=0"
-    "LIBSPDM_ENABLE_CAPABILITY_MUT_AUTH_CAP=0"
-    "LIBSPDM_ENABLE_CAPABILITY_ENCAP_CAP=0"
-    "LIBSPDM_ENABLE_CAPABILITY_CSR_CAP_EX=0"
-    "LIBSPDM_ENABLE_CAPABILITY_SET_CERT_CAP=0"
-    "LIBSPDM_ENABLE_CAPABILITY_EVENT_CAP=0"
-    "LIBSPDM_EVENT_RECIPIENT_SUPPORT=0"
-
-    # libspdm enables all cryptography configuration by default.
-    # todo: Disable more cryptography configuration in SPDM that are not required
-    # by RMM.
-    "LIBSPDM_SHA3_256_SUPPORT=0"
-    "LIBSPDM_SHA3_384_SUPPORT=0"
-    "LIBSPDM_SHA3_512_SUPPORT=0"
-    "LIBSPDM_SM3_256_SUPPORT=0"
-    "LIBSPDM_EDDSA_ED25519_SUPPORT=0"
-    "LIBSPDM_EDDSA_ED448_SUPPORT=0"
-    "LIBSPDM_SM2_DSA_P256_SUPPORT=0"
-    "LIBSPDM_SM2_KEY_EXCHANGE_P256_SUPPORT=0"
-    "LIBSPDM_AEAD_SM4_128_GCM_SUPPORT=0")
-
-# Based on RMM build type, set libspdm DEBUG flag
-if (CMAKE_BUILD_TYPE STREQUAL Debug)
-    list(APPEND LIBSPDM_CONFIG "LIBSPDM_DEBUG_ENABLE=1")
-else()
-    list(APPEND LIBSPDM_CONFIG "LIBSPDM_DEBUG_ENABLE=0")
-endif()
+# Set libspdm config file
+set(LIBSPDM_CONFIG "LIBSPDM_CONFIG=<libspdm_config.h>")
 
 # Below are the list of core SPDM libraries required for requester side protocol.
 set(LIBSPDM_CORE_LIBS
@@ -102,6 +68,8 @@ set(LIBSPDM_CORE_LIBS
 foreach(LIBSPDM_CORE_LIB IN LISTS LIBSPDM_CORE_LIBS)
     add_subdirectory("${LIBSPDM_DIR}/library/${LIBSPDM_CORE_LIB}"
         "${LIBSPDM_BIN_DIR}/library/${LIBSPDM_CORE_LIB}")
+    target_include_directories(${LIBSPDM_CORE_LIB} PRIVATE
+        "${RMM_SOURCE_DIR}/configs/libspdm")
     target_compile_definitions(${LIBSPDM_CORE_LIB} PRIVATE ${LIBSPDM_CONFIG})
     target_link_libraries(rmm-lib-spdm_requester INTERFACE "${LIBSPDM_CORE_LIB}")
 endforeach()
@@ -126,6 +94,8 @@ endif()
 foreach(LIBSPDM_STUB_LIB IN LISTS LIBSPDM_STUB_LIBS)
     add_subdirectory("${LIBSPDM_DIR}/os_stub/${LIBSPDM_STUB_LIB}"
         "${LIBSPDM_BIN_DIR}/os_stub/${LIBSPDM_STUB_LIB}")
+    target_include_directories(${LIBSPDM_STUB_LIB} PRIVATE
+        "${RMM_SOURCE_DIR}/configs/libspdm")
     target_compile_definitions(${LIBSPDM_STUB_LIB} PRIVATE ${LIBSPDM_CONFIG})
 
     # For cryptlib_mbedtls include headers and config from RMM MbedTLS directory
