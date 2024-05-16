@@ -7,10 +7,18 @@ include_guard()
 
 include(${CMAKE_CURRENT_LIST_DIR}/common_fake_host.cmake)
 
+# When running fuzzing, use the afl custom compiler
+if(HOST_VARIANT STREQUAL "host_fuzz")
+find_program(CMAKE_C_COMPILER
+    NAMES "afl-gcc-fast"
+    DOC "Path to afl-gcc-fast."
+    REQUIRED)
+else()
 find_program(CMAKE_C_COMPILER
     NAMES "gcc"
     DOC "Path to gcc."
     REQUIRED)
+endif()
 
 #
 # Needed to build CppUTest for unit tests
