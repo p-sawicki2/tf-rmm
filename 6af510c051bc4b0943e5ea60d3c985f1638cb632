@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3df98c8_a1d8830f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-16T13:28:04Z",
+      "side": 1,
+      "message": "minor comment rework from previous patch revision. Hence propagating the scores.",
+      "revId": "6af510c051bc4b0943e5ea60d3c985f1638cb632",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
