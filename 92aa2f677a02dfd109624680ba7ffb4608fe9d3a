@@ -3,6 +3,125 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0d6e99f9_b8236b58",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "remove space before \":\"",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5d41775_d86cbd76",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "dynamically?\n\"dynamic describe the console\" \u0026 \"dynamically configure the described console\" Can this be reworded to escape repetition?",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "364e66c0_f0a02350",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "RMM and it will..",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3fb47e3_3882131a",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "crash log\nwhen -\u003e for",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9764c4ef_96bae1f0",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "moved to",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1de2ff_3fc69977",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "in size",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b804077d_3b4554ba",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "SEA? IPA?",
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9b80d3f4_98f342bb",
         "filename": "docs/about/change-log.rst",
         "patchSetId": 2
@@ -20,6 +139,23 @@
         "endLine": 98,
         "endChar": 39
       },
+      "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc68477f_2f18b897",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T08:52:58Z",
+      "side": 1,
+      "message": "misra -\u003e MISRA",
       "revId": "92aa2f677a02dfd109624680ba7ffb4608fe9d3a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
