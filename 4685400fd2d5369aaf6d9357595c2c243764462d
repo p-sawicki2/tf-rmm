@@ -112,6 +112,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed8985b6_fca212e9",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T17:31:13Z",
+      "side": 1,
+      "message": "I considered that but I don\u0027t know how to feel about an assertion to S2TTE_OA_BITS_LPA2 when FEAT_LPA2 is disabled. I think that could lead to undetected bugs as if we had a value x for which S2TTE_OA_BITS_LPA2 \u003e x \u003e S2TTE_OA_BITS and FEAT_LPA2 were disabled, that could cause a failure that wouldn\u0027t be detected here.",
+      "parentUuid": "f9eece33_e0ce43ae",
+      "range": {
+        "startLine": 317,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 14
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "93b5ec8b_69dc6cfc",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 43
@@ -123,6 +147,24 @@
       "writtenOn": "2024-05-03T13:30:17Z",
       "side": 1,
       "message": "could add an assert that start_level is \u003e -1",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa39d3f5_880f770d",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T17:31:13Z",
+      "side": 1,
+      "message": "In that case, I think it should be a conditional assertion depending on whether FEAT_LPA2 is enabled or not, following the same reasoning as above.",
+      "parentUuid": "93b5ec8b_69dc6cfc",
       "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -152,6 +194,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6ae8469b_f2ece079",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T17:31:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dd3e88fd_e6764d33",
+      "range": {
+        "startLine": 820,
+        "startChar": 8,
+        "endLine": 821,
+        "endChar": 65
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea2731c1_05ed83d4",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 43
@@ -163,6 +229,24 @@
       "writtenOn": "2024-05-03T13:30:17Z",
       "side": 1,
       "message": "same comment as above. The unit tests need not worry about covering assertions.",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74b739a7_7a05f5bf",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T17:31:13Z",
+      "side": 1,
+      "message": "In this case, this is called by several public APIs, so instead of checking the assertions there, I moved the assertions here to avoid duplicity.\n\nAlso, about not covering assertions, I have mixed feelings. Whereas I understand your point, I also noticed that by trying to cover them I have detected several missed asserts in public APIs, including this ones.",
+      "parentUuid": "ea2731c1_05ed83d4",
       "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
