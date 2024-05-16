@@ -25,7 +25,7 @@ static unsigned int current_cpuid;
  * Allocate memory to emulate physical memory to initialize the
  * granule library.
  */
-IF_NCBMC(static) unsigned char granules_buffer[HOST_MEM_SIZE] __aligned(GRANULE_SIZE);
+IF_NVERIFICATION_FLAG(static) unsigned char granules_buffer[HOST_MEM_SIZE] __aligned(GRANULE_SIZE);
 
 /*
  * Define and set the Boot Interface arguments.
