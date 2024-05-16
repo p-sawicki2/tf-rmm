@@ -18,7 +18,7 @@
 /*
  * The bitmap for the reserved/used VMID values.
  */
-IF_NCBMC(static) unsigned long vmids[VMID_ARRAY_LONG_SIZE];
+IF_NVERIFICATION_FLAG(static) unsigned long vmids[VMID_ARRAY_LONG_SIZE];
 
 /*
  * Marks the VMID value to be in use. It returns:
