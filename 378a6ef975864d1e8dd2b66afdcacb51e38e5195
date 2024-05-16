@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7d8641a_ffc85492",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T11:53:29Z",
+      "side": 1,
+      "message": "CI+1 passed. Static failure can be ignored",
+      "revId": "378a6ef975864d1e8dd2b66afdcacb51e38e5195",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
