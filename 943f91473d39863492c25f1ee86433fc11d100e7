@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad384881_db370329",
+        "filename": "runtime/rmi/run.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-05-16T11:07:06Z",
+      "side": 1,
+      "message": "condition",
+      "revId": "943f91473d39863492c25f1ee86433fc11d100e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
