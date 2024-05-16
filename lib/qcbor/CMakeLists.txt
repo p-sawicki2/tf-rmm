@@ -27,7 +27,7 @@ target_link_libraries(qcbor
 
 # Add the relevant build flags.
 string(PREPEND qcbor_C_FLAGS "${CMAKE_C_FLAGS} ")
-string(PREPEND qcbor_C_FLAGS "-Wno-maybe-uninitialized ")
+string(PREPEND qcbor_C_FLAGS "-Wno-uninitialized ")
 
 string(REPLACE " " ";" qcbor_C_FLAGS ${qcbor_C_FLAGS})
 

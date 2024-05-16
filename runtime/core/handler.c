@@ -241,6 +241,7 @@ void handle_ns_smc(unsigned int function_id,
 		   unsigned long arg5,
 		   struct smc_result *res)
 {
+	INFO("SMC ARGS: 0x%08X 0x%016lX 0x%016lX 0x%016lX 0x%016lX 0x%016lX 0x%016lX\n", function_id, arg0, arg1, arg2, arg3, arg4, arg5);
 	(void)arg5;
 	unsigned int handler_id;
 	const struct smc_handler *handler = NULL;

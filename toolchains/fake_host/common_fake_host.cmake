@@ -8,5 +8,5 @@ include_guard()
 include(${CMAKE_CURRENT_LIST_DIR}/../common.cmake)
 
 foreach(language IN ITEMS ASM C CXX)
-    string(APPEND CMAKE_${language}_FLAGS_INIT "-fno-omit-frame-pointer -pg ")
+    string(APPEND CMAKE_${language}_FLAGS_INIT "-fno-omit-frame-pointer ")
 endforeach()

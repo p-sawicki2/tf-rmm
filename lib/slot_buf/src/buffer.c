@@ -96,12 +96,12 @@ bool check_cpu_slots_empty(void)
 
 static inline bool is_ns_slot(enum buffer_slot slot)
 {
-	return slot == SLOT_NS;
+    return slot == SLOT_NS;
 }
 
 static inline bool is_realm_slot(enum buffer_slot slot)
 {
-	return (slot != SLOT_NS) && (slot < NR_CPU_SLOTS);
+    return (slot != SLOT_NS) && (slot < NR_CPU_SLOTS);
 }
 
 static void *ns_buffer_granule_map(enum buffer_slot slot, struct granule *granule)

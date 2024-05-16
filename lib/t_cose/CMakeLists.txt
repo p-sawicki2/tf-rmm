@@ -17,7 +17,7 @@ set(T_COSE_SOURCE_DIR "${RMM_SOURCE_DIR}/ext/t_cose")
 #      a released version.
 target_compile_options(t_cose
     PRIVATE
-        "-Wno-maybe-uninitialized"
+        "-Wno-uninitialized"
         "-Wno-cpp"
         "-Wno-unused-variable")
 
