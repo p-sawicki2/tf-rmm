@@ -8,6 +8,7 @@ arm_config_option(
     HELP "Select the variant to use for the host platform"
     TYPE STRING
     STRINGS "host_build" "host_test" "host_cbmc"
+    STRINGS "host_build" "host_test" "host_ns_smc_fuzzer"
     DEFAULT "host_build")
 
 arm_config_option(
