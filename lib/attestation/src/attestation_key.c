@@ -112,6 +112,7 @@ int attest_init_realm_attestation_key(void)
 				    realm_attest_public_key,
 				    sizeof(realm_attest_public_key),
 				    &realm_attest_public_key_len);
+
 	if (ret != PSA_SUCCESS) {
 		ERROR("psa_export_public_key has failed\n");
 		rmm_el3_ifc_release_shared_buf();
