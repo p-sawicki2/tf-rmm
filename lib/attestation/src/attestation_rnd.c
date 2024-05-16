@@ -52,6 +52,9 @@ psa_status_t mbedtls_psa_external_get_random(
 	mbedtls_psa_external_random_context_t *context,
 	uint8_t *output, size_t output_size, size_t *output_length)
 {
+#ifdef VERIFICATION_FLAG
+	memset(output, 0x5a, output_size);
+#else
 	int ret;
 	unsigned int cpu_id = my_cpuid();
 	void *rng_ctx;
@@ -66,6 +69,7 @@ psa_status_t mbedtls_psa_external_get_random(
 	if (ret != 0) {
 		return PSA_ERROR_HARDWARE_FAILURE;
 	}
+#endif
 	*output_length = output_size;
 
 	return PSA_SUCCESS;
