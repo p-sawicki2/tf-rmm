@@ -16,6 +16,24 @@
       "message": "CI+1 passed. Static failure can be ignored",
       "revId": "378a6ef975864d1e8dd2b66afdcacb51e38e5195",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aebcfd71_d54afc3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-16T11:53:43Z",
+      "side": 1,
+      "message": "https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l1/604/",
+      "parentUuid": "c7d8641a_ffc85492",
+      "revId": "378a6ef975864d1e8dd2b66afdcacb51e38e5195",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
