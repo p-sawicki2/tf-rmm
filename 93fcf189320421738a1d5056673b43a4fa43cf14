@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fbd61dd_74dcc9b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-16T12:16:09Z",
+      "side": 1,
+      "message": "Thanks for the contribution, would it possible to add user-guide documentation on how to run the fizzer ? \n\nWe could have an application note for this.",
+      "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73a7d800_e7a0f549",
+        "filename": "plat/host/host_ns_smc_fuzzer/python/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-16T12:16:09Z",
+      "side": 1,
+      "message": "Is this file meant to be empty ?",
+      "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c9b5e67_6589ca2f",
+        "filename": "plat/host/host_ns_smc_fuzzer/src/fuzzer_protocol.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-16T12:16:09Z",
+      "side": 1,
+      "message": "Need copyright and license header.",
+      "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
