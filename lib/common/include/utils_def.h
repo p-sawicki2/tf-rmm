@@ -243,12 +243,22 @@
  * on the current build being a CBMC build or not.
  */
 #ifdef CBMC
-#define IF_NCBMC(x)
+#define VERIFICATION_FLAG
 #define IF_CBMC(x)	x
 #else /* CBMC */
-#define IF_NCBMC(x)	x
 #define IF_CBMC(x)
 #endif /* CBMC */
+
+/*
+ * Helper macros for conditionally compiling for both fuzzing and CBMC.
+ * For example, this is used to expose some internal data structure
+ * by conditionally removing the `static` keyword.
+ */
+#ifdef VERIFICATION_FLAG
+#define IF_NVERIFICATION_FLAG(x)
+#else /* VERIFICATION_FLAG */
+#define IF_NVERIFICATION_FLAG(x) x
+#endif /* VERIFICATION_FLAG */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__LINKER__)) */
 
