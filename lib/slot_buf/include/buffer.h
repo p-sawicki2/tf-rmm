@@ -99,4 +99,16 @@ void *buffer_map_internal(enum buffer_slot slot, unsigned long addr);
  */
 void buffer_unmap_internal(void *buf);
 
+#ifdef RMM_CCA_DA
+/*
+ * Maps the `num_aux` granules at 'g_pdev_aux' to buffer slot starting
+ * SLOT_PDEV_AUX0.
+ */
+void *buffer_pdev_aux_granules_map(struct granule *g_pdev_aux[],
+				   unsigned int num_aux);
+
+/* Unmaps the `num_aux` granules from slot starting SLOT_PDEV_AUX0 */
+void buffer_pdev_aux_unmap(void *pdev_aux, unsigned int num_aux);
+#endif /* RMM_CCA_DA */
+
 #endif /* BUFFER_H */
