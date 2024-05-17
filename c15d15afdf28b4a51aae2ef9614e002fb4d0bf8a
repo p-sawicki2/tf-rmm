@@ -758,6 +758,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9d5fbf0b_cf8f1bde",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-05-17T14:14:49Z",
+      "side": 1,
+      "message": "i did something similar to this patch. layering on top of 3 world and overriding was tedious. I created a new rmmdev.yaml and used basic configs like tfa-base, rmm base, tftf base, arch/v9.2.yaml etc and the file was flat and simple.\n\nCCA 3 world is fairly complicated to navigate for just building and running RMM. i recommend the current approach.",
+      "parentUuid": "de636334_a5c196d8",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 36
+      },
+      "revId": "c15d15afdf28b4a51aae2ef9614e002fb4d0bf8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a91c299e_b9549d2f",
         "filename": "tools/shrinkwrap/common/layers/tftf.yaml",
         "patchSetId": 13
