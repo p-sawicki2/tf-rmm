@@ -17,9 +17,6 @@
 #define REALM_ACTIVE		1U
 #define REALM_SYSTEM_OFF	2U
 
-/* Maximum number of Stage 2 Translation contexts needed per realm */
-#define MAX_S2_CTXS		(RMM_MAX_TOTAL_PLANES)
-
 /* struct rd is protected by the rd granule lock */
 struct rd {
 	/*
