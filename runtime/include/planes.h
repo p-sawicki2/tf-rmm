@@ -22,4 +22,7 @@
 /* Primary plane on a realm has always index '0' */
 #define PRIMARY_PLANE_ID		(0U)
 
+/* Maximum number of Stage 2 Translation contexts needed per realm */
+#define MAX_S2_CTXS			(RMM_MAX_TOTAL_PLANES)
+
 #endif /* PLANES_H */
