@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5485ac4_abd0d139",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "152a1170_39e9f907",
+      "range": {
+        "startLine": 19,
+        "startChar": 2,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35e0def0_d9f8fa5a",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Added",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 5
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "957be342_f7102d7d",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35e0def0_d9f8fa5a",
       "range": {
         "startLine": 21,
         "startChar": 2,
@@ -93,6 +141,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a41363ab_8e8ad1b9",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "113af0ce_ea544b77",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 11
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d35215d9_a63ca981",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "This is OK, as the first line is a summary which is a sentence on its own.",
+      "parentUuid": "cb0fca89_51ce385b",
+      "range": {
+        "startLine": 25,
+        "startChar": 49,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b17827d_dd4d2346",
@@ -139,6 +235,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9e0e91d_7f0ac0b3",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "00a1137b_d253a0df",
+      "range": {
+        "startLine": 30,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 39
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7a410ff_f4b9c44b",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b17827d_dd4d2346",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbaa06d2_d3c6f424",
@@ -175,6 +319,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Separated",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7477803b_7d0fe721",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99ab6fb1_ba51ed66",
       "range": {
         "startLine": 44,
         "startChar": 5,
@@ -231,6 +399,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63514f3b_55c2f9d8",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7274a2d0_39520e47",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 45
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "649059c6_08e4375b",
@@ -272,6 +464,30 @@
         "startChar": 49,
         "endLine": 56,
         "endChar": 50
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "113804aa_13963ea2",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "649059c6_08e4375b",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 8
       },
       "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -325,6 +541,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "34a2a04f_9779dac3",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "That will be too many categories IMO. The summary is clear enough to distinguish I think.",
+      "parentUuid": "d8aa70d1_f3458b2d",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 23
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3076288a_0eae32e6",
         "filename": "docs/about/change-log.rst",
         "patchSetId": 7
@@ -336,6 +576,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Extended",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 8
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e24712f1_240da146",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3076288a_0eae32e6",
       "range": {
         "startLine": 110,
         "startChar": 2,
@@ -369,6 +633,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4182413_58e79824",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Good catch, this needs to be REC_DESTROY.",
+      "parentUuid": "0198b012_b8979027",
+      "range": {
+        "startLine": 114,
+        "startChar": 24,
+        "endLine": 114,
+        "endChar": 41
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f581f0c1_261b8e00",
@@ -382,6 +670,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "nit: Integrated",
+      "range": {
+        "startLine": 116,
+        "startChar": 5,
+        "endLine": 116,
+        "endChar": 14
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c27f4e5_3c674252",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f581f0c1_261b8e00",
       "range": {
         "startLine": 116,
         "startChar": 5,
@@ -415,6 +727,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e696a7b7_011d13ff",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fb6329c_28330e1b",
+      "range": {
+        "startLine": 117,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 8
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fab4dba7_54ab7e59",
@@ -428,6 +764,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Added",
+      "range": {
+        "startLine": 118,
+        "startChar": 5,
+        "endLine": 118,
+        "endChar": 8
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ac4ee96_27504e48",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fab4dba7_54ab7e59",
       "range": {
         "startLine": 118,
         "startChar": 5,
@@ -474,6 +834,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Added",
+      "range": {
+        "startLine": 126,
+        "startChar": 5,
+        "endLine": 126,
+        "endChar": 8
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ebeac21_ad62bffa",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87de281e_12702ff5",
       "range": {
         "startLine": 126,
         "startChar": 5,
@@ -599,6 +983,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f92eb46_bb5df427",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "This is for future.",
+      "parentUuid": "d2bd44e7_78492c47",
+      "range": {
+        "startLine": 171,
+        "startChar": 2,
+        "endLine": 171,
+        "endChar": 11
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3ab28bd_bee63366",
@@ -612,6 +1020,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Added",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 178,
+        "endChar": 5
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21996654_d8bfc1c9",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:40:02Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "c3ab28bd_bee63366",
       "range": {
         "startLine": 178,
         "startChar": 2,
