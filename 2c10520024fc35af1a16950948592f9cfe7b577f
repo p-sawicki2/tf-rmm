@@ -26,6 +26,120 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "175d278f_a2ea7e0b",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "Add the following :\n\nIn order to use the configs define in RMM repo, it is essential to configure the env variable ``${SHRINKWRAP_CONFIG}`` to point to ``\u003cRMM_ROOT\u003e/tools/shrinkwrap/configs``  directory so the tool can locate the config yaml files. Also it is recommended to override the default build and working directory of Shrinkwrap to a known location by defining the ${SHRINKWRAP_BUILD} and SHRINKWRAP_PACKAGE env variable.\n\n\neg : \n\nexport WORKSPACE\u003d${HOME}/workspace\nexport SHRINKWRAP_BUILD\u003d${WORKSPACE}\nmkdir -p ${SHRINKWRAP_BUILD}\nexport SHRINKWRAP_PACKAGE\u003d${SHRINKWRAP_BUILD}/package\nexport SHRINKWRAP_CONFIG\u003d${RMM_ROOT_DIR}/tools/shrinkwrap/configs/",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2430b947_c1e345c6",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "see comment above, if that is added, this line may not be needed.",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b46b2c63_c8b8275c",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "Could also add:\n\nThe build and run commands can also be found in the documentation of the config. When invoking the ``build`` command, Shrinkwrap stores the external repositores\ninside the ``${SHRINKWRAP_BUILD}/source/\u003cCONFIG_NAME\u003e`` directory.\n\nIt is recommended to clean build after making repository other than RMM\nor when trying different configurations of RMM :\n\n    .. code-block:: bash\n\n      shrinkwrap --runtime\u003dnull clean rmm-tftf.yaml\n\n\nThe build time and runtime variables of the config can be overridden. For example :\n\n\n\u003c add an example command line overriding a build time variable and and a runtime variable \u003e",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d66d5479_5cca85e9",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "keyword",
+      "range": {
+        "startLine": 62,
+        "startChar": 19,
+        "endLine": 62,
+        "endChar": 27
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64cb4c2a_5f2a8554",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "overlay",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 16
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0bcd146_b00250bc",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "an an example comment line:\n\n\u003c Example to add overlay for LPA2 and then build and run \u003e",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "baef7b3c_f311cb5b",
         "filename": "docs/getting_started/index.rst",
         "patchSetId": 17
@@ -49,6 +163,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "124a7ad1_eed44a83",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "Can we use this overlay to override the 3 world config and point to local RMM repo ? \n\nIf yes, we can add this to the docs.",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "22305cdc_bd0ae566",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 17
@@ -66,6 +197,23 @@
         "endLine": 11,
         "endChar": 21
       },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a76ff24a_89e76f5e",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:58:26Z",
+      "side": 1,
+      "message": "would be useful to override the RMM_CONFIG variable to say build QEMU or RD-Fremont.",
       "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
