@@ -376,6 +376,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76a32a19_a44ab31a",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "edafb70a_0d181fc8",
+      "range": {
+        "startLine": 48,
+        "startChar": 39,
+        "endLine": 48,
+        "endChar": 40
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7274a2d0_39520e47",
@@ -493,6 +517,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4282a2eb_011472fe",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "6fc0cbf4_e236258a",
+      "range": {
+        "startLine": 56,
+        "startChar": 49,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6306c8a_e218d31b",
@@ -506,6 +554,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "\":\"",
+      "range": {
+        "startLine": 72,
+        "startChar": 38,
+        "endLine": 72,
+        "endChar": 39
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "429503fa_5d11d583",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "e6306c8a_e218d31b",
       "range": {
         "startLine": 72,
         "startChar": 38,
@@ -821,6 +893,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4afb318_15cdea33",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "6828fab9_84b2ea5c",
+      "range": {
+        "startLine": 124,
+        "startChar": 35,
+        "endLine": 124,
+        "endChar": 36
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "87de281e_12702ff5",
@@ -891,6 +987,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec33f1d6_1d213455",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "0e9a0d14_fce82f53",
+      "range": {
+        "startLine": 128,
+        "startChar": 42,
+        "endLine": 128,
+        "endChar": 43
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "318e31da_767a4537",
@@ -914,6 +1034,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a639f027_e47f7c92",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "318e31da_767a4537",
+      "range": {
+        "startLine": 135,
+        "startChar": 38,
+        "endLine": 135,
+        "endChar": 39
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b73c25a4_c88245ec",
@@ -927,6 +1071,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "\":\"",
+      "range": {
+        "startLine": 145,
+        "startChar": 44,
+        "endLine": 145,
+        "endChar": 45
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbc21293_fab0323f",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "b73c25a4_c88245ec",
       "range": {
         "startLine": 145,
         "startChar": 44,
@@ -1007,6 +1175,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b2bd97c_4dea8e5f",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "10e29ed0_5a94d6ca",
+      "range": {
+        "startLine": 171,
+        "startChar": 72,
+        "endLine": 171,
+        "endChar": 73
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3ab28bd_bee63366",
@@ -1077,6 +1269,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0be0a4c8_eea29521",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "42a3930c_9cb4c17e",
+      "range": {
+        "startLine": 180,
+        "startChar": 2,
+        "endLine": 180,
+        "endChar": 10
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b6040f4_ec5ba814",
@@ -1090,6 +1306,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Integrated",
+      "range": {
+        "startLine": 184,
+        "startChar": 2,
+        "endLine": 184,
+        "endChar": 11
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2913acb_3b454fcc",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "9b6040f4_ec5ba814",
       "range": {
         "startLine": 184,
         "startChar": 2,
@@ -1123,6 +1363,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2859f24_4057e7d3",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "2d6a647d_a25eccd8",
+      "range": {
+        "startLine": 186,
+        "startChar": 2,
+        "endLine": 186,
+        "endChar": 11
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82cded2e_4777ebda",
@@ -1136,6 +1400,30 @@
       "writtenOn": "2024-05-17T21:19:28Z",
       "side": 1,
       "message": "Supported",
+      "range": {
+        "startLine": 188,
+        "startChar": 2,
+        "endLine": 188,
+        "endChar": 9
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33506237_d086ff4a",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:05Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "82cded2e_4777ebda",
       "range": {
         "startLine": 188,
         "startChar": 2,
