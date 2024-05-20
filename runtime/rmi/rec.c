@@ -338,6 +338,9 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
+	/* REC always boots in PLANE_PRIMARY_ID plane */
+	rec->active_plane_id = PRIMARY_PLANE_ID;
+
 	init_rec_regs(rec, &rec_params, rd);
 	gic_cpu_state_init(&(rec_primary_plane(rec)->sysregs.gicstate));
 
@@ -353,6 +356,8 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->realm_info.pmu_num_ctrs = rd->pmu_num_ctrs;
 	rec->realm_info.algorithm = rd->algorithm;
 	rec->realm_info.simd_cfg = rd->simd_cfg;
+	rec->realm_info.num_aux_planes = rd->num_aux_planes;
+	rec->realm_info.rtt_tree_pp = rd->rtt_tree_pp;
 
 	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
 	if (rec->runnable) {
