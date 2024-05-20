@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "caa3142d_52e0fcc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T10:04:07Z",
+      "side": 1,
+      "message": "RMM-CI passes with RC1 TF-A repos. https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-main/657/",
+      "revId": "6521537e06476bd3617f6d5b11e4e604e03253f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
