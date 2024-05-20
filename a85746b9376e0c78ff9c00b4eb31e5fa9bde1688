@@ -306,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0793fd71_a6a87ee2",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T09:42:21Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "cbaa06d2_d3c6f424",
+      "range": {
+        "startLine": 42,
+        "startChar": 43,
+        "endLine": 42,
+        "endChar": 44
+      },
+      "revId": "a85746b9376e0c78ff9c00b4eb31e5fa9bde1688",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99ab6fb1_ba51ed66",
