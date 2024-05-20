@@ -88,23 +88,25 @@ static unsigned long realm_vtcr(struct rd *rd)
 static void init_common_sysregs(struct rec *rec, struct rd *rd)
 {
 	unsigned long mdcr_el2_val = read_mdcr_el2();
-	struct s2tt_context *s2_ctx = primary_s2_context(rd);
-	bool lpa2 = s2_ctx->enable_lpa2;
 
 	/* Set non-zero values only */
 	rec->common_sysregs.hcr_el2 = HCR_REALM_FLAGS;
 	rec->common_sysregs.vtcr_el2 =  realm_vtcr(rd);
-	rec->common_sysregs.vttbr_el2 = (granule_addr(s2_ctx->g_rtt) &
-					MASK(TTBRx_EL2_BADDR));
-	if (lpa2 == true) {
-		rec->common_sysregs.vttbr_el2 &= ~MASK(TTBRx_EL2_BADDR_MSB_LPA2);
-		rec->common_sysregs.vttbr_el2 |=
-			INPLACE(TTBRx_EL2_BADDR_MSB_LPA2,
-						EXTRACT(EL2_BADDR_MSB_LPA2,
-							granule_addr(s2_ctx->g_rtt)));
-	}
 
-	rec->common_sysregs.vttbr_el2 |= INPLACE(VTTBR_EL2_VMID, s2_ctx->vmid);
+	for (unsigned int i = 0U; i < realm_num_planes(rd); i++) {
+		struct s2tt_context *s2_ctx = s2_context(rd, i);
+
+		rec->common_sysregs.vttbr_el2[i] =
+			granule_addr(s2_ctx->g_rtt) & MASK(TTBRx_EL2_BADDR);
+
+		if (s2_ctx->enable_lpa2 == true) {
+			rec->common_sysregs.vttbr_el2[i] &= ~MASK(TTBRx_EL2_BADDR_MSB_LPA2);
+			rec->common_sysregs.vttbr_el2[i] |= INPLACE(TTBRx_EL2_BADDR_MSB_LPA2,
+				EXTRACT(EL2_BADDR_MSB_LPA2, granule_addr(s2_ctx->g_rtt)));
+		}
+
+		rec->common_sysregs.vttbr_el2[i] |= INPLACE(VTTBR_EL2_VMID, s2_ctx->vmid);
+	}
 
 	/* Control trapping of accesses to PMU registers */
 	if (rd->pmu_enabled) {
@@ -333,6 +335,9 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->g_rec = g_rec;
 	rec->rec_idx = rec_idx;
 
+	/* REC always boots in PLANE_PRIMARY_ID plane */
+	rec->active_plane_id = PRIMARY_PLANE_ID;
+
 	init_rec_regs(rec, &rec_params, rd);
 	gic_cpu_state_init(&(rec_primary_plane(rec)->sysregs.gicstate));
 
@@ -348,6 +353,8 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 	rec->realm_info.pmu_num_ctrs = rd->pmu_num_ctrs;
 	rec->realm_info.algorithm = rd->algorithm;
 	rec->realm_info.simd_cfg = rd->simd_cfg;
+	rec->realm_info.num_aux_planes = rd->num_aux_planes;
+	rec->realm_info.rtt_tree_pp = rd->rtt_tree_pp;
 
 	rec->runnable = (rec_params.flags & REC_PARAMS_FLAG_RUNNABLE) != 0UL;
 	if (rec->runnable) {
