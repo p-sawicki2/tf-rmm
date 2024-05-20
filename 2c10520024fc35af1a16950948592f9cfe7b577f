@@ -220,6 +220,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "51525cdd_be57ae5f",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T14:56:52Z",
+      "side": 1,
+      "message": "should this be moved to rmm-tftf.yaml ?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 36
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "60ee7f7a_17ca15ae",
         "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
         "patchSetId": 17
