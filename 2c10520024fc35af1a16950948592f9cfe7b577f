@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1359a4b_121eaca0",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "For development with RME enabled Linux running in Normal world, please refer to the ...\n\nIn case the Secure world also need to be included for development, please refer to the `4 world configuration`_.",
+      "range": {
+        "startLine": 21,
+        "startChar": 56,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baef7b3c_f311cb5b",
+        "filename": "docs/getting_started/index.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "need a reference from the getting started section to the shrinkwrap docs.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22305cdc_bd0ae566",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "this needs rewording ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60ee7f7a_17ca15ae",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "nit : In",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33e06fe2_daa45254",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "missing a {",
+      "range": {
+        "startLine": 24,
+        "startChar": 53,
+        "endLine": 24,
+        "endChar": 54
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f67ca0b_69215e27",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T08:28:29Z",
+      "side": 1,
+      "message": "SHRINKWRAP_CONFIG",
+      "range": {
+        "startLine": 27,
+        "startChar": 47,
+        "endLine": 27,
+        "endChar": 65
+      },
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
