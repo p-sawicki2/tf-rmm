@@ -98,6 +98,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a1e33ac5_70d92610",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-20T11:39:57Z",
+      "side": 1,
+      "message": "Indeed this is a concern. I haven\u0027t managed to review this patch yet.",
+      "parentUuid": "3e763c99_8910ec63",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d05e964c_8a910aaf",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 10
