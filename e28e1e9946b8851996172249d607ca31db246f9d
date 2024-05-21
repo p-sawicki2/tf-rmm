@@ -83,6 +83,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "32fd194f_bc25271a",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:34:54Z",
+      "side": 1,
+      "message": "I think the sections can be organized in the following manner:\n\n1. Introduction\n2. Setup for using Shrinkwrap config\n3. 3 world testing\n   This will test with tip of TF-A and RMM.\n\n   Give example command line for build and run of 3 world config. Could mention --runtime\u003dnull option . Refer to the 3 world documentation for detailed step and more options.\n   \n4. Testing with TFTF\n\n   Give example command line for build and run with TFTF. could mentioned --runtime\u003dnull option.\n   \n5. Other Overlay\n   Give a summary of other overlays and mention overlays can be combined as long as they do not conflict. Give a sample multiple overlay cmd line for build and run.\n   one line description of other overlays.",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8142d94_458604cb",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 18
@@ -153,6 +170,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7a169a6_3ae38701",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:34:54Z",
+      "side": 1,
+      "message": "remove this from std command line.\n\nJust say in description that this will utilize the compiler included in Shrinkwrap docker image. \n\nIf you need to use the local compiler and host tools, include `--runtime\u003dnull` and ensure that compiler and other dependencies for the firmware build are included in the PATH variable.",
+      "range": {
+        "startLine": 24,
+        "startChar": 15,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e64d9a69_9be4d801",
         "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
         "patchSetId": 18
@@ -182,6 +222,24 @@
       "side": 1,
       "message": "as discussed, keep `--runtime\u003dnull` as an option. would need to explain how to use it.",
       "parentUuid": "e64d9a69_9be4d801",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a80234a1_7dff23ca",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:34:54Z",
+      "side": 1,
+      "message": "Explain that the FVP_Base_RevC-2xAEMvA needs to be present in the PATH if --runtime\u003dnull is present in command line.",
+      "parentUuid": "1d02c021_dad2cc91",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -229,6 +287,23 @@
         "endLine": 64,
         "endChar": 19
       },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa5486e2_82e11f98",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:34:54Z",
+      "side": 1,
+      "message": "add a comment that only realm-payload tests are included in TFTF run.",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
