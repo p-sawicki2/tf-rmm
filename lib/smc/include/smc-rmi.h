@@ -74,8 +74,11 @@
 /* RTTE in an auxiliary RTT contained an unexpected value */
 #define RMI_ERROR_RTT_AUX		U(7)
 
+/* The operation requested by the command is not complete */
+#define RMI_INCOMPLETE			U(8)
+
 /* Max number of RMI Status Errors. */
-#define RMI_ERROR_MAX_COUNT		U(8)
+#define RMI_ERROR_MAX_COUNT		U(9)
 
 /*
  * The number of GPRs (starting from X0) that are
