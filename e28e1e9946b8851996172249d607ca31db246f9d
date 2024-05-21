@@ -83,6 +83,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b1186dc_b8b2b9e9",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:45:44Z",
+      "side": 1,
+      "message": "could explain that the source code will be downloaded to WORKSPACE/source/\u003cconfig\u003e. \n\nThe build will be at SHRINKWRAP_BUILD/build/\u003cconfig\u003e and the artefacts of build will be at SHRINKWRAP_PACKAGE/\u003cconfig\u003e folder.",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "32fd194f_bc25271a",
         "filename": "docs/getting_started/building-with-shrinkwrap.rst",
         "patchSetId": 18
