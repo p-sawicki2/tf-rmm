@@ -17,6 +17,12 @@
 #endif
 
 /*
+ * Setting this causes libspdm_debug_assert to call assert(0). The default
+ * config uses a deadloop while(1) code.
+ */
+#define LIBSPDM_DEBUG_LIBSPDM_ASSERT_CONFIG 0
+
+/*
  * For a Requester this value specifies the maximum number of entries that
  * libspdm will tolerate in a `VERSION` response before returning an error.
  */

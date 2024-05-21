@@ -75,16 +75,23 @@ set(SOURCE_DIRS
 set(SOURCE_DIRS
     ${SOURCE_DIRS}
     ${LIBSPDM_DIR}/os_stub/cryptlib_mbedtls
-    ${LIBSPDM_DIR}/os_stub/memlib)
+    ${LIBSPDM_DIR}/os_stub/memlib
+    ${LIBSPDM_DIR}/os_stub/debuglib)
 
 # For host build include extra os_stub libraries
 if(RMM_PLATFORM STREQUAL host)
     set(SOURCE_DIRS
         ${SOURCE_DIRS}
-        ${LIBSPDM_DIR}/os_stub/debuglib
         ${LIBSPDM_DIR}/os_stub/rnglib
         ${LIBSPDM_DIR}/os_stub/malloclib
         ${LIBSPDM_DIR}/os_stub/platform_lib)
+else()
+    # For RMM_PLATFORM=arm include arm_stub libraries
+    set(SOURCE_DIRS
+        ${SOURCE_DIRS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/arm_stub/spdm_rnglib
+        ${CMAKE_CURRENT_SOURCE_DIR}/arm_stub/spdm_timelib
+        ${CMAKE_CURRENT_SOURCE_DIR}/arm_stub/spdm_malloclib)
 endif()
 
 # Add all source directories
