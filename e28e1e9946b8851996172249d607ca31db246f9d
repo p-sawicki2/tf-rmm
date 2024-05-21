@@ -100,6 +100,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48f8c97a_60696a37",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:38:41Z",
+      "side": 1,
+      "message": "For the 3 world config, skip the mention of --runtime\u003dnull option for build as there are too many dependencies to be present in host and it is likely the build will fail.\n\nFor the run of FVP, perhaps we can specify.",
+      "parentUuid": "32fd194f_bc25271a",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8142d94_458604cb",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 18
