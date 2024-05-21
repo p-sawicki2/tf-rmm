@@ -135,6 +135,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eef3ab99_5ee6edb9",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T15:01:25Z",
+      "side": 1,
+      "message": "build cmd line: \nsee other comment\n\nFollow guidelines in 3world documentation for packing guest filesystem.\n\nrun cmd line:\n\nshrinkwrap run cca-3world.yaml --rtvar ROOTFS\u003d${SHRINKWRAP_PACKAGE}/cca-3world/rootfs.ext2",
+      "parentUuid": "48f8c97a_60696a37",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8142d94_458604cb",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 18
