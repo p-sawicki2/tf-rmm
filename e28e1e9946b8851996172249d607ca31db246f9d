@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f0059b1_266c7412",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "since the explanation for RMM_ROOT_DIR is at line 49, this section can be folded into the \"configs\" section ?",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70d6f696_0ced36f2",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "SHRINKWRAP_CONFIG",
+      "range": {
+        "startLine": 30,
+        "startChar": 18,
+        "endLine": 30,
+        "endChar": 28
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89826d82_bf19491d",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "\"..a known workspace directory. For instance, to create the workspace in ${HOME} :",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "800dd57d_a3001102",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "nit: this can be first at line 38 to align with explanation above.",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8142d94_458604cb",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "can move the TF-A and TFTF build vars here :\n\n    # Determines the branch or SHA to pull for TF-A\n    TFA_REVISION:\n      type: string\n      value: master\n\n    # Determines the branch or SHA to pull for TFTF\n    TFTF_REVISION:\n      type: string\n      value: master\n\n\nThis will help to run cc-3world stack with local RMM",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c71b3178_c31543ee",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "this can be \n\n./\n\nThis will mean a default value of PWD. and the instructions can be modified accordingly.",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e64d9a69_9be4d801",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "I get an error when running this command : \n\n[   fvp ] /home/sobmat01/workspace/package/tmphlcpqees/script.sh: line 9: FVP_Base_RevC-2xAEMvA: command not found\nException: FVP failed with 127",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3718611d_9acfff76",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T13:00:39Z",
+      "side": 1,
+      "message": "these need to go to rmm.yaml",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 19
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
