@@ -484,6 +484,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "431165cf_51d9b6c1",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-21T14:00:38Z",
+      "side": 1,
+      "message": "```\nshrinkwrap build cca-3world.yaml --overlay\u003dbuildroot.yaml --overlay\u003d./tools/shrinkwrap/common/layers/rmm.yaml --btvar GUEST_ROOTFS\u003d\u0027${artifact:BUILDROOT}\u0027 --btvar\u003dRMM_SRC\u003d${PWD} --no-sync\u003drmm\n```\n\nThis is the command used to build for 3 world.",
+      "parentUuid": "1f73e6df_bca317dc",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "51525cdd_be57ae5f",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 17
