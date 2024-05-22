@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69da907d_9a0ea9f1",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Actually that wasn\u0027t needed as the examples of use are on the yaml file itself",
+      "parentUuid": "3f0059b1_266c7412",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70d6f696_0ced36f2",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-05-21T13:00:39Z",
       "side": 1,
       "message": "SHRINKWRAP_CONFIG",
+      "range": {
+        "startLine": 30,
+        "startChar": 18,
+        "endLine": 30,
+        "endChar": 28
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15f5394b_8c438725",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70d6f696_0ced36f2",
       "range": {
         "startLine": 30,
         "startChar": 18,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "855e1a66_9023b801",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89826d82_bf19491d",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "800dd57d_a3001102",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af100e4_e7fdde59",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "800dd57d_a3001102",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b1186dc_b8b2b9e9",
@@ -94,6 +178,24 @@
       "writtenOn": "2024-05-21T14:45:44Z",
       "side": 1,
       "message": "could explain that the source code will be downloaded to WORKSPACE/source/\u003cconfig\u003e. \n\nThe build will be at SHRINKWRAP_BUILD/build/\u003cconfig\u003e and the artefacts of build will be at SHRINKWRAP_PACKAGE/\u003cconfig\u003e folder.",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c4d0e4f_f3ab1c13",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b1186dc_b8b2b9e9",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -153,6 +255,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "883eb473_b25265eb",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "I think section 3 should be \"Configs\" as the configurations provided by RMM (at the moment only rmm-tftf.yaml), then the Overlays and then the 3 world testing with one of the overlays previously explained?",
+      "parentUuid": "eef3ab99_5ee6edb9",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8142d94_458604cb",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 18
@@ -182,6 +302,24 @@
       "side": 1,
       "message": "Actually we only need the TF-A here.\n\n```\n+    # Determines the branch or SHA to pull for TF-A\n+    TFA_REVISION:\n+      type: string\n+      value: master\n+\n```\n\nalso add this to build section:\n\n```\n build:\n+\n+  tfa:\n+    repo:\n+      revision: ${btvar:TFA_REVISION}\n+\n```",
       "parentUuid": "d8142d94_458604cb",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "328da8f6_fdc91c79",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "358db707_069bbd57",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -221,6 +359,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fccd74bc_fb83c667",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fee31527_40482259",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7a169a6_3ae38701",
@@ -234,6 +390,30 @@
       "writtenOn": "2024-05-21T14:34:54Z",
       "side": 1,
       "message": "remove this from std command line.\n\nJust say in description that this will utilize the compiler included in Shrinkwrap docker image. \n\nIf you need to use the local compiler and host tools, include `--runtime\u003dnull` and ensure that compiler and other dependencies for the firmware build are included in the PATH variable.",
+      "range": {
+        "startLine": 24,
+        "startChar": 15,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bce30fc5_7a8444db",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7a169a6_3ae38701",
       "range": {
         "startLine": 24,
         "startChar": 15,
@@ -297,6 +477,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9b9ce39_5e9739ef",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a80234a1_7dff23ca",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3718611d_9acfff76",
@@ -344,6 +542,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "848cb40c_20f7b5db",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e10a9ff8_16e584d9",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 19
+      },
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa5486e2_82e11f98",
@@ -361,6 +583,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4605e0ec_99507346",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa5486e2_82e11f98",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1bcbf207_39783ca4",
@@ -374,6 +614,24 @@
       "writtenOn": "2024-05-21T14:40:51Z",
       "side": 1,
       "message": "The TFTF PAuth test is failing for me. Could you confirm on your side ?\n\n[  TF-A ] \u003e Executing \u0027Generate PAuth Fault by overwriting LR\u0027\n[  TF-A ] ERROR:   host_enter_realm_execute(26) RMI_EXIT_HOST_CALL failed\n[  TF-A ] ERROR:   host_realm_pauth_fault(): enter\u003d0 destroy\u003d1\n[  TF-A ]   TEST COMPLETE                                                 Failed\n\nThat\u0027s the failure",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c48c9ae5_bcadfa9d",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "This is still under investigation.",
+      "parentUuid": "1bcbf207_39783ca4",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

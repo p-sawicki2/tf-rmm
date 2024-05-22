@@ -382,6 +382,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "374876bc_e3b71d55",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "Thanks. Moved the TFA_REVISION btvar to this file as per our discussion and will update the documentation.",
+      "parentUuid": "11640991_d8b25ae4",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22305cdc_bd0ae566",
@@ -496,6 +514,24 @@
       "side": 1,
       "message": "```\nshrinkwrap build cca-3world.yaml --overlay\u003dbuildroot.yaml --overlay\u003d./tools/shrinkwrap/common/layers/rmm.yaml --btvar GUEST_ROOTFS\u003d\u0027${artifact:BUILDROOT}\u0027 --btvar\u003dRMM_SRC\u003d${PWD} --no-sync\u003drmm\n```\n\nThis is the command used to build for 3 world.",
       "parentUuid": "1f73e6df_bca317dc",
+      "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee298840_6e40e70b",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-22T18:05:23Z",
+      "side": 1,
+      "message": "added \"RMM_CONFIG\" btvar, defaulted to \"fvp_defcfg\"",
+      "parentUuid": "431165cf_51d9b6c1",
       "revId": "2c10520024fc35af1a16950948592f9cfe7b577f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
