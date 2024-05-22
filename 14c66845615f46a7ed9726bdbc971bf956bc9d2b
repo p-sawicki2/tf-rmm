@@ -34,6 +34,24 @@
       "parentUuid": "40c7ae2f_4725a702",
       "revId": "14c66845615f46a7ed9726bdbc971bf956bc9d2b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d1559d4_3af0b776",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2024-05-22T17:18:24Z",
+      "side": 1,
+      "message": "Thats fine Soby, although the periodic Dependabot JAVA alerts can be surprising when they occur they don\u0027t effect the supply chain for the Firmware. A way to isolate these from the main repository would be better though to avoid that uneasy feeling. I\u0027m sure something could be done with a little bit of effort.\n\nRegarding v1.0 security review, its good to see the incremental approach that will make the v1.0 release easier.",
+      "parentUuid": "146083a5_a59ccda1",
+      "revId": "14c66845615f46a7ed9726bdbc971bf956bc9d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
