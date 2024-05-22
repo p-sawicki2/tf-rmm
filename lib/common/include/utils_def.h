@@ -106,7 +106,6 @@
 	(_a)[_i] = (_v);			\
 })
 
-#ifndef CBMC
 #define COMPILER_ASSERT(_condition)	\
 			extern char compiler_assert[(_condition) ? 1 : -1]
 
@@ -122,14 +121,32 @@
 #define COMPILER_ASSERT_ZERO(_expr) (sizeof(struct { char: (-!(_expr)); }) \
 				- sizeof(struct { char: 0; }))
 
+/*
+ * COMPILER_ASSERT is a useful tool for CBMC to detect issues that can
+ * lead to assert failures. However to speed up CBMC analysis, some of the
+ * structures' alignment is broken by removing padding between fields, and
+ * this causes compiler asserts fail. So two special compile time asserts are
+ * used for checking padded structure size and field alignment, that are defined
+ * as always pass for CBMC.
+ * The COMPILER_ASSERTs are checked by the CBMC compiler as well.
+ */
+#ifndef CBMC
+#define ASSERT_TYPE_SIZE_EQUAL(type, size)	\
+	COMPILER_ASSERT(sizeof(type) == (size));
+
+#define ASSERT_FIELD_OFFSET(type, member, offset)	\
+	COMPILER_ASSERT((U(offsetof(type, member))) == (offset));
+#else /* CBMC */
+#define ASSERT_TYPE_SIZE_EQUAL(type, size)	\
+	COMPILER_ASSERT(0 == 0);
+
+#define ASSERT_FIELD_OFFSET(type, member, offset)	\
+	COMPILER_ASSERT(0 == 0);
+#endif /* CBMC */
+
 #define CHECK_TYPE_IS_ARRAY(_v) \
 	COMPILER_ASSERT_ZERO(!__builtin_types_compatible_p(typeof(_v),	\
 							typeof(&((_v)[0]))))
-#else /* CBMC */
-#define COMPILER_ASSERT(_condition)	extern char disabled_compiler_assert[1]
-#define COMPILER_ASSERT_ZERO(_expr)	extern char disabled_compiler_assert[1]
-#define CHECK_TYPE_IS_ARRAY(_v)		1
-#endif /* CBMC */
 
 #define IS_POWER_OF_TWO(x)			\
 	((((x) + UL(0)) & ((x) - UL(1))) == UL(0))
