@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40c7ae2f_4725a702",
+        "filename": "docs/about/change-log.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2024-05-22T14:07:37Z",
+      "side": 1,
+      "message": "I\u0027m looking at this change log as part of the high level Firmware-A v2.11 release security review activity required by Janus release assessment. Looking just at the New Features section nothing leaps out when comparing against the current threat model.\n\nAs TF-RMM and RME support in TF-A are still experimental the security review is more relaxed.\n\nFor the future one suggestion is that TF-RMM look to adopt the Conventional Commits mechanism as TF-A does. This aids in the auto generation of the initial changelog draft and has links to the commits. This does not stop the adding of more text to provide more context of work being delivered in the release.\n\nBeing able to easily follow through to the actual code commit is quite useful capability. I appreciate this could be achieved by also reviewing at the same time the git log for the release period but that can be quite laborious and error prone.\n\nBack to the Security review this complete that activity. \n\nI would suggest when TF-RMM reaches the v1.0 release a fuller security review is performed.",
+      "revId": "14c66845615f46a7ed9726bdbc971bf956bc9d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
