@@ -51,5 +51,32 @@ static inline uint16_t __sca_read16_acquire(uint16_t *ptr)
 }
 #define SCA_READ16_ACQUIRE(_p) ((typeof(*(_p)))__sca_read16_acquire((uint16_t *)(_p)))
 
+/* Single-Copy Atomic 8-bit write */
+static inline void __sca_write8(uint8_t *ptr, uint8_t val)
+{
+	*ptr = val;
+}
+#define SCA_WRITE8(_p, _v) __sca_write8((void *)(_p), ((uint8_t)(_v)))
+
+/* Single-Copy Atomic 8-bit write with RELEASE memory ordering semantics*/
+static inline void __sca_write8_release(uint8_t *ptr, uint8_t val)
+{
+	*ptr = val;
+}
+#define SCA_WRITE8_RELEASE(_p, _v) __sca_write8_release((void *)(_p), ((uint8_t)(_v)))
+
+/* Single-Copy Atomic 8-bit read */
+static inline uint8_t __sca_read8(uint8_t *ptr)
+{
+	return *ptr;
+}
+#define SCA_READ8(_p) ((typeof(*(_p)))__sca_read8((void *)(_p)))
+
+/* Single-Copy Atomic 8-bit read with ACQUIRE memory ordering semantics */
+static inline uint8_t __sca_read8_acquire(uint8_t *ptr)
+{
+	return *ptr;
+}
+#define SCA_READ8_ACQUIRE(_p) ((typeof(*(_p)))__sca_read8_acquire((void *)(_p)))
 
 #endif /* MEMORY_H */
