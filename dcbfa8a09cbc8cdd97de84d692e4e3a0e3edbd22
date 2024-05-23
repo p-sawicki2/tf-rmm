@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1939adb9_f326ee61",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-23T15:15:44Z",
+      "side": 1,
+      "message": "seems fine. I guess the developers have a choice now whether to use regular CASSERT or the new variants. Would be good to have some guidance at the place of macro definition  (which is present in your commit message) at the place where the macro is defined as well.",
+      "revId": "dcbfa8a09cbc8cdd97de84d692e4e3a0e3edbd22",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
