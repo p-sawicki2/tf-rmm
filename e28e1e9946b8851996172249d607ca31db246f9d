@@ -273,6 +273,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e282f969_c65c12f2",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-23T08:52:50Z",
+      "side": 1,
+      "message": "One reason for making the 3 world testing a header was to bring to attention the major focus of CCA testing and how RMM.yaml can be used to help in that regard.\n\nSo instead of making `config` as the header, my suggestion was to focus on the usecase as the header and in case of 3 world testing, we dont have any config.",
+      "parentUuid": "883eb473_b25265eb",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8142d94_458604cb",
         "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
         "patchSetId": 18

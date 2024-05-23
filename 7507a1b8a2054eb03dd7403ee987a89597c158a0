@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca2c8b37_ff8b8b6e",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-23T08:52:50Z",
+      "side": 1,
+      "message": "nit: remove white space.",
+      "range": {
+        "startLine": 32,
+        "startChar": 33,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "7507a1b8a2054eb03dd7403ee987a89597c158a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98603839_bf59260a",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-23T08:52:50Z",
+      "side": 1,
+      "message": "would be good to add the run command as well.",
+      "revId": "7507a1b8a2054eb03dd7403ee987a89597c158a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
