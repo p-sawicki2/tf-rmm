@@ -47,12 +47,10 @@ static unsigned long get_buffer_pa(uintptr_t buf, size_t buflen)
 	return buffer_pa;
 }
 
-/*
- * Get the realm attestation key to sign the realm attestation token. It is
- * expected that only the private key is retrieved in raw format.
- */
-int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
-					size_t *len, unsigned int crv)
+static int rmm_el3_ifc_get_realm_attest_key_internal(uintptr_t buf,
+						     size_t buflen, size_t *len,
+						     unsigned int crv,
+						     unsigned long id)
 {
 	struct smc_result smc_res;
 
@@ -64,13 +62,24 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 	/* coverity[uninit_use:SUPPRESS] */
 	if (smc_res.x[0] != 0UL) {
 		ERROR("Failed to get realm attestation key x0 = 0x%lx\n",
-				smc_res.x[0]);
+		      smc_res.x[0]);
 		return (int)smc_res.x[0];
 	}
 
 	*len = smc_res.x[1];
 
 	return 0;
+}
+
+/*
+ * Get the realm attestation key to sign the realm attestation token. It is
+ * expected that only the private key is retrieved in raw format.
+ */
+int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen, size_t *len,
+				     unsigned int crv)
+{
+	return rmm_el3_ifc_get_realm_attest_key_internal(
+		buf, buflen, len, crv, SMC_RMM_GET_REALM_ATTEST_KEY);
 }
 
 /*
@@ -152,4 +161,15 @@ int rmm_el3_ifc_pull_hes_response(uintptr_t buf, size_t buflen,
 	*len = smc_res.x[1];
 
 	return 0;
+}
+
+/*
+ * Get the realm attestation key to sign the realm attestation token. It is
+ * expected that only the private key is retrieved in raw format.
+ */
+int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
+						  size_t *len, unsigned int crv)
+{
+	return rmm_el3_ifc_get_realm_attest_key_internal(
+		buf, buflen, len, crv, SMC_RMM_GET_REALM_ATTEST_PUB_KEY_HES);
 }
