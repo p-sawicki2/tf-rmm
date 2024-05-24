@@ -102,3 +102,63 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 
 	return 0;
 }
+
+/*
+ * Push an attestation request to the HES.
+ * The caller must have already populated the request in the shared buffer.
+ */
+int rmm_el3_ifc_push_hes_request(uintptr_t buf, size_t buflen)
+{
+	struct smc_result smc_res;
+	unsigned long buffer_pa;
+	unsigned long offset = buf - rmm_shared_buffer_start_va;
+
+	assert((offset + buflen) <= rmm_el3_ifc_get_shared_buf_size());
+	assert((buf & ~PAGE_SIZE_MASK) == rmm_shared_buffer_start_va);
+
+	buffer_pa = (unsigned long)rmm_el3_ifc_get_shared_buf_pa() + offset;
+
+	monitor_call_with_res(SMC_RMM_HES_PUSH_ATTEST_REQ,
+			      buffer_pa,
+			      buflen,
+			      0UL,
+			      0UL, 0UL, 0UL, &smc_res);
+
+	/* coverity[uninit_use:SUPPRESS] */
+	if (smc_res.x[0] != 0UL) {
+		VERBOSE("Failed to push attest req to HES x0 = 0x%lx\n",
+		      smc_res.x[0]);
+		return (int)smc_res.x[0];
+	}
+
+	return 0;
+}
+
+int rmm_el3_ifc_pull_hes_response(uintptr_t buf, size_t buflen,
+					size_t *len)
+{
+	struct smc_result smc_res;
+	unsigned long buffer_pa;
+	unsigned long offset = buf - rmm_shared_buffer_start_va;
+
+	assert((offset + buflen) <= rmm_el3_ifc_get_shared_buf_size());
+	assert((buf & ~PAGE_SIZE_MASK) == rmm_shared_buffer_start_va);
+
+	buffer_pa = (unsigned long)rmm_el3_ifc_get_shared_buf_pa() + offset;
+
+	monitor_call_with_res(SMC_RMM_HES_PULL_ATTEST_RESP,
+			      buffer_pa,
+			      buflen,
+			      0UL, 0UL, 0UL, 0UL, &smc_res);
+
+	/* coverity[uninit_use:SUPPRESS] */
+	if (smc_res.x[0] != 0UL) {
+		VERBOSE("Failed to get attestation response x0 = 0x%lx\n",
+		      smc_res.x[0]);
+		return (int)smc_res.x[0];
+	}
+
+	*len = smc_res.x[1];
+
+	return 0;
+}
