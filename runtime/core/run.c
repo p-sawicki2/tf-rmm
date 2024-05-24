@@ -12,6 +12,9 @@
 #include <debug.h>
 #include <exit.h>
 #include <granule.h>
+#if RMM_ATTESTATION_USE_HES
+#include <hes_queue.h>
+#endif
 #include <pmu.h>
 #include <rec.h>
 #include <run.h>
@@ -297,6 +300,21 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	rec->active_simd_ctx = &g_ns_simd_ctx[cpuid];
 
 	do {
+#if RMM_ATTESTATION_USE_HES
+		/*
+		 * Check attestation response queue on every RMM entry and exit. This
+		 * allows currently execute RECs to make progress, if the REC waiting
+		 * on the response was scheduled out.
+		 */
+		hes_attest_pull_response_from_hes();
+
+		/*
+		 * Push head of attestation request queue to HES, if there are no pending
+		 * responses.
+		 */
+		hes_attest_push_request_to_hes();
+#endif
+
 		unsigned long rmm_cptr_el2 = read_cptr_el2();
 
 		/*
