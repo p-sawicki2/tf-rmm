@@ -24,6 +24,9 @@
 #define SMC_RMM_GET_REALM_ATTEST_KEY	SMC64_STD_FID(RMM_EL3, U(2))
 #define SMC_RMM_GET_PLAT_TOKEN		SMC64_STD_FID(RMM_EL3, U(3))
 
+#define SMC_RMM_HES_PUSH_ATTEST_REQ		SMC64_STD_FID(RMM_EL3, U(4))
+#define SMC_RMM_HES_PULL_ATTEST_RESP		SMC64_STD_FID(RMM_EL3, U(5))
+
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
 
@@ -331,6 +334,41 @@ static inline unsigned long rmm_el3_ifc_gtsi_undelegate(unsigned long addr)
  *	- ec:		SMC_RMM_BOOT_COMPLETE return code
  */
 __dead2 void rmm_el3_ifc_report_fail_to_el3(int ec);
+
+/*
+ * Push the attestation signing request to EL3 firmware, which will then
+ * push the request to the HES service.
+ *
+ * Args:
+ *	- buf:		Pointer to the buffer used to push the attestation
+ *			request to EL3. This must belong to the RMM-EL3 shared
+ *			memory and must be locked before use.
+ *	- buflen	Maximum size for the Attestation Request.
+ *
+ * Return:
+ *	- 0 On success or a negative error code otherwise. The error code
+ *	  of -EAGAIN indicates that the request was not queued since the
+ *	  queue in EL3 is full or the HES is busy.
+ */
+int rmm_el3_ifc_push_hes_request(uintptr_t buf, size_t buflen);
+
+/*
+ * Pull the attestation signing response from the EL3 firmware.
+ *
+ * Args:
+ *	- buf:		Pointer to the buffer used to pull the attestation
+ *			response from EL3. This must belong to the RMM-EL3 shared
+ *			memory and must be locked before use.
+ *	- buflen	Maximum size for the Attestation Response.
+ *	- len:		Pointer to a size_t variable to store the size of the
+ *			received attestation response.
+ *
+ * Return:
+ *	- 0 On success or a negative error code otherwise. The error code
+ *	  of -EAGAIN indicates that a response is not ready yet.
+ */
+int rmm_el3_ifc_pull_hes_response(uintptr_t buf, size_t buflen,
+					size_t *len);
 
 #endif /* __ASSEMBLER__ */
 #endif /* RMM_EL3_IFC_H */
