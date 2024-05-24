@@ -9,6 +9,9 @@
 #include <buffer.h>
 #include <cpuid.h>
 #include <debug.h>
+#if RMM_ATTESTATION_USE_HES
+#include <hes_queue.h>
+#endif
 #include <run.h>
 #include <simd.h>
 #include <smc-handler.h>
@@ -336,6 +339,21 @@ void handle_ns_smc(unsigned int function_id,
 	}
 
 	rmi_log_on_exit(handler_id, args, res);
+
+#if RMM_ATTESTATION_USE_HES
+	/*
+	 * Check attestation response queue on every RMM entry and exit. This
+	 * allows currently execute RECs to make progress, if the REC waiting
+	 * on the response was scheduled out.
+	 */
+	hes_attest_pull_response_from_hes();
+
+	/*
+	 * Push head of attestation request queue to HES, if there are no pending
+	 * responses.
+	 */
+	hes_attest_push_request_to_hes();
+#endif
 
 	/* If the handler uses FPU, restore the saved NS simd context. */
 	if (restore_ns_simd_state) {
