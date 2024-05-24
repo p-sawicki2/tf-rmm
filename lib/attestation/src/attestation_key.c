@@ -89,6 +89,22 @@ int attest_init_realm_attestation_key(void)
 	 */
 	buf = rmm_el3_ifc_get_shared_buf_locked();
 
+#if RMM_ATTESTATION_USE_HES
+	(void)key_attributes;
+	/* When HES is used for attestation, EL3 returns public key in raw format */
+	if (rmm_el3_ifc_get_realm_attest_pub_key_from_hes(buf,
+			rmm_el3_ifc_get_shared_buf_size(),
+			&attest_key_size,
+			ATTEST_KEY_CURVE_ECC_SECP384R1) != 0) {
+		rmm_el3_ifc_release_shared_buf();
+		return -EINVAL;
+	}
+
+	/* Get the RMM public attestation key */
+	(void)memcpy(realm_attest_public_key, (const void *)buf, attest_key_size);
+	realm_attest_public_key_len = attest_key_size;
+#else
+
 	if (rmm_el3_ifc_get_realm_attest_key(buf,
 				rmm_el3_ifc_get_shared_buf_size(),
 				&attest_key_size,
@@ -115,7 +131,6 @@ int attest_init_realm_attestation_key(void)
 	if (ret != PSA_SUCCESS) {
 		return -EINVAL;
 	}
-	attest_signing_key_loaded = true;
 
 	/* Get the RMM public attestation key */
 	ret = psa_export_public_key(attest_signing_key,
@@ -127,6 +142,9 @@ int attest_init_realm_attestation_key(void)
 		rmm_el3_ifc_release_shared_buf();
 		return -EINVAL;
 	}
+#endif
+
+	attest_signing_key_loaded = true;
 
 	/* Compute the hash of the RMM public attestation key */
 	ret = psa_hash_compute(PSA_ALG_SHA_256,

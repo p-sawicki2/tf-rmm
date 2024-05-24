@@ -34,12 +34,10 @@ void rmm_el3_ifc_release_shared_buf(void)
 	spinlock_release(&shared_area_lock);
 }
 
-/*
- * Get the realm attestation key to sign the realm attestation token. It is
- * expected that only the private key is retrieved in raw format.
- */
-int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
-					size_t *len, unsigned int crv)
+static int rmm_el3_ifc_get_realm_attest_key_internal(uintptr_t buf,
+						     size_t buflen, size_t *len,
+						     unsigned int crv,
+						     unsigned long id)
 {
 	struct smc_result smc_res;
 	unsigned long buffer_pa;
@@ -50,21 +48,30 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 
 	buffer_pa = (unsigned long)rmm_el3_ifc_get_shared_buf_pa() + offset;
 
-	monitor_call_with_res(SMC_RMM_GET_REALM_ATTEST_KEY,
-			      buffer_pa,
-			      buflen,
-			      crv, 0UL, 0UL, 0UL, &smc_res);
+	monitor_call_with_res(id, buffer_pa, buflen, crv, 0UL, 0UL, 0UL,
+			      &smc_res);
 
 	/* coverity[uninit_use:SUPPRESS] */
 	if (smc_res.x[0] != 0UL) {
 		ERROR("Failed to get realm attestation key x0 = 0x%lx\n",
-				smc_res.x[0]);
+		      smc_res.x[0]);
 		return (int)smc_res.x[0];
 	}
 
 	*len = smc_res.x[1];
 
 	return 0;
+}
+
+/*
+ * Get the realm attestation key to sign the realm attestation token. It is
+ * expected that only the private key is retrieved in raw format.
+ */
+int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen, size_t *len,
+				     unsigned int crv)
+{
+	return rmm_el3_ifc_get_realm_attest_key_internal(
+		buf, buflen, len, crv, SMC_RMM_GET_REALM_ATTEST_KEY);
 }
 
 /*
@@ -161,4 +168,15 @@ int rmm_el3_ifc_pull_hes_response(uintptr_t buf, size_t buflen,
 	*len = smc_res.x[1];
 
 	return 0;
+}
+
+/*
+ * Get the realm attestation key to sign the realm attestation token. It is
+ * expected that only the private key is retrieved in raw format.
+ */
+int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
+						  size_t *len, unsigned int crv)
+{
+	return rmm_el3_ifc_get_realm_attest_key_internal(
+		buf, buflen, len, crv, SMC_RMM_GET_REALM_ATTEST_PUB_KEY_HES);
 }
