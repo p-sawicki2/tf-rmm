@@ -26,6 +26,7 @@
 
 #define SMC_RMM_HES_PUSH_ATTEST_REQ		SMC64_STD_FID(RMM_EL3, U(4))
 #define SMC_RMM_HES_PULL_ATTEST_RESP		SMC64_STD_FID(RMM_EL3, U(5))
+#define SMC_RMM_GET_REALM_ATTEST_PUB_KEY_HES	SMC64_STD_FID(RMM_EL3, U(6))
 
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
@@ -369,6 +370,8 @@ int rmm_el3_ifc_push_hes_request(uintptr_t buf, size_t buflen);
  */
 int rmm_el3_ifc_pull_hes_response(uintptr_t buf, size_t buflen,
 					size_t *len);
+int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
+					size_t *len, unsigned int crv);
 
 #endif /* __ASSEMBLER__ */
 #endif /* RMM_EL3_IFC_H */
