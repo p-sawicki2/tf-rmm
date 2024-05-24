@@ -33,7 +33,9 @@ enum buffer_slot {
 	SLOT_RTT = U(SLOT_REC_AUX0) + MAX_REC_AUX_GRANULES,
 	SLOT_RTT2,		/* Some commands access two RTT granules at a time*/
 	SLOT_RSI_CALL,
-	NR_CPU_SLOTS
+	SLOT_REC_HES_QUEUE,
+	SLOT_REC_AUX0_HES_QUEUE,
+	NR_CPU_SLOTS = U(SLOT_REC_AUX0_HES_QUEUE) + MAX_REC_AUX_GRANULES
 };
 
 bool check_cpu_slots_empty(void);
