@@ -7,6 +7,7 @@
 #include <buffer.h>
 #include <debug.h>
 #include <granule.h>
+#include <hes_queue.h>
 #include <measurement.h>
 #include <realm.h>
 #include <rsi-handler.h>
@@ -294,6 +295,13 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 			rec_exit->exit_reason = RMI_EXIT_IRQ;
 			return;
 		}
+#if RMM_ATTESTATION_USE_HES
+		/*
+		 * If there are no interrupts pending, then continue to pull
+		 * requests from HES until this RECs request is done.
+		 */
+		hes_attest_pull_response_from_hes();
+#endif
 	}
 
 	/* Any other state is considered an error */
