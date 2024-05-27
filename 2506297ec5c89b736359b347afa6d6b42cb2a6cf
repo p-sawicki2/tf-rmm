@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "194a2345_e83fb052",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-05-27T07:41:35Z",
+      "side": 1,
+      "message": "Thanks for the comment. I also moved the definitions a few lines down, so they are _after_ the definition of COMPILER_ASSERT",
+      "revId": "2506297ec5c89b736359b347afa6d6b42cb2a6cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
