@@ -1,0 +1,692 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03e94bcc_dc4e0a92",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "For Shrinkwrap setup locally and further information, you can refer to ...",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 26
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf7ed70_0fb7a497",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Setup local RMM with Shrinkwrap",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9014213_a9b2c263",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Could add:\n\n```\nIt is assumed that you have RMM repository cloned locally which is used for your\ndevelopment. To help using Shrinkwrap with such a development workflow, the \nproject provides some Shrinkwrap configs and overlays. For the following sections,\nit is assumed that your current directory is the root of your RMM development \nrepository.\n```\n\nAnd replace all \u003cRMM_ROOT\u003e with ${PWD} below.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbbc7c41_954d5ae5",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "${PWD}",
+      "range": {
+        "startLine": 31,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c353930e_7149c478",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "PWD",
+      "range": {
+        "startLine": 36,
+        "startChar": 33,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f3bcc7a_e1f8284f",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "nit: should this also have /\u003cCONFIG_NAME\u003e as well ?",
+      "range": {
+        "startLine": 51,
+        "startChar": 23,
+        "endLine": 51,
+        "endChar": 25
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0764db_875526ae",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Suggest:\nYou can find further instructions on how to build the filesystem and package the required binaries in `3 world configuration`_ documentation. To run the demonstrator, use the following command :",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15f598e6_12eb0832",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "build -\u003e run",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d229fb2c_80537db4",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "gave a comment to move this line above the run cmd.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dc39d18_5ed33a76",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "..to test RMM and Arm RME extension utilizing...",
+      "range": {
+        "startLine": 91,
+        "startChar": 77,
+        "endLine": 92,
+        "endChar": 23
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "241297ce_00b9858e",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "could add the simple build and run commands here for ease of reading :\n\nTo build, issue the following cmd :\n\nshrinkwrap build --btvar\u003dRMM_SRC\u003d${PWD} rmm-tftf.yaml --no-sync\u003drmm\n\nTo run Realm tests on FVP, issue the following cmd :\n\nshrinkwrap run rmm-tftf.yaml\n\nThese commands can also be found.....",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d8e692d_13c1745b",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "just --no-sync\u003drmm is enough ?",
+      "range": {
+        "startLine": 119,
+        "startChar": 103,
+        "endLine": 119,
+        "endChar": 116
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a28781a0_ef7a6f25",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "this can be avoided ?",
+      "range": {
+        "startLine": 119,
+        "startChar": 17,
+        "endLine": 119,
+        "endChar": 31
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5421fc1_0a0746ad",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "specifies ``--runtime\u003dnull`` to use the native...\nand specifies ``--no-sync-all`` to prevent Shrinkwrap",
+      "range": {
+        "startLine": 141,
+        "startChar": 35,
+        "endLine": 141,
+        "endChar": 44
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "705bb939_2e901883",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Also add:\n\nNote that since --runtime\u003dnull is specified, the appropriate FVP (FVP_Base_RevC-2xAEMvA) needs to be present in the PATH.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06e781c9_9b0e1304",
+        "filename": "docs/getting_started/getting-started.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Building all of the involved stack is complicated. We recommend using `Shrinkwrap`_ tooling to bootstrap the stack. For more details on using `Shrinkwrap`_ and utilizing configs and overlays included in |RMM|, please refer \u003clink to RMM shrink wrap doc\u003e. \n\nThe TF-A documentation also provides some documentation to build TF-A and other pieces of firmware for RME in `TF-A RME documentation`_.  The ``RMM`` build option in TF-A should point to the ``rmm.img`` binary generated by build of |RMM|.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c28c21b_9918bf97",
+        "filename": "tools/shrinkwrap/common/layers/clean.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "rmm.yaml provides a null path for ``RMM_SRC`` btvar, but the clean command\ndoes not accept any btvar. Hence shrinkwrap clean will fail when invoked for the\nrmm-tftf.yaml. This overlay...",
+      "range": {
+        "startLine": 13,
+        "startChar": 64,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4875121c_35be2066",
+        "filename": "tools/shrinkwrap/common/layers/clean.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "..will pass.",
+      "range": {
+        "startLine": 17,
+        "startChar": 68,
+        "endLine": 17,
+        "endChar": 77
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "296292a0_0a273a88",
+        "filename": "tools/shrinkwrap/common/layers/rmm-debug.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "on -\u003e in",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a73ac67_7b11d2fa",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "..must be defined containing ...",
+      "range": {
+        "startLine": 10,
+        "startChar": 55,
+        "endLine": 10,
+        "endChar": 75
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "854f291b_d3502b1b",
+        "filename": "tools/shrinkwrap/common/layers/rmm.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Can also explain the RMM_CONFIG btvar here.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21cc1847_b2c6fc64",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "..to test RMM and Arm RME extension..",
+      "range": {
+        "startLine": 9,
+        "startChar": 47,
+        "endLine": 9,
+        "endChar": 81
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b47a79c1_378e8ca8",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "on -\u003e to",
+      "range": {
+        "startLine": 14,
+        "startChar": 46,
+        "endLine": 14,
+        "endChar": 48
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57937672_78b0384e",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "on -\u003e in",
+      "range": {
+        "startLine": 28,
+        "startChar": 36,
+        "endLine": 28,
+        "endChar": 38
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36321aaa_4b12986a",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "--no-sync\u003drmm",
+      "range": {
+        "startLine": 37,
+        "startChar": 56,
+        "endLine": 37,
+        "endChar": 65
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d860ef6_0502b096",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "installed native",
+      "range": {
+        "startLine": 46,
+        "startChar": 62,
+        "endLine": 46,
+        "endChar": 72
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15a5b553_cdc8f0d4",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "toolchain and FVP. Ensure that the relevant toolchains and FVP are present in the PATH variable.",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 12
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a95a9e3_0469eaf6",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "command",
+      "range": {
+        "startLine": 53,
+        "startChar": 57,
+        "endLine": 53,
+        "endChar": 65
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d56bafe0_215da8e4",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "process. So it is necessary\n\n\nor better , remove this as we have already explained in clean.yml why it is needed,",
+      "range": {
+        "startLine": 62,
+        "startChar": 18,
+        "endLine": 62,
+        "endChar": 23
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1413c3f0_6126f9de",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Explain the btvars and rtvars defined in this file.",
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ce48885_86335788",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "RMM/RME",
+      "range": {
+        "startLine": 86,
+        "startChar": 61,
+        "endLine": 86,
+        "endChar": 64
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7e82eb5_f1950b41",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "may not be needed. ENABLE_RME should enable all the flags required for TF-A.",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 31
+      },
+      "revId": "4bf45a45f6a77652dc316cdc15924e47c2374167",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

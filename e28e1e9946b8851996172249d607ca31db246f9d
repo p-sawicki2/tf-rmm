@@ -670,6 +670,42 @@
       "parentUuid": "1bcbf207_39783ca4",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34c637f0_591fe936",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Is this solved ?",
+      "parentUuid": "c48c9ae5_bcadfa9d",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "150c3856_7ead17ae",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-28T13:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c48c9ae5_bcadfa9d",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
