@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "640c84ba_7a8321db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-29T14:12:14Z",
+      "side": 1,
+      "message": "The static check failed due to CI issue, on retriggering it passed.",
+      "revId": "247357f2aa8dae5f25b599c920ad187f2433f022",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
