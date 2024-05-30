@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0b9a39b_7096ad9e",
+        "filename": "docs/getting_started/building-with-shrinkwrap.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-30T14:39:19Z",
+      "side": 1,
+      "message": "nit: Shrinkwrap",
+      "range": {
+        "startLine": 143,
+        "startChar": 49,
+        "endLine": 143,
+        "endChar": 59
+      },
+      "revId": "7375e814698f4bec14118ae511133157e960b31f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
