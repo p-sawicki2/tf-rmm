@@ -111,6 +111,39 @@ static uint8_t sample_attest_priv_key[] = {
 	0xEB, 0x1A, 0x41, 0x85, 0xBD, 0x11, 0x7F, 0x68
 };
 
+static uint8_t sample_ecdsa_p384_public_key[96] = {
+	0x1F, 0x1E, 0x1D, 0x1C, 0x1B, 0x1A, 0x19, 0x18, 0x04, 0x61, 0x31, 0x02,
+	0x58, 0x20, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x00, 0x0F, 0x0E,
+	0x0D, 0x0C, 0x0B, 0x0A, 0x09, 0x08, 0x17, 0x16, 0x15, 0x14, 0x13, 0x12,
+	0x11, 0x10, 0x1F, 0x1E, 0x1D, 0x1C, 0x1B, 0x1A, 0x19, 0x18, 0x19, 0x09,
+	0x60, 0x6C, 0x77, 0x68, 0x61, 0x74, 0x65, 0x76, 0x65, 0x72, 0x2E, 0x63,
+	0x6F, 0x6D, 0x58, 0x60, 0xE6, 0xB6, 0x38, 0x4F, 0xAE, 0x3F, 0x6E, 0x67,
+	0xF5, 0xD4, 0x97, 0x4B, 0x3F, 0xFD, 0x0A, 0xFA, 0x1D, 0xF0, 0x2F, 0x73,
+	0xB8, 0xFF, 0x5F, 0x02, 0xC0, 0x0F, 0x40, 0xAC, 0xF3, 0xA2, 0x9D, 0xB5,
+};
+
+struct hes_attest_request_s {
+	SET_MEMBER(uint8_t version, 0x0, 0x2);
+	SET_MEMBER(uint16_t struct_size, 0x2, 0x4);
+	SET_MEMBER(uint32_t alg_id, 0x4, 0x8);
+	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
+	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
+	SET_MEMBER(size_t hash_len, 0x18, 0x20);
+	SET_MEMBER(uint8_t hash_buf[64], 0x20, 0x60);
+};
+
+struct hes_attest_response_s {
+	SET_MEMBER(uint8_t version, 0x0, 0x2);
+	SET_MEMBER(uint16_t struct_size, 0x2, 0x8);
+	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
+	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
+	SET_MEMBER(uint16_t sig_len, 0x18, 0x20);
+	SET_MEMBER(uint8_t signature_buf[512], 0x20, 0x220);
+};
+
+static struct hes_attest_request_s hes_req = { 0 };
+static bool hes_req_valid;
+
 bool host_memcpy_ns_read(void *dest, const void *ns_src, unsigned long size)
 {
 	(void)memcpy(dest, ns_src, size);
@@ -146,6 +179,75 @@ unsigned long host_monitor_call(unsigned long id,
 	default:
 		return 0UL;
 	}
+}
+
+static int attest_push_hes_request(uint64_t buf_pa, uint64_t buf_size)
+{
+	if (hes_req_valid) {
+		return -ENOMEM;
+	}
+
+	if (buf_size < sizeof(struct hes_attest_request_s)) {
+		return -EINVAL;
+	}
+
+	hes_req = *(struct hes_attest_request_s *)buf_pa;
+
+	if (hes_req.version != 0x10 ||
+	    hes_req.struct_size != sizeof(struct hes_attest_request_s) ||
+	    hes_req.hash_len != 48 || hes_req.rec_granule == 0x0) {
+		return -EINVAL;
+	}
+
+	hes_req_valid = true;
+
+	return 0;
+}
+
+static int attest_get_hes_response(uint64_t buf_pa, uint64_t *buf_size)
+{
+	if (hes_req_valid == false) {
+		return -ENOMEM;
+	}
+
+	if (*buf_size < sizeof(sample_ecdsa_p384_public_key)) {
+		return -EINVAL;
+	}
+
+	struct hes_attest_response_s *resp =
+		(struct hes_attest_response_s *)buf_pa;
+	resp->version = 0x10;
+	resp->struct_size = sizeof(struct hes_attest_response_s);
+	resp->rec_granule = hes_req.rec_granule;
+	resp->req_ticket = hes_req.req_ticket;
+	resp->sig_len = sizeof(sample_ecdsa_p384_public_key);
+	/* Return public key as signature */
+	memcpy(resp->signature_buf, sample_ecdsa_p384_public_key,
+	       sizeof(sample_ecdsa_p384_public_key));
+
+	*buf_size = sizeof(struct hes_attest_response_s);
+
+	hes_req_valid = false;
+	return 0;
+}
+
+static int attest_get_realm_attest_pub_key(uint64_t buf_pa, uint64_t *buf_size,
+					   uint64_t ecc_curve)
+{
+	if (ecc_curve != ATTEST_KEY_CURVE_ECC_SECP384R1) {
+		ERROR("Invalid ECC curve specified\n");
+		return -EINVAL;
+	}
+
+	if (*buf_size < sizeof(sample_ecdsa_p384_public_key)) {
+		return -EINVAL;
+	}
+
+	(void)memcpy((void *)buf_pa, (void *)sample_ecdsa_p384_public_key,
+		     sizeof(sample_ecdsa_p384_public_key));
+	*buf_size = sizeof(sample_ecdsa_p384_public_key);
+
+	return 0;
 }
 
 static int attest_get_platform_token(uint64_t buf_pa, uint64_t *buf_size,
@@ -204,6 +306,18 @@ void host_monitor_call_with_res(unsigned long id,
 		break;
 	case SMC_RMM_GET_REALM_ATTEST_KEY:
 		res->x[0] = attest_get_signing_key(arg0, &arg1, arg2);
+		res->x[1] = arg1;
+		break;
+	case SMC_RMM_HES_PUSH_ATTEST_REQ:
+		res->x[0] = attest_push_hes_request(arg0, arg1);
+		res->x[1] = arg1;
+		break;
+	case SMC_RMM_HES_PULL_ATTEST_RESP:
+		res->x[0] = attest_get_hes_response(arg0, &arg1);
+		res->x[1] = arg1;
+		break;
+	case SMC_RMM_GET_REALM_ATTEST_PUB_KEY_HES:
+		res->x[0] = attest_get_realm_attest_pub_key(arg0, &arg1, arg2);
 		res->x[1] = arg1;
 		break;
 	default:
