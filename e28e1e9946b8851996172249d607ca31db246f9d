@@ -724,6 +724,24 @@
       "parentUuid": "34c637f0_591fe936",
       "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af96609_852882b9",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-30T15:36:05Z",
+      "side": 1,
+      "message": "TFTF fix is merged.",
+      "parentUuid": "0ea1a428_c45cc379",
+      "revId": "e28e1e9946b8851996172249d607ca31db246f9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

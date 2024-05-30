@@ -241,6 +241,75 @@
       "message": "Need `  btvars:` here.",
       "revId": "7375e814698f4bec14118ae511133157e960b31f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8cef7a7_b6315246",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-30T15:36:05Z",
+      "side": 1,
+      "message": "not needed.",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 46
+      },
+      "revId": "7375e814698f4bec14118ae511133157e960b31f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab4221a3_529aac62",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-30T15:36:05Z",
+      "side": 1,
+      "message": "may not be needed.",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 0
+      },
+      "revId": "7375e814698f4bec14118ae511133157e960b31f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d7f7b8b_8f13f7b7",
+        "filename": "tools/shrinkwrap/configs/rmm-tftf.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-30T15:36:05Z",
+      "side": 1,
+      "message": "not needed.",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 146,
+        "endChar": 0
+      },
+      "revId": "7375e814698f4bec14118ae511133157e960b31f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
