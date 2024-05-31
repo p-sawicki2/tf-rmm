@@ -48,6 +48,8 @@
  * - Statistical Profiling Extension not implemented
  * - Armv8.4 Self-hosted Trace Extension not implemented
  * - Trace Buffer Extension not implemented
+ * - Double Lock extension not implemented
+ *   set in ID_AA64DFR0_EL1_SET
  * - Branch Record Buffer Extension not implemented
  * - Trace Buffer External Mode not implemented
  */
@@ -70,11 +72,13 @@
  * - Armv8 debug architecture
  * - Number of breakpoints: 2
  * - Number of watchpoints: 2
+ * - Double Lock extension not implemented : 0xF
  */
 #define ID_AA64DFR0_EL1_SET						  \
 	INPLACE(ID_AA64DFR0_EL1_DebugVer, ID_AA64DFR0_EL1_Debugv8)	| \
 	INPLACE(ID_AA64DFR0_EL1_BRPs, 1UL)				| \
-	INPLACE(ID_AA64DFR0_EL1_WRPs, 1UL)
+	INPLACE(ID_AA64DFR0_EL1_WRPs, 1UL)				| \
+	INPLACE(ID_AA64DFR0_EL1_DoubleLock, 0xFUL)
 
 /*
  * ID_AA64DFR1_EL1:
