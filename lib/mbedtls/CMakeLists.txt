@@ -21,7 +21,9 @@ set(MBEDTLS_BIN_DIR "${CMAKE_BINARY_DIR}/ext/mbedtls")
 set(MBEDTLS_PATCH_DIR "${RMM_SOURCE_DIR}/configs/mbedtls")
 set(MBEDTLS_PATCH_FILES
     "${MBEDTLS_PATCH_DIR}/0001-Remove-compiler-options-for-clang.patch"
-    "${MBEDTLS_PATCH_DIR}/0002-Disable-explicit_bzero.patch")
+    "${MBEDTLS_PATCH_DIR}/0002-Disable-explicit_bzero.patch"
+    "${MBEDTLS_PATCH_DIR}/0003-force-MBEDTLS_CONFIG_FILE-definition.patch"
+    )
 
 Git_Apply_Patches(${MBEDTLS_SRC_DIR} "${MBEDTLS_PATCH_FILES}")
 
@@ -58,6 +60,6 @@ foreach(MBEDTLS_LIB IN ITEMS mbedcrypto mbedx509)
         "${RMM_SOURCE_DIR}/configs/mbedtls"
         "${MBEDTLS_SRC_DIR}/include")
     target_compile_definitions(${MBEDTLS_LIB} PUBLIC
-        "-DMBEDTLS_CONFIG_FILE=<mbedtls_config.h>")
+        "-DMBEDTLS_CONFIG_FILE=<rmm_mbedtls_config.h>")
     target_link_libraries(rmm-mbedtls INTERFACE "${MBEDTLS_LIB}")
 endforeach()
