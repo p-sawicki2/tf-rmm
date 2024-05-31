@@ -48,6 +48,7 @@
  * - Statistical Profiling Extension not implemented
  * - Armv8.4 Self-hosted Trace Extension not implemented
  * - Trace Buffer Extension not implemented
+ * - Double Lock extension not implemented
  * - Branch Record Buffer Extension not implemented
  * - Trace Buffer External Mode not implemented
  */
@@ -62,6 +63,7 @@
 	MASK(ID_AA64DFR0_EL1_PMSVer)		| \
 	MASK(ID_AA64DFR0_EL1_TraceFilt)		| \
 	MASK(ID_AA64DFR0_EL1_TraceBuffer)	| \
+	MASK(ID_AA64DFR0_EL1_DoubleLock)	| \
 	MASK(ID_AA64DFR0_EL1_BRBE)		| \
 	MASK(ID_AA64DFR0_EL1_ExtTrcBuff)
 
