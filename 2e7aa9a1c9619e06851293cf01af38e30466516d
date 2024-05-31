@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31728afd_c7bd82d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-31T07:37:11Z",
+      "side": 1,
+      "message": "looks fine, need to understand removal of one test",
+      "revId": "2e7aa9a1c9619e06851293cf01af38e30466516d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "621b2800_bd1dfc22",
+        "filename": "lib/arch/tests/simd_tests.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-31T07:37:11Z",
+      "side": 1,
+      "message": "note to self, need to understand this.",
+      "revId": "2e7aa9a1c9619e06851293cf01af38e30466516d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
