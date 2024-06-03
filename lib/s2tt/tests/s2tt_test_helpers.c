@@ -17,6 +17,7 @@
 #include <string.h>
 #include <test_helpers.h>
 #include <utils_def.h>
+#include <xlat_defs.h>
 
 static bool lpa2_enabled;
 
@@ -73,7 +74,6 @@ void s2tt_test_helpers_setup(bool lpa2)
 
 unsigned long s2tt_test_helpers_oa_mask(long level)
 {
-	assert(level >= s2tt_test_helpers_min_table_lvl());
 	assert(level <= S2TT_TEST_HELPERS_MAX_LVL);
 
 	unsigned int levels = (unsigned int)(S2TT_TEST_HELPERS_MAX_LVL - level);
@@ -126,7 +126,7 @@ unsigned long s2tt_test_helpers_pa_to_s2tte(unsigned long pa, long level)
 
 unsigned long s2tt_test_helpers_gen_pa(long level, bool aligned)
 {
-	unsigned int levels, effective_lvl, lsb;
+	unsigned int levels, lsb;
 	unsigned long pa;
 
 	/*
@@ -137,43 +137,18 @@ unsigned long s2tt_test_helpers_gen_pa(long level, bool aligned)
 	assert(level >= s2tt_test_helpers_min_table_lvl() - 1L);
 	assert(level <= S2TT_TEST_HELPERS_MAX_LVL);
 
-	/*
-	 * There is a corner case If 'level' < s2tt_test_helpers_min_table_lvl()
-	 * (e.g. we want to use the generated address to add a table at the
-	 * minimum possible level). In this case, set the MSB bits of the
-	 * address, corresponding to the first level table index to '0', as
-	 * we can only have a table at the minimum level.
-	 *
-	 * In order to do that, force 'level' to
-	 * s2tt_test_helpers_min_table_lvl()
-	 */
-
-	effective_lvl = (level < s2tt_test_helpers_min_table_lvl()) ?
-		(unsigned int)s2tt_test_helpers_min_table_lvl() :
-		(unsigned int)level;
-
-	levels = S2TT_TEST_HELPERS_MAX_LVL - effective_lvl;
+	levels = S2TT_TEST_HELPERS_MAX_LVL - level;
 	lsb = GRANULE_SHIFT + (levels * S2TTE_STRIDE);
 
 	do {
+		unsigned int shift = (level == S2TT_TEST_HELPERS_MIN_LVL_LPA2) ?
+				LM1_XLAT_ADDRESS_SHIFT : L0_XLAT_ADDRESS_SHIFT;
+
 		pa = test_helpers_get_rand_in_range((1UL << lsb), ULONG_MAX);
+		pa &= ((1UL << shift) - 1UL);
 	} while (pa == 0UL);
 
-	if (aligned == true) {
-		/*
-		 * There is a corner case If 'level' < s2tt_test_helpers_min_table_lvl()
-		 * for an aligned address (e.g. we want to use the generated
-		 * address to add a table at the minimum possible level).
-		 * In this case, just return address 0.
-		 */
-		if (level < s2tt_test_helpers_min_table_lvl()) {
-			pa = 0UL;
-		} else {
-			pa &= s2tt_test_helpers_oa_mask(level);
-		}
-	}
-
-	return pa;
+	return (pa & s2tt_test_helpers_oa_mask(level));
 }
 
 unsigned long s2tt_test_helpers_s2tte_to_attrs(unsigned long tte, bool ns)
