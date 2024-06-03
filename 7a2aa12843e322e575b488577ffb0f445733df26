@@ -130,6 +130,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b11a9fc5_83ce53ef",
+        "filename": "lib/granule/include/granule_types.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-03T14:55:47Z",
+      "side": 1,
+      "message": "We need 10 bits to hold maximum value of 512.\nRefcount occupies last 10 bits of granule structure \u0026 cannot exceed this field. Refcount reads \u0026 updates can be done atomically \u0026 doesn\u0027t effect bitlock \u0026 status fields.",
+      "parentUuid": "06b473bf_cca5cb04",
+      "range": {
+        "startLine": 208,
+        "startChar": 10,
+        "endLine": 208,
+        "endChar": 18
+      },
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "81b1cde3_b96b9d1c",
         "filename": "runtime/rmi/rec.c",
         "patchSetId": 11
