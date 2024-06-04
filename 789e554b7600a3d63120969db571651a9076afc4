@@ -146,6 +146,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b5813c21_40861008",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-04T12:33:44Z",
+      "side": 1,
+      "message": "This function removed from granule.h and its functionality is implemented in granule_set_refcount() (lib\\granule\\tests\\granule.cpp) used only for tests running on host.",
+      "parentUuid": "a584afb5_fa25e7cc",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "789e554b7600a3d63120969db571651a9076afc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d05e964c_8a910aaf",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 10
