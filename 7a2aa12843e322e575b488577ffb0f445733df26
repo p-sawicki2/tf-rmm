@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95207a79_f20ad3b4",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-04T11:02:05Z",
+      "side": 1,
+      "message": "The only field which can be updated is State, which is changed by granule_set_state() function called with granule bitlock held, so refcount is not effected. It is also possible to make State update atomic, so new refcount value set by other CPU will be preserved.",
+      "parentUuid": "c678e936_d3683e63",
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "134f8a15_10d0fdbb",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 11
@@ -84,6 +102,24 @@
       "writtenOn": "2024-05-20T11:39:57Z",
       "side": 1,
       "message": "need to assert that lock is indeed held.",
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3937995_7197cae6",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-04T11:02:05Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "134f8a15_10d0fdbb",
       "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -101,6 +137,24 @@
       "writtenOn": "2024-05-20T11:39:57Z",
       "side": 1,
       "message": "need to assert that lock is indeed held.",
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29ba4c67_8c8682f0",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-04T11:02:05Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5644be51_dbc33739",
       "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
