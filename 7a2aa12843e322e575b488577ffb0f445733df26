@@ -159,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27fb2d31_29d9eed3",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-05T11:58:18Z",
+      "side": 1,
+      "message": "I modified this function making setting new Status value atomic and not effecting Lock \u0026 Refcount fields by using LDEORH instruction.",
+      "parentUuid": "29ba4c67_8c8682f0",
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06b473bf_cca5cb04",
