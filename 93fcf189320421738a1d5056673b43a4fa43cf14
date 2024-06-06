@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a219b4a_e9ec93bb",
+        "filename": "plat/host/host_ns_smc_fuzzer/python/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-06T15:43:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73a7d800_e7a0f549",
+      "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c9b5e67_6589ca2f",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-05-16T12:16:09Z",
       "side": 1,
       "message": "Need copyright and license header.",
+      "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72f62719_faf4c856",
+        "filename": "plat/host/host_ns_smc_fuzzer/src/fuzzer_protocol.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-06T15:43:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c9b5e67_6589ca2f",
       "revId": "93fcf189320421738a1d5056673b43a4fa43cf14",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
