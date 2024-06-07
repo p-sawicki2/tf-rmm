@@ -206,7 +206,8 @@ static void init_s2_starting_level(struct rd *rd)
 
 		for (unsigned int rtte = 0U; rtte < s2ttes_per_s2tt; rtte++) {
 			if (addr_in_par(rd, current_ipa)) {
-				s2tt[rtte] = s2tte_create_unassigned_empty(s2tt_ctx);
+				s2tt[rtte] = s2tte_create_unassigned_empty(s2tt_ctx,
+							S2TTE_DEFAULT_IPA_AP);
 			} else {
 				s2tt[rtte] = s2tte_create_unassigned_ns(s2tt_ctx);
 			}

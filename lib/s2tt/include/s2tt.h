@@ -67,6 +67,24 @@ struct s2tt_context {
 #define S2TTES_PER_S2TT_LM1	(1UL << S2TTE_STRIDE_LM1)
 
 /*
+ * Access permission bits.
+ */
+#define S2TTE_PERM_R_SHIFT		6UL
+#define S2TTE_PERM_R_WIDTH		1UL
+#define S2TTE_PERM_W_SHIFT		7UL
+#define S2TTE_PERM_W_WIDTH		1UL
+#define S2TTE_PERM_XN_SHIFT		53UL
+#define S2TTE_PERM_XN_WIDTH		2UL
+
+#define S2TTE_AP_MASK			(MASK(S2TTE_PERM_R) | MASK(S2TTE_PERM_W))
+#define S2TTE_PERM_MASK			(S2TTE_AP_MASK | MASK(S2TTE_PERM_XN))
+
+/*
+ * Default value for Access Permissions on a protected IPA.
+ */
+#define S2TTE_DEFAULT_IPA_AP		(S2TTE_PERM_MASK)
+
+/*
  * The MMU is a separate observer, and requires that translation table updates
  * are made with single-copy-atomic stores, necessitating inline assembly. For
  * consistency we use accessors for both reads and writes of translation table
@@ -95,19 +113,26 @@ static inline uint64_t __tte_read(uint64_t *ttep)
 bool s2tte_has_ripas(const struct s2tt_context *s2_ctx,
 		     unsigned long s2tte, long level);
 
-unsigned long s2tte_create_unassigned_empty(const struct s2tt_context *s2_ctx);
-unsigned long s2tte_create_unassigned_ram(const struct s2tt_context *s2_ctx);
+unsigned long s2tte_create_unassigned_empty(const struct s2tt_context *s2_ctx,
+					    unsigned long ap);
+unsigned long s2tte_create_unassigned_ram(const struct s2tt_context *s2_ctx,
+					  unsigned long ap);
 unsigned long s2tte_create_unassigned_ns(const struct s2tt_context *s2_ctx);
-unsigned long s2tte_create_unassigned_destroyed(const struct s2tt_context *s2_ctx);
+unsigned long s2tte_create_unassigned_destroyed(const struct s2tt_context *s2_ctx,
+						unsigned long ap);
 
 unsigned long s2tte_create_assigned_empty(const struct s2tt_context *s2_ctx,
-					  unsigned long pa, long level);
+					  unsigned long pa, long level,
+					  unsigned long ap);
 unsigned long s2tte_create_assigned_ram(const struct s2tt_context *s2_ctx,
-					unsigned long pa, long level);
+					unsigned long pa, long level,
+					unsigned long ap);
 unsigned long s2tte_create_assigned_ns(const struct s2tt_context *s2_ctx,
-				       unsigned long s2tte, long level);
+				       unsigned long s2tte, long level,
+				       unsigned long ap);
 unsigned long s2tte_create_assigned_destroyed(const struct s2tt_context *s2_ctx,
-					      unsigned long pa, long level);
+					      unsigned long pa, long level,
+					      unsigned long ap);
 unsigned long s2tte_create_assigned_unchanged(const struct s2tt_context *s2_ctx,
 					      unsigned long s2tte,
 					      unsigned long pa,
@@ -150,30 +175,58 @@ bool s2tte_is_addr_lvl_aligned(const struct s2tt_context *s2_ctx,
 enum ripas s2tte_get_ripas(const struct s2tt_context *s2_ctx,
 			   unsigned long s2tte);
 
+/*
+ * Get the Access Permissions of a given S2TTE.
+ */
+static inline unsigned long s2tte_get_ap(const struct s2tt_context *s2_ctx,
+					 unsigned long s2tte)
+{
+	(void)s2_ctx;
+
+	return s2tte & S2TTE_PERM_MASK;
+}
+
+/*
+ * This function resets the Access Permissions @s2tte with the ones @ap
+ * and returns the resulting S2TTE.
+ *
+ * Note that this function accepts any value @ap, as it will mask out
+ * any bit that does not belong to the Access Permissions.
+ */
+static inline unsigned long s2tte_set_ap(const struct s2tt_context *s2_ctx,
+					 unsigned long s2tte,
+					 unsigned long ap)
+{
+	(void)s2_ctx;
+
+	return (s2tte & ~S2TTE_PERM_MASK) | (ap & S2TTE_PERM_MASK);
+}
+
 /***************************************************************************
  * Helpers for Stage 2 Translation Tables  (S2TT).
  **************************************************************************/
 
 void s2tt_init_unassigned_empty(const struct s2tt_context *s2_ctx,
-				unsigned long *s2tt);
+				unsigned long *s2tt, unsigned long);
 void s2tt_init_unassigned_ram(const struct s2tt_context *s2_ctx,
-			      unsigned long *s2tt);
+			      unsigned long *s2tt, unsigned long ap);
 void s2tt_init_unassigned_ns(const struct s2tt_context *s2_ctx,
 			     unsigned long *s2tt);
 void s2tt_init_unassigned_destroyed(const struct s2tt_context *s2_ctx,
-				    unsigned long *s2tt);
+				    unsigned long *s2tt, unsigned long ap);
 
 void s2tt_init_assigned_empty(const struct s2tt_context *s2_ctx,
 			      unsigned long *s2tt, unsigned long pa,
-			      long level);
+			      long level, unsigned long ap);
 void s2tt_init_assigned_ram(const struct s2tt_context *s2_ctx,
-			    unsigned long *s2tt, unsigned long pa, long level);
+			    unsigned long *s2tt, unsigned long pa, long level,
+			    unsigned long ap);
 void s2tt_init_assigned_ns(const struct s2tt_context *s2_ctx,
 			   unsigned long *s2tt, unsigned long attrs,
-			   unsigned long pa, long level);
+			   unsigned long pa, long level, unsigned long ap);
 void s2tt_init_assigned_destroyed(const struct s2tt_context *s2_ctx,
 				  unsigned long *s2tt, unsigned long pa,
-				  long level);
+				  long level, unsigned long ap);
 
 void s2tt_invalidate_page(const struct s2tt_context *s2_ctx, unsigned long addr);
 void s2tt_invalidate_block(const struct s2tt_context *s2_ctx, unsigned long addr);
@@ -181,22 +234,26 @@ void s2tt_invalidate_pages_in_block(const struct s2tt_context *s2_ctx,
 				    unsigned long addr);
 
 bool s2tt_is_unassigned_empty_block(const struct s2tt_context *s2_ctx,
-				    unsigned long *table);
+				    unsigned long *table, unsigned long *ap);
 bool s2tt_is_unassigned_ram_block(const struct s2tt_context *s2_ctx,
-				  unsigned long *table);
+				  unsigned long *table, unsigned long *ap);
 bool s2tt_is_unassigned_ns_block(const struct s2tt_context *s2_ctx,
 				 unsigned long *table);
 bool s2tt_is_unassigned_destroyed_block(const struct s2tt_context *s2_ctx,
-					unsigned long *table);
+					unsigned long *table, unsigned long *ap);
 
 bool s2tt_maps_assigned_empty_block(const struct s2tt_context *s2_ctx,
-				    unsigned long *table, long level);
+				    unsigned long *table, long level,
+				    unsigned long *ap);
 bool s2tt_maps_assigned_ram_block(const struct s2tt_context *s2_ctx,
-				  unsigned long *table, long level);
+				  unsigned long *table, long level,
+				  unsigned long *ap);
 bool s2tt_maps_assigned_ns_block(const struct s2tt_context *s2_ctx,
-				 unsigned long *table, long level);
+				 unsigned long *table, long level,
+				 unsigned long *ap);
 bool s2tt_maps_assigned_destroyed_block(const struct s2tt_context *s2_ctx,
-					unsigned long *table, long level);
+					unsigned long *table, long level,
+					unsigned long *ap);
 
 struct s2tt_walk {
 	struct granule *g_llt;
