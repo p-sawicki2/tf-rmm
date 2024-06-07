@@ -157,6 +157,30 @@
       },
       "revId": "a78c69f2eda7134e0dbc01026df9111101a12e36",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bd6fa49_ffd165d4",
+        "filename": "lib/granule/include/granule_types.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-06-07T12:49:13Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "63e04d7a_ec8e86c2",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 32
+      },
+      "revId": "a78c69f2eda7134e0dbc01026df9111101a12e36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
