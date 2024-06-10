@@ -22,7 +22,11 @@
 #include <t_cose/q_useful_buf.h>
 #include <t_cose/t_cose_sign_sign.h>
 #include <t_cose/t_cose_signature_sign_restart.h>
+#ifndef RMM_ATTESTATION_USE_EL3
 #include <t_cose_psa_crypto.h>
+#else
+#include <t_cose_rmm_el3_crypto.h>
+#endif
 #endif /* CBMC */
 
 /* The state of the CCA token generation */
@@ -79,7 +83,11 @@ struct attest_token_encode_ctx {
 	struct q_useful_buf_c                         signed_payload;
 	struct t_cose_sign_sign_ctx                   sign_ctx;
 	struct t_cose_signature_sign_restart          restartable_signer_ctx;
+#if RMM_ATTESTATION_USE_EL3
+	struct t_cose_rmm_el3_ctx		      crypto_ctx;
+#else
 	struct t_cose_psa_crypto_context              crypto_ctx;
+#endif
 };
 
 #define ATTEST_CHALLENGE_SIZE			(64)
@@ -192,8 +200,6 @@ int attest_realm_token_create(enum hash_algo algorithm,
 			     void *realm_token_buf,
 			     size_t realm_token_buf_size);
 
-
-
 /*
  * Initialize the token sign context and also the heap buffer used for the crypto.
  * It is assumed that the heap alloc context has already been assigned to this
@@ -209,6 +215,7 @@ int attest_realm_token_create(enum hash_algo algorithm,
  */
 int attest_token_ctx_init(struct token_sign_cntxt *token_ctx,
 			   unsigned char *heap_buf,
-			   unsigned int heap_buf_len);
+			   unsigned int heap_buf_len,
+			   uintptr_t granule_addr);
 
 #endif /* ATTESTATION_TOKEN_H */

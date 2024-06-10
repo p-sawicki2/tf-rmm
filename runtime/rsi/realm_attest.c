@@ -151,7 +151,8 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 	 */
 	att_ret = attest_token_ctx_init(&attest_data->token_sign_ctx,
 				rec->aux_data.attest_heap_buf,
-				REC_HEAP_SIZE);
+				REC_HEAP_SIZE,
+				granule_addr(rec->g_rec));
 	if (att_ret != 0) {
 		/* There is no provision for this failure so panic */
 		panic();
