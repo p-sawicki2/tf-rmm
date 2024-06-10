@@ -7,12 +7,12 @@
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
+#include <hes_queue.h>
 #include <rmm_el3_ifc.h>
 #include <run.h>
 #include <simd.h>
 #include <smc-rmi.h>
 #include <smc-rsi.h>
-
 #ifdef NDEBUG
 #define RMM_BUILD_TYPE	"release"
 #else
@@ -107,6 +107,14 @@ void rmm_main(void)
 	if (attestation_init() != 0) {
 		WARN("Attestation init failed.\n");
 	}
+
+#if RMM_ATTESTATION_USE_HES
+	/* Initialize the HES queue */
+	if (hes_attest_queue_init() != 0) {
+		WARN("HES queue init failed.\n");
+	}
+#endif
+
 #ifdef RMM_FPU_USE_AT_REL2
 	/*
 	 * TODO: Do not save and restore NS state. Instead after
