@@ -189,6 +189,15 @@ static void rec_attestation_heap_init(struct rec *r)
 	assert(ret == 0);
 }
 
+static void rec_attestation_context_init(struct rec *rec)
+{
+#if RMM_ATTESTATION_USE_HES
+	memset((void *)&rec->aux_data.attest_data->token_sign_ctx.ctx.crypto_ctx,
+	0,
+	sizeof(rec->aux_data.attest_data->token_sign_ctx.ctx.crypto_ctx));
+#endif
+}
+
 /* Initialize REC simd state */
 static void rec_simd_state_init(struct rec *r)
 {
@@ -238,6 +247,7 @@ static void rec_aux_granules_init(struct rec *r)
 		REC_ATTEST_SIZE;
 
 	rec_attestation_heap_init(r);
+	rec_attestation_context_init(r);
 	rec_simd_state_init(r);
 
 	/* Unmap auxiliary granules */
