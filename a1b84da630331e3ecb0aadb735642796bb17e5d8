@@ -109,6 +109,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "55818934_82684fdd",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T16:29:46Z",
+      "side": 1,
+      "message": "granule_set_refcount() \u0026 granule_refcount_read_relaxed() are called in granule.cpp unit tests without granule lock acquired.",
+      "parentUuid": "6c4d4b39_4647697f",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed779248_98eaa648",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 13
@@ -206,6 +230,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00af17d1_9024cece",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T16:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "213a8f03_0a734596",
+      "range": {
+        "startLine": 58,
+        "startChar": 14,
+        "endLine": 58,
+        "endChar": 15
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c4c6f7d_2eefa94e",
@@ -219,6 +267,30 @@
       "writtenOn": "2024-06-10T13:30:04Z",
       "side": 1,
       "message": "see above.",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32dd6b5_87dce3fe",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T16:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c4c6f7d_2eefa94e",
       "range": {
         "startLine": 71,
         "startChar": 9,
@@ -345,6 +417,30 @@
       "writtenOn": "2024-06-10T16:14:39Z",
       "side": 1,
       "message": "why is expected state int now instead of char ?",
+      "range": {
+        "startLine": 113,
+        "startChar": 15,
+        "endLine": 113,
+        "endChar": 19
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5be7d0b5_886118df",
+        "filename": "lib/granule/src/granule.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T16:29:46Z",
+      "side": 1,
+      "message": "I reverted API to the original which used 16 bytes granules. Will change back to uint8_t to fix cppcheck MISRA defects.",
+      "parentUuid": "a0c6108b_40099ec1",
       "range": {
         "startLine": 113,
         "startChar": 15,
