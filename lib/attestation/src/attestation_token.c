@@ -333,3 +333,17 @@ int attest_realm_token_create(enum hash_algo algorithm,
 
 	return 0;
 }
+
+void attest_token_ctx_init(struct token_sign_cntxt *ctx, uintptr_t granule_addr)
+{
+	if (!ctx) {
+		return;
+	}
+
+	(void)memset(ctx, 0, sizeof(*ctx));
+	ctx->state = ATTEST_SIGN_NOT_STARTED;
+
+#if RMM_ATTESTATION_USE_HES
+	t_cose_crypto_hes_ctx_init(&ctx->ctx.crypto_ctx, granule_addr);
+#endif
+}
