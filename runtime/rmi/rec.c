@@ -295,6 +295,12 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 						rec_params.aux[i],
 						GRANULE_STATE_DELEGATED);
 		if (g_rec_aux == NULL) {
+			/* Unlock granules already locked before free'ing them */
+			for (unsigned int k = 0U; k < i; k++) {
+				struct granule *g_rec_aux = rec_aux_granules[k];
+
+				granule_unlock(g_rec_aux);
+			}
 			free_rec_aux_granules(rec_aux_granules, i, false);
 			return RMI_ERROR_INPUT;
 		}
