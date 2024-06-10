@@ -156,7 +156,7 @@ static void attest_token_continue_write_state(struct rec *rec,
 	} else {
 
 		/* The signing has succeeded. Reset the state. */
-		attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+		attest_token_reset_state(&attest_data->token_sign_ctx);
 		res->smc_res.x[0] = RSI_SUCCESS;
 	}
 
@@ -191,7 +191,7 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 	if (attest_data->token_sign_ctx.state != ATTEST_SIGN_NOT_STARTED) {
 		int restart;
 
-		attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+		attest_token_reset_state(&attest_data->token_sign_ctx);
 		restart = attestation_heap_reinit_pe(rec->aux_data.attest_heap_buf,
 							REC_HEAP_SIZE);
 		if (restart != 0) {
@@ -200,11 +200,8 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 		}
 	}
 
-	/* Clear context for signing an attestation token */
-	(void)memset(&attest_data->token_sign_ctx, 0,
-			sizeof(struct token_sign_cntxt));
-
-	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
+	/* Initialize context for signing an attestation token */
+	attest_token_ctx_init(&attest_data->token_sign_ctx, granule_addr(rec->g_rec));
 
 	/*
 	 * rd lock is acquired so that measurement cannot be updated

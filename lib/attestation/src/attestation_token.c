@@ -15,6 +15,7 @@
 #include <attestation_priv.h>
 #include <attestation_token.h>
 #include <debug.h>
+#include <errno.h>
 #include <measurement.h>
 #include <qcbor/qcbor.h>
 #include <simd.h>
@@ -332,4 +333,22 @@ int attest_realm_token_create(enum hash_algo algorithm,
 				   &(ctx->ctx.signed_payload));
 
 	return 0;
+}
+
+void attest_token_reset_state(struct token_sign_cntxt *ctx)
+{
+	assert(ctx != NULL);
+	ctx->state = ATTEST_SIGN_NOT_STARTED;
+}
+
+void attest_token_ctx_init(struct token_sign_cntxt *ctx, uintptr_t granule_addr)
+{
+	assert(ctx != NULL);
+
+	(void)memset(ctx, 0, sizeof(*ctx));
+	(void)attest_token_reset_state(ctx);
+
+#if RMM_ATTESTATION_USE_EL3
+	t_cose_crypto_el3_ctx_init(&ctx->ctx.crypto_ctx, granule_addr);
+#endif
 }
