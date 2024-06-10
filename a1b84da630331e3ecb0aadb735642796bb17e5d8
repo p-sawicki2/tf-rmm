@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f90567a6_375d4633",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "Need an cassert that REFCOUNT_MAX cannot be higher than RECOUNT_WIDTH bits.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e23a361_62ea8d07",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "this can be implemented as sca_read16(). \n\nAnother way to look at this is that these are private macros and used only within this file. All the rest of code should use the accessors defined here. \n\nSo granule_refcount_read_realxed() should assert that lock is acquired.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed779248_98eaa648",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "See comment above.",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 58
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f0e1a88_56a7f0e9",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "This function is always called with lock acquired. Can you add an assert here and ensure the same ?",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "213a8f03_0a734596",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "replace with REFCOUNT() as per comments above.",
+      "range": {
+        "startLine": 58,
+        "startChar": 14,
+        "endLine": 58,
+        "endChar": 15
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c4c6f7d_2eefa94e",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "see above.",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0436d29a_0d203717",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T13:30:04Z",
+      "side": 1,
+      "message": "I still dont understand how the atomic EOR will solve the issue of refcount changing between Line 107 and 110.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
