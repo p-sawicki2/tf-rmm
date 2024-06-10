@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19faef22_a9ac5289",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T14:52:00Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f90567a6_375d4633",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e23a361_62ea8d07",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-06-10T13:30:04Z",
       "side": 1,
       "message": "this can be implemented as sca_read16(). \n\nAnother way to look at this is that these are private macros and used only within this file. All the rest of code should use the accessors defined here. \n\nSo granule_refcount_read_realxed() should assert that lock is acquired.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c4d4b39_4647697f",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T14:52:00Z",
+      "side": 1,
+      "message": "__sca_read16() uses \"ldrh\" instruction \u0026 compiler generates the same one for\ng-\u003edescriptor.\nrefcount can be modified without lock acquired.\nI can add refcount access functions.",
+      "parentUuid": "4e23a361_62ea8d07",
       "range": {
         "startLine": 25,
         "startChar": 2,
@@ -77,6 +119,24 @@
       "writtenOn": "2024-06-10T13:30:04Z",
       "side": 1,
       "message": "This function is always called with lock acquired. Can you add an assert here and ensure the same ?",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bee774c5_09162715",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-10T14:52:00Z",
+      "side": 1,
+      "message": "complete_psci_cpu_on() \u0026 granule_refcount_read_acquire() are called without granule lock acquired.",
+      "parentUuid": "5f0e1a88_56a7f0e9",
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
