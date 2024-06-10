@@ -142,6 +142,24 @@
       "message": "I still dont understand how the atomic EOR will solve the issue of refcount changing between Line 107 and 110.",
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d13eab08_c19f30c3",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T14:07:53Z",
+      "side": 1,
+      "message": "Thanks for the offline explanation Alexei, yes, this could work",
+      "parentUuid": "0436d29a_0d203717",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
