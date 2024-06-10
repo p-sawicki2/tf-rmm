@@ -85,6 +85,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dc2cbea9_0f936511",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:29:17Z",
+      "side": 1,
+      "message": "Yup, hence the suggestion to remove the variant and only retain the read_relaxed version.",
+      "parentUuid": "6c4d4b39_4647697f",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed779248_98eaa648",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 13
@@ -137,6 +161,24 @@
       "side": 1,
       "message": "complete_psci_cpu_on() \u0026 granule_refcount_read_acquire() are called without granule lock acquired.",
       "parentUuid": "5f0e1a88_56a7f0e9",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8a8b9b7_a8725857",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:29:17Z",
+      "side": 1,
+      "message": "\u003e complete_psci_cpu_on() \u0026 granule_refcount_read_acquire() \n\nBoth should have locks acquired by caller.",
+      "parentUuid": "bee774c5_09162715",
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
