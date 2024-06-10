@@ -189,6 +189,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70d29dff_c73ded41",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "add comment: Atomically EOR the val while keeping the bits for refcount and bitlock as 0 which would preserve their values in memory.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0436d29a_0d203717",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 13
@@ -218,6 +235,166 @@
       "side": 1,
       "message": "Thanks for the offline explanation Alexei, yes, this could work",
       "parentUuid": "0436d29a_0d203717",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf276e63_ac1023d6",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "I know this will work since refcount is the LSB. Would be good to add a comment. Similarly to below lines.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1717336_7938b373",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "add asset that the lock is locked.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b417ba0_4df4d30f",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "add assert that lock is locked.\n\nActually there is a slight over optimization in the current code : https://github.com/TF-RMM/tf-rmm/blob/90f176f25634b7e38cc77bb7faf5b2e2e5837988/runtime/rmi/rec.c#L428\n\nThe put should be a put_release over there.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0c6108b_40099ec1",
+        "filename": "lib/granule/src/granule.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "why is expected state int now instead of char ?",
+      "range": {
+        "startLine": 113,
+        "startChar": 15,
+        "endLine": 113,
+        "endChar": 19
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ba79b02_26d96aa5",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "granule_get_state() should be used outside granule component.",
+      "range": {
+        "startLine": 59,
+        "startChar": 34,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cc12872_5411aac2",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "get_refcount_relaxed should be used outside granule component.",
+      "range": {
+        "startLine": 489,
+        "startChar": 29,
+        "endLine": 489,
+        "endChar": 37
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4f58b16_b126ac4c",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "similar comments as previous.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5e58992_8917aa73",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-10T16:14:39Z",
+      "side": 1,
+      "message": "similar comments as previous.",
+      "range": {
+        "startLine": 996,
+        "startChar": 25,
+        "endLine": 996,
+        "endChar": 30
+      },
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
