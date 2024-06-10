@@ -76,6 +76,12 @@ target_sources(rmm-runtime
             "core/sysregs.c"
             "core/timers.c")
 
+if(RMM_ATTESTATION_USE_EL3)
+    target_sources(rmm-runtime
+        PRIVATE
+        "core/el3_token_sign_queue.c")
+endif()
+
 target_sources(rmm-runtime
     PRIVATE "rmi/feature.c"
             "rmi/granule.c"
