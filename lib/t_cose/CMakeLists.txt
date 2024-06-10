@@ -3,6 +3,13 @@
 # SPDX-FileCopyrightText: Copyright TF-RMM Contributors.
 #
 
+arm_config_option(
+    NAME RMM_ATTESTATION_USE_EL3
+    HELP "Use CCA HES to sign attestation tokens."
+    TYPE BOOL
+    DEFAULT FALSE
+    ADVANCED)
+
 # The t_cose library is not included in the CBMC analysis
 if(RMM_CBMC_STATIC_ANALYSIS)
     add_library(t_cose INTERFACE)
@@ -12,6 +19,13 @@ endif()
 add_library(t_cose)
 
 set(T_COSE_SOURCE_DIR "${RMM_SOURCE_DIR}/ext/t_cose")
+
+# Patch t_cose
+set(t_COSE_PATCH_DIR "${RMM_SOURCE_DIR}/configs/t_cose")
+set(t_COSE_PATCH_FILES
+    "${t_COSE_PATCH_DIR}/0001-Add-compile-time-option-for-HES-signing.patch")
+
+Git_Apply_Patches(${T_COSE_SOURCE_DIR} "${t_COSE_PATCH_FILES}")
 
 #TODO: Eliminate warning suppression once the t_cose submodule is updated to
 #      a released version.
@@ -55,3 +69,24 @@ target_sources(t_cose
         "${T_COSE_SOURCE_DIR}/src/t_cose_signature_sign_restart.c"
         "${T_COSE_SOURCE_DIR}/src/t_cose_util.c"
 )
+if(RMM_ATTESTATION_USE_EL3)
+    target_include_directories(t_cose
+        PUBLIC
+            "include"
+            "${T_COSE_SOURCE_DIR}/src")
+
+    target_compile_definitions(t_cose
+        PUBLIC
+            "RMM_ATTESTATION_USE_EL3=1"
+        PRIVATE
+            "T_COSE_DISABLE_COSE_SIGN=1")
+
+    target_sources(t_cose
+        PRIVATE
+            "src/t_cose_rmm_el3_crypto.c")
+
+    target_link_libraries(t_cose
+        PRIVATE
+            rmm-lib-arch
+    )
+endif()
