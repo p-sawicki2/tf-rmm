@@ -62,9 +62,10 @@ bool ns_buffer_write(enum buffer_slot slot,
 void slot_buf_finish_warmboot_init(void);
 
 /*
- * Maps the `num_aux` SLOT_REC_AUX granules.
+ * Maps the `num_aux` granules at `slot`.
  */
-void *buffer_aux_granules_map(struct granule *g_rec_aux[], unsigned int num_aux);
+void *buffer_aux_granules_map(struct granule *g_rec_aux[], unsigned int num_aux,
+				enum buffer_slot slot);
 
 /*
  * Unmaps the `num_aux` SLOT_REC_AUX buffers starting with the one
