@@ -16,6 +16,14 @@ arm_config_option(
     TYPE STRING
     DEFAULT 40)
 
+arm_config_option(
+    NAME HES_ATTEST_QUEUE_SIZE
+    HELP "Set size (number of elements) of the HES attestation queue."
+    TYPE STRING
+    DEFAULT 1
+    ADVANCED
+    DEPENDS RMM_ATTESTATION_USE_HES)
+
 target_compile_definitions(rmm-runtime
     PRIVATE "RSI_LOG_LEVEL=${RSI_LOG_LEVEL}")
 
@@ -75,6 +83,15 @@ target_sources(rmm-runtime
             "core/inject_exp.c"
             "core/sysregs.c"
             "core/timers.c")
+
+if(RMM_ATTESTATION_USE_HES)
+    target_sources(rmm-runtime
+        PRIVATE
+        "core/hes_queue.c")
+    target_compile_definitions(rmm-runtime
+        PRIVATE
+            "HES_ATTEST_QUEUE_SIZE=${HES_ATTEST_QUEUE_SIZE}U")
+endif()
 
 target_sources(rmm-runtime
     PRIVATE "rmi/feature.c"
