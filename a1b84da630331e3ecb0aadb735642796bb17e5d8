@@ -131,6 +131,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abe34149_3f0db050",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55818934_82684fdd",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed779248_98eaa648",
@@ -203,6 +227,24 @@
       "side": 1,
       "message": "\u003e complete_psci_cpu_on() \u0026 granule_refcount_read_acquire() \n\nBoth should have locks acquired by caller.",
       "parentUuid": "bee774c5_09162715",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71a538f0_ecbe9c0d",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8a8b9b7_a8725857",
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -318,6 +360,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fda9000_4f8797c1",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70d29dff_c73ded41",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0436d29a_0d203717",
@@ -424,6 +484,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f4cb595_bab2a8dd",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "The comment for smc_rec_destroy() calling atomic_granule_put() reads:\n\"Also, since the granule is only used for\n\t * refcount update, only an atomic operation will suffice and\n\t * release/acquire semantics are not required.\"\n\nShould the comment be amended \u0026 atomic_granule_put_release() used?\n\nAdding assert that granule is locked causes assert in smc_rec_destroy() \u0026 it is the only 1 function which calls atomic_granule_put(). This function can be removed if we switch to atomic_granule_put_release().",
+      "parentUuid": "4b417ba0_4df4d30f",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a0c6108b_40099ec1",
         "filename": "lib/granule/src/granule.c",
         "patchSetId": 13
@@ -492,6 +570,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04a275f1_edd7ba08",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "granule_get_state() asserts if granule is not locked.\nAdded new granule_state() which only asserts for (g !\u003d NULL) which will be called for non-locked granules.",
+      "parentUuid": "7ba79b02_26d96aa5",
+      "range": {
+        "startLine": 59,
+        "startChar": 34,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cc12872_5411aac2",
@@ -505,6 +607,30 @@
       "writtenOn": "2024-06-10T16:14:39Z",
       "side": 1,
       "message": "get_refcount_relaxed should be used outside granule component.",
+      "range": {
+        "startLine": 489,
+        "startChar": 29,
+        "endLine": 489,
+        "endChar": 37
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fbdf106_dbb66c52",
+        "filename": "runtime/rmi/realm.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-11T13:44:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cc12872_5411aac2",
       "range": {
         "startLine": 489,
         "startChar": 29,
