@@ -16,6 +16,24 @@
       "message": "Is this patch essential? We would pass MBEDTLS_CONFIG_FILE to build MbedTLS and we should not have an issue I think.",
       "revId": "84a6f4eaa1c69d820a81457341515c510b50d3a7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b808b2f_d2dd6fb0",
+        "filename": "configs/mbedtls/0003-force-MBEDTLS_CONFIG_FILE-definition.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:35:54Z",
+      "side": 1,
+      "message": "Seems to work well without this patch",
+      "parentUuid": "9acd3b2b_4351db37",
+      "revId": "84a6f4eaa1c69d820a81457341515c510b50d3a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
