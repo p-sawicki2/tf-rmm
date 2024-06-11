@@ -372,6 +372,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da3b9cde_fb6cc59f",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T08:57:43Z",
+      "side": 1,
+      "message": "can make this atomic increment. Similar comment for below as well.",
+      "parentUuid": "cf276e63_ac1023d6",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b1717336_7938b373",
         "filename": "lib/granule/include/granule.h",
         "patchSetId": 13
