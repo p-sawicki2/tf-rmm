@@ -11,6 +11,13 @@ add_library(rmm-plat-common)
 target_link_libraries(rmm-plat-common
     PRIVATE rmm-lib)
 
+if(RMM_CCA_DA)
+    add_subdirectory(${RMM_SOURCE_DIR}/drivers/pcie_tdi
+                     ${RMM_BINARY_DIR}/drivers/pcie_tdi)
+    target_link_libraries(rmm-plat-common
+        PRIVATE rmm-driver-pcie_tdi)
+endif()
+
 #
 # PLAT_CMN_CTX_MAX_XLAT_TABLES is allowed to be 0, and in case when there are
 # not enough tables the xlat tables creation will fail.
