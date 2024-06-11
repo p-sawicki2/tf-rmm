@@ -106,6 +106,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "425d538a_cfc1bc36",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:35:38Z",
+      "side": 1,
+      "message": "```\n+\n+target_include_directories(rmm-mbedtls INTERFACE \n+            \"${RMM_SOURCE_DIR}/configs/mbedtls\"\n+            \"${MBEDTLS_SRC_DIR}/include\")\n+target_compile_definitions(rmm-mbedtls INTERFACE MBEDTLS_CONFIG_FILE\u003d\u003c\nmbedtls_config.h\u003e)\n```",
+      "parentUuid": "4443d5ce_d0d9d61d",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "93c344b6_c6f5a789",
         "filename": "lib/measurement/CMakeLists.txt",
         "patchSetId": 7
