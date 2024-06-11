@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71ee2f25_44133772",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T14:51:36Z",
+      "side": 1,
+      "message": "The cppcheck-misra and checkpatch rules fail. \n\n```\ncmake -DRMM_CONFIG\u003dfvp_defcfg -S . -B build -DRMM_TOOLCHAIN\u003dllvm -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\ncmake --build build -- checkpatch cppcheck-misra\n```\n\nThe above commands should reproduce the errors for you.",
+      "revId": "b4ad9f7c5ca8ee9ce6b8e164eb31a41ba5f2ece7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
