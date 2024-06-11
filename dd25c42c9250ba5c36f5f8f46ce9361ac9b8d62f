@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f0357ea_2b95b534",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-11T09:34:51Z",
+      "side": 1,
+      "message": "This commit can be closed as the cptr_el2 check in context_switch path is removed.",
+      "revId": "dd25c42c9250ba5c36f5f8f46ce9361ac9b8d62f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
