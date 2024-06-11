@@ -98,6 +98,11 @@ static struct xlat_ctx_tbls runtime_tbls;
 static struct xlat_ctx_cfg runtime_xlat_ctx_cfg;
 static struct xlat_ctx runtime_xlat_ctx;
 
+#ifdef RMM_CCA_DA
+/* todo: use header file */
+int pcie_tdi_device_register(void);
+#endif
+
 int plat_cmn_init_el3_ifc(unsigned long x0, unsigned long x1,
 			   unsigned long x2, unsigned long x3)
 {
@@ -186,6 +191,11 @@ int plat_cmn_setup(struct xlat_mmap_region *plat_regions,
 	/* Read supported GIC virtualization features and init GIC variables */
 	gic_get_virt_features();
 
+#ifdef RMM_CCA_DA
+	/* Register device that supports Trusted IO with DA subsystem */
+	ret = pcie_tdi_device_register();
+	assert(ret == 0);
+#endif
 	return 0;
 }
 
