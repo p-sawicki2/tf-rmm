@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b476a2ba_e492a743",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "this line can be removed as well ?",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5d8e588_9db2ffb0",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "define a dummy link_to_source() here.",
+      "range": {
+        "startLine": 29,
+        "startChar": 66,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d7aba3a_cbe2a276",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "remove this line.",
+      "range": {
+        "startLine": 30,
+        "startChar": 23,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c16f9f0c_b0040e67",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be needed ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 40,
+        "endLine": 56,
+        "endChar": 48
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4443d5ce_d0d9d61d",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "add:\n\n+\n+target_include_directories(rmm-mbedtls INTERFACE \n+            \"${RMM_SOURCE_DIR}/configs/mbedtls\"\n+            \"${MBEDTLS_SRC_DIR}/include\")\n+target_compile_definitions(rmm-mbedtls INTERFACE MBEDTLS_CONFIG_FILE\u003d\u003cmbedtls_config.h\u003e)\n\nthis will remove the additional lines added to allocateor and other compoenents.",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93c344b6_c6f5a789",
+        "filename": "lib/measurement/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "this may not be needed. Check comments on lib/mbedtls/cmakelists.txt",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a14b1e82_1d9db9aa",
+        "filename": "lib/measurement/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T16:33:34Z",
+      "side": 1,
+      "message": "this may not be neded.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
