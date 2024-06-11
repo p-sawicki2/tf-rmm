@@ -266,6 +266,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e34e797_08f61065",
+        "filename": "lib/granule/include/granule_types.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T14:26:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44b3b76b_91d3a25b",
+      "range": {
+        "startLine": 208,
+        "startChar": 10,
+        "endLine": 208,
+        "endChar": 18
+      },
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81b1cde3_b96b9d1c",
@@ -351,6 +375,30 @@
       "side": 1,
       "message": "find_granule() doesn\u0027t lock the granule, find_lock_granule() does.\nI changed STATE(g_rec_params) to granule_state(g_rec_params) which can be called on unlocked granules.",
       "parentUuid": "b16824e9_14240b77",
+      "range": {
+        "startLine": 264,
+        "startChar": 32,
+        "endLine": 264,
+        "endChar": 37
+      },
+      "revId": "7a2aa12843e322e575b488577ffb0f445733df26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d903ae3_3435d7eb",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-11T14:26:00Z",
+      "side": 1,
+      "message": "ah, yes, this is a special case since this is NS granule so we dont both to take the lock. Perhaps the function should be granule_unlocked_state() to signal that this API is special and not meant to be used. The comment for granule_unlocked_state() can be \"To be used only for NS granules where RMM performs NS specific operations on the granule\"",
+      "parentUuid": "cc263ac1_4c7d95e5",
       "range": {
         "startLine": 264,
         "startChar": 32,
