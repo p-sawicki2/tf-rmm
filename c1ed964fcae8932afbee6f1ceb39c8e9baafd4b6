@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "597016d4_3edcb01c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-12T12:36:29Z",
+      "side": 1,
+      "message": "Thank you for working on adding fuzzing to TF-RMM. I\u0027m still in the process of understanding the setup you put together. In the meanwhile I added a few comments based on what I saw so far.",
+      "revId": "c1ed964fcae8932afbee6f1ceb39c8e9baafd4b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0083eab8_b7c84f05",
+        "filename": "plat/host/host_ns_smc_fuzzer/CMakeLists.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-12T12:36:29Z",
+      "side": 1,
+      "message": "Why the `exploit` schedule is selected? According to the documentation this seems to be the least efficient (if I understand correctly this is based on the scoring used by the original AFL). The documentation seems to be recommending `fast` or `explore`",
+      "range": {
+        "startLine": 93,
+        "startChar": 224,
+        "endLine": 93,
+        "endChar": 231
+      },
+      "revId": "c1ed964fcae8932afbee6f1ceb39c8e9baafd4b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01ae8ebe_2b3ec996",
+        "filename": "plat/host/host_ns_smc_fuzzer/python/mutate.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-12T12:36:29Z",
+      "side": 1,
+      "message": "https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/custom_mutators.md recommends that if add_buf is not used than the mutator should define `splice_optout`. I don\u0027t understand all the details though.",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 8
+      },
+      "revId": "c1ed964fcae8932afbee6f1ceb39c8e9baafd4b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8094fd18_87261666",
+        "filename": "plat/host/host_ns_smc_fuzzer/src/host_setup.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-12T12:36:29Z",
+      "side": 1,
+      "message": "Please add \n\n    #include \u003cunistd.h\u003e\n\nfor `read(...)`",
+      "revId": "c1ed964fcae8932afbee6f1ceb39c8e9baafd4b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
