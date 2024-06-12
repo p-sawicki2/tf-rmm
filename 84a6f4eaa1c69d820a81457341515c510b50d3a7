@@ -34,6 +34,24 @@
       "parentUuid": "9acd3b2b_4351db37",
       "revId": "84a6f4eaa1c69d820a81457341515c510b50d3a7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "237776ca_5fbb6d40",
+        "filename": "configs/mbedtls/0003-force-MBEDTLS_CONFIG_FILE-definition.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:48:32Z",
+      "side": 1,
+      "message": "\u003e Is this patch essential? ...\n\nHaving this patch helps to avoid making new changes that includes mbedtls header files without defining MBEDTLS_CONFIG_FILE.\n\nIf MBEDTLS_CONFIG_FILE is not defined, then build_info.h silently includes default mbedtls_config.h.\n\nAnd now after addressing the comments on including config options to INTERFACE library, this patch won\u0027t be required.",
+      "parentUuid": "9acd3b2b_4351db37",
+      "revId": "84a6f4eaa1c69d820a81457341515c510b50d3a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
