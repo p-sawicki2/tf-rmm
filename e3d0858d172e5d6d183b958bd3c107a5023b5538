@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54b0458a_746adb05",
+        "filename": "configs/mbedtls/mbedtls_config.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:43:24Z",
+      "side": 1,
+      "message": "This change got dropped while splitting mbedtls patchset from libspdm.",
+      "revId": "e3d0858d172e5d6d183b958bd3c107a5023b5538",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
