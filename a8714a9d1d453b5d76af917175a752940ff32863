@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d80ff4c_06e5990b",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b476a2ba_e492a743",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5d8e588_9db2ffb0",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-06-11T16:33:34Z",
       "side": 1,
       "message": "define a dummy link_to_source() here.",
+      "range": {
+        "startLine": 29,
+        "startChar": 66,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "496e5391_bdb09d51",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5d8e588_9db2ffb0",
       "range": {
         "startLine": 29,
         "startChar": 66,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87164ee4_54b6f881",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d7aba3a_cbe2a276",
+      "range": {
+        "startLine": 30,
+        "startChar": 23,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c16f9f0c_b0040e67",
@@ -77,6 +143,30 @@
       "writtenOn": "2024-06-11T16:33:34Z",
       "side": 1,
       "message": "this doesn\u0027t seem to be needed ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 40,
+        "endLine": 56,
+        "endChar": 48
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20962ca2_16c59156",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "\u003e this doesn\u0027t seem to be needed ?\n\nremoved mbedx509 as this can from older patchset when this was on top of libspdm",
+      "parentUuid": "c16f9f0c_b0040e67",
       "range": {
         "startLine": 56,
         "startChar": 40,
@@ -122,6 +212,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f8109e_c4792f2c",
+        "filename": "lib/mbedtls/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "\u003e target_include_directories(rmm-mbedtls INTERFACE\n\nThis way of including directories existed prior to this change and one of the reason to remove it was this new method helps to avoid linking mbedtls to another static library like rmm-lib-measurement/attestation/measurement.\n\nNow I have reverted to the old method.",
+      "parentUuid": "425d538a_cfc1bc36",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93c344b6_c6f5a789",
@@ -139,6 +247,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbea4c09_e2c02e85",
+        "filename": "lib/measurement/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93c344b6_c6f5a789",
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a14b1e82_1d9db9aa",
@@ -152,6 +278,30 @@
       "writtenOn": "2024-06-11T16:33:34Z",
       "side": 1,
       "message": "this may not be neded.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "a8714a9d1d453b5d76af917175a752940ff32863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0465c818_8ed592e9",
+        "filename": "lib/measurement/CMakeLists.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-12T11:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a14b1e82_1d9db9aa",
       "range": {
         "startLine": 19,
         "startChar": 0,
