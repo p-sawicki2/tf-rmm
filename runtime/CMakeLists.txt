@@ -115,4 +115,9 @@ target_sources(rmm-runtime
             "rsi/realm_attest.c"
             "rsi/system.c")
 
+if(RMM_CCA_DA)
+    target_sources(rmm-runtime
+          PRIVATE "rmi/da.c")
+endif()
+
 include (tests/CMakeLists.txt)
