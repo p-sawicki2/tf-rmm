@@ -96,4 +96,16 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 			unsigned long top,
 			struct smc_result *res);
 
+#ifdef RMM_CCA_DA
+unsigned long smc_pdev_create(unsigned long pdev_ptr,
+			      unsigned long pdev_params_ptr);
+
+#else /* !RMM_CCA_DA */
+static inline unsigned long smc_pdev_create(unsigned long pdev_ptr,
+					    unsigned long pdev_params_ptr)
+{
+	/* Replace with RMI_ERROR_NOT_SUPPORTED */
+	return SMC_NOT_SUPPORTED;
+}
+#endif /* RMM_CCA_DA */
 #endif /* SMC_HANDLER_H */

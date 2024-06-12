@@ -21,7 +21,8 @@ target_compile_definitions(rmm-runtime
 
 target_link_libraries(rmm-runtime
     PRIVATE rmm-lib
-            rmm-platform)
+            rmm-platform
+            rmm-plat-common)
 
 target_include_directories(rmm-runtime
     PRIVATE "include")
@@ -114,5 +115,10 @@ target_sources(rmm-runtime
             "rsi/realm_ipa_helper.c"
             "rsi/realm_attest.c"
             "rsi/system.c")
+
+if(RMM_CCA_DA)
+    target_sources(rmm-runtime
+        PRIVATE "rmi/da.c")
+endif()
 
 include (tests/CMakeLists.txt)
