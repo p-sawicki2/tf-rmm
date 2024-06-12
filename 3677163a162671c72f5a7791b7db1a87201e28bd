@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63dfaea5_98e87958",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-12T12:40:43Z",
+      "side": 1,
+      "message": "also add a comment that the config file is renamed.",
+      "revId": "3677163a162671c72f5a7791b7db1a87201e28bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07d4efce_ab2c8108",
+        "filename": "configs/mbedtls/rmm_mbedtls_config.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-12T12:40:43Z",
+      "side": 1,
+      "message": "this part of the comment can be removed as the intent is clear and we know we are in the same trust boundary as the caller of PSA crypto API.",
+      "range": {
+        "startLine": 45,
+        "startChar": 31,
+        "endLine": 46,
+        "endChar": 43
+      },
+      "revId": "3677163a162671c72f5a7791b7db1a87201e28bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
