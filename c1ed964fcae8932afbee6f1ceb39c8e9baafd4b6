@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d0b78125_062e3cbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-12T12:56:40Z",
+      "side": 1,
+      "message": "just a top level comment \n\nWould prefer the platform name to be \"host_fuzz\" rather than \"host_ns_smc_fuzzer\".",
+      "revId": "c1ed964fcae8932afbee6f1ceb39c8e9baafd4b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0083eab8_b7c84f05",
         "filename": "plat/host/host_ns_smc_fuzzer/CMakeLists.txt",
         "patchSetId": 9
