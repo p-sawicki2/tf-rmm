@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36e59cc3_98a1291f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:40:50Z",
+      "side": 1,
+      "message": "generally looks good",
+      "revId": "0e33d5417fd068ddf4837d8e6dc5c047ffcb46f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7e5dd70_ead55465",
+        "filename": "configs/libspdm/0004-fix-few-build-errors.patch",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:40:50Z",
+      "side": 1,
+      "message": "This can be solved by changing the CFLAG to avoid warning for this.",
+      "revId": "0e33d5417fd068ddf4837d8e6dc5c047ffcb46f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
