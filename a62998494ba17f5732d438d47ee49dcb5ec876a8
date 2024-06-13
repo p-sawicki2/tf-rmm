@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73196cbf_37cacdb7",
+        "filename": "toolchains/common.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:33:21Z",
+      "side": 1,
+      "message": "note to self, need to understand this better.",
+      "revId": "a62998494ba17f5732d438d47ee49dcb5ec876a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
