@@ -272,6 +272,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fddf3b98_1bddae3f",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:29:23Z",
+      "side": 1,
+      "message": "IN that case, we can add this flags just to MbedTLS compilation when being built for RMM_CCA_DA",
+      "parentUuid": "db677849_6df9fc7d",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f5a65a2_b0574c55",
         "filename": "tools/cppcheck/CPPCheck.cmake",
         "patchSetId": 7

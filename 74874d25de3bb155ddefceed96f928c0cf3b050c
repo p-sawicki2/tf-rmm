@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8366e0cf_56217a40",
+        "filename": "configs/libspdm/0002-fix-build-Wincompatible_pointer_types-errors.patch",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:29:23Z",
+      "side": 1,
+      "message": "as discussed could try modifying the CFLAGS to libspdm",
+      "revId": "74874d25de3bb155ddefceed96f928c0cf3b050c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0ad6a8a_3b8c7aac",
+        "filename": "configs/libspdm/0003-force-LIBSPDM_CONFIG-definition.patch",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-13T21:29:23Z",
+      "side": 1,
+      "message": "This patch may not be needed",
+      "revId": "74874d25de3bb155ddefceed96f928c0cf3b050c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
