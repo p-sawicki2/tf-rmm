@@ -178,6 +178,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f844f0c6_4a19be72",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed779248_98eaa648",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 58
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f0e1a88_56a7f0e9",
@@ -448,6 +472,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e8e440a_107cd931",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da3b9cde_fb6cc59f",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1717336_7938b373",
@@ -461,6 +503,24 @@
       "writtenOn": "2024-06-10T16:14:39Z",
       "side": 1,
       "message": "add asset that the lock is locked.",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ef904f1_b76f4a0c",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1717336_7938b373",
       "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -536,6 +596,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a58dab92_069ca14a",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "73e10459_4394cb86",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0c6108b_40099ec1",
@@ -573,6 +651,30 @@
       "side": 1,
       "message": "I reverted API to the original which used 16 bytes granules. Will change back to uint8_t to fix cppcheck MISRA defects.",
       "parentUuid": "a0c6108b_40099ec1",
+      "range": {
+        "startLine": 113,
+        "startChar": 15,
+        "endLine": 113,
+        "endChar": 19
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9549390a_7d85d0e4",
+        "filename": "lib/granule/src/granule.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5be7d0b5_886118df",
       "range": {
         "startLine": 113,
         "startChar": 15,
@@ -694,6 +796,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "adda0afc_c0c49d25",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4f58b16_b126ac4c",
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5e58992_8917aa73",
@@ -707,6 +827,30 @@
       "writtenOn": "2024-06-10T16:14:39Z",
       "side": 1,
       "message": "similar comments as previous.",
+      "range": {
+        "startLine": 996,
+        "startChar": 25,
+        "endLine": 996,
+        "endChar": 30
+      },
+      "revId": "a1b84da630331e3ecb0aadb735642796bb17e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33008041_08dd7b38",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5e58992_8917aa73",
       "range": {
         "startLine": 996,
         "startChar": 25,

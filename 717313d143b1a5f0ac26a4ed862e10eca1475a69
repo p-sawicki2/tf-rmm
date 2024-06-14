@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "948d6ff7_0dd92df8",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "rename this as RTT_REFCOUNT_MAX or something similar. \n\nREFCOUNT_MAX should be absolute maximum that can be accomodated.",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58fdfc3e_8fb5b3db",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "also add:\n\n\"This check is performed just after acquiring the lock and/or just before releasing the lock.\"",
+      "range": {
+        "startLine": 54,
+        "startChar": 43,
+        "endLine": 54,
+        "endChar": 44
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc96a7da_1e6fd2a9",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "..less than MAX_REFCOUNT",
+      "range": {
+        "startLine": 78,
+        "startChar": 43,
+        "endLine": 78,
+        "endChar": 44
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80edb822_b3f70c61",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "can assert that REFCOUNT \u003c 1024 here.",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c670454_2e885fa5",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "also add that \"This function is only meant to be used for verification and testing. This functionality is not required for RMM operations.\"",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ad6bee4_4426eae7",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "also assert that this will not overflow.",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceb9574c_9c8042c2",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "add a check here the refcount update at line 361 will not overflow.",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "907cb87b_09697056",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 357,
+        "startChar": 25,
+        "endLine": 359,
+        "endChar": 47
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1da531bb_b725194f",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-14T13:56:33Z",
+      "side": 1,
+      "message": "replace with:\n\"We use release semantic here to match acquire semantic for refcount in RMI_REALM_DESTROY.\"",
+      "range": {
+        "startLine": 424,
+        "startChar": 33,
+        "endLine": 425,
+        "endChar": 59
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
