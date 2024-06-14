@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8d270a7_6ee0c510",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "948d6ff7_0dd92df8",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58fdfc3e_8fb5b3db",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-14T13:56:33Z",
       "side": 1,
       "message": "also add:\n\n\"This check is performed just after acquiring the lock and/or just before releasing the lock.\"",
+      "range": {
+        "startLine": 54,
+        "startChar": 43,
+        "endLine": 54,
+        "endChar": 44
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f1378e6_d82d0f46",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "58fdfc3e_8fb5b3db",
       "range": {
         "startLine": 54,
         "startChar": 43,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "111740ab_e34ee80b",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fc96a7da_1e6fd2a9",
+      "range": {
+        "startLine": 78,
+        "startChar": 43,
+        "endLine": 78,
+        "endChar": 44
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80edb822_b3f70c61",
@@ -83,6 +155,24 @@
       "writtenOn": "2024-06-14T13:56:33Z",
       "side": 1,
       "message": "can assert that REFCOUNT \u003c 1024 here.",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99d04b5e_4fab5762",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "80edb822_b3f70c61",
       "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -104,6 +194,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92345799_f333ce04",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4c670454_2e885fa5",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ad6bee4_4426eae7",
@@ -117,6 +225,24 @@
       "writtenOn": "2024-06-14T13:56:33Z",
       "side": 1,
       "message": "also assert that this will not overflow.",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3110f94_e2c1a5cd",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0ad6bee4_4426eae7",
       "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -140,6 +266,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "19600a79_0afee322",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this check go on after line #304?",
+      "parentUuid": "ceb9574c_9c8042c2",
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "907cb87b_09697056",
         "filename": "runtime/rmi/rec.c",
         "patchSetId": 21
@@ -151,6 +295,30 @@
       "writtenOn": "2024-06-14T13:56:33Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 357,
+        "startChar": 25,
+        "endLine": 359,
+        "endChar": 47
+      },
+      "revId": "717313d143b1a5f0ac26a4ed862e10eca1475a69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "522272c7_8392ea46",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-14T15:18:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "907cb87b_09697056",
       "range": {
         "startLine": 357,
         "startChar": 25,
