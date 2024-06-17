@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6830aeae_71694749",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-17T15:45:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "21fb845c_8a122a52",
+      "revId": "984c2651457ea9e1ad27b77e5649d45a3e6ee7e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53c53a6e_a2d99552",

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7842f6c2_33d589c4",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-17T15:45:21Z",
+      "side": 1,
+      "message": "granule_unlock(g_rd);\n        granule_unlock_transition(g_rec, new_rec_state);\t\n        goto out_free_aux;\n\n\nor create a new goto label in between.",
+      "range": {
+        "startLine": 312,
+        "startChar": 7,
+        "endLine": 312,
+        "endChar": 19
+      },
+      "revId": "b43280809d7a197ce1ee512abd2bb818b610176a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
