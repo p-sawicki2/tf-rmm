@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b7b1acf_f1047164",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "please add unit (elements)",
+      "range": {
+        "startLine": 9,
+        "startChar": 69,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51d77538_39c2a1fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "Thanks for contributing to TF-RMM.",
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9807de96_c776fec6",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "This library would be a very good candidate for unit testing. Would it be possible to add some testcases?",
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce62828e_99539cce",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "Please add something along the lines:\n - The capacity of the queue is restricted to be power of 2\n - The elements are stored in fixed size slots.",
+      "range": {
+        "startLine": 13,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "105886f8_ebf690af",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "This field seems to be unused",
+      "range": {
+        "startLine": 31,
+        "startChar": 15,
+        "endLine": 31,
+        "endChar": 27
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af8e663d_56c995ae",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "Please add documentation to the functions",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 16
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98b031a0_71b4a047",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "I guess this condition is here to check that capacity is power of 2. However the condition evaluates false if q-\u003ecapacity is 0, enabling a queue with capacity \u003d\u003d 0. Is this intended?",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eab7ccb3_8e1eae64",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-18T14:08:09Z",
+      "side": 1,
+      "message": "An assert could be added that can detect push or pop under some circumstances (I think all the cases when the number of pushes and pops to/from the queue are not the same, but I didn\u0027t prove it):\n\n    assert(((iter-\u003eindex + iter-\u003eremaining) \u0026 (iter-\u003eq-\u003ecapacity - 1)) \u003d\u003d \n           ((iter-\u003eq-\u003eread + iter-\u003eq-\u003eelement_size) \u0026 (iter-\u003eq-\u003ecapacity - 1)));",
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
