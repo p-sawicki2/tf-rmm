@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d77c7687_db773600",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0b7b1acf_f1047164",
+      "range": {
+        "startLine": 9,
+        "startChar": 69,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "51d77538_39c2a1fe",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -81,6 +105,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f4da24c_4cf2e3b0",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ce62828e_99539cce",
+      "range": {
+        "startLine": 13,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "105886f8_ebf690af",
@@ -104,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b13193d7_2a663b1e",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "105886f8_ebf690af",
+      "range": {
+        "startLine": 31,
+        "startChar": 15,
+        "endLine": 31,
+        "endChar": 27
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af8e663d_56c995ae",
@@ -117,6 +189,30 @@
       "writtenOn": "2024-06-18T14:08:09Z",
       "side": 1,
       "message": "Please add documentation to the functions",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 16
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38fa7145_2a271c57",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "af8e663d_56c995ae",
       "range": {
         "startLine": 52,
         "startChar": 0,
@@ -152,6 +248,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "37c3ef61_564f1023",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "i think line 21 ensures capacity is not 0 and this condition should be avoided.",
+      "parentUuid": "98b031a0_71b4a047",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eab7ccb3_8e1eae64",
         "filename": "lib/queue/src/queue.c",
         "patchSetId": 1
@@ -163,6 +283,24 @@
       "writtenOn": "2024-06-18T14:08:09Z",
       "side": 1,
       "message": "An assert could be added that can detect push or pop under some circumstances (I think all the cases when the number of pushes and pops to/from the queue are not the same, but I didn\u0027t prove it):\n\n    assert(((iter-\u003eindex + iter-\u003eremaining) \u0026 (iter-\u003eq-\u003ecapacity - 1)) \u003d\u003d \n           ((iter-\u003eq-\u003eread + iter-\u003eq-\u003eelement_size) \u0026 (iter-\u003eq-\u003ecapacity - 1)));",
+      "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b7edf23_15a247c8",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-18T23:50:59Z",
+      "side": 1,
+      "message": "not sure i follow the ask. The contract, as described on line 113 (and now added to queue.h ;)) is that there are no queue modifications when using the iterator. it would be invalid to use it and i dont think there is a point int detecting that?",
+      "parentUuid": "eab7ccb3_8e1eae64",
       "revId": "a27d85f263105f08ecad50260940a3d82ddd0824",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
