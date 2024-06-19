@@ -274,6 +274,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c54ea280_28ad0f89",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "There is  granule_set_get_state_TC1() which calls granule_set/get_state()",
+      "parentUuid": "7f2f506a_979df13f",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "17835f88_a680e946",
         "filename": "lib/granule/tests/granule.cpp",
         "patchSetId": 30
@@ -285,6 +303,30 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "This is no longer true as granule_refcount_read_acquire() asserts now if granule \u003d\u003d NULL.\n\nWe need to add two more tests for this API:\n\n    - granule_refcount_read_acquire_TC2() to test when a NULL granule is passed.\n    - granule_refcount_read_acquire_TC3() to test when a value out of bounds is passed.",
+      "range": {
+        "startLine": 402,
+        "startChar": 1,
+        "endLine": 403,
+        "endChar": 50
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a24be8e_a66e5a1e",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "granule_refcount_read_acquire() doesn\u0027t check for any values passed except \nassert((g !\u003d NULL) \u0026\u0026 LOCKED(g));",
+      "parentUuid": "17835f88_a680e946",
       "range": {
         "startLine": 402,
         "startChar": 1,
@@ -318,6 +360,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d10923c7_1348e117",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "047f7627_32bb3ea6",
+      "range": {
+        "startLine": 1245,
+        "startChar": 14,
+        "endLine": 1245,
+        "endChar": 29
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df5b80c5_a40a120e",
@@ -331,6 +397,30 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "granule_put() is not tested here anymore, so this should be renamed to atomic_granule_put_TC1()",
+      "range": {
+        "startLine": 1272,
+        "startChar": 14,
+        "endLine": 1272,
+        "endChar": 29
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf116095_147fade2",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1272,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "df5b80c5_a40a120e",
       "range": {
         "startLine": 1272,
         "startChar": 14,
@@ -364,6 +454,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4d1cdec_dfeb230a",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7e2066af_6edd2286",
+      "range": {
+        "startLine": 1297,
+        "startChar": 14,
+        "endLine": 1297,
+        "endChar": 29
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7339869_0418635b",
@@ -377,6 +491,30 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "granule_refcount_inc()",
+      "range": {
+        "startLine": 1343,
+        "startChar": 51,
+        "endLine": 1343,
+        "endChar": 64
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2424149d_362c8eff",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1343,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "b7339869_0418635b",
       "range": {
         "startLine": 1343,
         "startChar": 51,
@@ -404,6 +542,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e0bd89d_91d24732",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1440,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fd780187_6e198bef",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69164e4c_8e4b4e67",
@@ -417,6 +573,24 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "Looks like the same test as line 1272, so one of them can be safely removed.",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "435cc0e1_9580f714",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T15:05:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "69164e4c_8e4b4e67",
       "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
