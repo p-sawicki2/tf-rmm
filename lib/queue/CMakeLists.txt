@@ -16,3 +16,5 @@ target_link_libraries(rmm-lib-queue
 
 target_sources(rmm-lib-queue
     PRIVATE "src/queue.c")
+
+include (tests/CMakeLists.txt)
