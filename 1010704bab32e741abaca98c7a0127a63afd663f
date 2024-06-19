@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bddd498_6c5557b5",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T10:59:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1f4ee534_e3862dd3",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37560769_647eb7c5",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "Shouldn\u0027t you add\n\nassert(REFCOUNT(g) \u003c REFCOUNT_MAX);?",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c1052a_3caf5202",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T10:59:33Z",
+      "side": 1,
+      "message": "REFCOUNT(g) is always \u003c\u003d REFCOUNT_MAX, because it uses 10-bit mask 0x3FF when reading bit field from granule descriptor.",
+      "parentUuid": "37560769_647eb7c5",
       "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e46cc23_349177e1",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T10:59:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "b6bec110_8a47081c",
+      "range": {
+        "startLine": 115,
+        "startChar": 1,
+        "endLine": 115,
+        "endChar": 19
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e319791_59350fcc",
@@ -71,6 +131,30 @@
       "writtenOn": "2024-06-18T15:53:52Z",
       "side": 1,
       "message": "Since this function is used on the unittests, is shouldn\u0027t be here. Rather, it should be a static function in granule.cpp",
+      "range": {
+        "startLine": 199,
+        "startChar": 19,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "204b1814_5449f553",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-19T10:59:33Z",
+      "side": 1,
+      "message": "The reason why this function is placed here is that it was decided to use LOCKED(), REFCOUNT() \u0026 STATE() macros only in granule.h \u0026 not in .c \u0026 .cpp files.",
+      "parentUuid": "8e319791_59350fcc",
       "range": {
         "startLine": 199,
         "startChar": 19,
