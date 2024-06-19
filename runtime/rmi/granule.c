@@ -51,6 +51,12 @@ unsigned long smc_granule_undelegate(unsigned long addr)
 	}
 
 	/*
+	 * RMM must scrub the granule before undelegating. EL3 expects that
+	 * the granule is scrubbed before it is cleaned to PoPA.
+	 */
+	buffer_granule_memzero(g, SLOT_DELEGATED);
+
+	/*
 	 * A delegated granule should only be undelegated on request from RMM.
 	 * If this call fails, we have an unrecoverable error in EL3/RMM.
 	 */
