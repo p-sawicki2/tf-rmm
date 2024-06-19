@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e712a0cb_1a91f209",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-19T14:00:40Z",
+      "side": 1,
+      "message": "Verified through https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/683/\n\nstatic check failures can be ignored",
+      "revId": "40c3a22a5f7b3642b30c4a2a25e05b3b623b0a48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
