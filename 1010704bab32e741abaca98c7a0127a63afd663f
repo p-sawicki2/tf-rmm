@@ -71,6 +71,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b746dd0_fbd8db70",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-19T12:21:28Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "21c1052a_3caf5202",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6bec110_8a47081c",
@@ -118,6 +136,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d95b38b_5d9296e3",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-19T12:21:28Z",
+      "side": 1,
+      "message": "I think this can just be fixed by making the comment on line 109 clearer as discussed yesterday?",
+      "parentUuid": "7e46cc23_349177e1",
+      "range": {
+        "startLine": 115,
+        "startChar": 1,
+        "endLine": 115,
+        "endChar": 19
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e319791_59350fcc",
@@ -155,6 +197,30 @@
       "side": 1,
       "message": "The reason why this function is placed here is that it was decided to use LOCKED(), REFCOUNT() \u0026 STATE() macros only in granule.h \u0026 not in .c \u0026 .cpp files.",
       "parentUuid": "8e319791_59350fcc",
+      "range": {
+        "startLine": 199,
+        "startChar": 19,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc9caacc_f98706fa",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-19T12:21:28Z",
+      "side": 1,
+      "message": "In that case, can you create a header file (e.g. granule_test_helpers.h o similar) for the unittests and move this there? Unittests are special in the sense that they are built as part of the library under test so they can access and include any private definition, not only the public ones, so I don\u0027t think it would be problematic to use LOCKED() et al. inside the unittests.\n\nWe should avoid having test helpers on the library to test.",
+      "parentUuid": "204b1814_5449f553",
       "range": {
         "startLine": 199,
         "startChar": 19,
