@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "525c43cf_1b322fa7",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-19T18:16:34Z",
+      "side": 1,
+      "message": "acquire?",
+      "range": {
+        "startLine": 49,
+        "startChar": 48,
+        "endLine": 49,
+        "endChar": 55
+      },
+      "revId": "b3d1945fe4ff5201a230ad4d1f42a0354ba0bc66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "635dc3dc_bc922bdc",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-19T18:16:34Z",
+      "side": 1,
+      "message": "if lock is held do you really need atomics?",
+      "range": {
+        "startLine": 228,
+        "startChar": 16,
+        "endLine": 228,
+        "endChar": 34
+      },
+      "revId": "b3d1945fe4ff5201a230ad4d1f42a0354ba0bc66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
