@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c3e4113_343c673a",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-20T15:18:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "928f0787_fe51898f",
+      "range": {
+        "startLine": 14,
+        "startChar": 19,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "385065939060ae7aa85d9a9a65044a5d00624831",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aeafa0b0_50d027fa",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-20T14:34:13Z",
       "side": 1,
       "message": "probably better of doing cmake --build \u003cTARGET_DIR} run-fuzzer to stay consistent without places.",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 8
+      },
+      "revId": "385065939060ae7aa85d9a9a65044a5d00624831",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c470c00_232bee12",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-20T15:18:01Z",
+      "side": 1,
+      "message": "Sorry I am not expert in Cmake, what is the suggesting here?",
+      "parentUuid": "aeafa0b0_50d027fa",
       "range": {
         "startLine": 96,
         "startChar": 4,
