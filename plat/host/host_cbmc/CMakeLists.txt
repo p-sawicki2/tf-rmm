@@ -10,6 +10,11 @@ arm_config_option(
     HELP "Enable CBMC static analysis."
     DEFAULT TRUE FORCE)
 
+#
+# TODO: Set reasonable value here
+#
+arm_config_option_override(NAME RMM_MAX_GRANULES DEFAULT 0x80000)
+
 target_link_libraries(rmm-plat-host_cbmc
     PRIVATE rmm-lib
     PUBLIC rmm-host-common)
