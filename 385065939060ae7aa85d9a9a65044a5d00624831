@@ -93,6 +93,30 @@
       },
       "revId": "385065939060ae7aa85d9a9a65044a5d00624831",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aab7b99e_297653d0",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-20T15:55:06Z",
+      "side": 1,
+      "message": "oh just saying instead of manually using make -C ..., you can replace that command with cmake --build \u003ctarget_dir\u003e run-fuzzer\n\nthat has the same effect and i believe is the patter used for the rest of the RMM project.",
+      "parentUuid": "8c470c00_232bee12",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 8
+      },
+      "revId": "385065939060ae7aa85d9a9a65044a5d00624831",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
