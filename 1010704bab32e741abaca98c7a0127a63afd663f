@@ -255,6 +255,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e7ce44_d6e84598",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-06-20T09:10:45Z",
+      "side": 1,
+      "message": "This function is also used by CBMC, I restored it at the back of granule.h.",
+      "parentUuid": "a7a1c508_2144b432",
+      "range": {
+        "startLine": 199,
+        "startChar": 19,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f2f506a_979df13f",
