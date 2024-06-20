@@ -279,6 +279,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12f2a3b5_df3425e6",
+        "filename": "lib/granule/include/granule.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-20T13:59:50Z",
+      "side": 1,
+      "message": "Acked",
+      "parentUuid": "18e7ce44_d6e84598",
+      "range": {
+        "startLine": 199,
+        "startChar": 19,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f2f506a_979df13f",
@@ -310,6 +334,24 @@
       "side": 1,
       "message": "There is  granule_set_get_state_TC1() which calls granule_set/get_state()",
       "parentUuid": "7f2f506a_979df13f",
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9a1b5a5_134eb5fa",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-20T13:59:50Z",
+      "side": 1,
+      "message": "Ohh yes, forgot about those...",
+      "parentUuid": "c54ea280_28ad0f89",
       "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -351,6 +393,30 @@
       "side": 1,
       "message": "granule_refcount_read_acquire() doesn\u0027t check for any values passed except \nassert((g !\u003d NULL) \u0026\u0026 LOCKED(g));",
       "parentUuid": "17835f88_a680e946",
+      "range": {
+        "startLine": 402,
+        "startChar": 1,
+        "endLine": 403,
+        "endChar": 50
+      },
+      "revId": "1010704bab32e741abaca98c7a0127a63afd663f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38c6f37b_30ad3142",
+        "filename": "lib/granule/tests/granule.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-20T13:59:50Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5a24be8e_a66e5a1e",
       "range": {
         "startLine": 402,
         "startChar": 1,
