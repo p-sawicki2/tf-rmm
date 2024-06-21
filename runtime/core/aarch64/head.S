@@ -40,6 +40,36 @@
 
 	isb
 
+	/*
+	 * RMM starts with MMU disabled and expects that EL3 enters the RMM with
+	 * clean cache lines. EL3 runs with caches enabled, so, while it can ensure
+	 * cache lines are clean, it cannot ensure that cache lines for RMM memory
+	 * locations are not allocated in cache. During init, RMM writes to BSS and
+	 * .data sections with caches disabled, and we must ensure that any cache
+	 * lines containing stale data must be invalidated, so that upon turning on
+	 * MMU, we read updated (and not stale cached) values.
+	 * The following guidelines apply for RMM and EL3 during RMM init, when RMM
+	 * has caches turned off, but EL3 has caches turned on:
+	 * 1) RMM must perform invalidation on all its location on entry on primary
+	 *    core, prior to enabling MMU. This is done below. This ensures we dont
+	 *    read stale values from cache when MMU is turned on by the RMM.
+	 * 2) Any time RMM enters EL3 before MMU is enabled in R-EL2, and performs
+	 *    writes to memory locationsi after return from EL3, invalidations must
+	 *    be performed on those locations. This again ensures that any stale
+	 *    values allocated into cache belonging to RMM memory during EL3 execution
+	 *    are invalidated.
+	 * 3) Secondary CPUs must perform invalidations on the per-cpu locations
+	 *    written to before enabling MMU. This again ensures stale values are not
+	 *    read when MMU is enabled in R-EL2.
+	 * 4) EL3 must clean any data that it writes to and is in a region of memory
+	 *    accessed by the RMM. This ensures there are no dirty lines, that can be
+	 *    written back by the caches and corrupt initialization by the RMM.
+	 */
+	adrp	x0, rmm_base
+	adrp	x2, rmm_end
+	sub	x1, x2, x0
+	bl	inv_dcache_range
+
 	ldr	x1, \_is_cold_boot_flag
 	cbz	x1, 1f
 
