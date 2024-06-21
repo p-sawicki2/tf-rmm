@@ -18,6 +18,40 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7fb4ec7_2b18b197",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "My comments on the documentation",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ff1ad1b_ac4ddcca",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "rst files in RMM are formatted so that line length is less than or equal to 80 characters where possible. This document should follow this practice as well.",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd430083_9ec6707a",
@@ -36,6 +70,282 @@
         "startChar": 0,
         "endLine": 4,
         "endChar": 4
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2fd42cf_22ea2a0f",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "At",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 2
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c6fdf0d_89b95cc9",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "Capital W",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 2
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ebf826d_d18c990d",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "Unnecessary, can be removed",
+      "range": {
+        "startLine": 28,
+        "startChar": 155,
+        "endLine": 28,
+        "endChar": 160
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49f60611_8fd22420",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "This sounds like `host_setup.c` generates the random bytes itself.\n\nI would suggest rephrasing this to something like \n\n\"populates the two data structures with the fuzzing input arriving from the fuzzer\"",
+      "range": {
+        "startLine": 31,
+        "startChar": 67,
+        "endLine": 31,
+        "endChar": 126
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14514442_2861b2cf",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "This sounds to me like the RMM binary would have control over fuzzer engine.\n\nI would suggest rephrasing this to something like\n\n\"extracts the predefined number of RMI interface calls\u0027 parameters from the fuzzing input, and calls them\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 58,
+        "endLine": 32,
+        "endChar": 142
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a839746f_6b04bf8d",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "insert \"host_setup.c\"",
+      "range": {
+        "startLine": 33,
+        "startChar": 76,
+        "endLine": 33,
+        "endChar": 77
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54658885_a50ee498",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "insert \"fuzzing\"",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "098ec0a5_bbcf686f",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "insert RMM",
+      "range": {
+        "startLine": 37,
+        "startChar": 52,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b8a0bcd_c02693c0",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "Maybe rephrase a bit like:\nfrom a range that is slighly wider that the range of the existing RMI interface FIDs as defined by the RMM specification",
+      "range": {
+        "startLine": 47,
+        "startChar": 76,
+        "endLine": 47,
+        "endChar": 139
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25ef20e0_ccd4d122",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "It is probably better not to repeat the values here, so we can write\n\nthat is defined by ``RMM_MAX_GRANULES`` and ``HOST_MEM_SIZE``",
+      "range": {
+        "startLine": 86,
+        "startChar": 46,
+        "endLine": 86,
+        "endChar": 110
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ee0a27_5acf0721",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "granule size",
+      "range": {
+        "startLine": 86,
+        "startChar": 212,
+        "endLine": 86,
+        "endChar": 214
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "377eca58_5064c524",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T11:31:46Z",
+      "side": 1,
+      "message": "This might be possible to work around",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 66
       },
       "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
