@@ -16,6 +16,24 @@
       "message": "minor: Would be good to add some comments for this function as well.",
       "revId": "7c95584acc784d139c73242fb7477a12aa092a96",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96446e3b_294e3819",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-21T15:19:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7f89b6cc_1491517a",
+      "revId": "7c95584acc784d139c73242fb7477a12aa092a96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
