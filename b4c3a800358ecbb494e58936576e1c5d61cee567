@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dd26719_6cf56915",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-21T15:11:46Z",
+      "side": 1,
+      "message": "Acknowledged, patch update coming shortly.",
+      "parentUuid": "b9173e3b_5b5bfaff",
+      "range": {
+        "startLine": 82,
+        "startChar": 31,
+        "endLine": 82,
+        "endChar": 46
+      },
+      "revId": "b4c3a800358ecbb494e58936576e1c5d61cee567",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "625b87b9_9df9ec23",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-21T09:23:11Z",
       "side": 1,
       "message": "This sounds like if there was a mechanism that prevents push/pop to a queue if there is an iterator is used. I would suggest to phrase this something like \n\n\"The iterator has no way to detect if a queue it points to have changed. If q_iter_get_next is called on an iterator that iterates over a queue that changed after q_init_iterator was called for that iterator, the behavior of q_iter_get_next is undefined.\"\n\nMaybe this statement is overkill, I\u0027m OK with something simpler if you can come up something, I just would like the emphasis being on that the iterator doesn\u0027t work properly if the queue is changed, although the iterator cannot detect this situation.\n\nThe same comment could be added to the docs of q_init_iterator",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 14
+      },
+      "revId": "b4c3a800358ecbb494e58936576e1c5d61cee567",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2960ea5f_9e1ea953",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-21T15:11:46Z",
+      "side": 1,
+      "message": "Acknowledged, patch update coming shortly.",
+      "parentUuid": "625b87b9_9df9ec23",
       "range": {
         "startLine": 112,
         "startChar": 0,
