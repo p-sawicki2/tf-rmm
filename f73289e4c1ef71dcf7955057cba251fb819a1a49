@@ -52,6 +52,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cec60214_a5443c29",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ff1ad1b_ac4ddcca",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd430083_9ec6707a",
@@ -65,6 +83,30 @@
       "writtenOn": "2024-06-21T08:39:01Z",
       "side": 1,
       "message": "Lines around titles must have at least same length as the title.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 4
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fb02991_943cea1c",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd430083_9ec6707a",
       "range": {
         "startLine": 4,
         "startChar": 0,
@@ -98,6 +140,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8790f72d_08fe3f01",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2fd42cf_22ea2a0f",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 2
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c6fdf0d_89b95cc9",
@@ -111,6 +177,30 @@
       "writtenOn": "2024-06-21T11:31:46Z",
       "side": 1,
       "message": "Capital W",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 2
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b64d365_18e2916f",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c6fdf0d_89b95cc9",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -144,6 +234,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a2f2dbe_5b2b4466",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebf826d_d18c990d",
+      "range": {
+        "startLine": 28,
+        "startChar": 155,
+        "endLine": 28,
+        "endChar": 160
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49f60611_8fd22420",
@@ -167,6 +281,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2a5f9ba_07756e69",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49f60611_8fd22420",
+      "range": {
+        "startLine": 31,
+        "startChar": 67,
+        "endLine": 31,
+        "endChar": 126
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14514442_2861b2cf",
@@ -180,6 +318,30 @@
       "writtenOn": "2024-06-21T11:31:46Z",
       "side": 1,
       "message": "This sounds to me like the RMM binary would have control over fuzzer engine.\n\nI would suggest rephrasing this to something like\n\n\"extracts the predefined number of RMI interface calls\u0027 parameters from the fuzzing input, and calls them\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 58,
+        "endLine": 32,
+        "endChar": 142
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af29e8c1_ac03a827",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14514442_2861b2cf",
       "range": {
         "startLine": 32,
         "startChar": 58,
@@ -236,6 +398,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d7aebd7_bc96399f",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a839746f_6b04bf8d",
+      "range": {
+        "startLine": 33,
+        "startChar": 76,
+        "endLine": 33,
+        "endChar": 77
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b517215_fa08c1e7",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54658885_a50ee498",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "098ec0a5_bbcf686f",
@@ -259,6 +469,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e27ec29a_6c8763c5",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "098ec0a5_bbcf686f",
+      "range": {
+        "startLine": 37,
+        "startChar": 52,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b8a0bcd_c02693c0",
@@ -272,6 +506,30 @@
       "writtenOn": "2024-06-21T11:31:46Z",
       "side": 1,
       "message": "Maybe rephrase a bit like:\nfrom a range that is slighly wider that the range of the existing RMI interface FIDs as defined by the RMM specification",
+      "range": {
+        "startLine": 47,
+        "startChar": 76,
+        "endLine": 47,
+        "endChar": 139
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8806047_b09a1537",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b8a0bcd_c02693c0",
       "range": {
         "startLine": 47,
         "startChar": 76,
@@ -328,6 +586,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c579763f_cc7f4260",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11ee0a27_5acf0721",
+      "range": {
+        "startLine": 86,
+        "startChar": 212,
+        "endLine": 86,
+        "endChar": 214
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "511196f3_e52ad13e",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25ef20e0_ccd4d122",
+      "range": {
+        "startLine": 86,
+        "startChar": 46,
+        "endLine": 86,
+        "endChar": 110
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "377eca58_5064c524",
@@ -364,6 +670,24 @@
       "writtenOn": "2024-06-21T08:39:01Z",
       "side": 1,
       "message": "please remove this file",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4585972_efb3b229",
+        "filename": "plat/host/host_fuzz/README.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-21T14:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "929da255_f13513ec",
       "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
