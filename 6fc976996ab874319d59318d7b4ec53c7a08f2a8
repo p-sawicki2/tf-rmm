@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c10210c8_5a62efbd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-21T10:26:05Z",
+      "side": 1,
+      "message": "I couldn\u0027t these being used anywhere in RMM or they added as generic helpers for future use ?",
+      "revId": "6fc976996ab874319d59318d7b4ec53c7a08f2a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
