@@ -143,6 +143,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec9541d7_8fb15ed6",
+        "filename": "lib/arch/include/aarch64/memory.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-21T09:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4279671_88938caa",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 12
+      },
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3876028_849ed6bc",
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "There\u0027s assertion in __granule_assert_unlocked_invariants():\n\tcase GRANULE_STATE_RTT:\n\t\t/* Refcount cannot be greater that number of entries in an RTT */\n\t\tassert(REFCOUNT(g) \u003c\u003d\n\t\t\t(unsigned short)(GRANULE_SIZE / sizeof(uint64_t)));",
       "parentUuid": "c3876028_849ed6bc",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 2
+      },
+      "revId": "b9c0bc9bde9b159116b4ebba1125c2a211d7dbce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c9cb82a_d12500fb",
+        "filename": "lib/realm/include/granule_types.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-21T09:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36fb2e34_c834ebe3",
       "range": {
         "startLine": 208,
         "startChar": 0,
