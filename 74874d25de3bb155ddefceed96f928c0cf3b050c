@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6fdad1d_e45a1eb0",
+        "filename": "configs/libspdm/0002-fix-build-Wincompatible_pointer_types-errors.patch",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-21T10:00:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8366e0cf_56217a40",
+      "revId": "74874d25de3bb155ddefceed96f928c0cf3b050c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0ad6a8a_3b8c7aac",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-13T21:29:23Z",
       "side": 1,
       "message": "This patch may not be needed",
+      "revId": "74874d25de3bb155ddefceed96f928c0cf3b050c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb452ef2_3f0e27e7",
+        "filename": "configs/libspdm/0003-force-LIBSPDM_CONFIG-definition.patch",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-21T10:00:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0ad6a8a_3b8c7aac",
       "revId": "74874d25de3bb155ddefceed96f928c0cf3b050c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

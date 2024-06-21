@@ -288,6 +288,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14a7019c_bee62cb2",
+        "filename": "toolchains/fake_host/gnu.cmake",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-21T10:00:04Z",
+      "side": 1,
+      "message": "\u003e MbedTLS compilation when being built for RMM_CCA_DA ...\n\nI tried to build this patch separately and found this change is required by one of the top level patch. So removed this change from this patch.\n\nAnd also there is a fix to resolve duplicate symbols in https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/28569/9/configs/libspdm/0004-fix-few-build-errors.patch#31 and that is required for this patch. So I have moved that fix to this patch.",
+      "parentUuid": "fddf3b98_1bddae3f",
+      "revId": "c2230577bba6ba003aeea96ff963487bd0349e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f5a65a2_b0574c55",
