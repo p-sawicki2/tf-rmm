@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b999b83_b389c3f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T08:39:01Z",
+      "side": 1,
+      "message": "There is a single problem in the fuzzer rst file that prevents it from rendering, I commented that. I can look at the content a bit later.",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd430083_9ec6707a",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T08:39:01Z",
+      "side": 1,
+      "message": "Lines around titles must have at least same length as the title.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 4
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "929da255_f13513ec",
+        "filename": "plat/host/host_fuzz/README.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-21T08:39:01Z",
+      "side": 1,
+      "message": "please remove this file",
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
