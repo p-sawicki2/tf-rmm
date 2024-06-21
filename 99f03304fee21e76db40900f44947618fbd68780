@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44320b1e_a2b2c783",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-21T13:59:58Z",
+      "side": 1,
+      "message": "Since with the HES flow , I am not sure this step is needed any more. Will need to check details further.",
+      "revId": "99f03304fee21e76db40900f44947618fbd68780",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
