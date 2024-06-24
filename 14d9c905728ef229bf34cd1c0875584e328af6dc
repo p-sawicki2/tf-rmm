@@ -1,0 +1,274 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dbc7a74_479442e4",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "If I understand correctly, the size of a request to be put in this queue is less than 128 bytes. Why is the default is so large?",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a20d49c4_6a8e684a",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "The `_array` postfix in the name is not necessary, as there is a single response per CPU.",
+      "range": {
+        "startLine": 64,
+        "startChar": 55,
+        "endLine": 64,
+        "endChar": 61
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dfa533f_9615edc9",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "This should be a define instead of having the literal here.",
+      "range": {
+        "startLine": 78,
+        "startChar": 15,
+        "endLine": 78,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "430db230_77da4177",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "This expression is already bool, I don\u0027t think the `!!` is necessary.",
+      "range": {
+        "startLine": 97,
+        "startChar": 11,
+        "endLine": 97,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b657b11_6f355463",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "I think instead of duplicating `rec_aux_granules_init`, that function should get a new parameter called something like `rec_aux0_slot` and use that function for HES aux granules as well.",
+      "range": {
+        "startLine": 104,
+        "startChar": 13,
+        "endLine": 104,
+        "endChar": 45
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "376525ba_44a772e5",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "Why not \n    \n    memcpy((void *)shared_buf, (void *)req, sizeof(*req));\n    memset((void *)shared_buf + sizeof(*req), 0, rmm_el3_ifc_get_shared_buf_size() - sizeof(*req));",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 55
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42021d1c_516f55f9",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 181,
+        "startChar": 24,
+        "endLine": 181,
+        "endChar": 28
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d785de42_0b90d83f",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "according to `rmm_el3_ifc_release_shared_buf` documentation that function returns `EAGAIN` if the queue is full (which makes more sense than `ENOMEM`)",
+      "range": {
+        "startLine": 190,
+        "startChar": 13,
+        "endLine": 190,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e03259d5_5bbce5ae",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "Is this correct?\n\nPlease consider the following scenario where CPU0 and CPU11 calls this function simultaneously: \n - CPU0 acquires lock\n - CPU0 sets queue_lock\u003dtrue\n - CPU0 executes the function body\n - CPU0 releases the lock\n - CPU0 sets queue_lock\u003dfalse\n - CPU1 acquires the lock\n - CPU1 sets queue_lock\u003dtrue\n - CPU0 checks queue_lock and sees queue_lock\u003d\u003dtrue\n - CPU0 releases the lock\n - CPU1 Continues function body execution, with lock released!",
+      "range": {
+        "startLine": 218,
+        "startChar": 5,
+        "endLine": 218,
+        "endChar": 15
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b575eec_5aaad65a",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "Same as `queue_lock`",
+      "range": {
+        "startLine": 221,
+        "startChar": 5,
+        "endLine": 221,
+        "endChar": 20
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68730db1_dd78dcd8",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "\u0027EAGAIN\u0027 as above.",
+      "range": {
+        "startLine": 241,
+        "startChar": 13,
+        "endLine": 241,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db338876_4533709e",
+        "filename": "runtime/include/hes_queue.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T12:43:02Z",
+      "side": 1,
+      "message": "Please add documentation to functions",
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
