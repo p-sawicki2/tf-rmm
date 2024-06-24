@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bea081f3_ad3adbbd",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T09:46:34Z",
+      "side": 1,
+      "message": "This should be an assert instead. Or are there cases when it is function is expected to be called with invalid ctx?",
+      "range": {
+        "startLine": 339,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 2
+      },
+      "revId": "dbb26484354dce7f8d07a141c7e5fdf4691821a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a8c3f88_8c388979",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-24T09:46:34Z",
+      "side": 1,
+      "message": "Why is it necessary to call `attest_token_ctx_init` here? Setting ATTEST_SIGN_NOT_STARTED in the state should prevent the state machine getting here without calling `handle_rsi_attest_token_init`, which calls `attest_token_ctx_init`.",
+      "range": {
+        "startLine": 159,
+        "startChar": 2,
+        "endLine": 159,
+        "endChar": 80
+      },
+      "revId": "dbb26484354dce7f8d07a141c7e5fdf4691821a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
