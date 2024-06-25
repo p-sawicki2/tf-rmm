@@ -232,6 +232,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "459fad10_c2500cf1",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-25T19:37:48Z",
+      "side": 1,
+      "message": "Oh, That\u0027s right. Each CPU has its own copy of this variable on its own stack. My mistake",
+      "parentUuid": "3bb0e6e4_6c0bcc52",
+      "range": {
+        "startLine": 218,
+        "startChar": 5,
+        "endLine": 218,
+        "endChar": 15
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b575eec_5aaad65a",
@@ -245,6 +269,30 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "Same as `queue_lock`",
+      "range": {
+        "startLine": 221,
+        "startChar": 5,
+        "endLine": 221,
+        "endChar": 20
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "228b8286_b11b92ef",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-25T19:37:48Z",
+      "side": 1,
+      "message": "Not an issue",
+      "parentUuid": "1b575eec_5aaad65a",
       "range": {
         "startLine": 221,
         "startChar": 5,
