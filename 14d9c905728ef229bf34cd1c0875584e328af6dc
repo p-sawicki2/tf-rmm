@@ -210,6 +210,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3bb0e6e4_6c0bcc52",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-25T18:22:56Z",
+      "side": 1,
+      "message": "queue_lock is a local variable, so cpu 1 cannot see it that way no? it is a local on line 149.",
+      "parentUuid": "e03259d5_5bbce5ae",
+      "range": {
+        "startLine": 218,
+        "startChar": 5,
+        "endLine": 218,
+        "endChar": 15
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1b575eec_5aaad65a",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 3
