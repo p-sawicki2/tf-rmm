@@ -657,6 +657,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39aec59d_83edfeb8",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-06-25T13:18:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "377eca58_5064c524",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 66
+      },
+      "revId": "f73289e4c1ef71dcf7955057cba251fb819a1a49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "929da255_f13513ec",
