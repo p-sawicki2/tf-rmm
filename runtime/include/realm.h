@@ -75,6 +75,10 @@ struct rd {
 	 * rtt_tree_pp == true: Each plane has its own RTT tree.
 	 */
 	bool rtt_tree_pp;
+
+	unsigned long overlay_perms[MAX_S2_CTXS];
+
+	unsigned int overlay_perm_immutable;
 };
 COMPILER_ASSERT((U(offsetof(struct rd, measurement)) & 7U) == 0U);
 COMPILER_ASSERT(sizeof(struct rd) <= GRANULE_SIZE);
