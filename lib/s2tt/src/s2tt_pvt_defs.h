@@ -147,4 +147,25 @@
 #define NR_RTT_LEVELS_LPA2	(S2TT_PAGE_LEVEL -		\
 					S2TT_MIN_STARTING_LEVEL_LPA2 + 1)
 
+/*
+ * Mostly Read Only (MRO) encoding bit. Other Access Permission bits
+ * on a S2TEE are invalid when this bit is set.
+ */
+#define S2TTE_PERM_MRO_SHIFT			(0UL)
+#define S2TTE_PERM_MRO_WIDTH			(1UL)
+
+/*
+ * Properties of a Stage2 Access Permission Label.
+ */
+struct s2tte_label_encoding {
+	unsigned long value;
+};
+
+#define S2TTE_AP_LABEL_ENCODE(_label, _mro, _r, _w, _xn)		\
+	[S2TTE_PERM_LABEL_ ## _label] =	{				\
+		.value = (INPLACE(S2TTE_PERM_MRO, _mro) | _xn		\
+			  | INPLACE(S2TTE_PERM_R, _r)			\
+			  | INPLACE(S2TTE_PERM_W, _w))			\
+	}
+
 #endif /* S2TT_PVT_DEFS */
