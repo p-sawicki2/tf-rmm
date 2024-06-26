@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8eb59411_03c39a17",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "It is a default value. I\u0027m assuming some one who ports to their platform will be weary of the default values for options they plan to use and either change it or not. It is also aligned with the typical granule/page size, so seemed neat. Outside of using the precise value of the request size, one could ask why is it larger, smaller or almost the same. happy to change to any value you suggest.",
+      "parentUuid": "9dbc7a74_479442e4",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a20d49c4_6a8e684a",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "The `_array` postfix in the name is not necessary, as there is a single response per CPU.",
+      "range": {
+        "startLine": 64,
+        "startChar": 55,
+        "endLine": 64,
+        "endChar": 61
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1438b9b_f978372d",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a20d49c4_6a8e684a",
       "range": {
         "startLine": 64,
         "startChar": 55,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f32597ac_bbd0e929",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0dfa533f_9615edc9",
+      "range": {
+        "startLine": 78,
+        "startChar": 15,
+        "endLine": 78,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "430db230_77da4177",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "This expression is already bool, I don\u0027t think the `!!` is necessary.",
+      "range": {
+        "startLine": 97,
+        "startChar": 11,
+        "endLine": 97,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e02b897_a10e2a39",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "430db230_77da4177",
       "range": {
         "startLine": 97,
         "startChar": 11,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb6963ed_260663d3",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7b657b11_6f355463",
+      "range": {
+        "startLine": 104,
+        "startChar": 13,
+        "endLine": 104,
+        "endChar": 45
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "376525ba_44a772e5",
@@ -129,6 +249,30 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "Why not \n    \n    memcpy((void *)shared_buf, (void *)req, sizeof(*req));\n    memset((void *)shared_buf + sizeof(*req), 0, rmm_el3_ifc_get_shared_buf_size() - sizeof(*req));",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 55
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3a3e9d0_46f3472a",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "376525ba_44a772e5",
       "range": {
         "startLine": 179,
         "startChar": 0,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac4d4581_609fbe35",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "42021d1c_516f55f9",
+      "range": {
+        "startLine": 181,
+        "startChar": 24,
+        "endLine": 181,
+        "endChar": 28
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d785de42_0b90d83f",
@@ -175,6 +343,30 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "according to `rmm_el3_ifc_release_shared_buf` documentation that function returns `EAGAIN` if the queue is full (which makes more sense than `ENOMEM`)",
+      "range": {
+        "startLine": 190,
+        "startChar": 13,
+        "endLine": 190,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f1076a9_e5af94d2",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "EAGAIN in TFA and RMM turned out to be different values, and i was really surprised!!ENOMEM was consistent. I will fix the documentation to remove EAGAIN and say ENOMEM. See the two links below for TFA and linux kernel.\n\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a/+/refs/heads/integration/include/lib/libc/errno.h#86\n\nvs\n\nhttps://github.com/torvalds/linux/blob/master/tools/include/uapi/asm-generic/errno-base.h#L15\n\nENOMEM is also fine, i think, because really we are saying there is no space in the queue.",
+      "parentUuid": "d785de42_0b90d83f",
       "range": {
         "startLine": 190,
         "startChar": 13,
@@ -326,6 +518,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "921100e0_f971803a",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "See above.",
+      "parentUuid": "68730db1_dd78dcd8",
+      "range": {
+        "startLine": 241,
+        "startChar": 13,
+        "endLine": 241,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db338876_4533709e",
@@ -339,6 +555,24 @@
       "writtenOn": "2024-06-24T12:43:02Z",
       "side": 1,
       "message": "Please add documentation to functions",
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7a733be_b7009b5c",
+        "filename": "runtime/include/hes_queue.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:03:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "db338876_4533709e",
       "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
