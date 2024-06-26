@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de192b46_6ce6208d",
+        "filename": "plat/host/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:10:02Z",
+      "side": 1,
+      "message": "is there a reason arm_config_option_override wont work?",
+      "revId": "3290385e75ca332561e18e030d73ab1fcc245af5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
