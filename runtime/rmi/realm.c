@@ -207,7 +207,8 @@ static void init_s2_starting_level(struct rd *rd)
 		for (unsigned int rtte = 0U; rtte < s2ttes_per_s2tt; rtte++) {
 			if (addr_in_par(rd, current_ipa)) {
 				s2tt[rtte] = s2tte_create_unassigned_empty(s2tt_ctx,
-							S2TTE_DEFAULT_IPA_AP);
+						s2tte_update_ap_from_index(s2tt_ctx,
+							0UL, DEFAULT_PROTECTED_OVERLAY_INDEX));
 			} else {
 				s2tt[rtte] = s2tte_create_unassigned_ns(s2tt_ctx);
 			}
@@ -392,6 +393,44 @@ static void free_vmids(unsigned short *vmid_list, unsigned int vmid_cnt)
 	}
 }
 
+/*
+ * Initialize the fixed Stage 2 Access Permissions:
+ *
+ *   - All Overlay Indexes for Primary Plane are set to S2TTE_PERM_LABEL_RW_upX.
+ *   - All Overlay Indexes for Secondary Planes are set to S2TTE_PERM_LABEL_NO_ACCESS.
+ *   - First Overlay Index for Secondary Planes is marked as immutable.
+ */
+static void init_overlay_permissions(struct rd *rd)
+{
+	rd->overlay_perm_immutable = 0U;
+
+	for (unsigned int s2_ctx_idx = 0U;
+			s2_ctx_idx < realm_num_planes(rd); s2_ctx_idx++) {
+		unsigned long overlay_perm = 0UL;
+		unsigned int default_perm;
+		struct s2tt_context *s2_ctx = s2_context(rd, s2_ctx_idx);
+
+		/* Default Access Permissions for Protected IPA space */
+		default_perm = (s2_ctx_idx == PRIMARY_PLANE_ID) ?
+						S2TTE_PERM_LABEL_RW_upX :
+						S2TTE_PERM_LABEL_NO_ACCESS;
+
+		for (unsigned int ap_index = 0U;
+				ap_index < S2TTE_PERM_INDEX_COUNT; ap_index++) {
+			/* Configure Access Permission indexes */
+			overlay_perm = s2tt_update_overlay_perms(s2_ctx,
+						overlay_perm, ap_index,
+						default_perm);
+		}
+
+
+		s2_ctx->overlay_perm = overlay_perm;
+	}
+
+	/* Lock the status of Index 0 for overlay values on secondary planes */
+	rd->overlay_perm_immutable |= 1U;
+}
+
 unsigned long smc_realm_create(unsigned long rd_addr,
 			       unsigned long realm_params_addr)
 {
@@ -464,6 +503,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 		s2tt_ctx->s2_starting_level = (int)p.rtt_level_start;
 		s2tt_ctx->num_root_rtts = p.rtt_num_start;
 		s2tt_ctx->enable_lpa2 = is_lpa2_requested(&p);
+		s2tt_ctx->s2ap_enabled = !rd->rtt_tree_pp;
 		s2tt_ctx->vmid = vmid[i];
 	}
 
@@ -485,6 +525,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 	rd->pmu_enabled = EXTRACT(RMI_REALM_FLAGS_PMU, p.flags) != 0UL;
 	rd->pmu_num_ctrs = p.pmu_num_ctrs;
 
+	init_overlay_permissions(rd);
 	init_s2_starting_level(rd);
 
 	measurement_realm_params_measure(rd->measurement[RIM_MEASUREMENT_SLOT],

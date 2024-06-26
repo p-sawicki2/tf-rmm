@@ -37,6 +37,15 @@ struct s2tt_context {
 
 	/* If FEAT_LPA2 is enabled */
 	bool enable_lpa2;
+
+	/* S2AP enabled */
+	bool s2ap_enabled;
+
+	/*
+	 * Overlay permissions for this context. This field is
+	 * specific to each plane.
+	 */
+	unsigned long overlay_perm;
 };
 
 #define S2TT_MIN_IPA_BITS		U(32)
@@ -88,9 +97,43 @@ struct s2tt_context {
 #define S2TTE_PERM_XNU_XP		(INPLACE(S2TTE_PERM_XN, 3UL))
 
 /*
- * Default value for Access Permissions on a protected IPA.
+ * Possible permission access labels. For compatibility with a future S2AP
+ * library based on FEAT_S2PIE and FEAT_S2PIO, the labels defined here are
+ * compatible with the ones on such feature. This might be removed later
+ * when the S2AP library is implemented.
  */
-#define S2TTE_DEFAULT_IPA_AP		(S2TTE_AP_MASK | S2TTE_PERM_XU_XP)
+#define S2TTE_PERM_LABEL_NO_ACCESS		(0U)
+#define S2TTE_PERM_LABEL_RESERVED_1		(1U)
+#define S2TTE_PERM_LABEL_MRO			(2U)
+#define S2TTE_PERM_LABEL_MRO_TL1		(3U)
+#define S2TTE_PERM_LABEL_WO			(4U)
+#define S2TTE_PERM_LABEL_RESERVED_5		(5U)
+#define S2TTE_PERM_LABEL_MRO_TL0		(6U)
+#define S2TTE_PERM_LABEL_MRO_TL01		(7U)
+#define S2TTE_PERM_LABEL_RO			(8U)
+#define S2TTE_PERM_LABEL_RO_uX			(9U)
+#define S2TTE_PERM_LABEL_RO_pX			(10U)
+#define S2TTE_PERM_LABEL_RO_upX			(11U)
+#define S2TTE_PERM_LABEL_RW			(12U)
+#define S2TTE_PERM_LABEL_RW_uX			(13U)
+#define S2TTE_PERM_LABEL_RW_pX			(14U)
+#define S2TTE_PERM_LABEL_RW_upX			(15U)
+
+/* Number of different permission labels */
+#define S2TTE_PERM_LABEL_COUNT			(16U)
+
+/*
+ * Size in bits and mask of the Permission Indirection Index value.
+ * This might be removed later when the S2AP library is implemented.
+ */
+#define S2TTE_PII_WIDTH				(4U)
+#define S2TTE_PII_MASK				((1UL << S2TTE_PII_WIDTH) - 1UL)
+
+/*
+ * Maximum number of encodings in Base or Overlay permissions.
+ * This will be removed later when the S2AP library is implemented.
+ */
+#define S2TTE_PERM_INDEX_COUNT			(15U)
 
 /*
  * The MMU is a separate observer, and requires that translation table updates
@@ -183,6 +226,18 @@ bool s2tte_is_addr_lvl_aligned(const struct s2tt_context *s2_ctx,
 enum ripas s2tte_get_ripas(const struct s2tt_context *s2_ctx,
 			   unsigned long s2tte);
 
+unsigned long s2tte_update_ap_from_index(const struct s2tt_context *s2_ctx,
+					 unsigned long s2tte,
+					 unsigned int index);
+
+static inline bool s2tte_is_perm_index_valid(const struct s2tt_context *s2_ctx,
+					     unsigned int index)
+{
+	(void)s2_ctx;
+
+	return !!(index < S2TTE_PERM_INDEX_COUNT);
+}
+
 /***************************************************************************
  * Helpers for Stage 2 Translation Tables  (S2TT).
  **************************************************************************/
@@ -251,5 +306,54 @@ unsigned long s2tt_skip_non_live_entries(const struct s2tt_context *s2_ctx,
 					 unsigned long addr,
 					 unsigned long *table,
 					 const struct s2tt_walk *wi);
+
+/*
+ * Set a S2 context overlay permissions while holding the RD granule lock.
+ */
+static inline void s2tt_set_ctx_overlay_perm(const struct s2tt_context *s2_ctx,
+					     unsigned long val)
+{
+	assert(s2_ctx != NULL);
+
+	SCA_WRITE64_RELEASE(s2_ctx->overlay_perm, val);
+}
+
+/*
+ * Get a S2 context overlay permissions while holding the RD granule lock.
+ */
+static inline unsigned long s2tt_get_ctx_overlay_perm_locked(
+					const struct s2tt_context *s2_ctx)
+{
+	assert(s2_ctx != NULL);
+
+	return SCA_READ64(&s2_ctx->overlay_perm);
+}
+
+/*
+ * Get a S2 overlay permissions without holding the RD granule lock.
+ */
+static inline unsigned long s2tt_get_ctx_overlay_perm_unlocked(
+					const struct s2tt_context *s2_ctx)
+{
+	assert(s2_ctx != NULL);
+
+	return SCA_READ64_ACQUIRE(&s2_ctx->overlay_perm);
+}
+
+/*
+ * Update the Access Permission @perm[@index] with the value @perm.
+ */
+static inline unsigned long s2tt_update_overlay_perms(
+					const struct s2tt_context *s2_ctx,
+					unsigned long perms,
+					unsigned int index,
+					unsigned int perm)
+{
+	assert(s2tte_is_perm_index_valid(s2_ctx, index));
+	assert(perm < S2TTE_PERM_LABEL_COUNT);
+
+	perms &= ~(S2TTE_PII_MASK << (S2TTE_PII_WIDTH * index));
+	return perms | ((unsigned long)perm  << (S2TTE_PII_WIDTH * index));
+}
 
 #endif /* S2TT_H */

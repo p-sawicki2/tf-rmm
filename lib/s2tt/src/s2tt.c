@@ -866,6 +866,62 @@ enum ripas s2tte_get_ripas(const struct s2tt_context *s2_ctx, unsigned long s2tt
 }
 
 /*
+ * Table containing label encodings for Access Permissions. For compatibility
+ * with a future S2AP library based on FEAT_S2PIE and FEAT_S2PIO, the encoded
+ * labels are equivalent to the ones on such features.
+ */
+const struct s2tte_label_encoding ap_encodings[S2TTE_PERM_LABEL_COUNT] = {
+	/*                     Label	       MRO R  W      EXEC	    */
+	S2TTE_AP_LABEL_ENCODE(NO_ACCESS,	0, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RESERVED_1,	0, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(MRO,		1, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(MRO_TL1,		1, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(WO,		0, 0, 1, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RESERVED_5,	0, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(MRO_TL0,		1, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(MRO_TL01,		1, 0, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RO,		0, 1, 0, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RO_uX,		0, 1, 0, S2TTE_PERM_XU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RO_pX,		0, 1, 0, S2TTE_PERM_XNU_XP),
+	S2TTE_AP_LABEL_ENCODE(RO_upX,		0, 1, 0, S2TTE_PERM_XU_XP),
+	S2TTE_AP_LABEL_ENCODE(RW,		0, 1, 1, S2TTE_PERM_XNU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RW_uX,		0, 1, 1, S2TTE_PERM_XU_XNP),
+	S2TTE_AP_LABEL_ENCODE(RW_pX,		0, 1, 1, S2TTE_PERM_XNU_XP),
+	S2TTE_AP_LABEL_ENCODE(RW_upX,		0, 1, 1, S2TTE_PERM_XU_XP)
+};
+
+/*
+ * Update a given S2TTE with the Access Permissions specified by the
+ * value @index and the configuration @s2_ctx->overlay_perm.
+ */
+unsigned long s2tte_update_ap_from_index(const struct s2tt_context *s2_ctx,
+					 unsigned long s2tte,
+					 unsigned int index)
+{
+	unsigned int label_idx;
+	unsigned long ap;
+	unsigned long permissions;
+
+	assert(s2_ctx != NULL);
+	assert(s2tte_is_perm_index_valid(s2_ctx, index));
+
+	/* S2AP not supported yet */
+	assert(s2_ctx->s2ap_enabled == false);
+
+	/* @TODO: Double check if RD is locked or unlocked here */
+	permissions = s2tt_get_ctx_overlay_perm_unlocked(s2_ctx);
+	label_idx = (permissions  >>
+			((unsigned long)index * S2TTE_PII_WIDTH)) & S2TTE_PII_MASK;
+
+	ap = ap_encodings[label_idx].value;
+
+	/* MRO not supported if S2AP is not available */
+	assert((ap & MASK(S2TTE_PERM_MRO)) == 0UL);
+
+	return (s2tte & ~S2TTE_PERM_MASK) | ap;
+}
+
+/*
  * Populates @s2tt with unassigned_empty s2ttes with the given
  * access permissions.
  *
