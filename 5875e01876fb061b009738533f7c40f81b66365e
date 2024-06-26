@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec27d43d_9e0d4680",
+        "filename": "cmake/CommonConfigs.cmake",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-26T09:55:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f80cdfbc_1d03ea7e",
+      "range": {
+        "startLine": 64,
+        "startChar": 49,
+        "endLine": 64,
+        "endChar": 50
+      },
+      "revId": "5875e01876fb061b009738533f7c40f81b66365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6586616_a9572db8",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-06-25T16:07:25Z",
       "side": 1,
       "message": "should the folder name be just \"libspdm\"  ?",
+      "revId": "5875e01876fb061b009738533f7c40f81b66365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91acb888_c2cfa5c4",
+        "filename": "lib/spdm_requester/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-26T09:55:01Z",
+      "side": 1,
+      "message": "\u003e should the folder name be just \"libspdm\"  ?\n\nexplicitly named it spdm_requester as only requester libs are compiled and not the whole libspdm project.",
+      "parentUuid": "c6586616_a9572db8",
       "revId": "5875e01876fb061b009738533f7c40f81b66365e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04f95629_713fed25",
+        "filename": "lib/spdm_requester/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-26T09:55:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "034897c6_01b7d873",
+      "range": {
+        "startLine": 20,
+        "startChar": 34,
+        "endLine": 22,
+        "endChar": 60
+      },
+      "revId": "5875e01876fb061b009738533f7c40f81b66365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc45900e_43a5b31b",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c5f0363_e8a5bd95",
+        "filename": "lib/spdm_requester/CMakeLists.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-26T09:55:01Z",
+      "side": 1,
+      "message": "Done\n\nAlso updated .gitignore file",
+      "parentUuid": "bc45900e_43a5b31b",
+      "revId": "5875e01876fb061b009738533f7c40f81b66365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7a9f1e8_0293737e",
@@ -94,6 +178,24 @@
       "writtenOn": "2024-06-25T16:07:25Z",
       "side": 1,
       "message": "an be removed when fetched to ext/libspdm",
+      "revId": "5875e01876fb061b009738533f7c40f81b66365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ac6a2e_e23d1979",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-06-26T09:55:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7a9f1e8_0293737e",
       "revId": "5875e01876fb061b009738533f7c40f81b66365e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
