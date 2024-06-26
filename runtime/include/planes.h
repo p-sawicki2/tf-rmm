@@ -25,4 +25,7 @@
 /* Maximum number of Stage 2 Translation contexts needed per realm */
 #define MAX_S2_CTXS			(RMM_MAX_TOTAL_PLANES)
 
+/* Default Overlay Permission Index for Protected IPA */
+#define DEFAULT_PROTECTED_OVERLAY_INDEX	(0U)
+
 #endif /* PLANES_H */

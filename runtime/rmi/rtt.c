@@ -9,6 +9,7 @@
 #include <errno.h>
 #include <granule.h>
 #include <measurement.h>
+#include <planes.h>
 #include <realm.h>
 #include <ripas.h>
 #include <s2tt.h>
@@ -73,6 +74,16 @@ static bool validate_rtt_entry_cmds(unsigned long map_addr,
 		return false;
 	}
 	return validate_map_addr(map_addr, level, rd);
+}
+
+/*
+ * On a change of RIPAS from any other value to RAM, the AP of the target
+ * protected IPA must be set to DEFAULT_PROTECTED_OVERLAY_INDEX.
+ */
+static unsigned long default_protected_ap(const struct s2tt_context *s2_ctx)
+{
+	return s2tte_update_ap_from_index(s2_ctx, 0UL,
+					  DEFAULT_PROTECTED_OVERLAY_INDEX);
 }
 
 unsigned long smc_rtt_create(unsigned long rd_addr,
@@ -146,7 +157,14 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 		__granule_get(wi.g_llt);
 
 	} else if (s2tte_is_unassigned_ram(&s2_ctx, parent_s2tte)) {
-		s2tt_init_unassigned_ram(&s2_ctx, s2tt, parent_s2tte);
+		/*
+		 * @TODO: Double check that the AP in this case are correct, as
+		 * the spec states that on a change of RIPAS from any other value
+		 * to RAM the AP should be equivalent to the overlay index
+		 * DEFAULT_PROTECTED_OVERLAY_INDEX but here we are creating
+		 * a new table.
+		 */
+		s2tt_init_unassigned_ram(&s2_ctx, s2tt, default_protected_ap(&s2_ctx));
 		__granule_get(wi.g_llt);
 
 	} else if (s2tte_is_unassigned_ns(&s2_ctx, parent_s2tte)) {
@@ -215,7 +233,15 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 
 		block_pa = s2tte_pa(&s2_ctx, parent_s2tte, level - 1L);
 
-		s2tt_init_assigned_ram(&s2_ctx, s2tt, block_pa, level, parent_s2tte);
+		/*
+		 * @TODO: Double check that the AP in this case are correct, as
+		 * the spec states that on a change of RIPAS from any other value
+		 * to RAM the AP should be equivalent to the overlay index
+		 * DEFAULT_PROTECTED_OVERLAY_INDEX but here we are creating
+		 * a new table.
+		 */
+		s2tt_init_assigned_ram(&s2_ctx, s2tt, block_pa, level,
+					default_protected_ap(&s2_ctx));
 		/*
 		 * Increase the refcount to mark the granule as in-use. refcount
 		 * is incremented by S2TTES_PER_S2TT (ref RTT unfolding).
@@ -566,7 +592,8 @@ void smc_rtt_destroy(unsigned long rd_addr,
 		 * deleted.
 		 */
 		parent_s2tte = s2tte_create_unassigned_destroyed(&s2_ctx,
-							S2TTE_DEFAULT_IPA_AP);
+				s2tte_update_ap_from_index(&s2_ctx, 0UL,
+					DEFAULT_PROTECTED_OVERLAY_INDEX));
 	} else {
 		parent_s2tte = s2tte_create_unassigned_ns(&s2_ctx);
 	}
@@ -952,6 +979,7 @@ static unsigned long data_create(unsigned long rd_addr,
 
 	if (g_src != NULL) {
 		bool ns_access_ok;
+		unsigned long ap;
 		void *data = buffer_granule_map(g_data, SLOT_DELEGATED);
 
 		assert(data != NULL);
@@ -977,13 +1005,19 @@ static unsigned long data_create(unsigned long rd_addr,
 			flags);
 		buffer_unmap(data);
 
-		/*
-		 * Create a new s2tte with HIPAS assigned and RIPAS
-		 * RAM and the same access permissions as on the original
-		 * s2tte.
-		 */
+		if (s2tte_is_assigned_ram(s2_ctx, s2tte, S2TT_PAGE_LEVEL)) {
+			/* Maintain same access permissions */
+			ap = s2tte;
+		} else {
+			/*
+			 * If changing the RIPAS to RAM, set the default
+			 * access permissions.
+			 */
+			ap = default_protected_ap(s2_ctx);
+		}
+
 		s2tte = s2tte_create_assigned_ram(s2_ctx, data_addr,
-						  S2TT_PAGE_LEVEL, s2tte);
+						  S2TT_PAGE_LEVEL, ap);
 	} else {
 
 		s2tte = s2tte_create_assigned_unchanged(s2_ctx, s2tte,
@@ -1153,22 +1187,24 @@ static int update_ripas(const struct s2tt_context *s2_ctx,
 
 	if (ripas_val == RIPAS_RAM) {
 		if (s2tte_is_unassigned_empty(s2_ctx, s2tte)) {
-			s2tte = s2tte_create_unassigned_ram(s2_ctx, s2tte);
+			s2tte = s2tte_create_unassigned_ram(s2_ctx,
+						default_protected_ap(s2_ctx));
 		} else if (s2tte_is_unassigned_destroyed(s2_ctx, s2tte)) {
 			if (change_destroyed == CHANGE_DESTROYED) {
-				s2tte = s2tte_create_unassigned_ram(s2_ctx, s2tte);
+				s2tte = s2tte_create_unassigned_ram(s2_ctx,
+						default_protected_ap(s2_ctx));
 			} else {
 				return -EINVAL;
 			}
 		} else if (s2tte_is_assigned_empty(s2_ctx, s2tte, level)) {
 			pa = s2tte_pa(s2_ctx, s2tte, level);
 			s2tte = s2tte_create_assigned_ram(s2_ctx, pa, level,
-							  s2tte);
+						default_protected_ap(s2_ctx));
 		} else if (s2tte_is_assigned_destroyed(s2_ctx, s2tte, level)) {
 			if (change_destroyed == CHANGE_DESTROYED) {
 				pa = s2tte_pa(s2_ctx, s2tte, level);
 				s2tte = s2tte_create_assigned_ram(s2_ctx, pa,
-								  level, s2tte);
+					level, default_protected_ap(s2_ctx));
 			} else {
 				return -EINVAL;
 			}
@@ -1293,7 +1329,8 @@ void smc_rtt_init_ripas(unsigned long rd_addr,
 
 		s2tte = s2tte_read(&s2tt[index]);
 		if (s2tte_is_unassigned_empty(s2_ctx, s2tte)) {
-			s2tte = s2tte_create_unassigned_ram(s2_ctx, s2tte);
+			s2tte = s2tte_create_unassigned_ram(s2_ctx,
+						default_protected_ap(s2_ctx));
 			s2tte_write(&s2tt[index], s2tte);
 		} else if (!s2tte_is_unassigned_ram(s2_ctx, s2tte)) {
 			break;
