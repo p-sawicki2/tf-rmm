@@ -16,6 +16,24 @@
       "message": "is there a reason arm_config_option_override wont work?",
       "revId": "3290385e75ca332561e18e030d73ab1fcc245af5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28b242e_42a5cadd",
+        "filename": "plat/host/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-26T07:15:18Z",
+      "side": 1,
+      "message": "This change is to enable `arm_config_option_override` to work in the host variant\u0027s CMake file. It turns out that `arm_config_option_override` must be called *before* `arm_config_option`.",
+      "parentUuid": "de192b46_6ce6208d",
+      "revId": "3290385e75ca332561e18e030d73ab1fcc245af5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
