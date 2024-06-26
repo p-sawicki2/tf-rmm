@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28a9270b_89d747b7",
+        "filename": "lib/queue/include/queue.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:01:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d7cb6a16_4d797084",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 65
+      },
+      "revId": "5d0ed3af668abf3eb40ae2ec0053e45bd26e26fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6d7dc9e_570bd82e",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-24T08:35:06Z",
       "side": 1,
       "message": "Subexpressions that are being OR-ed (||) needs to be enclosed in parentheses.\ni.e.: \n\n\tif ((q-\u003eread !\u003d 0U) || (q-\u003elength !\u003d 0U) || (q-\u003ecapacity \u003d\u003d 0U) ||\n\t    (q-\u003eelement_size \u003d\u003d 0U) || (q-\u003ebuffer \u003d\u003d NULL)) {",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "5d0ed3af668abf3eb40ae2ec0053e45bd26e26fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c4c27de_009d5a27",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:01:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d6d7dc9e_570bd82e",
       "range": {
         "startLine": 21,
         "startChar": 5,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eca2103d_6e8b8713",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:01:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e134e9d6_a9c3cf94",
+      "range": {
+        "startLine": 26,
+        "startChar": 42,
+        "endLine": 26,
+        "endChar": 43
+      },
+      "revId": "5d0ed3af668abf3eb40ae2ec0053e45bd26e26fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61151ce2_20f2fee9",
@@ -100,6 +172,30 @@
       "writtenOn": "2024-06-24T08:35:06Z",
       "side": 1,
       "message": "The return value of memset and memcpy must be used.\ni.e:\n\n\t(void)memset(\u0026buffer[index * q-\u003eelement_size], 0, q-\u003eelement_size);",
+      "range": {
+        "startLine": 81,
+        "startChar": 1,
+        "endLine": 81,
+        "endChar": 7
+      },
+      "revId": "5d0ed3af668abf3eb40ae2ec0053e45bd26e26fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49f67f9f_f37ae7f0",
+        "filename": "lib/queue/src/queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-26T04:01:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "61151ce2_20f2fee9",
       "range": {
         "startLine": 81,
         "startChar": 1,
