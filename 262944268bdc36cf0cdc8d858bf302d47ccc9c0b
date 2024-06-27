@@ -16,6 +16,24 @@
       "message": "Hi Raghu,\n\nThank you for contributing to RMM. This patch is necessary because the PSA sign calls that are going to the Mbed TLS crypto engine must be intercepted, and be forwarded to the HES. \nHowever the the implementation is not very clean, as it is defining a new adaption layer to t_cose. The adaption layer belongs to t_cose, but unfortunately I don\u0027t see how this code could be upstreamed there. Keeping this file in the tf-rmm repository could work, but the adaption layer cannot be considered a standard external interface, so it is subject to change from t_cose release to release. Also later we might want to change the CMake system to build the t_cose library with the t_cose CMake system, which breaks this solution.\nAfter some internal discussion, an idea came up that instead of doing this, the calls should be intercepted in the Mbed TLS driver layer. According to this documentation https://github.com/Mbed-TLS/mbedtls/blob/development/docs/proposed/psa-driver-interface.md it should be possible to register drivers that are called by the PSA interface instead of Mbed TLS builtin sign implementations. the driver code then can forward the calls to the HES. Another trustedfirmware.org project, TF-M, is doing something similar, providing drivers for a crypto accelerator. The implementation is here: https://git.trustedfirmware.org/TF-M/trusted-firmware-m/+/refs/heads/main/platform/ext/accelerator/cc312/cc312-rom/psa_driver_api/src/\nIt would be really good if this change could be refactored so that it imlements PSA Cryptoprocessor Drivers, and registers them in Mbed TLS.",
       "revId": "262944268bdc36cf0cdc8d858bf302d47ccc9c0b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3328e46_5b4ca8e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-27T21:48:46Z",
+      "side": 1,
+      "message": "Hi Mate, fair comments :) I had two choices, t_cose layer or mbedtls hooks, and picked t_cose since i thought after looking at the code that would be the lower lift and faster path w.r.t minimizing changes. I think t_cose may have made a poor choice by keeping the adapters there instead of allowing it to be outside and if we can ask them how stable they expect the adaptation layer/ABI to be, that would help. we might want to do this in the future too. I will see if i can follow up with the t_cose maintainer. Fundamentally, the t_cose adaptation layer is doing exactly what mbedtls driver or openssl engine layer does, but made it \"private\". \n\nHaving said that, let me refactor to hook at mbedtls instead of t_cose. If you have suggestions on where the \"adapter\" should live let me know, but i will plan to put it in the rmm mbedtls folder.\u003d, similar to what i did for t_cose adapter (if it was public ;))",
+      "parentUuid": "fbb212e3_66d86022",
+      "revId": "262944268bdc36cf0cdc8d858bf302d47ccc9c0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
