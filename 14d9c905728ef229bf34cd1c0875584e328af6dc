@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "776a28b7_44d5d923",
+        "filename": "runtime/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-27T09:08:29Z",
+      "side": 1,
+      "message": "I might be mistaken, but it seems to be that the definition of `struct hes_attest_request_s` is defined by te EL3-RMM interface. So to change the definition one needs to touch generic RMM code. So Actually I would argue that this shouldn\u0027t be a config option, but could be defined to a power of two that is larger than the structure size. also adding a COMPILER_ASSERT comparing the element size define and the struct size would help easily detect if a later change to the struct exceeds the size.",
+      "parentUuid": "8eb59411_03c39a17",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a20d49c4_6a8e684a",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 3
@@ -367,6 +391,30 @@
       "side": 1,
       "message": "EAGAIN in TFA and RMM turned out to be different values, and i was really surprised!!ENOMEM was consistent. I will fix the documentation to remove EAGAIN and say ENOMEM. See the two links below for TFA and linux kernel.\n\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a/+/refs/heads/integration/include/lib/libc/errno.h#86\n\nvs\n\nhttps://github.com/torvalds/linux/blob/master/tools/include/uapi/asm-generic/errno-base.h#L15\n\nENOMEM is also fine, i think, because really we are saying there is no space in the queue.",
       "parentUuid": "d785de42_0b90d83f",
+      "range": {
+        "startLine": 190,
+        "startChar": 13,
+        "endLine": 190,
+        "endChar": 19
+      },
+      "revId": "14d9c905728ef229bf34cd1c0875584e328af6dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bdfaa6c_c8b2e02c",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-06-27T09:08:29Z",
+      "side": 1,
+      "message": "Strange. ENOMEM should be fine.",
+      "parentUuid": "9f1076a9_e5af94d2",
       "range": {
         "startLine": 190,
         "startChar": 13,
