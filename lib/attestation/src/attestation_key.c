@@ -102,10 +102,13 @@ int attest_init_realm_attestation_key(void)
 	/* Clear the private key from the buffer */
 	(void)memset((uint8_t *)buf, 0, attest_key_size);
 
+	rmm_el3_ifc_release_shared_buf();
+
 	if (ret != PSA_SUCCESS) {
+		ERROR("psa_import_key has failed\n");
+		psa_reset_key_attributes(&key_attributes);
 		return -EINVAL;
 	}
-	attest_signing_key_loaded = true;
 
 	/* Get the RMM public attestation key */
 	ret = psa_export_public_key(attest_signing_key,
@@ -114,6 +117,8 @@ int attest_init_realm_attestation_key(void)
 				    &realm_attest_public_key_len);
 	if (ret != PSA_SUCCESS) {
 		ERROR("psa_export_public_key has failed\n");
+		psa_reset_key_attributes(&key_attributes);
+		psa_destroy_key(attest_signing_key);
 		rmm_el3_ifc_release_shared_buf();
 		return -EINVAL;
 	}
@@ -131,8 +136,7 @@ int attest_init_realm_attestation_key(void)
 		return -EINVAL;
 	}
 
-	rmm_el3_ifc_release_shared_buf();
-
+	attest_signing_key_loaded = true;
 	return 0;
 }
 
