@@ -48,7 +48,16 @@ static const struct rsi_handler rsi_logger[] = {
 	RSI_FUNCTION(_REALM_CONFIG, 1U, 0U),		/* 0xC4000196 */
 	RSI_FUNCTION(_IPA_STATE_SET, 4U, 2U),		/* 0xC4000197 */
 	RSI_FUNCTION(_IPA_STATE_GET, 1U, 1U),		/* 0xC4000198 */
-	RSI_FUNCTION(_HOST_CALL, 1U, 0U)		/* 0xC4000199 */
+	RSI_FUNCTION(_HOST_CALL, 1U, 0U),		/* 0xC4000199 */
+	{ 0 },						/* 0xC400019A */
+	{ 0 },						/* 0xC400019B */
+	{ 0 },						/* 0xC400019C */
+	{ 0 },						/* 0xC400019D */
+	{ 0 },						/* 0xC400019E */
+	{ 0 },						/* 0xC400019F */
+	RSI_FUNCTION(_MEM_GET_PERM_VALUE, 2U, 1U),	/* 0xC40001A0 */
+	RSI_FUNCTION(_MEM_SET_PERM_INDEX, 4U, 1U),	/* 0xC40001A1 */
+	RSI_FUNCTION(_MEM_SET_PERM_VALUE, 3U, 0U)	/* 0xC40001A2 */
 };
 
 #define RSI_STATUS_STRING(_id)[RSI_##_id] = #_id
@@ -74,7 +83,12 @@ static size_t print_entry(unsigned int id, unsigned long args[],
 	int cnt;
 
 	switch (id) {
-	case SMC_RSI_VERSION ... SMC_RSI_HOST_CALL: {
+	case SMC_RSI_VERSION ... SMC_RSI_HOST_CALL:
+	/*
+	 * Fall-through as the FIDs betwen RSI_HOST_CALL and
+	 * RSI_MEM_GET_PERM_VALUE are not used.
+	 */
+	case SMC_RSI_MEM_GET_PERM_VALUE ... SMC_RSI_MEM_SET_PERM_VALUE : {
 		const struct rsi_handler *logger = fid_to_rsi_logger(id);
 
 		num = logger->num_args;
@@ -142,8 +156,13 @@ void rsi_log_on_exit(unsigned int function_id, unsigned long args[],
 	int cnt;
 
 	switch (function_id) {
-	case SMC_RSI_VERSION ... SMC_RSI_HOST_CALL: {
-		const struct rsi_handler *logger =
+	case SMC_RSI_VERSION ... SMC_RSI_HOST_CALL:
+	/*
+	 * Fall-through as the FIDs betwen RSI_HOST_CALL and
+	 * RSI_MEM_GET_PERM_VALUE are not used.
+	 */
+	case SMC_RSI_MEM_GET_PERM_VALUE ... SMC_RSI_MEM_SET_PERM_VALUE : {
+			const struct rsi_handler *logger =
 				fid_to_rsi_logger(function_id);
 
 		/* Print status */
