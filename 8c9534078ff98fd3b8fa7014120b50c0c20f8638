@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcd2a8e0_011a01cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 32
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-06-28T12:41:11Z",
+      "side": 1,
+      "message": "Hi Vivek, can this patch be reworked according to review comments ?",
+      "revId": "8c9534078ff98fd3b8fa7014120b50c0c20f8638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
