@@ -196,6 +196,17 @@ COMPILER_ASSERT(U(offsetof(struct rec_plane, sp_el0)) ==
 	(U(offsetof(struct rec_plane, regs)) +
 	 U(sizeof(unsigned long) * RMM_REC_SAVED_GEN_REG_COUNT)));
 
+/*
+ * The RmmRecResponse enumeration represents whether the Host accepted
+ * or rejected a Realm request.
+ *
+ * Map RmmRecResponse to RmiResponse to simplify check operation.
+ */
+enum host_response {
+	ACCEPT = RMI_ACCEPT,	/* Host accepted Realm request */
+	REJECT = RMI_REJECT	/* Host rejected Realm request */
+};
+
 struct rec {
 	struct granule *g_rec;	/* the granule in which this REC lives */
 	unsigned long rec_idx;	/* which REC is this */
@@ -220,8 +231,20 @@ struct rec {
 		unsigned long addr;
 		enum ripas ripas_val;
 		enum ripas_change_destroyed change_destroyed;
-		enum ripas_response response;
+		enum host_response response;
 	} set_ripas;
+
+	/*
+	 * Populated when the REC issues a request to change
+	 * Overlay Permission Index.
+	 */
+	struct {
+		unsigned long top;
+		unsigned long base;
+		unsigned long index;
+		unsigned long cookie;
+		enum host_response response;
+	} set_s2ap;
 
 	/*
 	 * Common values across all RECs in a Realm.
