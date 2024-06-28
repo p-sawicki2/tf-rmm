@@ -102,6 +102,83 @@ static void complete_set_ripas(struct rec *rec)
 	rec->set_ripas.top = 0UL;
 }
 
+static void set_perm_immutable(struct rd *rd, unsigned long perm_index)
+{
+	rd->overlay_perm_immutable |= (1UL << perm_index);
+}
+
+static void complete_set_s2ap(struct rec *rec)
+{
+	struct rec_plane *plane = rec_active_plane(rec);
+	struct rd *rd;
+	bool rtt_tree_pp;
+	unsigned long new_base;
+	unsigned long next_s2tt_idx;
+	unsigned long cookie = 0UL;
+
+	/* S2AP change request can only come from Plane 0. */
+	assert(plane == rec_primary_plane(rec));
+
+	if ((rec->set_s2ap.base == 0UL) && (rec->set_s2ap.top == 0UL)) {
+		/* No S2AP index change pending. Just return */
+		return;
+	}
+
+	granule_lock(rec->realm_info.g_rd, GRANULE_STATE_RD);
+	rd = buffer_granule_map(rec->realm_info.g_rd, SLOT_RD);
+	rtt_tree_pp = rd->rtt_tree_pp;
+
+	if (rec->set_s2ap.response != REJECT) {
+		set_perm_immutable(rd, rec->set_s2ap.index);
+	}
+
+	buffer_unmap(rd);
+	granule_unlock(rec->realm_info.g_rd);
+
+	new_base = rec->set_s2ap.base;
+	if (rtt_tree_pp) {
+		/*
+		 * If we have updated the whole range of IPAs for the current
+		 * tree, we need to verify if there are pending RTT trees to
+		 * update and then create a new cookie to track the progress to
+		 * the next tree starting at base IPA.
+		 *
+		 * If, on the other hand, we haven't updated the whole range of
+		 * IPAs for the current tree, update the cookie with the new
+		 * base and the current tree index.
+		 *
+		 * Note that the current cookie contains the base addr and the
+		 * tree index from the last RSI_MEM_SET_PERM_INDEX call.
+		 */
+		cookie = rec->set_s2ap.cookie;
+		next_s2tt_idx = cookie & ~GRANULE_MASK;
+		assert(next_s2tt_idx < rec_num_planes(rec));
+
+		if ((new_base == rec->set_s2ap.top) &&
+		    ((next_s2tt_idx + 1UL) < rec_num_planes(rec))) {
+			/*
+			 * The current cookie should have the value of the
+			 * original base, which will be used to create a new
+			 * cookie to point to the base of the next RTT tree.
+			 */
+			new_base = cookie & GRANULE_MASK;
+			next_s2tt_idx++;
+		}
+
+		cookie = new_base | next_s2tt_idx;
+	}
+
+	rec->set_s2ap.base = 0UL;
+	rec->set_s2ap.top = 0UL;
+	rec->set_s2ap.index = 0UL;
+	rec->set_s2ap.cookie = 0UL;
+
+	plane->regs[0] = RSI_SUCCESS;
+	plane->regs[1] = new_base;
+	plane->regs[2] = rec->set_s2ap.response;
+	plane->regs[3] = cookie;
+}
+
 static bool complete_sea_insertion(struct rec *rec, struct rmi_rec_enter *rec_enter)
 {
 	struct rec_plane *plane = rec_active_plane(rec);
@@ -287,8 +364,13 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 	rec->set_ripas.response =
 		((rec_run.enter.flags & REC_ENTRY_FLAG_RIPAS_RESPONSE) == 0UL) ?
 			ACCEPT : REJECT;
-
 	complete_set_ripas(rec);
+
+	rec->set_s2ap.response =
+		((rec_run.enter.flags & REC_ENTRY_FLAG_S2AP_RESPONSE) == 0UL) ?
+			ACCEPT : REJECT;
+	complete_set_s2ap(rec);
+
 	complete_sysreg_emulation(rec, &rec_run.enter);
 
 	if (!complete_host_call(rec, &rec_run)) {
