@@ -94,5 +94,10 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rsi_result *res);
 void handle_psci(struct rec *rec, struct rmi_rec_exit *rec_exit,
 		 struct rsi_result *res);
+void handle_rsi_mem_get_perm_value(struct rec *rec, struct rsi_result *res);
+void handle_rsi_mem_set_perm_value(struct rec *rec, struct rsi_result *res);
+void handle_rsi_mem_set_perm_index(struct rec *rec,
+				   struct rmi_rec_exit *rec_exit,
+				   struct rsi_result *res);
 
 #endif /* RSI_HANDLER_H */
