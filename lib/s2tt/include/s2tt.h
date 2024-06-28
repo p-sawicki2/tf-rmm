@@ -43,7 +43,9 @@ struct s2tt_context {
 
 	/*
 	 * Pointer to the overlay permissions for this context, which are
-	 * stored in the Realm Descriptor.
+	 * stored in the Realm Descriptor. This pointer can only be accessed
+	 * with the parent RD mapped.
+	 *
 	 * This field is specific to each plane.
 	 */
 	unsigned long *overlay_perm;
