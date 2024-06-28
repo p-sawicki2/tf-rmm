@@ -59,16 +59,35 @@
 #define RMI_ERROR_REC			U(3)
 
 /*
- * An RTT walk terminated before reaching the target RTT level, or reached
- * an RTTE with an unexpected value. index: RTT level at which the walk
- * terminated
+ * On the primary RTT tree, an RTT walk terminated before reaching
+ * the target RTT level, or reached an RTTE with an unexpected value.
+ * index: RTT level at which the walk terminated
+ *
+ * If returned as output value for RMI_RTT_SET_S2AP then:
+ * X1: `progress_addr` (IPA): The IPA where the RTT walk failed
+ * X2: `rtt_tree` (IPA): The RTT tree where the RTT walk failed
  */
 #define RMI_ERROR_RTT			U(4)
 
 /*
+ * An attribute of a device does not match the expected value
+ */
+#define RMI_ERROR_DEVICE		U(5)
+
+/*
+ * The command is not supported
+ */
+#define RMI_ERROR_NOT_SUPPORTED		U(6)
+
+/*
+ * Same as RMI_ERROR_RTT, but it applied to auxiliary RTT trees.
+ */
+#define RMI_ERROR_RTT_AUX		U(7)
+
+/*
  * Number of RMI Status Errors.
  */
-#define RMI_ERROR_COUNT			U(5)
+#define RMI_ERROR_COUNT			U(8)
 
 /*
  * The number of GPRs (starting from X0) that are
@@ -111,6 +130,9 @@
 /* Host response to RIPAS change request */
 #define REC_ENTRY_FLAG_RIPAS_RESPONSE	(UL(1) << 4)
 
+/* Host response to S2AP change request */
+#define REC_ENTRY_FLAG_S2AP_RESPONSE	(UL(1) << 5)
+
 /*
  * RmiRecExitReason represents the reason for a REC exit.
  * This is returned to NS hosts via RMI_REC_ENTER::run_ptr.
@@ -122,6 +144,7 @@
 #define RMI_EXIT_RIPAS_CHANGE		U(4)
 #define RMI_EXIT_HOST_CALL		U(5)
 #define RMI_EXIT_SERROR			U(6)
+#define RMI_EXIT_S2AP_CHANGE		U(9)
 
 /* RmiRttEntryState represents the state of an RTTE */
 #define RMI_UNASSIGNED		UL(0)
@@ -365,6 +388,17 @@
  */
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
 
+/*
+ * arg0 == RD address
+ * arg1 == REC address
+ * arg2 == Start address
+ * arg3 == End address
+ *
+ * ret1 == Top of the address range where the S2AP was updated,
+ *	   if ret0 == RMI_SUCCESS
+ */
+#define SMC_RMM_RTT_SET_S2AP			SMC64_RMI_FID(U(0x3B))
+
 /* Size of Realm Personalization Value */
 #ifndef CBMC
 #define RPV_SIZE		64
@@ -508,6 +542,12 @@ struct rmi_rec_exit {
 			unsigned long ripas_top;	/* 0x508 */
 			/* RIPAS value of pending RIPAS change */
 			unsigned char ripas_value;	/* 0x510 */
+			/* Padding */
+			unsigned long padding;		/* 0x518 */
+			/* Base address of pending S2AP change */
+			unsigned long s2ap_base;	/* 0x520 */
+			/* Top address of pending S2AP change */
+			unsigned long s2ap_top;		/* 0x528 */
 		   }, 0x500, 0x600);
 	/* Host call immediate value */
 	SET_MEMBER_RMI(unsigned int imm, 0x600, 0x700);	/* 0x600 */

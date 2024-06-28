@@ -211,4 +211,33 @@ struct rsi_host_call {
  */
 #define SMC_RSI_HOST_CALL		SMC64_RSI_FID(U(0x9))
 
+
+/*
+ * arg1 == Index of the plane to get values from
+ * arg2 == Index of the permission to retrieve
+ * ret0 == Status / error
+ * ret1 == Memory permission value
+ */
+#define SMC_RSI_MEM_GET_PERM_VALUE	SMC64_RSI_FID(U(0x10))
+
+/*
+ * arg1 == Base of target IPA region
+ * arg2 == Top of target IPA region
+ * arg3 == Permission index
+ * arg4 == Cookie
+ * ret0 == Status / error
+ * ret1 == Base of IPA region which was not modified by the command
+ * ret2 == RSI response. Whether the host accepted or rejected the request
+ * ret3 == New cookie value
+ */
+#define SMC_RSI_MEM_SET_PERM_INDEX	SMC64_RSI_FID(U(0x11))
+
+/*
+ * arg1 == Index of the plane where to modify the permissions
+ * arg2 == Index of the permission to modify
+ * arg3 == Memory permission value
+ * ret0 == Status / error
+ */
+#define SMC_RSI_MEM_SET_PERM_VALUE	SMC64_RSI_FID(U(0x12))
+
 #endif /* SMC_RSI_H */
