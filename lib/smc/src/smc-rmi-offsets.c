@@ -50,6 +50,9 @@ COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, cntv_cval)) == 0x418U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, ripas_base)) == 0x500U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, ripas_top)) == 0x508U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, ripas_value)) == 0x510U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, ripas_io_pa)) == 0x518U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, s2ap_base)) == 0x520U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, s2ap_top)) == 0x528U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, imm)) == 0x600U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, pmu_ovf_status)) == 0x700U);
 
