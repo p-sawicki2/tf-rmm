@@ -31,7 +31,10 @@ static const char * const rmi_status_string[] = {
 	RMI_STATUS_STRING(ERROR_INPUT),
 	RMI_STATUS_STRING(ERROR_REALM),
 	RMI_STATUS_STRING(ERROR_REC),
-	RMI_STATUS_STRING(ERROR_RTT)
+	RMI_STATUS_STRING(ERROR_RTT),
+	RMI_STATUS_STRING(ERROR_DEVICE),
+	RMI_STATUS_STRING(ERROR_NOT_SUPPORTED),
+	RMI_STATUS_STRING(ERROR_RTT_AUX)
 };
 
 COMPILER_ASSERT(ARRAY_LEN(rmi_status_string) == RMI_ERROR_COUNT);
@@ -152,10 +155,18 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(PSCI_COMPLETE,		3, 0, smc_psci_complete,	 true,  true),
 	HANDLER(REC_AUX_COUNT,		1, 1, smc_rec_aux_count,	 true,  true),
 	HANDLER(RTT_INIT_RIPAS,		3, 1, smc_rtt_init_ripas,	 false, true),
-	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
+	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true),
+	HANDLER(RTT_SET_S2AP,		4, 1, smc_rtt_set_s2ap,		 false, true)
 };
 
+/*
+ * @TODO: The COMPILER_ASSERT below has been temporarly disabled as currently
+ *	  there are gaps on the RMI FIDs untill all of them are implemented.
+ *	  The COMPILER_ASSERT must be enabled once all the handlers are
+ *	  installed
+
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
+ */
 
 static inline bool rmi_handler_needs_fpu(unsigned int id)
 {
