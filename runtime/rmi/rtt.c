@@ -120,7 +120,6 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 	}
 
 	s2_ctx =  *primary_s2_context(rd);
-	buffer_unmap(rd);
 
 	/*
 	 * Lock the RTT root. Enforcing locking order RD->RTT is enough to
@@ -297,6 +296,7 @@ out_unmap_table:
 out_unlock_llt:
 	granule_unlock(wi.g_llt);
 	granule_unlock(g_tbl);
+	buffer_unmap(rd);
 	return ret;
 }
 
@@ -536,9 +536,7 @@ void smc_rtt_destroy(unsigned long rd_addr,
 
 	s2_ctx = *primary_s2_context(rd);
 	in_par = addr_in_par(rd, map_addr);
-	buffer_unmap(rd);
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
-	granule_unlock(g_rd);
 
 	s2tt_walk_lock_unlock(&s2_ctx, map_addr, level - 1L, &wi);
 
@@ -633,6 +631,8 @@ out_unmap_parent_table:
 	}
 	buffer_unmap(parent_s2tt);
 	granule_unlock(wi.g_llt);
+	buffer_unmap(rd);
+	granule_unlock(g_rd);
 	res->x[0] = ret;
 }
 
@@ -1509,6 +1509,157 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 		rec->set_ripas.addr = res->x[1];
 	}
 
+	buffer_unmap(s2tt);
+out_unlock_llt:
+	granule_unlock(wi.g_llt);
+	buffer_unmap(rd);
+out_unmap_rec:
+	buffer_unmap(rec);
+out_unlock_rec_rd:
+	granule_unlock(g_rec);
+	granule_unlock(g_rd);
+}
+
+void smc_rtt_set_s2ap(unsigned long rd_addr, unsigned long rec_addr,
+		      unsigned long base, unsigned long top,
+		      struct smc_result *res)
+{
+	struct granule *g_rd, *g_rec;
+	struct rec *rec;
+	struct rd *rd;
+	struct s2tt_walk wi;
+	struct s2tt_context *s2_ctx;
+	unsigned long *s2tt;
+	unsigned long perm_index, map_size, s2tt_idx, next, s2tte;
+
+	if ((top <= base) || !(GRANULE_ALIGNED(top))) {
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
+	if (!find_lock_two_granules(rd_addr,
+				   GRANULE_STATE_RD,
+				   &g_rd,
+				   rec_addr,
+				   GRANULE_STATE_REC,
+				   &g_rec)) {
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
+	if (granule_refcount_read_acquire(g_rec) != 0U) {
+		res->x[0] = RMI_ERROR_REC;
+		goto out_unlock_rec_rd;
+	}
+
+	rec = buffer_granule_map(g_rec, SLOT_REC);
+	assert(rec != NULL);
+
+	if (g_rd != rec->realm_info.g_rd) {
+		res->x[0] = RMI_ERROR_REC;
+		goto out_unmap_rec;
+	}
+
+	if ((rec->set_s2ap.base != base) || (top > rec->set_s2ap.top)) {
+		res->x[0] = RMI_ERROR_INPUT;
+		goto out_unmap_rec;
+	}
+
+	perm_index = rec->set_s2ap.index;
+
+	/*
+	 * Return error in case of target region:
+	 * - Is not the next chunk of requested region.
+	 * - Extends beyond the end of requested region.
+	 */
+	if ((base != rec->set_s2ap.base) || (top > rec->set_s2ap.top)) {
+		res->x[0] = RMI_ERROR_INPUT;
+		goto out_unmap_rec;
+	}
+
+	rd = buffer_granule_map(g_rd, SLOT_RD);
+	assert(rd != NULL);
+
+	if (rd->rtt_tree_pp) {
+		s2tt_idx = (rec->set_s2ap.cookie & ~GRANULE_MASK);
+	} else {
+		s2tt_idx = PRIMARY_PLANE_ID;
+	}
+
+	s2_ctx = s2_context(rd, s2tt_idx);
+	granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
+
+	/* Walk to the deepest level possible */
+	s2tt_walk_lock_unlock(s2_ctx, base, S2TT_PAGE_LEVEL, &wi);
+
+	if (base > realm_ipa_size(rd)) {
+		res->x[0] = RMI_ERROR_INPUT;
+		goto out_unlock_llt;
+	}
+
+	if (!s2tte_is_addr_lvl_aligned(s2_ctx, base, wi.last_level)) {
+		unsigned int error_id = (s2tt_idx == PRIMARY_PLANE_ID) ?
+					 RMI_ERROR_RTT : RMI_ERROR_RTT_AUX;
+
+		res->x[0] = pack_return_code(error_id, (unsigned char)wi.last_level);
+		res->x[1] = base;
+		res->x[2] = s2tt_idx;
+		goto out_unlock_llt;
+	}
+
+	map_size = s2tte_map_size(wi.last_level);
+	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
+	assert(s2tt != NULL);
+
+	/*
+	 * Update the entries in the RTT that we have reached by the walk.
+	 */
+	next = base;
+	while ((wi.index < S2TTES_PER_S2TT) && (next < top)) {
+		if (next + map_size > top) {
+			/*
+			 * The RTT entry covers the IPA space that partially
+			 * lays beyond 'top'. We need the next level RTT to
+			 * continue the operation
+			 */
+			unsigned int error_id = (s2tt_idx == PRIMARY_PLANE_ID) ?
+					RMI_ERROR_RTT : RMI_ERROR_RTT_AUX;
+
+			res->x[0] = pack_return_code(error_id,
+						(unsigned char)wi.last_level);
+			res->x[1] = next;
+			res->x[2] = s2tt_idx;
+			goto out_unmap_s2tt;
+		}
+
+		s2tte = s2tte_read(&s2tt[wi.index]);
+		if (s2tte_is_table(s2_ctx, s2tte, wi.last_level)) {
+			/*
+			 * We need to walk one more level to continue the
+			 * operation.
+			 */
+			break;
+		}
+
+		/* Update the S2AP with the new permission */
+		s2tte = s2tte_update_ap_from_index(s2_ctx, s2tte, perm_index);
+		s2tte_write(&s2tt[wi.index], s2tte);
+
+		/* Only invalidate for valid entries */
+		if (s2tte_is_assigned_ram(s2_ctx, s2tte, wi.last_level) ||
+		    s2tte_is_table(s2_ctx, s2tte, wi.last_level)) {
+			s2tt_invalidate_page(s2_ctx, next);
+		}
+
+		wi.index++;
+		next += map_size;
+	}
+
+	res->x[0] = RMI_SUCCESS;
+	res->x[1] = next;
+
+out_unmap_s2tt:
+	rec->set_s2ap.base = next;
 	buffer_unmap(s2tt);
 out_unlock_llt:
 	granule_unlock(wi.g_llt);
