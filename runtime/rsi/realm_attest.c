@@ -17,6 +17,13 @@
 
 #define MAX_EXTENDED_SIZE	(64U)
 #define MAX_MEASUREMENT_WORDS	(MAX_MEASUREMENT_SIZE / sizeof(unsigned long))
+
+/*
+ * Check if the REC token buffer size is equal or larger than the platform
+ * token size. Otherwise, stop the compilation.
+ */
+COMPILER_ASSERT(ATTEST_PLAT_TOKEN_SIZE <= REC_ATTEST_TOKEN_BUF_SIZE);
+
 /*
  * Return the Realm Personalization Value.
  *
