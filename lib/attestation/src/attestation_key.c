@@ -22,7 +22,7 @@
 /*
  * The platform token which will be needed during attestation.
  */
-static unsigned char rmm_platform_token_buf[SZ_4K];
+static unsigned char rmm_platform_token_buf[ATTEST_PLAT_TOKEN_SIZE];
 static struct q_useful_buf rmm_platform_token;
 
 /*
@@ -190,7 +190,7 @@ int attest_get_realm_public_key(struct q_useful_buf_c *public_key)
 int attest_setup_platform_token(void)
 {
 	uintptr_t shared_buf;
-	size_t platform_token_len;
+	size_t platform_token_len = 0;
 	struct q_useful_buf_c rmm_pub_key_hash;
 	int ret;
 
