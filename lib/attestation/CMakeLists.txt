@@ -12,8 +12,18 @@ arm_config_option(
     DEFAULT 1000
     ADVANCED)
 
+arm_config_option(
+    NAME RMM_PLAT_TOKEN_MAX_SIZE
+    HELP "Maximum size in bytes expected for the Attestation platform token"
+    TYPE STRING
+    DEFAULT 0x1000
+    ADVANCED)
+
 target_compile_definitions(rmm-lib-attestation
     PRIVATE "MBEDTLS_ECP_MAX_OPS=${MBEDTLS_ECP_MAX_OPS}U")
+
+target_compile_definitions(rmm-lib-attestation
+    PRIVATE "RMM_PLAT_TOKEN_MAX_SIZE=U(${RMM_PLAT_TOKEN_MAX_SIZE})")
 
 target_link_libraries(rmm-lib-attestation
   PRIVATE
