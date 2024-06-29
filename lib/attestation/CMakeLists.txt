@@ -12,8 +12,18 @@ arm_config_option(
     DEFAULT 1000
     ADVANCED)
 
+arm_config_option(
+    NAME RMM_TOKEN_BUFFER_SIZE
+    HELP "Sets the size of the buffer used to copy the attestation token to from EL3"
+    TYPE STRING
+    DEFAULT 0x1000
+    ADVANCED)
+
 target_compile_definitions(rmm-lib-attestation
     PRIVATE "MBEDTLS_ECP_MAX_OPS=${MBEDTLS_ECP_MAX_OPS}U")
+
+target_compile_definitions(rmm-lib-attestation
+    PRIVATE "RMM_TOKEN_BUFFER_SIZE=U(${RMM_TOKEN_BUFFER_SIZE})")
 
 target_link_libraries(rmm-lib-attestation
   PRIVATE

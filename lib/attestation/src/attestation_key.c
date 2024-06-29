@@ -22,7 +22,7 @@
 /*
  * The platform token which will be needed during attestation.
  */
-static unsigned char rmm_platform_token_buf[SZ_4K];
+static unsigned char rmm_platform_token_buf[RMM_TOKEN_BUFFER_SIZE];
 static struct q_useful_buf rmm_platform_token;
 
 /*
