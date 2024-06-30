@@ -52,6 +52,24 @@
       "parentUuid": "d3328e46_5b4ca8e9",
       "revId": "262944268bdc36cf0cdc8d858bf302d47ccc9c0b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8d37e66_3fe3afeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-06-30T22:55:18Z",
+      "side": 1,
+      "message": "I also want to point out that this design decision forces the use of mbedtls library and PSA, and we need to provide the option to use alternative crypto libraries since mbedtls may not meet the requirements for all consumers/customers of the RMM code, for example, since it doenst support certain algorithms, or performance, license or other reasons.\nhooking at t_cose has that advantage, and i have asked the maintainers here - https://github.com/laurencelundblade/t_cose/issues/281 .\n\nin fact, TF-A does the same thing for secure boot by providing an adapter - https://git.trustedfirmware.org/TF-A/trusted-firmware-a/+/refs/heads/integration/drivers/auth/crypto_mod.c to allow for use of other crypto libraries.",
+      "parentUuid": "d3328e46_5b4ca8e9",
+      "revId": "262944268bdc36cf0cdc8d858bf302d47ccc9c0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
