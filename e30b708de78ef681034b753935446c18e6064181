@@ -666,6 +666,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "961a163f_1cf0fd34",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-01T11:06:52Z",
+      "side": 1,
+      "message": "Oh, sorry, I misspelled the original / suggestion: So what I wanted to change is minimum to expected, so from `MINIMUM_LENGTH_FOR_FUZZ` to `EXPECTED_LENGTH_FOR_FUZZ`",
+      "parentUuid": "8a916a52_48f429e1",
+      "range": {
+        "startLine": 160,
+        "startChar": 15,
+        "endLine": 160,
+        "endChar": 16
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c2c1df4c_cf6de2d7",
         "filename": "tools/fuzz/CMakeLists.txt",
         "patchSetId": 20
