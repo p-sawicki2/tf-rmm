@@ -25,7 +25,7 @@ target_compile_definitions(t_cose
      PRIVATE
          "T_COSE_USE_PSA_CRYPTO=1"
          "T_COSE_DISABLE_HPKE=1"
-         "NO_MBED_KW_API=1"
+         "T_COSE_DISABLE_KEYWRAP=1"
 )
 
 target_link_libraries(t_cose
