@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cc2d451_8b41cf4c",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc9509c1_01d0be46",
+      "range": {
+        "startLine": 38,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 51
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80cf4d74_37ee8f2d",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "Must be in new line to render as a new bullet point.",
+      "range": {
+        "startLine": 142,
+        "startChar": 35,
+        "endLine": 142,
+        "endChar": 45
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18623923_2cab0d46",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80cf4d74_37ee8f2d",
       "range": {
         "startLine": 142,
         "startChar": 35,
@@ -81,6 +129,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d321d16_d47faa9c",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aea9639f_197d13aa",
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ebaf9d3_dd0aac43",
@@ -94,6 +160,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "I would suggest full path `tools/fuzz/CMakeLists.txt`",
+      "range": {
+        "startLine": 144,
+        "startChar": 44,
+        "endLine": 144,
+        "endChar": 53
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92b4892a_752bcbf0",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ebaf9d3_dd0aac43",
       "range": {
         "startLine": 144,
         "startChar": 44,
@@ -127,6 +217,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad337966_e052568d",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59bc9fc9_5208e4d6",
+      "range": {
+        "startLine": 147,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 48
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e3ea011_ac542de3",
@@ -140,6 +254,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "This is not necessary I think",
+      "range": {
+        "startLine": 162,
+        "startChar": 7,
+        "endLine": 162,
+        "endChar": 18
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "670b7c35_51865625",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e3ea011_ac542de3",
       "range": {
         "startLine": 162,
         "startChar": 7,
@@ -196,6 +334,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68f0b187_81c1d878",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08d9a091_089efa0d",
+      "range": {
+        "startLine": 166,
+        "startChar": 69,
+        "endLine": 166,
+        "endChar": 75
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c6642ca_b77bca91",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf5598bb_0e451c15",
+      "range": {
+        "startLine": 166,
+        "startChar": 17,
+        "endLine": 166,
+        "endChar": 31
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e843aa2_4ff22df0",
@@ -209,6 +395,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "instead of this I would suggest something like \n\n    After ``--`` are the target binary path and ``@@`` which tells AFL the location\n    in the fuzzing target command line where the input file name must be\nsubstituted.",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 42
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6977c706_7bf391ca",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e843aa2_4ff22df0",
       "range": {
         "startLine": 169,
         "startChar": 0,
@@ -242,6 +452,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd914553_2393f321",
+        "filename": "plat/host/host_fuzz/CMakeLists.txt",
+        "patchSetId": 20
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4e52a41_9a2fa1dc",
+      "range": {
+        "startLine": 13,
+        "startChar": 39,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fa4ec82_91654064",
@@ -255,6 +489,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "Comment got truncated",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 27
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2f7273_a44b3c2a",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fa4ec82_91654064",
       "range": {
         "startLine": 90,
         "startChar": 7,
@@ -288,6 +546,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfa71735_055aaffd",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6182db9a_6f031c5d",
+      "range": {
+        "startLine": 116,
+        "startChar": 10,
+        "endLine": 116,
+        "endChar": 11
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6c31b0e_09fa013c",
@@ -301,6 +583,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "Add `TODO:`",
+      "range": {
+        "startLine": 127,
+        "startChar": 10,
+        "endLine": 127,
+        "endChar": 11
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53761c8_9ca69e0c",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6c31b0e_09fa013c",
       "range": {
         "startLine": 127,
         "startChar": 10,
@@ -334,6 +640,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a916a52_48f429e1",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15bb4b51_bfd45a01",
+      "range": {
+        "startLine": 160,
+        "startChar": 15,
+        "endLine": 160,
+        "endChar": 16
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2c1df4c_cf6de2d7",
@@ -357,6 +687,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb6aa377_0e8bdefc",
+        "filename": "tools/fuzz/CMakeLists.txt",
+        "patchSetId": 20
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2c1df4c_cf6de2d7",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c1e027f_936ab3f3",
@@ -370,6 +724,30 @@
       "writtenOn": "2024-07-01T09:21:13Z",
       "side": 1,
       "message": "this could be more general, like \n\n    Parse input generated by the fuzzing engine",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 42
+      },
+      "revId": "e30b708de78ef681034b753935446c18e6064181",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b0998fe_35fdaa2c",
+        "filename": "tools/fuzz/python/parser.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T10:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c1e027f_936ab3f3",
       "range": {
         "startLine": 5,
         "startChar": 2,
