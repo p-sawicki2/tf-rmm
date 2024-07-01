@@ -41,9 +41,14 @@ add_subdirectory("t_cose")
 add_subdirectory("xlat")
 
 if(RMM_CCA_DA)
-    target_link_libraries(rmm-lib INTERFACE rmm-lib-spdm_requester)
+    target_link_libraries(rmm-lib INTERFACE
+        rmm-lib-spdm_requester
+        rmm-lib-da_interface)
+
     if(RMM_UNITTESTS)
         target_link_libraries(rmm-lib INTERFACE rmm-lib-spdm_requester_test)
     endif()
+
     add_subdirectory("spdm_requester")
+    add_subdirectory("da_interface")
 endif()
