@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e46b4e6_20652071",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-01T08:48:00Z",
+      "side": 1,
+      "message": "this can be removed. Same comment for below error case as well.",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 35
+      },
+      "revId": "5fdc777a903f058f3584983928d5172e5f219652",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "133cafe6_7c5c8fc8",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-01T08:48:00Z",
+      "side": 1,
+      "message": "psa_reset_key_attributes(\u0026key_attributes);\n\t\tpsa_destroy_key(attest_signing_key);\n\nneeds to be done here for error.",
+      "revId": "5fdc777a903f058f3584983928d5172e5f219652",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
