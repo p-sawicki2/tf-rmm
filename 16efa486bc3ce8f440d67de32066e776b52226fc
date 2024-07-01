@@ -22,6 +22,30 @@
       },
       "revId": "16efa486bc3ce8f440d67de32066e776b52226fc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fb85b50_f04e5e26",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-01T14:11:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7412f9b0_d82b3a01",
+      "range": {
+        "startLine": 143,
+        "startChar": 30,
+        "endLine": 143,
+        "endChar": 31
+      },
+      "revId": "16efa486bc3ce8f440d67de32066e776b52226fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
