@@ -23,6 +23,15 @@ void host_rmi_version(unsigned long rmi_verion, struct smc_result *res)
 		res);
 }
 
+void host_rmi_read_feature_register(unsigned long index, struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMI_FEATURES,
+		      index,
+		      0, 0, 0, 0, 0,
+		      res);
+
+}
+
 void host_rmi_granule_delegate(void *granule_address, struct smc_result *res)
 {
 	handle_ns_smc(SMC_RMI_GRANULE_DELEGATE,
@@ -157,4 +166,31 @@ void host_rmi_data_destroy(void *rd, uintptr_t ipa, struct smc_result *res)
 		(uintptr_t)rd, ipa,
 		0, 0, 0, 0,
 		res);
+}
+
+void host_rmi_pdev_create(void *pdev, void *pdev_params_ptr,
+			  struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMI_PDEV_CREATE, (uintptr_t)pdev,
+		      (uintptr_t)pdev_params_ptr, 0, 0, 0, 0, res);
+}
+
+void host_rmi_pdev_communicate(void *pdev, void *io_data_ptr,
+			       struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMI_PDEV_COMMUNICATE, (uintptr_t)pdev,
+		      (uintptr_t)io_data_ptr, 0, 0, 0, 0, res);
+}
+
+void host_rmi_pdev_get_state(void *pdev, struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMI_PDEV_GET_STATE, (uintptr_t)pdev,
+		      0, 0, 0, 0, 0, res);
+}
+
+void host_rmi_pdev_set_key(void *pdev, void *key_addr, unsigned long key_len,
+			   unsigned int key_sig_algo, struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMI_PDEV_SET_KEY, (uintptr_t)pdev,
+		      (uintptr_t)key_addr, key_len, key_sig_algo, 0, 0, res);
 }

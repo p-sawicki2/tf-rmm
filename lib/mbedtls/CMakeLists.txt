@@ -58,7 +58,7 @@ target_compile_definitions(rmm-mbedtls INTERFACE
 
 # Include targets mbedcrypto, mbedx509
 set(MBEDTLS_LIBS mbedcrypto)
-if(RMM_CCA_DA)
+if(RMM_CCA_DA OR RMM_ARCH STREQUAL fake_host)
     list(APPEND MBEDTLS_LIBS mbedx509)
 endif()
 

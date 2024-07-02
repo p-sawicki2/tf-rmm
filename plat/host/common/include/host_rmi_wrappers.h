@@ -9,6 +9,7 @@
 #include <smc-rmi.h>
 
 void host_rmi_version(unsigned long rmi_verion, struct smc_result *res);
+void host_rmi_read_feature_register(unsigned long index, struct smc_result *res);
 void host_rmi_granule_delegate(void *granule_address, struct smc_result *res);
 void host_rmi_granule_undelegate(void *granule_address, struct smc_result *res);
 void host_rmi_realm_create(void *rd, void *params_ptr, struct smc_result *res);
@@ -30,5 +31,11 @@ void host_rmi_data_create_unknown(void *rd, uintptr_t data, uintptr_t ipa,
 void host_rmi_rtt_init_ripas(void *rd, uintptr_t base, uintptr_t top,
 			struct smc_result *res);
 void host_rmi_data_destroy(void *rd, uintptr_t ipa, struct smc_result *res);
-
+void host_rmi_pdev_create(void *pdev, void *pdev_params_ptr,
+			  struct smc_result *res);
+void host_rmi_pdev_communicate(void *pdev, void *io_data_ptr,
+			       struct smc_result *res);
+void host_rmi_pdev_get_state(void *pdev, struct smc_result *res);
+void host_rmi_pdev_set_key(void *pdev, void *key_addr, unsigned long key_len,
+			   unsigned int key_sig_algo, struct smc_result *res);
 #endif /* HOST_RMI_WRAPPERS_H */

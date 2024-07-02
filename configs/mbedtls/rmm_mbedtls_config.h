@@ -97,14 +97,8 @@
 
 /* Configs required by SPDM requester used by RMM_CCA_DA */
 #ifdef RMM_CCA_DA
-#define MBEDTLS_OID_C
-#define MBEDTLS_RSA_C
-#define MBEDTLS_PKCS1_V15
-#define MBEDTLS_PKCS1_V21
 #define MBEDTLS_GENPRIME
 
-#define MBEDTLS_X509_USE_C
-#define MBEDTLS_X509_CRT_PARSE_C
 #define MBEDTLS_X509_CRL_PARSE_C
 #define MBEDTLS_X509_CSR_PARSE_C
 #define MBEDTLS_X509_CREATE_C
@@ -120,14 +114,23 @@
 #define MBEDTLS_ECDH_C
 #define MBEDTLS_DHM_C
 
-#define MBEDTLS_PK_C
-#define MBEDTLS_PK_PARSE_C
 #define MBEDTLS_PK_WRITE_C
 
 #define MBEDTLS_ECP_DP_SECP256R1_ENABLED
 #define MBEDTLS_ECP_DP_SECP384R1_ENABLED
 #define MBEDTLS_ECP_DP_SECP521R1_ENABLED
 #endif /* RMM_CCA_DA */
+
+#define MBEDTLS_OID_C
+#define MBEDTLS_RSA_C
+#define MBEDTLS_PKCS1_V15
+#define MBEDTLS_PKCS1_V21
+
+#define MBEDTLS_X509_USE_C
+#define MBEDTLS_X509_CRT_PARSE_C
+
+#define MBEDTLS_PK_C
+#define MBEDTLS_PK_PARSE_C
 
 /*
  * Declare memory allocation primitives to be used by MbedTLS

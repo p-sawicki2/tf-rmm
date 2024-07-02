@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 /* Create a simple 4 level (Lvl 0 - LvL 3) RTT structure */
 #define RTT_COUNT 4
@@ -44,7 +45,7 @@ static void enable_fake_host_mmu(void)
 	write_sctlr_el2(SCTLR_ELx_WXN_BIT | SCTLR_ELx_M_BIT);
 }
 
-static void *allocate_granule(void)
+void *allocate_granule(void)
 {
 	static unsigned int next_granule_index;
 	unsigned long granule;
@@ -271,6 +272,7 @@ static int create_realm(void)
 }
 
 void rmm_main(void);
+int host_rmi_feat_da(void);
 
 int main(int argc, char *argv[])
 {
@@ -300,6 +302,12 @@ int main(int argc, char *argv[])
 	/* Create a realm */
 	if (create_realm() != 0) {
 		ERROR("ERROR: failed to create realm");
+		return -1;
+	}
+
+	/* Invoke DA ABI related PDEV */
+	if (host_rmi_feat_da() != 0) {
+		ERROR("ERROR: host_feat_da failed.\n");
 		return -1;
 	}
 
