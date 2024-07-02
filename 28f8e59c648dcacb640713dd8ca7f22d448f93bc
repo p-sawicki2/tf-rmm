@@ -16,6 +16,46 @@
       "message": "I don\u0027t have the permissions to run CI+1.",
       "revId": "28f8e59c648dcacb640713dd8ca7f22d448f93bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "406af36f_5b7215f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-02T15:19:56Z",
+      "side": 1,
+      "message": "some cppcheck and coverity errors detected.",
+      "revId": "28f8e59c648dcacb640713dd8ca7f22d448f93bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1188f2e_1219c636",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-02T15:19:56Z",
+      "side": 1,
+      "message": "(void) psa_destroy_key(...) should resolve the MISRA error.",
+      "range": {
+        "startLine": 121,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 2
+      },
+      "revId": "28f8e59c648dcacb640713dd8ca7f22d448f93bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
