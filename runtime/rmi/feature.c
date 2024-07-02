@@ -56,6 +56,14 @@ unsigned long get_feature_register_0(void)
 				     simd_cfg.sve_vq);
 	}
 
+#ifdef RMM_CCA_DA
+	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_DA_EN, RMI_FEATURE_TRUE);
+	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_PDEV_NUM_AUX,
+			     PDEV_PARAM_AUX_GRANULES_MAX - 1U);
+#else
+	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_DA_EN, RMI_FEATURE_FALSE);
+#endif
+
 	return feat_reg0;
 }
 
