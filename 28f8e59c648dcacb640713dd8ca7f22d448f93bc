@@ -56,6 +56,30 @@
       },
       "revId": "28f8e59c648dcacb640713dd8ca7f22d448f93bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9834253c_99dd7df9",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-07-02T16:53:44Z",
+      "side": 1,
+      "message": "Hi Soby, \nYes, I looked at some other instances where this function was used, and it looks like void is being used. \nInitially I thought it was an issue that I was not using a variable for the return value from psa_destroy_key. But using a variable for the return like ret_val \u003d psa_destroy_key(xx); now complains that the ret_val variable is not being used anywhere in code. So I switched to void instead based on other examples.",
+      "parentUuid": "f1188f2e_1219c636",
+      "range": {
+        "startLine": 121,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 2
+      },
+      "revId": "28f8e59c648dcacb640713dd8ca7f22d448f93bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
