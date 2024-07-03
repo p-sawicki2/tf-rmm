@@ -6,17 +6,20 @@
 #ifndef T_COSE_RMM_HES_CRYPTO_H
 #define T_COSE_RMM_HES_CRYPTO_H
 
-#include <mbedtls/hkdf.h>
-#include <mbedtls/md.h>
 #include <psa/crypto.h>
 #include <spinlock.h>
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
 #include <t_cose_crypto.h>
-#include <utils_def.h>
+#include <t_cose_psa_crypto.h>
 
 struct t_cose_rmm_hes_ctx {
+
+	/*
+	 * Some of the operations in the crypto adaption layer might use the
+	 * crypto context. Make sure that casting this context to
+	 * `struct t_cose_psa_crypto_context` by them is safe.
+	 */
+	struct t_cose_psa_crypto_context psa_crypto_context;
+
 	spinlock_t lock;
 	struct {
 		/* cppcheck-suppress misra-c2012-6.1 */

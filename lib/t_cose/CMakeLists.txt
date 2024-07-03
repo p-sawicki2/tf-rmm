@@ -20,6 +20,13 @@ add_library(t_cose)
 
 set(T_COSE_SOURCE_DIR "${RMM_SOURCE_DIR}/ext/t_cose")
 
+# Patch t_cose
+set(t_COSE_PATCH_DIR "${RMM_SOURCE_DIR}/configs/t_cose")
+set(t_COSE_PATCH_FILES
+    "${t_COSE_PATCH_DIR}/0001-Add-compile-time-option-for-HES-signing.patch")
+
+Git_Apply_Patches(${T_COSE_SOURCE_DIR} "${t_COSE_PATCH_FILES}")
+
 #TODO: Eliminate warning suppression once the t_cose submodule is updated to
 #      a released version.
 target_compile_options(t_cose
@@ -56,17 +63,13 @@ target_include_directories(t_cose
 
 target_sources(t_cose
     PRIVATE
+        "${T_COSE_SOURCE_DIR}/crypto_adapters/t_cose_psa_crypto.c"
         "${T_COSE_SOURCE_DIR}/src/t_cose_parameters.c"
         "${T_COSE_SOURCE_DIR}/src/t_cose_sign_sign.c"
         "${T_COSE_SOURCE_DIR}/src/t_cose_signature_sign_restart.c"
         "${T_COSE_SOURCE_DIR}/src/t_cose_util.c"
 )
-
-if(NOT RMM_ATTESTATION_USE_HES)
-    target_sources(t_cose
-        PRIVATE
-            "${T_COSE_SOURCE_DIR}/crypto_adapters/t_cose_psa_crypto.c")
-else()
+if(RMM_ATTESTATION_USE_HES)
     target_include_directories(t_cose
         PUBLIC
             "include"
@@ -84,9 +87,6 @@ else()
 
     target_link_libraries(t_cose
         PRIVATE
-            rmm-lib-granule
-            rmm-lib-debug
-            rmm-lib-smc
-            rmm-lib-rmm_el3_ifc
-            rmm-lib-arch)
+            rmm-lib-arch
+    )
 endif()
