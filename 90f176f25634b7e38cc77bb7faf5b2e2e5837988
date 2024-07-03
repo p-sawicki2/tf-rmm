@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3195a9b4_9138faef",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 45
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 0,
+      "message": "keep the assert. It is OK if the unit test is not able to reach the assert() but it serves as a good function documentation and has benefits for fuzz_testing.",
+      "revId": "90f176f25634b7e38cc77bb7faf5b2e2e5837988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

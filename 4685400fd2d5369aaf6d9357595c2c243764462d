@@ -172,6 +172,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e356fd8b_d75144ba",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "in that case, we could do something like\n\nif(s2_ctx-\u003eenable_lpa2 \u003d true) {\n\n// assert for start level and max ipa for LPA2 case\n\n} else {\n\n// assert for start level and max ipa for non LPA2 case\n\n}",
+      "parentUuid": "ed8985b6_fca212e9",
+      "range": {
+        "startLine": 317,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 14
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "93b5ec8b_69dc6cfc",
         "filename": "lib/s2tt/src/s2tt.c",
         "patchSetId": 43
@@ -201,6 +225,24 @@
       "side": 1,
       "message": "In that case, I think it should be a conditional assertion depending on whether FEAT_LPA2 is enabled or not, following the same reasoning as above.",
       "parentUuid": "93b5ec8b_69dc6cfc",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "328bb0e5_1007e1b0",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "ack, see above.",
+      "parentUuid": "fa39d3f5_880f770d",
       "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -747,6 +789,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7bd8909c_a60c2a49",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "... table tte.\"\n\nas we are not creating an entire table here. Same comments for below.",
+      "range": {
+        "startLine": 848,
+        "startChar": 6,
+        "endLine": 848,
+        "endChar": 11
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "32e812bc_010127b7",
         "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
         "patchSetId": 43
@@ -758,6 +823,30 @@
       "writtenOn": "2024-05-08T09:29:15Z",
       "side": 1,
       "message": "need to understand this test better.",
+      "range": {
+        "startLine": 1046,
+        "startChar": 5,
+        "endLine": 1047,
+        "endChar": 4
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "973ca33f_954631e0",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32e812bc_010127b7",
       "range": {
         "startLine": 1046,
         "startChar": 5,
@@ -1449,6 +1538,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee3b2c84_93efcdf1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1758,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1d750dee_f9a5d7a1",
+      "range": {
+        "startLine": 1758,
+        "startChar": 6,
+        "endLine": 1758,
+        "endChar": 40
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6bf686b_2cbe4caa",
@@ -1862,6 +1975,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d634efe3_9b32fe30",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1993,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "A valid descriptor, by the nature of being valid, has RIPAS \u003d RAM and HIPAS \u003d assigned.\n\nThe API description says other wise. WE could restrict s2tte_get_ripas to invalid desc. IN this case , the function description and asserts should be changed.",
+      "parentUuid": "3a491a9e_3f5609a4",
+      "range": {
+        "startLine": 1990,
+        "startChar": 2,
+        "endLine": 1993,
+        "endChar": 6
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e4dd5637_e0212fa3",
         "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
         "patchSetId": 43
@@ -1897,6 +2034,30 @@
       "side": 1,
       "message": "S2TTE_INVALID_HIPAS_ASSIGNED is a bitmask with an offset \u003e 0, so I cannot just add +1. I can try something like\n\nINPLACE(S2TTE_INVALID_HIPAS, EXTRACT(S2TTE_INVALID_HIPAS, S2TTE_INVALID_HIPAS_ASSIGNED) + 1)",
       "parentUuid": "e4dd5637_e0212fa3",
+      "range": {
+        "startLine": 2056,
+        "startChar": 37,
+        "endLine": 2056,
+        "endChar": 42
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffe424f0_d258217b",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 2056,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "yes, that seems more appropraite",
+      "parentUuid": "5ee89a40_67635de0",
       "range": {
         "startLine": 2056,
         "startChar": 37,

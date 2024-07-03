@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0053def4_27f49434",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.h",
+        "patchSetId": 45
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "I think we dont need to take the puritan stance on this. IMO, reusing macros from the SUT is OK. I see the redefinitions as a burden which is difficult to maintain.",
+      "range": {
+        "startLine": 17,
+        "startChar": 3,
+        "endLine": 17,
+        "endChar": 28
+      },
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8484541f_24f82ac4",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.h",
+        "patchSetId": 45
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "reuse from main header.",
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "832d21ed_9e21713d",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.h",
+        "patchSetId": 45
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "It is difficult to verify the magic numbers here. Prefer to reuse from s2tt headers if possible. Same comments for below macros as well.",
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e57371_2833c3ec",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 45
+      },
+      "lineNbr": 1148,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "till here",
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b77e686_4dfd0df2",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 45
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "till here.",
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ea443e2_fa56062e",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 45
+      },
+      "lineNbr": 1966,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-03T16:30:37Z",
+      "side": 1,
+      "message": "till here",
+      "revId": "1fd4171c65e38bd490bf852408d9c834b8ebf667",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
