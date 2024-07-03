@@ -189,6 +189,30 @@
       },
       "revId": "dbb26484354dce7f8d07a141c7e5fdf4691821a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f7c23b5_51abad00",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-03T12:05:39Z",
+      "side": 1,
+      "message": "Thanks for the explanation (and please forgive if I still didn\u0027t get your point completely). My concern was calling memset on the whole context even if it is not necessary. But your point point about directly accessing context members all around the code makes complete sense.\n\nSo how about defining two operations, resetting the attestation state, and initializing the context. For example:\n\n    int attest_token_reset_state(struct token_sign_cntxt *ctx)\n    {\n        if (!ctx) {\n            return -EINVAL;\n        }\n        ctx-\u003estate \u003d ATTEST_SIGN_NOT_STARTED;\n    }\n\n    int attest_token_ctx_init(struct token_sign_cntxt *ctx, uintptr_t granule_addr)\n    {\n        if (!ctx) {\n            return -EINVAL;\n        }\n\n        (void)memset(ctx, 0, sizeof(*ctx));\n        (void)attest_token_reset_state(ctx);\n\n    #if RMM_ATTESTATION_USE_HES\n        t_cose_crypto_hes_ctx_init(\u0026ctx-\u003ectx.crypto_ctx, granule_addr);\n    #endif\n    }",
+      "parentUuid": "7bd3464f_d042d47a",
+      "range": {
+        "startLine": 159,
+        "startChar": 2,
+        "endLine": 159,
+        "endChar": 80
+      },
+      "revId": "dbb26484354dce7f8d07a141c7e5fdf4691821a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
