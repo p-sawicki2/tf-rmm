@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9245017_3c289e56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-03T13:46:29Z",
+      "side": 1,
+      "message": "Hi Raghu,\n\nWe had a discussion internally, about this patch. It would be nice if it would be possible to only override the functions in the psa crypto adapter that need different implementation for HES signing. We decided that patching t_cose source is acceptable.\n\nSo we came up with this patch: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29778\n\nThis is only there to illustrate the idea, we don\u0027t expect it to be merged/used as is. What is your view on a solution like this? Would it work for you?",
+      "revId": "325de22370c80dc3303821035d7d919981bc77c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
