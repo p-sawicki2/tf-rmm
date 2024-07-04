@@ -16,6 +16,24 @@
       "message": "The RMM granule state machine will not allow undelegating a granule which is not in state \"delegated\". \n\nWhen a granule is transitioned from \"delegated\" to any other state like \"REC, RD, RTT, DATA\" and then transitioned back to \"delegated\", there is a memzero() done.\n\nSee this query https://github.com/search?q\u003drepo%3ATF-RMM%2Ftf-rmm+memzero\u0026type\u003dcode\n\nDid you notice any case when a buffer was non zeroed when undelegate() was called?",
       "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ac2e03e_6edaff0c",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-04T16:48:22Z",
+      "side": 1,
+      "message": "Sorry where is it being cleared for DATA before undelegation? I didnt see it for DATA granules before undelegation, for example, granules allocated to realm, running out of it and then we are destroying a realm, i dont see it being cleared, at least not in an obvious way.\nWouldnt it be safer and simpler to do it in one place before undelegate, than to spread it around code to ensure a granule is always zeroed before undelegation?\nit is a huge security issue obviously if we miss a memzero and this seems safer, as we add more features, granule types etc.\nif it helps, i can remove the redundant memzero in other places in this patch, to unify the memzero.",
+      "parentUuid": "d28e2da7_fd4a75f9",
+      "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
