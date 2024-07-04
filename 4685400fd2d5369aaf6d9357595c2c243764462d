@@ -88,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47ae84a7_68e291c6",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-04T16:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ec08431_151527c5",
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5cecc1ae_e0bd0754",
@@ -184,6 +202,30 @@
       "side": 1,
       "message": "in that case, we could do something like\n\nif(s2_ctx-\u003eenable_lpa2 \u003d true) {\n\n// assert for start level and max ipa for LPA2 case\n\n} else {\n\n// assert for start level and max ipa for non LPA2 case\n\n}",
       "parentUuid": "ed8985b6_fca212e9",
+      "range": {
+        "startLine": 317,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 14
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f46aca1_1fd0e788",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 43
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-04T16:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e356fd8b_d75144ba",
       "range": {
         "startLine": 317,
         "startChar": 1,
