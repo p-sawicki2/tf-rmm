@@ -628,6 +628,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a3521a3_255d9f40",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2124,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T21:11:13Z",
+      "side": 1,
+      "message": "remove the \"possition \"",
+      "parentUuid": "270fb6d7_3fbd49ec",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "970ebc1b_b152b5f4",
         "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
         "patchSetId": 2
@@ -886,6 +904,30 @@
       "writtenOn": "2024-07-04T21:07:45Z",
       "side": 1,
       "message": "sl may not be needed?",
+      "range": {
+        "startLine": 2204,
+        "startChar": 6,
+        "endLine": 2204,
+        "endChar": 8
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6475a941_f36ffe66",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2204,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T21:11:13Z",
+      "side": 1,
+      "message": "Ignore",
+      "parentUuid": "3f2e35ba_d0d54d70",
       "range": {
         "startLine": 2204,
         "startChar": 6,
