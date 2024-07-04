@@ -1,0 +1,365 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "deac781e_c318a16a",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "minor: Can add a test for the valid case as well eventhough the operation in NOP on fake_host. Same comment for below as well. \n\nThis is mainly for coverage reasons.",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2773e823_507e806a",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "A minor suggestion.\n\na static function can be defined at top which take unassigned_ripas and assigned_ripas as args.\n\nThis will help to reduce 4 copies of this function in this file.",
+      "range": {
+        "startLine": 430,
+        "startChar": 5,
+        "endLine": 430,
+        "endChar": 36
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8defce_6a160211",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "till here.",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f8a65a5_8bd5dcf0",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "```\n\n* Ancillary function to generate a test input s2tt_skip_non_live_entries(). The only input required to this function is @wi.index. The rest are output values.\n\n *\t- Arguments:\n *\t\titer: Iteration number. 0: generate a live S2TTE at index \u003e wi.index, 1:  generate a live S2TTE at index at wi.index , 2: generate a live S2TTE at index \u003c wi.index.\n *\t\twi:  The s2tt_walk structure to pass to s2tt_skip_non_live_entries(). Other than wi.level, all other fieds are setup by this helper.\n *\t\ttte_idx: tte index where the live entry is generated.,\n *\t\taligned_ipa: the ipa corresponding the tte_index.\n *\t\tunaligned_ipa: The unaligned ipa corresponding to tte_index.\n *\n *\t- Returns: The expected ipa that should be returned by\n *\t\t   s2tt_skip_non_live_entries() as per the test input.\n */\n```",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "863fd6d1_cb452765",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "nit: the alignment is not correct for this comment block.",
+      "range": {
+        "startLine": 1718,
+        "startChar": 3,
+        "endLine": 1718,
+        "endChar": 8
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "905de640_45fc7b01",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1733,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "remove the s2tt_ prefix since this is an internal static function.",
+      "range": {
+        "startLine": 1733,
+        "startChar": 21,
+        "endLine": 1733,
+        "endChar": 26
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "317024cc_4b2e8ea3",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1744,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "wi.index somewhere in the middle of the table.",
+      "range": {
+        "startLine": 1743,
+        "startChar": 29,
+        "endLine": 1744,
+        "endChar": 44
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab06e497_75354d32",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1755,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "remove notion of above, and below. Use \u003e, \u003d\u003d or \u003c.",
+      "range": {
+        "startLine": 1755,
+        "startChar": 24,
+        "endLine": 1755,
+        "endChar": 30
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58fb74d6_623582a1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "aligned_ipa",
+      "range": {
+        "startLine": 1784,
+        "startChar": 2,
+        "endLine": 1784,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9de51982_4bc45337",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1790,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "`unaligned_ipa`",
+      "range": {
+        "startLine": 1790,
+        "startChar": 2,
+        "endLine": 1790,
+        "endChar": 6
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "492ca603_2feb57aa",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1791,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "this is `aligned_ipa` + random()",
+      "range": {
+        "startLine": 1790,
+        "startChar": 8,
+        "endLine": 1791,
+        "endChar": 39
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8b4c492_a89a19a0",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1793,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "explain the rationale.\n\nwhen iter \u003d\u003d 0, we expect the tested function to return the `aligned_ipa`. When iter \u003d\u003d 1, we expect the tested function to return the unaligned_ipa. Otherwise the tested function returns the start to ipa of next table.",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49956a4a_54b1c056",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1809,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "`\u003e`",
+      "range": {
+        "startLine": 1809,
+        "startChar": 12,
+        "endLine": 1809,
+        "endChar": 17
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93dd6f67_4289d3b7",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1811,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "at wi.index..",
+      "range": {
+        "startLine": 1811,
+        "startChar": 6,
+        "endLine": 1811,
+        "endChar": 18
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3584f33e_9a2074a2",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1813,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "`\u003c`",
+      "range": {
+        "startLine": 1813,
+        "startChar": 35,
+        "endLine": 1813,
+        "endChar": 40
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16e0eb47_08fb780e",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1899,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "from the last test when iter \u003d\u003d 2, we ...",
+      "range": {
+        "startLine": 1899,
+        "startChar": 24,
+        "endLine": 1899,
+        "endChar": 33
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e4036df_2b78854b",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2070,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-04T13:49:01Z",
+      "side": 1,
+      "message": "till here.",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
