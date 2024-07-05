@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ecb53c7_f1b2e1cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T10:34:42Z",
+      "side": 1,
+      "message": "The fix to s2tte_get_ripas() can be a separate patch as it is change in behavior of the API.",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "172a1b8f7848bdb15a38e14ad1a111c4f35907d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45e23220_c08defe8",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T10:34:42Z",
+      "side": 1,
+      "message": "can add assert that the desc_type is either PAGE or BLOCK descriptor.",
+      "revId": "172a1b8f7848bdb15a38e14ad1a111c4f35907d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

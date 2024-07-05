@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f24b0ca0_647ea438",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T10:34:42Z",
+      "side": 0,
+      "message": "Keep this assert.",
+      "revId": "81f9c7f6384e270bb13617178c112163d9d9b426",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b68a6eab_9e7df560",
+        "filename": "lib/s2tt/src/s2tt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T10:34:42Z",
+      "side": 0,
+      "message": "keep these asserts. The asserts are also useful when refactoring s2tt code in future to avoid making mistakes.",
+      "revId": "81f9c7f6384e270bb13617178c112163d9d9b426",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
