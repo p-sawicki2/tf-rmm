@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e476c12a_19877cd1",
+        "filename": "drivers/pcie_tdi/src/include/pcie_tdi_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001371
+      },
+      "writtenOn": "2024-07-05T09:04:59Z",
+      "side": 1,
+      "message": "TDI is typically used to refer to an instance of a physical device. But most of the parameters here are for the whole physical device. Sure enough that a TDI can be a PF or VF, may be the naming is confusing.\n\nAlso if it were to represent the pdev, where are the address association registers ?",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
