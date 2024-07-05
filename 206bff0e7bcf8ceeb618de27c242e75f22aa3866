@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "077bbd5e_e29caee1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 48
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:09:53Z",
+      "side": 1,
+      "message": "Should this be `\u0026` ?",
+      "range": {
+        "startLine": 575,
+        "startChar": 21,
+        "endLine": 575,
+        "endChar": 22
+      },
+      "revId": "206bff0e7bcf8ceeb618de27c242e75f22aa3866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a2ae520_da9613f1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 48
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:09:53Z",
+      "side": 1,
+      "message": ".. table tte.\"",
+      "range": {
+        "startLine": 848,
+        "startChar": 6,
+        "endLine": 848,
+        "endChar": 12
+      },
+      "revId": "206bff0e7bcf8ceeb618de27c242e75f22aa3866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eab3572_0d26941a",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
+        "patchSetId": 48
+      },
+      "lineNbr": 1958,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:09:53Z",
+      "side": 1,
+      "message": "need to add test for valid TTE for get_ripas()",
+      "revId": "206bff0e7bcf8ceeb618de27c242e75f22aa3866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bf1c632_d8bc3a17",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g1.h",
+        "patchSetId": 48
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:09:53Z",
+      "side": 1,
+      "message": "Need to add a test to test for get_ripas() for valid desc ?",
+      "revId": "206bff0e7bcf8ceeb618de27c242e75f22aa3866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
