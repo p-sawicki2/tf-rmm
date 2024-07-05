@@ -34,6 +34,24 @@
       "parentUuid": "d28e2da7_fd4a75f9",
       "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79f5143e_92ffdd90",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T09:13:01Z",
+      "side": 1,
+      "message": "The RMI_DATA_DESTROY will do the clearing of the buffer. The code is here : https://github.com/TF-RMM/tf-rmm/blob/81f9c7f6384e270bb13617178c112163d9d9b426/runtime/rmi/rtt.c#L1090\n\nEvery RMI_*_DESTROY call will have a memzero of the granule on success [1].\n\nThe state transition need not go via undelegation always. For example, this flow is allowed : DELEGATED -\u003e RD -\u003e DELEGATED -\u003e RD.\n\nThe first RD may be for 1 realm and the second RD could be for another Realm. Hence it is essential to scrub the granule when transitioning from any other state to DELEGATED state. \n\nYes, I agree it would be better to have it at one place, but due to transitions as described above, we cannot avoid at the DESTROY calls [2].\n\nPerhaps `granule_set_state(DELEGATED)` can do the memzero if the state is being transitioned from one of the REALM related states ?\n\n[1] If per world encryption is available, then scrubbing on returning the granule back to NS may not be so important.\n\n[2] When FEAT_MEC is implemented, depending on whether the RD, REC, RTTs are all encrypted using the per-realm key, perhaps this needs re-evaluation.",
+      "parentUuid": "0ac2e03e_6edaff0c",
+      "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
