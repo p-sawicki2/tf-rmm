@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "375fef61_4d316a5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 48
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:13:50Z",
+      "side": 1,
+      "message": "tests(lib/s2tt):",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "206bff0e7bcf8ceeb618de27c242e75f22aa3866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "077bbd5e_e29caee1",
         "filename": "lib/s2tt/tests/s2tt_tests_base_g1.cpp",
         "patchSetId": 48
