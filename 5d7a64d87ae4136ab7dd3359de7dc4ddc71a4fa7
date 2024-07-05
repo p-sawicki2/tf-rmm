@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a17d166_de6d49e2",
+        "filename": "lib/spdm_requester/arm_stub/spdm_rnglib/spdm_rnglib.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001371
+      },
+      "writtenOn": "2024-07-05T09:05:04Z",
+      "side": 1,
+      "message": "Shouldnt we assert() this until we get a proper implementation ? That way it will be more noticeable.",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4da6664_bd57456d",
+        "filename": "lib/spdm_requester/arm_stub/spdm_timelib/spdm_time.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001371
+      },
+      "writtenOn": "2024-07-05T09:05:04Z",
+      "side": 1,
+      "message": "Yes I think yielding back to RMM and doing a wait exit makes sense. We need to confirm in all cases that libspdm is actually waiting for the device to respond.",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
