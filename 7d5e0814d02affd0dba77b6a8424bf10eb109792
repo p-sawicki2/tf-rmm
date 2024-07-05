@@ -1114,6 +1114,328 @@
       },
       "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e3a0aae_89d96083",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2270,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "starting",
+      "range": {
+        "startLine": 2270,
+        "startChar": 32,
+        "endLine": 2270,
+        "endChar": 41
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a8f9d1d_07ea29e7",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2282,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "incorrect description ?",
+      "range": {
+        "startLine": 2277,
+        "startChar": 0,
+        "endLine": 2282,
+        "endChar": 43
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3696dc0_42911e08",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2292,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "rename these variables as per comments given to function above.",
+      "range": {
+        "startLine": 2292,
+        "startChar": 15,
+        "endLine": 2292,
+        "endChar": 26
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b4f292e_146ee5e6",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "... span across the IPA size but can fit within S2TTE_MAX_CONCAT_TABLES at sl + 1.\"",
+      "range": {
+        "startLine": 2309,
+        "startChar": 49,
+        "endLine": 2309,
+        "endChar": 67
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9ade1d1_4cf7b6d3",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "starting level is confusing. reword this paragraph as :\n\n\" If the address can fit within S2TTE_MAX_CONCAT_TABLES at sl + 1, we can use the same tables for testing the concatenated root table support.\"",
+      "range": {
+        "startLine": 2312,
+        "startChar": 24,
+        "endLine": 2315,
+        "endChar": 43
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddf5b5f8_c495e855",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2421,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "didn\u0027t get how this will work as this is a pointer to the granule. would prefer to use platform API on the level - 1 granule address to get the granule.",
+      "range": {
+        "startLine": 2421,
+        "startChar": 1,
+        "endLine": 2421,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7572d22c_8a891691",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2439,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "wrong comment as root grnaule is level is sl + 2 ?",
+      "range": {
+        "startLine": 2438,
+        "startChar": 4,
+        "endLine": 2439,
+        "endChar": 61
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ec92a11_5ca0be03",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "would prefer to reinitilaize the end level.",
+      "range": {
+        "startLine": 2449,
+        "startChar": 1,
+        "endLine": 2449,
+        "endChar": 13
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f735c38e_6255355a",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2450,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "same comment for this.",
+      "range": {
+        "startLine": 2450,
+        "startChar": 1,
+        "endLine": 2450,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84d66196_88cd4db5",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2459,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "I dont understand this. Shouldn\u0027t this be sl + 2 ?",
+      "range": {
+        "startLine": 2459,
+        "startChar": 30,
+        "endLine": 2459,
+        "endChar": 37
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "814d69ce_d91d1143",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2490,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "reinit end level again.",
+      "range": {
+        "startLine": 2490,
+        "startChar": 9,
+        "endLine": 2490,
+        "endChar": 19
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7711b98b_51a5f971",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2592,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "correct comment as mentioned above and similar comments below.",
+      "range": {
+        "startLine": 2585,
+        "startChar": 14,
+        "endLine": 2592,
+        "endChar": 52
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a37bc072_51942684",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 3109,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "correct the comment.",
+      "range": {
+        "startLine": 3108,
+        "startChar": 25,
+        "endLine": 3109,
+        "endChar": 50
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2ffc050_0dd667f9",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 3117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:55:39Z",
+      "side": 1,
+      "message": "```\n   sl_index \u003d s2tt_test_helpers_get_idx_from_addr(pa, sl);\n} while (sl_index \u003c S2TTE_MAX_CONCAT_TABLES);\n```\n\nWouldn\u0027t his work ?",
+      "range": {
+        "startLine": 3116,
+        "startChar": 13,
+        "endLine": 3117,
+        "endChar": 55
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
