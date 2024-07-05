@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "032ce4b7_69cd2fd9",
+        "filename": "runtime/rmi/da.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1001371
+      },
+      "writtenOn": "2024-07-05T09:04:54Z",
+      "side": 1,
+      "message": "looks like a weird value, 8192 or 4096 ?",
+      "revId": "91478b6a50b3f64ac78b60dd3aface0e9fb12562",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
