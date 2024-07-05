@@ -852,6 +852,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "912e1e26_509962e5",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:11:30Z",
+      "side": 1,
+      "message": "given comment on latest",
+      "parentUuid": "7bd8909c_a60c2a49",
+      "range": {
+        "startLine": 848,
+        "startChar": 6,
+        "endLine": 848,
+        "endChar": 11
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32e812bc_010127b7",
@@ -1651,6 +1675,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9483f459_bbe1fee7",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12fb2dd1_659466c3",
+      "range": {
+        "startLine": 1760,
+        "startChar": 5,
+        "endLine": 1760,
+        "endChar": 30
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c58fc41_d8af3e03",
@@ -2029,6 +2077,30 @@
       "side": 1,
       "message": "A valid descriptor, by the nature of being valid, has RIPAS \u003d RAM and HIPAS \u003d assigned.\n\nThe API description says other wise. WE could restrict s2tte_get_ripas to invalid desc. IN this case , the function description and asserts should be changed.",
       "parentUuid": "3a491a9e_3f5609a4",
+      "range": {
+        "startLine": 1990,
+        "startChar": 2,
+        "endLine": 1993,
+        "endChar": 6
+      },
+      "revId": "4685400fd2d5369aaf6d9357595c2c243764462d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b61c573_733c5045",
+        "filename": "lib/s2tt/tests/s2tt_tests_base.cpp",
+        "patchSetId": 43
+      },
+      "lineNbr": 1993,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-05T11:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d634efe3_9b32fe30",
       "range": {
         "startLine": 1990,
         "startChar": 2,
