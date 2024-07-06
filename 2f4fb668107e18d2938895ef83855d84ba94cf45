@@ -70,6 +70,24 @@
       "parentUuid": "79f5143e_92ffdd90",
       "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93fc2831_354f9602",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-06T01:26:30Z",
+      "side": 1,
+      "message": "btw, i confirmed with one of our memory security architects as well, and he said it is best that we scrub granules regardless of MEC or memory encryption, since there will always be some timing or other corner case in the cache hierarchy that can create cross realm leaks if we dont scrub, specifically for the transition case you mentioned...\nNow i\u0027m more paranoid and think we should make sure cross realm and cross PAS should scrub memory, and i think your solution should work very well :)",
+      "parentUuid": "8f997c02_7f75e616",
+      "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
