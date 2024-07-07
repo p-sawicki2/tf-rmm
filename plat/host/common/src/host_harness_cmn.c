@@ -149,19 +149,31 @@ unsigned long host_monitor_call(unsigned long id,
 }
 
 static int attest_get_platform_token(uint64_t buf_pa, uint64_t *buf_size,
-				     uint64_t c_size)
+				     uint64_t c_size, uint64_t offset)
 {
 	(void)c_size; /* The challenge is ignored */
+	uint64_t platform_token_size = sizeof(platform_token);
+	uint64_t ret_value = E_RMM_GET_PLAT_TOKEN_INCOMPLETE;
 
-	if (*buf_size < sizeof(platform_token)) {
-		ERROR("Failed to get platform token: Buffer is too small.\n");
-		return -ENOMEM;
+	if (offset >= platform_token_size) {
+		ERROR("Offset is beyond platform token bounds\n");
+		return -EINVAL;
 	}
 
-	(void)memcpy((void *)buf_pa, (void *)platform_token, sizeof(platform_token));
-	*buf_size = sizeof(platform_token);
+	/*
+	 * If the buffer is enough to fit the remaining bytes of the token,
+	 * return only the remaining bytes of the token and indicate that
+	 * the transfer is complete.
+	 */
+	if (offset + *buf_size >= platform_token_size) {
+		*buf_size = platform_token_size - offset;
+		ret_value = E_RMM_GET_PLAT_TOKEN_SUCCESS;
+	}
 
-	return 0;
+	(void)memcpy((void *)buf_pa, (void *)platform_token + offset,
+		*buf_size);
+
+	return ret_value;
 }
 
 static int attest_get_signing_key(uint64_t buf_pa, uint64_t *buf_size,
@@ -193,13 +205,13 @@ void host_monitor_call_with_res(unsigned long id,
 			struct smc_result *res)
 {
 	/* Avoid MISRA C:2102-2.7 warnings */
-	(void)arg3;
 	(void)arg4;
 	(void)arg5;
 
 	switch (id) {
 	case SMC_RMM_GET_PLAT_TOKEN:
-		res->x[0] = attest_get_platform_token(arg0, &arg1, arg2);
+		res->x[0] = attest_get_platform_token(arg0, &arg1,
+				arg2, arg3);
 		res->x[1] = arg1;
 		break;
 	case SMC_RMM_GET_REALM_ATTEST_KEY:

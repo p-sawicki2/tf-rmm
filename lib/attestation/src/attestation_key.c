@@ -190,8 +190,12 @@ int attest_get_realm_public_key(struct q_useful_buf_c *public_key)
 int attest_setup_platform_token(void)
 {
 	uintptr_t shared_buf;
-	size_t platform_token_len;
+	size_t shared_buf_len;
+	size_t token_piece_len;
 	struct q_useful_buf_c rmm_pub_key_hash;
+	/* coverity[misra_c_2012_rule_14_3_violation:SUPPRESS] */
+	uint64_t hash_length = PSA_HASH_LENGTH(PSA_ALG_SHA_256);
+	uint64_t offset = 0;
 	int ret;
 
 	/*
@@ -207,36 +211,61 @@ int attest_setup_platform_token(void)
 
 	shared_buf = rmm_el3_ifc_get_shared_buf_locked();
 
+	shared_buf_len = rmm_el3_ifc_get_shared_buf_size();
+
 	(void)memcpy((void *)shared_buf, rmm_pub_key_hash.ptr,
 					 rmm_pub_key_hash.len);
 
-	ret = rmm_el3_ifc_get_platform_token(
-			shared_buf,
-			rmm_el3_ifc_get_shared_buf_size(),
-			&platform_token_len,
-			/* coverity[misra_c_2012_rule_14_3_violation:SUPPRESS] */
-			PSA_HASH_LENGTH(PSA_ALG_SHA_256));
+	do {
+		ret = rmm_el3_ifc_get_platform_token(
+				shared_buf,
+				shared_buf_len,
+				&token_piece_len,
+				hash_length,
+				offset);
 
-	if (ret != 0) {
-		rmm_el3_ifc_release_shared_buf();
-		return -EINVAL;
-	}
+		if (ret < 0) {
+			rmm_el3_ifc_release_shared_buf();
+			return -EINVAL;
+		}
 
-	/* 
-	 * Make sure the token length does not exceed the size of the
-	 * token buffer
-	 */
-	assert(platform_token_len <= sizeof(rmm_platform_token_buf));
+		if (offset + token_piece_len
+				> RMM_TOKEN_BUFFER_SIZE) {
+			rmm_el3_ifc_release_shared_buf();
+			ERROR("The received piece of token does" \
+			      "not fit in the token buffer.\n");
+			return -ENOBUFS;
+		}
 
-	/* coverity[misra_c_2012_rule_9_1_violation:SUPPRESS] */
-	(void)memcpy((void *)rmm_platform_token_buf,
-		     (void *)shared_buf,
-		     platform_token_len);
+		if (token_piece_len == 0
+			&& ret == E_RMM_GET_PLAT_TOKEN_INCOMPLETE) {
+
+			/*
+			 * Prevent an infinite loop if EL3 keeps
+			 * returning no bytes and the return value
+			 * is not E_RMM_GET_PLAT_TOKEN_SUCCESS.
+			 */
+			rmm_el3_ifc_release_shared_buf();
+			return -EINVAL;
+		}
+
+		/* coverity[misra_c_2012_rule_9_1_violation:SUPPRESS] */
+		(void)memcpy((void *)rmm_platform_token_buf + offset,
+			     (void *)shared_buf,
+			     token_piece_len);
+
+		offset += token_piece_len;
+
+	} while (ret == E_RMM_GET_PLAT_TOKEN_INCOMPLETE);
 
 	rmm_el3_ifc_release_shared_buf();
 
 	rmm_platform_token.ptr = rmm_platform_token_buf;
-	rmm_platform_token.len = platform_token_len;
+	/*
+	 * At this point, the offset value corresponds to the length
+	 * of the token received.
+	 */
+	rmm_platform_token.len = offset;
 
 	return 0;
 }
