@@ -14,6 +14,7 @@
 #include <string.h>
 
 #define ATTEST_KEY_CURVE_ECC_SECP384R1	0
+#define ATTEST_PLAT_TOKEN_USED_LENGTH	100
 
 /* Hardcoded platform token value */
 static uint8_t platform_token[] = {
@@ -102,6 +103,7 @@ static uint8_t platform_token[] = {
 	0xC1, 0x26, 0x96, 0x53, 0xA3, 0x60, 0x3F, 0x6C,
 	0x75, 0x96, 0x90, 0x6A, 0xF9, 0x4E, 0xDA, 0x30
 };
+static uint64_t platform_token_offset = 0;
 
 static uint8_t sample_attest_priv_key[] = {
 	0x20, 0x11, 0xC7, 0xF0, 0x3C, 0xEE, 0x43, 0x25, 0x17, 0x6E,
@@ -148,20 +150,41 @@ unsigned long host_monitor_call(unsigned long id,
 	}
 }
 
-static int attest_get_platform_token(uint64_t buf_pa, uint64_t *buf_size,
-				     uint64_t c_size)
+static int attest_get_platform_token(uint64_t buf_pa, uint64_t buf_size,
+				     uint64_t c_size, uint64_t *token_hunk_size,
+				     uint64_t *remaining_len)
 {
-	(void)c_size; /* The challenge is ignored */
+	uint64_t platform_token_size = sizeof(platform_token);
 
-	if (*buf_size < sizeof(platform_token)) {
-		ERROR("Failed to get platform token: Buffer is too small.\n");
-		return -ENOMEM;
+	if (c_size != 0) {
+		platform_token_offset = 0;
+	}
+	else if (platform_token_offset == platform_token_size) {
+		return E_RMM_GET_PLAT_TOKEN_END_REACHED;
 	}
 
-	(void)memcpy((void *)buf_pa, (void *)platform_token, sizeof(platform_token));
-	*buf_size = sizeof(platform_token);
+	*token_hunk_size = ATTEST_PLAT_TOKEN_USED_LENGTH;
+	if (*token_hunk_size > buf_size) {
+		*token_hunk_size = buf_size;
+	}
 
-	return 0;
+	/*
+	 * If the buffer is enough to fit the remaining bytes of the token,
+	 * return only the remaining bytes of the token.
+	 */
+	if (platform_token_offset + *token_hunk_size
+			>= platform_token_size) {
+		*token_hunk_size = platform_token_size - platform_token_offset;
+	}
+
+	(void)memcpy((void *)buf_pa,
+		(void *)platform_token + platform_token_offset,
+		*token_hunk_size);
+
+	platform_token_offset += *token_hunk_size;
+	*remaining_len = platform_token_size - platform_token_offset;
+
+	return E_RMM_GET_PLAT_TOKEN_SUCCESS;
 }
 
 static int attest_get_signing_key(uint64_t buf_pa, uint64_t *buf_size,
@@ -193,14 +216,14 @@ void host_monitor_call_with_res(unsigned long id,
 			struct smc_result *res)
 {
 	/* Avoid MISRA C:2102-2.7 warnings */
-	(void)arg3;
-	(void)arg4;
 	(void)arg5;
 
 	switch (id) {
 	case SMC_RMM_GET_PLAT_TOKEN:
-		res->x[0] = attest_get_platform_token(arg0, &arg1, arg2);
-		res->x[1] = arg1;
+		res->x[0] = attest_get_platform_token(arg0, arg1,
+				arg2, &arg3, &arg4);
+		res->x[1] = arg3;
+		res->x[2] = arg4;
 		break;
 	case SMC_RMM_GET_REALM_ATTEST_KEY:
 		res->x[0] = attest_get_signing_key(arg0, &arg1, arg2);
