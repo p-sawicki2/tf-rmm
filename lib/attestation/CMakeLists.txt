@@ -16,7 +16,7 @@ arm_config_option(
     NAME RMM_PLAT_TOKEN_MAX_SIZE
     HELP "Maximum size in bytes expected for the Attestation platform token"
     TYPE STRING
-    DEFAULT 0x1000
+    DEFAULT 0x3000
     ADVANCED)
 
 target_compile_definitions(rmm-lib-attestation

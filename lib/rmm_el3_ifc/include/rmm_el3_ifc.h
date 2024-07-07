@@ -37,6 +37,10 @@
 #define E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED	(-6)
 #define E_RMM_BOOT_MANIFEST_DATA_ERROR			(-7)
 
+/* SMC_RMM_GET_PLAT_TOKEN return codes */
+#define E_RMM_GET_PLAT_TOKEN_SUCCESS			(0)
+#define E_RMM_GET_PLAT_TOKEN_END_REACHED		(1)
+
 /************************
  * Version related macros
  ************************/
@@ -293,23 +297,38 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 /*
  * Get the platform token from the EL3 firmware and pass the public hash
  * value to it.
- * The caller of this API should have filled the public key hash at `buf`
- * and the length of the key hash must be stored in hash_size.
+ * If the whole token does not fit in the buffer, a piece of the token will be
+ * returned in the buffer, and this function will have to be called
+ * sequentially in order to obtain the full token. Output variable
+ * remaining_len will indicate how much of the token remains to be retrieved.
  *
  * Args:
  *	- buf:		Pointer to the buffer used to get the platform token
  *			from EL3. This must belong to the RMM-EL3 shared memory
  *			and must be locked before use.
  *	- buflen	Maximum size for the Platform Token.
- *	- len:		Pointer where the size of the retrieved platform token
- *			will be stored.
  *	- hash_size:	Size of the SHA digest used for the token generation.
+ *			If hash_size contains a valid size (> 0), the buffer
+ *			will contain the first part of the token after
+ *			returning. If it is 0, the buffer will contain the part
+ *			of the token that follows the part retrieved in the
+ *			previous call.
+ *	- token_len:	Pointer where the size of the retrieved platform token
+ *			will be stored.
+ *	- remaining_len:Return the number of bytes of the token that are pending
+ *			transfer.
  *
  * Return:
- *	- 0 On success or a negative error code otherwise.
+ *	- E_RMM_GET_PLAT_TOKEN_SUCCESS		if part (or entirety) of the
+ *						token has been received
+ *						successfully.
+ *	- E_RMM_GET_PLAT_TOKEN_END_REACHED	if the entire token has been
+ *						retrieved and there is no more
+ *						parts of the token pending.
  */
 int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
-					size_t *len, size_t hash_size);
+					size_t hash_size, size_t *token_len,
+					size_t *remaining_len);
 
 static inline unsigned long rmm_el3_ifc_gtsi_delegate(unsigned long addr)
 {
