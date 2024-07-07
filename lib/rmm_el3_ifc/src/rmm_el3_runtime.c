@@ -73,7 +73,8 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
  * input for platform token computation.
  */
 int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
-					size_t *len, size_t hash_size)
+					size_t *len, size_t hash_size,
+					uint64_t token_offset)
 {
 	struct smc_result smc_res;
 	unsigned long buffer_pa;
@@ -89,10 +90,11 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 			      buffer_pa,
 			      buflen,
 			      hash_size,
-			      0UL, 0UL, 0UL, &smc_res);
+			      token_offset,
+			      0UL, 0UL, &smc_res);
 
 	/* coverity[uninit_use:SUPPRESS] */
-	if (smc_res.x[0] != 0UL) {
+	if (smc_res.x[0] < 0L) {
 		ERROR("Failed to get platform token x0 = 0x%lx\n",
 				smc_res.x[0]);
 		return (int)smc_res.x[0];
@@ -100,5 +102,5 @@ int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 
 	*len = smc_res.x[1];
 
-	return 0;
+	return (int)smc_res.x[0];
 }

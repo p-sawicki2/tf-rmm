@@ -37,6 +37,10 @@
 #define E_RMM_BOOT_MANIFEST_VERSION_NOT_SUPPORTED	(-6)
 #define E_RMM_BOOT_MANIFEST_DATA_ERROR			(-7)
 
+/* SMC_RMM_GET_PLAT_TOKEN return codes */
+#define E_RMM_GET_PLAT_TOKEN_SUCCESS			(0)
+#define E_RMM_GET_PLAT_TOKEN_INCOMPLETE			(1)
+
 /************************
  * Version related macros
  ************************/
@@ -293,8 +297,13 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
 /*
  * Get the platform token from the EL3 firmware and pass the public hash
  * value to it.
- * The caller of this API should have filled the public key hash at `buf`
- * and the length of the key hash must be stored in hash_size.
+ * On the first call, token_offset has to be 0, and the caller of this API
+ * should have filled the public key hash at `buf` and the length of the key
+ * hash must be stored in hash_size.
+ * In order to receive the whole token, this function shall be called multiple
+ * times as long as the return value is E_RMM_GET_PLAT_TOKEN_INCOMPLETE. The
+ * token_offset parameter has to be updated according to the number of bytes
+ * received on the previous call (*len).
  *
  * Args:
  *	- buf:		Pointer to the buffer used to get the platform token
@@ -304,12 +313,21 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
  *	- len:		Pointer where the size of the retrieved platform token
  *			will be stored.
  *	- hash_size:	Size of the SHA digest used for the token generation.
+ *	- token_offset:	Offset within token from which to retrieve the data.
  *
  * Return:
- *	- 0 On success or a negative error code otherwise.
+ *	- E_RMM_GET_PLAT_TOKEN_SUCCESS		if the last part (or entirety)
+ *						of the token has been received
+ *						and there are no more bytes of
+ *						the token pending.
+ *	- E_RMM_GET_PLAT_TOKEN_INCOMPLETE	if part of the token has been
+ *						received but more of the token
+ *						remains to be transferred.
+ *	- Negative error code otherwise.
  */
 int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
-					size_t *len, size_t hash_size);
+					size_t *len, size_t hash_size,
+					uint64_t token_offset);
 
 static inline unsigned long rmm_el3_ifc_gtsi_delegate(unsigned long addr)
 {
