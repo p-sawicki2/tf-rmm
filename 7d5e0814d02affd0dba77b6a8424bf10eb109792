@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6839e215_746d470e",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "deac781e_c318a16a",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2773e823_507e806a",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-07-04T13:49:01Z",
       "side": 1,
       "message": "A minor suggestion.\n\na static function can be defined at top which take unassigned_ripas and assigned_ripas as args.\n\nThis will help to reduce 4 copies of this function in this file.",
+      "range": {
+        "startLine": 430,
+        "startChar": 5,
+        "endLine": 430,
+        "endChar": 36
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fcd81a7_d6f1f11d",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2773e823_507e806a",
       "range": {
         "startLine": 430,
         "startChar": 5,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9048c35_b124019b",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c8defce_6a160211",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f8a65a5_8bd5dcf0",
@@ -75,6 +135,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d5eacb6_11b8fc14",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "I don\u0027t agree with the renaming for `aligned_ipa` (former `entry_ipa`) and `unaligned_ipa` (former `ipa`). In fact, I think the names should be kept as:\n\n- `entry_ipa` is used by the caller to generate a table which is mapped at such address. It is always aligned to `table_ipa[wi.index]`.\n- `ipa` is used by the caller as input to test s2tt_skip_non_live_entries(). It uses `table_ipa[tte_idx]` in order to be generated and, depending on `iter` it can be \u003c, \u003d\u003d (in which case is an aligned address) or \u003e than `entry_ipa`.\n- This function returns, depending on the value of `iter`, either `entry_ipa`, `ipa` or a different IPA as the expected one to be returned by s2tt_skip_non_live_entries().",
+      "parentUuid": "1f8a65a5_8bd5dcf0",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "863fd6d1_cb452765",
@@ -88,6 +166,30 @@
       "writtenOn": "2024-07-04T13:49:01Z",
       "side": 1,
       "message": "nit: the alignment is not correct for this comment block.",
+      "range": {
+        "startLine": 1718,
+        "startChar": 3,
+        "endLine": 1718,
+        "endChar": 8
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d816638_ecd1f5de",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "863fd6d1_cb452765",
       "range": {
         "startLine": 1718,
         "startChar": 3,
@@ -121,6 +223,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6b08197_a0ad3614",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1733,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "905de640_45fc7b01",
+      "range": {
+        "startLine": 1733,
+        "startChar": 21,
+        "endLine": 1733,
+        "endChar": 26
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317024cc_4b2e8ea3",
@@ -134,6 +260,30 @@
       "writtenOn": "2024-07-04T13:49:01Z",
       "side": 1,
       "message": "wi.index somewhere in the middle of the table.",
+      "range": {
+        "startLine": 1743,
+        "startChar": 29,
+        "endLine": 1744,
+        "endChar": 44
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5d91bfa_5cea60b5",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1744,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "317024cc_4b2e8ea3",
       "range": {
         "startLine": 1743,
         "startChar": 29,
@@ -167,6 +317,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "369d5dad_39cfc8ed",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1755,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab06e497_75354d32",
+      "range": {
+        "startLine": 1755,
+        "startChar": 24,
+        "endLine": 1755,
+        "endChar": 30
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58fb74d6_623582a1",
@@ -180,6 +354,30 @@
       "writtenOn": "2024-07-04T13:49:01Z",
       "side": 1,
       "message": "aligned_ipa",
+      "range": {
+        "startLine": 1784,
+        "startChar": 2,
+        "endLine": 1784,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87741b56_047e623a",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58fb74d6_623582a1",
       "range": {
         "startLine": 1784,
         "startChar": 2,
@@ -213,6 +411,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f09e5a83_2c76cfe1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1790,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9de51982_4bc45337",
+      "range": {
+        "startLine": 1790,
+        "startChar": 2,
+        "endLine": 1790,
+        "endChar": 6
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "492ca603_2feb57aa",
@@ -236,6 +458,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aad19d16_6a361a9d",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1791,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "See my previous comment to regard this. According to it we will always need `tte_idx` to generate `entry_ipa` and `wi.index` to generate `ipa` regardless of the value of `iter`",
+      "parentUuid": "492ca603_2feb57aa",
+      "range": {
+        "startLine": 1790,
+        "startChar": 8,
+        "endLine": 1791,
+        "endChar": 39
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8b4c492_a89a19a0",
@@ -249,6 +495,24 @@
       "writtenOn": "2024-07-04T13:49:01Z",
       "side": 1,
       "message": "explain the rationale.\n\nwhen iter \u003d\u003d 0, we expect the tested function to return the `aligned_ipa`. When iter \u003d\u003d 1, we expect the tested function to return the unaligned_ipa. Otherwise the tested function returns the start to ipa of next table.",
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a222ed47_4498640e",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1793,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-08T19:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8b4c492_a89a19a0",
       "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
