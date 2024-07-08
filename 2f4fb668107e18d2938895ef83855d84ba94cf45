@@ -88,6 +88,24 @@
       "parentUuid": "8f997c02_7f75e616",
       "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c88a8e65_ca2b87ad",
+        "filename": "runtime/rmi/granule.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-08T08:56:32Z",
+      "side": 1,
+      "message": "OK, good to know. We will keep the software scrubs then regardless of MEC and other per world encryption schemes.\n\n\u003e Are you okay if i update the patch to memzero in granule_set_state to DELEGATED? I agree with that.\n\nI just realized that it may be more difficult than I initially envisaged. The buffer may or maynot be mapped and this is only known to caller and not passed to this function. \n\nThe current scheme of ensuring scrub of granule as part of RMI_*_DESTROY is not too problematic to review and upkeep. This is part of the Threat model of RMM and I would expect maintainers of RMM to be aware of this threat. \n\nBut if there is a rationalization possible, we can evaluate it.",
+      "parentUuid": "93fc2831_354f9602",
+      "revId": "2f4fb668107e18d2938895ef83855d84ba94cf45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
