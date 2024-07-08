@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d2e06db_8b34caba",
+        "filename": "configs/libspdm/rmm_libspdm_config.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-08T22:10:58Z",
+      "side": 1,
+      "message": "shouldnt this depend on the build type? if RMM is debug you want this enabled?",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a17d166_de6d49e2",
         "filename": "lib/spdm_requester/arm_stub/spdm_rnglib/spdm_rnglib.c",
         "patchSetId": 1
