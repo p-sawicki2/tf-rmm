@@ -45,6 +45,30 @@
       },
       "revId": "33fd4dd81b4c87a208258a3592d18f4be56a8df1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28e5443a_39637703",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 2079,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-09T17:31:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27b19018_ed1d4c68",
+      "range": {
+        "startLine": 2079,
+        "startChar": 14,
+        "endLine": 2079,
+        "endChar": 23
+      },
+      "revId": "33fd4dd81b4c87a208258a3592d18f4be56a8df1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
