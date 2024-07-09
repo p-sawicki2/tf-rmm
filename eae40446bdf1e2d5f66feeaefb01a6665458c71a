@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2e309ccd_7d20e05a",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:43:30Z",
+      "side": 1,
+      "message": "\u003e these are for planes and not DA right? can we remove?\n\nI added all planes related ABIs because not having these entries causes a shift in FID of SMC_RMI_VDEV_* in handler table that doesn\u0027t align with the spec. Let me look into it further. We discussed this internally and there are plans to use RMM_V1.1 build flag.",
+      "parentUuid": "0f30c250_98cf51d9",
+      "range": {
+        "startLine": 403,
+        "startChar": 0,
+        "endLine": 410,
+        "endChar": 64
+      },
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "55027adb_ab324e1f",
         "filename": "lib/smc/include/smc-rmi.h",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2024-07-08T21:35:56Z",
       "side": 1,
       "message": "same here. if feat is DA, this should be here i think.",
+      "range": {
+        "startLine": 417,
+        "startChar": 8,
+        "endLine": 417,
+        "endChar": 28
+      },
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06078040_7fd6ac9a",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:43:30Z",
+      "side": 1,
+      "message": "Done\n\nThis will be tracked under same comment https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29732/comment/0f30c250_98cf51d9/",
+      "parentUuid": "55027adb_ab324e1f",
       "range": {
         "startLine": 417,
         "startChar": 8,
@@ -77,6 +125,24 @@
       "writtenOn": "2024-07-08T21:35:56Z",
       "side": 1,
       "message": "should this be under CCA_DA or whatever the compile time flag is that we have used?",
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e52f25c5_a1375576",
+        "filename": "lib/smc/include/smc-rmi.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:43:30Z",
+      "side": 1,
+      "message": "Done\n\nThis will be tracked under same comment https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29732/comment/0f30c250_98cf51d9/",
+      "parentUuid": "d210acec_aef42d29",
       "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -145,6 +211,30 @@
       "writtenOn": "2024-07-08T21:35:56Z",
       "side": 1,
       "message": "same, planes related. probably shouldnt be here.",
+      "range": {
+        "startLine": 170,
+        "startChar": 1,
+        "endLine": 175,
+        "endChar": 25
+      },
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "167950ab_43a55c5c",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:43:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e8f44da_bc56a924",
       "range": {
         "startLine": 170,
         "startChar": 1,
