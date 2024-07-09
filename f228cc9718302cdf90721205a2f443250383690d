@@ -16,6 +16,29 @@
       "message": "As discussed, this patch cannot be merged. Need alternative solution.",
       "revId": "f228cc9718302cdf90721205a2f443250383690d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4f0b954_58a9b3ae",
+        "filename": "toolchains/common.cmake",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:30:53Z",
+      "side": 1,
+      "message": "this can go into common_aarch64.cmake ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "f228cc9718302cdf90721205a2f443250383690d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
