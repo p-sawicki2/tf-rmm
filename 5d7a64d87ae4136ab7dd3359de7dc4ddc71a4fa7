@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af36569_90705c28",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:52:47Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c116a864_42f439c0",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4197c44_f37e2c89",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-09T10:05:30Z",
       "side": 1,
       "message": "can we use these stubs for fake_host as well. This is what we do for current MbedTLS lib in RMM.",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09f5c6cc_86a2f664",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:52:47Z",
+      "side": 1,
+      "message": "\u003e can we use these stubs for fake_host as well. This is what we do for current MbedTLS lib in RMM.\n\nyes, we can use. these patch was more recently developed so we can now replace to use these for fake_host. For host build can I leave rnglib coming from libspdm?",
+      "parentUuid": "c4197c44_f37e2c89",
       "range": {
         "startLine": 11,
         "startChar": 14,
@@ -82,6 +130,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00f028b5_23163f73",
+        "filename": "configs/libspdm/rmm_libspdm_config.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:52:47Z",
+      "side": 1,
+      "message": "@Raghu\n\n\u003e shouldnt this depend on the build type? if RMM is debug you want this  enabled?\n\n\nyes, this macro is used only when DEBUG build is enabled. so moved it within DEBUG.\n\n\n@Soby\n\u003e Yes, unless we know the assert() policy of libspdm ...\n\nFor non-debug build libspdm_assert() doesn\u0027t exist. For DEBUG its already enabled by default and this change set it to native assert.",
+      "parentUuid": "2d2e06db_8b34caba",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a17d166_de6d49e2",
@@ -99,6 +165,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39cafe42_e52b1ed3",
+        "filename": "lib/spdm_requester/arm_stub/spdm_rnglib/spdm_rnglib.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:52:47Z",
+      "side": 1,
+      "message": "Ack, added assert",
+      "parentUuid": "6a17d166_de6d49e2",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4da6664_bd57456d",
@@ -112,6 +196,24 @@
       "writtenOn": "2024-07-05T09:05:04Z",
       "side": 1,
       "message": "Yes I think yielding back to RMM and doing a wait exit makes sense. We need to confirm in all cases that libspdm is actually waiting for the device to respond.",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "760407fe_b3031f59",
+        "filename": "lib/spdm_requester/arm_stub/spdm_timelib/spdm_time.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T17:52:47Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e4da6664_bd57456d",
       "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
