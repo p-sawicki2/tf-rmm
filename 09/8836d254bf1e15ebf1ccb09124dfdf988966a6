@@ -1,0 +1,8 @@
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Allow-CI+1: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 09 Jul 2024 16:04:00 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/28869
+Project: TF-RMM/tf-rmm
+Branch: refs/heads/integration
