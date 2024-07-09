@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c116a864_42f439c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T10:05:30Z",
+      "side": 1,
+      "message": "use RMM_ARCH for these purposes.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4197c44_f37e2c89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T10:05:30Z",
+      "side": 1,
+      "message": "can we use these stubs for fake_host as well. This is what we do for current MbedTLS lib in RMM.",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d2e06db_8b34caba",
         "filename": "configs/libspdm/rmm_libspdm_config.h",
         "patchSetId": 1
@@ -14,6 +60,24 @@
       "writtenOn": "2024-07-08T22:10:58Z",
       "side": 1,
       "message": "shouldnt this depend on the build type? if RMM is debug you want this enabled?",
+      "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c479ce2_465bfacc",
+        "filename": "configs/libspdm/rmm_libspdm_config.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T10:05:30Z",
+      "side": 1,
+      "message": "Yes, unless we know the assert() policy of libspdm , it is difficult to make this decision. If the assert() can be trigger at all in a valid runtime scenario, it may be better to keep as a while(1). \n\nSo agree that this should be enabled for a DEBUG build.",
+      "parentUuid": "2d2e06db_8b34caba",
       "revId": "5d7a64d87ae4136ab7dd3359de7dc4ddc71a4fa7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
