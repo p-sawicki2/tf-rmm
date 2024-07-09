@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b50d894_25c38dee",
+        "filename": "drivers/pcie_tdi/src/include/pcie_tdi_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-09T20:25:31Z",
+      "side": 1,
+      "message": "i dont see why we need this level of indirection, the RMM spec already has data structures to abstract PFs/VFs so yet another layer of indirection seems unnecessary.\nAs for structure repetition, Why dont we just use the RmmPdev type from the spec? that already has device classes etc.",
+      "parentUuid": "78f8a92e_8e9789e2",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29067e17_b50a8ed0",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 2
@@ -85,6 +103,24 @@
       "side": 1,
       "message": "\u003e there is no way at boot, yo ucan know what devices aer present in the system. ...\n\n\nRMM doesn\u0027t know if any TDISP capable device exist during boot time or runtime. This driver must be seen as an interface driver that registers different type of device classes supported by the RMM spec with the runtime component of RMM.\nI initial had these changes in lib folder, then moved to over here as this provides device like functionality like connect, sending/receving device commands. So at RMM init time this registers the device class with DA interfce layer. I can rename the driver name or it location based on any further comments.\n\nOnly during PDEV create RMM will have pdev_id (bdf for PCIe TDI) passed from Host. And even during that time RMM relies on NS host that it had actually passed a valid PCIe TDI with DOE/IDE_KM/TDISP capabilities.",
       "parentUuid": "29067e17_b50a8ed0",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e0eb074_adf5d160",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-09T20:25:31Z",
+      "side": 1,
+      "message": "Perhaps this is a naming issue then. You are really registering a driver here for a device class, not a device. I dont see why you need that level of indirection, everything is statically linked anyway, you might as well call those APIs using a public header sicne for a given TDISP device, what we do in the RMM is device unique and not common.\nThe RMM spec already has sufficient abstractions and data structures so im not sure why we need another layer of indirection. What does it buy?",
+      "parentUuid": "fa3d8dc1_c304a0a7",
       "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
