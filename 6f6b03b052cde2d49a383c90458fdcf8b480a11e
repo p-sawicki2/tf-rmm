@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dff9387f_2a9c4d62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:40:10Z",
+      "side": 1,
+      "message": "This patch can be merged independent of DA stack",
+      "revId": "6f6b03b052cde2d49a383c90458fdcf8b480a11e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
