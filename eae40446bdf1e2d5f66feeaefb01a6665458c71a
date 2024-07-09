@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "564645f2_8c6dc55b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:45:26Z",
+      "side": 1,
+      "message": "I suspect the v1.0 ABI is being changed by this patch. need to introduce a new build flag `RMM_V1.1` and put these changes under that. \n\nPerhaps RMM_CCA_DA need to depend on v1.1 flag or maybe the former needs to be renamed to v1.1.",
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f30c250_98cf51d9",
@@ -60,6 +77,57 @@
       "writtenOn": "2024-07-08T21:35:56Z",
       "side": 1,
       "message": "should this be under CCA_DA or whatever the compile time flag is that we have used?",
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a106824f_2ee9009d",
+        "filename": "lib/smc/include/smc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:45:26Z",
+      "side": 1,
+      "message": "need to under v1.1 flag.",
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ba28778_918d5f86",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:45:26Z",
+      "side": 1,
+      "message": "need to be under build flag for v1.1.",
+      "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01983b7a_4b20af24",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-09T09:45:26Z",
+      "side": 1,
+      "message": "all new APIs should be under v1.1 build flag.",
       "revId": "eae40446bdf1e2d5f66feeaefb01a6665458c71a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
