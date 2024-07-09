@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "78f8a92e_8e9789e2",
+        "filename": "drivers/pcie_tdi/src/include/pcie_tdi_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T18:05:43Z",
+      "side": 1,
+      "message": "@Yousuf\n\u003e TDI is typically used to refer to an instance of a physical device. \n\nYes, it can refer a PF or VF. But w.r.t current spec the init/connect/ioctl will be called only using a PDEV handle so the underlying device is always a PF.\n\nMay be later when VF can have a seperate connection to a device, this will change. And at that time we can introduce a flag to mentioned if this TDI is a VF or PF. Correct me if this is wrong. And also if there are any VF specific SMMU init needs to be done we handle it later. Current assumption for phase1 is the TDI is treated as a whole device (like passthrough).\n\n\u003e Also if it were to represent the pdev, where are the address association registers ?\n\nSure, that is missed out. I will add it.\n\n\n@Raghu\n\n\u003e also some of it seems like a repeat of what is in pdev..\n\nthese fields are in pdev_params that are passed during init and not in pdev. let me know which part of the code you are referring?",
+      "parentUuid": "99dc4833_40505078",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29067e17_b50a8ed0",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 2
@@ -49,6 +67,24 @@
       "writtenOn": "2024-07-08T22:21:39Z",
       "side": 1,
       "message": "there is no way at boot, yo ucan know what devices aer present in the system. This has to happen at runtime and cannot happen during rmm init..",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa3d8dc1_c304a0a7",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-09T18:05:43Z",
+      "side": 1,
+      "message": "\u003e there is no way at boot, yo ucan know what devices aer present in the system. ...\n\n\nRMM doesn\u0027t know if any TDISP capable device exist during boot time or runtime. This driver must be seen as an interface driver that registers different type of device classes supported by the RMM spec with the runtime component of RMM.\nI initial had these changes in lib folder, then moved to over here as this provides device like functionality like connect, sending/receving device commands. So at RMM init time this registers the device class with DA interfce layer. I can rename the driver name or it location based on any further comments.\n\nOnly during PDEV create RMM will have pdev_id (bdf for PCIe TDI) passed from Host. And even during that time RMM relies on NS host that it had actually passed a valid PCIe TDI with DOE/IDE_KM/TDISP capabilities.",
+      "parentUuid": "29067e17_b50a8ed0",
       "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
