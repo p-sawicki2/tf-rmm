@@ -2208,6 +2208,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f15f9bf4_cdfca969",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2262,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "You mean addr_to_granule()? Yes, that seems to work. Didn\u0027t think of it.",
+      "parentUuid": "74120806_064e221d",
+      "range": {
+        "startLine": 2254,
+        "startChar": 0,
+        "endLine": 2262,
+        "endChar": 1
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e3a0aae_89d96083",
@@ -2221,6 +2245,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "starting",
+      "range": {
+        "startLine": 2270,
+        "startChar": 32,
+        "endLine": 2270,
+        "endChar": 41
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dd4bd6a_268dc117",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2270,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e3a0aae_89d96083",
       "range": {
         "startLine": 2270,
         "startChar": 32,
@@ -2254,6 +2302,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cb27f69_0aaec1b8",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2282,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Double checked. The description is correct but one of the tests wasn\u0027t setup properly. Fixed.",
+      "parentUuid": "4a8f9d1d_07ea29e7",
+      "range": {
+        "startLine": 2277,
+        "startChar": 0,
+        "endLine": 2282,
+        "endChar": 43
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3696dc0_42911e08",
@@ -2267,6 +2339,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "rename these variables as per comments given to function above.",
+      "range": {
+        "startLine": 2292,
+        "startChar": 15,
+        "endLine": 2292,
+        "endChar": 26
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17a07322_1772ae51",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2292,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3696dc0_42911e08",
       "range": {
         "startLine": 2292,
         "startChar": 15,
@@ -2300,6 +2396,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5322656_26773937",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b4f292e_146ee5e6",
+      "range": {
+        "startLine": 2309,
+        "startChar": 49,
+        "endLine": 2309,
+        "endChar": 67
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9ade1d1_4cf7b6d3",
@@ -2313,6 +2433,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "starting level is confusing. reword this paragraph as :\n\n\" If the address can fit within S2TTE_MAX_CONCAT_TABLES at sl + 1, we can use the same tables for testing the concatenated root table support.\"",
+      "range": {
+        "startLine": 2312,
+        "startChar": 24,
+        "endLine": 2315,
+        "endChar": 43
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8ae9e63_8b128a56",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9ade1d1_4cf7b6d3",
       "range": {
         "startLine": 2312,
         "startChar": 24,
@@ -2346,6 +2490,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1ffeef4_7182fbfc",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2421,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddf5b5f8_c495e855",
+      "range": {
+        "startLine": 2421,
+        "startChar": 1,
+        "endLine": 2421,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7572d22c_8a891691",
@@ -2359,6 +2527,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "wrong comment as root grnaule is level is sl + 2 ?",
+      "range": {
+        "startLine": 2438,
+        "startChar": 4,
+        "endLine": 2439,
+        "endChar": 61
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1939c0bc_16c9beba",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2439,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "The index of the root granule to test the concatenated tables would be `sl + 2` yes, but only because we need to add 1 to the index to offset for the possible negative value in case `sl \u003d\u003d -1`. When using concatenated tables at root level, the walking start level is `sl + 1`",
+      "parentUuid": "7572d22c_8a891691",
       "range": {
         "startLine": 2438,
         "startChar": 4,
@@ -2392,6 +2584,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "970896b6_45d76534",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "This was a bug. It is removed.",
+      "parentUuid": "9ec92a11_5ca0be03",
+      "range": {
+        "startLine": 2449,
+        "startChar": 1,
+        "endLine": 2449,
+        "endChar": 13
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f735c38e_6255355a",
@@ -2405,6 +2621,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "same comment for this.",
+      "range": {
+        "startLine": 2450,
+        "startChar": 1,
+        "endLine": 2450,
+        "endChar": 12
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6200a5ef_4d5c0a19",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2450,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "This is a bug. It is removed",
+      "parentUuid": "f735c38e_6255355a",
       "range": {
         "startLine": 2450,
         "startChar": 1,
@@ -2438,6 +2678,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80d39cb8_1b100ee3",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2459,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "No. Here we are not using the level as index for an array. We are setting the starting level at the s2 context as SL + 1 (so it will use the concatenated tables).",
+      "parentUuid": "84d66196_88cd4db5",
+      "range": {
+        "startLine": 2459,
+        "startChar": 30,
+        "endLine": 2459,
+        "endChar": 37
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "814d69ce_d91d1143",
@@ -2451,6 +2715,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "reinit end level again.",
+      "range": {
+        "startLine": 2490,
+        "startChar": 9,
+        "endLine": 2490,
+        "endChar": 19
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "baf5738b_e9ea58e1",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2490,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "`end_level` is reinitialized at line 2486 for this test. Here, we need to call `populate_s2tts()` with a level below `end_level` so when we call `s2tt_walk_lock_unlock()` later, we test a walk up to `end_level` but with a table set populated only up to `end_level - 1`.",
+      "parentUuid": "814d69ce_d91d1143",
       "range": {
         "startLine": 2490,
         "startChar": 9,
@@ -2484,6 +2772,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecbc3c1f_f0b82638",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2592,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7711b98b_51a5f971",
+      "range": {
+        "startLine": 2585,
+        "startChar": 14,
+        "endLine": 2592,
+        "endChar": 52
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a37bc072_51942684",
@@ -2507,6 +2819,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0615395c_83851bed",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 3109,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a37bc072_51942684",
+      "range": {
+        "startLine": 3108,
+        "startChar": 25,
+        "endLine": 3109,
+        "endChar": 50
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2ffc050_0dd667f9",
@@ -2520,6 +2856,30 @@
       "writtenOn": "2024-07-05T11:55:39Z",
       "side": 1,
       "message": "```\n   sl_index \u003d s2tt_test_helpers_get_idx_from_addr(pa, sl);\n} while (sl_index \u003c S2TTE_MAX_CONCAT_TABLES);\n```\n\nWouldn\u0027t his work ?",
+      "range": {
+        "startLine": 3116,
+        "startChar": 13,
+        "endLine": 3117,
+        "endChar": 55
+      },
+      "revId": "7d5e0814d02affd0dba77b6a8424bf10eb109792",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49b728b8_246295a9",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 3117,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-10T12:27:18Z",
+      "side": 1,
+      "message": "Yes and no:\n\nWhen FEAT_LPA2 is disabled, it will work, however, when FEAT_LPA2 is enabled, the maximum IPA size is 52 bits and level -1 has only 16 entries, in which case we will never get sl_index \u003e S2TTE_MAX_CONCAT_TABLES.\n\nSo In this case as I always need a SL index \u003e\u003d S2TTE_MAX_CONCAT_TABLES I used the trick of using SL + 2 as the starting level to test the concatenated tables as that ensures that the level above will allow a number of entries larger than S2TTE_MAX_CONCAT_TABLES.\n\nHowever, on second thoughts I think it is easier to just make `sl \u003d s2tt_test_helpers_min_table_lvl() + 1` so I will fix it and add a comment explaining why I choose this starting level.",
+      "parentUuid": "b2ffc050_0dd667f9",
       "range": {
         "startLine": 3116,
         "startChar": 13,
