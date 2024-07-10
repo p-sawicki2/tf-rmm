@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c295d658_ed69c7fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-10T16:21:49Z",
+      "side": 1,
+      "message": "It should be possible for host build variants to override in their plat makefiles. _override() will set value of the last override encountered in the build flow.",
+      "revId": "bc22ba381dab41db55cc002cff5b2a0699da7b35",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
