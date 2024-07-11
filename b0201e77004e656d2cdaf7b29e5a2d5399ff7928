@@ -121,6 +121,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96eaef5d_125f31c9",
+        "filename": "lib/arch/src/vmid.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Revert",
+      "parentUuid": "bf6ac144_10583de4",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b378b689_22d34cb1",
@@ -138,6 +156,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b30c0e0_73704892",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "I inherited this change from Kis Imre, which affects the performance. I had a second thought: since we are running fuzzing, it is better we cover as much code as possible. I will revert it.",
+      "parentUuid": "b378b689_22d34cb1",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38385020_70fc0505",
@@ -151,6 +187,24 @@
       "writtenOn": "2024-07-10T16:56:42Z",
       "side": 1,
       "message": "can implement a function to return a pointer to this struct rather than exporting this symbol.",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9218aaeb_600bce84",
+        "filename": "lib/granule/src/granule.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38385020_70fc0505",
       "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -174,6 +228,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "33d4d10f_02547860",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 26
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Mate suggests this change.",
+      "parentUuid": "f9fabb89_d195156f",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9fa2280e_3d606e66",
         "filename": "plat/host/common/src/host_utils.c",
         "patchSetId": 26
@@ -185,6 +257,24 @@
       "writtenOn": "2024-07-10T16:56:42Z",
       "side": 1,
       "message": "can export a helper. I think the helper may already be present as part unit tests",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d3862ea_ccaa7e5b",
+        "filename": "plat/host/common/src/host_utils.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fa2280e_3d606e66",
       "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -212,6 +302,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0571d4c9_d7ae02a3",
+        "filename": "plat/host/host_fuzz/CMakeLists.txt",
+        "patchSetId": 26
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "582632d2_385893a1",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b64e8da_d38e0f29",
@@ -225,6 +339,24 @@
       "writtenOn": "2024-07-10T16:56:42Z",
       "side": 1,
       "message": "is the non persistent mode tested ?",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3da28968_c9d7122c",
+        "filename": "plat/host/host_fuzz/src/host_setup.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-11T14:23:05Z",
+      "side": 1,
+      "message": "Yes, I used it to check the crash found by AFL++. One may need to use non-persistent mode, i.e., reading input from file, to re-confirm (1) if an assert is trigger and (2) where is the assert.",
+      "parentUuid": "3b64e8da_d38e0f29",
       "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
