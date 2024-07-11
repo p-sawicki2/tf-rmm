@@ -16,6 +16,23 @@
       "message": "Note that this change is a prototype on the fake_host arch. Once this is approved, then we will implement the EL3 piece.",
       "revId": "10cb4134dad9412b829cf1281c543e7347f27177",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "478db942_d358720a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-11T10:21:06Z",
+      "side": 1,
+      "message": "Testing restricted to fake_host.",
+      "revId": "10cb4134dad9412b829cf1281c543e7347f27177",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
