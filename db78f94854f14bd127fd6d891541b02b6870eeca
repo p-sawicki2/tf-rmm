@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b3032c9a_192b7389",
+        "filename": "drivers/pcie_tdi/src/include/pcie_tdi_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-11T14:39:53Z",
+      "side": 1,
+      "message": "Looks like I didn\u0027t get your question correct. Responding to this query\n\u003e also some of it seems like a repeat of what is in pdev..\n\nThis pcie_tdi is part of pdev and struct fields are not duplicated. I can\u0027t directly use the rmi_pdev_params as this struct has padding with 4k size. So these are copied to pdev.__dev_context (pcie_tdi) struct.\n\nAnd regarding indirection, the reason for doing this is to isolate device specific stuff like SPDM, IDE_KM, TDISP, IMPDEF Arm root port programming from runtime/rmi/da.c. There are many ways to do this. This is a minimal re-direction based on alp6 spec pdev.cls\u003dPCIE field. There are plans to add more device types, and with new spec alp7 the pdev.cls is removed and replaced with pdev.flags that could have [SPDM | \u003cdifferent types of IDE selection\u003e]. This pdev.flags represents various device configuration options. So this re-direction layer will also change as pdev.cls is removed. For now the plan is to add functionality like cert retrieval, secure session establishment, and implement spdm_get_measurement. And I will re-visit this redirection layer soon based on the new spec update.",
+      "parentUuid": "4b50d894_25c38dee",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29067e17_b50a8ed0",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 2
@@ -121,6 +139,24 @@
       "side": 1,
       "message": "Perhaps this is a naming issue then. You are really registering a driver here for a device class, not a device. I dont see why you need that level of indirection, everything is statically linked anyway, you might as well call those APIs using a public header sicne for a given TDISP device, what we do in the RMM is device unique and not common.\nThe RMM spec already has sufficient abstractions and data structures so im not sure why we need another layer of indirection. What does it buy?",
       "parentUuid": "fa3d8dc1_c304a0a7",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fc7dc6b_7e53b935",
+        "filename": "plat/common/src/plat_common_init.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-07-11T14:39:53Z",
+      "side": 1,
+      "message": "Agree, the name can be changed to driver or can be moved to lib directory as RMM doesn\u0027t probe any device. As mentioned earlier in the previous comment this naming also needs some change with the specification dropping pdev.cls. Initial assumption was for every device class there will class specific device operations.",
+      "parentUuid": "4e0eb074_adf5d160",
       "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
