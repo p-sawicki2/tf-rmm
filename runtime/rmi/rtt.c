@@ -19,6 +19,7 @@
 #include <status.h>
 #include <stddef.h>
 #include <string.h>
+#include <xlat_defs.h>
 
 /*
  * Validate the map_addr value passed to RMI_RTT_* and RMI_DATA_* commands.
@@ -86,10 +87,12 @@ static unsigned long default_protected_ap(const struct s2tt_context *s2_ctx)
 					  DEFAULT_PROTECTED_OVERLAY_INDEX);
 }
 
-unsigned long smc_rtt_create(unsigned long rd_addr,
-			     unsigned long rtt_addr,
-			     unsigned long map_addr,
-			     unsigned long ulevel)
+static unsigned long rtt_create(unsigned long rd_addr,
+				unsigned long rtt_addr,
+				unsigned long map_addr,
+				unsigned long ulevel,
+				unsigned long index,
+				bool aux)
 {
 	struct granule *g_rd;
 	struct granule *g_tbl;
@@ -119,7 +122,27 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 		return RMI_ERROR_INPUT;
 	}
 
-	s2_ctx =  *primary_s2_context(rd);
+	if (aux) {
+		if ((!rd->rtt_tree_pp) ||
+		    (index == (unsigned long)PRIMARY_PLANE_ID) ||
+		    (index >= (unsigned long)realm_num_planes(rd))) {
+			buffer_unmap(rd);
+			granule_unlock(g_rd);
+			granule_unlock(g_tbl);
+			return RMI_ERROR_INPUT;
+		}
+		s2_ctx = *s2_context(rd, (unsigned int)index);
+	} else {
+		s2_ctx = *primary_s2_context(rd);
+	}
+
+	if ((s2_ctx.enable_lpa2 == false) &&
+			(rtt_addr >= (1UL << LM1_XLAT_ADDRESS_SHIFT))) {
+		buffer_unmap(rd);
+		granule_unlock(g_rd);
+		granule_unlock(g_tbl);
+		return RMI_ERROR_INPUT;
+	}
 
 	/*
 	 * Lock the RTT root. Enforcing locking order RD->RTT is enough to
@@ -298,6 +321,23 @@ out_unlock_llt:
 	granule_unlock(g_tbl);
 	buffer_unmap(rd);
 	return ret;
+}
+
+unsigned long smc_rtt_create(unsigned long rd_addr,
+			     unsigned long rtt_addr,
+			     unsigned long map_addr,
+			     unsigned long ulevel)
+{
+	return rtt_create(rd_addr, rtt_addr, map_addr, ulevel, 0UL, false);
+}
+
+unsigned long smc_rtt_aux_create(unsigned long rd_addr,
+				 unsigned long rtt_addr,
+				 unsigned long map_addr,
+				 unsigned long ulevel,
+				 unsigned long index)
+{
+	return rtt_create(rd_addr, rtt_addr, map_addr, ulevel, index, true);
 }
 
 void smc_rtt_fold(unsigned long rd_addr,

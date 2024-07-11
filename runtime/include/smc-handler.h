@@ -56,6 +56,12 @@ unsigned long smc_rtt_create(unsigned long rd_addr,
 			     unsigned long map_addr,
 			     unsigned long ulevel);
 
+unsigned long smc_rtt_aux_create(unsigned long rd_addr,
+				 unsigned long rtt_addr,
+				 unsigned long map_addr,
+				 unsigned long ulevel,
+				 unsigned long index);
+
 void smc_rtt_destroy(unsigned long rd_addr,
 		     unsigned long map_addr,
 		     unsigned long ulevel,

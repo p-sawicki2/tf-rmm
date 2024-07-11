@@ -390,6 +390,15 @@
 
 /*
  * arg0 == RD address
+ * arg1 == RTT address
+ * arg2 == map address
+ * arg3 == level
+ * arg4 == RTT Tree index
+ */
+#define SMC_RMM_RTT_AUX_CREATE			SMC64_RMI_FID(U(0x2D))
+
+/*
+ * arg0 == RD address
  * arg1 == REC address
  * arg2 == Start address
  * arg3 == End address

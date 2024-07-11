@@ -156,7 +156,8 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(REC_AUX_COUNT,		1, 1, smc_rec_aux_count,	 true,  true),
 	HANDLER(RTT_INIT_RIPAS,		3, 1, smc_rtt_init_ripas,	 false, true),
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true),
-	HANDLER(RTT_SET_S2AP,		4, 1, smc_rtt_set_s2ap,		 false, true)
+	HANDLER(RTT_SET_S2AP,		4, 1, smc_rtt_set_s2ap,		 false, true),
+	HANDLER(RTT_AUX_CREATE,		5, 0, smc_rtt_aux_create,	 false, true)
 };
 
 /*
