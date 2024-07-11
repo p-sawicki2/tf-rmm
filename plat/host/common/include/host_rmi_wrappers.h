@@ -19,6 +19,8 @@ void host_rmi_rtt_aux_create(void *rd, void *rtt, void *ipa, unsigned int level,
 			     unsigned int index, struct smc_result *res);
 void host_rmi_rtt_destroy(void *rd, void *ipa, unsigned int level,
 			  struct smc_result *res);
+void host_rmi_rtt_aux_destroy(void *rd, void *ipa, unsigned int level,
+			      unsigned int index, struct smc_result *res);
 void host_rmi_rec_aux_count(void *rd, struct smc_result *res);
 void host_rmi_rec_create(void *rd, void *rec, void *params_ptr,
 			 struct smc_result *res);

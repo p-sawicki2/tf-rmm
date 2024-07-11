@@ -88,7 +88,8 @@ enum rmi_type {
 	set_rmi_type(3, 1),	/* 3 arguments, 1 output value */
 	set_rmi_type(3, 2),	/* 3 arguments, 2 output values */
 	set_rmi_type(3, 4),	/* 3 arguments, 4 output values */
-	set_rmi_type(4, 1)	/* 4 arguments, 1 output value */
+	set_rmi_type(4, 1),	/* 4 arguments, 1 output value */
+	set_rmi_type(4, 2)	/* 4 arguments, 2 output value */
 };
 
 struct smc_handler {
@@ -107,6 +108,7 @@ struct smc_handler {
 		handler_3_o	f_32;
 		handler_3_o	f_34;
 		handler_4_o	f_41;
+		handler_4_o	f_42;
 		void		*fn_dummy;
 	};
 	enum rmi_type	type;
@@ -157,7 +159,8 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_INIT_RIPAS,		3, 1, smc_rtt_init_ripas,	 false, true),
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true),
 	HANDLER(RTT_SET_S2AP,		4, 1, smc_rtt_set_s2ap,		 false, true),
-	HANDLER(RTT_AUX_CREATE,		5, 0, smc_rtt_aux_create,	 false, true)
+	HANDLER(RTT_AUX_CREATE,		5, 0, smc_rtt_aux_create,	 false, true),
+	HANDLER(RTT_AUX_DESTROY,	4, 2, smc_rtt_aux_destroy,	 true, true)
 };
 
 /*

@@ -399,6 +399,19 @@
 
 /*
  * arg0 == RD address
+ * arg1 == map address
+ * arg2 == level
+ * arg3 == RTT Tree index
+ *
+ * ret1 == Address (PA) of the RTT, if ret0 == RMI_SUCCESS
+ *         Otherwise, undefined.
+ * ret2 == Top of the non-live address region. Only valid
+ *         if ret0 == RMI_SUCCESS or ret0 == (RMI_ERROR_RTT, x)
+ */
+#define SMC_RMM_RTT_AUX_DESTROY			SMC64_RMI_FID(U(0x2E))
+
+/*
+ * arg0 == RD address
  * arg1 == REC address
  * arg2 == Start address
  * arg3 == End address

@@ -91,6 +91,18 @@ void host_rmi_rtt_destroy(void *rd, void *ipa, unsigned int level,
 		res);
 }
 
+void host_rmi_rtt_aux_destroy(void *rd, void *ipa, unsigned int level,
+			      unsigned int index, struct smc_result *res)
+{
+	handle_ns_smc(SMC_RMM_RTT_DESTROY,
+		(uintptr_t)rd,
+		(uintptr_t)ipa,
+		level,
+		index,
+		0, 0,
+		res);
+}
+
 void host_rmi_rec_aux_count(void *rd, struct smc_result *res)
 {
 	handle_ns_smc(SMC_RMM_REC_AUX_COUNT,
