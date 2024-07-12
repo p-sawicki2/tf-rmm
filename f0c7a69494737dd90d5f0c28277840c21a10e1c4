@@ -1494,6 +1494,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d70a0e3_51cfe7c5",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 3024,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T17:28:56Z",
+      "side": 1,
+      "message": "\"For this test , we want to generate a concatenated table at min_table_level + 2. Hence use min_table_level + 1 as the level to generate the ipa.\"",
+      "parentUuid": "9604c00a_a0a73c5d",
+      "range": {
+        "startLine": 3023,
+        "startChar": 38,
+        "endLine": 3024,
+        "endChar": 58
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3da4036a_c764efd1",
         "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
         "patchSetId": 12
@@ -1528,6 +1552,30 @@
       "writtenOn": "2024-07-12T16:47:10Z",
       "side": 1,
       "message": "Left as is as per our discussion.",
+      "parentUuid": "3da4036a_c764efd1",
+      "range": {
+        "startLine": 3026,
+        "startChar": 1,
+        "endLine": 3026,
+        "endChar": 50
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "243c584c_7f37cd35",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 3026,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T17:28:56Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3da4036a_c764efd1",
       "range": {
         "startLine": 3026,
@@ -1622,6 +1670,30 @@
       "writtenOn": "2024-07-12T16:47:10Z",
       "side": 1,
       "message": "Yes, s2tt_test_helpers_get_idx_from_addr() is receiving the start level (\u0027sl\u0027), which is the level of the parent table.",
+      "parentUuid": "998cf50c_939d7408",
+      "range": {
+        "startLine": 3039,
+        "startChar": 22,
+        "endLine": 3039,
+        "endChar": 45
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8d4a310_0f7b34b3",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 3039,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T17:28:56Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "998cf50c_939d7408",
       "range": {
         "startLine": 3039,
