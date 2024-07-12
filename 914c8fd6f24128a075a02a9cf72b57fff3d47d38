@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24d8cc8b_98dbcd75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T13:09:54Z",
+      "side": 1,
+      "message": "There is a MISRA error here : https://jenkins.openci.aws.arm.com/job/rmm-coverity-internal/1012/artifact/artefacts/html-misra/1/4_attestation_key.c.html#error",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
