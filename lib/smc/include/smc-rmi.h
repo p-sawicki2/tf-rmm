@@ -412,6 +412,16 @@
 
 /*
  * arg0 == RD address
+ * arg1 == map address
+ * arg2 == level
+ * arg3 == RTT Tree index
+ *
+ * ret1 == Address(PA) of the RTT folded, if ret0 == RMI_SUCCESS
+ */
+#define SMC_RMM_RTT_AUX_FOLD			SMC64_RMI_FID(U(0x2F))
+
+/*
+ * arg0 == RD address
  * arg1 == REC address
  * arg2 == Start address
  * arg3 == End address

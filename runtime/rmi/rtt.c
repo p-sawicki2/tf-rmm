@@ -340,10 +340,12 @@ unsigned long smc_rtt_aux_create(unsigned long rd_addr,
 	return rtt_create(rd_addr, rtt_addr, map_addr, ulevel, index, true);
 }
 
-void smc_rtt_fold(unsigned long rd_addr,
-		  unsigned long map_addr,
-		  unsigned long ulevel,
-		  struct smc_result *res)
+static void rtt_fold(unsigned long rd_addr,
+		     unsigned long map_addr,
+		     unsigned long ulevel,
+		     unsigned long index,
+		     bool aux,
+		     struct smc_result *res)
 {
 	struct granule *g_rd;
 	struct granule *g_tbl;
@@ -372,7 +374,21 @@ void smc_rtt_fold(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = *primary_s2_context(rd);
+	if (aux) {
+		if ((!rd->rtt_tree_pp) ||
+		    (index == (unsigned long)PRIMARY_PLANE_ID) ||
+		    (index >= (unsigned long)realm_num_planes(rd))) {
+			buffer_unmap(rd);
+			granule_unlock(g_rd);
+			res->x[0] = RMI_ERROR_INPUT;
+			res->x[2] = 0UL;
+			return;
+		}
+		s2_ctx = *s2_context(rd, (unsigned int)index);
+	} else {
+		s2_ctx = *primary_s2_context(rd);
+	}
+
 	buffer_unmap(rd);
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
 	granule_unlock(g_rd);
@@ -538,6 +554,23 @@ out_unmap_parent_table:
 out_unlock_parent_table:
 	granule_unlock(wi.g_llt);
 	res->x[0] = ret;
+}
+
+void smc_rtt_fold(unsigned long rd_addr,
+		  unsigned long map_addr,
+		  unsigned long ulevel,
+		  struct smc_result *res)
+{
+	rtt_fold(rd_addr, map_addr, ulevel, 0UL, false, res);
+}
+
+void smc_rtt_aux_fold(unsigned long rd_addr,
+		      unsigned long map_addr,
+		      unsigned long ulevel,
+		      unsigned long index,
+		      struct smc_result *res)
+{
+	rtt_fold(rd_addr, map_addr, ulevel, index, true, res);
 }
 
 static void rtt_destroy(unsigned long rd_addr,
