@@ -78,6 +78,12 @@ void smc_rtt_fold(unsigned long rd_addr,
 		  unsigned long ulevel,
 		  struct smc_result *res);
 
+void smc_rtt_aux_fold(unsigned long rd_addr,
+		      unsigned long map_addr,
+		      unsigned long ulevel,
+		      unsigned long index,
+		      struct smc_result *res);
+
 unsigned long smc_rtt_map_unprotected(unsigned long rd_addr,
 				      unsigned long map_addr,
 				      unsigned long ulevel,
