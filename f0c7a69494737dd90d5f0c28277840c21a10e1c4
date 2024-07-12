@@ -1516,6 +1516,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbc01dc6_532b19db",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 3024,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T18:58:25Z",
+      "side": 1,
+      "message": "Done. ignore",
+      "parentUuid": "2d70a0e3_51cfe7c5",
+      "range": {
+        "startLine": 3023,
+        "startChar": 38,
+        "endLine": 3024,
+        "endChar": 58
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3da4036a_c764efd1",
