@@ -372,6 +372,270 @@
       },
       "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3846d18c_5021dab5",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "Add: \"The starting level (SL) for the tables is always expected to be the lowest level supported by the architecture. The concatenated tables begin at SL + 1 level.\"",
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e6b6af4_1c92f6ce",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2028,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "SL+1",
+      "range": {
+        "startLine": 2028,
+        "startChar": 57,
+        "endLine": 2028,
+        "endChar": 70
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b1c9be2_ac78c8f6",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2030,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "nit: in",
+      "range": {
+        "startLine": 2030,
+        "startChar": 52,
+        "endLine": 2030,
+        "endChar": 56
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9ddf861_8355b395",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2037,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "struct granule *",
+      "range": {
+        "startLine": 2037,
+        "startChar": 33,
+        "endLine": 2037,
+        "endChar": 46
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d3e6807_221360fc",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2037,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "expected",
+      "range": {
+        "startLine": 2037,
+        "startChar": 25,
+        "endLine": 2037,
+        "endChar": 33
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3683bdae_cc75f235",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2043,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "can be removed.",
+      "range": {
+        "startLine": 2039,
+        "startChar": 0,
+        "endLine": 2043,
+        "endChar": 24
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28fdaf90_0649f456",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2046,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "argument",
+      "range": {
+        "startLine": 2046,
+        "startChar": 51,
+        "endLine": 2046,
+        "endChar": 59
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56307b8d_3c1b5495",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2217,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "Give the tests IDs\n\nLike 1a, \n1b\n1c etc\n\n\nand use the same IDs in the comments below.",
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c90da618_d2ac9b5f",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "\"at starting level + 1\"",
+      "range": {
+        "startLine": 2222,
+        "startChar": 12,
+        "endLine": 2222,
+        "endChar": 17
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8360c5a3_20c55242",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "so as to",
+      "range": {
+        "startLine": 2222,
+        "startChar": 45,
+        "endLine": 2222,
+        "endChar": 52
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31f035a2_ebae64ac",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "whose",
+      "range": {
+        "startLine": 2257,
+        "startChar": 8,
+        "endLine": 2257,
+        "endChar": 14
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "792e05cd_1cfb4daf",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 2342,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-12T10:50:47Z",
+      "side": 1,
+      "message": "finalizing",
+      "range": {
+        "startLine": 2342,
+        "startChar": 47,
+        "endLine": 2342,
+        "endChar": 58
+      },
+      "revId": "f0c7a69494737dd90d5f0c28277840c21a10e1c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
