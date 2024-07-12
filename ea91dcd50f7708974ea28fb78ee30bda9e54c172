@@ -56,6 +56,24 @@
       "message": "I think this should be format of the EL3 call\n\n\ninput Args :\n     buffer addr, buffer len, hash size\n\noutput args :\n     return code, token_len, remaining_len\n\n\nWhen RMM first calls EL3, it needs to provide `hash_size` to EL3 after ensuring it has copied the hash to buffer.\n\nEL3 then returns with token in buffer, token len in x1 and indicates SUCCESS.\nIf token does not fit in buffer, then EL3 set remaining_len to whatever is remaining length of the token.  If RMM is able to accommodate in its token buffer, then -\n\nRMM calls EL3, but this time , it sets hash size to 0. EL3 then progresses to copy the token to the buffer and  sets the remaining_len.\n\nRMM on returning from EL3 copies the rest of token to buffer and checks remaining_len. If 0, exit the flow, else continue loop.",
       "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b879776_876042d7",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-12T17:59:12Z",
+      "side": 1,
+      "message": "So, if I understood correctly, I should remove the offset argument from the EL3 call. If that\u0027s the case, how does TF-A know the position in the token to copy bytes from? Shall I keep an offset variable in TF-A to handle this?",
+      "parentUuid": "9e4460ef_ed074984",
+      "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
