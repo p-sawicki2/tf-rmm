@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e28d68e_09262b72",
+        "filename": "drivers/pcie_tdi/src/include/pcie_tdi_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-13T14:31:11Z",
+      "side": 1,
+      "message": "The problem with func pointer is using func pointers that are non-const and generally worse for secuirty. This can instead simply be a library per class that is compiled in. Everything is statically linked so we can almost entirely avoid func pointers and indirections which make readability worse since.",
+      "parentUuid": "b3032c9a_192b7389",
+      "revId": "db78f94854f14bd127fd6d891541b02b6870eeca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29067e17_b50a8ed0",
         "filename": "plat/common/src/plat_common_init.c",
         "patchSetId": 2
