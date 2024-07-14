@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6eb4aee_59817603",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-14T00:57:45Z",
+      "side": 1,
+      "message": "ping. what is needed to merge this simple patch?",
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
