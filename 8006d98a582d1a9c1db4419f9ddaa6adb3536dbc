@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5e31618e_047de176",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-14T02:25:02Z",
+      "side": 1,
+      "message": "dont follow why this exception is needed. can you elaborate?",
+      "range": {
+        "startLine": 10,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 61
+      },
+      "revId": "8006d98a582d1a9c1db4419f9ddaa6adb3536dbc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "87fb5d9a_15f1f760",
         "filename": "runtime/rmi/rtt.c",
         "patchSetId": 7
