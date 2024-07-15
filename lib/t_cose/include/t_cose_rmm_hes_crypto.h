@@ -30,8 +30,8 @@ struct t_cose_rmm_hes_ctx {
 		uintptr_t rec_granule;
 		uint64_t req_ticket;
 		uint16_t sig_len;
-		uint8_t sig_buffer[512];
-		uint8_t c_buffer_for_tbs_hash[T_COSE_CRYPTO_MAX_HASH_SIZE];
+		void *sig_buffer;
+		const void *c_buffer_for_tbs_hash;
 	} state;
 };
 

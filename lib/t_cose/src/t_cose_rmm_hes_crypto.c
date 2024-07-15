@@ -109,9 +109,9 @@ t_cose_crypto_init_hes_ctx_crypto(struct t_cose_rmm_hes_ctx *hes_ctx_locked,
 	/* Assumes lock is held for context */
 	hes_ctx_locked->state.alg_id = cose_alg_id_to_psa_alg_id(cose_algorithm_id);
 	hes_ctx_locked->state.sig_len = signature_buffer.len;
+	hes_ctx_locked->state.sig_buffer = signature_buffer.ptr;
 	hes_ctx_locked->state.hash_len = hash_to_sign.len;
-	(void)memcpy(hes_ctx_locked->state.c_buffer_for_tbs_hash, hash_to_sign.ptr,
-	       hash_to_sign.len);
+	hes_ctx_locked->state.c_buffer_for_tbs_hash = hash_to_sign.ptr;
 }
 
 void t_cose_crypto_hes_init(t_cose_crypto_hes_enqueue_t enqueue)
@@ -165,12 +165,6 @@ enum t_cose_err_t t_cose_crypto_sign_restart(
 
 	spinlock_acquire(&hes_crypto_context->lock);
 	if (!started) {
-		if (hash_to_sign.len >
-		    sizeof(hes_crypto_context->state.c_buffer_for_tbs_hash)) {
-			return_value = T_COSE_ERR_FAIL;
-
-			goto release;
-		}
 		t_cose_crypto_init_hes_ctx_crypto(hes_crypto_context,
 						  cose_algorithm_id,
 						  hash_to_sign,
@@ -194,8 +188,6 @@ enum t_cose_err_t t_cose_crypto_sign_restart(
 	if (hes_crypto_context->state.is_sig_valid) {
 		assert(hes_crypto_context->state.is_req_queued == true);
 		assert(hes_crypto_context->state.sig_len <= signature_buffer.len);
-		(void)memcpy(signature_buffer.ptr, hes_crypto_context->state.sig_buffer,
-		       hes_crypto_context->state.sig_len);
 		signature->ptr = signature_buffer.ptr;
 		signature->len = hes_crypto_context->state.sig_len;
 		return_value = T_COSE_SUCCESS;

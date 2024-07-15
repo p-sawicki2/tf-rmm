@@ -202,8 +202,7 @@ void hes_attest_pull_response_from_hes(void)
 		goto out_buf_lock;
 	}
 
-	if (hes_resp->sig_len > sizeof(hes_ctx->state.sig_buffer) ||
-	    hes_resp->sig_len > hes_ctx->state.sig_len) {
+	if (hes_resp->sig_len > hes_ctx->state.sig_len) {
 		ERROR("%s:%d sig len mismatch %x %x\n", __func__, __LINE__,
 		      hes_ctx->state.sig_len, hes_resp->sig_len);
 		hes_ctx->state.is_hes_err = true;
