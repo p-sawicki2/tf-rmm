@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "74729130_10693055",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-15T09:32:03Z",
+      "side": 1,
+      "message": "Sorry, There are couple of things going on related to this patch which I needed time to think more about, which I think I have more clarity on now.\n\n1/ It is really the BSS section which needs to do memzero which could conflict with stale lines in cache . The stack is always unwound before MMU enable. R/W (un modified prior to MMU enable), RO, Code does not need this. R/W (modified prior to MMU enable) and any other global data in BSS updated in RMM prior to MMU enable will need to do CMOs (regardless of this memzero). Proposal : To restrict this operation to BSS section.\n\n2/ In an RSS/HES centric Boot flow, this invalidation would not be needed as the CPUs are not doing the loading and RMM can rely on the reset state of the cache network. One solution could be wrap this in a build flag and leave the default to ON so platforms can optimize this if needed.\n\n3/ For live activation/NUMA support of RMM, we are thinking of discontinuous BSS/data sections. Proposed solution is to get EL3 to allocate and zero out sparse BSS depending on NUMA topology (will need further prototyping to iron out any problems).\n\nSo for now, we could do the following:\n\n1. Keep the cache inv limited to BSS section.\n2. Wrap the code with a build flag (say RMM_BOOT_INV_BSS) and keep the default value as `ON`.",
+      "parentUuid": "b6eb4aee_59817603",
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61c1ec50_4446f29e",
         "filename": "runtime/core/aarch64/head.S",
         "patchSetId": 1
