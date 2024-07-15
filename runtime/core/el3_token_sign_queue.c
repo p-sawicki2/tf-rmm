@@ -196,8 +196,7 @@ void el3_token_sign_pull_response_from_el3(void)
 		goto out_buf_lock;
 	}
 
-	if (el3_resp->sig_len > sizeof(ctx->state.sig_buffer) ||
-	    el3_resp->sig_len > ctx->state.sig_len) {
+	if (el3_resp->sig_len > ctx->state.sig_len) {
 		ERROR("%s:%d sig len mismatch %x %x\n", __func__, __LINE__,
 		      ctx->state.sig_len, el3_resp->sig_len);
 		ctx->state.is_el3_err = true;
@@ -205,7 +204,7 @@ void el3_token_sign_pull_response_from_el3(void)
 	}
 
 	ctx->state.sig_len = el3_resp->sig_len;
-	memcpy((void *)ctx->state.sig_buffer,
+	memcpy(ctx->state.sig_buffer,
 		(void *)el3_resp->signature_buf, el3_resp->sig_len);
 	ctx->state.is_sig_valid = true;
 

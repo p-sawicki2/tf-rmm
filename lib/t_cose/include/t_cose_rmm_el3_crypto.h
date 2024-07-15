@@ -34,8 +34,8 @@ struct t_cose_rmm_el3_ctx {
 		uintptr_t rec_granule;
 		uint64_t req_ticket;
 		uint16_t sig_len;
-		uint8_t sig_buffer[512];
-		uint8_t c_buffer_for_tbs_hash[T_COSE_CRYPTO_MAX_HASH_SIZE];
+		void *sig_buffer;
+		const void *c_buffer_for_tbs_hash;
 	} state;
 };
 COMPILER_ASSERT_NO_CBMC(U(offsetof(struct t_cose_rmm_el3_ctx, psa_crypto_context)) == 0U);
