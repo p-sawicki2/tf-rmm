@@ -118,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65552273_c77cdcc5",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-07-15T13:34:17Z",
+      "side": 1,
+      "message": "\u003e BL31 does not map RMM memory but only maps RMM-EL3 shared buffer. BL2 loads RMM hence will result in allocating cache lines corresponding to the region even though the caches are flushed.\n\nYes sorry, I was thinking more of the loader here BL2 which runs at EL3 on 4 worlds systems. In which case, this might be about BL2 invalidating the region for the image it has just loaded. But I think your next argument below discards this.\n\n\u003e EL3 cannot easily ensure there are no cache lines allocated corresponding to RMM region while having a valid MMU mapping in EL3 stage 1. The only way it can ensure this is by disabling MMU and then issuing cache inv().\n\nYes agree.",
+      "parentUuid": "d1adcaac_ec05ba7d",
+      "range": {
+        "startLine": 46,
+        "startChar": 27,
+        "endLine": 47,
+        "endChar": 40
+      },
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "acc2e2d8_a06db79a",
