@@ -53,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26622f83_192d50f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-15T12:43:12Z",
+      "side": 1,
+      "message": "\u003e  It is really the BSS section which needs to do memzero which could conflict with stale lines in cache \n\nJust remembered the PIE fixup done to code and data section prior to MMU enable. So ignore the comment to invalidate just the BSS.\n\nSo the patch is good as it stands. Just add the wrap the code with a build flag (or this can be deferred to future when we have such a platform.",
+      "parentUuid": "74729130_10693055",
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61c1ec50_4446f29e",
@@ -66,6 +84,30 @@
       "writtenOn": "2024-07-15T07:59:43Z",
       "side": 1,
       "message": "I\u0027m not sure why this is the case. If the RMMD does the same operation as below (invalidate the entire region to which RMM is loaded), then EL3 is able to guarantee there is no stale cache line relating to the RMM image, no?",
+      "range": {
+        "startLine": 46,
+        "startChar": 27,
+        "endLine": 47,
+        "endChar": 40
+      },
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1adcaac_ec05ba7d",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-15T12:43:12Z",
+      "side": 1,
+      "message": "BL31 does not map RMM memory but only maps RMM-EL3 shared buffer. BL2 loads RMM hence will result in allocating cache lines corresponding to the region even though the caches are flushed. \n\nEL3 cannot easily ensure there are no cache lines allocated corresponding to RMM region while having a valid MMU mapping in EL3 stage 1. The only way it can ensure this is by disabling MMU and then issuing cache inv().",
+      "parentUuid": "61c1ec50_4446f29e",
       "range": {
         "startLine": 46,
         "startChar": 27,
@@ -94,6 +136,29 @@
         "startChar": 24,
         "endLine": 57,
         "endChar": 34
+      },
+      "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2644c571_124c2335",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-15T12:43:12Z",
+      "side": 1,
+      "message": "\"RMM starts with MMU disabled (and hence with data cacheability disabled). EL3 loads RMM with caches enabled, so, while it can ensure cache lines are clean, it cannot ensure that cache lines for RMM memory locations are not allocated in cache.\"\n\n\"During init, RMM writes to BSS and various part of RMM as part of PIE fixup with data cacheability disabled, hence cache lines containing stale data must be invalidated, so that upon turning on MMU (and hence enabling cacheability), we read updated values.\"\n\nThe below may belong better in a design document (https://tf-rmm.readthedocs.io/en/latest/design/cold-and-warm-boot-design.html)\n\nThe following guidelines apply for RMM, when RMM\nhas caches turned off, but EL3 has caches turned on:\n1) RMM must perform invalidation on all its memory on entry on primary core, prior to enabling MMU as part of cold boot.\n2) Any function in RMM which is invoked prior to MMU enable need perform CMOs on any data which is part of shared mapping in RMM. This ensures that function need not depend on whether it is invoked as part of cold boot / warm boot.\n3) Runtime EL3 firmware (BL31) should not map any part of RMM except the shared buffer used for comms between RMM and EL3. RMM to perform required CMOs on the shared buffer when communicating with EL3 prior to enabling MMU. The only exception is the Boot Manifest which needs to be flushed by EL3 before RMM cold boot entry.",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 66,
+        "endChar": 72
       },
       "revId": "3e3fe562c170d3b057d79734de3fa27005c076f9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
