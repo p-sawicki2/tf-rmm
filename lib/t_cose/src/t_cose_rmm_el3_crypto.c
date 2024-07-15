@@ -34,9 +34,9 @@ t_cose_crypto_init_el3_ctx_crypto(struct t_cose_rmm_el3_ctx *el3_ctx_locked,
 	/* Assumes lock is held for context */
 	el3_ctx_locked->state.alg_id = cose_alg_id_to_psa_alg_id(cose_algorithm_id);
 	el3_ctx_locked->state.sig_len = signature_buffer.len;
+	el3_ctx_locked->state.sig_buffer = signature_buffer.ptr;
 	el3_ctx_locked->state.hash_len = hash_to_sign.len;
-	(void)memcpy(el3_ctx_locked->state.c_buffer_for_tbs_hash, hash_to_sign.ptr,
-	       hash_to_sign.len);
+	el3_ctx_locked->state.c_buffer_for_tbs_hash = hash_to_sign.ptr;
 }
 
 void t_cose_crypto_el3_enqueue_cb_init(t_cose_crypto_el3_enqueue_t enqueue)
@@ -94,12 +94,6 @@ enum t_cose_err_t t_cose_crypto_sign_restart_el3(
 	 */
 	spinlock_acquire(&el3_crypto_context->lock);
 	if (!started) {
-		if (hash_to_sign.len >
-		    sizeof(el3_crypto_context->state.c_buffer_for_tbs_hash)) {
-			return_value = T_COSE_ERR_FAIL;
-
-			goto release;
-		}
 		t_cose_crypto_init_el3_ctx_crypto(el3_crypto_context,
 						  cose_algorithm_id,
 						  hash_to_sign,
@@ -126,8 +120,6 @@ enum t_cose_err_t t_cose_crypto_sign_restart_el3(
 	if (el3_crypto_context->state.is_sig_valid) {
 		assert(el3_crypto_context->state.is_req_queued == true);
 		assert(el3_crypto_context->state.sig_len <= signature_buffer.len);
-		(void)memcpy(signature_buffer.ptr, el3_crypto_context->state.sig_buffer,
-		       el3_crypto_context->state.sig_len);
 		signature->ptr = signature_buffer.ptr;
 		signature->len = el3_crypto_context->state.sig_len;
 		return_value = T_COSE_SUCCESS;
