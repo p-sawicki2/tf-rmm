@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c20c5e21_eb3c0d91",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4739fa63_887b6719",
+      "range": {
+        "startLine": 127,
+        "startChar": 14,
+        "endLine": 127,
+        "endChar": 38
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6be3f8d8_98dd778c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-12T17:28:56Z",
       "side": 1,
       "message": "this may not be needed. Else the line 144 check needs to level \u003c \u003d S2TT_TEST_HELPERS_MIN_LVL_LPA2\n\nCheck the logic for level \u003d -2.",
+      "range": {
+        "startLine": 137,
+        "startChar": 51,
+        "endLine": 137,
+        "endChar": 55
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08be9e34_346a5590",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6be3f8d8_98dd778c",
       "range": {
         "startLine": 137,
         "startChar": 51,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7efc7c4_106093bc",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4fc33cb8_9cb80ddb",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 147,
+        "endChar": 5
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "518f99dc_bf733253",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-07-12T17:28:56Z",
       "side": 1,
       "message": "s2tt_test_helpers_lvl_mask() is a more appropriate name.",
+      "range": {
+        "startLine": 151,
+        "startChar": 14,
+        "endLine": 151,
+        "endChar": 39
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "865f1254_4c476611",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "518f99dc_bf733253",
       "range": {
         "startLine": 151,
         "startChar": 14,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab53266a_b5a50852",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4a79903_849558e2",
+      "range": {
+        "startLine": 313,
+        "startChar": 61,
+        "endLine": 313,
+        "endChar": 62
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92f6e6e7_b908da7c",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "550b8394_0dd71cd4",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92f6e6e7_b908da7c",
+      "range": {
+        "startLine": 2035,
+        "startChar": 62,
+        "endLine": 2035,
+        "endChar": 63
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40626a36_82e57866",
@@ -152,6 +296,30 @@
       "writtenOn": "2024-07-12T17:28:56Z",
       "side": 1,
       "message": "2a",
+      "range": {
+        "startLine": 2371,
+        "startChar": 0,
+        "endLine": 2372,
+        "endChar": 13
+      },
+      "revId": "ffba11ab3e1aacd3a712e324c5c0bc8f18206fd4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbad2c3a_5d0d3ff0",
+        "filename": "lib/s2tt/tests/s2tt_tests_base_g2.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 2372,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-15T12:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40626a36_82e57866",
       "range": {
         "startLine": 2371,
         "startChar": 0,
