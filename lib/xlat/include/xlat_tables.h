@@ -218,7 +218,13 @@ struct xlat_llt_info {
 
 static inline void xlat_write_tte(uint64_t *entry, uint64_t desc)
 {
-	SCA_WRITE64(entry, desc);
+	/*
+	 * Write to TTE using a release operation to ensure that all memory
+	 * ops using the current TTE are finished before the write to the TTE
+	 * is performed. This is especially important when the TTE is being
+	 * written to make a page table entry invalid.
+	 */
+	SCA_WRITE64_RELEASE(entry, desc);
 }
 
 static inline uint64_t xlat_read_tte(uint64_t *entry)
