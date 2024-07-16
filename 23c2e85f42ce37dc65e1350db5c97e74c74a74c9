@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1230878_9ef1607d",
+        "filename": "lib/s2tt/tests/s2tt_test_helpers.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-16T10:38:58Z",
+      "side": 1,
+      "message": "replaced with original assert",
+      "parentUuid": "a6a0e210_3bc9bc01",
+      "revId": "23c2e85f42ce37dc65e1350db5c97e74c74a74c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "451c339e_246931bb",
