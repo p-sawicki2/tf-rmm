@@ -50,6 +50,24 @@
       "message": "Firstly, thanks so much for creating a patch.\nim not a fan of this type of patching, that seems to be spread through different repos on tf.org. This sort of patching makes code readability, code browsing much harder, since you have to manually apply the patch to see what the code is really doing.\nOther things - this effectively creates a fork of the *library*, and as we add more patches, or if the upstream library is updated, we would need to reevaluate the patches and update the patches to that.\nOutside of the advantage that we can redirect rest of the functions to PSA crypto, i think this is worse for maintenance.\nGiven this enhancement is sort of simple from the perspective of this particular sequence, i dont have strong objections to this, but as a general rule of thumb, i dont think this is a great approach.\nThe point of the t_cose crypto adapter is for a user to override functions and actually reimplement or create their own implementations of those functions, but we are pushing RMM_ATTESTATION_USE_HES to the t_cose library has nothing to do with.\nIf i want to use our security engine for the rest of the crypto functions, along with attestation signing, i\u0027d have to patch the psa crypto adapter yet again.\nAnyway, lets go wiht this approach if you think this is more maintainable, if you would be kind enough to rebase on top of the latest patchset, we can merge this along with the rest of the patches.",
       "revId": "8cfb9cb70141fe76f9c30eec76555bafe0610946",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e073f34_fae86440",
+        "filename": "configs/t_cose/0001-Add-compile-time-option-for-HES-signing.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-16T14:10:27Z",
+      "side": 1,
+      "message": "spending some more time, please ignore my comment above. i see this is more standard and common practice than i knew of. Learnt something new.\nthanks again for the patch.",
+      "parentUuid": "f001595c_bb9fc57c",
+      "revId": "8cfb9cb70141fe76f9c30eec76555bafe0610946",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
