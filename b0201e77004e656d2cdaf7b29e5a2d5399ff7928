@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0abe3df5_a7ac8ea3",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-16T12:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4070fd63_653104a6",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3778d71c_69d5146f",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-07-10T16:56:42Z",
       "side": 1,
       "message": "the general norm is the tools should be present in the PATH of the shell. The RMM CMake should find the appropriate tool and configure it automatically (using find_program()).\n\nI think generally if -DRMM_TOOLCHAIN\u003dllvm is specified, then fuzzer should try to use 1. afl-clang-lto or if not found 2. afl-clang-fast.\n\nif -DRMM_TOOLCHAIN\u003dgnu is specified, then fuzzer should try to use 1. afl-gcc-fast\n\nFor me , afl-gcc did not work some reason.",
+      "range": {
+        "startLine": 101,
+        "startChar": 10,
+        "endLine": 103,
+        "endChar": 52
+      },
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59f65adc_6433742a",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-16T12:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3778d71c_69d5146f",
       "range": {
         "startLine": 101,
         "startChar": 10,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f686af29_98da9c84",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-16T12:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7fce169_346cc945",
+      "range": {
+        "startLine": 104,
+        "startChar": 27,
+        "endLine": 104,
+        "endChar": 64
+      },
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2621d471_3dfe6276",
@@ -100,6 +172,24 @@
       "writtenOn": "2024-07-10T16:56:42Z",
       "side": 1,
       "message": "If these are AFL command line , can we provide an example on how to provide this via RMM build ?",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae26b911_0e483dc7",
+        "filename": "docs/resources/application-notes/fuzzing.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-07-16T12:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2621d471_3dfe6276",
       "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
