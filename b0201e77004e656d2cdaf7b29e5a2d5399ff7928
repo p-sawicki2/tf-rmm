@@ -246,6 +246,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4efc3de_a512cd0d",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 26
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-16T09:36:12Z",
+      "side": 1,
+      "message": "I\u0027ve seen a linker error if keywrap wasn\u0027t disabled. I recall that it happened when I was compiling with a non-LTO compiler. I didn\u0027t investigate the details.",
+      "parentUuid": "33d4d10f_02547860",
+      "revId": "b0201e77004e656d2cdaf7b29e5a2d5399ff7928",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9fa2280e_3d606e66",
         "filename": "plat/host/common/src/host_utils.c",
         "patchSetId": 26
