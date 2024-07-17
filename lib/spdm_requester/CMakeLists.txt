@@ -114,3 +114,9 @@ foreach(SOURCE_DIR IN LISTS SOURCE_DIRS)
 
     target_link_libraries(rmm-lib-spdm_requester INTERFACE ${SPDM_LIB})
 endforeach()
+
+# Manually create dependencies for libspdm libraries
+target_link_libraries(cryptlib_mbedtls PRIVATE rmm-mbedtls)
+target_link_libraries(spdm_requester_lib PRIVATE spdm_common_lib spdm_crypt_lib)
+target_link_libraries(spdm_secured_message_lib PRIVATE spdm_crypt_lib)
+target_link_libraries(spdm_common_lib PRIVATE spdm_crypt_lib)
