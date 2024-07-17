@@ -169,6 +169,30 @@
       },
       "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "467bf892_38a9cee3",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-17T09:19:12Z",
+      "side": 1,
+      "message": "\u003e can you elaborate why it is better? after your comment, i was thinking it MUST be done after reloc? rmm_base and rmm_end are link time addresses so if rmm gets relocated, we would be invalidating incorrect locations?\n\nrmm_base is 0x0 at link time and this will be fixed up after the PIE reloc fixups. Hence for the invalidations to act on the right addresses, this will need to be done after PIE fixup.\n\n\n\u003e actually why does this not apply to warmboot? when EL3 on secondary cores boot up, again cache lines could be allocated, and when other cores access data on turning on MMU, they can access stale lines right?\nor is the assumption that secondary core wont write to any location? if yes, that seems like a flaky assumption?\n\nThe data incoherency can happen if any secondary accesses data before its MMU is turned ON. We have the 2nd rule which says \"Any function in RMM which is invoked prior to MMU enable needs to perform CMOs on any data modified which is not part of the per-cpu stack in the RMM.\" \n\nBefore MMU on, The warm boot path should only write/modify per-cpu data for the corresponding CPU (and perform CMO). It can read data which is global but it should have been flushed by the writer. Hence in RMM , only certain data and function is allowed to be accessed at this stage of boot. Do you think the current wording of the 2nd rule encompass these intentions ? We could add a clarification that \"in warm boot path, care should be taken that only per-cpu locations are modified and reads of global data should be restricted to the ones which are meant to be accessed during this phase.\"\n\ninv() cache lines by secondaries for whole RMM area may throw out valid dirty lines thus causing incorrect operation.\n\nThe reason the whole RMM area is inv() in cold boot is because of BSS memzero and PIE fixups which is only a cold boot operation.",
+      "parentUuid": "b46733f8_ac749f44",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 8
+      },
+      "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
