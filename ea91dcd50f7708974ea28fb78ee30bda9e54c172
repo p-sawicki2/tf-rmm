@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a208513_3e6b48f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-17T21:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd493908_e80f291c",
+      "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7e9c13f_527ad08f",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-07-12T17:50:47Z",
       "side": 1,
       "message": "I think we dont need the new error code. See comment on next file.",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 42
+      },
+      "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0bb49f1_8f9583ac",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-17T21:28:09Z",
+      "side": 1,
+      "message": "Replaced with E_RMM_GET_PLAT_TOKEN_END_REACHED to indicate that the token has been fully retrieved, as discussed offline.",
+      "parentUuid": "a7e9c13f_527ad08f",
       "range": {
         "startLine": 42,
         "startChar": 8,
@@ -90,6 +132,24 @@
       "side": 1,
       "message": "Good point. Yes, TF-A can internally maintain a counter for tracking the offset as part of each invocation of get_platform_token() call. \n\nThe reason is that fact the TF-A itself maybe receiving this buffer in chunks from HES. Hence to avoid a situation wherein RMM requests an earlier chunk (which TF-A may have discarded as part of RMM consuming it), and forcing TF-A to buffer the whole platform token within EL3, it would be better to avoid the possibility for RMM to ask for previous chunks or even fast forward to future.",
       "parentUuid": "1b879776_876042d7",
+      "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55cb93a0_4f6b84ba",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-17T21:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "917953bb_bdcd8128",
       "revId": "ea91dcd50f7708974ea28fb78ee30bda9e54c172",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
