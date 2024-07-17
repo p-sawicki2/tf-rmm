@@ -16,6 +16,23 @@
       "message": "Have you verified that the unittests pass with these changes?",
       "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ae69d90_e03b68fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-17T11:06:08Z",
+      "side": 1,
+      "message": "The current changes are good. There is a pending optimization to remove the release semantics from Invalid to valid transition for a tte.",
+      "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
