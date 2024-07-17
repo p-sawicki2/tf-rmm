@@ -26,6 +26,14 @@
 #define STRUCT_TYPE			struct
 #define REG_TYPE			unsigned long
 #define RMM_REALM_TOKEN_BUF_SIZE	SZ_1K
+
+/* MbedTLS needs 8K of heap for attestation usecases */
+#define REC_HEAP_PAGES			2U
+#define REC_HEAP_SIZE			(REC_HEAP_PAGES * SZ_4K)
+
+/* Number of pages per REC for attestation buffer */
+#define REC_ATTEST_TOKEN_BUF_SIZE	(RMM_CCA_TOKEN_BUFFER * SZ_4K)
+
 #else /* CBMC */
 /*
  * struct rec must fit in a single granule. CBMC has a smaller GRANULE_SIZE
@@ -46,7 +54,17 @@
 /* Reserve a single byte per saved register instead of 8. */
 #define REG_TYPE			unsigned char
 #define RMM_REALM_TOKEN_BUF_SIZE	4U
+
+#define REC_HEAP_PAGES		2U
+#define REC_HEAP_SIZE		(16)
+
+/* Number of pages per REC for attestation buffer */
+#define REC_ATTEST_TOKEN_BUF_SIZE	(16)
+
 #endif /* CBMC */
+
+#define PADDING_COUNT(type) \
+	(round_up((long int)sizeof(type), (long int)GRANULE_SIZE) - (long int)sizeof(type))
 
 struct granule;
 
@@ -147,22 +165,31 @@ COMPILER_ASSERT(sizeof(struct rec_attest_data) <= GRANULE_SIZE);
  * This structure contains pointers to data that are allocated
  * in auxilary granules for a REC.
  */
+/* TODO: Is it really necessary to align members to page? */
 struct rec_aux_data {
 	/* Pointer to the heap buffer */
-	uint8_t *attest_heap_buf;
+	uint8_t attest_heap_buf[REC_HEAP_SIZE];
+	uint8_t padding1[(round_up((long int)REC_HEAP_SIZE, (long int)GRANULE_SIZE) - (long int)REC_HEAP_SIZE)];
 
 	/* Pointer to PMU state */
-	struct pmu_state *pmu;
+	struct pmu_state pmu;
+	uint8_t padding2[PADDING_COUNT(struct pmu_state)];
 
 	/* SIMD context region */
-	struct simd_context *simd_ctx;
+	struct simd_context simd_ctx;
+	uint8_t padding3[PADDING_COUNT(struct simd_context)];
 
 	/* Pointer to attestation-related data */
-	struct rec_attest_data *attest_data;
+	struct rec_attest_data attest_data;
+	uint8_t padding4[PADDING_COUNT(struct rec_attest_data)];
 
 	/* Address of the attestation token buffer */
-	uintptr_t cca_token_buf;
+	uint8_t cca_token_buf[REC_ATTEST_TOKEN_BUF_SIZE];
 };
+COMPILER_ASSERT(U(offsetof(struct rec_aux_data, pmu)) % GRANULE_SIZE == 0U);
+COMPILER_ASSERT(U(offsetof(struct rec_aux_data, simd_ctx)) % GRANULE_SIZE == 0U);
+COMPILER_ASSERT(U(offsetof(struct rec_aux_data, attest_data)) % GRANULE_SIZE == 0U);
+COMPILER_ASSERT(U(offsetof(struct rec_aux_data, cca_token_buf)) % GRANULE_SIZE == 0U);
 
 struct rec {
 	struct granule *g_rec;	/* the granule in which this REC lives */
@@ -239,7 +266,7 @@ struct rec {
 
 	/* Addresses of auxiliary granules */
 	struct granule *g_aux[MAX_REC_AUX_GRANULES];
-	struct rec_aux_data aux_data;
+	struct rec_aux_data *aux_data;
 	struct {
 		unsigned long vsesr_el2;
 		bool inject;

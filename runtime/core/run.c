@@ -82,7 +82,7 @@ static void save_realm_state(struct rec *rec, struct rmi_rec_exit *rec_exit)
 		pmu_update_rec_exit(rec_exit);
 
 		/* Save PMU context */
-		pmu_save_state(rec->aux_data.pmu,
+		pmu_save_state(&(rec->aux_data->pmu),
 				rec->realm_info.pmu_num_ctrs);
 	}
 }
@@ -168,7 +168,7 @@ static void restore_realm_state(struct rec *rec)
 
 	if (rec->realm_info.pmu_enabled) {
 		/* Restore PMU context */
-		pmu_restore_state(rec->aux_data.pmu,
+		pmu_restore_state(&(rec->aux_data->pmu),
 				  rec->realm_info.pmu_num_ctrs);
 	}
 }
@@ -280,7 +280,7 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	 * Associate the attest heap with the current CPU. This heap will be
 	 * used for attestation RSI calls when the REC is running.
 	 */
-	ret = attestation_heap_ctx_assign_pe(&rec->aux_data.attest_data->alloc_ctx);
+	ret = attestation_heap_ctx_assign_pe(&rec->aux_data->attest_data.alloc_ctx);
 	assert(ret == 0);
 
 	ns_state->pmu = &g_pmu_data[cpuid];
@@ -343,7 +343,7 @@ void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	 * Check if FPU/SIMD was used, and if it was, save the realm state,
 	 * restore the NS state.
 	 */
-	if (rec->active_simd_ctx == rec->aux_data.simd_ctx) {
+	if (rec->active_simd_ctx == &(rec->aux_data->simd_ctx)) {
 		(void)simd_context_switch(rec->active_simd_ctx,
 					  &g_ns_simd_ctx[cpuid]);
 

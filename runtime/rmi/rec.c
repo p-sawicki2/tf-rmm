@@ -23,6 +23,21 @@
 #include <stddef.h>
 #include <string.h>
 
+#ifndef CBMC
+
+/* Number of pages per REC to be allocated */
+#define REC_NUM_PAGES	\
+	(unsigned long)(round_up( \
+		(long int)sizeof(struct rec_aux_data), (long int)GRANULE_SIZE) / \
+		(long int)GRANULE_SIZE)
+
+#else /* CBMC */
+
+/* Number of aux granules pages per REC to be used */
+#define REC_NUM_PAGES		(1U)
+
+#endif /* CBMC */
+
 static void init_rec_sysregs(struct rec *rec, unsigned long mpidr)
 {
 	/* Set non-zero values only */
@@ -173,7 +188,7 @@ static void free_rec_aux_granules(struct granule *rec_aux[],
 static void rec_attestation_heap_init(struct rec *r)
 {
 	int ret __unused;
-	struct rec_attest_data *attest_data = r->aux_data.attest_data;
+	struct rec_attest_data *attest_data = &(r->aux_data->attest_data);
 
 	/* Initialize attestation state */
 	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
@@ -181,7 +196,7 @@ static void rec_attestation_heap_init(struct rec *r)
 	ret = attestation_heap_ctx_assign_pe(&attest_data->alloc_ctx);
 	assert(ret == 0);
 
-	(void)attestation_heap_ctx_init(r->aux_data.attest_heap_buf,
+	(void)attestation_heap_ctx_init(&(r->aux_data->attest_heap_buf[0]),
 					REC_HEAP_SIZE);
 
 	ret = attestation_heap_ctx_unassign_pe();
@@ -193,7 +208,7 @@ static void rec_simd_state_init(struct rec *r)
 {
 	int __unused retval;
 
-	retval = simd_context_init(SIMD_OWNER_REL1, r->aux_data.simd_ctx,
+	retval = simd_context_init(SIMD_OWNER_REL1, &(r->aux_data->simd_ctx),
 				   &r->realm_info.simd_cfg);
 	assert(retval == 0);
 }
@@ -205,7 +220,6 @@ static void rec_simd_state_init(struct rec *r)
 static void rec_aux_granules_init(struct rec *r)
 {
 	void *rec_aux;
-	struct rec_aux_data *aux_data;
 
 	/* Map auxiliary granules */
 	rec_aux = buffer_aux_granules_map(r->g_aux, r->num_rec_aux);
@@ -213,11 +227,6 @@ static void rec_aux_granules_init(struct rec *r)
 
 	/*
 	 * Ensure we have enough aux granules for use by REC:
-	 * - REC_HEAP_PAGES for MbedTLS heap
-	 * - REC_PMU_PAGES for PMU state
-	 * - REC_SIMD_PAGES for SIMD state
-	 * - REC_ATTEST_PAGES for 'rec_attest_data' structure
-	 * - REC_ATTEST_BUFFER_PAGES for attestation buffer
 	 */
 	assert(r->num_rec_aux >= REC_NUM_PAGES);
 
@@ -225,16 +234,7 @@ static void rec_aux_granules_init(struct rec *r)
 	 * Assign base address for attestation heap, PMU, SIMD, attestation
 	 * data and buffer.
 	 */
-	aux_data = &r->aux_data;
-	aux_data->attest_heap_buf = (uint8_t *)rec_aux;
-	aux_data->pmu = (struct pmu_state *)
-		((uintptr_t)aux_data->attest_heap_buf + REC_HEAP_SIZE);
-	aux_data->simd_ctx = (struct simd_context *)
-		((uintptr_t)aux_data->pmu + REC_PMU_SIZE);
-	aux_data->attest_data = (struct rec_attest_data *)
-		((uintptr_t)aux_data->simd_ctx + REC_SIMD_SIZE);
-	aux_data->cca_token_buf = (uintptr_t)aux_data->attest_data +
-		REC_ATTEST_SIZE;
+	r->aux_data = (struct rec_aux_data *)rec_aux;
 
 	rec_attestation_heap_init(r);
 	rec_simd_state_init(r);
