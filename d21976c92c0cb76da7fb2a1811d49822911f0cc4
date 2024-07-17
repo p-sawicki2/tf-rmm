@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4da88b01_2752088a",
+        "filename": "docs/design/cold-and-warm-boot-design.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-17T14:45:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d92c84d_7be01e94",
+      "range": {
+        "startLine": 40,
+        "startChar": 16,
+        "endLine": 40,
+        "endChar": 23
+      },
+      "revId": "d21976c92c0cb76da7fb2a1811d49822911f0cc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9909256f_7a3a1980",
