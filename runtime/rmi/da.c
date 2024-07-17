@@ -83,6 +83,36 @@ static int rmi_pdev_comm_send(dev_handle_t handle, const void *request,
 			      size_t request_size, bool is_sspdm,
 			      uint64_t timeout)
 {
+	struct pdev *pd;
+	struct granule *g_req_addr;
+	bool ns_access_ok;
+	size_t request_size_min;
+
+	pd = devh_to_pdev(handle);
+
+	/* Copy the request to NS buffer passed during pdev_communicate */
+	g_req_addr = find_granule(pd->io_enter_args.req_addr);
+	if ((g_req_addr == NULL ||
+	     granule_unlocked_state(g_req_addr) != GRANULE_STATE_NS)) {
+		return -1;
+	}
+
+	request_size_min = round_up(request_size, 8);
+	ns_access_ok = ns_buffer_write(SLOT_NS, g_req_addr, 0, request_size_min,
+				       (void *)request);
+	if (!ns_access_ok) {
+		return -1;
+	}
+
+	pd->io_exit_args.flags |= INPLACE(RMI_IO_EXIT_FLAGS_SEND, 1UL);
+	if (!is_sspdm) {
+		pd->io_exit_args.req_type = RMI_IO_REQUEST_TYPE_SPDM;
+	} else {
+		pd->io_exit_args.req_type = RMI_IO_REQUEST_TYPE_SECURE_SPDM;
+	}
+	pd->io_exit_args.req_len = request_size;
+	pd->io_exit_args.timeout = timeout;
+
 	return 0;
 }
 
@@ -93,6 +123,29 @@ static int rmi_pdev_comm_send(dev_handle_t handle, const void *request,
 static int rmi_pdev_comm_recv(dev_handle_t handle, void *response,
 			      size_t *response_size)
 {
+	struct pdev *pd;
+	struct granule *g_resp_addr;
+	bool ns_access_ok;
+	size_t resp_len;
+
+	pd = devh_to_pdev(handle);
+
+	/* Copy the response from NS buffer passed during pdev_communicate */
+	g_resp_addr = find_granule(pd->io_enter_args.resp_addr);
+	if ((g_resp_addr == NULL ||
+	     granule_unlocked_state(g_resp_addr) != GRANULE_STATE_NS)) {
+		return -1;
+	}
+
+	resp_len = round_up(pd->io_enter_args.resp_len, 8);
+	ns_access_ok = ns_buffer_read(SLOT_NS, g_resp_addr, 0, resp_len,
+				       (void *)response);
+	if (!ns_access_ok) {
+		return -1;
+	}
+
+	*response_size = pd->io_enter_args.resp_len;
+
 	return 0;
 }
 
@@ -327,6 +380,183 @@ out_restore_pdev_aux_granule_state:
 		pdev_restore_aux_granules_state(pdev_aux_granules,
 						pdev_params.num_aux, false);
 	}
+
+	return rc;
+}
+
+/* Validate RmiIoData.RmiIoEnter argument passed by Host */
+static unsigned long copyin_and_validate_io_enter(unsigned long io_data_ptr,
+						  rmi_io_enter_t *io_enter_args)
+{
+	struct granule *g_io_data;
+	bool ns_access_ok;
+
+	g_io_data = find_granule(io_data_ptr);
+	if ((g_io_data == NULL ||
+	     granule_unlocked_state(g_io_data) != GRANULE_STATE_NS)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	ns_access_ok = ns_buffer_read(SLOT_NS, g_io_data, RMI_IO_ENTER_OFFSET,
+				      sizeof(rmi_io_enter_t), io_enter_args);
+	if (!ns_access_ok) {
+		return RMI_ERROR_INPUT;
+	}
+
+	if (!GRANULE_ALIGNED(io_enter_args->req_addr) ||
+	    !GRANULE_ALIGNED(io_enter_args->resp_addr) ||
+	    (io_enter_args->resp_len > GRANULE_SIZE)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/* Check if request and response buffers are in NS PAS */
+	if ((granule_unlocked_state(find_granule(io_enter_args->req_addr)) !=
+	     GRANULE_STATE_NS) ||
+	    (granule_unlocked_state(find_granule(io_enter_args->resp_addr)) !=
+	     GRANULE_STATE_NS)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	return RMI_SUCCESS;
+}
+
+/*
+ * copyout IoExitArgs
+ */
+static unsigned long copyout_io_exit(unsigned long io_data_ptr,
+				     rmi_io_exit_t *io_exit_args)
+{
+	struct granule *g_io_data;
+	bool ns_access_ok;
+
+	g_io_data = find_granule(io_data_ptr);
+	if ((g_io_data == NULL ||
+	     granule_unlocked_state(g_io_data) != GRANULE_STATE_NS)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	ns_access_ok = ns_buffer_write(SLOT_NS, g_io_data, RMI_IO_EXIT_OFFSET,
+				      sizeof(rmi_io_exit_t), io_exit_args);
+	if (!ns_access_ok) {
+		return RMI_ERROR_INPUT;
+	}
+
+	return RMI_SUCCESS;
+}
+
+/*
+ * smc_pdev_communicate
+ *
+ * pdev_ptr	- PA of the PDEV
+ * data_ptr	- PA of the communication data structure
+ */
+unsigned long smc_pdev_communicate(unsigned long pdev_ptr,
+				   unsigned long io_data_ptr)
+{
+	struct granule *g_pdev;
+	rmi_io_enter_t io_enter_args;
+	struct pdev *pd;
+	void *aux_mapped_addr __unused;
+	int rc;
+	int cma_rc;
+
+	if (!GRANULE_ALIGNED(pdev_ptr) ||
+	    !GRANULE_ALIGNED(io_data_ptr)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/* Validate RmiIoEnter arguments in IoData */
+	rc = copyin_and_validate_io_enter(io_data_ptr, &io_enter_args);
+	if (rc != RMI_SUCCESS) {
+		return rc;
+	}
+
+	/* Lock pdev granule and map it */
+	g_pdev = find_lock_granule(pdev_ptr, GRANULE_STATE_PDEV);
+	if (g_pdev == NULL) {
+		return RMI_ERROR_INPUT;
+	}
+
+	pd = buffer_granule_map(g_pdev, SLOT_PDEV);
+	if (pd == NULL) {
+		granule_unlock(g_pdev);
+		return RMI_ERROR_INPUT;
+	}
+
+	assert(pd->g_pdev == g_pdev);
+
+	if (pd->io_state == PDEV_IO_IDLE || pd->io_state == PDEV_IO_ERROR) {
+		rc = RMI_ERROR_DEVICE;
+		goto out_pdev_buf_unmap;
+	}
+
+	/* todo: not mentioned in spec */
+	/* IoEnter.status must be NONE when IO state is IO_PENDING */
+	if ((pd->io_state == PDEV_IO_PENDING &&
+	     io_enter_args.status != RMI_IO_ENTER_STATUS_NONE) ||
+	    (pd->io_state == PDEV_IO_ACTIVE &&
+	     (io_enter_args.status != RMI_IO_ENTER_STATUS_SUCCESS &&
+	      io_enter_args.status != RMI_IO_ENTER_STATUS_ERROR))) {
+		rc = RMI_ERROR_INPUT;
+		goto out_pdev_buf_unmap;
+	}
+
+	/* Copy IoEnter args to PDEV and clear old IoExit args held in PDEV */
+	memcpy(&pd->io_enter_args, &io_enter_args, sizeof(rmi_io_enter_t));
+	memset(&pd->io_exit_args, 0, sizeof(rmi_io_exit_t));
+
+	/* Map PDEV aux granules */
+	aux_mapped_addr = buffer_pdev_aux_granules_map(pd->g_aux, pd->num_aux);
+	assert(aux_mapped_addr != NULL);
+
+	/* If PDEV needs heap, associate the heap context with current CPU */
+	rc = buffer_alloc_ctx_assign(&pd->heap_ctx);
+	assert(rc == 0);
+
+	if (pd->io_state == PDEV_IO_ACTIVE) {
+		cma_rc = cma_spdm_cmd_resume(pd->dev.cma_spdm_priv_data);
+	} else {
+		if (pd->rmi_state == RMI_PDEV_STATE_NEW) {
+			cma_rc = cma_spdm_cmd_dispatch(SPDM_INIT_CONNECTION,
+					       pd->dev.cma_spdm_priv_data);
+		} else {
+			cma_rc = CMA_SPDM_STATUS_ERROR;
+			assert(false);
+		}
+	}
+
+	if (cma_rc == CMA_SPDM_STATUS_ERROR) {
+		pd->io_state = PDEV_IO_ERROR;
+		pd->rmi_state = RMI_PDEV_STATE_ERROR;
+		pd->io_exit_args.flags = 0;
+	} else if (cma_rc == CMA_SPDM_STATUS_IO_WAIT) {
+		pd->io_state = PDEV_IO_ACTIVE;
+	} else {
+		pd->io_state = PDEV_IO_IDLE;
+		if (pd->rmi_state == RMI_PDEV_STATE_NEW) {
+			pd->rmi_state = RMI_PDEV_STATE_NEEDS_KEY;
+		} else {
+			assert(false);
+		}
+	}
+
+	rc = copyout_io_exit(io_data_ptr, &pd->io_exit_args);
+	if (rc != RMI_SUCCESS) {
+		/* todo: call cma_spdm cleanup? */
+		rc = RMI_ERROR_INPUT;
+		goto out_pdev_aux_unmap;
+	}
+
+out_pdev_aux_unmap:
+	/* Unmap all PDEV aux granules */
+	buffer_pdev_aux_unmap(aux_mapped_addr, pd->num_aux);
+
+	buffer_alloc_ctx_unassign();
+
+out_pdev_buf_unmap:
+	buffer_unmap(pd);
+
+	granule_unlock(g_pdev);
 
 	return rc;
 }

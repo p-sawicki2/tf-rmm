@@ -7,6 +7,7 @@
 #define CMA_SPDM_PRIVATE_H
 
 #include <assert.h>
+#include <context.h>
 #include <industry_standard/spdm.h>
 #include <industry_standard/spdm_secured_message.h>
 #include <library/spdm_requester_lib.h>
@@ -155,6 +156,7 @@
 #define LIBSPMD_CONTEXT_SIZE		0x2000
 #define SEND_RECV_BUF_SIZE		0x1000
 #define LIBSPMD_SCRATCH_BUF_SIZE	0xC000
+#define LIBSPMD_STACK_SIZE		0x3000
 
 #define spdm_to_cma(spdm) ((struct cma_spdm_context *)((unsigned long)(spdm) -	\
 		       offsetof(struct cma_spdm_context, libspdm_context)))
@@ -162,6 +164,11 @@
 struct cma_spdm_context {
 	dev_handle_t dev_handle;
 	uint8_t cert_slot_id;
+
+	context_t main_ctx;
+	context_t libspdm_cmd_ctx;
+	libspdm_return_t libspdm_cmd_rc;
+	bool is_msg_sspdm;
 
 	/*
 	 * Device communication callbacks ops to send, recv and cache device
@@ -171,6 +178,7 @@ struct cma_spdm_context {
 
 	void *send_recv_buffer;
 	void *scratch_buffer;
+	void *libspdm_stack;
 
 	/*
 	 * End of this structure holds libspdm context. This is kept inside this

@@ -11,11 +11,32 @@
 #include <psa/crypto_struct.h>
 #include <string.h>
 
+/* Custom libspdm status code */
+#define LIBSPDM_STATUS_IO_WAIT		((libspdm_return_t)0x80008000)
+
+typedef void (*libspdm_cmd_main_t)(void);
+
 static libspdm_return_t cma_spdm_send_message(void *spdm_context,
 					      size_t request_size,
 					      const void *request,
 					      uint64_t timeout)
 {
+	struct cma_spdm_context *cma;
+	int rc;
+
+	cma = spdm_to_cma(spdm_context);
+
+	assert(cma->comm_ops != NULL);
+	rc = cma->comm_ops->send(cma->dev_handle, request, request_size,
+				 cma->is_msg_sspdm, timeout);
+	if (rc != 0U) {
+		return LIBSPDM_STATUS_SEND_FAIL;
+	}
+
+	cma->libspdm_cmd_rc = LIBSPDM_STATUS_IO_WAIT;
+	rc = swapcontext(&cma->libspdm_cmd_ctx, &cma->main_ctx);
+	assert(rc == 0);
+
 	return LIBSPDM_STATUS_SUCCESS;
 }
 
@@ -24,6 +45,17 @@ static libspdm_return_t cma_spdm_receive_message(void *spdm_context,
 						 void **response,
 						 uint64_t timeout)
 {
+	struct cma_spdm_context *cma;
+	int rc;
+
+	cma = spdm_to_cma(spdm_context);
+
+	assert(cma->comm_ops != NULL);
+	rc = cma->comm_ops->recv(cma->dev_handle, *response, response_size);
+	if (rc != 0U) {
+		return LIBSPDM_STATUS_RECEIVE_FAIL;
+	}
+
 	return LIBSPDM_STATUS_SUCCESS;
 }
 
@@ -34,6 +66,14 @@ cma_spdm_transport_encode_message(void *spdm_context, const uint32_t *session_id
 				  size_t *transport_message_size,
 				  void **transport_message)
 {
+	struct cma_spdm_context *cma;
+
+	cma = spdm_to_cma(spdm_context);
+
+	cma->is_msg_sspdm = false;
+
+	*transport_message_size = message_size;
+	*transport_message = (void *)message;
 	return LIBSPDM_STATUS_SUCCESS;
 }
 
@@ -44,6 +84,28 @@ cma_spdm_transport_decode_message(void *spdm_context, uint32_t **session_id,
 				  void *transport_message,
 				  size_t *message_size, void **message)
 {
+	struct cma_spdm_context *cma;
+
+	cma = spdm_to_cma(spdm_context);
+
+	/*
+	 * As no transport headers are available, the type of the received
+	 * message is SPDM or SECURED_SPDM based on last sent request type.
+	 */
+	if (cma->is_msg_sspdm) {
+		/*
+		 * Get session ID from encrpyted message and check against the
+		 * session id in CMA SPDM context.
+		 */
+
+		/* Convert secured mssage to normal message */
+	} else {
+		*session_id = NULL;
+	}
+
+	*message_size = transport_message_size;
+	*message = (void *)transport_message;
+
 	return LIBSPDM_STATUS_SUCCESS;
 }
 
@@ -88,6 +150,131 @@ static void cma_spdm_release_receiver_buffer(void *spdm_context,
 }
 
 /*
+ * todo:
+ * Process the libspdm connection state. Check if the responder (DSM) supports
+ * the required version, capabilities, algorithms as mentioned by PCIE CMA-SPDM
+ */
+static int process_cma_spdm_init_connection(struct cma_spdm_context *cma)
+{
+	return LIBSPDM_STATUS_SUCCESS;
+}
+
+/* cma_spdm_init_connection_main */
+void cma_spdm_init_connection_main(struct cma_spdm_context *cma)
+{
+	void *spdm_context;
+	int rc;
+
+	spdm_context = (void *)&cma->libspdm_context;
+
+	/*
+	 * Below are list of SPDM requester commands send to the device to
+	 * init connection and get certificate. These commands will result in
+	 * multiple async IO from libspdm layer followed by IO resume to libspdm
+	 * layer.
+	 */
+
+	/*
+	 * Initialize the connection. This does GET_VERSION, GET_CAPABILITIES
+	 * NEGOTIATE_ALGORITHMS
+	 */
+	cma->libspdm_cmd_rc = libspdm_init_connection(spdm_context, false);
+	if (cma->libspdm_cmd_rc != LIBSPDM_STATUS_SUCCESS) {
+		return;
+	}
+
+	rc = process_cma_spdm_init_connection(cma);
+	if (rc != 0) {
+		cma->libspdm_cmd_rc = LIBSPDM_STATUS_UNSUPPORTED_CAP;
+		return;
+	}
+
+	cma->libspdm_cmd_rc = LIBSPDM_STATUS_SUCCESS;
+}
+
+/* cma_spdm_deinit_connection_main */
+void cma_spdm_deinit_connection_main(struct cma_spdm_context *cma)
+{
+	/* Terminate the connection. This closes the secure session */
+	cma->libspdm_cmd_rc = libspdm_init_connection((void *)
+						      &cma->libspdm_context,
+						      true);
+
+	/* todo: cleanup/reset CMA spdm context */
+}
+
+/* cma_spdm_cmd_dispatch */
+int cma_spdm_cmd_dispatch(int cmd, void *cma_spdm_context)
+{
+	struct cma_spdm_context *cma;
+	libspdm_cmd_main_t cmd_main;
+	int rc;
+
+	cma = (struct cma_spdm_context *)cma_spdm_context;
+
+	/* Return error if the previous command is in pending state */
+	if (cma->libspdm_cmd_rc == LIBSPDM_STATUS_IO_WAIT) {
+		return CMA_SPDM_STATUS_ERROR;
+	}
+
+	if (cmd == SPDM_INIT_CONNECTION) {
+		cmd_main = (libspdm_cmd_main_t)cma_spdm_init_connection_main;
+	} else if (cmd == SPDM_DEINIT_CONNECTION) {
+		cmd_main = (libspdm_cmd_main_t)cma_spdm_deinit_connection_main;
+	} else if (cmd == SPDM_SECURE_SESSION) {
+		assert(false);
+	} else {
+		return CMA_SPDM_STATUS_ERROR;
+	}
+
+	rc = getcontext(&cma->libspdm_cmd_ctx);
+	assert(rc == 0);
+
+	makecontext_setup(&cma->libspdm_cmd_ctx, cma->libspdm_stack,
+			  LIBSPMD_STACK_SIZE, &cma->main_ctx);
+
+	makecontext(&cma->libspdm_cmd_ctx, cmd_main, 1, cma);
+	rc = swapcontext(&cma->main_ctx, &cma->libspdm_cmd_ctx);
+	assert(rc == 0);
+
+	if (cma->libspdm_cmd_rc == LIBSPDM_STATUS_IO_WAIT) {
+		rc = CMA_SPDM_STATUS_IO_WAIT;
+	} else if (cma->libspdm_cmd_rc != LIBSPDM_STATUS_SUCCESS) {
+		rc = CMA_SPDM_STATUS_ERROR;
+	} else {
+		rc = CMA_SPDM_STATUS_SUCCESS;
+	}
+
+	return rc;
+}
+
+/* cma_spdm_resume_cmd */
+int cma_spdm_cmd_resume(void *cma_spdm_context)
+{
+	struct cma_spdm_context *cma;
+	int rc;
+
+	cma = (struct cma_spdm_context *)cma_spdm_context;
+
+	if (cma->libspdm_cmd_rc != LIBSPDM_STATUS_IO_WAIT) {
+		return CMA_SPDM_STATUS_ERROR;
+	}
+
+	rc = swapcontext(&cma->main_ctx, &cma->libspdm_cmd_ctx);
+	assert(rc == 0);
+
+	if (cma->libspdm_cmd_rc == LIBSPDM_STATUS_IO_WAIT) {
+		rc = CMA_SPDM_STATUS_IO_WAIT;
+	} else if (cma->libspdm_cmd_rc != LIBSPDM_STATUS_SUCCESS) {
+		rc = CMA_SPDM_STATUS_ERROR;
+	} else {
+		rc = CMA_SPDM_STATUS_SUCCESS;
+	}
+
+	return rc;
+}
+
+/*
  * Returns CMA SPDM context size. This include libspdm context, libspdm
  * secured message context, libspdm send/recv buffer, libspdm scratch space and
  * libspdm stack.
@@ -103,7 +290,8 @@ size_t cma_spdm_get_context_size(void)
 	assert(libspdm_get_context_size() <= LIBSPMD_CONTEXT_SIZE);
 
 	total = sizeof(struct cma_spdm_context) + LIBSPMD_CONTEXT_SIZE +
-		SEND_RECV_BUF_SIZE + LIBSPMD_SCRATCH_BUF_SIZE;
+		SEND_RECV_BUF_SIZE + LIBSPMD_SCRATCH_BUF_SIZE +
+		LIBSPMD_STACK_SIZE;
 	total = round_up(total, 4096);
 
 	return total;
@@ -121,6 +309,8 @@ size_t cma_spdm_get_context_size(void)
  *          |      send_recv_buffer          | 0x1000
  *          |--------------------------------|
  *          |    libspdm scratch_buffer      | 0xC000
+ *          |--------------------------------|
+ *          |         libspdm stack          | 0x3000
  *           --------------------------------
  *
  * Inits libspdm context using libspdm helper routines and registers send/recv
@@ -156,6 +346,7 @@ int cma_spdm_context_init(void *cma_spdm_priv_data,
 	cma->send_recv_buffer = cma_spdm_priv_data +
 		sizeof(struct cma_spdm_context) + LIBSPMD_CONTEXT_SIZE;
 	cma->scratch_buffer = cma->send_recv_buffer + SEND_RECV_BUF_SIZE;
+	cma->libspdm_stack = cma->scratch_buffer + LIBSPMD_SCRATCH_BUF_SIZE;
 
 	/* Initialize cma_spdm_context */
 	cma->dev_handle = handle;
