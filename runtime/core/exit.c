@@ -326,7 +326,7 @@ static bool handle_simd_exception(struct rec *rec, unsigned long esr)
 	 */
 	if ((esr_el2_ec == ESR_EL2_EC_SME) &&
 	    (!rec->realm_info.simd_cfg.sve_en ||
-	     (rec->active_simd_ctx == rec->aux_data.simd_ctx))) {
+	     (rec->active_simd_ctx == &(rec->aux_data->simd_ctx)))) {
 		realm_inject_undef_abort();
 		return true;
 	}
@@ -335,11 +335,11 @@ static bool handle_simd_exception(struct rec *rec, unsigned long esr)
 	 * As REC uses lazy enablement, upon FPU/SVE/SME exception the active
 	 * SIMD context must not be the REC's context
 	 */
-	assert(rec->active_simd_ctx != rec->aux_data.simd_ctx);
+	assert(rec->active_simd_ctx != &(rec->aux_data->simd_ctx));
 
 	/* Save the NS SIMD context and restore REC's SIMD context */
 	rec->active_simd_ctx = simd_context_switch(rec->active_simd_ctx,
-						   rec->aux_data.simd_ctx);
+						   &(rec->aux_data->simd_ctx));
 
 	/*
 	 * As the REC SIMD context is now restored, enable SIMD flags in REC's

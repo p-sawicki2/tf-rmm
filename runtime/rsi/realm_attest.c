@@ -79,8 +79,8 @@ static void attest_token_continue_write_state(struct rec *rec,
 	enum s2_walk_status walk_status;
 	struct s2_walk_result walk_res = { 0UL };
 	size_t attest_token_len, length;
-	struct rec_attest_data *attest_data = rec->aux_data.attest_data;
-	uintptr_t cca_token_buf = rec->aux_data.cca_token_buf;
+	struct rec_attest_data *attest_data = &(rec->aux_data->attest_data);
+	uintptr_t cca_token_buf = (uintptr_t)&(rec->aux_data->cca_token_buf[0]);
 
 	/*
 	 * Translate realm granule IPA to PA. If returns with
@@ -180,7 +180,7 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 
 	assert(rec != NULL);
 
-	attest_data = rec->aux_data.attest_data;
+	attest_data = &(rec->aux_data->attest_data);
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
 	/*
@@ -192,7 +192,7 @@ void handle_rsi_attest_token_init(struct rec *rec, struct rsi_result *res)
 		int restart;
 
 		attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
-		restart = attestation_heap_reinit_pe(rec->aux_data.attest_heap_buf,
+		restart = attestation_heap_reinit_pe(&(rec->aux_data->attest_heap_buf[0]),
 							REC_HEAP_SIZE);
 		if (restart != 0) {
 			/* There is no provision for this failure so panic */
@@ -260,7 +260,7 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 	assert(rec != NULL);
 	assert(rec_exit != NULL);
 
-	attest_data = rec->aux_data.attest_data;
+	attest_data = &(rec->aux_data->attest_data);
 	res->action = UPDATE_REC_RETURN_TO_REALM;
 
 	realm_buf_ipa = rec->regs[1];
