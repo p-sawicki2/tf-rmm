@@ -26,6 +26,14 @@
 #define STRUCT_TYPE			struct
 #define REG_TYPE			unsigned long
 #define RMM_REALM_TOKEN_BUF_SIZE	SZ_1K
+
+/* MbedTLS needs 8K of heap for attestation usecases */
+#define REC_HEAP_PAGES			2U
+#define REC_HEAP_SIZE			(REC_HEAP_PAGES * SZ_4K)
+
+/* Number of pages per REC for attestation buffer */
+#define REC_ATTEST_TOKEN_BUF_SIZE	(RMM_CCA_TOKEN_BUFFER * SZ_4K)
+
 #else /* CBMC */
 /*
  * struct rec must fit in a single granule. CBMC has a smaller GRANULE_SIZE
@@ -46,6 +54,13 @@
 /* Reserve a single byte per saved register instead of 8. */
 #define REG_TYPE			unsigned char
 #define RMM_REALM_TOKEN_BUF_SIZE	4U
+
+#define REC_HEAP_PAGES		2U
+#define REC_HEAP_SIZE		(16)
+
+/* Number of pages per REC for attestation buffer */
+#define REC_ATTEST_TOKEN_BUF_SIZE	(16)
+
 #endif /* CBMC */
 
 struct granule;
@@ -149,19 +164,19 @@ COMPILER_ASSERT(sizeof(struct rec_attest_data) <= GRANULE_SIZE);
  */
 struct rec_aux_data {
 	/* Pointer to the heap buffer */
-	uint8_t *attest_heap_buf;
+	uint8_t attest_heap_buf[REC_HEAP_SIZE];
 
 	/* Pointer to PMU state */
-	struct pmu_state *pmu;
+	struct pmu_state pmu;
 
 	/* SIMD context region */
-	struct simd_context *simd_ctx;
+	struct simd_context simd_ctx;
 
 	/* Pointer to attestation-related data */
-	struct rec_attest_data *attest_data;
+	struct rec_attest_data attest_data;
 
 	/* Address of the attestation token buffer */
-	uintptr_t cca_token_buf;
+	uint8_t cca_token_buf[REC_ATTEST_TOKEN_BUF_SIZE];
 };
 
 struct rec {
@@ -239,7 +254,7 @@ struct rec {
 
 	/* Addresses of auxiliary granules */
 	struct granule *g_aux[MAX_REC_AUX_GRANULES];
-	struct rec_aux_data aux_data;
+	struct rec_aux_data *aux_data;
 	struct {
 		unsigned long vsesr_el2;
 		bool inject;
