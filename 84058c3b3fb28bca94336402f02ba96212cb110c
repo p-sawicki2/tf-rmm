@@ -52,6 +52,24 @@
       "parentUuid": "4d618be2_f6283922",
       "revId": "84058c3b3fb28bca94336402f02ba96212cb110c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87b603ad_93f16608",
+        "filename": "lib/xlat/include/xlat_tables.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-17T10:05:05Z",
+      "side": 1,
+      "message": "Currently both are there, so we are covered. I think generally dsb store ensures that the store is visible to all instructions succeeding it. So that is usually sufficient to prevent instructions being ordered earlier. Since MMU update is special, the store also has a side effect on instruction stream and hence the need for isb(). That\u0027s as far as my knowledge goes in this area.",
+      "parentUuid": "03bbd785_6ab31173",
+      "revId": "84058c3b3fb28bca94336402f02ba96212cb110c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
