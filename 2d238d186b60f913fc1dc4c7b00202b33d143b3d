@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c94a3b1a_e0825d4d",
+        "filename": "docs/design/cold-and-warm-boot-design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-17T00:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b471135d_04f1c94e",
+      "range": {
+        "startLine": 47,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 60
+      },
+      "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bcb7d02f_e0375bc2",
@@ -58,6 +82,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e0e7a4_a9d56395",
+        "filename": "docs/design/cold-and-warm-boot-design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-17T00:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcb7d02f_e0375bc2",
+      "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fb02664_d7f6606e",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-07-16T09:13:22Z",
       "side": 1,
       "message": "The value of x0 will be fixed up during PIE fixup. Also here both cold and warm boots paths overlap thus executing this on warm boot paths as well. \n\nHence I think , this logic is better to run after PIE fixup. Can be after or before BSS memset.\n\nLine 110 should be a good place.",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 8
+      },
+      "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d92177f4_acc0b4d1",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-17T00:52:19Z",
+      "side": 1,
+      "message": "can you elaborate why it is better? after your comment, i was thinking it MUST be done after reloc? rmm_base and rmm_end are link time addresses so if rmm gets relocated, we would be invalidating incorrect locations?\n\nagree 110 is a good place, i think the latest point it can be done is before xlat_enable_mmu_el2 since thats really when data caches are enabled, and until then we are \"safe\".",
+      "parentUuid": "5fb02664_d7f6606e",
       "range": {
         "startLine": 53,
         "startChar": 6,
