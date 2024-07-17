@@ -193,6 +193,30 @@
       },
       "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56988837_102fbba5",
+        "filename": "runtime/core/aarch64/head.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-17T13:57:00Z",
+      "side": 1,
+      "message": "i think that clarification would be good. let me add that to read me, since if a secondary core also modified global data that can be used outside its context on other CPUs, then the same problem applies.\nAnd ack on inv() cache lines, i incorrectly thought invalidate affects only local caches but it affects the entire shareability domain (OSH  default i think, when MMU disabled).",
+      "parentUuid": "467bf892_38a9cee3",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 8
+      },
+      "revId": "2d238d186b60f913fc1dc4c7b00202b33d143b3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
