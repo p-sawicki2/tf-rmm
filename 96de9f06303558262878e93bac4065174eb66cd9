@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4e6aec9_aeaddcfc",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-18T11:43:19Z",
+      "side": 1,
+      "message": "This line here made me think why are we having pointers in `struct rec_aux_data` instead of structures/arrays directly. After experimenting a bit, I didn\u0027t find any obvious reasons, so I created this patch: \nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30034\n\nIt should make possible to change this line to \n\n    attest_data \u003d \u0026(((rec_aux_data *)rec_aux)-\u003eattest_data)",
+      "revId": "96de9f06303558262878e93bac4065174eb66cd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
