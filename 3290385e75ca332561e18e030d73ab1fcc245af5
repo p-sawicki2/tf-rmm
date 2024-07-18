@@ -70,6 +70,24 @@
       "parentUuid": "644692c0_af079ec8",
       "revId": "3290385e75ca332561e18e030d73ab1fcc245af5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af2e2a55_f08b7492",
+        "filename": "plat/host/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-18T06:51:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "210ef346_2da1c363",
+      "revId": "3290385e75ca332561e18e030d73ab1fcc245af5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
