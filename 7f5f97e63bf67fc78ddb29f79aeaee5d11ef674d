@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02e2d9c0_7f85a21a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:51:52Z",
+      "side": 1,
+      "message": "The params were not correctly communicated by me.  I have clarified.",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a297d37_9634bb95",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:51:52Z",
+      "side": 1,
+      "message": "keep the original as default. And then override it for host_build platform.",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c4348b5_ee49ec81",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:51:52Z",
+      "side": 1,
+      "message": "this is the length of the current hunk/chuck returned. so perhaps this should be called token_hunk_len.\n\nso the check should probably be (offset + token_hunk_len + remaining_len) \u003e RMM_PLAT_TOKEN_MAX_SIZE",
+      "range": {
+        "startLine": 231,
+        "startChar": 6,
+        "endLine": 231,
+        "endChar": 25
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "307a9657_56272eaa",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:51:52Z",
+      "side": 1,
+      "message": "this should just be `token_hunk_len`",
+      "range": {
+        "startLine": 240,
+        "startChar": 6,
+        "endLine": 240,
+        "endChar": 51
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6572726_3cfcb478",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:51:52Z",
+      "side": 1,
+      "message": "offset +\u003d token_hunk_len",
+      "range": {
+        "startLine": 242,
+        "startChar": 11,
+        "endLine": 242,
+        "endChar": 45
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
