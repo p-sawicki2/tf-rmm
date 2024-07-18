@@ -34,6 +34,24 @@
       "parentUuid": "b5c47974_daa32bea",
       "revId": "ba25ac31f393834298e82f194fd9a41372863163",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7298d6ac_f0566aae",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T10:57:32Z",
+      "side": 1,
+      "message": "The state is being reset to NOT_STARTED here : https://github.com/TF-RMM/tf-rmm/blob/main/runtime/rsi/realm_attest.c#L194 which is also being done in the _init() function.\n\nYour patch is in the right direction. I think we have a bit of technical debt to move all of token_sign_ctx.state manipulation and checks to the component. It may need a bit of refactor.",
+      "parentUuid": "cd8a5e5f_2afbc07a",
+      "revId": "ba25ac31f393834298e82f194fd9a41372863163",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
