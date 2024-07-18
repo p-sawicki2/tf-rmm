@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a85d769_63dcfd4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 31
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-18T06:55:22Z",
+      "side": 1,
+      "message": "I updated the parent changes according to Soby\u0027s comments. Please rebase on https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29663/2 (d3db2a06e8275aa95887962364b84caef1860dfd)",
+      "revId": "53e43e8eba61f20be46e34d7ab606047a94612cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
