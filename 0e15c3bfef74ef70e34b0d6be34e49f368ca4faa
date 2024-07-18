@@ -157,6 +157,24 @@
       "parentUuid": "004ccade_0e24e5e4",
       "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a157a804_b5524e8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001079
+      },
+      "writtenOn": "2024-07-18T13:47:24Z",
+      "side": 1,
+      "message": "Thanks.\nI have missed the info that CPU2 cannot see the mapping of CPU1.\nIs this because, at R-EL2, each CPU has its own stage 1 translation table tree?",
+      "parentUuid": "aae0c72f_86d7c57f",
+      "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
