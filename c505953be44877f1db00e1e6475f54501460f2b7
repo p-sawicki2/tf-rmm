@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09940c99_94cdcd82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T13:49:44Z",
+      "side": 1,
+      "message": "Sorry, I just remembered why we have the unusual way to allocate aux_data pages. It is easier to illustrate this via an example :\n\nIt is possible for NS_HOST to not not enable SVE and PMU support for a Realm. In such a scenario, RMM could return a lower REC_AUX_COUNT when RMI_REC_AUX_COUNT is called by Host. This means, Host could allocate lower count of Aux pages when creating a REC. \n\nCurrently we dont do this optimization in RMM and hence it is not clear from the implementation why the strange way to allocate AUX pages.",
+      "revId": "c505953be44877f1db00e1e6475f54501460f2b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d16ed01c_8137fbb7",
         "filename": "runtime/include/rec.h",
         "patchSetId": 3
@@ -31,6 +48,29 @@
       "writtenOn": "2024-07-18T13:38:27Z",
       "side": 1,
       "message": "add extra tab to align",
+      "revId": "c505953be44877f1db00e1e6475f54501460f2b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6af9752_8c045b18",
+        "filename": "runtime/include/rec.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T13:49:44Z",
+      "side": 1,
+      "message": "may not be needed for CBMC build.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 24
+      },
       "revId": "c505953be44877f1db00e1e6475f54501460f2b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
