@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "de3e7c43_baf930ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T12:58:52Z",
+      "side": 1,
+      "message": "After giving it some thought, this sequence is  also valid:\n\n1. EL3 returns token_hunk_len as 0 and says remaining_len is x bytes  (where x !\u003d 0). This allows RMM to poll on EL3 in case the EL3 decides to implement a non-blocking call.\n\n2. If remaining_len is allowed to change during the course of hunk retrieval. This allows flexibility would be good wherein EL3 itself is not sure about the total size of token and needs the HES to reply to figure this out. \n\nOnce we have a working prototype of this interface, this document would also need suitable modification : https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-attest-get-plat-token-command",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a297d37_9634bb95",
         "filename": "lib/attestation/CMakeLists.txt",
         "patchSetId": 3
