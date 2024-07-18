@@ -34,6 +34,24 @@
       "parentUuid": "44320b1e_a2b2c783",
       "revId": "99f03304fee21e76db40900f44947618fbd68780",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23b7fbf5_ce9cae96",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-18T17:11:21Z",
+      "side": 1,
+      "message": "btw, your comment is not only applicable to when HES is being used. Isnt this the same case when normal delegated attestation is used? It appears we get the key from EL3, and ship it back to EL3 for the platform token, so what is unique here?",
+      "parentUuid": "10b3a1ab_1cec5c10",
+      "revId": "99f03304fee21e76db40900f44947618fbd68780",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
