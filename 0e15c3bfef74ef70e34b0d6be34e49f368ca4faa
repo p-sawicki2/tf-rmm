@@ -175,6 +175,24 @@
       "parentUuid": "aae0c72f_86d7c57f",
       "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ce2301_5c6791a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-18T13:51:16Z",
+      "side": 1,
+      "message": "Yes, for the High VA space, every CPU has its own Stage 1 translation table tree.",
+      "parentUuid": "a157a804_b5524e8d",
+      "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
