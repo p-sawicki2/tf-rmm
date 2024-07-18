@@ -229,6 +229,24 @@
       "parentUuid": "b65f466b_f8f4f2b2",
       "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "588eaca1_8d4994ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-18T14:50:17Z",
+      "side": 1,
+      "message": "EL0 application in the RMM is independent of this patch series at the moment. The VHE EL0 partition problem has already been solved in hafnium. The entire EL0 application can run on per CPU mappings, by simply reserving HighVA for it, using the same trick RMM is using today, and an associated ASID for example. They can in fact use the same ASID too, so long as the EL0 applications are isolated in VA space and there are no overlaps, and then we simply flush TLBs for the shared ASID when switching, so one application cannot use the TLBs to bypass (this is 1990s style app isolation). Lots of ways to skin the problem, independent of this patch.",
+      "parentUuid": "d8db0928_c3048fef",
+      "revId": "0e15c3bfef74ef70e34b0d6be34e49f368ca4faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
