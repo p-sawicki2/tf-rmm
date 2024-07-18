@@ -1,0 +1,99 @@
+From 1976ee94b29c768bfaa6edec63b673adaafcc071 Mon Sep 17 00:00:00 2001
+From: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+Date: Wed, 10 Jul 2024 11:17:08 +0100
+Subject: [PATCH] get_certificate: do not store cert_chain content
+
+Add support for NULL cert_chain argument to libspdm_try_get_certificate.
+
+Add LIBSPDM_DATA_PEER_USED_CERT_CHAIN_HASH to libspdm_set_data to
+set the spdm_cert_chain hash value.
+
+Signed-off-by: Arunachalam Ganapathy <arunachalam.ganapathy@arm.com>
+---
+ include/library/spdm_common_lib.h                 |  2 ++
+ .../spdm_common_lib/libspdm_com_context_data.c    | 15 +++++++++++++++
+ .../libspdm_req_get_certificate.c                 | 15 ++++++++++-----
+ 3 files changed, 27 insertions(+), 5 deletions(-)
+
+diff --git a/include/library/spdm_common_lib.h b/include/library/spdm_common_lib.h
+index b4595d2ad0..1ec38c1491 100644
+--- a/include/library/spdm_common_lib.h
++++ b/include/library/spdm_common_lib.h
+@@ -154,6 +154,8 @@ typedef enum {
+     LIBSPDM_DATA_MULTI_KEY_CONN_REQ,
+     LIBSPDM_DATA_MULTI_KEY_CONN_RSP,
+ 
++    LIBSPDM_DATA_PEER_USED_CERT_CHAIN_HASH,
++
+     /* MAX */
+     LIBSPDM_DATA_MAX
+ } libspdm_data_type_t;
+diff --git a/library/spdm_common_lib/libspdm_com_context_data.c b/library/spdm_common_lib/libspdm_com_context_data.c
+index e1f913bd11..fdd578dfe3 100644
+--- a/library/spdm_common_lib/libspdm_com_context_data.c
++++ b/library/spdm_common_lib/libspdm_com_context_data.c
+@@ -612,6 +612,21 @@ libspdm_return_t libspdm_set_data(void *spdm_context, libspdm_data_type_t data_t
+ #endif /* LIBSPDM_CERT_PARSE_SUPPORT */
+ #endif /* LIBSPDM_RECORD_TRANSCRIPT_DATA_SUPPORT */
+         break;
++    case LIBSPDM_DATA_PEER_USED_CERT_CHAIN_HASH:
++        if (parameter->location != LIBSPDM_DATA_LOCATION_CONNECTION) {
++            return LIBSPDM_STATUS_INVALID_PARAMETER;
++        }
++        slot_id = parameter->additional_data[0];
++        if (slot_id >= SPDM_MAX_SLOT_COUNT) {
++            return LIBSPDM_STATUS_INVALID_PARAMETER;
++        }
++        context->connection_info.peer_used_cert_chain_slot_id = slot_id;
++	context->connection_info.peer_used_cert_chain[slot_id].buffer_hash_size =
++	    data_size;
++	libspdm_copy_mem(context->connection_info.peer_used_cert_chain[slot_id].buffer_hash,
++                         sizeof(context->connection_info.peer_used_cert_chain[slot_id].buffer_hash),
++                         data, data_size);
++	break;
+     case LIBSPDM_DATA_PEER_PUBLIC_KEY:
+         if (parameter->location != LIBSPDM_DATA_LOCATION_LOCAL) {
+             return LIBSPDM_STATUS_INVALID_PARAMETER;
+diff --git a/library/spdm_requester_lib/libspdm_req_get_certificate.c b/library/spdm_requester_lib/libspdm_req_get_certificate.c
+index ef432ca0f6..901312e20f 100644
+--- a/library/spdm_requester_lib/libspdm_req_get_certificate.c
++++ b/library/spdm_requester_lib/libspdm_req_get_certificate.c
+@@ -92,7 +92,6 @@ static libspdm_return_t libspdm_try_get_certificate(libspdm_context_t *spdm_cont
+     LIBSPDM_ASSERT(slot_id < SPDM_MAX_SLOT_COUNT);
+     LIBSPDM_ASSERT(cert_chain_size != NULL);
+     LIBSPDM_ASSERT(*cert_chain_size > 0);
+-    LIBSPDM_ASSERT(cert_chain != NULL);
+ 
+     /* -=[Verify State Phase]=- */
+     if (!libspdm_is_capabilities_flag_supported(
+@@ -329,10 +328,12 @@ static libspdm_return_t libspdm_try_get_certificate(libspdm_context_t *spdm_cont
+                        spdm_request->offset, spdm_response->portion_length));
+         LIBSPDM_INTERNAL_DUMP_HEX(spdm_response->cert_chain, spdm_response->portion_length);
+ 
+-        libspdm_copy_mem((uint8_t *)cert_chain + cert_chain_size_internal,
+-                         cert_chain_capacity - cert_chain_size_internal,
+-                         spdm_response->cert_chain,
+-                         spdm_response->portion_length);
++	if (cert_chain != NULL) {
++	    libspdm_copy_mem((uint8_t *)cert_chain + cert_chain_size_internal,
++			     cert_chain_capacity - cert_chain_size_internal,
++			     spdm_response->cert_chain,
++			     spdm_response->portion_length);
++	}
+ 
+         cert_chain_size_internal += spdm_response->portion_length;
+ 
+@@ -378,6 +379,10 @@ static libspdm_return_t libspdm_try_get_certificate(libspdm_context_t *spdm_cont
+         }
+     }
+ 
++    if (cert_chain == NULL) {
++	goto done;
++    }
++
+     spdm_context->connection_info.peer_used_cert_chain_slot_id = slot_id;
+ #if LIBSPDM_RECORD_TRANSCRIPT_DATA_SUPPORT
+     spdm_context->connection_info.peer_used_cert_chain[slot_id].buffer_size =
+-- 
+2.39.2
+

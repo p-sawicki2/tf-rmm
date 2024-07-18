@@ -12,6 +12,7 @@
 #include <industry_standard/spdm_secured_message.h>
 #include <library/spdm_requester_lib.h>
 #include <library/spdm_secured_message_lib.h>
+#include <psa/crypto.h>
 #include <utils_def.h>
 
 /*
@@ -169,6 +170,13 @@ struct cma_spdm_context {
 	context_t libspdm_cmd_ctx;
 	libspdm_return_t libspdm_cmd_rc;
 	bool is_msg_sspdm;
+
+	/* spdm_cert_chain digest details */
+	psa_hash_operation_t spdm_cert_chain_hash_op;
+	psa_algorithm_t spdm_cert_chain_algo;
+	uint8_t spdm_cert_chain_digest[64];
+	size_t spdm_cert_chain_digest_length;
+	size_t spdm_cert_chain_len;
 
 	/*
 	 * Device communication callbacks ops to send, recv and cache device

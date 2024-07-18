@@ -155,6 +155,40 @@ static int rmi_pdev_comm_recv(dev_handle_t handle, void *response,
 static int rmi_pdev_comm_cache(dev_handle_t handle, const void *cache_buf,
 			       size_t cache_offset, size_t cache_len)
 {
+	struct pdev *pd;
+	struct granule *g_resp_addr;
+	bool ns_access_ok;
+
+	pd = devh_to_pdev(handle);
+
+	/*
+	 * If 'cache_buf' is set then overwrite the NS response buffer with new
+	 * data. Else use the existing content to be cached by the NS host.
+	 */
+	if (cache_buf != NULL) {
+		size_t cache_len_rounded;
+
+		assert(cache_offset == 0);
+
+		g_resp_addr = find_granule(pd->io_enter_args.resp_addr);
+		if ((g_resp_addr == NULL ||
+		     granule_unlocked_state(g_resp_addr) != GRANULE_STATE_NS)) {
+			return -1;
+		}
+
+		cache_len_rounded = round_up(cache_len, 8);
+		ns_access_ok = ns_buffer_write(SLOT_NS, g_resp_addr, 0,
+					       cache_len_rounded,
+					       (void *)cache_buf);
+		if (!ns_access_ok) {
+			return -1;
+		}
+	}
+
+	pd->io_exit_args.flags |= INPLACE(RMI_IO_EXIT_FLAGS_CACHE, 1UL);
+	pd->io_exit_args.cache_offset = cache_offset;
+	pd->io_exit_args.cache_len = cache_len;
+
 	return 0;
 }
 
