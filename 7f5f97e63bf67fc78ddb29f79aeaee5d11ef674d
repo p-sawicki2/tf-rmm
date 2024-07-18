@@ -35,6 +35,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98ba0f5c_2dce2f5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2024-07-18T19:09:27Z",
+      "side": 1,
+      "message": "AFAICT, this approach implies that RMM-EL3 buffer should stay at 4KB. This in turn introduces a memcpy in EL3 to copy the token to the shared buffer in pieces.\n\nA faster approach would be to increase the RMM-EL3 shared buffer to eliminate the extra memcpy. For platforms that are capable of using a larger size, it would be beneficial.",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a297d37_9634bb95",
