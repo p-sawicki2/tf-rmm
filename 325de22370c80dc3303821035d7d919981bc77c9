@@ -52,6 +52,24 @@
       "parentUuid": "2ae6b8da_ba907a0e",
       "revId": "325de22370c80dc3303821035d7d919981bc77c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83bcc753_d0376bbf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-18T08:31:22Z",
+      "side": 1,
+      "message": "Hi Raghu, I think it would be better if there was a single change affecting the t_cose adaption layer, so if you could merge the change into this one, that would be helpful. And then I will abandon my change.",
+      "parentUuid": "c068b0f0_0deab7cc",
+      "revId": "325de22370c80dc3303821035d7d919981bc77c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
