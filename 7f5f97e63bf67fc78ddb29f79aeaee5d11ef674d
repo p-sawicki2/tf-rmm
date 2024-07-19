@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "35f86493_270fe3ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-19T10:08:16Z",
+      "side": 1,
+      "message": "There are several considerations to the approach: \n\n1. The RMM-EL3 buffer size is 4KB and it is a single buffer for all CPUs. This is not scalable for system wherein the buffer may be used frequently (eg : Realm token signing by HES). Also this is not an ideal design for NUMA. Hence we would like to move to per-CPU buffer for RMM-EL3 comms. Not increasing the size of buffer will save memory needed in this scheme.\n\n\n2. Being an interface buffer between EL3 and RMM, it will help to standardize the interface thus removing platform specific sizes for buffer used for comms. Also removing the platform dependancy on the buffer size will enable RMM to do buffer management and mapping in S1 TT within RMM generically.\n\n3. The platform token is currently only retrieved during cold boot. The memcpy overhead is the same (it is just broken to multiple parts). An additional SMC is involved but being cold boot this overhead is not an issue. (perhaps for Realm key refresh in future this may be done at runtime, but this will be very infrequent), \n\n4. The current mechanism provides the flexibility to implement a streaming type of interface (rather than blocking call). Consider a situation when a large platform token needs to be retrieved from HES. This interface allows to be non-blocking and return early to implement a \"polling\" loop thus allowing EL3 to return early to RMM if HES is busy. Also if the size of EL3-HES buffer is not large enough to accomodate the platform token , it is likely that EL3 will need to retrieve the token in streaming fashion from HES. This interface maps neatly into such a HES comms scheme as well.\n \nAnd hence we have gone with such a design.",
+      "parentUuid": "98ba0f5c_2dce2f5d",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a297d37_9634bb95",
         "filename": "lib/attestation/CMakeLists.txt",
         "patchSetId": 3
