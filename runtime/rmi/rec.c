@@ -175,14 +175,12 @@ static void rec_attestation_heap_init(struct rec *r)
 	int ret __unused;
 	struct rec_attest_data *attest_data = r->aux_data.attest_data;
 
-	/* Initialize attestation state */
-	attest_data->token_sign_ctx.state = ATTEST_SIGN_NOT_STARTED;
-
 	ret = attestation_heap_ctx_assign_pe(&attest_data->alloc_ctx);
 	assert(ret == 0);
 
-	(void)attestation_heap_ctx_init(r->aux_data.attest_heap_buf,
-					REC_HEAP_SIZE);
+	attest_token_ctx_init(&attest_data->token_sign_ctx,
+				r->aux_data.attest_heap_buf,
+				REC_HEAP_SIZE);
 
 	ret = attestation_heap_ctx_unassign_pe();
 	assert(ret == 0);
