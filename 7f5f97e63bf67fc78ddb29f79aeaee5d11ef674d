@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "94dda02e_35b3c2e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2024-07-19T15:00:52Z",
+      "side": 1,
+      "message": "This design choice makes several assumptions.\n\n1. The platform does not have enough memory for a larger per-PE RMM-EL3 shared buffer.\n2. The HES cannot write the entire token to memory in one go.\n3. The HES does not have access to DRAM and so the memory area for saving the token is limited.\n\nAll these assumptions do not apply to all platforms.\n\nThe available memory and HES performance are platform specific and we cannot standardize them. With several calls we add SMC turnaround time to the use case, which can be avoided IMO.\n\nI dont understand how adding smaller shared memory can allow the RMM to poll. We can add polling irrespective of the size. If the HES provides an interrupt, EL3 can always return to RMM.\n\nI think the design considers slower HES, platforms with smaller DRAM. But it should also consider platforms with faster HES and less/no memory restrictions.",
+      "parentUuid": "35f86493_270fe3ee",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a297d37_9634bb95",
         "filename": "lib/attestation/CMakeLists.txt",
         "patchSetId": 3
