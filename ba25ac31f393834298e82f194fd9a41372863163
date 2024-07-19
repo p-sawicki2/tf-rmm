@@ -70,6 +70,24 @@
       "parentUuid": "7298d6ac_f0566aae",
       "revId": "ba25ac31f393834298e82f194fd9a41372863163",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e836d29_8f7308b8",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-19T10:14:53Z",
+      "side": 1,
+      "message": "I think a refactor of the attestation APIs would be needed to move the state management internal to the component. I have a pushed a patch here to do the same : https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30050",
+      "parentUuid": "4168e558_2e85bc33",
+      "revId": "ba25ac31f393834298e82f194fd9a41372863163",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
