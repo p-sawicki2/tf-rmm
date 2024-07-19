@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8ffe86b9_e78daae3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-19T09:22:47Z",
+      "side": 1,
+      "message": "There is another way to think about this. For each combination  declare a separate struct type. then define another struct type with the first field indicating the type of object and pointer to aux data.\n\nWhen the realm is created, depending on the capabilities selected for the realm , choose the type of object and depending on this type, the pointer needs to be typecast to the right structure and used. \n\nThen again it sounds very difficult to reason about correctness. But the patch has highlighted an important refactoring needed. We need a small framework to manage this properly. created a backlog ticket: https://jira.arm.com/browse/GENFW-9253",
+      "parentUuid": "7efaba17_56cd751a",
+      "revId": "c505953be44877f1db00e1e6475f54501460f2b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d16ed01c_8137fbb7",
         "filename": "runtime/include/rec.h",
         "patchSetId": 3
