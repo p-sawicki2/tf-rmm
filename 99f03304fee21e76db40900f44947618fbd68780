@@ -52,6 +52,24 @@
       "parentUuid": "10b3a1ab_1cec5c10",
       "revId": "99f03304fee21e76db40900f44947618fbd68780",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d196f949_2c99d8c3",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-19T11:24:08Z",
+      "side": 1,
+      "message": "Ignore my comment, this is fine. I had incorrect understanding of the HES sign flow when I made the comment.",
+      "parentUuid": "10b3a1ab_1cec5c10",
+      "revId": "99f03304fee21e76db40900f44947618fbd68780",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
