@@ -25,11 +25,12 @@
 #include <t_cose_psa_crypto.h>
 #endif /* CBMC */
 
-/* The state of the realm token generation */
+/* The state of the CCA token generation */
 enum attest_token_gen_state_t {
-	ATTEST_SIGN_NOT_STARTED,
-	ATTEST_SIGN_IN_PROGRESS,
-	ATTEST_SIGN_TOKEN_WRITE_IN_PROGRESS
+	ATTEST_TOKEN_NOT_STARTED,	/* Initial phase */
+	ATTEST_TOKEN_INIT,		/* Initialized */
+	ATTEST_TOKEN_SIGN,		/* Realm token sign */
+	ATTEST_TOKEN_CREATE,		/* CCA Token create */
 };
 
 #ifndef CBMC
@@ -39,6 +40,8 @@ enum attest_token_gen_state_t {
 enum attest_token_err_t {
 	/* Success */
 	ATTEST_TOKEN_ERR_SUCCESS = 0,
+	/* The Attest token context state is incorrect */
+	ATTEST_TOKEN_ERR_INVALID_STATE,
 	/* The buffer passed in to receive the output is too small. */
 	ATTEST_TOKEN_ERR_TOO_SMALL,
 	/*
@@ -138,7 +141,7 @@ struct token_sign_cntxt {
  * Else returns one of the attest_token_err_t errors on
  * any other error.
  *
- * me				Token Creation Context.
+ * me				Token Sign Context.
  * completed_token_len		Length of the completed token.
  *
  * This completes the token after the payload has been added. When
@@ -146,7 +149,7 @@ struct token_sign_cntxt {
  * formatting of the token is completed.
  */
 enum attest_token_err_t
-attest_realm_token_sign(struct attest_token_encode_ctx *me,
+attest_realm_token_sign(struct token_sign_cntxt *me,
 			size_t *completed_token_len);
 
 /*
@@ -161,7 +164,8 @@ attest_realm_token_sign(struct attest_token_encode_ctx *me,
  *
  * Return 0 in case of error, the length of the cca token otherwise.
  */
-size_t attest_cca_token_create(void *attest_token_buf,
+size_t attest_cca_token_create(struct token_sign_cntxt *me,
+				void *attest_token_buf,
 				size_t attest_token_buf_size,
 				const void *realm_token_buf,
 				size_t realm_token_len);
@@ -192,5 +196,10 @@ int attest_realm_token_create(enum hash_algo algorithm,
 			     struct token_sign_cntxt *ctx,
 			     void *realm_token_buf,
 			     size_t realm_token_buf_size);
+
+
+int attest_token_ctx_init(struct token_sign_cntxt *token_ctx,
+			   unsigned char *heap_buf,
+			   unsigned int heap_buf_len);
 
 #endif /* ATTESTATION_TOKEN_H */
