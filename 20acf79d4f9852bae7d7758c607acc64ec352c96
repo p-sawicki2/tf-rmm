@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51849a0_d3a73c96",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-19T13:55:36Z",
+      "side": 1,
+      "message": "Making the name a bit more specific may be useful, say -\nSMC_RMM_PUSH_ATTEST_SIGN_REQ\n\nAlso I wonder whether the EL3 service need to have the \"HES\" in the name. Is there a possibility that this service can be completely implemented within EL3 ? So the service implementation is EL3 specific but the name captures the functionality provided ?\n\nJust a thought, dont do any rework in this direction yet.",
+      "revId": "20acf79d4f9852bae7d7758c607acc64ec352c96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
