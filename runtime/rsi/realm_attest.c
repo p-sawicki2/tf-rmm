@@ -300,7 +300,7 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 		 * If there are no interrupts pending, then continue to pull
 		 * requests from HES until this RECs request is done.
 		 */
-		hes_attest_pull_response_from_hes();
+		hes_attest_pull_response_from_hes(rec);
 #endif
 	}
 

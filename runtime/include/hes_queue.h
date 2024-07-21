@@ -5,6 +5,7 @@
 #ifndef HES_QUEUE_H
 #define HES_QUEUE_H
 
+#include <rec.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -22,6 +23,6 @@ int hes_attest_queue_init(void);
  * than it normally is, to ensure we dont overwrite the REC that may be
  * currently live when this function is called.
  */
-void hes_attest_pull_response_from_hes(void);
+void hes_attest_pull_response_from_hes(struct rec *curr_rec);
 
 #endif /* HES_QUEUE_H */

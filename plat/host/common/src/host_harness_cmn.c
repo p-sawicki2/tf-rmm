@@ -123,9 +123,7 @@ static uint8_t sample_ecdsa_p384_public_key[96] = {
 };
 
 struct hes_attest_request_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x4);
-	SET_MEMBER(uint32_t alg_id, 0x4, 0x8);
+	SET_MEMBER(uint32_t alg_id, 0x0, 0x8);
 	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
 	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
 	SET_MEMBER(size_t hash_len, 0x18, 0x20);
@@ -133,12 +131,10 @@ struct hes_attest_request_s {
 };
 
 struct hes_attest_response_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x8);
-	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
-	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
-	SET_MEMBER(uint16_t sig_len, 0x18, 0x20);
-	SET_MEMBER(uint8_t signature_buf[512], 0x20, 0x220);
+	SET_MEMBER(uintptr_t rec_granule, 0x0, 0x8);
+	SET_MEMBER(uint64_t req_ticket, 0x8, 0x10);
+	SET_MEMBER(uint16_t sig_len, 0x10, 0x12);
+	SET_MEMBER(uint8_t signature_buf[512], 0x12, 0x212);
 };
 
 static struct hes_attest_request_s hes_req = { 0 };
@@ -193,9 +189,7 @@ static int attest_push_hes_request(uint64_t buf_pa, uint64_t buf_size)
 
 	hes_req = *(struct hes_attest_request_s *)buf_pa;
 
-	if (hes_req.version != 0x10 ||
-	    hes_req.struct_size != sizeof(struct hes_attest_request_s) ||
-	    hes_req.hash_len != 48 || hes_req.rec_granule == 0x0) {
+	if (hes_req.hash_len != 48 || hes_req.rec_granule == 0x0) {
 		return -EINVAL;
 	}
 
@@ -216,8 +210,6 @@ static int attest_get_hes_response(uint64_t buf_pa, uint64_t *buf_size)
 
 	struct hes_attest_response_s *resp =
 		(struct hes_attest_response_s *)buf_pa;
-	resp->version = 0x10;
-	resp->struct_size = sizeof(struct hes_attest_response_s);
 	resp->rec_granule = hes_req.rec_granule;
 	resp->req_ticket = hes_req.req_ticket;
 	resp->sig_len = sizeof(sample_ecdsa_p384_public_key);

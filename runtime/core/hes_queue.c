@@ -24,17 +24,13 @@
 
 /* Structure format in which EL3 expects a request */
 struct hes_attest_request_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x4);
-	SET_MEMBER(psa_algorithm_t alg_id, 0x4, 0x8);
+	SET_MEMBER(psa_algorithm_t alg_id, 0x0, 0x8);
 	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
 	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
 	SET_MEMBER(size_t hash_len, 0x18, 0x20);
 	SET_MEMBER(uint8_t hash_buf[64], 0x20, 0x60);
 };
-COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, version)) == 0x0U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, struct_size)) == 0x2U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, alg_id)) == 0x4U);
+COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, alg_id)) == 0x0U);
 COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, rec_granule)) == 0x8U);
 COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, req_ticket)) == 0x10U);
 COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, hash_len)) == 0x18U);
@@ -42,21 +38,16 @@ COMPILER_ASSERT(U(offsetof(struct hes_attest_request_s, hash_buf)) == 0x20U);
 
 /* Structure format in which EL3 is expected to return data */
 struct hes_attest_response_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x8);
-	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
-	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
-	SET_MEMBER(uint16_t sig_len, 0x18, 0x20);
-	SET_MEMBER(uint8_t signature_buf[512], 0x20, 0x220);
+	SET_MEMBER(uintptr_t rec_granule, 0x0, 0x8);
+	SET_MEMBER(uint64_t req_ticket, 0x8, 0x10);
+	SET_MEMBER(uint16_t sig_len, 0x10, 0x12);
+	SET_MEMBER(uint8_t signature_buf[512], 0x12, 0x212);
 };
-
-COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, version)) == 0x0U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, struct_size)) == 0x2U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, rec_granule)) == 0x8U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, req_ticket)) == 0x10U);
-COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, sig_len)) == 0x18U);
+COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, rec_granule)) == 0x0U);
+COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, req_ticket)) == 0x8U);
+COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, sig_len)) == 0x10U);
 COMPILER_ASSERT(U(offsetof(struct hes_attest_response_s, signature_buf)) ==
-		0x20U);
+		0x12U);
 
 static uint64_t hes_attest_ticket = 1;
 
@@ -75,8 +66,6 @@ static bool hes_attest_queue_try_enqueue(struct t_cose_rmm_hes_ctx *hes_ctx_lock
 
 
 	req = (struct hes_attest_request_s *)rmm_el3_ifc_get_shared_buf_locked();
-	req->version = HES_ATTEST_REQUEST_VERSION;
-	req->struct_size = sizeof(*req);
 	req->alg_id = hes_ctx_locked->state.alg_id;
 	req->rec_granule = hes_ctx_locked->state.rec_granule;
 	req->hash_len = hes_ctx_locked->state.hash_len;
@@ -85,9 +74,6 @@ static bool hes_attest_queue_try_enqueue(struct t_cose_rmm_hes_ctx *hes_ctx_lock
 
 	req->req_ticket = atomic_load_add_64(&hes_attest_ticket, 1);
 	*ticket = req->req_ticket;
-
-	(void)memset(((void *)req + sizeof(*req)), 0,
-			(rmm_el3_ifc_get_shared_buf_size() - sizeof(*req)));
 
 	ret = rmm_el3_ifc_push_hes_request((uintptr_t)req,
 					   rmm_el3_ifc_get_shared_buf_size());
@@ -125,17 +111,18 @@ int hes_attest_queue_init(void)
 	return 0;
 }
 
-void hes_attest_pull_response_from_hes(void)
+void hes_attest_pull_response_from_hes(struct rec *curr_rec)
 {
 	uintptr_t shared_buf;
 	int ret = 0;
 	size_t resp_len = 0;
-	struct granule *rec_granule;
-	struct rec *rec;
-	struct t_cose_rmm_hes_ctx *hes_ctx;
+	struct granule *rec_granule = NULL;
+	struct rec *rec = NULL;
+	struct t_cose_rmm_hes_ctx *hes_ctx = NULL;
 	void *rec_aux = NULL;
 	struct rec_attest_data *attest_data = NULL;
 	struct hes_attest_response_s *hes_resp = &hes_attest_response[my_cpuid()];
+	bool unmap_unlock_needed = false;
 
 	shared_buf = rmm_el3_ifc_get_shared_buf_locked();
 	ret = rmm_el3_ifc_pull_hes_response(
@@ -155,33 +142,45 @@ void hes_attest_pull_response_from_hes(void)
 	memcpy((void *)hes_resp, (void *)shared_buf, sizeof(*hes_resp));
 	rmm_el3_ifc_release_shared_buf();
 
-	assert(hes_resp->version == HES_ATTEST_RESPONSE_VERSION);
-	assert(hes_resp->struct_size == sizeof(*hes_resp));
-
-	rec_granule = find_lock_granule(
-		hes_resp->rec_granule, GRANULE_STATE_REC);
-	if (!rec_granule) {
-		/*
-		 * REC must have been destroyed, drop the response.
-		 */
-		VERBOSE("REC granule %lx not found\n", hes_resp->rec_granule);
-		return;
-	}
-
-	rec = buffer_granule_map(rec_granule, SLOT_REC_HES_QUEUE);
-	assert(rec != NULL);
-
 	/*
-	 * Map auxiliary granules. Note that the aux graules are mapped at a
-	 * different high VA than during realm creation since this function
-	 * may be executing with another rec mapped at the same high VA.
-	 * Any accesses to aux granules via initialized pointers such as
-	 * attest_data, need to be recaluclated at the new high VA.
+	 * Check if the response is for the current REC. If it is, the current
+	 * code path is guaranteed to have a reference on the REC and the REC
+	 * cannot be deleted. It also means that the REC is mapped at the usual
+	 * SLOT_REC, so we can avoid lokcing and mapping the REC and the AUX
+	 * granules.
 	 */
-	rec_aux = buffer_aux_granules_map_hes_slot(rec->g_aux, rec->num_rec_aux);
-	assert(rec_aux != NULL);
+	if (hes_resp->rec_granule != granule_addr(curr_rec->g_rec)) {
 
-	attest_data = rec_aux + REC_HEAP_SIZE + REC_PMU_SIZE + REC_SIMD_SIZE;
+		rec_granule = find_lock_granule(
+			hes_resp->rec_granule, GRANULE_STATE_REC);
+		if (!rec_granule) {
+			/*
+			 * REC must have been destroyed, drop the response.
+			 */
+			VERBOSE("REC granule %lx not found\n", hes_resp->rec_granule);
+			return;
+		}
+
+		rec = buffer_granule_map(rec_granule, SLOT_REC_HES_QUEUE);
+		assert(rec != NULL);
+
+		/*
+		 * Map auxiliary granules. Note that the aux graules are mapped at a
+		 * different high VA than during realm creation since this function
+		 * may be executing with another rec mapped at the same high VA.
+		 * Any accesses to aux granules via initialized pointers such as
+		 * attest_data, need to be recaluclated at the new high VA.
+		 */
+		rec_aux = buffer_aux_granules_map_hes_slot(rec->g_aux, rec->num_rec_aux);
+		assert(rec_aux != NULL);
+
+		unmap_unlock_needed = true;
+		attest_data = (struct rec_attest_data *)(uintptr_t)rec_aux + REC_HEAP_SIZE +
+			      REC_PMU_SIZE + REC_SIMD_SIZE;
+	} else {
+		rec = curr_rec;
+		attest_data = rec->aux_data.attest_data;
+	}
 	hes_ctx = &attest_data->token_sign_ctx.ctx.crypto_ctx;
 
 	spinlock_acquire(&hes_ctx->lock);
@@ -217,7 +216,9 @@ void hes_attest_pull_response_from_hes(void)
 out_buf_lock:
 	spinlock_release(&hes_ctx->lock);
 	/* Unmap auxiliary granules */
-	buffer_aux_unmap(rec_aux, rec->num_rec_aux);
-	buffer_unmap(rec);
-	granule_unlock(rec_granule);
+	if (unmap_unlock_needed) {
+		buffer_aux_unmap(rec_aux, rec->num_rec_aux);
+		buffer_unmap(rec);
+		granule_unlock(rec_granule);
+	}
 }
