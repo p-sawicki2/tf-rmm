@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa26f352_0a8d8977",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-21T06:44:03Z",
+      "side": 1,
+      "message": "The EL3-RMM interface itself is versioned and binds all the structures and the sizes. Now since this is an optional interface, it does have a case to have separate versioning. \n\nNeed to think further :\n1. Will all optional EL3-RMM SMCs need to keep its own versioning ? If that is the case, will it be problematic for RMM to work out compatibility with EL3 firmware.\n\n2. The RMM-EL3 FID space is limited. If we do get more of these optional SMCs in future, do we need a more optimal FID strategy for optional SMCs ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5f9754d_62d1f94f",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-21T06:44:03Z",
+      "side": 1,
+      "message": "Is this memset(0) of the remaining buffer needed ? I couldnt think of a specific problem if this is not done. My assumption is that EL3 will only read the specified size.\n\nIf at all this is needed, it may be faster to use `granule_memzero_mapped` on the buffer and then copy the request to it.",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee2d89ea_44a56cf9",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-21T06:44:03Z",
+      "side": 1,
+      "message": "should this be -EAGAIN  or another error to indicate EMPTY ?",
+      "range": {
+        "startLine": 143,
+        "startChar": 13,
+        "endLine": 143,
+        "endChar": 19
+      },
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ac1a6de_8d506287",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-21T06:44:03Z",
+      "side": 1,
+      "message": "These may need to be runtime checks at boot. But potentially both push and pull will need to be same version, so if push has not reported error, then it is unlikely pull will have different errors. \n\nneed to think further on versioning as aspects as mentioned above.",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28324161_f16ef894",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-21T06:44:03Z",
+      "side": 1,
+      "message": "If the response corresponds to the current REC, is there a risk in double mapping AUX pages to 2 different VAs  (VA alias) ?\n\nIs there a way to detect whether the response is for a pending request by the current REC , using ticket number perhaps ?",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
