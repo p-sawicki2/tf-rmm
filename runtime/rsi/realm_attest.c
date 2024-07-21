@@ -276,7 +276,7 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 		 * TODO: Future enhancement to decouple rec and aux granule
 		 * mapping from pulling response from EL3.
 		 */ 
-		el3_token_sign_pull_response_from_el3();
+		el3_token_sign_pull_response_from_el3(rec);
 #endif
 	}
 

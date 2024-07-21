@@ -5,6 +5,7 @@
 #ifndef EL3_TOKEN_SIGN_H
 #define EL3_TOKEN_SIGN_H
 
+#include <rec.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -22,6 +23,6 @@ int el3_token_sign_queue_init(void);
  * than it normally is, to ensure we dont overwrite the REC that may be
  * currently live when this function is called.
  */
-void el3_token_sign_pull_response_from_el3(void);
+void el3_token_sign_pull_response_from_el3(struct rec *curr_rec);
 
 #endif /* EL3_TOKEN_SIGN_H */

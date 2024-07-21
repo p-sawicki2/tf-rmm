@@ -23,17 +23,13 @@
 
 /* Structure format in which EL3 expects a request */
 struct el3_token_sign_request_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x4);
-	SET_MEMBER(psa_algorithm_t alg_id, 0x4, 0x8);
+	SET_MEMBER(psa_algorithm_t alg_id, 0x0, 0x8);
 	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
 	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
 	SET_MEMBER(size_t hash_len, 0x18, 0x20);
 	SET_MEMBER(uint8_t hash_buf[64], 0x20, 0x60);
 };
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, version)) == 0x0U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, struct_size)) == 0x2U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, alg_id)) == 0x4U);
+COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, alg_id)) == 0x0U);
 COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, rec_granule)) == 0x8U);
 COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, req_ticket)) == 0x10U);
 COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, hash_len)) == 0x18U);
@@ -41,21 +37,17 @@ COMPILER_ASSERT(U(offsetof(struct el3_token_sign_request_s, hash_buf)) == 0x20U)
 
 /* Structure format in which EL3 is expected to return data */
 struct el3_token_sign_response_s {
-	SET_MEMBER(uint8_t version, 0x0, 0x2);
-	SET_MEMBER(uint16_t struct_size, 0x2, 0x8);
-	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x10);
-	SET_MEMBER(uint64_t req_ticket, 0x10, 0x18);
-	SET_MEMBER(uint16_t sig_len, 0x18, 0x20);
-	SET_MEMBER(uint8_t signature_buf[512], 0x20, 0x220);
+	SET_MEMBER(uintptr_t rec_granule, 0x8, 0x8);
+	SET_MEMBER(uint64_t req_ticket, 0x8, 0x10);
+	SET_MEMBER(uint16_t sig_len, 0x10, 0x12);
+	SET_MEMBER(uint8_t signature_buf[512], 0x12, 0x212);
 };
 
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, version)) == 0x0U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, struct_size)) == 0x2U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, rec_granule)) == 0x8U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, req_ticket)) == 0x10U);
-COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, sig_len)) == 0x18U);
+COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, rec_granule)) == 0x0U);
+COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, req_ticket)) == 0x8U);
+COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, sig_len)) == 0x10U);
 COMPILER_ASSERT(U(offsetof(struct el3_token_sign_response_s, signature_buf)) ==
-		0x20U);
+		0x12U);
 
 static uint64_t el3_token_sign_ticket = 1;
 
@@ -72,15 +64,12 @@ static bool el3_attest_queue_try_enqueue(struct t_cose_rmm_el3_ctx *ctx_locked,
 		return false;
 	}
 
-
 	req = (struct el3_token_sign_request_s *)rmm_el3_ifc_get_shared_buf_locked();
-	req->version = EL3_TOKEN_SIGN_REQUEST_VERSION;
-	req->struct_size = sizeof(*req);
 	req->alg_id = ctx_locked->state.alg_id;
 	req->rec_granule = ctx_locked->state.rec_granule;
 	req->hash_len = ctx_locked->state.hash_len;
 	memcpy(req->hash_buf, ctx_locked->state.c_buffer_for_tbs_hash,
-	       req->hash_len);
+		req->hash_len);
 
 	/*
 	 * Overflow of the 64 bit number will occur after ~580 years at
@@ -89,9 +78,6 @@ static bool el3_attest_queue_try_enqueue(struct t_cose_rmm_el3_ctx *ctx_locked,
 	 */
 	req->req_ticket = atomic_load_add_64(&el3_token_sign_ticket, 1);
 	*ticket = req->req_ticket;
-
-	(void)memset(((void *)req + sizeof(*req)), 0,
-			(rmm_el3_ifc_get_shared_buf_size() - sizeof(*req)));
 
 	ret = rmm_el3_ifc_push_el3_attest_sign_request((uintptr_t)req,
 					   rmm_el3_ifc_get_shared_buf_size());
@@ -119,17 +105,18 @@ int el3_token_sign_queue_init(void)
 	return 0;
 }
 
-void el3_token_sign_pull_response_from_el3(void)
+void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 {
 	uintptr_t shared_buf;
 	int ret = 0;
 	size_t resp_len = 0;
-	struct granule *rec_granule;
-	struct rec *rec;
-	struct t_cose_rmm_el3_ctx *ctx;
+	struct granule *rec_granule = NULL;
+	struct rec *rec = NULL;
+	struct t_cose_rmm_el3_ctx *ctx = NULL;
 	void *rec_aux = NULL;
 	struct rec_attest_data *attest_data = NULL;
 	struct el3_token_sign_response_s *el3_resp = &el3_token_sign_response[my_cpuid()];
+	bool unmap_unlock_needed = false;
 
 	shared_buf = rmm_el3_ifc_get_shared_buf_locked();
 	ret = rmm_el3_ifc_pull_el3_attest_sign_response(
@@ -149,33 +136,46 @@ void el3_token_sign_pull_response_from_el3(void)
 	memcpy((void *)el3_resp, (void *)shared_buf, sizeof(*el3_resp));
 	rmm_el3_ifc_release_shared_buf();
 
-	assert(el3_resp->version == EL3_TOKEN_SIGN_RESPONSE_VERSION);
-	assert(el3_resp->struct_size == sizeof(*el3_resp));
-
-	rec_granule = find_lock_granule(
-		el3_resp->rec_granule, GRANULE_STATE_REC);
-	if (!rec_granule) {
-		/*
-		 * REC must have been destroyed, drop the response.
-		 */
-		VERBOSE("REC granule %lx not found\n", el3_resp->rec_granule);
-		return;
-	}
-
-	rec = buffer_granule_map(rec_granule, SLOT_EL3_SIGN_REC);
-	assert(rec != NULL);
-
 	/*
-	 * Map auxiliary granules. Note that the aux graules are mapped at a
-	 * different high VA than during realm creation since this function
-	 * may be executing with another rec mapped at the same high VA.
-	 * Any accesses to aux granules via initialized pointers such as
-	 * attest_data, need to be recaluclated at the new high VA.
+	 * Check if the response is for the current REC. If it is, the current
+	 * code path is guaranteed to have a reference on the REC and the REC
+	 * cannot be deleted. It also means that the REC is mapped at the usual
+	 * SLOT_REC, so we can avoid lokcing and mapping the REC and the AUX
+	 * granules.
 	 */
-	rec_aux = buffer_aux_granules_map_el3_sign_slot(rec->g_aux, rec->num_rec_aux);
-	assert(rec_aux != NULL);
+	if (el3_resp->rec_granule != granule_addr(curr_rec->g_rec)) {
 
-	attest_data = rec_aux + REC_HEAP_SIZE + REC_PMU_SIZE + REC_SIMD_SIZE;
+		rec_granule = find_lock_granule(
+			el3_resp->rec_granule, GRANULE_STATE_REC);
+		if (!rec_granule) {
+			/*
+			 * REC must have been destroyed, drop the response.
+			 */
+			VERBOSE("REC granule %lx not found\n", el3_resp->rec_granule);
+			return;
+		}
+
+		rec = buffer_granule_map(rec_granule, SLOT_EL3_SIGN_REC);
+		assert(rec != NULL);
+
+		/*
+		 * Map auxiliary granules. Note that the aux graules are mapped at a
+		 * different high VA than during realm creation since this function
+		 * may be executing with another rec mapped at the same high VA.
+		 * Any accesses to aux granules via initialized pointers such as
+		 * attest_data, need to be recaluclated at the new high VA.
+		 */
+		rec_aux = buffer_aux_granules_map_el3_sign_slot(rec->g_aux,
+								rec->num_rec_aux);
+		assert(rec_aux != NULL);
+
+		unmap_unlock_needed = true;
+		attest_data = (struct rec_attest_data *)(uintptr_t)rec_aux + REC_HEAP_SIZE +
+			      REC_PMU_SIZE + REC_SIMD_SIZE;
+	} else {
+		rec = curr_rec;
+		attest_data = rec->aux_data.attest_data;
+	}
 	ctx = &attest_data->token_sign_ctx.ctx.crypto_ctx;
 
 	spinlock_acquire(&ctx->lock);
@@ -211,7 +211,9 @@ void el3_token_sign_pull_response_from_el3(void)
 out_buf_lock:
 	spinlock_release(&ctx->lock);
 	/* Unmap auxiliary granules */
-	buffer_aux_unmap(rec_aux, rec->num_rec_aux);
-	buffer_unmap(rec);
-	granule_unlock(rec_granule);
+	if (unmap_unlock_needed) {
+		buffer_aux_unmap(rec_aux, rec->num_rec_aux);
+		buffer_unmap(rec);
+		granule_unlock(rec_granule);
+	}
 }
