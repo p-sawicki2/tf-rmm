@@ -164,7 +164,8 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_AUX_CREATE,		5, 0, smc_rtt_aux_create,	 false, true),
 	HANDLER(RTT_AUX_DESTROY,	4, 2, smc_rtt_aux_destroy,	 true, true),
 	HANDLER(RTT_AUX_FOLD,		4, 1, smc_rtt_aux_fold,		 false, false),
-	HANDLER(RTT_AUX_READ_ENTRY,	4, 4, smc_rtt_aux_read_entry,	 false, true)
+	HANDLER(RTT_AUX_READ_ENTRY,	4, 4, smc_rtt_aux_read_entry,	 false, true),
+	HANDLER(RTT_AUX_MAP_PROTECTED,	3, 4, smc_rtt_aux_map_protected, false, true)
 };
 
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
