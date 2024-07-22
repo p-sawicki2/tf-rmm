@@ -16,6 +16,24 @@
       "message": "The patch itself is OK. \n\nSome notes - Based on resolution of the below items, some further changes may be needed: \n\n1. confirm naming of New SMCs. The version of RMM-EL3 interface need to be bumped up. The docs also need update.\n2. SMC discovery from EL3 as part of boot.\n3. Failure path if SMC not found in EL3 - SMC_UNK may be returned from EL3.",
       "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7817b58_ab1a7fe7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T15:10:13Z",
+      "side": 1,
+      "message": "ack on #1. Please suggest a name.\nack on #2. This is new, shouldnt version indicate if available or not, or are you suggesting we discover presence of this feature? I would like to do this as patches on top of this series if that is fine.\nFor #3, isnt it already take care of? It is either 0 or something else, and code paths will fail if they have unexpected error code (ie other than EAGAIN).",
+      "parentUuid": "c0a0b7a8_4a6c3a30",
+      "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
