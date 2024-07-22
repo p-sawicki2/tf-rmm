@@ -1808,3 +1808,168 @@ out_unlock_rec_rd:
 	granule_unlock(g_rec);
 	granule_unlock(g_rd);
 }
+
+/*
+ * Calculate the PA mapped @ipa.
+ *
+ * @ipa is the intermediate physical address mapped @level that
+ * may not be aligned @level.
+ * @pa_base is the base physical address of that mapping @level.
+ */
+static unsigned long realign_pa(struct s2tt_context *s2_ctx,
+				unsigned long pa_base,
+				unsigned long level,
+				unsigned long ipa)
+{
+	unsigned long offset = ipa -
+			(ipa & s2tte_lvl_mask(level, s2_ctx->enable_lpa2));
+
+	return pa_base + offset;
+}
+
+void smc_rtt_aux_map_protected(unsigned long rd_addr,
+			       unsigned long map_addr,
+			       unsigned long index,
+			       struct smc_result *res)
+{
+	struct granule *g_rd;
+	struct rd *rd;
+	struct s2tt_walk wi;
+	unsigned long *s2tt, primary_s2tte, s2tte;
+	struct s2tt_context s2_ctx, aux_s2_ctx;
+	unsigned long primary_level, primary_ripas, primary_pa, aux_pa;
+	unsigned long map_size;
+
+	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
+	if (g_rd == NULL) {
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
+	rd = buffer_granule_map(g_rd, SLOT_RD);
+	assert(rd != NULL);
+
+	if (!validate_rtt_entry_cmds(map_addr, S2TT_PAGE_LEVEL, rd)) {
+		buffer_unmap(rd);
+		granule_unlock(g_rd);
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
+	if ((!rd->rtt_tree_pp) ||
+	    (index == (unsigned long)PRIMARY_S2_CTX_ID) ||
+	    (index >= (unsigned long)realm_num_s2_contexts(rd))) {
+		buffer_unmap(rd);
+		granule_unlock(g_rd);
+		res->x[0] = RMI_ERROR_INPUT;
+		return;
+	}
+
+	s2_ctx = *primary_s2_context(rd);
+
+	buffer_unmap(rd);
+
+	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
+
+	s2tt_walk_lock_unlock(&s2_ctx, map_addr, S2TT_PAGE_LEVEL, &wi);
+	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
+	assert(s2tt != NULL);
+
+	primary_s2tte = s2tte_read(&s2tt[wi.index]);
+	buffer_unmap(s2tt);
+	granule_unlock(wi.g_llt);
+
+	primary_level = wi.last_level;
+	primary_ripas = (unsigned long)s2tte_get_ripas(&s2_ctx, primary_s2tte);
+	primary_pa = s2tte_pa(&s2_ctx, primary_s2tte, primary_level);
+
+	/* If the IPA is not assigned on the primary RTT, report and return */
+	if (s2tte_is_assigned_ram(&s2_ctx, primary_s2tte, primary_level)) {
+		res->x[0] = pack_return_code(RMI_ERROR_RTT,
+					     (unsigned char)wi.last_level);
+		res->x[1] = (unsigned long)PRIMARY_S2_CTX_ID;
+		res->x[2] = (unsigned long)wi.last_level;
+		res->x[3] = (unsigned long)RMI_UNASSIGNED;
+		res->x[4] = primary_ripas;
+
+		granule_unlock(g_rd);
+		return;
+	}
+
+	/*
+	 * We have retrieved all the info we needed from the walk on the
+	 * primary table. Prepare a walk on the auxiliary one.
+	 */
+	aux_s2_ctx = *index_to_s2_context(rd, (unsigned int)index);
+	granule_lock(aux_s2_ctx.g_rtt, GRANULE_STATE_RTT);
+	granule_unlock(g_rd);
+	s2tt_walk_lock_unlock(&aux_s2_ctx, map_addr, S2TT_PAGE_LEVEL, &wi);
+
+	/*
+	 * The address space to map on the auxiliary table cannot be larger
+	 * than the one on the primary one.
+	 */
+	if (wi.last_level < primary_level) {
+		res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
+					     (unsigned char)wi.last_level);
+		res->x[1] = (unsigned long)index;
+		res->x[2] = primary_level;
+		res->x[3] = (unsigned long)RMI_ASSIGNED;
+		res->x[4] = primary_ripas;
+
+		granule_unlock(wi.g_llt);
+		return;
+	}
+
+	/*
+	 * Realign the PA on the primary S2TTE to the level in the
+	 * auxiliary RTT entry.
+	 */
+	aux_pa = realign_pa(&aux_s2_ctx, primary_pa, wi.last_level, map_addr);
+
+	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
+	assert(s2tt != NULL);
+
+	s2tte = s2tte_read(&s2tt[wi.index]);
+
+	/* If the entry ripas is destroyed, report it and exit */
+	if (s2tte_get_ripas(&s2_ctx, s2tte) == RIPAS_DESTROYED) {
+		res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
+					     (unsigned char)wi.last_level);
+		res->x[1] = (unsigned long)wi.index;
+		res->x[2] = primary_level;
+		res->x[3] = (unsigned long)RMI_AUX_DESTROYED;
+		res->x[4] = primary_ripas;
+
+		buffer_unmap(s2tt);
+		granule_unlock(wi.g_llt);
+		return;
+	}
+
+	/*
+	 * Increment the refcounter for all the DATA granules that are going
+	 * to be mapped.
+	 */
+	map_size = s2tte_map_size(wi.last_level);
+	for (unsigned long offset = 0UL; offset < map_size; offset += GRANULE_SIZE) {
+		struct granule *g_data = find_lock_granule(aux_pa + offset,
+							   GRANULE_STATE_DATA);
+
+		assert(g_data != NULL);
+		__granule_get(g_data);
+		granule_unlock(g_data);
+	}
+
+	/*
+	 * Create the new entry. Reuse the entry on the primary table as it
+	 * contains the AP to use on the secondary entry.
+	 */
+	s2tte = s2tte_create_assigned_ram(&aux_s2_ctx, aux_pa,
+					  wi.last_level, primary_s2tte);
+	s2tte_write(&s2tt[wi.index], s2tte);
+
+	buffer_unmap(s2tt);
+	granule_unlock(wi.g_llt);
+
+	res->x[0] = RMI_SUCCESS;
+}
