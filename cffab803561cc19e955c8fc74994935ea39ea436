@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "323330be_2099e9de",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T17:28:18Z",
+      "side": 1,
+      "message": "oh, please see the header file. the t_cose_rmm_hes_ctx embeds a t_cose_psa_crypto_context. DOnt want reference RMM to be tied to MBEDTLS. as i have mentioned, we may want to override crypto libraries and t_cose is a layer above mbed/psa crypto..",
+      "parentUuid": "039eb48b_312e3a3c",
+      "range": {
+        "startLine": 89,
+        "startChar": 51,
+        "endLine": 89,
+        "endChar": 65
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5845f6d4_e5c0a113",
         "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
         "patchSetId": 11
@@ -60,6 +84,30 @@
       "writtenOn": "2024-07-22T16:01:25Z",
       "side": 1,
       "message": "is there a need for callback based registration of the `enqueue` function ? Calling the function directly is simpler to follow.\n\nAlso if this call here is able to handle other errors like SMC_UNK returned from EL3, then the code here can return T_COSE_ERR_FAIL which can then be handled appropriately at the caller.\n\nalso add an assert that `is_started` is true at this point.",
+      "range": {
+        "startLine": 106,
+        "startChar": 6,
+        "endLine": 106,
+        "endChar": 31
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "044ce9ee_935b4639",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T17:28:18Z",
+      "side": 1,
+      "message": "we can use it here but t_cose will depende on the el3 if library, and the pushing and pulling will be in completely different modules. It seems cleaner to kee the pushing nad pulling in the runtime and keep t_cose library \"independent\". \nthe return is also boolean to keep it simple. queining succeeded or not. i dont think we want start handing errors in EL3 since there can be numerous errors and from RMMs point of view, queining suceeded or failed. others are probably not worth solving or accounting for, since we pushed queining issues to EL3..\ni\u0027d rather leave it the way it is.\nack to assert.",
+      "parentUuid": "e8ce8ab3_f8a4abee",
       "range": {
         "startLine": 106,
         "startChar": 6,
