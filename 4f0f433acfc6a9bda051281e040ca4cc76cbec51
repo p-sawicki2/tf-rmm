@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "777541f5_bb40b952",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:03:38Z",
+      "side": 1,
+      "message": "This change is not needed , if this structure is embedded in t_cose_psa_crypto_context  as this will be needed in case caller needs to use other t_cose APIs.",
+      "revId": "4f0f433acfc6a9bda051281e040ca4cc76cbec51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22f78d12_753e9664",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:03:38Z",
+      "side": 1,
+      "message": "rebasing on attestation state refactor patch should get rid of these.",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 81
+      },
+      "revId": "4f0f433acfc6a9bda051281e040ca4cc76cbec51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
