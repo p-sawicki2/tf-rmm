@@ -73,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d2801e21_61135763",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T18:02:20Z",
+      "side": 1,
+      "message": "will add comment. I dont think the optimization to move to 111 buys us much other than a few memory accesses. this shouldnt be a highly contended lock so i\u0027d rather get correctness than save on a few accesses under lock. Signature len for example, https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30005/3/lib/t_cose/src/t_cose_rmm_hes_crypto.c optimization would break the lock being moved and would have to move the lock back up since the singature buffer pointer is accessed by the thread updating the REC.",
+      "parentUuid": "5845f6d4_e5c0a113",
+      "range": {
+        "startLine": 91,
+        "startChar": 19,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e8ce8ab3_f8a4abee",
         "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
         "patchSetId": 11
@@ -131,6 +155,24 @@
       "writtenOn": "2024-07-22T16:01:25Z",
       "side": 1,
       "message": "Add a comment here that the pull of response is done outside the current function.",
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e96bf92b_00060e7f",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T18:02:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "24f356fa_dcd35225",
       "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
