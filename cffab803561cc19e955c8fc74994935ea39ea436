@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "039eb48b_312e3a3c",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:01:25Z",
+      "side": 1,
+      "message": "If the same crypto context need to be utilized for other t_cose operations, the caller may need a common structure to use.\n\nHence we need to embed t_cose_rmm_hes_ctx in t_cose_psa_crypto_context. Here we need to access the field corresponding to t_cose_rmm_hes_ctx within  t_cose_psa_crypto_context I think.",
+      "range": {
+        "startLine": 89,
+        "startChar": 51,
+        "endLine": 89,
+        "endChar": 65
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5845f6d4_e5c0a113",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:01:25Z",
+      "side": 1,
+      "message": "Need a comment here as to why this lock is needed.\n\n\"Since the response corresponding to this REC  can done by another REC, we need to to protect the below from concurrent access\".\n\n\nSince the other core is only accessing fields corresponding to the response, perhaps the lock can be moved to line 111 ?",
+      "range": {
+        "startLine": 91,
+        "startChar": 19,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8ce8ab3_f8a4abee",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:01:25Z",
+      "side": 1,
+      "message": "is there a need for callback based registration of the `enqueue` function ? Calling the function directly is simpler to follow.\n\nAlso if this call here is able to handle other errors like SMC_UNK returned from EL3, then the code here can return T_COSE_ERR_FAIL which can then be handled appropriately at the caller.\n\nalso add an assert that `is_started` is true at this point.",
+      "range": {
+        "startLine": 106,
+        "startChar": 6,
+        "endLine": 106,
+        "endChar": 31
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24f356fa_dcd35225",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:01:25Z",
+      "side": 1,
+      "message": "Add a comment here that the pull of response is done outside the current function.",
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
