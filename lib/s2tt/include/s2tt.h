@@ -171,6 +171,8 @@ static inline uint64_t __tte_read(uint64_t *ttep)
 	(1ULL << (unsigned int)(((S2TT_PAGE_LEVEL - (level)) *		\
 				(int)S2TTE_STRIDE) + (int)GRANULE_SHIFT))
 
+unsigned long s2tte_lvl_mask(long level, bool lpa2);
+
 bool s2tte_has_ripas(const struct s2tt_context *s2_ctx,
 		     unsigned long s2tte, long level);
 
