@@ -125,6 +125,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb536415_dfa95802",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "939af8cb_a1a3db19",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee2d89ea_44a56cf9",
@@ -162,6 +180,30 @@
       "side": 1,
       "message": "see this comment and response: https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29291/3..10/runtime/core/hes_queue.c#b190\n\nWe dont need to differentiate EMPTY or try again in this interface since the function should allow to infer what it is. if EL3 is busy, it is busy and RMM trying to do anything to solve EL3/HES specific problems is not beneficial.",
       "parentUuid": "ee2d89ea_44a56cf9",
+      "range": {
+        "startLine": 143,
+        "startChar": 13,
+        "endLine": 143,
+        "endChar": 19
+      },
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c5095ca_67196a02",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "I agree there is no much value in differentiating when the action to perform is same in RMM.\n\n There is a way to decouple values of error code in EL3 and RMM. The EL3-RMM interface will need to define all the valid error codes for this API and EL3 will need to map to one of the error defined. RMM will do the reverse and RMM error values will be decoupled from TF-A in this manner.",
+      "parentUuid": "96466f51_40eaf56f",
       "range": {
         "startLine": 143,
         "startChar": 13,
@@ -274,6 +316,24 @@
       "side": 1,
       "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30098/1\nimplemented last option.",
       "parentUuid": "da034841_06bc7927",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02d24c88_a83e66ec",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "Acknowledged. VA aliasing is usually not a problem but best to avoid it if we can.",
+      "parentUuid": "c02db5f0_fbb4f052",
       "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

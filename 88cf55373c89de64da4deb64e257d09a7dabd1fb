@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74cdde60_fe23550e",
+        "filename": "lib/slot_buf/src/buffer.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "better to expose 2 variants of this function from the lib , one to map aux in REC and the other to map when EL3 sign is defined.\n\nAn internal helper can be defined to do it commonly for both within this file",
+      "range": {
+        "startLine": 224,
+        "startChar": 6,
+        "endLine": 224,
+        "endChar": 29
+      },
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cd787df_33ee6008",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "As part of rename to generic name , perhaps \"el3_token_sign_queue.c\", the file, functions, structures would need rename.",
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cd7b9fa_777bd3df",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "Need a comment on the expected wrap around behaviour.",
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32805d5f_5df778e5",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "although currently we have arbitrary panics in RMM, the policy we are shifting towards is to return the error code back to caller. \n\nThe spec doesn\u0027t allow to return an unk error code, but we are discussing to change that. Hence the error will be propagated to Realm and perhaps Realm will exit but keeping RMM still alive.",
+      "range": {
+        "startLine": 106,
+        "startChar": 2,
+        "endLine": 106,
+        "endChar": 10
+      },
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a178e4a_f6658bda",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "I gave a previous comment on this, but this function can move to buffer module.\n\nthe name can be `buffer_aux_granules_map_el3_sign_slot` ?",
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cb54a75_a2490261",
+        "filename": "runtime/core/init.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "can be done within attestation_init().",
+      "range": {
+        "startLine": 113,
+        "startChar": 5,
+        "endLine": 113,
+        "endChar": 26
+      },
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84dadea3_fbad7e59",
+        "filename": "runtime/rmi/rec.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:46:48Z",
+      "side": 1,
+      "message": "hopefully this may not be needed after refactor to attestation,",
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
