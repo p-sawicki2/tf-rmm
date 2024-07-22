@@ -106,6 +106,24 @@
       "parentUuid": "8e836d29_8f7308b8",
       "revId": "ba25ac31f393834298e82f194fd9a41372863163",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26737b32_11cc844f",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T15:24:11Z",
+      "side": 1,
+      "message": "OK, the changes can be rebased on that. There is a TF-X test failing with that patch , so that will need to be fixed as well . \n\nBeing holiday season, many folks (including me) are on holiday, so things may move slowly for the next 3- 4 weeks.",
+      "parentUuid": "d0ba0784_ef9beee2",
+      "revId": "ba25ac31f393834298e82f194fd9a41372863163",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
