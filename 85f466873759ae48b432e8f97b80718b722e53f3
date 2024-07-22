@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3f1e2e18_4d7dea30",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T00:41:49Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30098/1",
+      "parentUuid": "8ca08112_1726410b",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b5f9754d_62d1f94f",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 10
@@ -79,6 +103,24 @@
       "side": 1,
       "message": "cleanliness and defense in depth. The shared buffer could be used for other things and ideally EL3 shouldnt use those bytes but zeroing memory would be better in case it does. Happy to remove it.\nAlso left over from the days where we might want to extend this structure in the next version, but given this can be tied to the EL3-RMM interface version, we dont need it anymore.",
       "parentUuid": "b5f9754d_62d1f94f",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "939af8cb_a1a3db19",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T00:41:49Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30098/1",
+      "parentUuid": "e2d17e79_2f2d5bb9",
       "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -167,6 +209,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "896eb71f_54d88b59",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T00:41:49Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30098/1",
+      "parentUuid": "23043627_4d99a16b",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28324161_f16ef894",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 10
@@ -196,6 +256,24 @@
       "side": 1,
       "message": "can you elaborate on why is it a \"risk\"? Mapping same PA with 2 VAs and same attributes is a valid way to access memory without issues.\nWe can detect if the REC is mapped using the ticket number but that seems somewhat hacky to identify the REC since the ticket number is to identify the request, not the REC itself. The rec_granule_addr uniquely identifies the REC itself.\nThe non-hacky way (other than mapping at different VA like this patch) to do it would be to have a way to identify if a slot in the slot buf (rec in this case) it currently in use and look up the granule that is mapped to the slot currently. or perhaps use address translation instruction at the REC VA to get back the PA and compare and then have an if else.\nYet another option, since this function is called from one and only one place, is to pass the current REC granule address as a parameter and skip the granule lock and map if it matches the response being processed. The granule lock is required to prevent it from being destroyed, but in the code path where this is called, we know for certain we have a ref count on the REC and it cannot be destroyed.\nI think the last option is worthwhile and easy to implement to get the benefit of the optimization.",
       "parentUuid": "28324161_f16ef894",
+      "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c02db5f0_fbb4f052",
+        "filename": "runtime/core/hes_queue.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-07-22T00:41:49Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30098/1\nimplemented last option.",
+      "parentUuid": "da034841_06bc7927",
       "revId": "85f466873759ae48b432e8f97b80718b722e53f3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
