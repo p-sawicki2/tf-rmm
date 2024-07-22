@@ -150,6 +150,7 @@
 #define RMI_UNASSIGNED		UL(0)
 #define RMI_ASSIGNED		UL(1)
 #define RMI_TABLE		UL(2)
+#define RMI_AUX_DESTROYED	UL(5)
 
 /* RmiFeature enumerations */
 #define RMI_FEATURE_FALSE	UL(0)
@@ -419,6 +420,19 @@
  * ret1 == Address(PA) of the RTT folded, if ret0 == RMI_SUCCESS
  */
 #define SMC_RMM_RTT_AUX_FOLD			SMC64_RMI_FID(U(0x2F))
+
+/*
+ * arg0 == RD address
+ * arg1 == map address
+ * arg2 == RTT Tree index
+ *
+ * ret1 == index of the RTT Tree that caused a failure
+ * ret2 == level of RTTE reached by a walk of the primary RTT tree
+ * ret3 == state of RTTE which caused RMI_ERROR_RTT
+ * ret4 == ripas of the RTTE which caused RMI_ERROR_RTT
+ * if ret0 == RMI_SUCCESS, otherwise, undefined.
+ */
+#define SMC_RMM_RTT_AUX_MAP_PROTECTED		SMC64_RMI_FID(U(0x30))
 
 /*
  * arg0 == RD address
