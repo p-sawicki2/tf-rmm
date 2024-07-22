@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29e8a9a2_f86c944e",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T16:47:40Z",
+      "side": 1,
+      "message": "can be done within attest_token_continue_sign_state().",
+      "revId": "16dc17f5e5c44b4f1b84179a2247b9c3ae390f45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
