@@ -18,7 +18,7 @@
 /*
  * Return a mask for the IPA field on a S2TTE
  */
-static unsigned long s2tte_lvl_mask(long level, bool lpa2)
+unsigned long s2tte_lvl_mask(long level, bool lpa2)
 {
 	assert(level <= S2TT_PAGE_LEVEL);
 	assert(level >= S2TT_MIN_STARTING_LEVEL_LPA2);
