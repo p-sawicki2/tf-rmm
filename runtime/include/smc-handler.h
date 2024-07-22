@@ -99,6 +99,12 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 			unsigned long ulevel,
 			struct smc_result *res);
 
+void smc_rtt_aux_read_entry(unsigned long rd_addr,
+			    unsigned long map_addr,
+			    unsigned long ulevel,
+			    unsigned long index,
+			    struct smc_result *res);
+
 unsigned long smc_psci_complete(unsigned long calling_rec_addr,
 				unsigned long target_rec_addr,
 				unsigned long status);
