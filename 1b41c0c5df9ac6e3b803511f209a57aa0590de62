@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be5fb5c7_7e2968ba",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T15:21:59Z",
+      "side": 1,
+      "message": "Unrelated to this patch. This slot is not needed anymore.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 49
+      },
+      "revId": "1b41c0c5df9ac6e3b803511f209a57aa0590de62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a76a56f9_d8729d8d",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T15:21:59Z",
+      "side": 1,
+      "message": "SLOT_EL3_SIGN_REC,    /* Slot for target REC during EL3 sign flow */  \nSLOT_EL3_SIGN_AUX0,   /* Slots for AUX granules on target REC during EL3 sign flow */",
+      "range": {
+        "startLine": 36,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "1b41c0c5df9ac6e3b803511f209a57aa0590de62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
