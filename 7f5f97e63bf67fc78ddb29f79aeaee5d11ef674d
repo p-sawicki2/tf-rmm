@@ -106,6 +106,42 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "08a4e0d5_191f9c24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "02e2d9c0_7f85a21a",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09c33606_bbcafe48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de3e7c43_baf930ef",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a297d37_9634bb95",
@@ -123,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "105f282c_34e17790",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a297d37_9634bb95",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c4348b5_ee49ec81",
@@ -136,6 +190,30 @@
       "writtenOn": "2024-07-18T12:51:52Z",
       "side": 1,
       "message": "this is the length of the current hunk/chuck returned. so perhaps this should be called token_hunk_len.\n\nso the check should probably be (offset + token_hunk_len + remaining_len) \u003e RMM_PLAT_TOKEN_MAX_SIZE",
+      "range": {
+        "startLine": 231,
+        "startChar": 6,
+        "endLine": 231,
+        "endChar": 25
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc47b74_0c06138f",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c4348b5_ee49ec81",
       "range": {
         "startLine": 231,
         "startChar": 6,
@@ -169,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7320bd06_2f0a00ea",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "307a9657_56272eaa",
+      "range": {
+        "startLine": 240,
+        "startChar": 6,
+        "endLine": 240,
+        "endChar": 51
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6572726_3cfcb478",
@@ -192,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04a5968b_09a01ede",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6572726_3cfcb478",
+      "range": {
+        "startLine": 242,
+        "startChar": 11,
+        "endLine": 242,
+        "endChar": 45
+      },
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54bd9d5e_102c2228",
@@ -205,6 +331,24 @@
       "writtenOn": "2024-07-18T12:53:20Z",
       "side": 1,
       "message": "Is the added byte added a valid token ? \n\nIf not, this change can be done locally to test the changes and then lets stick to original token.",
+      "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04855508_4d555de7",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-22T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54bd9d5e_102c2228",
       "revId": "7f5f97e63bf67fc78ddb29f79aeaee5d11ef674d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
