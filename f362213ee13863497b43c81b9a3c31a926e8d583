@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fbc8efc_8c568f9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-22T14:15:50Z",
+      "side": 1,
+      "message": "The TF-X tests fail with this patch. Tests need fixing up as they were based on based state machine and functions. @Juan could you take a look at the tests failure.",
+      "revId": "f362213ee13863497b43c81b9a3c31a926e8d583",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da449a96_24596d96",
