@@ -422,6 +422,20 @@
 
 /*
  * arg0 == RD address
+ * arg1 == map address
+ * arg2 == level
+ * arg3 == RTT Tree index
+ *
+ * ret1 == level
+ * ret2 == s2tte type
+ * ret3 == s2tte
+ * ret4 == ripas
+ * if ret0 == RMI_SUCCESS, otherwise, undefined.
+ */
+#define SMC_RMM_RTT_AUX_READ_ENTRY		SMC64_RMI_FID(U(0x32))
+
+/*
+ * arg0 == RD address
  * arg1 == REC address
  * arg2 == Start address
  * arg3 == End address
