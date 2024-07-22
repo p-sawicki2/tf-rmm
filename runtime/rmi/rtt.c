@@ -911,10 +911,12 @@ void smc_rtt_unmap_unprotected(unsigned long rd_addr,
 	map_unmap_ns(rd_addr, map_addr, level, 0UL, UNMAP_NS, res);
 }
 
-void smc_rtt_read_entry(unsigned long rd_addr,
-			unsigned long map_addr,
-			unsigned long ulevel,
-			struct smc_result *res)
+static void rtt_read_entry(unsigned long rd_addr,
+			   unsigned long map_addr,
+			   unsigned long ulevel,
+			   unsigned long index,
+			   bool aux,
+			   struct smc_result *res)
 {
 	struct granule *g_rd;
 	struct rd *rd;
@@ -939,7 +941,20 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 		return;
 	}
 
-	s2_ctx = *primary_s2_context(rd);
+	if (aux) {
+		if ((!rd->rtt_tree_pp) ||
+		    (index == (unsigned long)PRIMARY_S2_CTX_ID) ||
+		    (index >= (unsigned long)realm_num_s2_contexts(rd))) {
+			buffer_unmap(rd);
+			granule_unlock(g_rd);
+			res->x[0] = RMI_ERROR_INPUT;
+			return;
+		}
+		s2_ctx = *index_to_s2_context(rd, (unsigned int)index);
+	} else {
+		s2_ctx = *primary_s2_context(rd);
+	}
+
 	buffer_unmap(rd);
 
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
@@ -996,6 +1011,23 @@ void smc_rtt_read_entry(unsigned long rd_addr,
 	granule_unlock(wi.g_llt);
 
 	res->x[0] = RMI_SUCCESS;
+}
+
+void smc_rtt_read_entry(unsigned long rd_addr,
+			unsigned long map_addr,
+			unsigned long ulevel,
+			struct smc_result *res)
+{
+	rtt_read_entry(rd_addr, map_addr, ulevel, 0UL, false, res);
+}
+
+void smc_rtt_aux_read_entry(unsigned long rd_addr,
+			    unsigned long map_addr,
+			    unsigned long ulevel,
+			    unsigned long index,
+			    struct smc_result *res)
+{
+	rtt_read_entry(rd_addr, map_addr, ulevel, index, true, res);
 }
 
 static unsigned long validate_data_create_unknown(unsigned long map_addr,
