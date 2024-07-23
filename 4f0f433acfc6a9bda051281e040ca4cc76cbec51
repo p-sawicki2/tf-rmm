@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14c3e86f_ac870387",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T15:24:32Z",
+      "side": 1,
+      "message": "I just realzed that psa_crypto context is embedded within this context.",
+      "parentUuid": "c3e2b35d_570ea6c7",
+      "revId": "4f0f433acfc6a9bda051281e040ca4cc76cbec51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22f78d12_753e9664",
