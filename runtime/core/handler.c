@@ -87,6 +87,7 @@ enum rmi_type {
 	set_rmi_type(2, 2),	/* 2 arguments, 2 output values */
 	set_rmi_type(3, 1),	/* 3 arguments, 1 output value */
 	set_rmi_type(3, 2),	/* 3 arguments, 2 output values */
+	set_rmi_type(3, 3),	/* 3 arguments, 3 output values */
 	set_rmi_type(3, 4),	/* 3 arguments, 4 output values */
 	set_rmi_type(4, 1),	/* 4 arguments, 1 output value */
 	set_rmi_type(4, 2),	/* 4 arguments, 2 output values */
@@ -107,6 +108,7 @@ struct smc_handler {
 		handler_2_o	f_22;
 		handler_3_o	f_31;
 		handler_3_o	f_32;
+		handler_3_o	f_33;
 		handler_3_o	f_34;
 		handler_4_o	f_41;
 		handler_4_o	f_42;
@@ -166,6 +168,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_AUX_FOLD,		4, 1, smc_rtt_aux_fold,		 false, false),
 	HANDLER(RTT_AUX_READ_ENTRY,	4, 4, smc_rtt_aux_read_entry,	 false, true),
 	HANDLER(RTT_AUX_MAP_PROTECTED,	3, 4, smc_rtt_aux_map_protected, false, true),
+	HANDLER(RTT_AUX_MAP_UNPROTECTED,3, 3, smc_rtt_aux_map_unprotected, false, true),
 	HANDLER(RTT_AUX_UNMAP_PROTECTED,3, 2, smc_rtt_aux_unmap_protected, false, true)
 };
 
@@ -345,6 +348,9 @@ void handle_ns_smc(unsigned int function_id,
 		break;
 	case rmi_type_32:
 		handler->f_32(arg0, arg1, arg2, res);
+		break;
+	case rmi_type_33:
+		handler->f_33(arg0, arg1, arg2, res);
 		break;
 	case rmi_type_34:
 		handler->f_34(arg0, arg1, arg2, res);
