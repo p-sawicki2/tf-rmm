@@ -34,6 +34,24 @@
       "parentUuid": "c0a0b7a8_4a6c3a30",
       "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "518deac1_0f6c4811",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T14:16:25Z",
+      "side": 1,
+      "message": "regarding name, \n\nIt is choice between {EL3_TOKEN_SIGN_ , ATTEST_EL3_SIGN_} or a variation of that..\n\nBecause the SMCs are optional, having the version does not mandate that the SMC is present. The availability of these SMCs will need to be queried via another RMM_EL3_FEATURES like SMC.\n\nSince the SMCs are optional , it may return SMC_UNK at this point unless the RMM_EL3_FEATURES is defined in such a way that if hte feature is present, then the SMCs must be present.",
+      "parentUuid": "e7817b58_ab1a7fe7",
+      "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
