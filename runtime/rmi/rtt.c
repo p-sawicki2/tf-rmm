@@ -1827,10 +1827,11 @@ static unsigned long realign_pa(struct s2tt_context *s2_ctx,
 	return pa_base + offset;
 }
 
-void smc_rtt_aux_map_protected(unsigned long rd_addr,
-			       unsigned long map_addr,
-			       unsigned long index,
-			       struct smc_result *res)
+static void rtt_aux_map(unsigned long rd_addr,
+			unsigned long map_addr,
+			unsigned long index,
+			struct smc_result *res,
+			bool protected)
 {
 	struct granule *g_rd;
 	struct rd *rd;
@@ -1881,19 +1882,34 @@ void smc_rtt_aux_map_protected(unsigned long rd_addr,
 	primary_ripas = (unsigned long)s2tte_get_ripas(&s2_ctx, primary_s2tte);
 	primary_pa = s2tte_pa(&s2_ctx, primary_s2tte, primary_level);
 
-	/* If the IPA is not assigned on the primary RTT, report and return */
-	if (!s2tte_is_assigned_ram(&s2_ctx, primary_s2tte, primary_level)) {
-		res->x[0] = pack_return_code(RMI_ERROR_RTT,
+	if (protected) {
+		/* If the IPA is not assigned on the primary RTT, report and return */
+		if (!s2tte_is_assigned_ram(&s2_ctx, primary_s2tte, primary_level)) {
+			res->x[0] = pack_return_code(RMI_ERROR_RTT,
 						(unsigned char)primary_level);
-		res->x[1] = (unsigned long)PRIMARY_S2_CTX_ID;
-		res->x[2] = primary_level;
-		res->x[3] = s2tte_is_unassigned(&s2_ctx, primary_s2tte) ?
-				(unsigned long)RMI_UNASSIGNED :
-				(unsigned long)RMI_ASSIGNED;
-		res->x[4] = primary_ripas;
+			res->x[1] = (unsigned long)PRIMARY_S2_CTX_ID;
+			res->x[2] = primary_level;
+			res->x[3] = s2tte_is_unassigned(&s2_ctx, primary_s2tte) ?
+					(unsigned long)RMI_UNASSIGNED :
+					(unsigned long)RMI_ASSIGNED;
+			res->x[4] = primary_ripas;
 
-		granule_unlock(g_rd);
-		return;
+			granule_unlock(g_rd);
+			return;
+		}
+	} else {
+		/* If the IPA is not assigned_ns on the primary RTT, report and return */
+		if (!s2tte_is_assigned_ns(&s2_ctx, primary_s2tte, primary_level)) {
+			res->x[0] = pack_return_code(RMI_ERROR_RTT, primary_level);
+			res->x[1] = (unsigned long)PRIMARY_S2_CTX_ID;
+			res->x[2] = primary_level;
+			res->x[3] = s2tte_is_unassigned(&s2_ctx, primary_s2tte) ?
+						(unsigned long)RMI_UNASSIGNED :
+						(unsigned long)RMI_ASSIGNED;
+
+			granule_unlock(g_rd);
+			return;
+		}
 	}
 
 	/*
@@ -1923,7 +1939,9 @@ void smc_rtt_aux_map_protected(unsigned long rd_addr,
 		res->x[3] = s2tte_is_unassigned(&aux_s2_ctx, s2tte) ?
 				(unsigned long)RMI_UNASSIGNED :
 				(unsigned long)RMI_ASSIGNED;
-		res->x[4] = primary_ripas;
+		if (protected) {
+			res->x[4] = primary_ripas;
+		}
 
 		buffer_unmap(s2tt);
 		granule_unlock(wi.g_llt);
@@ -1936,55 +1954,90 @@ void smc_rtt_aux_map_protected(unsigned long rd_addr,
 	 */
 	aux_pa = realign_pa(&aux_s2_ctx, primary_pa, wi.last_level, map_addr);
 
-	/* If the entry ripas is destroyed, report it and exit */
-	if (s2tte_get_ripas(&aux_s2_ctx, s2tte) == RIPAS_DESTROYED) {
-		res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
+	if (protected) {
+		/* If the entry ripas is destroyed, report it and exit */
+		if (s2tte_get_ripas(&aux_s2_ctx, s2tte) == RIPAS_DESTROYED) {
+			res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
 					     (unsigned char)wi.last_level);
-		res->x[1] = (unsigned long)wi.index;
-		res->x[2] = primary_level;
-		res->x[3] = (unsigned long)RMI_AUX_DESTROYED;
-		res->x[4] = primary_ripas;
+			res->x[1] = (unsigned long)wi.index;
+			res->x[2] = primary_level;
+			res->x[3] = (unsigned long)RMI_AUX_DESTROYED;
+			res->x[4] = primary_ripas;
 
-		buffer_unmap(s2tt);
-		granule_unlock(wi.g_llt);
-		return;
+			buffer_unmap(s2tt);
+			granule_unlock(wi.g_llt);
+			return;
+		}
+
+		/* If the entry ripas is RAM, we exit with success condition */
+		if (s2tte_is_assigned_ram(&aux_s2_ctx, s2tte, wi.last_level)) {
+			res->x[0] = RMI_SUCCESS;
+
+			buffer_unmap(s2tt);
+			granule_unlock(wi.g_llt);
+			return;
+		}
+
+		/*
+		 * Increment the refcounter for all the DATA granules that are going
+		 * to be mapped.
+		 */
+		map_size = s2tte_map_size(wi.last_level);
+		for (unsigned long offset = 0UL; offset < map_size; offset += GRANULE_SIZE) {
+			struct granule *g_data = find_lock_granule(aux_pa + offset,
+								   GRANULE_STATE_DATA);
+
+			assert(g_data != NULL);
+			__granule_get(g_data);
+			granule_unlock(g_data);
+		}
+
+		/*
+		 * Create the new entry maintaining the access permissions from the
+		 * original auxiliary entry.
+		 */
+		s2tte = s2tte_create_assigned_ram(&aux_s2_ctx, aux_pa,
+						  wi.last_level, s2tte);
+	} else {
+		/* If the entry is already assigned_ns, exit with success condition */
+		if (s2tte_is_assigned_ns(&aux_s2_ctx, s2tte, wi.last_level)) {
+			res->x[0] = RMI_SUCCESS;
+
+			buffer_unmap(s2tt);
+			granule_unlock(wi.g_llt);
+			return;
+		}
+
+		/*
+		 * Create an assigned_ns descriptor, reusing the AP from the
+		 * descriptor on the primary tree.
+		 */
+		s2tte = s2tte_create_assigned_ns(&aux_s2_ctx, s2tte,
+						 wi.last_level, primary_s2tte);
 	}
 
-	/* If the entry ripas is RAM, we exit with success condition */
-	if (s2tte_is_assigned_ram(&aux_s2_ctx, s2tte, wi.last_level)) {
-		res->x[0] = RMI_SUCCESS;
-
-		buffer_unmap(s2tt);
-		granule_unlock(wi.g_llt);
-		return;
-	}
-
-	/*
-	 * Increment the refcounter for all the DATA granules that are going
-	 * to be mapped.
-	 */
-	map_size = s2tte_map_size(wi.last_level);
-	for (unsigned long offset = 0UL; offset < map_size; offset += GRANULE_SIZE) {
-		struct granule *g_data = find_lock_granule(aux_pa + offset,
-							   GRANULE_STATE_DATA);
-
-		assert(g_data != NULL);
-		__granule_get(g_data);
-		granule_unlock(g_data);
-	}
-
-	/*
-	 * Create the new entry maintaining the access permissions from the
-	 * original auxiliary entry.
-	 */
-	s2tte = s2tte_create_assigned_ram(&aux_s2_ctx, aux_pa,
-					  wi.last_level, s2tte);
 	s2tte_write(&s2tt[wi.index], s2tte);
 
 	buffer_unmap(s2tt);
 	granule_unlock(wi.g_llt);
 
 	res->x[0] = RMI_SUCCESS;
+}
+
+void smc_rtt_aux_map_protected(unsigned long rd_addr,
+			       unsigned long map_addr,
+			       unsigned long index,
+			       struct smc_result *res)
+{
+	rtt_aux_map(rd_addr, map_addr, index, res, true);
+}
+
+void smc_rtt_aux_map_unprotected(unsigned long rd_addr,
+				 unsigned long map_addr,
+				 unsigned long index,
+				 struct smc_result *res)
+{
+	rtt_aux_map(rd_addr, map_addr, index, res, false);
 }
 
 void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
