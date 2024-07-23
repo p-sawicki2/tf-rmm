@@ -129,6 +129,11 @@ void smc_rtt_aux_map_protected(unsigned long rd_addr,
 			       unsigned long index,
 			       struct smc_result *res);
 
+void smc_rtt_aux_map_unprotected(unsigned long rd_addr,
+				 unsigned long map_addr,
+				 unsigned long index,
+				 struct smc_result *res);
+
 void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
 				 unsigned long unmap_addr,
 				 unsigned long index,
