@@ -34,6 +34,23 @@
       "parentUuid": "24d8cc8b_98dbcd75",
       "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d299acb_ab403019",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T16:43:52Z",
+      "side": 1,
+      "message": "Add a cmake check here to ensure that RMM_PLAT_TOKEN_MAX_SIZE \u003c\u003d RMM_CCA_TOKEN_BUFFER. or a COMPILER_ASSERT should also be enough although the latter give a descriptive diagnostic to user.",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
