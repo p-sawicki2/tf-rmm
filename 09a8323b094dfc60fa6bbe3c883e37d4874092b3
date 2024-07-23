@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "651f1b95_1492f997",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "The errors are defined here : https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-attest-get-plat-token-command\n\nE_RMM_OK can be used for Success\nE_RMM_INVAL can be sued for PLAT_TOKEN_END reached because this case is identical to `hash_size` being zero.",
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4b9c771_146eab03",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "`Buffer size` should be sufficient.",
+      "range": {
+        "startLine": 310,
+        "startChar": 13,
+        "endLine": 310,
+        "endChar": 49
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7f80241_c8b82c60",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "incorrect desc (this was incorrect earlier as well).",
+      "range": {
+        "startLine": 311,
+        "startChar": 22,
+        "endLine": 312,
+        "endChar": 41
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bb0782d_b1786460",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "\"Further calls to this API needs to have `hash_size` set to 0 to retrieve rest of the platform token\"",
+      "range": {
+        "startLine": 317,
+        "startChar": 23,
+        "endLine": 319,
+        "endChar": 45
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33b4f420_86b89d6c",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "needs to be UL I think.",
+      "range": {
+        "startLine": 97,
+        "startChar": 22,
+        "endLine": 97,
+        "endChar": 23
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4d7c5ed_9f722743",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "\".._HUNK_LEN\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d30bc30a_c99bea7c",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "There are a couple of cases which need to be checked\n\n```\nif (platform_token_offset !\u003d 0) {\n    if(c_size !\u003d 0) \n\treturn E_RMM_INVAL;\n    else\n        platform_token_offset \u003d 0;\n} else {\n    if(c_size \u003d\u003d 0)\n        return E_RMM_INVAL;\n}\n\n```",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4d08366_b5e2f6a9",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "prefer to work with a local variable and finally assign to this pointer.",
+      "range": {
+        "startLine": 166,
+        "startChar": 2,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa44e60e_50a74bea",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:07:45Z",
+      "side": 1,
+      "message": "Maybe this can be simplified by calculating the remaining len and if remaining len is \u003c hunk_size , assign remaining len to hunk_size.",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 174,
+        "endChar": 4
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
