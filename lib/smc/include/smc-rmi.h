@@ -437,6 +437,18 @@
 /*
  * arg0 == RD address
  * arg1 == map address
+ * arg2 == RTT Tree index
+ *
+ * ret1 == index of the RTT Tree that caused a failure
+ * ret2 == level of RTTE reached by a walk of the primary RTT tree
+ * ret3 == state of RTTE which caused RMI_ERROR_RTT
+ * if ret0 == RMI_SUCCESS, otherwise, undefined.
+ */
+#define SMC_RMM_RTT_AUX_MAP_UNPROTECTED		SMC64_RMI_FID(U(0x31))
+
+/*
+ * arg0 == RD address
+ * arg1 == map address
  * arg2 == level
  * arg3 == RTT Tree index
  *
