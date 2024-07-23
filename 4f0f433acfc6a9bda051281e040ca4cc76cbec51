@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c3e2b35d_570ea6c7",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T14:10:16Z",
+      "side": 1,
+      "message": "OK, I may have misunderstood the layering. the current patch as it stands, it is making use of psa crypto APIs for rest of functionality (like calculating the SHA within the cose token). \n\nIf we indeed need to use psa crypto for some functionality, wouldn\u0027t the caller need to use psa_crypto context ?",
+      "parentUuid": "a79859c4_fba806a0",
+      "revId": "4f0f433acfc6a9bda051281e040ca4cc76cbec51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "22f78d12_753e9664",
         "filename": "lib/attestation/include/attestation_token.h",
         "patchSetId": 11
