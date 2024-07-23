@@ -158,6 +158,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76465bef_b86cb745",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-07-23T10:13:37Z",
+      "side": 1,
+      "message": "as sorry, I see what you tried to do there.\n\n```\nif (platform_token_offset \u003d\u003d 0 \u0026\u0026 c_size \u003d\u003d 0)\n    return RMM_E_INVAL;\nelse if (c_size !\u003d 0)\n    platform_token_offset \u003d 0;\n    \n```\n\nshould work ?",
+      "parentUuid": "d30bc30a_c99bea7c",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c4d08366_b5e2f6a9",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 4
