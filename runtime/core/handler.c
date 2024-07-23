@@ -106,6 +106,7 @@ struct smc_handler {
 		handler_2_o	f_22;
 		handler_3_o	f_31;
 		handler_3_o	f_32;
+		handler_3_o	f_33;
 		handler_3_o	f_34;
 		handler_4_o	f_41;
 		handler_4_o	f_42;
@@ -165,6 +166,7 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_AUX_FOLD,		4, 1, smc_rtt_aux_fold,		 false, false),
 	HANDLER(RTT_AUX_READ_ENTRY,	4, 4, smc_rtt_aux_read_entry,	 false, true),
 	HANDLER(RTT_AUX_MAP_PROTECTED,	3, 4, smc_rtt_aux_map_protected, false, true),
+	HANDLER(RTT_AUX_MAP_UNPROTECTED,3, 3, smc_rtt_aux_map_unprotected, false, true),
 	HANDLER(RTT_AUX_UNMAP_PROTECTED,3, 2, smc_rtt_aux_unmap_protected, false, true)
 };
 
