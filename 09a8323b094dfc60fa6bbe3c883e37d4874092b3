@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "062eff4c_e8d22730",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "651f1b95_1492f997",
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4b9c771_146eab03",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-07-23T10:07:45Z",
       "side": 1,
       "message": "`Buffer size` should be sufficient.",
+      "range": {
+        "startLine": 310,
+        "startChar": 13,
+        "endLine": 310,
+        "endChar": 49
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7758d8ec_eaca82d1",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4b9c771_146eab03",
       "range": {
         "startLine": 310,
         "startChar": 13,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff89a3be_1fa7f755",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7f80241_c8b82c60",
+      "range": {
+        "startLine": 311,
+        "startChar": 22,
+        "endLine": 312,
+        "endChar": 41
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1bb0782d_b1786460",
@@ -77,6 +143,30 @@
       "writtenOn": "2024-07-23T10:07:45Z",
       "side": 1,
       "message": "\"Further calls to this API needs to have `hash_size` set to 0 to retrieve rest of the platform token\"",
+      "range": {
+        "startLine": 317,
+        "startChar": 23,
+        "endLine": 319,
+        "endChar": 45
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e231337_d3ec1857",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1bb0782d_b1786460",
       "range": {
         "startLine": 317,
         "startChar": 23,
@@ -112,6 +202,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d8a070f3_f3a935ef",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Hmmm... not sure. Value can be either E_RMM_OK (0) or E_RMM_INVAL (-5) now. I think it is OK as it is. Please correct me if I\u0027m wrong.",
+      "parentUuid": "33b4f420_86b89d6c",
+      "range": {
+        "startLine": 97,
+        "startChar": 22,
+        "endLine": 97,
+        "endChar": 23
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4d7c5ed_9f722743",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 4
@@ -123,6 +237,30 @@
       "writtenOn": "2024-07-23T10:07:45Z",
       "side": 1,
       "message": "\".._HUNK_LEN\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6b422af_d02f0cbe",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4d7c5ed_9f722743",
       "range": {
         "startLine": 17,
         "startChar": 26,
@@ -182,6 +320,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2839036b_247873e1",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Hi Soby, \nI think that it would be nice to consider the possibility for the token retrieval to be reset, and therefore start getting the token from its beginning, provided that c_size !\u003d 0, and without minding where platform_token_offset points at. This means that, whether the token has been fully retrieved or not, using c_size !\u003d will reset platform_token_offset and start copying from the beginning of the token again. Therefore, there would be no need to wait for the full token to be retrieved before asking for the full token again.\n\nLet me know what you think.",
+      "parentUuid": "76465bef_b86cb745",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c4d08366_b5e2f6a9",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 4
@@ -193,6 +355,30 @@
       "writtenOn": "2024-07-23T10:07:45Z",
       "side": 1,
       "message": "prefer to work with a local variable and finally assign to this pointer.",
+      "range": {
+        "startLine": 166,
+        "startChar": 2,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6fde4f1_826d8151",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4d08366_b5e2f6a9",
       "range": {
         "startLine": 166,
         "startChar": 2,
@@ -216,6 +402,30 @@
       "writtenOn": "2024-07-23T10:07:45Z",
       "side": 1,
       "message": "Maybe this can be simplified by calculating the remaining len and if remaining len is \u003c hunk_size , assign remaining len to hunk_size.",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 174,
+        "endChar": 4
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80b4935d_471dd9d1",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-07-24T21:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa44e60e_50a74bea",
       "range": {
         "startLine": 171,
         "startChar": 1,
