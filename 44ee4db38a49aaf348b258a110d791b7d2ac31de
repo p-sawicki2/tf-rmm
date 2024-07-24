@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d5c9d75_ad9a78b2",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-07-24T22:15:08Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "45ab470c_e3d6ae0c",
+      "range": {
+        "startLine": 1311,
+        "startChar": 1,
+        "endLine": 1319,
+        "endChar": 2
+      },
+      "revId": "44ee4db38a49aaf348b258a110d791b7d2ac31de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1379cf15_22b594bb",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2660a3c9_7dc49bfa",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 2253,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-07-24T22:15:08Z",
+      "side": 1,
+      "message": "Acknowledged, Thank you for the inputs. \nI apologize for not having thought through this completely. The false condition here I was only trying to test to see the functionality. I have removed test_helpers_expect_assert_fail(false) as  I do not expect the assert for MMU enabled to fail since its not enabled upto this point. So have removed the test_helper.\nHave moved the assertion check test itself to a new test case.",
+      "parentUuid": "1379cf15_22b594bb",
+      "revId": "44ee4db38a49aaf348b258a110d791b7d2ac31de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c643617e_51a2805c",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-07-23T12:05:42Z",
       "side": 1,
       "message": "Must be moved to its own test.",
+      "range": {
+        "startLine": 2264,
+        "startChar": 1,
+        "endLine": 2268,
+        "endChar": 41
+      },
+      "revId": "44ee4db38a49aaf348b258a110d791b7d2ac31de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70deab56_54506b19",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 2268,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-07-24T22:15:08Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c643617e_51a2805c",
       "range": {
         "startLine": 2264,
         "startChar": 1,
