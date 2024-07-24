@@ -2044,10 +2044,11 @@ void smc_rtt_aux_map_unprotected(unsigned long rd_addr,
 	rtt_aux_map(rd_addr, map_addr, index, res, false);
 }
 
-void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
-				 unsigned long unmap_addr,
-				 unsigned long index,
-				 struct smc_result *res)
+static void rtt_aux_unmap(unsigned long rd_addr,
+			  unsigned long unmap_addr,
+			  unsigned long index,
+			  struct smc_result *res,
+			  bool protected)
 {
 	struct granule *g_rd;
 	struct rd *rd;
@@ -2094,28 +2095,58 @@ void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
 
 	s2tte = s2tte_read(&s2tt[wi.index]);
 
-	/* If the IPA is not assigned on the auxiliary RTT, report and return */
-	if (!s2tte_is_assigned_ram(&s2_ctx, s2tte, wi.last_level)) {
-		res->x[0] = pack_return_code(RMI_ERROR_RTT,
+	if (protected) {
+		/* If the IPA is not assigned on the auxiliary RTT, report and return */
+		if (!s2tte_is_assigned_ram(&s2_ctx, s2tte, wi.last_level)) {
+			res->x[0] = pack_return_code(RMI_ERROR_RTT,
 					     (unsigned char)wi.last_level);
-		res->x[1] = s2tt_skip_non_live_entries(&s2_ctx, unmap_addr,
-							s2tt, &wi);
-		buffer_unmap(s2tt);
-		granule_unlock(wi.g_llt);
-		return;
+			res->x[1] = s2tt_skip_non_live_entries(&s2_ctx, unmap_addr,
+								s2tt, &wi);
+			buffer_unmap(s2tt);
+			granule_unlock(wi.g_llt);
+			return;
+		}
+
+		/*
+		 * Save the PA mapped by the entry, as we will need it later to
+		 * decrement the reference count for the associated granules.
+		 */
+		pa = s2tte_pa(&s2_ctx, s2tte, wi.last_level);
+
+		/*
+		 * Create the new S2TTE, reusing the original one so that they
+		 * have the same Access Permissions.
+		 */
+		s2tte = s2tte_create_unassigned_empty(&s2_ctx, s2tte);
+
+		/*
+		 * Decrement the refcounter for all the DATA granules that are
+		 * going to be mapped.
+		 */
+		map_size = s2tte_map_size(wi.last_level);
+		for (unsigned long offset = 0UL;
+		     offset < map_size; offset += GRANULE_SIZE) {
+			struct granule *g_data = find_lock_granule(pa + offset,
+							   GRANULE_STATE_DATA);
+
+			assert(g_data != NULL);
+			__granule_put(g_data);
+			granule_unlock(g_data);
+		}
+	} else {
+		/* If the IPA is not assigned_ns the auxiliary RTT, report and return */
+		if (!s2tte_is_assigned_ns(&s2_ctx, s2tte, wi.last_level)) {
+			res->x[0] = pack_return_code(RMI_ERROR_RTT,
+					     (unsigned char)wi.last_level);
+			res->x[1] = s2tt_skip_non_live_entries(&s2_ctx, unmap_addr,
+								s2tt, &wi);
+			buffer_unmap(s2tt);
+			granule_unlock(wi.g_llt);
+			return;
+		}
+
+		s2tte =  s2tte_create_unassigned_ns(&s2_ctx);
 	}
-
-	/*
-	 * Save the PA mapped by the entry, as we will need it later to
-	 * decrement the reference count for the associated granules.
-	 */
-	pa = s2tte_pa(&s2_ctx, s2tte, wi.last_level);
-
-	/*
-	 * Create the new S2TTE, reusing the original one so that they
-	 * have the same Access Permissions.
-	 */
-	s2tte = s2tte_create_unassigned_empty(&s2_ctx, s2tte);
 
 	s2tte_write(&s2tt[wi.index], s2tte);
 
@@ -2125,24 +2156,26 @@ void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
 		s2tt_invalidate_block(&s2_ctx, unmap_addr);
 	}
 
-	/*
-	 * Decrement the refcounter for all the DATA granules that are going
-	 * to be mapped.
-	 */
-	map_size = s2tte_map_size(wi.last_level);
-	for (unsigned long offset = 0UL; offset < map_size; offset += GRANULE_SIZE) {
-		struct granule *g_data = find_lock_granule(pa + offset,
-							   GRANULE_STATE_DATA);
-
-		assert(g_data != NULL);
-		__granule_put(g_data);
-		granule_unlock(g_data);
-	}
-
 	res->x[0] = RMI_SUCCESS;
 	res->x[1] = s2tt_skip_non_live_entries(&s2_ctx, unmap_addr, s2tt, &wi);
 	res->x[2] = wi.last_level;
 
 	buffer_unmap(s2tt);
 	granule_unlock(wi.g_llt);
+}
+
+void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
+				 unsigned long unmap_addr,
+				 unsigned long index,
+				 struct smc_result *res)
+{
+	rtt_aux_unmap(rd_addr, unmap_addr, index, res, true);
+}
+
+void smc_rtt_aux_unmap_unprotected(unsigned long rd_addr,
+				   unsigned long unmap_addr,
+				   unsigned long index,
+				   struct smc_result *res)
+{
+	rtt_aux_unmap(rd_addr, unmap_addr, index, res, false);
 }
