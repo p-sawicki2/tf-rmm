@@ -167,7 +167,8 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_AUX_READ_ENTRY,	4, 4, smc_rtt_aux_read_entry,	 false, true),
 	HANDLER(RTT_AUX_MAP_PROTECTED,	3, 4, smc_rtt_aux_map_protected, false, true),
 	HANDLER(RTT_AUX_MAP_UNPROTECTED,3, 3, smc_rtt_aux_map_unprotected, false, true),
-	HANDLER(RTT_AUX_UNMAP_PROTECTED,3, 2, smc_rtt_aux_unmap_protected, false, true)
+	HANDLER(RTT_AUX_UNMAP_PROTECTED,3, 2, smc_rtt_aux_unmap_protected, false, true),
+	HANDLER(RTT_AUX_UNMAP_UNPROTECTED,3, 2, smc_rtt_aux_unmap_unprotected, false, true)
 };
 
 /*
