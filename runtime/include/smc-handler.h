@@ -138,4 +138,9 @@ void smc_rtt_aux_unmap_protected(unsigned long rd_addr,
 				 unsigned long unmap_addr,
 				 unsigned long index,
 				 struct smc_result *res);
+
+void smc_rtt_aux_unmap_unprotected(unsigned long rd_addr,
+				   unsigned long unmap_addr,
+				   unsigned long index,
+				   struct smc_result *res);
 #endif /* SMC_HANDLER_H */

@@ -473,6 +473,17 @@
 
 /*
  * arg0 == RD address
+ * arg1 == unmap address
+ * arg2 == RTT Tree index
+ *
+ * ret1 == Top IPA of non-live RTT entries from entry at which the RTT walk terminated
+ * ret2 == level of RTTE reached by a walk of the RTT
+ * if ret0 == RMI_SUCCESS, otherwise, undefined.
+ */
+#define SMC_RMM_RTT_AUX_UNMAP_UNPROTECTED	SMC64_RMI_FID(U(0x34))
+
+/*
+ * arg0 == RD address
  * arg1 == REC address
  * arg2 == Start address
  * arg3 == End address
