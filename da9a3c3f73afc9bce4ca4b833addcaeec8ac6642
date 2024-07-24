@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8c27d45_c23d0420",
+        "filename": "runtime/rsi/memory.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-07-24T15:14:56Z",
+      "side": 1,
+      "message": "Need to unlock the rd",
+      "range": {
+        "startLine": 205,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 13
+      },
+      "revId": "da9a3c3f73afc9bce4ca4b833addcaeec8ac6642",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
