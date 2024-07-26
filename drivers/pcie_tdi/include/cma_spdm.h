@@ -20,6 +20,11 @@ typedef unsigned long dev_handle_t;
 #define SPDM_DEINIT_CONNECTION		0x11U
 #define SPDM_SECURE_SESSION		0x12U
 
+#define CMA_SPDM_SIG_ECDSA_P256		0x1
+#define CMA_SPDM_SIG_ECDSA_P384		0x2
+#define CMA_SPDM_SIG_RSASSA_3072	0x3
+#define CMA_SPDM_SIG_ALGO_INVALID	0xFF
+
 /*
  * Device communication operations to send/recv management data to device (DSM).
  * NS host handles device communications. RMM reads/writes to NS buffer and does
@@ -44,4 +49,7 @@ int cma_spdm_context_init(void *cma_spdm_priv_data,
 int cma_spdm_cmd_dispatch(int cmd, void *cma_spdm_context);
 
 int cma_spdm_cmd_resume(void *cma_spdm_context);
+
+int cma_spdm_set_key(void *cma_spdm_context, uint8_t *key, size_t key_len,
+		     uint8_t key_sig_algo);
 #endif /* CMA_SPDM_H */

@@ -479,6 +479,94 @@ int cma_spdm_cmd_resume(void *cma_spdm_context)
 }
 
 /*
+ * Set public key context in libspdm connection
+ */
+int cma_spdm_set_key(void *cma_spdm_context, uint8_t *key, size_t key_len,
+		     uint8_t key_sig_algo)
+{
+	struct cma_spdm_context *cma;
+	libspdm_data_parameter_t parameter;
+	libspdm_return_t status;
+	void *data_ptr;
+	int rc;
+
+	cma = (struct cma_spdm_context *)cma_spdm_context;
+
+	if (key_sig_algo == CMA_SPDM_SIG_ECDSA_P256 ||
+	    key_sig_algo == CMA_SPDM_SIG_ECDSA_P384) {
+		mbedtls_ecdh_context *ecdh;
+		mbedtls_ecp_keypair kp;
+		mbedtls_ecp_group grp;
+		mbedtls_ecp_point pt;
+
+		ecdh = &cma->pk_ctx.ecdh;
+
+		mbedtls_ecdh_init(ecdh);
+		mbedtls_ecp_keypair_init(&kp);
+		mbedtls_ecp_group_init(&grp);
+		mbedtls_ecp_point_init(&pt);
+
+		/* todo: call keypair/group/point_free upon error */
+		if (key_sig_algo == CMA_SPDM_SIG_ECDSA_P256) {
+			INFO("MBEDTLS_ECP_DP_SECP256R1\n");
+			rc = mbedtls_ecp_group_load(&grp,
+						    MBEDTLS_ECP_DP_SECP256R1);
+		} else {
+			INFO("MBEDTLS_ECP_DP_SECP384R1\n");
+			rc = mbedtls_ecp_group_load(&grp,
+						    MBEDTLS_ECP_DP_SECP384R1);
+		}
+		if (rc != 0) {
+			return -1;
+		}
+
+		rc = mbedtls_ecp_point_read_binary(&grp, &pt, key, key_len);
+		if (rc != 0) {
+			return -1;
+		}
+
+		rc = mbedtls_ecp_set_public_key(grp.id, &kp, &pt);
+		if (rc != 0) {
+			return -1;
+		}
+
+		rc = mbedtls_ecdh_get_params(ecdh, &kp, MBEDTLS_ECDH_OURS);
+		if (rc != 0) {
+			return -1;
+		}
+	} else if (key_sig_algo == CMA_SPDM_SIG_RSASSA_3072) {
+		/* Public exponent of RSA3072 key is 65537 */
+		uint8_t rsa_e[] = { 0x01, 0x00, 0x01 };
+		mbedtls_rsa_context *ctx;
+
+		ctx = &cma->pk_ctx.rsa;
+
+		mbedtls_rsa_init(ctx);
+		rc = mbedtls_rsa_import_raw(ctx, key, key_len, NULL, 0, NULL, 0,
+					    NULL, 0, rsa_e, sizeof(rsa_e));
+		if (rc != 0) {
+			return -1;
+		}
+	} else {
+		return -1;
+	}
+
+	/* Set LIBSPDM_DATA_PEER_USED_CERT_CHAIN_PUBLIC_KEY in spdm connection */
+	memset(&parameter, 0, sizeof(parameter));
+	parameter.location = LIBSPDM_DATA_LOCATION_CONNECTION;
+	parameter.additional_data[0] = cma->cert_slot_id;
+	data_ptr = (void *)&cma->pk_ctx;
+	status = libspdm_set_data((void *)&cma->libspdm_context,
+				  LIBSPDM_DATA_PEER_USED_CERT_CHAIN_PUBLIC_KEY,
+				  &parameter, &data_ptr, sizeof(data_ptr));
+	if (status != LIBSPDM_STATUS_SUCCESS) {
+		return -1;
+	}
+
+	return 0;
+}
+
+/*
  * Returns CMA SPDM context size. This include libspdm context, libspdm
  * secured message context, libspdm send/recv buffer, libspdm scratch space and
  * libspdm stack.

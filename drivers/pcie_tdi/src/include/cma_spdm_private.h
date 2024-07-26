@@ -12,6 +12,8 @@
 #include <industry_standard/spdm_secured_message.h>
 #include <library/spdm_requester_lib.h>
 #include <library/spdm_secured_message_lib.h>
+#include <mbedtls/ecdh.h>
+#include <mbedtls/rsa.h>
 #include <psa/crypto.h>
 #include <utils_def.h>
 
@@ -177,6 +179,12 @@ struct cma_spdm_context {
 	uint8_t spdm_cert_chain_digest[64];
 	size_t spdm_cert_chain_digest_length;
 	size_t spdm_cert_chain_len;
+
+	/* Public key context */
+	union {
+		mbedtls_ecdh_context ecdh;
+		mbedtls_rsa_context rsa;
+	} pk_ctx __aligned(32);
 
 	/*
 	 * Device communication callbacks ops to send, recv and cache device

@@ -104,6 +104,10 @@ unsigned long smc_pdev_communicate(unsigned long pdev_ptr,
 				   unsigned long io_data_ptr);
 
 void smc_pdev_get_state(unsigned long pdev_ptr, struct smc_result *res);
+
+unsigned long smc_pdev_set_key(unsigned long pdev_ptr, unsigned long key_ptr,
+			       unsigned long key_len,
+			       unsigned long key_sig_algo);
 #else /* !RMM_CCA_DA */
 static inline unsigned long smc_pdev_create(unsigned long pdev_ptr,
 					    unsigned long pdev_params_ptr)
@@ -124,6 +128,14 @@ static inline void smc_pdev_get_state(unsigned long pdev_ptr,
 {
 	/* Replace with RMI_ERROR_NOT_SUPPORTED */
 	res->x[0] = SMC_NOT_SUPPORTED;
+}
+
+static inline unsigned long smc_pdev_set_key(unsigned long pdev_ptr,
+					     unsigned long key_ptr,
+					     unsigned long key_len,
+					     unsigned long key_sig_algo)
+{
+	return SMC_NOT_SUPPORTED;
 }
 #endif /* RMM_CCA_DA */
 #endif /* SMC_HANDLER_H */

@@ -25,6 +25,8 @@
 #define PDEV_IO_IDLE		0x2
 #define PDEV_IO_PENDING		0x3
 
+#define PUBLIC_KEY_LEN_MAX	512
+
 #define PDEV_HEAP_SIZE		(3U * SZ_4K)
 
 #define pdev_to_devh(pd)	((dev_handle_t)((unsigned long)(pd)))
@@ -637,4 +639,124 @@ out_err_input:
 	res->x[0] = RMI_ERROR_INPUT;
 
 	return;
+}
+
+static uint8_t rmi_to_cma_spdm_sig_algo(uint8_t rmi_key_algo)
+{
+	if (rmi_key_algo == RMI_SIGNATURE_ALGORITHM_ECDSA_P256) {
+		return CMA_SPDM_SIG_ECDSA_P256;
+	} else if (rmi_key_algo == RMI_SIGNATURE_ALGORITHM_ECDSA_P384) {
+		return CMA_SPDM_SIG_ECDSA_P384;
+	} else if (rmi_key_algo == RMI_SIGNATURE_ALGORITHM_RSASSA_3072) {
+		return CMA_SPDM_SIG_RSASSA_3072;
+	}
+
+	return CMA_SPDM_SIG_ALGO_INVALID;
+}
+
+/*
+ * Provide public key associated with a PDEV.
+ *
+ * pdev_ptr	- PA of the PDEV
+ * key_ptr	- PA of the key
+ * key_len	- Length of the key in bytes
+ * key_sig_algo	- Signature algorithm
+ */
+unsigned long smc_pdev_set_key(unsigned long pdev_ptr, unsigned long key_ptr,
+			       unsigned long key_len, unsigned long key_sig_algo)
+{
+	struct granule *g_pdev;
+	struct granule *g_key;
+	void *aux_mapped_addr __unused;
+	size_t key_len_rounded;
+	bool ns_access_ok;
+	struct pdev *pd;
+	uint8_t key[PUBLIC_KEY_LEN_MAX];
+	uint8_t cma_spdm_sig_algo;
+	int cma_rc;
+	int rc;
+
+	if (!GRANULE_ALIGNED(pdev_ptr) || !GRANULE_ALIGNED(key_ptr)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/* Check if key_ptr is in NS PAS */
+	if (granule_unlocked_state(find_granule(key_ptr)) != GRANULE_STATE_NS) {
+		return RMI_ERROR_INPUT;
+	}
+
+	cma_spdm_sig_algo = rmi_to_cma_spdm_sig_algo(key_sig_algo);
+	if (cma_spdm_sig_algo == CMA_SPDM_SIG_ALGO_INVALID) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/*
+	 * Check key_len parameter value with PUBLIC_KEY_LEN_MAX.
+	 * todo: Validater 'key_len' against max key length based on algorithm
+	 */
+	if (key_len > PUBLIC_KEY_LEN_MAX) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/* Map and copy public key */
+	g_key = find_granule(key_ptr);
+	if ((g_key == NULL || granule_unlocked_state(g_key) !=
+	     GRANULE_STATE_NS)) {
+		return RMI_ERROR_INPUT;
+	}
+
+	key_len_rounded = round_up(key_len, 8);
+	ns_access_ok = ns_buffer_read(SLOT_NS, g_key, 0U, key_len_rounded, key);
+	if (!ns_access_ok) {
+		return RMI_ERROR_INPUT;
+	}
+
+	/* Lock pdev granule and map it */
+	g_pdev = find_lock_granule(pdev_ptr, GRANULE_STATE_PDEV);
+	if (g_pdev == NULL) {
+		return RMI_ERROR_INPUT;
+	}
+
+	pd = buffer_granule_map(g_pdev, SLOT_PDEV);
+	if (pd == NULL) {
+		granule_unlock(g_pdev);
+		return RMI_ERROR_INPUT;
+	}
+
+	assert(pd->g_pdev == g_pdev);
+
+	if (pd->rmi_state != RMI_PDEV_STATE_NEEDS_KEY) {
+		rc = RMI_ERROR_DEVICE;
+		goto out_pdev_buf_unmap;
+	}
+
+	/* Map PDEV aux granules */
+	aux_mapped_addr = buffer_pdev_aux_granules_map(pd->g_aux, pd->num_aux);
+	assert(aux_mapped_addr != NULL);
+
+	/* If PDEV needs heap, associate the heap context with current CPU */
+	rc = buffer_alloc_ctx_assign(&pd->heap_ctx);
+	assert(rc == 0);
+
+	cma_rc = cma_spdm_set_key(pd->dev.cma_spdm_priv_data, key, key_len,
+				  cma_spdm_sig_algo);
+	if (cma_rc == CMA_SPDM_STATUS_SUCCESS) {
+		pd->io_state = PDEV_IO_PENDING;
+		pd->rmi_state = RMI_PDEV_STATE_HAS_KEY;
+		rc = RMI_SUCCESS;
+	} else {
+		rc = RMI_ERROR_DEVICE;
+	}
+
+	/* Unmap all PDEV aux granules */
+	buffer_pdev_aux_unmap(aux_mapped_addr, pd->num_aux);
+
+	buffer_alloc_ctx_unassign();
+
+out_pdev_buf_unmap:
+	buffer_unmap(pd);
+
+	granule_unlock(g_pdev);
+
+	return rc;
 }
