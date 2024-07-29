@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0937c90a_df09ce27",
+        "filename": "lib/slot_buf/src/buffer.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-07-29T09:13:25Z",
+      "side": 1,
+      "message": "Raghu\u0027s original code was just like your suggestion Soby, I asked him this change to reduce code duplication. I didn\u0027t consider the possible performance gain through inlining. https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/29291/3/runtime/core/hes_queue.c#104\n\nHaving an internal (static) helper seems to be a good idea with regards to invalid possibilities of `slot`. It seems that inlining still works in that case if the function is called from the same compilation unit: https://godbolt.org/z/WqoE8T14c\n\nHowever the function definition is in a library, and we are calling them from runtime, I\u0027m not sure inlining will work across compilation units, as we are not using Link time optimization as far as I know.",
+      "parentUuid": "28057d71_33d4badc",
+      "range": {
+        "startLine": 224,
+        "startChar": 6,
+        "endLine": 224,
+        "endChar": 29
+      },
+      "revId": "88cf55373c89de64da4deb64e257d09a7dabd1fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0cd787df_33ee6008",
         "filename": "runtime/core/hes_queue.c",
         "patchSetId": 11
