@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00eb08b0_660d0762",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-07-29T19:56:43Z",
+      "side": 1,
+      "message": "ripas of aux rtt can only be assigned ram or assigned destroyed, shall we skip or add assert in other cases?",
+      "revId": "b589ac472aad7dbe4b3b45a69a89102bbc0bf7c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
