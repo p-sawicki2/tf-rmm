@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17f8303a_c3fbf51f",
+        "filename": "lib/xlat/src/xlat_contexts.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-07-29T10:17:48Z",
+      "side": 1,
+      "message": "assert(!is_mmu_enabled());\n?",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd3a38fa_2530655a",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-07-29T10:17:48Z",
+      "side": 1,
+      "message": "uintptr_t is unsigned long, so 1UL",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba0ea05c_76728d95",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 2376,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-07-29T10:17:48Z",
+      "side": 1,
+      "message": "xlat_ctx_cfg_init_tc14() uses uintptr_t, why is it uint64_t here?",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab0fa27f_86118e6c",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-07-29T10:17:48Z",
+      "side": 1,
+      "message": "1UL",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
