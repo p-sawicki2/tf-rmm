@@ -240,4 +240,95 @@ struct rsi_host_call {
  */
 #define SMC_RSI_MEM_SET_PERM_VALUE	SMC64_RSI_FID(U(0x12))
 
+/* Number of general purpose registers per Plane */
+#define RSI_PLANE_NR_GPRS		31
+
+/* Maximum number of Interrupt Controller List Registers */
+#define RSI_PLANE_GIC_NUM_LRS		U(16)
+
+/* RsiPlaneExitReason represents the reason for a Plane exit */
+#define RSI_EXIT_SYNC			U(0)
+#define RSI_EXIT_IRQ			U(1)
+
+#ifndef __ASSEMBLER__
+
+/*
+ * Data passed from Primary plane to the RMM on entry to a Secondary plane
+ */
+struct rsi_plane_enter {
+	/* Flags - Offset 0x0 */
+	SET_MEMBER_RSI(unsigned long flags, 0, 0x8);
+	/* Program counter - Offset 0x8 */
+	SET_MEMBER_RSI(unsigned long pc, 0x8, 0x100);
+	/* General purpose registers - Offset 0x100 */
+	SET_MEMBER_RSI(unsigned long gprs[RSI_PLANE_NR_GPRS], 0x100, 0x200);
+	/* GICv3 registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* GICv3 Hypervisor Control Register - Offset 0x200 */
+			unsigned long gicv3_hcr;
+			/* GICv3 List Registers - Offset 0x208 */
+			unsigned long gicv3_lrs[RSI_PLANE_GIC_NUM_LRS];
+		}, 0x200, 0x300);
+};
+
+/*
+ * Data passed from the RMM to Primary Plane on exit from Secondary Plane
+ */
+struct rsi_plane_exit {
+	/* Exit reason - Offset 0x0 */
+	SET_MEMBER_RSI(unsigned long exit_reason, 0x0, 0x100);
+	/* EL2 system registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* Exception Link Register - Offset 0x100 */
+			unsigned long elr_el2;
+			/* Exception Syndrome Register - Offset 0x108 */
+			unsigned long esr_el2;
+			/* Fault Address Register - Offset 0x110 */
+			unsigned long far_el2;
+			/* Hypervisor IPA Fault Address register - Offset 0x118 */
+			unsigned long hpfar_el2;
+		}, 0x100, 0x200);
+	/* General purpose registers - Offset 0x200 */
+	SET_MEMBER_RSI(unsigned long gprs[RSI_PLANE_NR_GPRS], 0x200, 0x300);
+	/* GICv3 registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* GICv3 Hypervisor Control Register - Offset 0x300 */
+			unsigned long gicv3_hcr;
+			/* GICv3 List Registers - Offset 0x308 */
+			unsigned long gicv3_lrs[RSI_PLANE_GIC_NUM_LRS];
+			/* GICv3 Maintenance Interrupt State Register - Offset 0x388 */
+			unsigned long gicv3_misr;
+			/* GICv3 Virtual Machine Control Register - Offset 0x390*/
+			unsigned long gicv3_vmcr;
+		}, 0x300, 0x400);
+	/* Timer registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* Physical Timer Control Register Value - Offstet 0x400 */
+			unsigned long cntp_ctl;
+			/* Physical Timer Compare Value Register - Offset 0x408 */
+			unsigned long cntp_cval;
+			/* Virtual Timer Control Register Value - Offset 0x410 */
+			unsigned long cntv_ctl;
+			/* Virtual Timer Compare Value Register - Offset 0x418 */
+			unsigned long cntv_cval;
+		}, 0x400, 0x500);
+};
+
+/*
+ * Data shared between Primary Plane and the RMM during entry to and exit
+ * from Secondary Planes.
+ */
+struct rsi_plane_run {
+	/* Entry information - Offset 0x0 */
+	SET_MEMBER_RSI(struct rsi_plane_enter enter, 0x0, 0x800);
+	/* Exit information - Offset 0x800 */
+	SET_MEMBER_RSI(struct rsi_plane_exit exit, 0x800, 0x1000);
+};
+
+#endif /* __ASSEMBLER__ */
+
 #endif /* SMC_RSI_H */
