@@ -174,6 +174,8 @@ struct rec_plane {
 	unsigned long pc;
 	unsigned long pstate;
 
+	bool trap_hc;
+
 	STRUCT_TYPE {
 		/*
 		 * The contents of the *_EL2 system registers at the last time

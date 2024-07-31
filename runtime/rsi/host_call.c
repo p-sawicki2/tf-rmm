@@ -76,6 +76,7 @@ static void do_host_call(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	if (rec_exit != NULL) {
 		/* Copy host call arguments to REC exit data structure */
 		rec_exit->imm = host_call->imm;
+		rec_exit->plane = rec->active_plane_id;
 		for (i = 0U; i < RSI_HOST_CALL_NR_GPRS; i++) {
 			rec_exit->gprs[i] = host_call->gprs[i];
 		}
