@@ -237,7 +237,16 @@ static bool complete_host_call(struct rec *rec, struct rmi_rec_run *rec_run)
 	walk_result = complete_rsi_host_call(rec, &rec_run->enter);
 
 	if (walk_result.abort) {
-		emulate_stage2_data_abort(rec, &rec_run->exit, walk_result.rtt_level);
+		/*
+		 * The IPA where the result should be copied to (referred to by
+		 * X1 at RSI_HOST_CALL) has RAM ripas but invalid mapping.
+		 * Emulate the data abort against that IPA so that the host
+		 * can bring the page in.
+		 */
+		unsigned long ipa = rec_active_plane(rec)->regs[1];
+
+		emulate_stage2_data_abort(rec, &rec_run->exit,
+					  walk_result.rtt_level, ipa);
 		return false;
 	}
 

@@ -372,7 +372,7 @@ static inline unsigned long mpidr_to_rec_idx(unsigned long mpidr)
 void rec_run_loop(struct rec *rec, struct rmi_rec_exit *rec_exit);
 void inject_serror(struct rec *rec, unsigned long vsesr);
 void emulate_stage2_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
-			       unsigned long rtt_level);
+			       unsigned long rtt_level, unsigned long ipa);
 
 #endif /* __ASSEMBLER__ */
 #endif /* REC_H */
