@@ -171,10 +171,9 @@ static bool handle_sync_external_abort(struct rec *rec,
 
 void emulate_stage2_data_abort(struct rec *rec,
 			       struct rmi_rec_exit *rec_exit,
-			       unsigned long rtt_level)
+			       unsigned long rtt_level,
+			       unsigned long ipa)
 {
-	unsigned long fipa = rec_active_plane(rec)->regs[1];
-
 	assert(rtt_level <= (unsigned long)S2TT_PAGE_LEVEL);
 
 	/*
@@ -184,7 +183,7 @@ void emulate_stage2_data_abort(struct rec *rec,
 	rec_exit->esr = (ESR_EL2_EC_DATA_ABORT |
 			(ESR_EL2_ABORT_FSC_TRANSLATION_FAULT_L0 + rtt_level));
 	rec_exit->far = 0UL;
-	rec_exit->hpfar = fipa >> HPFAR_EL2_FIPA_OFFSET;
+	rec_exit->hpfar = ipa >> HPFAR_EL2_FIPA_OFFSET;
 	rec_exit->exit_reason = RMI_EXIT_SYNC;
 }
 
@@ -470,7 +469,19 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	}
 
 	if (((unsigned int)res.action & FLAG_STAGE_2_ABORT) != 0U) {
-		emulate_stage2_data_abort(rec, rec_exit, res.rtt_level);
+		/*
+		 * The RSI call cannot progress because the IPA that was
+		 * provided by the Realm has invalid mapping. Emulate the
+		 * data abort gainst that IPA so that the host can bring
+		 * the page in.
+		 *
+		 * @TODO: All RSI calls hold the IPA in X1. This may not be
+		 * true in the future so further refactoring around data abort
+		 * emulation might be required.
+		 */
+		unsigned long ipa = rec_active_plane(rec)->regs[1];
+
+		emulate_stage2_data_abort(rec, rec_exit, res.rtt_level, ipa);
 	} else {
 		advance_pc();
 	}
