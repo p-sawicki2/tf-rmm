@@ -38,6 +38,8 @@ COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, exit_reason)) == 0U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, esr)) == 0x100U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, far)) == 0x108U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, hpfar)) == 0x110U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, rtt_tree)) == 0x118U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, rtt_level)) == 0x120U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gprs)) == 0x200U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gicv3_hcr)) == 0x300U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gicv3_lrs)) == 0x308U);

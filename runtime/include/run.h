@@ -30,4 +30,7 @@ void restore_realm_state(struct rec *rec, struct rec_plane *plane);
 /* Save the realm state @plane */
 void save_realm_state(struct rec_plane *plane);
 
+/* Configure system registers for the curren stage 2 running @rec */
+void configure_realm_stage2(struct rec *rec);
+
 #endif /* RUN_H */

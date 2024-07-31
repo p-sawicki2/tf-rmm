@@ -240,4 +240,129 @@ struct rsi_host_call {
  */
 #define SMC_RSI_MEM_SET_PERM_VALUE	SMC64_RSI_FID(U(0x12))
 
+/* Number of general purpose registers per Plane */
+#define RSI_PLANE_NR_GPRS		31
+
+/* Maximum number of Interrupt Controller List Registers */
+#define RSI_PLANE_GIC_NUM_LRS		U(16)
+
+/* RsiPlaneExitReason represents the reason for a Plane exit */
+#define RSI_EXIT_SYNC			U(0)
+#define RSI_EXIT_IRQ			U(1)
+
+#ifndef __ASSEMBLER__
+
+/*
+ * EL1 system registers per Plane
+ */
+struct rsi_plane_el1_sysregs {
+	unsigned long sp_el0;			/*   0x0 */
+	unsigned long sp_el1;			/*   0x8 */
+	unsigned long elr_el1;			/*  0x10 */
+	unsigned long spsr_el1;			/*  0x18 */
+	unsigned long pmcr_el0;			/*  0x20 */
+	unsigned long pmuserenr_el0;		/*  0x28 */
+	unsigned long tpidrro_el0;		/*  0x30 */
+	unsigned long tpidr_el0;		/*  0x38 */
+	unsigned long csselr_el1;		/*  0x40 */
+	unsigned long sctlr_el1;		/*  0x48 */
+	unsigned long actlr_el1;		/*  0x50 */
+	unsigned long cpacr_el1;		/*  0x58 */
+	unsigned long zcr_el1;			/*  0x60 */
+	unsigned long ttbr0_el1;		/*  0x68 */
+	unsigned long ttbr1_el1;		/*  0x70 */
+	unsigned long tcr_el1;			/*  0x78 */
+	unsigned long esr_el1;			/*  0x80 */
+	unsigned long afsr0_el1;		/*  0x88 */
+	unsigned long afsr1_el1;		/*  0x90 */
+	unsigned long far_el1;			/*  0x98 */
+	unsigned long mair_el1;			/*  0xA0 */
+	unsigned long vbar_el1;			/*  0xA8 */
+	unsigned long contextidr_el1;		/*  0xB0 */
+	unsigned long tpidr_el1;		/*  0xB8 */
+	unsigned long amair_el1;		/*  0xC0 */
+	unsigned long cntkctl_el1;		/*  0xC8 */
+	unsigned long par_el1;			/*  0xD0 */
+	unsigned long mdscr_el1;		/*  0xD8 */
+	unsigned long mdccint_el1;		/*  0xE0 */
+	unsigned long disr_el1;			/*  0xE8 */
+	unsigned long mpam0_el1;		/*  0xF0 */
+
+	/* Timer Registers */
+	unsigned long cntp_ctl_el0;		/*  0xF8 */
+	unsigned long cntp_cval_el0;		/* 0x100 */
+	unsigned long cntv_ctl_el0;		/* 0x108 */
+	unsigned long cntv_cval_el0;		/* 0x110 */
+};
+
+/*
+ * Data passed from P0 to the RMM on entry to Pn
+ */
+struct rsi_plane_entry {
+	/* Flags */
+	SET_MEMBER_RSI(unsigned long flags, 0, 0x8);				/*   0x0 */
+	/* Program counter */
+	SET_MEMBER_RSI(unsigned long pc, 0x8, 0x100);				/*   0x8 */
+	/* General purpose registers */
+	SET_MEMBER_RSI(unsigned long gprs[RSI_PLANE_NR_GPRS], 0x100, 0x200);	/* 0x100 */
+	/* EL1 system registers */
+	SET_MEMBER_RSI(struct rsi_plane_el1_sysregs el1_sysregs, 0x200, 0x400);	/* 0x200 */
+	/* GICv3 registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* GICv3 Hypervisor Control Register */
+			unsigned long gicv3_hcr;				/* 0x400 */
+			/* GICv3 List Registers */
+			unsigned long gicv3_lrs[RSI_PLANE_GIC_NUM_LRS];		/* 0x408 */
+		}, 0x400, 0x500);
+};
+
+/*
+ * Data passed from the RMM to P0 on exit from Pn
+ */
+struct rsi_plane_exit {
+	/* Exit reason */
+	SET_MEMBER_RSI(unsigned long exit_reason, 0x0, 0x100);			/*   0x0 */
+	/* EL2 system registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* Exception Link Register */
+			unsigned long elr_el2;					/* 0x100 */
+			/* Exception Syndrome Register */
+			unsigned long esr_el2;					/* 0x108 */
+			/* Fault Address Register */
+			unsigned long far_el2;					/* 0x110 */
+			/* Hypervisor IPA Fault Address register */
+			unsigned long hpfar_el2;				/* 0x118 */
+		}, 0x100, 0x200);
+	/* General purpose registers */
+	SET_MEMBER_RSI(unsigned long gprs[RSI_PLANE_NR_GPRS], 0x200, 0x300);	/* 0x200 */
+	/* EL1 system registers */
+	SET_MEMBER_RSI(struct rsi_plane_el1_sysregs el1_sysregs, 0x300, 0x500);	/* 0x300 */
+	/* GICv3 registers */
+	SET_MEMBER_RSI(
+		struct {
+			/* GICv3 Hypervisor Control Register */
+			unsigned long gicv3_hcr;				/* 0x500 */
+			/* GICv3 List Registers */
+			unsigned long gicv3_lrs[RSI_PLANE_GIC_NUM_LRS];		/* 0x508 */
+			/* GICv3 Maintenance Interrupt State Register */
+			unsigned long gicv3_misr;				/* 0x588 */
+			/* GICv3 Virtual Machine Control Register */
+			unsigned long gicv3_vmcr;				/* 0x590 */
+		}, 0x500, 0x600);
+};
+
+/*
+ * Data shared between P0 and the RMM during entry to and exit from Pn
+ */
+struct rsi_plane_run {
+	/* Entry information */
+	SET_MEMBER_RSI(struct rsi_plane_entry entry, 0x0, 0x800);		/*   0x0 */
+	/* Exit information */
+	SET_MEMBER_RSI(struct rsi_plane_exit exit, 0x800, 0x1000);		/* 0x800 */
+};
+
+#endif /* __ASSEMBLER__ */
+
 #endif /* SMC_RSI_H */
