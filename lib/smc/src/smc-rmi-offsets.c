@@ -38,6 +38,8 @@ COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, exit_reason)) == 0U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, esr)) == 0x100U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, far)) == 0x108U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, hpfar)) == 0x110U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, rtt_tree)) == 0x118U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, rtt_level)) == 0x120U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gprs)) == 0x200U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gicv3_hcr)) == 0x300U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, gicv3_lrs)) == 0x308U);
@@ -54,6 +56,7 @@ COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, ripas_io_pa)) == 0x518U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, s2ap_base)) == 0x520U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, s2ap_top)) == 0x528U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, imm)) == 0x600U);
+COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, plane)) == 0x608U);
 COMPILER_ASSERT(U(offsetof(struct rmi_rec_exit, pmu_ovf_status)) == 0x700U);
 
 COMPILER_ASSERT(sizeof(struct rmi_rec_run) <= GRANULE_SIZE);
