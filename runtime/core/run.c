@@ -128,7 +128,7 @@ static void restore_sysreg_state(struct sysreg_state *sysregs)
 	write_cntv_ctl_el02(sysregs->cntv_ctl_el0);
 }
 
-static void configure_realm_stage2(struct rec *rec)
+void configure_realm_stage2(struct rec *rec)
 {
 	unsigned int s2_ctx_id = active_s2_context_idx(rec);
 
