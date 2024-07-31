@@ -606,6 +606,10 @@ struct rmi_rec_exit {
 			unsigned long far;		/* 0x108 */
 			/* Hypervisor IPA Fault Address register */
 			unsigned long hpfar;		/* 0x110 */
+			/* Index of RTT tree active at time of exit */
+			unsigned long rtt_tree;		/* 0x118 */
+			/* Level of requested RTT */
+			unsigned long rtt_level;	/* 0x120 */
 		   }, 0x100, 0x200);
 	/* General-purpose registers */
 	SET_MEMBER_RMI(unsigned long gprs[REC_EXIT_NR_GPRS], 0x200, 0x300); /* 0x200 */
@@ -644,7 +648,13 @@ struct rmi_rec_exit {
 			unsigned long s2ap_top;		/* 0x528 */
 		   }, 0x500, 0x600);
 	/* Host call immediate value */
-	SET_MEMBER_RMI(unsigned int imm, 0x600, 0x700);	/* 0x600 */
+	SET_MEMBER_RMI(struct {
+			/* Host call immediate value */
+			unsigned int imm;		/* 0x600 */
+			/* Plane index */
+			unsigned long plane;		/* 0x608 */
+		   }, 0x600, 0x700);
+
 	/* PMU overflow status */
 	SET_MEMBER_RMI(unsigned long pmu_ovf_status, 0x700, 0x800);	/* 0x700 */
 };
