@@ -226,6 +226,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8eaa9fe0_fb90b205",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:02:18Z",
+      "side": 1,
+      "message": "You are right on the error code. Here the smc_res.x[0] is of unsigned long type. So either you would need to typecase LHS to signed and then use 0L or if you dont care about the actual value, keep the LHS as unsigned and then use 0UL.",
+      "parentUuid": "d8a070f3_f3a935ef",
+      "range": {
+        "startLine": 97,
+        "startChar": 22,
+        "endLine": 97,
+        "endChar": 23
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4d7c5ed_9f722743",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 4
@@ -332,6 +356,30 @@
       "side": 1,
       "message": "Hi Soby, \nI think that it would be nice to consider the possibility for the token retrieval to be reset, and therefore start getting the token from its beginning, provided that c_size !\u003d 0, and without minding where platform_token_offset points at. This means that, whether the token has been fully retrieved or not, using c_size !\u003d will reset platform_token_offset and start copying from the beginning of the token again. Therefore, there would be no need to wait for the full token to be retrieved before asking for the full token again.\n\nLet me know what you think.",
       "parentUuid": "76465bef_b86cb745",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a4455d0_deff8622",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:02:18Z",
+      "side": 1,
+      "message": "Yup, this was my thinking as well and I could see that in your code. The second code snippet I suggested should have that behaviour. \n\nIt also handles the case that if platform_token_offset is 0, then having c_size \u003d\u003d 0 is an error.",
+      "parentUuid": "2839036b_247873e1",
       "range": {
         "startLine": 159,
         "startChar": 1,

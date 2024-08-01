@@ -26,6 +26,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3bd13f2c_9df265f0",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:02:18Z",
+      "side": 1,
+      "message": "nit: would be good to define all the error codes as defined here : https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-el3-runtime-service-return-codes",
+      "revId": "f04afce5fc8d8ef105dbef3d14290200753d3575",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ccd6f10_31402018",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:02:18Z",
+      "side": 1,
+      "message": "There could be several errors and this is one of the possibilities. \n\n\"An error in input arguments. This could also be due to the fact that the token has been retrieved fully in a prior call and the arguments should correspond to token generation phase.\"",
+      "range": {
+        "startLine": 326,
+        "startChar": 18,
+        "endLine": 327,
+        "endChar": 44
+      },
+      "revId": "f04afce5fc8d8ef105dbef3d14290200753d3575",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26c7ffe4_dd6aa674",
         "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
         "patchSetId": 6
@@ -66,6 +106,23 @@
         "endLine": 17,
         "endChar": 30
       },
+      "revId": "f04afce5fc8d8ef105dbef3d14290200753d3575",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45ac6d63_ea7bd2bc",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:02:18Z",
+      "side": 1,
+      "message": "nit: It looks better if the updates are done together , perhaps after line 188.",
       "revId": "f04afce5fc8d8ef105dbef3d14290200753d3575",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
