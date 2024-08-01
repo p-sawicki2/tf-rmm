@@ -33,6 +33,23 @@
       "message": "Thanks for the fix.",
       "revId": "e9aea7fbb9cec9ee822740c83e25204145e2f8ea",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50eda886_fb395c6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-08-01T11:05:02Z",
+      "side": 1,
+      "message": "Restarted internal Coverity job passed:\nhttps://jenkins.openci.aws.arm.com/job/rmm-coverity-internal/1056/",
+      "revId": "e9aea7fbb9cec9ee822740c83e25204145e2f8ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
