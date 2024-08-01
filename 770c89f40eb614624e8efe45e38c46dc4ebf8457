@@ -20,6 +20,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3141477e_38ff5a43",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-01T10:38:23Z",
+      "side": 1,
+      "message": "nit: align to the asterisk enclosure. Do the same on other comments as well",
+      "range": {
+        "startLine": 1017,
+        "startChar": 4,
+        "endLine": 1017,
+        "endChar": 70
+      },
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "728a40df_4c86db84",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-01T10:38:23Z",
+      "side": 1,
+      "message": "Remove this. We don\u0027t need to give much implementation details of the entity under test",
+      "range": {
+        "startLine": 1018,
+        "startChar": 4,
+        "endLine": 1018,
+        "endChar": 47
+      },
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dd3a38fa_2530655a",
         "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
         "patchSetId": 8
@@ -31,6 +77,63 @@
       "writtenOn": "2024-07-29T10:17:48Z",
       "side": 1,
       "message": "uintptr_t is unsigned long, so 1UL",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19b88235_5f2f2122",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-01T10:38:23Z",
+      "side": 1,
+      "message": "nit: For readability, leave a blank line before the comment",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d59216d_cffd4b83",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-01T10:38:23Z",
+      "side": 1,
+      "message": "Since you are doing two negative tests, they should be tested separately not at the same time:\n\n- Try to initialize a context with the MMU enabled.\n- Try to initialize a context with a NULL configuration.\n\nFor the former test, you need to pass a valid configuration as we are interested in exercising the library when all the parameters are correct except for the MMU state, for the latter, the MMU should be disabled as for that test we are interested in exercising the library when the state is correct and all the parameters are correct as well except for the configuration.\n\nThat said, xlat_ctx_init_tc2() already tests a NULL configuration, so you only need to test for the former, so you need to create a valid configuration to pass to xlat_ctx_init()",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b1fef7e_5e03f14a",
+        "filename": "lib/xlat/tests/xlat_tests_base_g2.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 2259,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-01T10:38:23Z",
+      "side": 1,
+      "message": "I think we can safely remove this as the MMU is never enabled with the changes on this test.",
+      "range": {
+        "startLine": 2258,
+        "startChar": 1,
+        "endLine": 2259,
+        "endChar": 23
+      },
       "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
