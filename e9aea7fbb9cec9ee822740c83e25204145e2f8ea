@@ -16,6 +16,23 @@
       "message": "Hi Mr. Fedorov, \nCan you review and see if this patch is suitable?\nThanks!",
       "revId": "e9aea7fbb9cec9ee822740c83e25204145e2f8ea",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "272dc7d1_7b284f37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-01T09:11:19Z",
+      "side": 1,
+      "message": "Thanks for the fix.",
+      "revId": "e9aea7fbb9cec9ee822740c83e25204145e2f8ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
