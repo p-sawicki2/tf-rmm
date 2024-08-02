@@ -52,6 +52,24 @@
       "parentUuid": "036f13f3_0a78260b",
       "revId": "16dc17f5e5c44b4f1b84179a2247b9c3ae390f45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dfa4b99_29be2219",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-02T11:39:58Z",
+      "side": 1,
+      "message": "Hi Raghu,\nThinking about this more. There is a potential way to decouple aux granule mapping from hes_attest_pull-response.\n\nIf hes_attest_pull_response can return a error code to indicate that a response is available, then also return a pointer to the hes_attest_response_s, then  the caller can decide whether it belongs to current realm or map in another realm as required.\n\nFor now this sequence is OK. this can be a future enhancement. A TODO note to mention this potential solution here will be good.",
+      "parentUuid": "2c7eb1da_09d23218",
+      "revId": "16dc17f5e5c44b4f1b84179a2247b9c3ae390f45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
