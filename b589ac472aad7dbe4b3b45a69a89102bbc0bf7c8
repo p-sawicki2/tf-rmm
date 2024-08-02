@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5314150_20cd08b0",
+        "filename": "runtime/core/handler.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-02T12:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a00c43_eec0e252",
+      "revId": "b589ac472aad7dbe4b3b45a69a89102bbc0bf7c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00eb08b0_660d0762",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-29T19:56:43Z",
       "side": 1,
       "message": "ripas of aux rtt can only be assigned ram or assigned destroyed, shall we skip or add assert in other cases?",
+      "revId": "b589ac472aad7dbe4b3b45a69a89102bbc0bf7c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9db98ca_43aa220c",
+        "filename": "runtime/rmi/rtt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-08-02T12:14:22Z",
+      "side": 1,
+      "message": "I couldn\u0027t find that limitation on the spec, actually. Also, when initializing the s2 starting level (init_s2_starting_level@realm.c) all the entries in all the trees are unassigned_empty. When creating auxiliary tables, we actually copy the entries from the primary into the secondary ones, then we can map/unmap on them. Also, the failure conditions for RMI_RTT_AUX_READ_ENTRY in the spec didn\u0027t mention such limitation.",
+      "parentUuid": "00eb08b0_660d0762",
       "revId": "b589ac472aad7dbe4b3b45a69a89102bbc0bf7c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
