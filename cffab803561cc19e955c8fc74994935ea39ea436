@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6467010b_afc3bedd",
+        "filename": "lib/t_cose/include/t_cose_rmm_hes_crypto.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-08-04T00:32:31Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "bf903405_8f5ae34b",
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "039eb48b_312e3a3c",
@@ -126,6 +144,30 @@
       "side": 1,
       "message": "will add comment. I dont think the optimization to move to 111 buys us much other than a few memory accesses. this shouldnt be a highly contended lock so i\u0027d rather get correctness than save on a few accesses under lock. Signature len for example, https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30005/3/lib/t_cose/src/t_cose_rmm_hes_crypto.c optimization would break the lock being moved and would have to move the lock back up since the singature buffer pointer is accessed by the thread updating the REC.",
       "parentUuid": "5845f6d4_e5c0a113",
+      "range": {
+        "startLine": 91,
+        "startChar": 19,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "cffab803561cc19e955c8fc74994935ea39ea436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1684a713_a36addf4",
+        "filename": "lib/t_cose/src/t_cose_rmm_hes_crypto.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-08-04T00:32:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2801e21_61135763",
       "range": {
         "startLine": 91,
         "startChar": 19,
