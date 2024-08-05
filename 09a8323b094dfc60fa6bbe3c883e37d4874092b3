@@ -248,6 +248,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe13c802_ae8f6e9a",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-08-05T17:32:59Z",
+      "side": 1,
+      "message": "Got it! I think that, although we don\u0027t care much about the value but we expect a signed value, it is better to typecast.",
+      "parentUuid": "8eaa9fe0_fb90b205",
+      "range": {
+        "startLine": 97,
+        "startChar": 22,
+        "endLine": 97,
+        "endChar": 23
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4d7c5ed_9f722743",
@@ -380,6 +404,30 @@
       "side": 1,
       "message": "Yup, this was my thinking as well and I could see that in your code. The second code snippet I suggested should have that behaviour. \n\nIt also handles the case that if platform_token_offset is 0, then having c_size \u003d\u003d 0 is an error.",
       "parentUuid": "2839036b_247873e1",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa297b61_fc55460f",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-08-05T17:32:59Z",
+      "side": 1,
+      "message": "Hi Soby, \nI remember we talked offline about this last week. What comes to my mind now is the case in which you return no bytes on the first call because the HES is busy. So at least an extra call is needed with c_size \u003d 0 while platform_token_offset is still 0. It does not apply for the host harness, but just wanted to bring it up in case we want to emulate the same behavior here. Maybe we need an extra variable to account for this case.",
+      "parentUuid": "5a4455d0_deff8622",
       "range": {
         "startLine": 159,
         "startChar": 1,
