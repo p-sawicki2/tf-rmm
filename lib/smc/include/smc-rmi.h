@@ -176,6 +176,9 @@
 /* Address which is inaccessible to the Realm due to an action taken by the Host */
 #define RMI_DESTROYED	UL(2)
 
+/* Address where MMIO of an assigned Realm device is mapped */
+#define RMI_IO		UL(3)
+
 /* RmiPmuOverflowStatus enumeration representing PMU overflow status */
 #define RMI_PMU_OVERFLOW_NOT_ACTIVE	U(0)
 #define RMI_PMU_OVERFLOW_ACTIVE		U(1)
