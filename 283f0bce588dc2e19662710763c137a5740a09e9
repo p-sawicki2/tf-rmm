@@ -70,6 +70,24 @@
       "parentUuid": "518deac1_0f6c4811",
       "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9efbe85a_01366fe6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-05T09:07:12Z",
+      "side": 1,
+      "message": "To keep the version number update sane, \nI think RMM_EL3_FEATURES would need to be added to the RMM-EL3 comms first (with a minor number bump) and then the HES pull and Push SMCs added with another minor version bump. \n\nRegarding the RMM_EL3_FEATURES ,there are potentially 2 ways to implement:\n\n1. It takes the optional SMC FID as an argument and then returns SUCCESS/ERROR.\n2. No arguments are taken, and EL3 returns a bit mask , and each optional SMC has an allocated bit. If the bit is set, then the SMC is available, if unset then the SMC is not present.\n\nBoth has pros and cons. 2 has the advantage that we can retrieve all the optional services with one SMC call and hence I think this may be better approach.\n\nAs a heads up, I am on holiday for 2 weeks from tomorrow .",
+      "parentUuid": "aef8fa30_4534cf1c",
+      "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
