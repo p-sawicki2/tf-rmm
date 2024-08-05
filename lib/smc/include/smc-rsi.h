@@ -157,12 +157,25 @@
  */
 #define SET_MEMBER_RSI	SET_MEMBER
 
+/* Size of Realm Personalization Value */
+#ifndef CBMC
+#define RSI_RPV_SIZE		64
+#else
+/*
+ * Small RPV size so that RsiRealmConfig structure
+ * fits in the reduced sized granule defined for CBMC
+ */
+#define RSI_RPV_SIZE		1
+#endif
+
 /* RsiRealmConfig structure containing realm configuration */
 struct rsi_realm_config {
 	/* IPA width in bits */
 	SET_MEMBER_RSI(unsigned long ipa_width, 0, 8);		/* Offset 0 */
 	/* Hash algorithm */
-	SET_MEMBER_RSI(unsigned long algorithm, 8, 0x1000);	/* Offset 8 */
+	SET_MEMBER_RSI(unsigned char algorithm, 8, 0x200);	/* Offset 8 */
+	/* Realm Personalization Value */
+	SET_MEMBER_RSI(unsigned char rpv[RSI_RPV_SIZE], 0x200, 0x1000); /* Offset 0x200 */
 };
 
 #endif /* __ASSEMBLER__ */
