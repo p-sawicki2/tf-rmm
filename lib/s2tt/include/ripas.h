@@ -17,7 +17,8 @@
 enum ripas {
 	RIPAS_EMPTY = RMI_EMPTY,	/* Unused IPA for Realm */
 	RIPAS_RAM = RMI_RAM,		/* IPA used for Code/Data by Realm */
-	RIPAS_DESTROYED = RMI_DESTROYED	/* IPA is inaccessible to the Realm */
+	RIPAS_DESTROYED = RMI_DESTROYED,/* IPA is inaccessible to the Realm */
+	RIPAS_IO = RMI_IO		/* MMIO mapped address of assigned Realm device */
 };
 
 /*
