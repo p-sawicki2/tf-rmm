@@ -233,6 +233,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c1569a47_d74a09f2",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-08-06T22:25:16Z",
+      "side": 1,
+      "message": "I have the same doubt about uint64_t and uintptr_t. \nReferring to https://tf-rmm.readthedocs.io/en/latest/process/coding-standard.html#data-types-structures-and-typedefs for portability\nshould I also change other similar instances of start_va and end_va to uintptr_t?",
+      "parentUuid": "6de6b204_de56c70e",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "19b88235_5f2f2122",
         "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
         "patchSetId": 8
