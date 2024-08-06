@@ -48,6 +48,16 @@
 #define RMM_REALM_TOKEN_BUF_SIZE	4U
 #endif /* CBMC */
 
+/*
+ * The order of the maximum number of RECs which can be created per Realm.
+ * It is set to the width of 'refcount' field of the granule descriptor.
+ *
+ * The maximum number of RECs is computed as follows:
+ * MAX_RECS = (2 ^ RMM_REC_MAX_ORDER) - 1.
+ *
+ */
+#define RMM_REC_MAX_ORDER		GRN_REFCOUNT_WIDTH
+
 struct granule;
 
 /*
