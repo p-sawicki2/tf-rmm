@@ -7,6 +7,7 @@
 #include <assert.h>
 #include <feature.h>
 #include <gic.h>
+#include <rec.h>
 #include <s2tt.h>
 #include <simd.h>
 #include <smc-handler.h>
@@ -60,6 +61,13 @@ unsigned long get_feature_register_0(void)
 	/* Set number of List registers implemented, minus one */
 	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_GICV3_NUM_LRS,
 				gic_vgic_get_num_lrs());
+
+	/*
+	 * Set the order of the maximum number of RECs which
+	 * can be created per Realm.
+	 */
+	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_MAX_RECS_ORDER,
+				RMM_REC_MAX_ORDER);
 
 	return feat_reg0;
 }
