@@ -327,3 +327,8 @@ void gic_save_state(struct gic_cpu_state *gicstate)
 	/* On REC exit, set ICH_HCR_EL2.En == '0' */
 	write_ich_hcr_el2(gicstate->ich_hcr_el2 & ~ICH_HCR_EL2_EN_BIT);
 }
+
+unsigned long gic_vgic_get_num_lrs(void)
+{
+	return EXTRACT(ICH_VTR_EL2_LIST_REGS, read_ich_vtr_el2());
+}
