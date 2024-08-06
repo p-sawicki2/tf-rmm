@@ -6,6 +6,7 @@
 #include <arch_features.h>
 #include <assert.h>
 #include <feature.h>
+#include <gic.h>
 #include <s2tt.h>
 #include <simd.h>
 #include <smc-handler.h>
@@ -55,6 +56,9 @@ unsigned long get_feature_register_0(void)
 			     INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
 				     simd_cfg.sve_vq);
 	}
+
+	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_GICV3_NUM_LRS,
+				gic_vgic_get_num_lrs());
 
 	return feat_reg0;
 }
