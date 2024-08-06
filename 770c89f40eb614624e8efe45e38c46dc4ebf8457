@@ -215,6 +215,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6de6b204_de56c70e",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-08-06T21:40:25Z",
+      "side": 1,
+      "message": "Hi @Alexei, \nDo I need to make this change for other similar instances as well throughout this file?",
+      "parentUuid": "681391f3_def521fb",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "19b88235_5f2f2122",
         "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
         "patchSetId": 8
