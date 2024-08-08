@@ -20,6 +20,9 @@ unsigned long get_feature_register_0(void)
 	/* Set S2SZ field */
 	unsigned long s2sz = arch_feat_get_pa_width();
 	unsigned long feat_reg0 = INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, s2sz);
+	unsigned long num_bps = EXTRACT(ID_AA64DFR0_EL1_BRPs, read_id_aa64dfr0_el1());
+	unsigned long num_wps = EXTRACT(ID_AA64DFR0_EL1_WRPs, read_id_aa64dfr0_el1());
+	unsigned long num_tmp;
 	struct simd_config simd_cfg = { 0 };
 
 	/* Set LPA2 field. RMM needs both Stage 1 and Stage 2 to support LPA2 */
@@ -45,9 +48,29 @@ unsigned long get_feature_register_0(void)
 	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS,
 				EXTRACT(PMCR_EL0_N, read_pmcr_el0()));
 
-	/* The architecture requires at least two breakpoints and watchpoints */
-	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_NUM_BPS, 2U);
-	feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_NUM_WPS, 2U);
+	/*
+	 * If FEAT_Debugv8p9 is implemented and 16 or more breakpoints or
+	 * watchpoints are implemented, then BRPs and WRPs fields read as
+	 * 0b1111 and ID_AA64DFR1_EL1 indicates the number of breakpoints
+	 * and watchpoints.
+	 */
+	if (num_bps == 15UL) {
+		num_tmp = EXTRACT(ID_AA64DFR1_EL1_BRPs, read_id_aa64dfr1_el1());
+		if (num_tmp != 0UL) {
+			num_bps = num_tmp;
+		}
+	}
+
+	if (num_wps == 15UL) {
+		num_tmp = EXTRACT(ID_AA64DFR1_EL1_WRPs, read_id_aa64dfr1_el1());
+		if (num_tmp != 0UL) {
+			num_wps = num_tmp;
+		}
+	}
+
+	/* Set number of breakpoints and watchpoints */
+	feat_reg0 |= (INPLACE(RMI_FEATURE_REGISTER_0_NUM_BPS, num_bps) |
+			INPLACE(RMI_FEATURE_REGISTER_0_NUM_WPS, num_wps));
 
 	/* Get CPU simd configuration and set SVE fields if SVE is present */
 	(void)simd_get_cpu_config(&simd_cfg);
