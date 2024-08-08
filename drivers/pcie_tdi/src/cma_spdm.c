@@ -407,6 +407,48 @@ void cma_spdm_deinit_connection_main(struct cma_spdm_context *cma)
 	/* todo: cleanup/reset CMA spdm context */
 }
 
+/* cma_spdm_start_session_main */
+void cma_spdm_start_session_main(struct cma_spdm_context *cma)
+{
+	uint32_t session_id;
+	libspdm_return_t status;
+
+	/*
+	 * 1.1-alp7 removed the need for CHAL code. Retain the call to
+	 * libspdm_challenge as it helps to validate spdm_cert_chain_hash and
+	 * public key before key_exchange call. Useful for debugging.
+	 */
+	status = libspdm_challenge((void *)&cma->libspdm_context, NULL, 0,
+			SPDM_CHALLENGE_REQUEST_NO_MEASUREMENT_SUMMARY_HASH,
+				NULL, NULL);
+	cma->libspdm_cmd_rc = status;
+	INFO("libspdm_challenge: 0x%x\n", status);
+	if (cma->libspdm_cmd_rc != LIBSPDM_STATUS_SUCCESS) {
+		return;
+	}
+
+	/*
+	 * SPDM_REQUEST_NO_MEASUREMENT_SUMMARY_HASH
+	 * SPDM_REQUEST_ALL_MEASUREMENTS_HASH
+	 */
+	status = libspdm_start_session((void *)&cma->libspdm_context,
+				       false, /* use_psk */
+				       NULL, /* psk_hint */
+				       0, /* psk_hint size */
+	       SPDM_REQUEST_NO_MEASUREMENT_SUMMARY_HASH, /* meas hash type */
+				       cma->cert_slot_id, /* slot id */
+				       0, /* session policy */
+				       &session_id,
+				       NULL, /* hbeat period */
+				       NULL /* measurement_hash */);
+	if (status == LIBSPDM_STATUS_SUCCESS) {
+		cma->session_id = session_id;
+		INFO("SPDM secure session id: 0x%x\n", cma->session_id);
+	}
+
+	cma->libspdm_cmd_rc = status;
+}
+
 /* cma_spdm_cmd_dispatch */
 int cma_spdm_cmd_dispatch(int cmd, void *cma_spdm_context)
 {
@@ -426,7 +468,7 @@ int cma_spdm_cmd_dispatch(int cmd, void *cma_spdm_context)
 	} else if (cmd == SPDM_DEINIT_CONNECTION) {
 		cmd_main = (libspdm_cmd_main_t)cma_spdm_deinit_connection_main;
 	} else if (cmd == SPDM_SECURE_SESSION) {
-		assert(false);
+		cmd_main = (libspdm_cmd_main_t)cma_spdm_start_session_main;
 	} else {
 		return CMA_SPDM_STATUS_ERROR;
 	}

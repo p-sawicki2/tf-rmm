@@ -172,6 +172,7 @@ struct cma_spdm_context {
 	context_t libspdm_cmd_ctx;
 	libspdm_return_t libspdm_cmd_rc;
 	bool is_msg_sspdm;
+	uint32_t session_id;
 
 	/* spdm_cert_chain digest details */
 	psa_hash_operation_t spdm_cert_chain_hash_op;

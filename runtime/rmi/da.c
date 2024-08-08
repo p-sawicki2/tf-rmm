@@ -555,6 +555,9 @@ unsigned long smc_pdev_communicate(unsigned long pdev_ptr,
 		if (pd->rmi_state == RMI_PDEV_STATE_NEW) {
 			cma_rc = cma_spdm_cmd_dispatch(SPDM_INIT_CONNECTION,
 					       pd->dev.cma_spdm_priv_data);
+		} else if (pd->rmi_state == RMI_PDEV_STATE_HAS_KEY) {
+			cma_rc = cma_spdm_cmd_dispatch(SPDM_SECURE_SESSION,
+					       pd->dev.cma_spdm_priv_data);
 		} else {
 			cma_rc = CMA_SPDM_STATUS_ERROR;
 			assert(false);
@@ -571,6 +574,8 @@ unsigned long smc_pdev_communicate(unsigned long pdev_ptr,
 		pd->io_state = PDEV_IO_IDLE;
 		if (pd->rmi_state == RMI_PDEV_STATE_NEW) {
 			pd->rmi_state = RMI_PDEV_STATE_NEEDS_KEY;
+		} else if (pd->rmi_state == RMI_PDEV_STATE_HAS_KEY) {
+			pd->rmi_state = RMI_PDEV_STATE_READY;
 		} else {
 			assert(false);
 		}
