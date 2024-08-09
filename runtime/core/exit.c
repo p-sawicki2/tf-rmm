@@ -79,18 +79,24 @@ static bool access_in_rec_par(struct rec *rec, unsigned long addr)
  *
  * @ipa must be aligned to the granule size.
  */
-static bool ipa_is_empty(unsigned long ipa, struct rec *rec)
+static bool ipa_is_empty(unsigned long ipa, struct rec *rec,
+			 bool *is_assigned_ram)
 {
 	struct s2_walk_result s2_walk;
 	enum s2_walk_status walk_status;
 
 	assert(GRANULE_ALIGNED(ipa));
+	assert(is_assigned_ram != NULL);
 
 	walk_status = realm_ipa_to_pa(rec, ipa, &s2_walk);
 
 	if (walk_status == WALK_SUCCESS) {
 		granule_unlock(s2_walk.llt);
+		assert(s2_walk.ripas_val == RIPAS_RAM);
+		*is_assigned_ram = true;
+		return false;
 	}
+	*is_assigned_ram = false;
 
 	if ((walk_status != WALK_INVALID_PARAMS) &&
 	    (s2_walk.ripas_val == RIPAS_EMPTY)) {
@@ -202,6 +208,7 @@ static bool handle_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	unsigned long hpfar = read_hpfar_el2();
 	unsigned long fipa = (hpfar & MASK(HPFAR_EL2_FIPA)) << HPFAR_EL2_FIPA_OFFSET;
 	unsigned long write_val = 0UL;
+	bool is_assigned_ram = false;
 
 	if (handle_sync_external_abort(rec, rec_exit, esr)) {
 		/*
@@ -217,8 +224,11 @@ static bool handle_data_abort(struct rec *rec, struct rmi_rec_exit *rec_exit,
 	 * Insert the SEA and return to the Realm if IPA is outside realm IPA space or
 	 * the granule's RIPAS is EMPTY.
 	 */
-	if ((fipa >= rec_ipa_size(rec)) || ipa_is_empty(fipa, rec)) {
+	if ((fipa >= rec_ipa_size(rec)) || ipa_is_empty(fipa, rec, &is_assigned_ram)) {
 		inject_sync_idabort(ESR_EL2_ABORT_FSC_SEA);
+		return true;
+	}
+	if (is_assigned_ram) {
 		return true;
 	}
 
@@ -255,6 +265,7 @@ static bool handle_instruction_abort(struct rec *rec, struct rmi_rec_exit *rec_e
 	unsigned long fsc_type = fsc & ~MASK(ESR_EL2_ABORT_FSC_LEVEL);
 	unsigned long hpfar = read_hpfar_el2();
 	unsigned long fipa = (hpfar & MASK(HPFAR_EL2_FIPA)) << HPFAR_EL2_FIPA_OFFSET;
+	bool is_assigned_ram = false;
 
 	if (handle_sync_external_abort(rec, rec_exit, esr)) {
 		/*
@@ -270,8 +281,12 @@ static bool handle_instruction_abort(struct rec *rec, struct rmi_rec_exit *rec_e
 	 * - The granule's RIPAS is EMPTY
 	 */
 	if ((fipa >= rec_ipa_size(rec)) ||
-			!access_in_rec_par(rec, fipa) || ipa_is_empty(fipa, rec)) {
+			!access_in_rec_par(rec, fipa) ||
+			ipa_is_empty(fipa, rec, &is_assigned_ram)) {
 		inject_sync_idabort(ESR_EL2_ABORT_FSC_SEA);
+		return true;
+	}
+	if (is_assigned_ram) {
 		return true;
 	}
 
