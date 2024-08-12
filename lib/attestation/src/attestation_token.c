@@ -176,10 +176,12 @@ attest_realm_token_sign(struct attest_token_encode_ctx *me,
 	return attest_res;
 }
 
-size_t attest_cca_token_create(void *attest_token_buf,
-			       size_t attest_token_buf_size,
-			       const void *realm_token_buf,
-			       size_t realm_token_len)
+enum attest_token_err_t
+attest_cca_token_create(void *attest_token_buf,
+		       size_t attest_token_buf_size,
+		       const void *realm_token_buf,
+		       size_t realm_token_len,
+		       size_t *cca_token_len)
 {
 	struct q_useful_buf_c   completed_token;
 	QCBOREncodeContext      cbor_enc_ctx;
@@ -193,7 +195,10 @@ size_t attest_cca_token_create(void *attest_token_buf,
 	/* Get the platform token */
 	ret = attest_get_platform_token(&platform_token.ptr,
 					&platform_token.len);
-	assert(ret == 0);
+	if (ret != 0) {
+		ERROR("Platform token is not ready for retrieval\n");
+		return ATTEST_TOKEN_ERR_PLAT_TOKEN_NOT_READY;
+	}
 
 	QCBOREncode_Init(&cbor_enc_ctx, attest_token_ub);
 
@@ -214,15 +219,14 @@ size_t attest_cca_token_create(void *attest_token_buf,
 
 	if (qcbor_res == QCBOR_ERR_BUFFER_TOO_SMALL) {
 		ERROR("CCA output token buffer too small\n");
-		return 0;
+		return ATTEST_TOKEN_ERR_CBOR_BUFFER_TOO_SMALL;
 	} else if (qcbor_res != QCBOR_SUCCESS) {
 		/* likely from array not closed, too many closes, ... */
-		assert(false);
-	} else {
-		/* coverity[uninit_use:SUPPRESS] */
-		return completed_token.len;
+		return ATTEST_TOKEN_ERR_CBOR_OTHER;
 	}
-	return 0;
+	/* coverity[uninit_use:SUPPRESS] */
+	*cca_token_len = completed_token.len;
+	return ATTEST_TOKEN_ERR_SUCCESS;
 }
 
 /*
