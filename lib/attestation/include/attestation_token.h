@@ -53,7 +53,19 @@ enum attest_token_err_t {
 	 * Signing is in progress, function should be called with the same
 	 * parameters again.
 	 */
-	ATTEST_TOKEN_ERR_COSE_SIGN_IN_PROGRESS
+	ATTEST_TOKEN_ERR_COSE_SIGN_IN_PROGRESS,
+	/*
+	 * Error code to return when buffer size is too small
+	 */
+	ATTEST_TOKEN_ERR_CBOR_BUFFER_TOO_SMALL,
+	/*
+	 * Generic for CBOR error
+	 */
+	ATTEST_TOKEN_ERR_CBOR_OTHER,
+	/*
+	 * Error code for platform token not ready
+	 */
+	ATTEST_TOKEN_ERR_PLAT_TOKEN_NOT_READY
 };
 
 /*
@@ -156,15 +168,19 @@ attest_realm_token_sign(struct attest_token_encode_ctx *me,
  *				written.
  * attest_token_buf_size	Size of the buffer where the token will be
  *				written.
- * realm_token_buf	Pointer to the realm token.
- * realm_token_len	Length of the realm token.
+ * realm_token_buf		Pointer to the realm token.
+ * realm_token_len		Length of the realm token.
+ * cca_token_len		Returns the length of top-level CCA token
  *
- * Return 0 in case of error, the length of the cca token otherwise.
+ * Returns ATTEST_TOKEN_ERR_SUCCESS (0) if CCA top-level token is
+ * created. Otherwise, returns the proper error value.
  */
-size_t attest_cca_token_create(void *attest_token_buf,
+enum attest_token_err_t
+attest_cca_token_create(void *attest_token_buf,
 				size_t attest_token_buf_size,
 				const void *realm_token_buf,
-				size_t realm_token_len);
+				size_t realm_token_len,
+				size_t *cca_token_len);
 
 /*
  * Assemble the Realm token in the buffer provided in realm_token_buf,
