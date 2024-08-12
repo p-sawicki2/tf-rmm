@@ -7,6 +7,12 @@ find_program(RMM_CPPCHECK_EXE "cppcheck" DOC "Path to Cppcheck")
 
 if(NOT RMM_CPPCHECK_EXE)
   message(FATAL_ERROR "Could not find cppcheck executable.")
+else()
+  message(cppcheck_path: "${RMM_CPPCHECK_EXE}")
+  execute_process(COMMAND ${RMM_CPPCHECK_EXE} --version
+			OUTPUT_VARIABLE CPPCHECK_VERSION)
+  message(cppcheck_version: "${CPPCHECK_VERSION}")
+  set(CPPCHECK_MIN "2.14")
 endif()
 
 #
@@ -59,6 +65,13 @@ if(NOT EXISTS "${COMPILE_COMMANDS_FILE}")
     message(FATAL_ERROR "Please configure with -DCMAKE_EXPORT_COMPILE_COMMANDS=ON.")
 endif()
 
+find_package(Python3 REQUIRED)
+find_program(CPPCHECK_XML_EXEC "parse_cppcheck_xml.py"
+  PATHS ${SOURCE_DIR}
+  PATH_SUFFIXES tools/cppcheck
+  DOC "Path to parse_cppcheck_xml.py"
+)
+
 #
 # Create the output directory
 #
@@ -87,3 +100,17 @@ if(EXE_CPPCHECK_TWICE)
           --project=${COMPILE_COMMANDS_FILE} ${cppcheck-flags}
     )
 endif()
+
+execute_process(
+    WORKING_DIRECTORY ${SOURCE_DIR}
+    COMMAND  ${Python3_EXECUTABLE} ${CPPCHECK_XML_EXEC} ${CPPCHECK_OUTPUT} ${CPPCHECK_BUILD_DIR}
+    OUTPUT_VARIABLE cppcheck_errors
+    RESULT_VARIABLE cppcheck_version
+)
+
+if(${cppcheck_version} GREATER 0)
+  message(FATAL_ERROR "Cppcheck failed with error count: ${cppcheck_errors}")
+else()
+  message(WARNING "cppcheck version installed is : ${CPPCHECK_VERSION}, but minimum required version is ${CPPCHECK_MIN}")
+endif()
+
