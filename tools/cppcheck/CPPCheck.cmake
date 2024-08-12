@@ -7,6 +7,13 @@ find_program(RMM_CPPCHECK_EXE "cppcheck" DOC "Path to Cppcheck")
 
 if(NOT RMM_CPPCHECK_EXE)
   message(FATAL_ERROR "Could not find cppcheck executable.")
+else()
+  message(cppcheck_path: "${RMM_CPPCHECK_EXE}")
+  execute_process(COMMAND ${RMM_CPPCHECK_EXE} --version
+			OUTPUT_VARIABLE CPPCHECK_INSTALLED_VERSION)
+  string(REGEX MATCH "[0-9]+\\.[0-9]+" CPPCHECK_INSTALLED ${CPPCHECK_INSTALLED_VERSION})
+  message(Installed version: "${CPPCHECK_INSTALLED}")
+  set(CPPCHECK_MIN_REQD "2.14")
 endif()
 
 #
@@ -87,3 +94,17 @@ if(EXE_CPPCHECK_TWICE)
           --project=${COMPILE_COMMANDS_FILE} ${cppcheck-flags}
     )
 endif()
+
+if(EXISTS "${CPPCHECK_OUTPUT}")
+    file(READ "${CPPCHECK_OUTPUT}" cppcheck_xml)
+    #message(print: "${cppcheck_xml}")
+    string(REGEX MATCHALL "<error" errtag "${cppcheck_xml}")
+    list(LENGTH errtag errcount)
+
+    if("${CPPCHECK_INSTALLED}" VERSION_GREATER "${CPPCHECK_MIN_REQD}")
+        message(FATAL_ERROR "Cppcheck failed with error count: ${errcount}")
+    else()
+        message(WARNING "cppcheck installed version is: ${CPPCHECK_INSTALLED}, minimum required version is ${CPPCHECK_MIN_REQD}.")
+    endif()
+endif()
+
