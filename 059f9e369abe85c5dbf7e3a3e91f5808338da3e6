@@ -33,6 +33,24 @@
       "message": "When we run a test which is expected to trigger an assert we should not run anything after the expected assert (we should finish the test straight afterwards) as the assert condition might leave the system in an undetermined state. So we should not iterate here to trigger different asserts. The guideline should be to trigger one and only one assert per test.\n\nFor this test in particular, you would have three options:\n\n* Break the test in several tests, one per each possible iteration, or\n* Since the VA_REGION used should not make much difference in this case, just pick up one, or\n* The intermediate solution would be to randomize the selection of VA_REGIONS, for example with\n\n\n\tunsigned int va_region \u003d (unsigned int)test_helpers_get_rand_in_range(0UL, VA_REGIONS - 1);\n\t\nUsually the tests are run several times so picking up a random value should be enough.",
       "revId": "059f9e369abe85c5dbf7e3a3e91f5808338da3e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3af5a37_b98c868d",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-08-13T18:28:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e19422e8_3edd9025",
+      "revId": "059f9e369abe85c5dbf7e3a3e91f5808338da3e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
