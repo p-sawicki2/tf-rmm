@@ -1123,8 +1123,8 @@ void s2tt_init_assigned_ns(const struct s2tt_context *s2_ctx,
  * NOTE: For now, only the RTTE with PA are live.
  * This could change with EXPORT/IMPORT support.
  */
-static bool s2tte_is_live(const struct s2tt_context *s2_ctx,
-			  unsigned long s2tte, long level)
+bool s2tte_is_live(const struct s2tt_context *s2_ctx,
+		   unsigned long s2tte, long level)
 {
 	return s2tte_has_pa(s2_ctx, s2tte, level);
 }

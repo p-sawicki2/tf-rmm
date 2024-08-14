@@ -1219,6 +1219,7 @@ void smc_data_destroy(unsigned long rd_addr,
 	unsigned long data_addr, s2tte, *s2tt;
 	struct rd *rd;
 	struct s2tt_context s2_ctx;
+	bool rtt_next_aux_entry = true;
 
 	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
 	if (g_rd == NULL) {
@@ -1257,24 +1258,44 @@ void smc_data_destroy(unsigned long rd_addr,
 
 	s2tte = s2tte_read(&s2tt[wi.index]);
 
+	if (!s2tte_is_live(&s2_ctx, s2tte, S2TT_PAGE_LEVEL)) {
+		res->x[0] = pack_return_code(RMI_ERROR_RTT,
+						(unsigned char)S2TT_PAGE_LEVEL);
+		goto out_unmap_ll_table;
+	}
+
+	data_addr = s2tte_pa(&s2_ctx, s2tte, S2TT_PAGE_LEVEL);
+
+	/*
+	 * Lock the data granule and check the expected state. Correct locking
+	 * order is guaranteed because granule address is obtained from a
+	 * locked granule by the table walk. This lock needs to be acquired
+	 * before a state transition to or from GRANULE_STATE_DATA for a
+	 * data granule can happen.
+	 */
+	g_data = find_lock_granule(data_addr, GRANULE_STATE_DATA);
+	assert(g_data != NULL);
+
+	if (g_data->refcount > 0U) {
+		/* This data granule is mapped into an auxiliary RTT table */
+		granule_unlock(g_data);
+		res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
+						(unsigned char)0U);
+		rtt_next_aux_entry = false;
+		goto out_unmap_ll_table;
+	}
+
 	if (s2tte_is_assigned_ram(&s2_ctx, s2tte, S2TT_PAGE_LEVEL)) {
-		data_addr = s2tte_pa(&s2_ctx, s2tte, S2TT_PAGE_LEVEL);
 		s2tte = s2tte_create_unassigned_destroyed(&s2_ctx, s2tte);
 		s2tte_write(&s2tt[wi.index], s2tte);
 		s2tt_invalidate_page(&s2_ctx, map_addr);
 	} else if (s2tte_is_assigned_empty(&s2_ctx, s2tte, S2TT_PAGE_LEVEL)) {
-		data_addr = s2tte_pa(&s2_ctx, s2tte, S2TT_PAGE_LEVEL);
 		s2tte = s2tte_create_unassigned_empty(&s2_ctx, s2tte);
 		s2tte_write(&s2tt[wi.index], s2tte);
 	} else if (s2tte_is_assigned_destroyed(&s2_ctx, s2tte,
 					       S2TT_PAGE_LEVEL)) {
-		data_addr = s2tte_pa(&s2_ctx, s2tte, S2TT_PAGE_LEVEL);
 		s2tte = s2tte_create_unassigned_destroyed(&s2_ctx, s2tte);
 		s2tte_write(&s2tt[wi.index], s2tte);
-	} else {
-		res->x[0] = pack_return_code(RMI_ERROR_RTT,
-						(unsigned char)S2TT_PAGE_LEVEL);
-		goto out_unmap_ll_table;
 	}
 
 	__granule_put(wi.g_llt);
@@ -1285,15 +1306,18 @@ void smc_data_destroy(unsigned long rd_addr,
 	 * granule by table walk. This lock needs to be acquired before a state
 	 * transition to or from GRANULE_STATE_DATA for granule address can happen.
 	 */
-	g_data = find_lock_granule(data_addr, GRANULE_STATE_DATA);
-	assert(g_data != NULL);
 	buffer_granule_memzero(g_data, SLOT_DELEGATED);
 	granule_unlock_transition(g_data, GRANULE_STATE_DELEGATED);
 
 	res->x[0] = RMI_SUCCESS;
 	res->x[1] = data_addr;
 out_unmap_ll_table:
-	res->x[2] = s2tt_skip_non_live_entries(&s2_ctx, map_addr, s2tt, &wi);
+	if (rtt_next_aux_entry) {
+		res->x[2] = s2tt_skip_non_live_entries(&s2_ctx, map_addr,
+						       s2tt, &wi);
+	} else {
+		res->x[2] = 0UL;
+	}
 	buffer_unmap(s2tt);
 	granule_unlock(wi.g_llt);
 }
@@ -1495,11 +1519,44 @@ out_unmap_llt:
 	granule_unlock(g_rd);
 }
 
+/*
+ * Return the memory size that is NOT mapped elsewhere in auxiliary trees
+ * where the start of the region is pointed to by @s2tte.
+ *
+ * Note that:
+ *	- @s2tte is a valid (page or block) descriptor in the primary RTT tree.
+ *	- The RTT where @s2tte resides is locked.
+ */
+static unsigned long not_aux_mappings(struct s2tt_context *s2_ctx,
+				      unsigned long s2tte, unsigned long level)
+{
+	struct granule *g_data;
+	unsigned long map_size = s2tte_map_size((int)level);
+	unsigned long data_addr = s2tte_pa(s2_ctx, s2tte, level);
+	unsigned long offset;
+
+	for (offset = 0UL; offset < map_size; offset += GRANULE_SIZE) {
+		/*
+		 * Do not lock the access to refcout. We are permitted to
+		 * do that because we are holding the RTT lock.
+		 */
+		g_data = find_granule(data_addr + offset);
+		assert(g_data != NULL);
+
+		if (g_data->refcount > 0U) {
+			break;
+		}
+	}
+
+	return offset;
+}
+
 static void rtt_set_ripas_range(struct s2tt_context *s2_ctx,
 				unsigned long *s2tt,
 				unsigned long base,
 				unsigned long top,
 				struct s2tt_walk *wi,
+				bool rtt_tree_pp,
 				enum ripas ripas_val,
 				enum ripas_change_destroyed change_destroyed,
 				struct smc_result *res)
@@ -1507,6 +1564,8 @@ static void rtt_set_ripas_range(struct s2tt_context *s2_ctx,
 	unsigned long index;
 	long level = wi->last_level;
 	unsigned long map_size = s2tte_map_size((int)level);
+	unsigned long aux_rtt_offset;
+	bool aux_rtt_mapped = false;
 
 	/* Align to the RTT level */
 	unsigned long addr = base & ~(map_size - 1UL);
@@ -1527,6 +1586,28 @@ static void rtt_set_ripas_range(struct s2tt_context *s2_ctx,
 		 */
 		if ((addr + map_size) > top) {
 			break;
+		}
+
+		if (rtt_tree_pp && (ripas_val == RIPAS_EMPTY) &&
+		    s2tte_is_assigned_ram(s2_ctx, s2tt[index], level)) {
+			/*
+			 * Transition from RAM to EMPTY ripas is permitted only
+			 * if there is no valid mappings in auxiliary RTT trees.
+			 *
+			 * Note that only ASSIGNED_RAM entries can have valid
+			 * auxiliary mappings.
+			 */
+
+			assert(level >= S2TT_MIN_BLOCK_LEVEL);
+
+			aux_rtt_offset = not_aux_mappings(s2_ctx,
+							  s2tt[index], level);
+
+			if (aux_rtt_offset < map_size) {
+				/* There are granules mapped on aux tables */
+				aux_rtt_mapped = true;
+				break;
+			}
 		}
 
 		ret = update_ripas(s2_ctx, &s2tt[index], level,
@@ -1550,6 +1631,13 @@ static void rtt_set_ripas_range(struct s2tt_context *s2_ctx,
 	if (addr > base) {
 		res->x[0] = RMI_SUCCESS;
 		res->x[1] = addr;
+	} else if (aux_rtt_mapped) {
+		/*
+		 * Report that we cannot make further progress due to
+		 * auxiliary mappings.
+		 */
+		res->x[0] = RMI_ERROR_RTT_AUX;
+		res->x[1] = addr + aux_rtt_offset;
 	} else {
 		res->x[0] = pack_return_code(RMI_ERROR_RTT,
 						(unsigned char)level);
@@ -1641,7 +1729,8 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 	assert(s2tt != NULL);
 
 	rtt_set_ripas_range(s2_ctx, s2tt, base, top, &wi,
-				ripas_val, change_destroyed, res);
+			    rd->rtt_tree_pp, ripas_val,
+			    change_destroyed, res);
 
 	if (res->x[0] == RMI_SUCCESS) {
 		rec->set_ripas.addr = res->x[1];
