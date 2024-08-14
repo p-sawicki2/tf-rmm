@@ -88,6 +88,24 @@
       "parentUuid": "aef8fa30_4534cf1c",
       "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d79485da_3b9d1868",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-08-14T12:06:53Z",
+      "side": 1,
+      "message": "i will add a patch on top of the series for this and post a comment here. we can leave this open until i post a patch, and then we can resolve so we can start merging patches, if that is okay.",
+      "parentUuid": "9efbe85a_01366fe6",
+      "revId": "283f0bce588dc2e19662710763c137a5740a09e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
