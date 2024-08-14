@@ -6,6 +6,7 @@
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
+#include <el3_token_sign_queue.h>
 #include <granule.h>
 #include <measurement.h>
 #include <realm.h>
@@ -294,6 +295,17 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 			rec_exit->exit_reason = RMI_EXIT_IRQ;
 			return;
 		}
+#if RMM_ATTESTATION_USE_EL3
+		/*
+		 * If there are no interrupts pending, then continue to pull
+		 * requests from EL3 until this RECs request is done.
+		 */
+		/*
+		 * TODO: Future enhancement to decouple rec and aux granule
+		 * mapping from pulling response from EL3.
+		 */ 
+		el3_token_sign_pull_response_from_el3();
+#endif
 	}
 
 	/* Any other state is considered an error */
