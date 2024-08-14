@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2edaa85a_b2d55c21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-08-14T13:52:21Z",
+      "side": 1,
+      "message": "CI jobs:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/748/\nCI cppcheck with fix:\nhttps://jenkins.openci.aws.arm.com/job/rmm-cppcheck/844/",
+      "revId": "d4579fa013eaa287e4e1409c871f4ae2cff40d95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
