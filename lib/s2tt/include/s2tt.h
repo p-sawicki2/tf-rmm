@@ -242,6 +242,9 @@ unsigned long s2tte_update_ap_from_index(const struct s2tt_context *s2_ctx,
 					 unsigned long s2tte,
 					 unsigned int index);
 
+bool s2tte_is_live(const struct s2tt_context *s2_ctx,
+		   unsigned long s2tte, long level);
+
 static inline bool s2tte_is_perm_index_valid(const struct s2tt_context *s2_ctx,
 					     unsigned int index)
 {

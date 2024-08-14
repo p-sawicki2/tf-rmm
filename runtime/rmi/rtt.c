@@ -1209,6 +1209,37 @@ unsigned long smc_data_create_unknown(unsigned long rd_addr,
 	return data_create(rd_addr, data_addr, map_addr, NULL, 0);
 }
 
+/*
+ * Check if the S2TTE mapped @ipa is aux_live.
+ *
+ * This function assumes that the granule @rd is locked on entry.
+ */
+static bool addr_is_aux_live(struct rd *rd, unsigned long ipa, int level)
+{
+	for (unsigned int i = 1U; i < realm_num_s2_rtts(rd); i++) {
+		struct s2tt_walk wi;
+		struct s2tt_context *s2_ctx = index_to_s2_context(rd, i);
+		unsigned long s2tte, *s2tt;
+
+		granule_lock(s2_ctx->g_rtt, GRANULE_STATE_RTT);
+		s2tt_walk_lock_unlock(s2_ctx, ipa, S2TT_PAGE_LEVEL, &wi);
+		s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
+
+		assert(s2tt != NULL);
+
+		s2tte = s2tte_read((&s2tt[wi.index]));
+		buffer_unmap(s2tt);
+		granule_unlock(wi.g_llt);
+
+		if (s2tte_is_live(s2_ctx, s2tte, wi.last_level) &&
+		    (level <= wi.last_level)) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
 void smc_data_destroy(unsigned long rd_addr,
 		      unsigned long map_addr,
 		      struct smc_result *res)
@@ -1219,6 +1250,7 @@ void smc_data_destroy(unsigned long rd_addr,
 	unsigned long data_addr, s2tte, *s2tt;
 	struct rd *rd;
 	struct s2tt_context s2_ctx;
+	int level;
 
 	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
 	if (g_rd == NULL) {
@@ -1243,7 +1275,6 @@ void smc_data_destroy(unsigned long rd_addr,
 	buffer_unmap(rd);
 
 	granule_lock(s2_ctx.g_rtt, GRANULE_STATE_RTT);
-	granule_unlock(g_rd);
 
 	s2tt_walk_lock_unlock(&s2_ctx, map_addr, S2TT_PAGE_LEVEL, &wi);
 	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
@@ -1256,6 +1287,25 @@ void smc_data_destroy(unsigned long rd_addr,
 	}
 
 	s2tte = s2tte_read(&s2tt[wi.index]);
+	level = wi.last_level;
+	buffer_unmap(s2tt);
+
+	/* Check if map_addr is aux_live. This will unlock and unmap rd */
+	if (addr_is_aux_live(rd, map_addr, level))
+	{
+		granule_unlock(wi.g_llt);
+		buffer_unmap(rd);
+		granule_unlock(g_rd);
+		res->x[0] = pack_return_code(RMI_ERROR_RTT_AUX,
+						(unsigned char)0U);
+		return;
+	}
+
+	buffer_unmap(rd);
+	granule_unlock(g_rd);
+
+	/* Re-map the s2tt to continue */
+	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
 
 	if (s2tte_is_assigned_ram(&s2_ctx, s2tte, S2TT_PAGE_LEVEL)) {
 		data_addr = s2tte_pa(&s2_ctx, s2tte, S2TT_PAGE_LEVEL);
@@ -1637,6 +1687,15 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 		goto out_unlock_llt;
 	}
 
+	/* Verify if the address range is live */
+	for (unsigned long addr = base; base < top; base += GRANULE_SIZE) {
+		if (addr_is_aux_live(rd, addr, wi.last_level)) {
+		       res->x[0] = pack_return_code(RMI_ERROR_RTT,
+						(unsigned char)wi.last_level);
+			goto out_unlock_llt;
+		}
+	}
+
 	s2tt = buffer_granule_map(wi.g_llt, SLOT_RTT);
 	assert(s2tt != NULL);
 
@@ -1647,7 +1706,6 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 		rec->set_ripas.addr = res->x[1];
 	}
 
-	buffer_unmap(s2tt);
 out_unlock_llt:
 	granule_unlock(wi.g_llt);
 	buffer_unmap(rd);
