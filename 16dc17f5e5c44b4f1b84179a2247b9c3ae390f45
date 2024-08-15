@@ -88,6 +88,24 @@
       "parentUuid": "3dfa4b99_29be2219",
       "revId": "16dc17f5e5c44b4f1b84179a2247b9c3ae390f45",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d23859d_52db0002",
+        "filename": "runtime/rsi/realm_attest.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-08-15T12:35:33Z",
+      "side": 1,
+      "message": "analyzed more, this is possible to do like you said, but requires the attestation state management clean up to go in. If that happens, absolutely, we can make the attest_rsp structure the interface between attestation lib and runtime, for the final operation to push it to the appropriate REC (which must live in runtime due to rec header dependencies, perhaps via a call back provide to attestation lib).\nI will do this as soon as the rest of the patches merge.",
+      "parentUuid": "3cde8605_1b0e4a51",
+      "revId": "16dc17f5e5c44b4f1b84179a2247b9c3ae390f45",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
