@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68a90e9d_35a9148a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-08-15T20:34:30Z",
+      "side": 1,
+      "message": "CI passed for this patch. \nCI run https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/750/ failed for static checks but passed after re-run: https://jenkins.openci.aws.arm.com/job/rmm-static-checks/3165/\n\nPlease provide manual Verified+1 as I don\u0027t have permission to do that. \n\nThanks!",
+      "revId": "1275e51700feabc21ed9e4565b5988b969fe3882",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
