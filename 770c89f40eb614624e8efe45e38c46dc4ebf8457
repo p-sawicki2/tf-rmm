@@ -267,6 +267,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b3c45ba_d42b3925",
+        "filename": "lib/xlat/tests/xlat_tests_base_g1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-08-15T21:08:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ca003ebc_1be6e762",
+      "revId": "770c89f40eb614624e8efe45e38c46dc4ebf8457",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19b88235_5f2f2122",
