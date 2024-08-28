@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1d9e099_96c16a71",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-28T08:51:40Z",
+      "side": 1,
+      "message": "After reviewing,  the current comments seem OK.",
+      "parentUuid": "da449a96_24596d96",
+      "range": {
+        "startLine": 30,
+        "startChar": 27,
+        "endLine": 30,
+        "endChar": 46
+      },
+      "revId": "f362213ee13863497b43c81b9a3c31a926e8d583",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc510764_942b9077",
@@ -81,6 +105,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c95f8f2_686efcfc",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-28T08:51:40Z",
+      "side": 1,
+      "message": "Ignore",
+      "parentUuid": "fc510764_942b9077",
+      "range": {
+        "startLine": 32,
+        "startChar": 21,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "f362213ee13863497b43c81b9a3c31a926e8d583",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ffb7e31_650e0e00",
@@ -94,6 +142,30 @@
       "writtenOn": "2024-07-22T11:11:29Z",
       "side": 1,
       "message": "Ready for cca token creation",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 42
+      },
+      "revId": "f362213ee13863497b43c81b9a3c31a926e8d583",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac2f7cdc_eadb89b9",
+        "filename": "lib/attestation/include/attestation_token.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-28T08:51:40Z",
+      "side": 1,
+      "message": "Ignore",
+      "parentUuid": "4ffb7e31_650e0e00",
       "range": {
         "startLine": 33,
         "startChar": 26,
