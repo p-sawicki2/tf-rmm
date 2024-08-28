@@ -611,6 +611,9 @@ bool handle_realm_exit(struct rec *rec, struct rmi_rec_exit *rec_exit, int excep
 		ret = handle_exception_sync(rec, rec_exit);
 		if (!ret) {
 			rec->last_run_info.esr = read_esr_el2();
+			if (((rec_exit->esr) & (ESR_EL2_ABORT_ISV_BIT)) == 0UL) {
+				rec->last_run_info.esr |= ~ESR_EL2_ABORT_ISV_BIT;
+			}
 			rec->last_run_info.far = read_far_el2();
 			rec->last_run_info.hpfar = read_hpfar_el2();
 		}
