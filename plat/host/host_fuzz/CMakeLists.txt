@@ -11,6 +11,7 @@ arm_config_option_override(
     FORCE 1)
 
 add_compile_definitions("PERSISTENT_MODE=1")
+include_directories("../../../runtime/include/")
 
 # Maximum number of granules supported,
 # so that fuzzing input has a reasonable size

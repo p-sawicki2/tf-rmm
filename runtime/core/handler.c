@@ -185,7 +185,7 @@ static void rmi_log_on_exit(unsigned int handler_id,
 	rc = unpack_return_code(res->x[0]);
 
 	if ((handler->log_exec) ||
-	    (handler->log_error && (rc.status != RMI_SUCCESS))) {
+	    (handler->log_error)) {
 		unsigned int num;
 
 		/* Print function name */

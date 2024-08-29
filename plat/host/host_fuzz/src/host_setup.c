@@ -11,6 +11,8 @@
 #include <host_rmi_wrappers.h>
 #include <host_utils.h>
 #include <platform_api.h>
+#include <realm.h>
+#include <rec.h>
 #include <rmm_el3_ifc.h>
 #include <smc-rmi.h>
 #include <smc-rsi.h>
@@ -78,17 +80,146 @@ void init(void)
 #define FUZZ_COMMAND_COUNT 10
 /* Registers X0 -- X6 */
 #define FUZZ_REGISTER_COUNT 7
-#define FUZZ_FID_BEGIN 0xC4000140
+#define FUZZ_FID_BEGIN 0xC4000150
 #define FUZZ_FID_END   0xC4000190
 
 unsigned long host_util_get_granule_meta_base();
 
 void iteration_init(const uint8_t * const buffer)
 {
-    unsigned char * granules_buffer = (unsigned char *)host_util_get_granule_base();
-    struct granule * granules = (struct granule *)host_util_get_granule_meta_base();
+	unsigned char * granules_buffer = (unsigned char *)host_util_get_granule_base();
+	struct granule * granules = (struct granule *)host_util_get_granule_meta_base();
 	memcpy(granules_buffer, buffer, HOST_MEM_SIZE * sizeof(unsigned char));
-    memcpy(granules, buffer + HOST_MEM_SIZE * sizeof(unsigned char), RMM_MAX_GRANULES * sizeof(struct granule));
+	memcpy(granules, buffer + HOST_MEM_SIZE * sizeof(unsigned char), RMM_MAX_GRANULES * sizeof(struct granule));
+}
+
+void parameter_transfer(uint64_t * parameters, size_t counts)
+{
+	uint64_t fid = parameters[0];
+	for(size_t i = 1; i < counts; ++i) {
+		/* skip the non-address parameters */
+		if ( ( fid == 0xC4000153 && i == 5 )
+		  || ( fid == 0xC4000170 && i == 2 )
+		  || ( fid == 0xC4000172 && i == 3 )
+		  || ( fid == 0xC400018D && i == 1 )
+		  || ( fid == 0xC400017A && i == 2 )
+		  || ( fid == 0xC400017B && ( i == 3 || i == 4 ) )
+		  || ( fid == 0xC4000164 && i == 3 )
+		  || ( fid == 0xC4000158 && i == 2 )
+		  || ( fid == 0xC400017D && ( i == 4 || i == 5 ) )
+		  || ( fid == 0xC400017E && ( i == 3 || i == 4 ) )
+		  || ( fid == 0xC400017F && ( i == 3 || i == 4 ) )
+		  || ( fid == 0xC4000180 && i == 3 )
+		  || ( fid == 0xC4000181 && i == 3 )
+		  || ( fid == 0xC4000182 && ( i == 3 || i == 4 ) )
+		  || ( fid == 0xC4000183 && i == 3 )
+		  || ( fid == 0xC4000184 && i == 3 )
+		  || ( fid == 0xC400015D && i == 4 )
+		  || ( fid == 0xC400015E && i == 3 )
+		  || ( fid == 0xC4000166 && i == 3 )
+		  || ( fid == 0xC400015F && ( i == 3 || i == 4 ) )
+		  || ( fid == 0xC4000161 && i == 3 )
+		  || ( fid == 0xC4000162 && i == 3 )
+		  || ( fid == 0xC4000150 && i == 1 )
+		  ) {
+			continue;
+		}
+		/* The rest parameters are all relateive addresses to the base */
+		parameters[i] += host_util_get_granule_base();
+	}
+}
+
+bool valid_granule(void * g)
+{
+	void * granules_buffer = (unsigned char *)host_util_get_granule_base();
+	return  g >= granules_buffer
+		 && g < granules_buffer + HOST_MEM_SIZE
+		 && (unsigned long)g % GRANULE_SIZE == 0;
+}
+
+
+bool valid_granule_meta(void * g)
+{
+	void * granules = (struct granule *)host_util_get_granule_meta_base();
+	return g >= granules
+		&& g < granules + (RMM_MAX_GRANULES * sizeof(struct rd))
+		&& (unsigned long) g % sizeof(struct rd) == 0;
+}
+/*
+ * Early exit without calling the RMM handler.
+ * NOTE: the lengths of arrays are defined in global macro.
+ * */
+bool valid_state(uint64_t (*call_invocation)[FUZZ_REGISTER_COUNT])
+{
+
+	unsigned char * granules_buffer = (unsigned char *)host_util_get_granule_base();
+	struct granule * granules = (struct granule *)host_util_get_granule_meta_base();
+	for (size_t i = 0; i < RMM_MAX_GRANULES; ++i) {
+		struct granule * g = &(granules[i]);
+		/* If the lock-bit is 1, i.e. locked */
+		if (g->descriptor & GRN_LOCK_BIT) {
+			INFO("Granule #%zu is locked.\n", i);
+			return false;
+		}
+
+		/* rule out unexpected refcount state, `REFCOUNT(g)`,
+		 * and then check invariant. */
+		switch (STATE(g)) {
+		case GRANULE_STATE_NS:
+		case GRANULE_STATE_DELEGATED:
+		case GRANULE_STATE_DATA:
+		case GRANULE_STATE_REC_AUX:
+			if (REFCOUNT(g) != 0U) {
+				return false;
+			}
+			break;
+		case GRANULE_STATE_REC: {
+			if (REFCOUNT(g) > 1U) {
+				return false;
+			}
+			struct rec * rec_ptr = (struct rec *)&granules_buffer[i * GRANULE_SIZE];
+			struct granule * g_rd = (rec_ptr->realm_info).g_rd;
+			if( !( valid_granule_meta(g_rd) ) ) {
+				return false;
+			}
+			break;
+		}
+		case GRANULE_STATE_RTT:
+			if (REFCOUNT(g) > RTT_REFCOUNT_MAX) {
+				return false;
+			}
+			break;
+		case GRANULE_STATE_RD: {
+			struct rd * rd_ptr = (struct rd *)&granules_buffer[i * GRANULE_SIZE];
+			int s2_starting_level = (rd_ptr->s2_ctx).s2_starting_level;
+			unsigned int num_root_rtts = (rd_ptr->s2_ctx).num_root_rtts;
+			void * g_rtt = (rd_ptr->s2_ctx).g_rtt;
+			if ( !( s2_starting_level >= -1
+				 && s2_starting_level <= 3
+				 && num_root_rtts <= 16
+				 && valid_granule(g_rtt) ) ) {
+				return false;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+	}
+
+	/* Shrink the FID space */
+	for (size_t i = 0; i < FUZZ_COMMAND_COUNT; ++i) {
+		uint64_t fid = call_invocation[i][0];
+		if ( !(fid >= FUZZ_FID_BEGIN && fid <= FUZZ_FID_END) ) {
+			INFO("Call #%zu has unexpected fid %lx.\n", i, fid);
+			return false;
+		}
+	}
+
+
+
+	INFO("No early exit.\n");
+	return true;
 }
 
 void execute(unsigned char *buffer)
@@ -96,7 +227,7 @@ void execute(unsigned char *buffer)
 	/* Initialise the RMM internal data structur. */
 	iteration_init(buffer);
 
-	VERBOSE("RMM: Beginning of Fake Host execution\n");
+	INFO("RMM: Beginning of Fake Host execution\n");
 
 	/* Directly point to the buffer so save a `memcpy` call. */
 	uint64_t (*call_invocation)[FUZZ_REGISTER_COUNT] =
@@ -105,8 +236,15 @@ void execute(unsigned char *buffer)
 							+ HOST_MEM_SIZE * sizeof(unsigned char)
 							+ RMM_MAX_GRANULES * sizeof(struct granule));
 
+	if (!valid_state(call_invocation)) {
+		INFO("Early exist.\n");
+		return;
+	}
+
 	/* Call commands. */
 	for (int i = 0; i < FUZZ_COMMAND_COUNT; ++i) {
+
+		parameter_transfer(call_invocation[i], FUZZ_REGISTER_COUNT);
 
 		INFO("SMC ARGS: 0x%08lX 0x%016lX 0x%016lX 0x%016lX 0x%016lX 0x%016lX 0x%016lX\n"
 			, call_invocation[i][0]
@@ -167,9 +305,9 @@ int main(int argc, char *argv[])
 	}
 
 	/*
-     * ALL pages, granule meta data,
-     * and a list of `FUZZ_COMMAND_COUNT` sequence calls.
-     */
+	 * ALL pages, granule meta data,
+	 * and a list of `FUZZ_COMMAND_COUNT` sequence calls.
+	 */
 	uint8_t buffer[EXPECTED_LENGTH_FOR_FUZZ] = { 0 };
 
 	FILE *fp = fopen(argv[1], "rb");
