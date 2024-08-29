@@ -118,6 +118,8 @@ static void attest_token_continue_write_state(struct rec *rec,
 		res->smc_res.x[0] = RSI_INCOMPLETE;
 	} else {
 		res->smc_res.x[0] = RSI_SUCCESS;
+		/* Token creation is complete, clear any artefacts */
+		memset(attest_data, 0, sizeof(*attest_data));
 	}
 
 	res->smc_res.x[1] = length;
