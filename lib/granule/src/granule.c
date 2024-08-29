@@ -264,6 +264,7 @@ void granule_memzero_mapped(void *buf)
 	dsb(ish);
 }
 
-unsigned long host_util_get_granule_meta_base() {
+unsigned long host_util_get_granule_meta_base() 
+{
     return (unsigned long)granules;
 }

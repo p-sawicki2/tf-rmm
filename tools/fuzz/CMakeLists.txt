@@ -15,7 +15,7 @@ arm_config_option(
     NAME FUZZ_COMMAND_COUNT
     HELP "The number of arbitrary RMI commands to be executed in the fuzzing."
     TYPE STRING
-    DEFAULT 10)
+    DEFAULT 20)
 
 arm_config_option(
     NAME FUZZ_REGISTER_COUNT

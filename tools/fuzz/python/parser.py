@@ -6,9 +6,9 @@
 
 if __name__ == "__main__":
 
-    from data_type import RMMFuzzingInput
-    import sys
+	from data_type import RMMFuzzingInput
+	import sys
 
-    with open(sys.argv[1], "rb") as file:
-        fuzzing_input = RMMFuzzingInput.from_bytes(file.read())
-        print(fuzzing_input)
+	with open(sys.argv[1], "rb") as file:
+		fuzzing_input = RMMFuzzingInput.from_bytes(file.read())
+		print(fuzzing_input)
