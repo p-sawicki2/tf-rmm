@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d993227b_6228abc7",
+        "filename": "plat/arm/CMakeLists.txt",
+        "patchSetId": 35
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "This can be renamed to PLAT_ARM_MAX_NUM_DRAM_BANKS.\n\nAdd this to build-options.rst documentation.",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45c703f6_62d49d5f",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "add: assert(dram-\u003enum_banks \u003e 0);",
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b01e90b_16207665",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "this doesn\u0027t look right.\n\nThis may have to be (addr \u003e (bank-\u003ebase + bank-\u003esize - 1) I think. Could you confirm ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 20,
+        "endLine": 44,
+        "endChar": 45
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13505729_d0128fca",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "It seems instead of storing the cumnulative_size, it may be better to store the cumulative granule idx as this size is always being divided by GRANULE_SIZE.\n\nPerhaps call the field `prev_granule_idx`.",
+      "range": {
+        "startLine": 47,
+        "startChar": 9,
+        "endLine": 47,
+        "endChar": 47
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db233923_4d88fe9c",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "Instead of dividing by GRANULE_SIZE , it may be better to shift.\n\nYou could right shift addr by GRANULE_SHIFT",
+      "range": {
+        "startLine": 48,
+        "startChar": 10,
+        "endLine": 48,
+        "endChar": 45
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bc441ef_83c8e2b3",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "add:  assert(dram-\u003enum_banks \u003e 0) before this line.",
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba0278d_a0bd757e",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "this looks fishy, it does not seem to be needed. Could you confirm ?",
+      "range": {
+        "startLine": 79,
+        "startChar": 36,
+        "endLine": 79,
+        "endChar": 42
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eab41e9_b8f71305",
+        "filename": "plat/arm/src/arm_granule.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "left shift by GRANULE_SHIFT.",
+      "range": {
+        "startLine": 86,
+        "startChar": 42,
+        "endLine": 86,
+        "endChar": 56
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bca218cb_c2878a4c",
+        "filename": "plat/arm/src/arm_memory.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "add  assert(num_granules \u003c\u003d RMM_MAX_GRANULES);",
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5763ed7f_67d3b961",
+        "filename": "plat/arm/src/include/arm_dram.h",
+        "patchSetId": 35
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "+/* Arm platform dram mgmt structures */",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7096eaef_784269a7",
+        "filename": "plat/arm/src/include/arm_dram.h",
+        "patchSetId": 35
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-08-29T11:30:47Z",
+      "side": 1,
+      "message": "/* Sorted array of DDR banks */",
+      "range": {
+        "startLine": 23,
+        "startChar": 54,
+        "endLine": 23,
+        "endChar": 55
+      },
+      "revId": "dde14355931323bd485c40df1d165444be63fa50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
