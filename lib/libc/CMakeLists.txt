@@ -13,6 +13,7 @@ if(NOT RMM_ARCH STREQUAL fake_host)
 
     target_include_directories(rmm-lib-libc SYSTEM
         PUBLIC "include"
+               "include/${RMM_ARCH}"
         # The CMAKE_INCLUDE_PATH is included here for Yocto builds.  the
         # Yocto recipe will define this variable as part of the build.
         ${CMAKE_INCLUDE_PATH})
@@ -33,10 +34,14 @@ if(NOT RMM_ARCH STREQUAL fake_host)
 
     target_sources(rmm-lib-libc
         PRIVATE
-           "src/aarch64/memset.S")
+           "src/aarch64/memset.S"
+           "src/aarch64/context_helpers.c"
+           "src/aarch64/context.S")
 
 target_compile_definitions(rmm-lib-libc
     PRIVATE "PRINTF_DISABLE_SUPPORT_FLOAT")
 else()
-   add_library(rmm-lib-libc INTERFACE)
+    add_library(rmm-lib-libc INTERFACE)
+    target_include_directories(rmm-lib-libc INTERFACE
+        "include/${RMM_ARCH}")
 endif()
