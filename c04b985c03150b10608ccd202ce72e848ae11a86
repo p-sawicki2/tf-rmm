@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d927da9_aa150d2f",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-08-30T13:04:23Z",
+      "side": 1,
+      "message": "if ((rec_exit-\u003eesr \u0026 ESR_EL2_ABORT_ISV_BIT) \u003d\u003d 0UL)",
+      "revId": "c04b985c03150b10608ccd202ce72e848ae11a86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
