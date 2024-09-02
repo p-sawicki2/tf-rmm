@@ -16,6 +16,24 @@
       "message": "Hello, can you review this patch?",
       "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38fe9811_b3223756",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-02T16:19:18Z",
+      "side": 1,
+      "message": "Thanks for the patch, most of us were on holiday last month and hence the delay. Hope to progress this ASAP.",
+      "parentUuid": "3dd5aa02_a29d366a",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
