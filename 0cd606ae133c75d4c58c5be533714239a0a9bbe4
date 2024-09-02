@@ -33,6 +33,24 @@
       "message": "This may break emulatable aborts at unprotected IPA ?",
       "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2f0ecdf_78c15441",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001123
+      },
+      "writtenOn": "2024-09-02T11:06:54Z",
+      "side": 1,
+      "message": "Hi Soby, the intent of this change is that if the ISV bit is cleared in the rec_exit-\u003eesr because of https://review.trustedfirmware.org/plugins/gitiles/TF-RMM/tf-rmm/+/refs/heads/main/runtime/core/exit.c#225 then clear that in the last_run_info.esr too. \n\nSo if for emulatable aborts at unprotected IPA, i believe ISV at rec-exit-\u003eesr will be set. Please correct me if i am wrong.",
+      "parentUuid": "ceabe49c_6eae6472",
+      "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
