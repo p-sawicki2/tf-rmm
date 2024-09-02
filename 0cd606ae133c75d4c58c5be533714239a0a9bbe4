@@ -16,6 +16,23 @@
       "message": "CI KVM unit tests failures due to a known issue.",
       "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceabe49c_6eae6472",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-02T10:57:23Z",
+      "side": 1,
+      "message": "This may break emulatable aborts at unprotected IPA ?",
+      "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
