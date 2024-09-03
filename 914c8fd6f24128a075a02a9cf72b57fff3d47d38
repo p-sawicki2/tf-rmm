@@ -59,6 +59,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b473aff_044a8bba",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-03T23:23:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d87c4ce3_e4bd926b",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 12
+      },
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d299acb_ab403019",
@@ -90,6 +114,24 @@
       "side": 1,
       "message": "I guess you mean \u003c\u003d REC_ATTEST_TOKEN_BUF_SIZE, since RMM_CCA_TOKEN_BUFFER is 1 by default.",
       "parentUuid": "4d299acb_ab403019",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2451b3ca_e75646e4",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-03T23:23:16Z",
+      "side": 1,
+      "message": "Hmmm... That won\u0027t work as REC_ATTEST_TOKEN_BUF_SIZE is defined inside a .h file. Also, RMM_PLAT_TOKEN_MAX_SIZE is defined as private for the attestation module.\nI can think of two solutions: \n- Make RMM_PLAT_TOKEN_MAX_SIZE public and add a COMPILE_ASSERT line in runtime/rsi/realm_attest.c (I included this solution in the last patchset)\n- Use a cmake check and compare RMM_PLAT_TOKEN_MAX_SIZE with RMM_CCA_TOKEN_BUFFER * 0x1000 (same formula as in the .h file).",
+      "parentUuid": "912e90cc_d7a68328",
       "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
