@@ -140,7 +140,7 @@ void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 	 * Check if the response is for the current REC. If it is, the current
 	 * code path is guaranteed to have a reference on the REC and the REC
 	 * cannot be deleted. It also means that the REC is mapped at the usual
-	 * SLOT_REC, so we can avoid lokcing and mapping the REC and the AUX
+	 * SLOT_REC, so we can avoid locking and mapping the REC and the AUX
 	 * granules.
 	 */
 	if (el3_resp->rec_granule != granule_addr(curr_rec->g_rec)) {
@@ -159,7 +159,7 @@ void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 		assert(rec != NULL);
 
 		/*
-		 * Map auxiliary granules. Note that the aux graules are mapped at a
+		 * Map auxiliary granules. Note that the aux granules are mapped at a
 		 * different high VA than during realm creation since this function
 		 * may be executing with another rec mapped at the same high VA.
 		 * Any accesses to aux granules via initialized pointers such as

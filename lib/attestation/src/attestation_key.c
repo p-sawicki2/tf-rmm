@@ -82,7 +82,7 @@ int attest_init_realm_attestation_key(void)
 #if RMM_ATTESTATION_USE_EL3
 	(void)key_attributes;
 	/* When HES is used for attestation, EL3 returns public key in raw format */
-	if (rmm_el3_ifc_get_realm_attest_pub_key_from_hes(buf,
+	if (rmm_el3_ifc_get_realm_attest_pub_key_from_el3(buf,
 			rmm_el3_ifc_get_shared_buf_size(),
 			&attest_key_size,
 			ATTEST_KEY_CURVE_ECC_SECP384R1) != 0) {

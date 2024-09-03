@@ -378,7 +378,7 @@ int rmm_el3_ifc_push_el3_attest_sign_request(uintptr_t buf, size_t buflen);
  */
 int rmm_el3_ifc_pull_el3_attest_sign_response(uintptr_t buf, size_t buflen,
 					size_t *len);
-int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
+int rmm_el3_ifc_get_realm_attest_pub_key_from_el3(uintptr_t buf, size_t buflen,
 					size_t *len, unsigned int crv);
 
 
