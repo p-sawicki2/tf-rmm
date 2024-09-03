@@ -51,6 +51,24 @@
       "parentUuid": "ceabe49c_6eae6472",
       "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d3411f1_ccb8f983",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-03T09:49:55Z",
+      "side": 1,
+      "message": "I see, thanks for the explanation. Although your fix will also work, there is an assumption that esr value in last run info is the unmodified reg value.  This may cause us problems in future.\n\n\nA more maintainable solution, albeit less efficient one could be:\n\n1. Add spsr_el2 field in last run info and update it as part of rec_exit.\n2. In complete_mmio_emulation(), add additional checks for !addr_in_rec_par() and !access_is_aarch32() [ this is new helper to be added] and complete mmio emulation only if the prior conditions succeed.\n3. Modify fixup_aarch32_data_abort() to call access_is_aarch32() to reuse the same helper.\n\nAlthough this is less efficient, it has the advantage of not make a custom modification to esr_el2 in last run info . Let me know of your thoughts.",
+      "parentUuid": "b2f0ecdf_78c15441",
+      "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
