@@ -203,7 +203,7 @@ int rmm_el3_ifc_pull_el3_attest_sign_response(uintptr_t buf, size_t buflen,
  * Get the realm attestation key to sign the realm attestation token. It is
  * expected that only the private key is retrieved in raw format.
  */
-int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
+int rmm_el3_ifc_get_realm_attest_pub_key_from_el3(uintptr_t buf, size_t buflen,
 						  size_t *len, unsigned int crv)
 {
 	struct smc_result smc_res;
