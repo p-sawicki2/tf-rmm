@@ -74,6 +74,24 @@
       "message": "Add a cmake check here to ensure that RMM_PLAT_TOKEN_MAX_SIZE \u003c\u003d RMM_CCA_TOKEN_BUFFER. or a COMPILER_ASSERT should also be enough although the latter give a descriptive diagnostic to user.",
       "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "912e90cc_d7a68328",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-03T22:11:50Z",
+      "side": 1,
+      "message": "I guess you mean \u003c\u003d REC_ATTEST_TOKEN_BUF_SIZE, since RMM_CCA_TOKEN_BUFFER is 1 by default.",
+      "parentUuid": "4d299acb_ab403019",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
