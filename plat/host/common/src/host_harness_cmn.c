@@ -14,6 +14,9 @@
 #include <string.h>
 
 #define ATTEST_KEY_CURVE_ECC_SECP384R1	0
+#define SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ_OP		U(1)
+#define SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP_OP		U(2)
+#define SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY_OP		U(3)
 
 /* Hardcoded platform token value */
 static uint8_t platform_token[] = {
@@ -277,6 +280,17 @@ static int attest_get_signing_key(uint64_t buf_pa, uint64_t *buf_size,
 	return 0;
 }
 
+static int rmm_el3_get_features(uint64_t feat_reg_idx, uint64_t *feat_reg)
+{
+	*feat_reg = 0;
+	if (feat_reg_idx != RMM_EL3_IFC_FEAT_REG_0_IDX) {
+		return -EINVAL;
+	}
+
+	*feat_reg |= RMM_EL3_IFC_FEAT_REG_0_EL3_TOKEN_SIGN_MASK;
+	return 0;
+}
+
 void host_monitor_call_with_res(unsigned long id,
 			unsigned long arg0,
 			unsigned long arg1,
@@ -300,18 +314,29 @@ void host_monitor_call_with_res(unsigned long id,
 		res->x[0] = attest_get_signing_key(arg0, &arg1, arg2);
 		res->x[1] = arg1;
 		break;
-	case SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ:
-		res->x[0] = attest_push_hes_request(arg0, arg1);
+	case SMC_RMM_EL3_FEATURES:
+		res->x[0] = rmm_el3_get_features(arg0, &arg1);
 		res->x[1] = arg1;
 		break;
-	case SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP:
-		res->x[0] = attest_get_hes_response(arg0, &arg1);
-		res->x[1] = arg1;
-		break;
-	case SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY:
-		res->x[0] = attest_get_realm_attest_pub_key(arg0, &arg1, arg2);
-		res->x[1] = arg1;
-		break;
+	case SMC_RMM_EL3_TOKEN_SIGN:
+	{
+		switch (arg0) {
+		case SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ_OP:
+			res->x[0] = attest_push_hes_request(arg1, arg2);
+			break;
+		case SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP_OP:
+			res->x[0] = attest_get_hes_response(arg1, &arg2);
+			res->x[1] = arg2;
+			break;
+		case SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY_OP:
+			res->x[0] = attest_get_realm_attest_pub_key(arg1, &arg2, arg3);
+			res->x[1] = arg2;
+			break;
+		default:
+			res->x[0] = -EINVAL;
+			break;
+		}
+	}
 	default:
 		VERBOSE("Unimplemented monitor call id %lx\n", id);
 	}

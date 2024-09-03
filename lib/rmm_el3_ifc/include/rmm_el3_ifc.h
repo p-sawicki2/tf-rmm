@@ -24,12 +24,10 @@
 #define SMC_RMM_GET_REALM_ATTEST_KEY	SMC64_STD_FID(RMM_EL3, U(2))
 #define SMC_RMM_GET_PLAT_TOKEN		SMC64_STD_FID(RMM_EL3, U(3))
 
-#define SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ		SMC64_STD_FID(RMM_EL3, U(4))
-#define SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP		SMC64_STD_FID(RMM_EL3, U(5))
-#define SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY		SMC64_STD_FID(RMM_EL3, U(6))
-
 /* Starting RMM-EL3 interface version 0.3 */
-#define SMC_RMM_EL3_FEATURES		SMC64_STD_FID(RMM_EL3, U(7))
+#define SMC_RMM_EL3_FEATURES		SMC64_STD_FID(RMM_EL3, U(4))
+
+#define SMC_RMM_EL3_TOKEN_SIGN		SMC64_STD_FID(RMM_EL3, U(5))
 
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
@@ -111,6 +109,14 @@
 	 (RMM_EL3_MANIFEST_GET_VERS_MINOR(_version) >= RMM_EL3_MANIFEST_VERS_MINOR))
 
 #ifndef __ASSEMBLER__
+
+/*****************************************************************************
+ * RMM-EL3 Interface Feature Register Definitions
+ ***************************************************************************/
+#define RMM_EL3_IFC_FEAT_REG_0_IDX				U(0)
+#define RMM_EL3_IFC_FEAT_REG_0_EL3_TOKEN_SIGN_BIT		U(0)
+#define RMM_EL3_IFC_FEAT_REG_0_EL3_TOKEN_SIGN_MASK		U(1)
+
 /****************************************************************************
  * Boot interface related functions
  ***************************************************************************/

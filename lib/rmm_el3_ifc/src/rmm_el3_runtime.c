@@ -14,8 +14,32 @@
 #include <stdint.h>
 #include <xlat_defs.h>
 
+#define SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ_OP		U(1)
+#define SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP_OP		U(2)
+#define SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY_OP		U(3)
+
 /* Spinlock used to protect the EL3<->RMM shared area */
 static spinlock_t shared_area_lock = {0U};
+
+static bool rmm_el3_ifc_el3_token_sign_supported(void)
+{
+	static uint64_t feat_reg;
+	static bool feat_reg_read;
+	int ret;
+
+	if (feat_reg_read) {
+		return (feat_reg & RMM_EL3_IFC_FEAT_REG_0_EL3_TOKEN_SIGN_MASK) != 0;
+	}
+
+	ret = rmm_el3_ifc_get_feat_register(RMM_EL3_IFC_FEAT_REG_0_IDX,
+					    &feat_reg);
+	if (ret != 0) {
+		ERROR("Failed to get feature register\n");
+		return false;
+	}
+
+	return (feat_reg & RMM_EL3_IFC_FEAT_REG_0_EL3_TOKEN_SIGN_MASK) != 0;
+}
 
 /*
  * Get and lock a pointer to the start of the RMM<->EL3 shared buffer.
@@ -122,10 +146,15 @@ int rmm_el3_ifc_push_el3_attest_sign_request(uintptr_t buf, size_t buflen)
 {
 	struct smc_result smc_res;
 
-	monitor_call_with_res(SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ,
+	if (!rmm_el3_ifc_el3_token_sign_supported()) {
+		ERROR("EL3 does not support token signing\n");
+		return -ENOTSUP;
+	}
+
+	monitor_call_with_res(SMC_RMM_EL3_TOKEN_SIGN,
+			      SMC_RMM_EL3_PUSH_ATTEST_SIGN_REQ_OP,
 			      get_buffer_pa(buf, buflen),
 			      buflen,
-			      0UL,
 			      0UL, 0UL, 0UL, &smc_res);
 
 	/* coverity[uninit_use:SUPPRESS] */
@@ -147,10 +176,16 @@ int rmm_el3_ifc_pull_el3_attest_sign_response(uintptr_t buf, size_t buflen,
 {
 	struct smc_result smc_res;
 
-	monitor_call_with_res(SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP,
+	if (!rmm_el3_ifc_el3_token_sign_supported()) {
+		ERROR("EL3 does not support token signing\n");
+		return -ENOTSUP;
+	}
+
+	monitor_call_with_res(SMC_RMM_EL3_TOKEN_SIGN,
+			      SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP_OP,
 			      get_buffer_pa(buf, buflen),
 			      buflen,
-			      0UL, 0UL, 0UL, 0UL, &smc_res);
+			      0UL, 0UL, 0UL, &smc_res);
 
 	/* coverity[uninit_use:SUPPRESS] */
 	if (smc_res.x[0] != 0UL) {
@@ -171,8 +206,29 @@ int rmm_el3_ifc_pull_el3_attest_sign_response(uintptr_t buf, size_t buflen,
 int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
 						  size_t *len, unsigned int crv)
 {
-	return rmm_el3_ifc_get_realm_attest_key_internal(
-		buf, buflen, len, crv, SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY);
+	struct smc_result smc_res;
+
+	if (!rmm_el3_ifc_el3_token_sign_supported()) {
+		ERROR("EL3 does not support token signing\n");
+		return -ENOTSUP;
+	}
+
+	monitor_call_with_res(SMC_RMM_EL3_TOKEN_SIGN,
+			      SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY_OP,
+			      get_buffer_pa(buf, buflen),
+			      buflen,
+			      crv, 0UL, 0UL, &smc_res);
+
+	/* coverity[uninit_use:SUPPRESS] */
+	if (smc_res.x[0] != 0UL) {
+		ERROR("Failed to get realm attestation key x0 = 0x%lx\n",
+		      smc_res.x[0]);
+		return (int)smc_res.x[0];
+	}
+
+	*len = smc_res.x[1];
+
+	return 0;
 }
 
 /*
