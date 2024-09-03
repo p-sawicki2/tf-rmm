@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "352fbdee_9cf87d83",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1001401
+      },
+      "writtenOn": "2024-09-03T21:55:29Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right! My patch just wants to fix the bug with the minimum number of lines changed.  If I change the function name and introduce new types, this work type may be a `refactor`. I wonder if the type of the commit is `fix` or `refactor`.",
+      "parentUuid": "7e20f170_eefb6f12",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bdd08322_51069438",
         "filename": "runtime/core/exit.c",
         "patchSetId": 1
