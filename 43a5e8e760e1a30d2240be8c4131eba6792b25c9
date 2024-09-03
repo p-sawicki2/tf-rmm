@@ -22,6 +22,30 @@
       },
       "revId": "43a5e8e760e1a30d2240be8c4131eba6792b25c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba98a41f_2130892a",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-09-03T13:18:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e965252_371fed9a",
+      "range": {
+        "startLine": 977,
+        "startChar": 1,
+        "endLine": 977,
+        "endChar": 23
+      },
+      "revId": "43a5e8e760e1a30d2240be8c4131eba6792b25c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
