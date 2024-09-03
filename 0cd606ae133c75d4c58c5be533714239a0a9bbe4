@@ -69,6 +69,24 @@
       "parentUuid": "b2f0ecdf_78c15441",
       "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36be4b9e_69850eec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001123
+      },
+      "writtenOn": "2024-09-03T11:32:00Z",
+      "side": 1,
+      "message": "Agree with your soulution, initially i thought of this but went ahead with the current approach as addr_in_rec_par() and fixup_aarch32_data_abort() were already being checked as part of handle_data_abort() function.\n\nI did not understand why do we need to save spsr_el2 in last_run_info and rec_exit?",
+      "parentUuid": "9d3411f1_ccb8f983",
+      "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
