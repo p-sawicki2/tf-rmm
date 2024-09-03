@@ -34,6 +34,57 @@
       "parentUuid": "3dd5aa02_a29d366a",
       "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "237f4f1b_e7360af4",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-09-03T10:29:08Z",
+      "side": 1,
+      "message": "With this change this function not longer checks if the IPA has RIPAS \u003d\u003d EMPTY. Now it can also tell us if it is ASSIGNED_RAM, so I think we should rename it to something more appropriate and change the return type to avoid the extra argument for the assigned_ram condition. I guess something like\n\n\tstatic enum ipa_type get_ipa_type(unsigned long ipa, struct rec *rec);\n\nwhere `enum ipa_type` is an enum with every possible value that can be returned (such as `RIPAS_EMPTY`, `ASSIGNED_RAM`, `OTHER`, for example).\n\nThis would also allow more scalability if we wanted to add extra cases in the future.",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdd08322_51069438",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-09-03T10:29:08Z",
+      "side": 1,
+      "message": "nit: Leave an empty line before the \u0027if\u0027 statement for readability.",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4f8a126_21ed171d",
+        "filename": "runtime/core/exit.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-09-03T10:29:08Z",
+      "side": 1,
+      "message": "nit: Leave an empty line before the \u0027if\u0027 statement for readability.",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
