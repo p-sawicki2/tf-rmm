@@ -87,6 +87,24 @@
       "parentUuid": "9d3411f1_ccb8f983",
       "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfce9234_bc4b60f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-03T12:36:07Z",
+      "side": 1,
+      "message": "ok.\nspsr is needed for checking aarch32 mode of execution : https://review.trustedfirmware.org/plugins/gitiles/TF-RMM/tf-rmm/+/refs/heads/main/runtime/core/exit.c#42",
+      "parentUuid": "36be4b9e_69850eec",
+      "revId": "0cd606ae133c75d4c58c5be533714239a0a9bbe4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
