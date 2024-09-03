@@ -440,6 +440,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "49a7c9f6_d9450f70",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-03T16:23:42Z",
+      "side": 1,
+      "message": "ah, good point. In this case, because EL3 was not able to copy the SHA to HES buffer (because it was full and busy), it may be better for RMM to keep repeating the call with the hash populated in the shared buffer. This is easier to specify in the RMM-EL3 spec : Ensure hash buffer is populated (i.e c_size !\u003d0)  till the first hunk is retrieved via this API. Afterwards the c_size should be zero.\n\nwould that work ?",
+      "parentUuid": "fa297b61_fc55460f",
+      "range": {
+        "startLine": 159,
+        "startChar": 1,
+        "endLine": 164,
+        "endChar": 2
+      },
+      "revId": "09a8323b094dfc60fa6bbe3c883e37d4874092b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c4d08366_b5e2f6a9",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 4
