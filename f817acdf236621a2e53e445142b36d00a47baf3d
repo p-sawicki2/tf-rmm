@@ -34,6 +34,24 @@
       "parentUuid": "8f124f08_aa808c22",
       "revId": "f817acdf236621a2e53e445142b36d00a47baf3d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9f37fa3_511fe075",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-03T21:46:52Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30982",
+      "parentUuid": "85fdd66d_deb3ec49",
+      "revId": "f817acdf236621a2e53e445142b36d00a47baf3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
