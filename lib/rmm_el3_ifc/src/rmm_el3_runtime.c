@@ -5,6 +5,7 @@
 
 #include <assert.h>
 #include <debug.h>
+#include <errno.h>
 #include <rmm_el3_ifc.h>
 #include <rmm_el3_ifc_priv.h>
 #include <spinlock.h>
@@ -172,4 +173,36 @@ int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
 {
 	return rmm_el3_ifc_get_realm_attest_key_internal(
 		buf, buflen, len, crv, SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY);
+}
+
+/*
+ * Access the feature register. This is supported for interface version 0.3 and
+ * later.
+ */
+int rmm_el3_ifc_get_feat_register(unsigned int feat_reg_idx, uint64_t *feat_reg)
+{
+	struct smc_result smc_res;
+	unsigned long rmm_el3_ifc_version = rmm_el3_ifc_get_version();
+
+	if (RMM_EL3_IFC_GET_VERS_MAJOR(rmm_el3_ifc_version) != 0 ||
+	    RMM_EL3_IFC_GET_VERS_MINOR(rmm_el3_ifc_version) < 3) {
+		ERROR("Feature register access not supported by this version 0x%lx\n",
+			rmm_el3_ifc_version);
+		return -ENOTSUP;
+	}
+
+	monitor_call_with_res(SMC_RMM_EL3_FEATURES,
+			      feat_reg_idx,
+			      0UL, 0UL, 0UL, 0UL, 0UL, &smc_res);
+
+	/* coverity[uninit_use:SUPPRESS] */
+	if (smc_res.x[0] != 0UL) {
+		ERROR("Failed to get feature register x0 = 0x%lx\n",
+		      smc_res.x[0]);
+		return (int)smc_res.x[0];
+	}
+
+	*feat_reg = smc_res.x[1];
+
+	return 0;
 }

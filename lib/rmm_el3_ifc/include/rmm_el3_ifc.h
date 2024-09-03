@@ -28,6 +28,9 @@
 #define SMC_RMM_EL3_PULL_ATTEST_SIGN_RESP		SMC64_STD_FID(RMM_EL3, U(5))
 #define SMC_RMM_EL3_GET_REALM_ATTEST_PUB_KEY		SMC64_STD_FID(RMM_EL3, U(6))
 
+/* Starting RMM-EL3 interface version 0.3 */
+#define SMC_RMM_EL3_FEATURES		SMC64_STD_FID(RMM_EL3, U(7))
+
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
 
@@ -69,7 +72,7 @@
  * The Minor version value for the Boot interface supported by this
  * implementation of RMM.
  */
-#define RMM_EL3_IFC_VERS_MINOR		(U(2))
+#define RMM_EL3_IFC_VERS_MINOR		(U(3))
 
 /*
  * Check if RMM-EL3 Interface is compatible. The Major version should match
@@ -371,6 +374,13 @@ int rmm_el3_ifc_pull_el3_attest_sign_response(uintptr_t buf, size_t buflen,
 					size_t *len);
 int rmm_el3_ifc_get_realm_attest_pub_key_from_hes(uintptr_t buf, size_t buflen,
 					size_t *len, unsigned int crv);
+
+
+/*
+ * Access the feature register. This is supported for interface version 0.3 and
+ * later.
+ */
+int rmm_el3_ifc_get_feat_register(unsigned int feat_reg_idx, uint64_t *feat_reg);
 
 #endif /* __ASSEMBLER__ */
 #endif /* RMM_EL3_IFC_H */
