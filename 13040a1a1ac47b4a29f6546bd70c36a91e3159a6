@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c70dc17_d92c9842",
+        "filename": "lib/s2tt/include/ripas.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-04T14:49:46Z",
+      "side": 1,
+      "message": "is RIPAS_DEV defined in 1.0? can you point to the 1.0 rel spec? i have the EAC5 version but cant see anything related to device assignment.",
+      "revId": "13040a1a1ac47b4a29f6546bd70c36a91e3159a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
