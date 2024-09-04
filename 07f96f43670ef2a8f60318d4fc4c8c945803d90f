@@ -38,6 +38,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "27957ba1_51c90d85",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-04T10:18:51Z",
+      "side": 1,
+      "message": "RMM will set RIPAS from RAM to EMPTY when the Realm has requested the same (via RSI_IPA_STATE_SET command). So if the Realm encounters an error due to RMM performing a transition from RAM to EMPTY, this is an issue in Realm software which must be fixed. \n\nHence I dont think this is a problem in RMM.",
+      "revId": "07f96f43670ef2a8f60318d4fc4c8c945803d90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "237f4f1b_e7360af4",
         "filename": "runtime/core/exit.c",
         "patchSetId": 1
