@@ -240,6 +240,13 @@ struct rsi_host_call {
  */
 #define SMC_RSI_MEM_SET_PERM_VALUE	SMC64_RSI_FID(U(0x12))
 
+/*
+ * arg1 == Index of target plane
+ * arg2 == IPA of rsi_plane_run object
+ * ret0 == Status / error
+ */
+#define SMC_RSI_PLANE_ENTER		SMC64_RSI_FID(U(0x13))
+
 /* Number of general purpose registers per Plane */
 #define RSI_PLANE_NR_GPRS		31
 

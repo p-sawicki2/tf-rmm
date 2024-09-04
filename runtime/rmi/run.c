@@ -395,7 +395,10 @@ unsigned long smc_rec_enter(unsigned long rec_addr,
 
 	rec_run_loop(rec, &rec_run.exit);
 
-	gic_copy_state_to_rec_exit(&plane->sysregs.gicstate, &rec_run.exit);
+	if (rec->active_plane_id == PRIMARY_PLANE_ID) {
+		gic_copy_state_to_rec_exit(&plane->sysregs.gicstate,
+					   &rec_run.exit);
+	}
 
 out_unmap_buffers:
 	buffer_unmap(rec);

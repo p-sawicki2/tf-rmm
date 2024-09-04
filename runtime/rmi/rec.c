@@ -136,6 +136,7 @@ static void init_rec_regs(struct rec *rec,
 			  struct rmi_rec_params *rec_params,
 			  struct rd *rd)
 {
+	/* @TODO: We might not need to initialize secondary planes' contexts */
 	for (unsigned int i = 0U; i < rec_num_planes(rec); i++) {
 		struct rec_plane *plane = rec_plane_by_idx(rec, i);
 
@@ -162,6 +163,7 @@ static void init_rec_regs(struct rec *rec,
 				SPSR_EL2_D_BIT;
 
 		init_rec_sysregs(rec, plane, rec_params->mpidr);
+		gic_cpu_state_init(&(plane->sysregs.gicstate));
 	}
 
 	init_common_sysregs(rec, rd);
@@ -350,9 +352,6 @@ unsigned long smc_rec_create(unsigned long rd_addr,
 
 	rec->realm_info.num_aux_planes = rd->num_aux_planes;
 	init_rec_regs(rec, &rec_params, rd);
-	for (unsigned int i = 0U; i < rec_num_planes(rec); i++) {
-		gic_cpu_state_init(&(rec_plane_by_idx(rec, i)->sysregs.gicstate));
-	}
 	
 	/* REC always boots in PLANE_PRIMARY_ID plane */
 	rec->active_plane_id = PRIMARY_PLANE_ID;
