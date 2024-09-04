@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "517a1c57_b5bac504",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-09-04T07:49:42Z",
+      "side": 1,
+      "message": "This should return error!",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 11
+      },
+      "revId": "9e3e376f3d4ed3388c94f0f9a25b5dd9fccf1331",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19f0e91c_bea8b762",
+        "filename": "lib/attestation/src/attestation_token.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-09-04T07:49:42Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 241,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 1
+      },
+      "revId": "9e3e376f3d4ed3388c94f0f9a25b5dd9fccf1331",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
