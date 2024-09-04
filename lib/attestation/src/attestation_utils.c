@@ -96,6 +96,14 @@ int attestation_init(void)
 
 	buffer_alloc_ctx_unassign();
 
+#if RMM_ATTESTATION_USE_EL3
+	/* Initialize the EL3 queue */
+	if (el3_token_sign_queue_init() != 0) {
+		WARN("EL3 queue init failed.\n");
+		return -ENOTSUP;
+	}
+#endif
+
 	attest_initialized = true;
 
 	return 0;

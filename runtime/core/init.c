@@ -7,7 +7,6 @@
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
-#include <el3_token_sign_queue.h>
 #include <rmm_el3_ifc.h>
 #include <run.h>
 #include <simd.h>
@@ -107,13 +106,6 @@ void rmm_main(void)
 	if (attestation_init() != 0) {
 		WARN("Attestation init failed.\n");
 	}
-
-#if RMM_ATTESTATION_USE_EL3
-	/* Initialize the EL3 queue */
-	if (el3_token_sign_queue_init() != 0) {
-		WARN("EL3 queue init failed.\n");
-	}
-#endif
 
 #ifdef RMM_FPU_USE_AT_REL2
 	/*

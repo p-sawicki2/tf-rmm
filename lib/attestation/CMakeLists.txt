@@ -50,3 +50,12 @@ target_sources(rmm-lib-attestation
         "src/attestation_rnd.c"
         "src/attestation_token.c"
         "src/attestation_utils.c")
+
+if(RMM_ATTESTATION_USE_EL3)
+    target_sources(rmm-lib-attestation
+        PRIVATE
+        "src/attestation_el3_token_sign.c")
+    target_link_libraries(rmm-lib-attestation
+        PUBLIC
+          rmm-lib-slot_buf)
+endif()

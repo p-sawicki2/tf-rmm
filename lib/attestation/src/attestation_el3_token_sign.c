@@ -5,13 +5,13 @@
 
 #include <assert.h>
 #include <atomics.h>
+#include <attestation_token.h>
 #include <buffer.h>
 #include <cpuid.h>
 #include <debug.h>
 #include <errno.h>
 #include <granule.h>
 #include <memory.h>
-#include <rec.h>
 #include <rmm_el3_ifc.h>
 #include <spinlock.h>
 #include <stdbool.h>
@@ -105,18 +105,17 @@ int el3_token_sign_queue_init(void)
 	return 0;
 }
 
-void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
+/*
+ * Pull the response from EL3 into the per cpu response buffer. The function
+ * returns the granule address of the REC for which the response was received
+ * and is expected to passed into el3_token_write_response_to_ctx().
+ */
+uintptr_t attest_el3_token_sign_pull_response_from_el3(void)
 {
 	uintptr_t shared_buf;
 	int ret = 0;
 	size_t resp_len = 0;
-	struct granule *rec_granule = NULL;
-	struct rec *rec = NULL;
-	struct t_cose_rmm_el3_ctx *ctx = NULL;
-	void *rec_aux = NULL;
-	struct rec_attest_data *attest_data = NULL;
 	struct el3_token_sign_response_s *el3_resp = &el3_token_sign_response[my_cpuid()];
-	bool unmap_unlock_needed = false;
 
 	shared_buf = rmm_el3_ifc_get_shared_buf_locked();
 	ret = rmm_el3_ifc_pull_el3_attest_sign_response(
@@ -124,7 +123,7 @@ void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 	if (ret == -ENOMEM) {
 		VERBOSE("EL3 asked to retry pull\n");
 		rmm_el3_ifc_release_shared_buf();
-		return;
+		return 0UL;
 	}
 
 	if (ret != 0 || resp_len != sizeof(*el3_resp)) {
@@ -135,49 +134,36 @@ void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 
 	memcpy((void *)el3_resp, (void *)shared_buf, sizeof(*el3_resp));
 	rmm_el3_ifc_release_shared_buf();
+	return el3_resp->rec_granule;
+}
 
-	/*
-	 * Check if the response is for the current REC. If it is, the current
-	 * code path is guaranteed to have a reference on the REC and the REC
-	 * cannot be deleted. It also means that the REC is mapped at the usual
-	 * SLOT_REC, so we can avoid locking and mapping the REC and the AUX
-	 * granules.
-	 */
-	if (el3_resp->rec_granule != granule_addr(curr_rec->g_rec)) {
+/*
+ * Write the response from EL3 to the context. The response is written only if the context
+ * is valid and the response is for the right request. If the function returns an error
+ * the caller must treat it as a fatal error. The granule_addr is checked against the
+ * per cpu response buffer to ensure that the response is for the right request.
+ * The caller must ensure that the REC granule lock is held so that it cannot be deleted
+ * while the response is being written. The auxillary granules must be mapped before
+ * this function is called. If the REC is not the currently running REC, ctx is expected
+ * to be relocated to the correct high VA.
+ */
+int attest_el3_token_write_response_to_ctx(struct token_sign_cntxt *sign_ctx,
+					   uintptr_t granule_addr)
+{
+	struct el3_token_sign_response_s *el3_resp = &el3_token_sign_response[my_cpuid()];
 
-		rec_granule = find_lock_granule(
-			el3_resp->rec_granule, GRANULE_STATE_REC);
-		if (!rec_granule) {
-			/*
-			 * REC must have been destroyed, drop the response.
-			 */
-			VERBOSE("REC granule %lx not found\n", el3_resp->rec_granule);
-			return;
-		}
-
-		rec = buffer_granule_map(rec_granule, SLOT_EL3_SIGN_REC);
-		assert(rec != NULL);
-
-		/*
-		 * Map auxiliary granules. Note that the aux granules are mapped at a
-		 * different high VA than during realm creation since this function
-		 * may be executing with another rec mapped at the same high VA.
-		 * Any accesses to aux granules via initialized pointers such as
-		 * attest_data, need to be recaluclated at the new high VA.
-		 */
-		rec_aux = buffer_aux_granules_map_el3_sign_slot(rec->g_aux,
-								rec->num_rec_aux);
-		assert(rec_aux != NULL);
-
-		unmap_unlock_needed = true;
-		attest_data = (struct rec_attest_data *)(uintptr_t)rec_aux + REC_HEAP_SIZE +
-			      REC_PMU_SIZE + REC_SIMD_SIZE;
-	} else {
-		rec = curr_rec;
-		attest_data = rec->aux_data.attest_data;
+	if (!sign_ctx) {
+		ERROR("%s:%d Invalid context\n", __func__, __LINE__);
+		return -EINVAL;
 	}
-	ctx = &attest_data->token_sign_ctx.ctx.crypto_ctx;
 
+	if (granule_addr != el3_resp->rec_granule) {
+		VERBOSE("Response for REC granule %lx not found\n",
+			 el3_resp->rec_granule);
+		return -EINVAL;
+	}
+
+	struct t_cose_rmm_el3_ctx *ctx = &(sign_ctx->ctx.crypto_ctx);
 	spinlock_acquire(&ctx->lock);
 
 	/*
@@ -210,10 +196,5 @@ void el3_token_sign_pull_response_from_el3(struct rec *curr_rec)
 
 out_buf_lock:
 	spinlock_release(&ctx->lock);
-	/* Unmap auxiliary granules */
-	if (unmap_unlock_needed) {
-		buffer_aux_unmap(rec_aux, rec->num_rec_aux);
-		buffer_unmap(rec);
-		granule_unlock(rec_granule);
-	}
+	return 0;
 }

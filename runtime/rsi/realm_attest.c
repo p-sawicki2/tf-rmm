@@ -6,7 +6,6 @@
 #include <attestation.h>
 #include <buffer.h>
 #include <debug.h>
-#include <el3_token_sign_queue.h>
 #include <granule.h>
 #include <measurement.h>
 #include <realm.h>
@@ -203,6 +202,70 @@ static bool check_pending_irq(void)
 	return (read_isr_el1() != 0UL);
 }
 
+static void write_response_to_rec(struct rec *curr_rec,
+				uintptr_t resp_granule)
+{
+	struct granule *rec_granule = NULL;
+	struct rec *rec = NULL;
+	void *rec_aux = NULL;
+	struct token_sign_cntxt *ctx = NULL;
+	struct rec_attest_data *attest_data = NULL;
+	bool unmap_unlock_needed = false;
+
+	/*
+	 * Check if the granule is the same as the current REC. If it is, the current
+	 * code path is guaranteed to have a reference on the REC and the REC
+	 * cannot be deleted. It also means that the REC is mapped at the usual
+	 * SLOT_REC, so we can avoid locking and mapping the REC and the AUX
+	 * granules.
+	 */
+	if (resp_granule != granule_addr(curr_rec->g_rec)) {
+
+		rec_granule = find_lock_granule(
+				resp_granule, GRANULE_STATE_REC);
+		if (!rec_granule) {
+			/*
+			 * REC must have been destroyed, drop the response.
+			 */
+			VERBOSE("REC granule %lx not found\n", resp_granule);
+			return;
+		}
+
+		rec = buffer_granule_map(rec_granule, SLOT_EL3_SIGN_REC);
+		assert(rec != NULL);
+
+		/*
+		 * Map auxiliary granules. Note that the aux granules are mapped at a
+		 * different high VA than during realm creation since this function
+		 * may be executing with another rec mapped at the same high VA.
+		 * Any accesses to aux granules via initialized pointers such as
+		 * attest_data, need to be recaluclated at the new high VA.
+		 */
+		rec_aux = buffer_aux_granules_map_el3_sign_slot(rec->g_aux,
+								rec->num_rec_aux);
+		assert(rec_aux != NULL);
+
+		unmap_unlock_needed = true;
+		attest_data = (struct rec_attest_data *)(uintptr_t)rec_aux + REC_HEAP_SIZE +
+			      REC_PMU_SIZE + REC_SIMD_SIZE;
+	} else {
+		rec = curr_rec;
+		attest_data = rec->aux_data.attest_data;
+	}
+	ctx = &attest_data->token_sign_ctx;
+
+	if (attest_el3_token_write_response_to_ctx(ctx, resp_granule) != 0) {
+		panic();
+	}
+
+	if (unmap_unlock_needed) {
+		buffer_aux_unmap(rec_aux, rec->num_rec_aux);
+		buffer_unmap(rec);
+		granule_unlock(rec_granule);
+	}
+	return;
+}
+
 void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rmi_rec_exit *rec_exit,
 				      struct rsi_result *res)
@@ -273,10 +336,15 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 		 * requests from EL3 until this RECs request is done.
 		 */
 		/*
-		 * TODO: Future enhancement to decouple rec and aux granule
-		 * mapping from pulling response from EL3.
+		 * Pull response from EL3, find the corresponding rec granule
+		 * and attestation context, and have the attestation library
+		 * write the response to the context.
 		 */
-		el3_token_sign_pull_response_from_el3(rec);
+		uintptr_t granule = attest_el3_token_sign_pull_response_from_el3();
+		if (granule == 0UL) {
+			continue;
+		}
+		write_response_to_rec(rec, granule);
 #endif
 	}
 

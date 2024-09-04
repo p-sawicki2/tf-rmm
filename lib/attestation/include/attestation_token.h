@@ -218,4 +218,22 @@ int attest_token_ctx_init(struct token_sign_cntxt *token_ctx,
 			   unsigned int heap_buf_len,
 			   uintptr_t granule_addr);
 
+/*
+ * Pull the response from EL3 into the per cpu response buffer. The function
+ * returns the granule address of the REC for which the response was received
+ * and is expected to passed into el3_token_write_response_to_ctx().
+ */
+uintptr_t attest_el3_token_sign_pull_response_from_el3(void);
+
+/*
+ * Write the response from EL3 to the context. The response is written only if the context
+ * is valid and the response is for the right request. If the function returns an error
+ * the caller must treat it as a fatal error. The granule_addr is checked against the
+ * per cpu response buffer to ensure that the response is for the right request.
+ * The caller must ensure that the REC granule lock is held so that it cannot be deleted
+ * while the response is being written. The auxillary granules must be mapped before
+ * this function is called. If the REC is not the currently running REC, ctx is expected
+ * to be relocated to the correct high VA.
+ */
+int attest_el3_token_write_response_to_ctx(struct token_sign_cntxt *ctx, uintptr_t granule_addr);
 #endif /* ATTESTATION_TOKEN_H */
