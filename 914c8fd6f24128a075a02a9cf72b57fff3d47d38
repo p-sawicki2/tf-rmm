@@ -134,6 +134,24 @@
       "parentUuid": "912e90cc_d7a68328",
       "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "392887d1_f8054846",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-04T09:01:52Z",
+      "side": 1,
+      "message": "RMM_CCA_TOKEN_BUFFER is a global config so it should be available here to evaluate. I meant something like this:\n\n```\nMATH(EXPR CCA_TOKEN_BUFFER_BYTES \"${RMM_CCA_TOKEN_BUFFER} * 0x1000\")\nif(${CCA_TOKEN_BUFFER_BYTES} LESS ${ATTEST_PLAT_TOKEN_SIZE})\n    message(FATAL_ERROR \"RMM_CCA_TOKEN_BUFFER is less than ATTEST_PLAT_TOKEN_SIZE\")\nendif()\n```",
+      "parentUuid": "2451b3ca_e75646e4",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
