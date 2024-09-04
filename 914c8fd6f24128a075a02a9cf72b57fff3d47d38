@@ -152,6 +152,24 @@
       "parentUuid": "2451b3ca_e75646e4",
       "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc7cb164_ca18b23b",
+        "filename": "lib/attestation/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-04T15:51:37Z",
+      "side": 1,
+      "message": "OK. More like my second suggestion.\n\nI think that the message should be something more like \"RMM_CCA_TOKEN_BUFFER size is less than ATTEST_PLAT_TOKEN_SIZE\", since RMM_CCA_TOKEN_BUFFER and ATTEST_PLAT_TOKEN_SIZE are not comparable directly.\n\nDone.",
+      "parentUuid": "392887d1_f8054846",
+      "revId": "914c8fd6f24128a075a02a9cf72b57fff3d47d38",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
