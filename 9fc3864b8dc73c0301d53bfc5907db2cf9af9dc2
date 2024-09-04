@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "efd3467e_98d1e25b",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-09-04T08:38:59Z",
+      "side": 1,
+      "message": "Oh, That\u0027s right, I missed that",
+      "parentUuid": "661ff155_ea9df4e3",
+      "range": {
+        "startLine": 313,
+        "startChar": 28,
+        "endLine": 314,
+        "endChar": 16
+      },
+      "revId": "9fc3864b8dc73c0301d53bfc5907db2cf9af9dc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "713ed513_5fb08389",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "The fact that this is a shared buffer is only known to caller. To this API, it is a buffer (already locked by caller if shared with other PEs). The buffer might as well be private in future.",
       "parentUuid": "713ed513_5fb08389",
+      "range": {
+        "startLine": 315,
+        "startChar": 13,
+        "endLine": 315,
+        "endChar": 24
+      },
+      "revId": "9fc3864b8dc73c0301d53bfc5907db2cf9af9dc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9591720c_99296593",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2024-09-04T08:38:59Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "3834a11c_7e468491",
       "range": {
         "startLine": 315,
         "startChar": 13,
