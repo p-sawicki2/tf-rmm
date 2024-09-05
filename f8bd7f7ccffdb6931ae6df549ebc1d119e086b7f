@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdc39ddd_64eb4ec6",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:47:03Z",
+      "side": 1,
+      "message": "nit: vertical alignment",
+      "range": {
+        "startLine": 27,
+        "startChar": 42,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f5b75b_5fd85878",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:47:03Z",
+      "side": 1,
+      "message": "I suggest not adding EL3_PUSH/EL3_PULL. The _REQ/_RESP suffix is enough to indicate the direction.",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fa7fbd6_3672e2af",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:47:03Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 352,
+        "startChar": 16,
+        "endLine": 352,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abfbee4e_7b701ea1",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:47:03Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 369,
+        "startChar": 16,
+        "endLine": 369,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0061f74_d38e9ddf",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:47:03Z",
+      "side": 1,
+      "message": "nit: can be moved to the next line",
+      "range": {
+        "startLine": 118,
+        "startChar": 9,
+        "endLine": 118,
+        "endChar": 13
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
