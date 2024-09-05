@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f857f14_5aa40342",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-05T13:55:52Z",
+      "side": 1,
+      "message": "IIUC EL3 just forwards the signing req/resp and HES do the actual signing. Migth represent this in the naming.",
+      "range": {
+        "startLine": 36,
+        "startChar": 6,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "9c19f8b0be74a5800e58fbe2c36ff331957603ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
