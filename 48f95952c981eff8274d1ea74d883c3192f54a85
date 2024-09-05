@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "782ba0f0_77b08198",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-05T16:09:47Z",
+      "side": 1,
+      "message": "I set RMM_EL3_IFC_VERS_MINOR to 3. Will that be OK?",
+      "parentUuid": "b02925e3_bdbc530b",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4527dadd_96b95d2a",
         "filename": "lib/attestation/src/attestation_key.c",
         "patchSetId": 14
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-05T10:03:40Z",
       "side": 1,
       "message": "add another check here\n\n```\n/*\n * Retry if the EL3 has not managed to return the token. It could be\n * that HES queue is full and RMM needs to retry again.\n */\nif (token_hunk_len \u003d\u003d 0) {\n  continue;\n}\n```",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45f36a8d_0969b099",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-05T16:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4527dadd_96b95d2a",
       "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -48,6 +84,30 @@
       "writtenOn": "2024-09-05T10:03:40Z",
       "side": 1,
       "message": "why is this suppression needed ?",
+      "range": {
+        "startLine": 239,
+        "startChar": 2,
+        "endLine": 239,
+        "endChar": 59
+      },
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07e9177e_506b68c7",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-05T16:09:47Z",
+      "side": 1,
+      "message": "Discussed offline. It is now adressed.",
+      "parentUuid": "3515bfa4_1b41df6e",
       "range": {
         "startLine": 239,
         "startChar": 2,
@@ -81,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86af67b9_6b06d892",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-05T16:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f77787f_0956ffd2",
+      "range": {
+        "startLine": 246,
+        "startChar": 2,
+        "endLine": 248,
+        "endChar": 5
+      },
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61bd1fdb_6b510482",
@@ -94,6 +178,24 @@
       "writtenOn": "2024-09-05T10:03:40Z",
       "side": 1,
       "message": "add comment here,\n\n`/* c_size should not be zero if platform_token_offset is 0 */`",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8274b7f3_5ff91bec",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-09-05T16:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61bd1fdb_6b510482",
       "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
