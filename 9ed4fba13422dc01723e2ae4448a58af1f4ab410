@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "722e8d3f_fe4e21fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T08:53:10Z",
+      "side": 1,
+      "message": "tools/cppcheck",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c247b91_208b0f0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T08:53:10Z",
+      "side": 1,
+      "message": "fail build if errors detected",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c35e3a7_f7c476af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T08:53:10Z",
+      "side": 1,
+      "message": "also add:\n\nThe minimum required version is 2.14.",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a45a157_48f3750d",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T08:53:10Z",
+      "side": 1,
+      "message": "Update the documentation for CPPCheck version here : https://tf-rmm.readthedocs.io/en/latest/getting_started/getting-started.html#tool-dependency-overview\n\nAlso add a note for this behaviour in https://tf-rmm.readthedocs.io/en/latest/resources/application-notes/cppcheck.html.\n\nOnce this patch is merged, the CI scripts also need to be udpated.",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45350b00_8e13cbe2",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T08:53:10Z",
+      "side": 1,
+      "message": "should this be VERSION_GREATER_EQUAL ?",
+      "range": {
+        "startLine": 104,
+        "startChar": 31,
+        "endLine": 104,
+        "endChar": 47
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
