@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29356066_bd190bca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T15:07:38Z",
+      "side": 1,
+      "message": "The checks here : https://github.com/TF-RMM/tf-rmm/blob/main/runtime/rmi/rec.c#L292 and here : https://github.com/TF-RMM/tf-rmm/blob/main/lib/granule/include/granule.h#L85",
+      "revId": "cb669769b1a5180d616d7f97307cf66fb72f260f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa56a67e_1124db06",
+        "filename": "runtime/include/rec.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T15:07:38Z",
+      "side": 1,
+      "message": "Should perhaps be linked to REFCOUNT_MAX somehow. It could be defined in the same file and then we could have a compiler assert to ensure both are the same.",
+      "revId": "cb669769b1a5180d616d7f97307cf66fb72f260f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
