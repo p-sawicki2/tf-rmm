@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b02925e3_bdbc530b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T10:03:40Z",
+      "side": 1,
+      "message": "need to wait till TF-A patch is merged.  Also RMM-EL3 ifc should be updated to expect the newer version of RMM-EL3 interface here : https://github.com/TF-RMM/tf-rmm/blob/main/lib/rmm_el3_ifc/include/rmm_el3_ifc.h#L68",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4527dadd_96b95d2a",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T10:03:40Z",
+      "side": 1,
+      "message": "add another check here\n\n```\n/*\n * Retry if the EL3 has not managed to return the token. It could be\n * that HES queue is full and RMM needs to retry again.\n */\nif (token_hunk_len \u003d\u003d 0) {\n  continue;\n}\n```",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3515bfa4_1b41df6e",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T10:03:40Z",
+      "side": 1,
+      "message": "why is this suppression needed ?",
+      "range": {
+        "startLine": 239,
+        "startChar": 2,
+        "endLine": 239,
+        "endChar": 59
+      },
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f77787f_0956ffd2",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T10:03:40Z",
+      "side": 1,
+      "message": "nit:\ncan use single line comment format. `/* */`",
+      "range": {
+        "startLine": 246,
+        "startChar": 2,
+        "endLine": 248,
+        "endChar": 5
+      },
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61bd1fdb_6b510482",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T10:03:40Z",
+      "side": 1,
+      "message": "add comment here,\n\n`/* c_size should not be zero if platform_token_offset is 0 */`",
+      "revId": "48f95952c981eff8274d1ea74d883c3192f54a85",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
