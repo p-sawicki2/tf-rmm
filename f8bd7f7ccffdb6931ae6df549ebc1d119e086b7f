@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1795aa94_a92e4027",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-05T19:24:29Z",
+      "side": 1,
+      "message": "This was suggested by Soby in previous comment. would prefer to leave it as is.",
+      "parentUuid": "56f5b75b_5fd85878",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7fa7fbd6_3672e2af",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 14
@@ -72,6 +96,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a18aa68a_9b239c58",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-05T19:24:29Z",
+      "side": 1,
+      "message": "prefer to leave as is. naming was suggested earlier.",
+      "parentUuid": "7fa7fbd6_3672e2af",
+      "range": {
+        "startLine": 352,
+        "startChar": 16,
+        "endLine": 352,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "abfbee4e_7b701ea1",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 14
@@ -83,6 +131,30 @@
       "writtenOn": "2024-09-05T13:47:03Z",
       "side": 1,
       "message": "as above",
+      "range": {
+        "startLine": 369,
+        "startChar": 16,
+        "endLine": 369,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88cfda34_2961dc90",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-05T19:24:29Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "abfbee4e_7b701ea1",
       "range": {
         "startLine": 369,
         "startChar": 16,
