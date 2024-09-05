@@ -47,6 +47,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe4e9d86_3e305456",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "722e8d3f_fe4e21fd",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2678ce30_1f178078",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3c247b91_208b0f0b",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c35e3a7_f7c476af",
@@ -60,6 +108,24 @@
       "writtenOn": "2024-09-05T08:53:10Z",
       "side": 1,
       "message": "also add:\n\nThe minimum required version is 2.14.",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c352ca6_39952f61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3c35e3a7_f7c476af",
       "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1aa8a93_f0127d8f",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8a45a157_48f3750d",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20024030_1526a45d",
@@ -94,6 +178,30 @@
       "writtenOn": "2024-09-05T09:42:49Z",
       "side": 1,
       "message": "can be removed.",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 38
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c7e12fc_c0bf8a9d",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "20024030_1526a45d",
       "range": {
         "startLine": 100,
         "startChar": 0,
@@ -139,6 +247,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad5945d8_188c1772",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f0d48dbe_e2f42fde",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "45350b00_8e13cbe2",
@@ -152,6 +278,30 @@
       "writtenOn": "2024-09-05T08:53:10Z",
       "side": 1,
       "message": "should this be VERSION_GREATER_EQUAL ?",
+      "range": {
+        "startLine": 104,
+        "startChar": 31,
+        "endLine": 104,
+        "endChar": 47
+      },
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a836e066_48a18cce",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-09-05T21:24:42Z",
+      "side": 1,
+      "message": "Acknowledged, Thanks, yes makes sense to add VERSION_GREATER_EQUAL.",
+      "parentUuid": "45350b00_8e13cbe2",
       "range": {
         "startLine": 104,
         "startChar": 31,
