@@ -22,6 +22,30 @@
       },
       "revId": "9c19f8b0be74a5800e58fbe2c36ff331957603ac",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ef14daf_67546f47",
+        "filename": "lib/slot_buf/include/buffer.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-05T19:25:16Z",
+      "side": 1,
+      "message": "again, it used to be called HES. Soby suggested otherwise. Would prefer to leave as is.",
+      "parentUuid": "2f857f14_5aa40342",
+      "range": {
+        "startLine": 36,
+        "startChar": 6,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "9c19f8b0be74a5800e58fbe2c36ff331957603ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
