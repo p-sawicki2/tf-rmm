@@ -106,6 +106,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b2555f36_2d1f25d1",
+        "filename": "tools/cppcheck/CPPCheck.cmake",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-05T09:53:15Z",
+      "side": 1,
+      "message": "When I ran on my local machine, this was the generated output.\n\n\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e\n\u003cresults version\u003d\"2\"\u003e\n    \u003ccppcheck version\u003d\"2.14.0\"/\u003e\n    \u003cerrors\u003e\n    \u003c/errors\u003e\n\u003c/results\u003e\n\nSo the build failed with\n\n```\nCMake Error at tools/cppcheck/CPPCheck.cmake:105 (message):\n  Cppcheck failed with error count: 1\n```",
+      "revId": "9ed4fba13422dc01723e2ae4448a58af1f4ab410",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45350b00_8e13cbe2",
         "filename": "tools/cppcheck/CPPCheck.cmake",
         "patchSetId": 5
