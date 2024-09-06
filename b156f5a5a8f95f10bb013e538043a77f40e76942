@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fe65e70_1c81f5de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-06T10:37:14Z",
+      "side": 1,
+      "message": "Coverity passed : https://jenkins.openci.aws.arm.com/job/rmm-coverity-internal/1146/",
+      "revId": "b156f5a5a8f95f10bb013e538043a77f40e76942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
