@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5b3b9b9_f6c85bf1",
+        "filename": "lib/gic/src/gic.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-06T10:25:26Z",
+      "side": 1,
+      "message": "suggest :\nreturn gic_virt_feature.nr_lrs;\n\nAs this will tie the discovery together and in case in future this number is different from h/w value, less chance of inconsistency.",
+      "range": {
+        "startLine": 333,
+        "startChar": 8,
+        "endLine": 333,
+        "endChar": 58
+      },
+      "revId": "571b25a60a5a023b52f5eaa4df484eb7097d0578",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
