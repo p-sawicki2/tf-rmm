@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6c69242_5e3a5c42",
+        "filename": "runtime/include/realm.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-09-06T17:57:36Z",
+      "side": 1,
+      "message": "Review this API as seems buggy.\n\nAlso, it might be possible to remove it",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 199,
+        "endChar": 2
+      },
+      "revId": "e2c60e972610da8f5867de14445c6e7b858ed31e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
