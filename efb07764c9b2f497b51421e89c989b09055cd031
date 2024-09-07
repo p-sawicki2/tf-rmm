@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0c75602_fddd3105",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-07T02:16:48Z",
+      "side": 1,
+      "message": "Sorry, while thinking about EL3 spec , I realized it is better to have a separate error code for the BUSY state. See comments on TF-A patch.\n\n\n```\n        /*\n\t\t * Retry if EL3 is busy\n\t\t */\n\t\tif (ret \u003d\u003d E_RMM_BUSY) {\n\t\t\tcontinue;\n\t\t\t\n```",
+      "range": {
+        "startLine": 231,
+        "startChar": 2,
+        "endLine": 237,
+        "endChar": 12
+      },
+      "revId": "efb07764c9b2f497b51421e89c989b09055cd031",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
