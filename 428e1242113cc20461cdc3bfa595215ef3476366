@@ -323,6 +323,30 @@
       },
       "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "973d7254_717676ea",
+        "filename": "lib/t_cose/src/t_cose_rmm_el3_crypto.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T14:57:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ee69b571_e6951b94",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 110,
+        "endChar": 31
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
