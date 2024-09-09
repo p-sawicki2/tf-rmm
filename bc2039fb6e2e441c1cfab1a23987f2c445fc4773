@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13784da6_cbf6625e",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:28:13Z",
+      "side": 1,
+      "message": "Just a heads up:\nThe public key encoding is changing in the RMM spec: 1.0-rel0-rc2\n\nSo far it was in a raw format  (psa_export_key() encodes ECC_PUP_KEYS according to SEC1 \u0026sect;2.3.3) but it is changing to be a CBOR serialized COSE_Key object.",
+      "range": {
+        "startLine": 84,
+        "startChar": 50,
+        "endLine": 84,
+        "endChar": 74
+      },
+      "revId": "bc2039fb6e2e441c1cfab1a23987f2c445fc4773",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dc4270a_16ad3362",
+        "filename": "lib/attestation/src/attestation_key.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:28:13Z",
+      "side": 1,
+      "message": "same code is in line 159",
+      "range": {
+        "startLine": 143,
+        "startChar": 1,
+        "endLine": 143,
+        "endChar": 34
+      },
+      "revId": "bc2039fb6e2e441c1cfab1a23987f2c445fc4773",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02720407_edd36dfa",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:28:13Z",
+      "side": 1,
+      "message": "copy-paste error",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 3
+      },
+      "revId": "bc2039fb6e2e441c1cfab1a23987f2c445fc4773",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
