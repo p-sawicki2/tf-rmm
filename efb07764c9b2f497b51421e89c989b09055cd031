@@ -43,6 +43,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "081b997d_b12ba9e9",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T14:08:20Z",
+      "side": 1,
+      "message": "Having reviewed another patch stack which affects RMM_EL3 interface, the error code can be E_RMM_AGAIN.",
+      "parentUuid": "c88d367f_210afa39",
+      "revId": "efb07764c9b2f497b51421e89c989b09055cd031",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c45c8208_03e3d035",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 25
