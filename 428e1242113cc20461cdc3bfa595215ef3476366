@@ -299,6 +299,30 @@
       },
       "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee69b571_e6951b94",
+        "filename": "lib/t_cose/src/t_cose_rmm_el3_crypto.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-09-09T14:05:09Z",
+      "side": 1,
+      "message": "the function internally panics since it should never fail for anything other than a full queue. so when it returns false, it simply means retry again.\nThe EL3 interface is very simple, if EL3 returns -EAGAIN, it means tr again. anything else is catastrophic failure.",
+      "parentUuid": "d3ac8533_34fb7930",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 110,
+        "endChar": 31
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
