@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "211e4296_771b0c50",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T14:31:00Z",
+      "side": 1,
+      "message": "these can be defined in rmm_el3_ifc.h",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6013339f_0a29bb5c",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T14:31:00Z",
+      "side": 1,
+      "message": "Might an assert be better? Seems like a misconfiguration issue.\nEither the interface does not support the feature register query or the platform does not support the EL3_SIGN feature.",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dd16dfe_1fb6b8a7",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T14:31:00Z",
+      "side": 1,
+      "message": "rmm_el3_ifc.h",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e633fb1c_71b3dd70",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T14:31:00Z",
+      "side": 1,
+      "message": "nit: insert a blank line",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 291,
+        "endChar": 10
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
