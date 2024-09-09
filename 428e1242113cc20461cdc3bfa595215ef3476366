@@ -3,6 +3,144 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9aad4ec_b3b35ad6",
+        "filename": "configs/t_cose/0001-Add-compile-time-option-for-HES-signing.patch",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "nit: prefer \"_el3_sign\" to be inline with naming.",
+      "range": {
+        "startLine": 31,
+        "startChar": 26,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c29e1a14_a9c4f82e",
+        "filename": "configs/t_cose/0001-Add-compile-time-option-for-HES-signing.patch",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "suggest: \"_restart_el3_sign\"",
+      "range": {
+        "startLine": 51,
+        "startChar": 31,
+        "endLine": 51,
+        "endChar": 42
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e380884_da7b5aaf",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "we need to include \"EL3_SIGN\" in the name of the flag. Could avoid the RMM_ and abbr to ATTEST\n\nSo this name could be ATTEST_TOKEN_EL3_SIGN",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8ab0646_12b3bb40",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "\"Use EL3 service to sign Realm attestation token.\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 8,
+        "endChar": 49
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "769eb36b_d498598c",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "suggest: _el3_sign.c\"",
+      "range": {
+        "startLine": 86,
+        "startChar": 24,
+        "endLine": 86,
+        "endChar": 38
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dedc222e_de6a0cc7",
+        "filename": "lib/t_cose/CMakeLists.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "nit: can be on previous line.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 5
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ba375896_b7d1b69a",
         "filename": "lib/t_cose/include/t_cose_rmm_el3_crypto.h",
         "patchSetId": 14
@@ -37,6 +175,30 @@
       "writtenOn": "2024-09-09T08:58:29Z",
       "side": 1,
       "message": "Same comment as here:\nhttps://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/29284/comment/a63ff754_e0709fcb/\n\npsa/crypto.h has macros to compute signature length per curve",
+      "range": {
+        "startLine": 37,
+        "startChar": 21,
+        "endLine": 37,
+        "endChar": 24
+      },
+      "revId": "428e1242113cc20461cdc3bfa595215ef3476366",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f30712c6_f35148e5",
+        "filename": "lib/t_cose/include/t_cose_rmm_el3_crypto.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T13:27:49Z",
+      "side": 1,
+      "message": "Yes, today the signature algo is ATTEST_KEY_CURVE_ECC_SECP384R1.\n\n\nOne could argue that this size may need to cater for future algo additions and since it is part of EL3-RMM interface, it cannot be easily changed and hence it needs to be over-provisioned. In any case, there needs to be a macro for this size, and needs to asserted that the size is indeed \u003e\u003d expected size of algo.\n\nAlso it may be worth to add \"algo\" parameter to the EL3_SIGN_REQ SMC as a future hardening. This can be hardcoded for now and EL3 can do a trivial check for this arg.",
+      "parentUuid": "9bf81e28_62937bd8",
       "range": {
         "startLine": 37,
         "startChar": 21,
