@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd542ae0_0a791ab5",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "According to https://www.secg.org/sec1-v2.pdf 2.3.3. An 0x04 byte must be prepended to the public key. So the size is 97 bytes.",
+      "range": {
+        "startLine": 115,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 72
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa03a6ab_4a8cd9f5",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "nit: _s sufffix is not needed",
+      "range": {
+        "startLine": 125,
+        "startChar": 25,
+        "endLine": 125,
+        "endChar": 27
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c662ade5_c19d83a6",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 135,
+        "startChar": 26,
+        "endLine": 135,
+        "endChar": 29
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07b05a1_54259122",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "nit: memcpy would be more obvious",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 194,
+        "endChar": 50
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca007c49_cef2928d",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "this could be just a memset to a fixed value.",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 46
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7b52178_4f87facd",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T11:48:44Z",
+      "side": 1,
+      "message": "nit: insert blank line",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 10
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
