@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dbc5b84f_8908fc43",
+        "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T11:28:28Z",
+      "side": 1,
+      "message": "The original rationale was these APIs were not exactly doing a request/response on behalf of calling Realm. These were driving a queue which could have multiple requests. \n\nThe request side RMM queue is now removed. \n\nOn the response side, the response may not correspond to the current request . In fact RMM will end up pulling responses till it finds the correct one. \n\nSo there is no 1:1 correspondence like a typical REQ-RESP flow.\n\nThis alternate method is going to be a config option in RMM and an optional RMM-EL3 feature. Hence we thought having a uniform naming across all the SMCs and APIs would be useful to tie this all together, \"EL3_SIGN\" is the name we have come up with for this alternate Attestation flow. A grep of the above feature name would bring up all the associated APIs and functionality.\n\nEL3 could make use of HES but this is IMPDEF based on platform and HES does not need to reflect in the names.\n\nYou are right that SMCs are targeted at EL3 , so having EL3 in the SMC name is not particularly useful for the SMC names.\n\nI dont have a strong opinion on Push/Pull in the names. As long as we can document the behavior in the EL3-RMM specification, it should be OK I think.\n\n\nFor the SMCs, these names also would work I think:\n\nSMC_RMM_EL3_SIGN_ATTEST_REQ\nSMC_RMM_EL3_SIGN_ATTEST_RESP\n\nThe names need not block the patch stack, we can additional reworks to rename.",
+      "parentUuid": "1795aa94_a92e4027",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 24
+      },
+      "revId": "f8bd7f7ccffdb6931ae6df549ebc1d119e086b7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7fa7fbd6_3672e2af",
         "filename": "lib/rmm_el3_ifc/include/rmm_el3_ifc.h",
         "patchSetId": 14
