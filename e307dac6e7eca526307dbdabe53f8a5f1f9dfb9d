@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a8af1ec_702d795a",
+        "filename": "lib/t_cose/include/t_cose_rmm_el3_crypto.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000024
+      },
+      "writtenOn": "2024-09-09T13:14:15Z",
+      "side": 1,
+      "message": "might shorten the name (e.g.:hash_buf, hash_buffer, tbs_hash_buf) and move the hash_len member next to it.",
+      "range": {
+        "startLine": 38,
+        "startChar": 14,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "e307dac6e7eca526307dbdabe53f8a5f1f9dfb9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
