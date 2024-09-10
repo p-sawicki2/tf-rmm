@@ -49,6 +49,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b445844d_d6399564",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "we could share the same data structures from RMM. The structure definitions would need to move to a header file and can be included by this file. The header file would need to be part of rmm_el3_ifc component.",
+      "range": {
+        "startLine": 125,
+        "startChar": 7,
+        "endLine": 125,
+        "endChar": 18
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c662ade5_c19d83a6",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 14
@@ -95,6 +118,93 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "694f9056_78c3b207",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "yes, memcpy would be better.",
+      "parentUuid": "a07b05a1_54259122",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 194,
+        "endChar": 50
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27151c73_d6fb54ad",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "Use predefined macros for this numbers ? Potentially this is SHA512 len",
+      "range": {
+        "startLine": 198,
+        "startChar": 25,
+        "endLine": 198,
+        "endChar": 28
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09284867_9efcee1a",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "can validate alg_id as well.",
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0540774_2bfa3f28",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "need to use RMM-EL3 interface std error codes as described here : https://trustedfirmware-a.readthedocs.io/en/latest/components/rmm-el3-comms-spec.html#rmm-el3-runtime-service-return-codes\n\nWe are adding E_RMM_EAGAIN as part of another patch stack which is a better fit in this usecase as it asks the caller to try again.\n\nSame comment for all error codes.",
+      "range": {
+        "startLine": 210,
+        "startChar": 9,
+        "endLine": 210,
+        "endChar": 16
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ca007c49_cef2928d",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 14
@@ -106,6 +216,30 @@
       "writtenOn": "2024-09-09T11:48:44Z",
       "side": 1,
       "message": "this could be just a memset to a fixed value.",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 46
+      },
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfe52603_d2ee1f14",
+        "filename": "plat/host/common/src/host_harness_cmn.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:20:08Z",
+      "side": 1,
+      "message": "If this can be a runtime Signature of the hash value, potentially any test case running on FVP/QEMU which validates signature would work. But can be done as a enhancement later on.",
+      "parentUuid": "ca007c49_cef2928d",
       "range": {
         "startLine": 224,
         "startChar": 0,
