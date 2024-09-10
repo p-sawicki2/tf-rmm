@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68ba2b4b_238c37ab",
+        "filename": "lib/t_cose/src/t_cose_rmm_el3_crypto.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:27:25Z",
+      "side": 0,
+      "message": "Just confirm if we have an assertion in the code flow to ensure that the length is within size limits.",
+      "revId": "8d6ff10b581cfbde0816b28e30b58ddcdb6e3883",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
