@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17e88778_f97cafdc",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:47:51Z",
+      "side": 1,
+      "message": "+1.",
+      "parentUuid": "211e4296_771b0c50",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6013339f_0a29bb5c",
         "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-09T14:31:00Z",
       "side": 1,
       "message": "Might an assert be better? Seems like a misconfiguration issue.\nEither the interface does not support the feature register query or the platform does not support the EL3_SIGN feature.",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbefc4b8_5e6d2343",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-10T15:47:51Z",
+      "side": 1,
+      "message": "it would be a misconfiguration yes. Because this is interaction with an entity outside RMM boundary, it needs to be a panic().\n\nBut, this misconfiguration only affects attestation usecases and rest of RMM and realm ABI should continue work as a principle.\n\nI think this would be better if features is queried and  error flagged up during boot in attestation_init(). Once attestation_init fails, any further attest calls should return error at top level (within attestation module). Hence Realm would get error for RSI_ATTESTATION_INIT call. \n\n\nIf the early error return is done, then this can be a panic() as we will not hit this code path during runtime.",
+      "parentUuid": "6013339f_0a29bb5c",
       "range": {
         "startLine": 151,
         "startChar": 2,
