@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "425b9efc_a2776f69",
+        "filename": "lib/rmm_el3_ifc/src/rmm_el3_runtime.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-11T13:24:50Z",
+      "side": 1,
+      "message": "Thinking further, once the EL3_SIGN feature is validated as being present during boot (as part of attestation_init()), and further attestation calls can progress only after this is done, then this check can be an assert(). \n\nWorst case, even if the SMC is not implemented in EL3, it would return SMC_UNK back to RMM and there is should not be any harm caused.",
+      "parentUuid": "dbefc4b8_5e6d2343",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "1a8fc9fabc9ba32e21fe816cfabd5a99a238113e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0dd16dfe_1fb6b8a7",
         "filename": "plat/host/common/src/host_harness_cmn.c",
         "patchSetId": 1
