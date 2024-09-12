@@ -9,6 +9,7 @@
 #include <feature.h>
 #include <granule.h>
 #include <measurement.h>
+#include <metadata.h>
 #include <realm.h>
 #include <simd.h>
 #include <smc-handler.h>
@@ -18,14 +19,39 @@
 #include <string.h>
 #include <table.h>
 #include <vmid.h>
+#include <debug.h>
 
 #define RMM_FEATURE_MIN_IPA_SIZE	PARANGE_0000_WIDTH
+
+static bool compare_rims(struct rd *rd, struct rmi_islet_realm_metadata *metadata)
+{
+	return memcmp(rd->measurement[RIM_MEASUREMENT_SLOT], metadata->rim, MAX_MEASUREMENT_SIZE) != 0;
+}
+
+static bool compare_hash_algos(struct rd *rd, struct rmi_islet_realm_metadata *metadata)
+{
+	uint64_t hash_algo = METADATA_HASH_SHA_256;
+
+	switch (rd->algorithm) {
+		case HASH_SHA_256:
+			hash_algo = METADATA_HASH_SHA_256;
+			break;
+		case HASH_SHA_512:
+			hash_algo = METADATA_HASH_SHA_512;
+			break;
+		default:
+			assert(false);
+	}
+
+	return hash_algo != metadata->hash_algo;
+}
 
 unsigned long smc_realm_activate(unsigned long rd_addr)
 {
 	struct rd *rd;
 	struct granule *g_rd;
 	unsigned long ret;
+	struct rmi_islet_realm_metadata *metadata = NULL;
 
 	g_rd = find_lock_granule(rd_addr, GRANULE_STATE_RD);
 	if (g_rd == NULL) {
@@ -35,14 +61,40 @@ unsigned long smc_realm_activate(unsigned long rd_addr)
 	rd = granule_map(g_rd, SLOT_RD);
 	assert(rd != NULL);
 
+	if (rd->g_metadata) {
+		INFO("Realm metadata is in use!\n");
+		granule_lock(rd->g_metadata, GRANULE_STATE_METADATA);
+
+		metadata = granule_map(rd->g_metadata, SLOT_METADATA);
+		assert(metadata != NULL);
+
+		if (compare_rims(rd, metadata)) {
+			WARN("Calculated rim and those read from metadata are not the same!\n");
+			ret = RMI_ERROR_REALM;
+			goto out_err;
+		}
+
+		if (compare_hash_algos(rd, metadata)) {
+			WARN("Provided measurement hash algorithm and metadata hash algorithm are different!\n");
+			ret = RMI_ERROR_REALM;
+			goto out_err;
+		}
+	}
+
 	if (get_rd_state_locked(rd) == REALM_NEW) {
 		set_rd_state(rd, REALM_ACTIVE);
 		ret = RMI_SUCCESS;
 	} else {
 		ret = RMI_ERROR_REALM;
 	}
-	buffer_unmap(rd);
 
+out_err:
+	if (rd->g_metadata) {
+		buffer_unmap(metadata);
+		granule_unlock(rd->g_metadata);
+	}
+
+	buffer_unmap(rd);
 	granule_unlock(g_rd);
 
 	return ret;
@@ -401,6 +453,7 @@ unsigned long smc_realm_create(unsigned long rd_addr,
 
 	rd->pmu_enabled = EXTRACT(RMI_REALM_FLAGS_PMU, p.flags) != 0UL;
 	rd->pmu_num_ctrs = p.pmu_num_ctrs;
+	rd->g_metadata = NULL;
 
 	init_s2_starting_level(rd);
 

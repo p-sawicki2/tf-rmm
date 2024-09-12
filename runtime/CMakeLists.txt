@@ -55,7 +55,8 @@ target_sources(rmm-runtime
             "rmi/rec.c"
             "rmi/rtt.c"
             "rmi/run.c"
-            "rmi/system.c")
+            "rmi/system.c"
+            "rmi/metadata.c")
 
 target_sources(rmm-runtime
     PRIVATE "rsi/config.c"
@@ -66,6 +67,7 @@ target_sources(rmm-runtime
             "rsi/psci.c"
             "rsi/realm_ipa_helper.c"
             "rsi/realm_attest.c"
+            "rsi/sealing.c"
             "rsi/system.c")
 
 arm_config_option(

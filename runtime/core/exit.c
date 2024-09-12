@@ -439,6 +439,9 @@ static bool handle_realm_rsi(struct rec *rec, struct rmi_rec_exit *rec_exit)
 	case SMC_RSI_HOST_CALL:
 		handle_rsi_host_call(rec, rec_exit, &res);
 		break;
+	case RSI_ISLET_REALM_SEALING_KEY:
+		handle_rsi_islet_realm_sealing_key(rec, &res);
+		break;
 	default:
 		res.action = UPDATE_REC_RETURN_TO_REALM;
 		res.smc_res.x[0] = SMC_UNKNOWN;

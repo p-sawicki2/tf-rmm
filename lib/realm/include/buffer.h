@@ -34,6 +34,7 @@ enum buffer_slot {
 	SLOT_RTT = U(SLOT_REC_AUX0) + MAX_REC_AUX_GRANULES,
 	SLOT_RTT2,		/* Some commands access two RTT granules at a time*/
 	SLOT_RSI_CALL,
+	SLOT_METADATA,
 	NR_CPU_SLOTS
 };
 

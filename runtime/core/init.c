@@ -9,6 +9,7 @@
 #include <debug.h>
 #include <rmm_el3_ifc.h>
 #include <run.h>
+#include <sealing.h>
 #include <simd.h>
 #include <smc-rmi.h>
 #include <smc-rsi.h>
@@ -107,6 +108,10 @@ void rmm_main(void)
 #endif
 	if (attestation_init() != 0) {
 		WARN("Attestation init failed.\n");
+	}
+
+	if (sealing_init() != 0) {
+		WARN("Sealing init failed.\n");
 	}
 #ifdef RMM_FPU_USE_AT_REL2
 	/*

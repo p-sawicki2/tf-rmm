@@ -36,6 +36,7 @@
 #define SMC64_RMI_FID(_offset)		SMC64_STD_FID(RMI, _offset)
 
 #define IS_SMC64_RMI_FID(_fid)		IS_SMC64_STD_FAST_IN_RANGE(RMI, _fid)
+#define IS_SMC64_VEN_RMI_FID(_fid)		IS_SMC64_VEN_FAST_IN_RANGE(RMI, _fid)
 
 /* Command completed successfully. index is zero. */
 #define RMI_SUCCESS			U(0)
@@ -364,6 +365,13 @@
  *	   if ret0 == RMI_SUCCESS
  */
 #define SMC_RMM_RTT_SET_RIPAS			SMC64_RMI_FID(U(0x19))
+
+/*
+ * arg0 == RD address
+ * arg1 == the address of delegated granule for metadata
+ * arg2 == metadata address
+ */
+#define SMC_RMM_ISLET_REALM_SET_METADATA			SMC64_RMI_FID(U(0x0))
 
 /* Size of Realm Personalization Value */
 #ifndef CBMC

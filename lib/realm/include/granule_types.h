@@ -179,7 +179,12 @@ enum granule_state {
 	 *   - Assigned s2tte.
 	 */
 	GRANULE_STATE_RTT,
-	GRANULE_STATE_LAST = GRANULE_STATE_RTT
+
+	/*
+	 * Metadata granule
+	 */
+	GRANULE_STATE_METADATA,
+	GRANULE_STATE_LAST = 	GRANULE_STATE_METADATA,
 };
 
 struct granule {

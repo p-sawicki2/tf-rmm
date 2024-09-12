@@ -13,8 +13,10 @@ target_link_libraries(rmm-lib
               rmm-lib-debug
               rmm-lib-gic
               rmm-lib-measurement
+              rmm-lib-metadata
               rmm-lib-realm
               rmm-lib-rmm_el3_ifc
+              rmm-lib-sealing
               rmm-lib-smc
               rmm-lib-timers
               rmm-lib-xlat
@@ -28,9 +30,11 @@ add_subdirectory("debug")
 add_subdirectory("gic")
 add_subdirectory("mbedtls")
 add_subdirectory("measurement")
+add_subdirectory("metadata")
 add_subdirectory("qcbor")
 add_subdirectory("realm")
 add_subdirectory("rmm_el3_ifc")
+add_subdirectory("sealing")
 add_subdirectory("smc")
 add_subdirectory("t_cose")
 add_subdirectory("timers")

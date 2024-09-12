@@ -24,6 +24,7 @@
 #define SMC_OEN_MASK		U(0x3F)
 #define SMC_OEN_STD		U(0x4)
 #define SMC_OEN_ARCH		U(0x0)
+#define SMC_OEN_VEN		U(0xC7)
 
 /* FID: Must be zero (MBZ) */
 #define SMC_MBZ_SHIFT		U(16)
@@ -69,6 +70,10 @@
 #define SMC_STD_CALL_BASE	(SMC_SET_FIELD(U(0), TYPE, SMC_TYPE_FAST) | \
 				SMC_SET_FIELD(U(0), OEN, SMC_OEN_STD))
 
+				/* 0xC7000000 */
+#define SMC_VENDOR_CALL_BASE	(SMC_SET_FIELD(U(0), TYPE, SMC_TYPE_FAST) | \
+				SMC_SET_FIELD(U(0), OEN, SMC_OEN_VEN))
+
 				/* 0x840001CF */
 #define SMC_STD_CALL_LIMIT	(SMC_SET_FIELD(SMC_STD_CALL_BASE, FNUM,     \
 					       U(0x1CF)))
@@ -104,6 +109,11 @@
 	 SMC_SET_FIELD(SMC_STD_CALL_BASE, FNUM,				   \
 	 (SMC64_##_range##_FNUM_MIN + (_offset))))
 
+#define SMC64_VENDOR_FID(_range, _offset)					   \
+	(SMC_SET_FIELD(SMC_VENDOR_CALL_BASE, CC, SMC_CC_SMC64)		|  \
+	 SMC_SET_FIELD(SMC_VENDOR_CALL_BASE, FNUM,				   \
+	 (SMC64_##_range##_FNUM_MIN + (_offset))))
+
 #define IS_SMC64_FID_IN_RANGE(_range, _fid)				   \
 	((SMC_GET_FIELD(_fid, FNUM)	>= SMC64_##_range##_FNUM_MIN)	&& \
 	 (SMC_GET_FIELD(_fid, FNUM)	<= SMC64_##_range##_FNUM_MAX))
@@ -118,6 +128,12 @@
 	   SMC_FIELD_VAL(TYPE, SMC_TYPE_FAST)				|  \
 	   SMC_FIELD_VAL(OEN, SMC_OEN_STD))))
 
+#define IS_SMC64_FID_VEN_FAST(_fid)					   \
+	(((_fid) & ~SMC_FIELD_VAL(FNUM, SMC_FNUM_MASK)) ==		   \
+	 ((SMC_FIELD_VAL(CC, SMC_CC_SMC64)				|  \
+	   SMC_FIELD_VAL(TYPE, SMC_TYPE_FAST)				|  \
+	   SMC_FIELD_VAL(OEN, SMC_OEN_VEN))))
+
 #define IS_SMC32_FID_STD_FAST(_fid)					   \
 	(((_fid) & ~SMC_FIELD_VAL(FNUM, SMC_FNUM_MASK)) ==		   \
 	 ((SMC_FIELD_VAL(CC, SMC_CC_SMC32)				|  \
@@ -129,6 +145,9 @@
 
 #define IS_SMC32_STD_FAST_IN_RANGE(_range, _fid)			   \
 	(IS_SMC32_FID_STD_FAST(_fid) && IS_SMC32_FID_IN_RANGE(_range, _fid))
+
+#define IS_SMC64_VEN_FAST_IN_RANGE(_range, _fid)			   \
+	(IS_SMC64_FID_VEN_FAST(_fid) && IS_SMC64_FID_IN_RANGE(_range, _fid))
 
 #define SMC64_NUM_FIDS_IN_RANGE(_range)					   \
 	(SMC64_##_range##_FNUM_MAX - SMC64_##_range##_FNUM_MIN + 1U)
@@ -178,8 +197,8 @@ unsigned long monitor_call(unsigned long id,
 			unsigned long arg4,
 			unsigned long arg5);
 
-/* Result registers X0-X4 */
-#define SMC_RESULT_REGS		5U
+/* Result registers X0-X5 */
+#define SMC_RESULT_REGS		6U
 
 struct smc_result {
 	unsigned long x[SMC_RESULT_REGS];

@@ -35,6 +35,7 @@
 #define IS_SMC64_RSI_FID(_fid)		IS_SMC64_STD_FAST_IN_RANGE(RSI, _fid)
 
 #define SMC64_RSI_FID(_offset)		SMC64_STD_FID(RSI, _offset)
+#define SMC64_RSI_VENDOR_FID(_offset)		SMC64_VENDOR_FID(RSI, _offset)
 
 /*
  * RsiCommandReturnCode enumeration
@@ -190,6 +191,18 @@ struct rsi_realm_config {
  * ret1 == RIPAS value
  */
 #define SMC_RSI_IPA_STATE_GET		SMC64_RSI_FID(U(0x8))
+
+
+/*
+ * arg1 == flags
+ * arg2 == SVN
+ * ret0 == Status / error
+ * ret1 == Doubleword 0 of the Realm sealing key
+ * ret2 == Doubleword 1 of the Realm sealing key
+ * ret3 == Doubleword 2 of the Realm sealing key
+ * ret4 == Doubleword 3 of the Realm sealing key
+ */
+#define RSI_ISLET_REALM_SEALING_KEY		SMC64_RSI_VENDOR_FID(U(0x1))
 
 #define RSI_HOST_CALL_NR_GPRS		U(31)
 

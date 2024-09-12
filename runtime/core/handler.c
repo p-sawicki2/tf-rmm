@@ -153,6 +153,10 @@ static const struct smc_handler smc_handlers[] = {
 	HANDLER(RTT_SET_RIPAS,		4, 1, smc_rtt_set_ripas,	 false, true)
 };
 
+static const struct smc_handler smc_vendor_handlers[] = {
+	HANDLER(ISLET_REALM_SET_METADATA,		3, 0, smc_islet_realm_set_metadata,		 true,  true),
+};
+
 COMPILER_ASSERT(ARRAY_LEN(smc_handlers) == SMC64_NUM_FIDS_IN_RANGE(RMI));
 
 static inline bool rmi_handler_needs_fpu(unsigned int id)
@@ -255,6 +259,13 @@ void handle_ns_smc(unsigned int function_id,
 		handler_id = RMI_HANDLER_ID(function_id);
 		if (handler_id < ARRAY_LEN(smc_handlers)) {
 			handler = &smc_handlers[handler_id];
+		}
+	}
+
+	if (IS_SMC64_VEN_RMI_FID(function_id)) {
+		handler_id = RMI_HANDLER_ID(function_id);
+		if (handler_id < ARRAY_LEN(smc_vendor_handlers)) {
+			handler = &smc_vendor_handlers[handler_id];
 		}
 	}
 

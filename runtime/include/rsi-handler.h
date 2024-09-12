@@ -94,5 +94,6 @@ void handle_rsi_attest_token_continue(struct rec *rec,
 				      struct rsi_result *res);
 void handle_psci(struct rec *rec, struct rmi_rec_exit *rec_exit,
 		 struct rsi_result *res);
+void handle_rsi_islet_realm_sealing_key(struct rec *rec, struct rsi_result *res);
 
 #endif /* RSI_HANDLER_H */

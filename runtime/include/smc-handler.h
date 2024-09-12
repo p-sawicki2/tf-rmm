@@ -96,4 +96,8 @@ void smc_rtt_set_ripas(unsigned long rd_addr,
 			unsigned long top,
 			struct smc_result *res);
 
+unsigned long smc_islet_realm_set_metadata(unsigned long rd_addr,
+		       unsigned long mdg_addr,
+		       unsigned long metadata);
+
 #endif /* SMC_HANDLER_H */

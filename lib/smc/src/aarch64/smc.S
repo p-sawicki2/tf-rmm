@@ -23,7 +23,7 @@ endfunc monitor_call
  *    x0 - x6 - SMC call arguments
  *    x7 - Reference to smc_result structure allocated by caller
  * Return :
- *    x0 - x3 Return values from SMC
+ *    x0 - x5 Return values from SMC
  * The return args are also copied to smc_result data structure.
  */
 func monitor_call_with_res
@@ -39,5 +39,6 @@ func monitor_call_with_res
 	/* Fill the smc_result structure */
 	stp x0, x1, [x7, #0]
 	stp x2, x3, [x7, #16]
+	stp x4, x5, [x7, #32]
 	ret
 endfunc monitor_call_with_res

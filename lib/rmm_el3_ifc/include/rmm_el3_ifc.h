@@ -27,6 +27,8 @@
 					/* 0x1CF */
 #define SMC_RMM_BOOT_COMPLETE		SMC64_STD_FID(RMM_EL3, U(0x1F))
 
+#define SMC_RMM_ISLET_GET_VHUK SMC64_VENDOR_FID(RMM_EL3, U(0))
+
 /* SMC_RMM_BOOT_COMPLETE return codes */
 #define E_RMM_BOOT_SUCCESS				(0)
 #define E_RMM_BOOT_UNKNOWN_ERROR			(-1)
@@ -273,6 +275,9 @@ int rmm_el3_ifc_get_realm_attest_key(uintptr_t buf, size_t buflen,
  */
 int rmm_el3_ifc_get_platform_token(uintptr_t buf, size_t buflen,
 					size_t *len, size_t hash_size);
+
+
+int rmm_el3_ifc_get_realm_vhuk_key(uint8_t *key, size_t key_size, unsigned int key_type);
 
 static inline unsigned long rmm_el3_ifc_gtsi_delegate(unsigned long addr)
 {
