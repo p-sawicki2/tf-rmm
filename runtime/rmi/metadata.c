@@ -75,6 +75,11 @@ unsigned long smc_islet_realm_set_metadata(unsigned long rd_addr,
 		goto out_err;
 	}
 
+	if (rd->g_metadata != NULL) {
+		ret = RMI_ERROR_REALM;
+		goto out_err;
+	}
+
 	/** Copy and assign the metadata granule to the realm descriptor */
 	copy_metadata(meta, &realm_metadata);
 	rd->g_metadata = g_metadata;
