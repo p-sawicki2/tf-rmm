@@ -194,6 +194,12 @@ struct rsi_realm_config {
 
 
 /*
+ * arg1 == ipa of the Granule where the Realm metadata will be stored
+ * ret0 == Status / error
+ */
+#define RSI_ISLET_REALM_METADATA		SMC64_RSI_VENDOR_FID(U(0x0))
+
+/*
  * arg1 == flags
  * arg2 == SVN
  * ret0 == Status / error
