@@ -38,15 +38,20 @@ void handle_rsi_islet_realm_metadata(struct rec *rec, struct rsi_result *res)
 		return;
 	}
 
-	/* Map the Realm granule pointed by the ipa */
-	gr = find_granule(walk_res.pa);
-	dst_metadata = (struct rmi_islet_realm_metadata *)granule_map(gr, SLOT_RSI_CALL);
-	assert(dst_metadata != NULL);
-
 	/** Lock and map RD granule */
 	granule_lock(rec->realm_info.g_rd, GRANULE_STATE_RD);
 	rd = granule_map(rec->realm_info.g_rd, SLOT_RD);
 	assert(rd != NULL);
+
+	if (rd->g_metadata == NULL) {
+		res->smc_res.x[0] = RSI_ERROR_STATE;
+		goto out_err;
+	}
+
+	/* Map the Realm granule pointed by the ipa */
+	gr = find_granule(walk_res.pa);
+	dst_metadata = (struct rmi_islet_realm_metadata *)granule_map(gr, SLOT_RSI_CALL);
+	assert(dst_metadata != NULL);
 
 	/** Lock and map RD's metadata granule */
 	granule_lock(rd->g_metadata, GRANULE_STATE_METADATA);
@@ -60,16 +65,16 @@ void handle_rsi_islet_realm_metadata(struct rec *rec, struct rsi_result *res)
 	buffer_unmap(src_metadata);
 	granule_unlock(rd->g_metadata);
 
+	/* Unmap Realm data granule */
+	buffer_unmap(dst_metadata);
+
+	res->smc_res.x[0] = RSI_SUCCESS;
+
+out_err:
 	/** Unmap and unlock the RD granule */
 	buffer_unmap(rd);
 	granule_unlock(rec->realm_info.g_rd);
 
-	/* Unmap Realm data granule */
-	buffer_unmap(dst_metadata);
-
 	/* Unlock last level RTT */
 	granule_unlock(walk_res.llt);
-
-	/* Write output values */
-	res->smc_res.x[0] = RSI_SUCCESS;
 }
