@@ -10,7 +10,7 @@
 #define RSI_ISLET_USE_IKM_VHUK_M			(1U << 0)
 #define RSI_ISLET_SLK_RIM			(1U << 1)
 #define RSI_ISLET_SLK_REALM_ID			(1U << 2)
-#define RSI_ISLET_SLK_SVN			(1U << 2)
+#define RSI_ISLET_SLK_SVN			(1U << 3)
 
 #define SEALING_KEY_SIZE	U(32)
 #define VHUKA 0x1
