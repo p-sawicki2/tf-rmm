@@ -535,10 +535,12 @@ unsigned long smc_realm_destroy(unsigned long rd_addr)
 	 */
 	vmid_free(rd->s2_ctx.vmid);
 
-	/* Clear the content of metadata granule and transition it to DELEGATED state */
-	granule_lock(rd->g_metadata, GRANULE_STATE_METADATA);
-	granule_memzero(rd->g_metadata, SLOT_METADATA);
-	granule_unlock_transition(rd->g_metadata, GRANULE_STATE_DELEGATED);
+	if (rd->g_metadata != NULL) {
+		/* Clear the content of metadata granule and transition it to DELEGATED state */
+		granule_lock(rd->g_metadata, GRANULE_STATE_METADATA);
+		granule_memzero(rd->g_metadata, SLOT_METADATA);
+		granule_unlock_transition(rd->g_metadata, GRANULE_STATE_DELEGATED);
+	}
 
 	buffer_unmap(rd);
 
