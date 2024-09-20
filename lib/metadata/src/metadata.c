@@ -68,14 +68,14 @@ bool verify_metadata_signature(struct rmi_islet_realm_metadata *realm_metadata)
 		goto out_err;
 	}
 
-	if ((ret = mbedtls_mpi_read_binary(&r, realm_metadata->signature, P385_SIGNATURE_POINT_SIZE)) != 0) {
+	if ((ret = mbedtls_mpi_read_binary(&r, realm_metadata->signature, P384_SIGNATURE_POINT_SIZE)) != 0) {
 		WARN("Cannot read R part of signature: %s\n", mbedtls_high_level_strerr(ret));
 		result = false;
 		goto out_err;
 	}
 
-	if ((ret = mbedtls_mpi_read_binary(&s, realm_metadata->signature + P385_SIGNATURE_POINT_SIZE,
-			P385_SIGNATURE_POINT_SIZE)) != 0) {
+	if ((ret = mbedtls_mpi_read_binary(&s, realm_metadata->signature + P384_SIGNATURE_POINT_SIZE,
+			P384_SIGNATURE_POINT_SIZE)) != 0) {
 		WARN("Cannot read S part of signature: %s\n",  mbedtls_high_level_strerr(ret));
 		result = false;
 		goto out_err;
